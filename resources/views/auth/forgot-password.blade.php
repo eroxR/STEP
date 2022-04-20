@@ -24,8 +24,13 @@
                 <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
             </div>
 
-            <div class="flex items-center justify-end mt-4">
-                <x-jet-button>
+            <div class="flex items-center justify-end mt-4 ">
+
+                <x-jet-danger-button class="ml-4 font-bold py-2 px-4 rounded-full">
+                    <a href="{{ route('login') }}">Cancel</a>
+                </x-jet-danger-button>
+
+                <x-jet-button class="ml-4 font-bold py-2 px-4 rounded-full">
                     {{ __('Email Password Reset Link') }}
                 </x-jet-button>
             </div>

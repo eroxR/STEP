@@ -16,12 +16,14 @@
             @csrf
 
             <div>
-                <x-jet-label for="email" value="{{ __('Email') }}" />
-                <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
+                <x-jet-label for="username" value="{{ __('Username') }}" />
+                <i class="far fa-user-circle"></i>
+                <x-jet-input id="username" class="block mt-1 w-full" type="text" name="username" :value="old('username')" required autofocus />
             </div>
 
             <div class="mt-4">
                 <x-jet-label for="password" value="{{ __('Password') }}" />
+                <i class="fas fa-lock"></i>
                 <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
             </div>
 
@@ -39,9 +41,16 @@
                     </a>
                 @endif
 
-                <x-jet-button class="ml-4">
+                @if (Route::has('register'))
+                    <x-jet-danger-button class="ml-4 font-bold py-2 px-4 rounded-full">
+                        <a href="{{ route('register') }}">Register</a>
+                    </x-jet-danger-button>
+                @endif
+
+                <x-jet-button class="ml-4 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full">
                     {{ __('Log in') }}
                 </x-jet-button>
+
             </div>
         </form>
     </x-jet-authentication-card>
