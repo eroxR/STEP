@@ -22,5 +22,5 @@ class passenger extends Model
         //relación uno a muchos
         public function identification(){
             return $this->belongsTo('App\Models\identification');
-        }
+        }    
 }

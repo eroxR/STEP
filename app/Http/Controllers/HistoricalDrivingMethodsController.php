@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\historical_Driving_Methods;
-use App\Http\Requests\Storehistorical_Driving_MethodsRequest;
-use App\Http\Requests\Updatehistorical_Driving_MethodsRequest;
+use App\Models\historicalDrivingMethods;
+use App\Http\Requests\StorehistoricalDrivingMethodsRequest;
+use App\Http\Requests\UpdatehistoricalDrivingMethodsRequest;
 
 class HistoricalDrivingMethodsController extends Controller
 {
@@ -31,10 +31,10 @@ class HistoricalDrivingMethodsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\Storehistorical_Driving_MethodsRequest  $request
+     * @param  \App\Http\Requests\StorehistoricalDrivingMethodsRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Storehistorical_Driving_MethodsRequest $request)
+    public function store(StorehistoricalDrivingMethodsRequest $request)
     {
         //
     }
@@ -42,10 +42,10 @@ class HistoricalDrivingMethodsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\historical_Driving_Methods  $historical_Driving_Methods
+     * @param  \App\Models\historicalDrivingMethods  $historicalDrivingMethods
      * @return \Illuminate\Http\Response
      */
-    public function show(historical_Driving_Methods $historical_Driving_Methods)
+    public function show(historicalDrivingMethods $historicalDrivingMethods)
     {
         //
     }
@@ -53,10 +53,10 @@ class HistoricalDrivingMethodsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\historical_Driving_Methods  $historical_Driving_Methods
+     * @param  \App\Models\historicalDrivingMethods  $historicalDrivingMethods
      * @return \Illuminate\Http\Response
      */
-    public function edit(historical_Driving_Methods $historical_Driving_Methods)
+    public function edit(historicalDrivingMethods $historicalDrivingMethods)
     {
         //
     }
@@ -64,11 +64,11 @@ class HistoricalDrivingMethodsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\Updatehistorical_Driving_MethodsRequest  $request
-     * @param  \App\Models\historical_Driving_Methods  $historical_Driving_Methods
+     * @param  \App\Http\Requests\UpdatehistoricalDrivingMethodsRequest  $request
+     * @param  \App\Models\historicalDrivingMethods  $historicalDrivingMethods
      * @return \Illuminate\Http\Response
      */
-    public function update(Updatehistorical_Driving_MethodsRequest $request, historical_Driving_Methods $historical_Driving_Methods)
+    public function update(UpdatehistoricalDrivingMethodsRequest $request, historicalDrivingMethods $historicalDrivingMethods)
     {
         //
     }
@@ -76,10 +76,10 @@ class HistoricalDrivingMethodsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\historical_Driving_Methods  $historical_Driving_Methods
+     * @param  \App\Models\historicalDrivingMethods  $historicalDrivingMethods
      * @return \Illuminate\Http\Response
      */
-    public function destroy(historical_Driving_Methods $historical_Driving_Methods)
+    public function destroy(historicalDrivingMethods $historicalDrivingMethods)
     {
         //
     }

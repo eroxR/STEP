@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\historical_arl;
-use App\Http\Requests\Storehistorical_arlRequest;
-use App\Http\Requests\Updatehistorical_arlRequest;
+use App\Models\historicalArl;
+use App\Http\Requests\StorehistoricalArlRequest;
+use App\Http\Requests\UpdatehistoricalArlRequest;
 
 class HistoricalArlController extends Controller
 {
@@ -31,10 +31,10 @@ class HistoricalArlController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\Storehistorical_arlRequest  $request
+     * @param  \App\Http\Requests\StorehistoricalArlRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Storehistorical_arlRequest $request)
+    public function store(StorehistoricalArlRequest $request)
     {
         //
     }
@@ -42,10 +42,10 @@ class HistoricalArlController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\historical_arl  $historical_arl
+     * @param  \App\Models\historicalArl  $historicalArl
      * @return \Illuminate\Http\Response
      */
-    public function show(historical_arl $historical_arl)
+    public function show(historicalArl $historicalArl)
     {
         //
     }
@@ -53,10 +53,10 @@ class HistoricalArlController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\historical_arl  $historical_arl
+     * @param  \App\Models\historicalArl  $historicalArl
      * @return \Illuminate\Http\Response
      */
-    public function edit(historical_arl $historical_arl)
+    public function edit(historicalArl $historicalArl)
     {
         //
     }
@@ -64,11 +64,11 @@ class HistoricalArlController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\Updatehistorical_arlRequest  $request
-     * @param  \App\Models\historical_arl  $historical_arl
+     * @param  \App\Http\Requests\UpdatehistoricalArlRequest  $request
+     * @param  \App\Models\historicalArl  $historicalArl
      * @return \Illuminate\Http\Response
      */
-    public function update(Updatehistorical_arlRequest $request, historical_arl $historical_arl)
+    public function update(UpdatehistoricalArlRequest $request, historicalArl $historicalArl)
     {
         //
     }
@@ -76,10 +76,10 @@ class HistoricalArlController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\historical_arl  $historical_arl
+     * @param  \App\Models\historicalArl  $historicalArl
      * @return \Illuminate\Http\Response
      */
-    public function destroy(historical_arl $historical_arl)
+    public function destroy(historicalArl $historicalArl)
     {
         //
     }

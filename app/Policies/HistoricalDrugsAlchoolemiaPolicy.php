@@ -3,7 +3,7 @@
 namespace App\Policies;
 
 use App\Models\User;
-use App\Models\historical_Drugs_Alchoolemia;
+use App\Models\historicalDrugsAlchoolemia;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class HistoricalDrugsAlchoolemiaPolicy
@@ -25,10 +25,10 @@ class HistoricalDrugsAlchoolemiaPolicy
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\historical_Drugs_Alchoolemia  $historicalDrugsAlchoolemia
+     * @param  \App\Models\historicalDrugsAlchoolemia  $historicalDrugsAlchoolemia
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, historical_Drugs_Alchoolemia $historicalDrugsAlchoolemia)
+    public function view(User $user, historicalDrugsAlchoolemia $historicalDrugsAlchoolemia)
     {
         //
     }
@@ -48,10 +48,10 @@ class HistoricalDrugsAlchoolemiaPolicy
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\historical_Drugs_Alchoolemia  $historicalDrugsAlchoolemia
+     * @param  \App\Models\historicalDrugsAlchoolemia  $historicalDrugsAlchoolemia
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, historical_Drugs_Alchoolemia $historicalDrugsAlchoolemia)
+    public function update(User $user, historicalDrugsAlchoolemia $historicalDrugsAlchoolemia)
     {
         //
     }
@@ -60,10 +60,10 @@ class HistoricalDrugsAlchoolemiaPolicy
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\historical_Drugs_Alchoolemia  $historicalDrugsAlchoolemia
+     * @param  \App\Models\historicalDrugsAlchoolemia  $historicalDrugsAlchoolemia
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, historical_Drugs_Alchoolemia $historicalDrugsAlchoolemia)
+    public function delete(User $user, historicalDrugsAlchoolemia $historicalDrugsAlchoolemia)
     {
         //
     }
@@ -72,10 +72,10 @@ class HistoricalDrugsAlchoolemiaPolicy
      * Determine whether the user can restore the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\historical_Drugs_Alchoolemia  $historicalDrugsAlchoolemia
+     * @param  \App\Models\historicalDrugsAlchoolemia  $historicalDrugsAlchoolemia
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, historical_Drugs_Alchoolemia $historicalDrugsAlchoolemia)
+    public function restore(User $user, historicalDrugsAlchoolemia $historicalDrugsAlchoolemia)
     {
         //
     }
@@ -84,10 +84,10 @@ class HistoricalDrugsAlchoolemiaPolicy
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\historical_Drugs_Alchoolemia  $historicalDrugsAlchoolemia
+     * @param  \App\Models\historicalDrugsAlchoolemia  $historicalDrugsAlchoolemia
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, historical_Drugs_Alchoolemia $historicalDrugsAlchoolemia)
+    public function forceDelete(User $user, historicalDrugsAlchoolemia $historicalDrugsAlchoolemia)
     {
         //
     }

@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\compensation_box;
-use App\Http\Requests\Storecompensation_boxRequest;
-use App\Http\Requests\Updatecompensation_boxRequest;
+use App\Models\compensationBox;
+use App\Http\Requests\StorecompensationBoxRequest;
+use App\Http\Requests\UpdatecompensationBoxRequest;
 
 class CompensationBoxController extends Controller
 {
@@ -31,10 +31,10 @@ class CompensationBoxController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\Storecompensation_boxRequest  $request
+     * @param  \App\Http\Requests\StorecompensationBoxRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Storecompensation_boxRequest $request)
+    public function store(StorecompensationBoxRequest $request)
     {
         //
     }
@@ -42,10 +42,10 @@ class CompensationBoxController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\compensation_box  $compensation_box
+     * @param  \App\Models\compensationBox  $compensationBox
      * @return \Illuminate\Http\Response
      */
-    public function show(compensation_box $compensation_box)
+    public function show(compensationBox $compensationBox)
     {
         //
     }
@@ -53,10 +53,10 @@ class CompensationBoxController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\compensation_box  $compensation_box
+     * @param  \App\Models\compensationBox  $compensationBox
      * @return \Illuminate\Http\Response
      */
-    public function edit(compensation_box $compensation_box)
+    public function edit(compensationBox $compensationBox)
     {
         //
     }
@@ -64,11 +64,11 @@ class CompensationBoxController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\Updatecompensation_boxRequest  $request
-     * @param  \App\Models\compensation_box  $compensation_box
+     * @param  \App\Http\Requests\UpdatecompensationBoxRequest  $request
+     * @param  \App\Models\compensationBox  $compensationBox
      * @return \Illuminate\Http\Response
      */
-    public function update(Updatecompensation_boxRequest $request, compensation_box $compensation_box)
+    public function update(UpdatecompensationBoxRequest $request, compensationBox $compensationBox)
     {
         //
     }
@@ -76,10 +76,10 @@ class CompensationBoxController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\compensation_box  $compensation_box
+     * @param  \App\Models\compensationBox  $compensationBox
      * @return \Illuminate\Http\Response
      */
-    public function destroy(compensation_box $compensation_box)
+    public function destroy(compensationBox $compensationBox)
     {
         //
     }

@@ -3,7 +3,7 @@
 namespace App\Policies;
 
 use App\Models\User;
-use App\Models\contract_type;
+use App\Models\contractType;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class ContractTypePolicy
@@ -25,10 +25,10 @@ class ContractTypePolicy
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\contract_type  $contractType
+     * @param  \App\Models\contractType  $contractType
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, contract_type $contractType)
+    public function view(User $user, contractType $contractType)
     {
         //
     }
@@ -48,10 +48,10 @@ class ContractTypePolicy
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\contract_type  $contractType
+     * @param  \App\Models\contractType  $contractType
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, contract_type $contractType)
+    public function update(User $user, contractType $contractType)
     {
         //
     }
@@ -60,10 +60,10 @@ class ContractTypePolicy
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\contract_type  $contractType
+     * @param  \App\Models\contractType  $contractType
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, contract_type $contractType)
+    public function delete(User $user, contractType $contractType)
     {
         //
     }
@@ -72,10 +72,10 @@ class ContractTypePolicy
      * Determine whether the user can restore the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\contract_type  $contractType
+     * @param  \App\Models\contractType  $contractType
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, contract_type $contractType)
+    public function restore(User $user, contractType $contractType)
     {
         //
     }
@@ -84,10 +84,10 @@ class ContractTypePolicy
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\contract_type  $contractType
+     * @param  \App\Models\contractType  $contractType
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, contract_type $contractType)
+    public function forceDelete(User $user, contractType $contractType)
     {
         //
     }

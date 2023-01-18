@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\educational_level;
-use App\Http\Requests\Storeeducational_levelRequest;
-use App\Http\Requests\Updateeducational_levelRequest;
+use App\Models\educationalLevel;
+use App\Http\Requests\StoreeducationalLevelRequest;
+use App\Http\Requests\UpdateeducationalLevelRequest;
 
 class EducationalLevelController extends Controller
 {
@@ -31,10 +31,10 @@ class EducationalLevelController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\Storeeducational_levelRequest  $request
+     * @param  \App\Http\Requests\StoreeducationalLevelRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Storeeducational_levelRequest $request)
+    public function store(StoreeducationalLevelRequest $request)
     {
         //
     }
@@ -42,10 +42,10 @@ class EducationalLevelController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\educational_level  $educational_level
+     * @param  \App\Models\educationalLevel  $educationalLevel
      * @return \Illuminate\Http\Response
      */
-    public function show(educational_level $educational_level)
+    public function show(educationalLevel $educationalLevel)
     {
         //
     }
@@ -53,10 +53,10 @@ class EducationalLevelController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\educational_level  $educational_level
+     * @param  \App\Models\educationalLevel  $educationalLevel
      * @return \Illuminate\Http\Response
      */
-    public function edit(educational_level $educational_level)
+    public function edit(educationalLevel $educationalLevel)
     {
         //
     }
@@ -64,11 +64,11 @@ class EducationalLevelController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\Updateeducational_levelRequest  $request
-     * @param  \App\Models\educational_level  $educational_level
+     * @param  \App\Http\Requests\UpdateeducationalLevelRequest  $request
+     * @param  \App\Models\educationalLevel  $educationalLevel
      * @return \Illuminate\Http\Response
      */
-    public function update(Updateeducational_levelRequest $request, educational_level $educational_level)
+    public function update(UpdateeducationalLevelRequest $request, educationalLevel $educationalLevel)
     {
         //
     }
@@ -76,10 +76,10 @@ class EducationalLevelController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\educational_level  $educational_level
+     * @param  \App\Models\educationalLevel  $educationalLevel
      * @return \Illuminate\Http\Response
      */
-    public function destroy(educational_level $educational_level)
+    public function destroy(educationalLevel $educationalLevel)
     {
         //
     }

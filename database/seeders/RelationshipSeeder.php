@@ -16,7 +16,6 @@ class RelationshipSeeder extends Seeder
     public function run()
     {
         //
-
         $parentezco1 = new relationship();
         $parentezco1->description_relationship="Abuelo(a)";
         $parentezco1->save();

@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\historical_layoffs;
-use App\Http\Requests\Storehistorical_layoffsRequest;
-use App\Http\Requests\Updatehistorical_layoffsRequest;
+use App\Models\historicalLayoffs;
+use App\Http\Requests\StorehistoricalLayoffsRequest;
+use App\Http\Requests\UpdatehistoricalLayoffsRequest;
 
 class HistoricalLayoffsController extends Controller
 {
@@ -31,10 +31,10 @@ class HistoricalLayoffsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\Storehistorical_layoffsRequest  $request
+     * @param  \App\Http\Requests\StorehistoricalLayoffsRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Storehistorical_layoffsRequest $request)
+    public function store(StorehistoricalLayoffsRequest $request)
     {
         //
     }
@@ -42,10 +42,10 @@ class HistoricalLayoffsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\historical_layoffs  $historical_layoffs
+     * @param  \App\Models\historicalLayoffs  $historicalLayoffs
      * @return \Illuminate\Http\Response
      */
-    public function show(historical_layoffs $historical_layoffs)
+    public function show(historicalLayoffs $historicalLayoffs)
     {
         //
     }
@@ -53,10 +53,10 @@ class HistoricalLayoffsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\historical_layoffs  $historical_layoffs
+     * @param  \App\Models\historicalLayoffs  $historicalLayoffs
      * @return \Illuminate\Http\Response
      */
-    public function edit(historical_layoffs $historical_layoffs)
+    public function edit(historicalLayoffs $historicalLayoffs)
     {
         //
     }
@@ -64,11 +64,11 @@ class HistoricalLayoffsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\Updatehistorical_layoffsRequest  $request
-     * @param  \App\Models\historical_layoffs  $historical_layoffs
+     * @param  \App\Http\Requests\UpdatehistoricalLayoffsRequest  $request
+     * @param  \App\Models\historicalLayoffs  $historicalLayoffs
      * @return \Illuminate\Http\Response
      */
-    public function update(Updatehistorical_layoffsRequest $request, historical_layoffs $historical_layoffs)
+    public function update(UpdatehistoricalLayoffsRequest $request, historicalLayoffs $historicalLayoffs)
     {
         //
     }
@@ -76,10 +76,10 @@ class HistoricalLayoffsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\historical_layoffs  $historical_layoffs
+     * @param  \App\Models\historicalLayoffs  $historicalLayoffs
      * @return \Illuminate\Http\Response
      */
-    public function destroy(historical_layoffs $historical_layoffs)
+    public function destroy(historicalLayoffs $historicalLayoffs)
     {
         //
     }

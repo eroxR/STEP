@@ -9,8 +9,8 @@ class usertype extends Model
 {
     use HasFactory;
 
-    	    //relación uno a muchos inversa
-            public function user(){
-                return $this->hasMany('App\Models\user');
-            }
+        //relación uno a muchos inversa
+        public function user(){
+            return $this->hasMany('App\Models\user');
+        }    
 }

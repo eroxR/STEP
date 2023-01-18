@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\supplier_category;
-use App\Http\Requests\Storesupplier_categoryRequest;
-use App\Http\Requests\Updatesupplier_categoryRequest;
+use App\Models\supplierCategory;
+use App\Http\Requests\StoresupplierCategoryRequest;
+use App\Http\Requests\UpdatesupplierCategoryRequest;
 
 class SupplierCategoryController extends Controller
 {
@@ -31,10 +31,10 @@ class SupplierCategoryController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\Storesupplier_categoryRequest  $request
+     * @param  \App\Http\Requests\StoresupplierCategoryRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Storesupplier_categoryRequest $request)
+    public function store(StoresupplierCategoryRequest $request)
     {
         //
     }
@@ -42,10 +42,10 @@ class SupplierCategoryController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\supplier_category  $supplier_category
+     * @param  \App\Models\supplierCategory  $supplierCategory
      * @return \Illuminate\Http\Response
      */
-    public function show(supplier_category $supplier_category)
+    public function show(supplierCategory $supplierCategory)
     {
         //
     }
@@ -53,10 +53,10 @@ class SupplierCategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\supplier_category  $supplier_category
+     * @param  \App\Models\supplierCategory  $supplierCategory
      * @return \Illuminate\Http\Response
      */
-    public function edit(supplier_category $supplier_category)
+    public function edit(supplierCategory $supplierCategory)
     {
         //
     }
@@ -64,11 +64,11 @@ class SupplierCategoryController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\Updatesupplier_categoryRequest  $request
-     * @param  \App\Models\supplier_category  $supplier_category
+     * @param  \App\Http\Requests\UpdatesupplierCategoryRequest  $request
+     * @param  \App\Models\supplierCategory  $supplierCategory
      * @return \Illuminate\Http\Response
      */
-    public function update(Updatesupplier_categoryRequest $request, supplier_category $supplier_category)
+    public function update(UpdatesupplierCategoryRequest $request, supplierCategory $supplierCategory)
     {
         //
     }
@@ -76,10 +76,10 @@ class SupplierCategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\supplier_category  $supplier_category
+     * @param  \App\Models\supplierCategory  $supplierCategory
      * @return \Illuminate\Http\Response
      */
-    public function destroy(supplier_category $supplier_category)
+    public function destroy(supplierCategory $supplierCategory)
     {
         //
     }

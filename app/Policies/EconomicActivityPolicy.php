@@ -3,7 +3,7 @@
 namespace App\Policies;
 
 use App\Models\User;
-use App\Models\economic_activity;
+use App\Models\economicActivity;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class EconomicActivityPolicy
@@ -25,10 +25,10 @@ class EconomicActivityPolicy
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\economic_activity  $economicActivity
+     * @param  \App\Models\economicActivity  $economicActivity
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, economic_activity $economicActivity)
+    public function view(User $user, economicActivity $economicActivity)
     {
         //
     }
@@ -48,10 +48,10 @@ class EconomicActivityPolicy
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\economic_activity  $economicActivity
+     * @param  \App\Models\economicActivity  $economicActivity
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, economic_activity $economicActivity)
+    public function update(User $user, economicActivity $economicActivity)
     {
         //
     }
@@ -60,10 +60,10 @@ class EconomicActivityPolicy
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\economic_activity  $economicActivity
+     * @param  \App\Models\economicActivity  $economicActivity
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, economic_activity $economicActivity)
+    public function delete(User $user, economicActivity $economicActivity)
     {
         //
     }
@@ -72,10 +72,10 @@ class EconomicActivityPolicy
      * Determine whether the user can restore the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\economic_activity  $economicActivity
+     * @param  \App\Models\economicActivity  $economicActivity
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, economic_activity $economicActivity)
+    public function restore(User $user, economicActivity $economicActivity)
     {
         //
     }
@@ -84,10 +84,10 @@ class EconomicActivityPolicy
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\economic_activity  $economicActivity
+     * @param  \App\Models\economicActivity  $economicActivity
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, economic_activity $economicActivity)
+    public function forceDelete(User $user, economicActivity $economicActivity)
     {
         //
     }

@@ -3,7 +3,7 @@
 namespace App\Policies;
 
 use App\Models\User;
-use App\Models\supplier_category;
+use App\Models\supplierCategory;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class SupplierCategoryPolicy
@@ -25,10 +25,10 @@ class SupplierCategoryPolicy
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\supplier_category  $supplierCategory
+     * @param  \App\Models\supplierCategory  $supplierCategory
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, supplier_category $supplierCategory)
+    public function view(User $user, supplierCategory $supplierCategory)
     {
         //
     }
@@ -48,10 +48,10 @@ class SupplierCategoryPolicy
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\supplier_category  $supplierCategory
+     * @param  \App\Models\supplierCategory  $supplierCategory
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, supplier_category $supplierCategory)
+    public function update(User $user, supplierCategory $supplierCategory)
     {
         //
     }
@@ -60,10 +60,10 @@ class SupplierCategoryPolicy
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\supplier_category  $supplierCategory
+     * @param  \App\Models\supplierCategory  $supplierCategory
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, supplier_category $supplierCategory)
+    public function delete(User $user, supplierCategory $supplierCategory)
     {
         //
     }
@@ -72,10 +72,10 @@ class SupplierCategoryPolicy
      * Determine whether the user can restore the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\supplier_category  $supplierCategory
+     * @param  \App\Models\supplierCategory  $supplierCategory
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, supplier_category $supplierCategory)
+    public function restore(User $user, supplierCategory $supplierCategory)
     {
         //
     }
@@ -84,10 +84,10 @@ class SupplierCategoryPolicy
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\supplier_category  $supplierCategory
+     * @param  \App\Models\supplierCategory  $supplierCategory
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, supplier_category $supplierCategory)
+    public function forceDelete(User $user, supplierCategory $supplierCategory)
     {
         //
     }

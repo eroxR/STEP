@@ -3,7 +3,7 @@
 namespace App\Policies;
 
 use App\Models\User;
-use App\Models\educational_level;
+use App\Models\educationalLevel;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class EducationalLevelPolicy
@@ -25,10 +25,10 @@ class EducationalLevelPolicy
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\educational_level  $educationalLevel
+     * @param  \App\Models\educationalLevel  $educationalLevel
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, educational_level $educationalLevel)
+    public function view(User $user, educationalLevel $educationalLevel)
     {
         //
     }
@@ -48,10 +48,10 @@ class EducationalLevelPolicy
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\educational_level  $educationalLevel
+     * @param  \App\Models\educationalLevel  $educationalLevel
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, educational_level $educationalLevel)
+    public function update(User $user, educationalLevel $educationalLevel)
     {
         //
     }
@@ -60,10 +60,10 @@ class EducationalLevelPolicy
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\educational_level  $educationalLevel
+     * @param  \App\Models\educationalLevel  $educationalLevel
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, educational_level $educationalLevel)
+    public function delete(User $user, educationalLevel $educationalLevel)
     {
         //
     }
@@ -72,10 +72,10 @@ class EducationalLevelPolicy
      * Determine whether the user can restore the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\educational_level  $educationalLevel
+     * @param  \App\Models\educationalLevel  $educationalLevel
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, educational_level $educationalLevel)
+    public function restore(User $user, educationalLevel $educationalLevel)
     {
         //
     }
@@ -84,10 +84,10 @@ class EducationalLevelPolicy
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\educational_level  $educationalLevel
+     * @param  \App\Models\educationalLevel  $educationalLevel
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, educational_level $educationalLevel)
+    public function forceDelete(User $user, educationalLevel $educationalLevel)
     {
         //
     }

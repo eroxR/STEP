@@ -14,13 +14,13 @@ class identification extends Model
             return $this->hasMany('App\Models\user');
         }
     
-        //relación uno a muchos
+        //relación uno a muchos inversa
         public function contract(){
             return $this->hasMany('App\Models\contract');
         }
     
-        //relación uno a muchos
+        //relación uno a muchos inversa
         public function passenger(){
             return $this->hasMany('App\Models\passenger');
-        }
+        }    
 }

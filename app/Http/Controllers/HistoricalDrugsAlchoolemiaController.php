@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\historical_Drugs_Alchoolemia;
-use App\Http\Requests\Storehistorical_Drugs_AlchoolemiaRequest;
-use App\Http\Requests\Updatehistorical_Drugs_AlchoolemiaRequest;
+use App\Models\historicalDrugsAlchoolemia;
+use App\Http\Requests\StorehistoricalDrugsAlchoolemiaRequest;
+use App\Http\Requests\UpdatehistoricalDrugsAlchoolemiaRequest;
 
 class HistoricalDrugsAlchoolemiaController extends Controller
 {
@@ -31,10 +31,10 @@ class HistoricalDrugsAlchoolemiaController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\Storehistorical_Drugs_AlchoolemiaRequest  $request
+     * @param  \App\Http\Requests\StorehistoricalDrugsAlchoolemiaRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Storehistorical_Drugs_AlchoolemiaRequest $request)
+    public function store(StorehistoricalDrugsAlchoolemiaRequest $request)
     {
         //
     }
@@ -42,10 +42,10 @@ class HistoricalDrugsAlchoolemiaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\historical_Drugs_Alchoolemia  $historical_Drugs_Alchoolemia
+     * @param  \App\Models\historicalDrugsAlchoolemia  $historicalDrugsAlchoolemia
      * @return \Illuminate\Http\Response
      */
-    public function show(historical_Drugs_Alchoolemia $historical_Drugs_Alchoolemia)
+    public function show(historicalDrugsAlchoolemia $historicalDrugsAlchoolemia)
     {
         //
     }
@@ -53,10 +53,10 @@ class HistoricalDrugsAlchoolemiaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\historical_Drugs_Alchoolemia  $historical_Drugs_Alchoolemia
+     * @param  \App\Models\historicalDrugsAlchoolemia  $historicalDrugsAlchoolemia
      * @return \Illuminate\Http\Response
      */
-    public function edit(historical_Drugs_Alchoolemia $historical_Drugs_Alchoolemia)
+    public function edit(historicalDrugsAlchoolemia $historicalDrugsAlchoolemia)
     {
         //
     }
@@ -64,11 +64,11 @@ class HistoricalDrugsAlchoolemiaController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\Updatehistorical_Drugs_AlchoolemiaRequest  $request
-     * @param  \App\Models\historical_Drugs_Alchoolemia  $historical_Drugs_Alchoolemia
+     * @param  \App\Http\Requests\UpdatehistoricalDrugsAlchoolemiaRequest  $request
+     * @param  \App\Models\historicalDrugsAlchoolemia  $historicalDrugsAlchoolemia
      * @return \Illuminate\Http\Response
      */
-    public function update(Updatehistorical_Drugs_AlchoolemiaRequest $request, historical_Drugs_Alchoolemia $historical_Drugs_Alchoolemia)
+    public function update(UpdatehistoricalDrugsAlchoolemiaRequest $request, historicalDrugsAlchoolemia $historicalDrugsAlchoolemia)
     {
         //
     }
@@ -76,10 +76,10 @@ class HistoricalDrugsAlchoolemiaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\historical_Drugs_Alchoolemia  $historical_Drugs_Alchoolemia
+     * @param  \App\Models\historicalDrugsAlchoolemia  $historicalDrugsAlchoolemia
      * @return \Illuminate\Http\Response
      */
-    public function destroy(historical_Drugs_Alchoolemia $historical_Drugs_Alchoolemia)
+    public function destroy(historicalDrugsAlchoolemia $historicalDrugsAlchoolemia)
     {
         //
     }

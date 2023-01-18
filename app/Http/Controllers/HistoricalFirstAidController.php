@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\historical_First_Aid;
-use App\Http\Requests\Storehistorical_First_AidRequest;
-use App\Http\Requests\Updatehistorical_First_AidRequest;
+use App\Models\historicalFirst_Aid;
+use App\Http\Requests\StorehistoricalFirst_AidRequest;
+use App\Http\Requests\UpdatehistoricalFirst_AidRequest;
 
 class HistoricalFirstAidController extends Controller
 {
@@ -31,10 +31,10 @@ class HistoricalFirstAidController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\Storehistorical_First_AidRequest  $request
+     * @param  \App\Http\Requests\StorehistoricalFirst_AidRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Storehistorical_First_AidRequest $request)
+    public function store(StorehistoricalFirst_AidRequest $request)
     {
         //
     }
@@ -42,10 +42,10 @@ class HistoricalFirstAidController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\historical_First_Aid  $historical_First_Aid
+     * @param  \App\Models\historicalFirst_Aid  $historicalFirst_Aid
      * @return \Illuminate\Http\Response
      */
-    public function show(historical_First_Aid $historical_First_Aid)
+    public function show(historicalFirst_Aid $historicalFirst_Aid)
     {
         //
     }
@@ -53,10 +53,10 @@ class HistoricalFirstAidController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\historical_First_Aid  $historical_First_Aid
+     * @param  \App\Models\historicalFirst_Aid  $historicalFirst_Aid
      * @return \Illuminate\Http\Response
      */
-    public function edit(historical_First_Aid $historical_First_Aid)
+    public function edit(historicalFirst_Aid $historicalFirst_Aid)
     {
         //
     }
@@ -64,11 +64,11 @@ class HistoricalFirstAidController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\Updatehistorical_First_AidRequest  $request
-     * @param  \App\Models\historical_First_Aid  $historical_First_Aid
+     * @param  \App\Http\Requests\UpdatehistoricalFirst_AidRequest  $request
+     * @param  \App\Models\historicalFirst_Aid  $historicalFirst_Aid
      * @return \Illuminate\Http\Response
      */
-    public function update(Updatehistorical_First_AidRequest $request, historical_First_Aid $historical_First_Aid)
+    public function update(UpdatehistoricalFirst_AidRequest $request, historicalFirst_Aid $historicalFirst_Aid)
     {
         //
     }
@@ -76,10 +76,10 @@ class HistoricalFirstAidController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\historical_First_Aid  $historical_First_Aid
+     * @param  \App\Models\historicalFirst_Aid  $historicalFirst_Aid
      * @return \Illuminate\Http\Response
      */
-    public function destroy(historical_First_Aid $historical_First_Aid)
+    public function destroy(historicalFirst_Aid $historicalFirst_Aid)
     {
         //
     }

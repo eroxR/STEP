@@ -25,78 +25,78 @@ class driver extends Model
     }
 
     //relación uno a muchos
-    public function historical_Five_Senses_Driving(){
-        return $this->hasMany('App\Models\historical_Five_Senses_Driving');
+    public function historicalFiveSensesDriving(){
+        return $this->hasMany('App\Models\historicalFiveSensesDriving');
     }
 
     //relación uno a muchos
-    public function historical_Distractions(){
-        return $this->hasMany('App\Models\historical_Distractions');
+    public function historicalDistractions(){
+        return $this->hasMany('App\Models\historicalDistractions');
     }
 
     //relación uno a muchos
-    public function historical_Drugs_Alchoolemia(){
-        return $this->hasMany('App\Models\historical_Drugs_Alchoolemia');
+    public function historicalDrugsAlchoolemia(){
+        return $this->hasMany('App\Models\historicalDrugsAlchoolemia');
     }
 
     //relación uno a muchos
-    public function historical_Driving_Test(){
-        return $this->hasMany('App\Models\historical_Driving_Test');
+    public function historicalDrivingTest(){
+        return $this->hasMany('App\Models\historicalDrivingTest');
     }
 
     //relación uno a muchos
-    public function historical_License(){
-        return $this->hasMany('App\Models\historical_License');
+    public function historicalLicense(){
+        return $this->hasMany('App\Models\historicalLicense');
     }
 
     //relación uno a muchos
-    public function historical_Defensive_Driving(){
-        return $this->hasMany('App\Models\historical_Defensive_Driving');
+    public function historicalDefensiveDriving(){
+        return $this->hasMany('App\Models\historicalDefensiveDriving');
     }
 
     //relación uno a muchos
-    public function historical_Driving_Methods(){
-        return $this->hasMany('App\Models\historical_Driving_Methods');
+    public function historicalDrivingMethods(){
+        return $this->hasMany('App\Models\historicalDrivingMethods');
     }
 
     //relación uno a muchos
-    public function historical_Norm_Transit(){
-        return $this->hasMany('App\Models\historical_Norm_Transit');
+    public function historicalNormTransit(){
+        return $this->hasMany('App\Models\historicalNormTransit');
     }
 
     //relación uno a muchos
-    public function historical_Land_Transport_Standards(){
-        return $this->hasMany('App\Models\historical_Land_Transport_Standards');
+    public function historicalLandTransportStandards(){
+        return $this->hasMany('App\Models\historicalLandTransportStandards');
     }
 
     //relación uno a muchos
-    public function historical_First_Aid(){
-        return $this->hasMany('App\Models\historical_First_Aid');
+    public function historicalFirst_Aid(){
+        return $this->hasMany('App\Models\historicalFirst_Aid');
     }
 
     //relación uno a muchos
-    public function historical_First_Responder(){
-        return $this->hasMany('App\Models\historical_First_Responder');
+    public function historicalFirstResponder(){
+        return $this->hasMany('App\Models\historicalFirstResponder');
     }
 
     //relación uno a muchos
-    public function historical_Safety_Active_Passive_Vehicles(){
-        return $this->hasMany('App\Models\historical_Safety_Active_Passive_Vehicles');
+    public function historicalSafetyActivePassiveVehicles(){
+        return $this->hasMany('App\Models\historicalSafetyActivePassiveVehicles');
     }
 
     //relación uno a muchos
-    public function historical_road_safety(){
-        return $this->hasMany('App\Models\historical_road_safety');
+    public function historicalRoadSafety(){
+        return $this->hasMany('App\Models\historicalRoadSafety');
     }
 
     //relación uno a muchos
-    public function historical_Simits(){
-        return $this->hasMany('App\Models\historical_Simits');
+    public function historicalSimits(){
+        return $this->hasMany('App\Models\historicalSimits');
     }
 
     //relación uno a muchos
-    public function historical_Tips_Normative(){
-        return $this->hasMany('App\Models\historical_Tips_Normative');
+    public function historicalTipsNormative(){
+        return $this->hasMany('App\Models\historicalTipsNormative');
     }
 
     //relación muchos a muchos
@@ -113,4 +113,34 @@ class driver extends Model
     public function vehicle(){
         return $this->hasMany('App\Models\vehicle');
     }
+
+    //relación uno a uno inversa
+    public function licenseCategory(){
+        return $this->belongsTo('App\Models\licenseCategory');
+    }
+
+    protected $fillable = [
+        'user_id',
+        'license_number',
+        'license_category',
+        'license_expiration',
+        'certificate_drugs_alchoolemia',
+        'SIMIT_queries',
+        'driving_exam',
+        'Norm_Overland_Transportation_Automotive',
+        'Rules_Transit',
+        'Normative_Tips',
+        'Driving_Methods',
+        'Defensive_driving',
+        'distractions',
+        'First_aid',
+        'First_Responder',
+        'five_senses_driving',
+        'Active_Passive_Security_vehicle',
+        'Road_safety',
+        'driver_status',
+        'Linked',
+
+    ];
+
 }

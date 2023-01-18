@@ -3,7 +3,7 @@
 namespace App\Policies;
 
 use App\Models\User;
-use App\Models\work_area;
+use App\Models\workArea;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class WorkAreaPolicy
@@ -25,10 +25,10 @@ class WorkAreaPolicy
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\work_area  $workArea
+     * @param  \App\Models\workArea  $workArea
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, work_area $workArea)
+    public function view(User $user, workArea $workArea)
     {
         //
     }
@@ -48,10 +48,10 @@ class WorkAreaPolicy
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\work_area  $workArea
+     * @param  \App\Models\workArea  $workArea
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, work_area $workArea)
+    public function update(User $user, workArea $workArea)
     {
         //
     }
@@ -60,10 +60,10 @@ class WorkAreaPolicy
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\work_area  $workArea
+     * @param  \App\Models\workArea  $workArea
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, work_area $workArea)
+    public function delete(User $user, workArea $workArea)
     {
         //
     }
@@ -72,10 +72,10 @@ class WorkAreaPolicy
      * Determine whether the user can restore the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\work_area  $workArea
+     * @param  \App\Models\workArea  $workArea
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, work_area $workArea)
+    public function restore(User $user, workArea $workArea)
     {
         //
     }
@@ -84,10 +84,10 @@ class WorkAreaPolicy
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\work_area  $workArea
+     * @param  \App\Models\workArea  $workArea
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, work_area $workArea)
+    public function forceDelete(User $user, workArea $workArea)
     {
         //
     }

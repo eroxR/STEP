@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\historical_License;
-use App\Http\Requests\Storehistorical_LicenseRequest;
-use App\Http\Requests\Updatehistorical_LicenseRequest;
+use App\Models\historicalLicense;
+use App\Http\Requests\StorehistoricalLicenseRequest;
+use App\Http\Requests\UpdatehistoricalLicenseRequest;
 
 class HistoricalLicenseController extends Controller
 {
@@ -31,10 +31,10 @@ class HistoricalLicenseController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\Storehistorical_LicenseRequest  $request
+     * @param  \App\Http\Requests\StorehistoricalLicenseRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Storehistorical_LicenseRequest $request)
+    public function store(StorehistoricalLicenseRequest $request)
     {
         //
     }
@@ -42,10 +42,10 @@ class HistoricalLicenseController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\historical_License  $historical_License
+     * @param  \App\Models\historicalLicense  $historicalLicense
      * @return \Illuminate\Http\Response
      */
-    public function show(historical_License $historical_License)
+    public function show(historicalLicense $historicalLicense)
     {
         //
     }
@@ -53,10 +53,10 @@ class HistoricalLicenseController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\historical_License  $historical_License
+     * @param  \App\Models\historicalLicense  $historicalLicense
      * @return \Illuminate\Http\Response
      */
-    public function edit(historical_License $historical_License)
+    public function edit(historicalLicense $historicalLicense)
     {
         //
     }
@@ -64,11 +64,11 @@ class HistoricalLicenseController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\Updatehistorical_LicenseRequest  $request
-     * @param  \App\Models\historical_License  $historical_License
+     * @param  \App\Http\Requests\UpdatehistoricalLicenseRequest  $request
+     * @param  \App\Models\historicalLicense  $historicalLicense
      * @return \Illuminate\Http\Response
      */
-    public function update(Updatehistorical_LicenseRequest $request, historical_License $historical_License)
+    public function update(UpdatehistoricalLicenseRequest $request, historicalLicense $historicalLicense)
     {
         //
     }
@@ -76,10 +76,10 @@ class HistoricalLicenseController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\historical_License  $historical_License
+     * @param  \App\Models\historicalLicense  $historicalLicense
      * @return \Illuminate\Http\Response
      */
-    public function destroy(historical_License $historical_License)
+    public function destroy(historicalLicense $historicalLicense)
     {
         //
     }

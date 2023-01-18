@@ -22,10 +22,12 @@ class UserSeeder extends Seeder
             'lastname' => 'Renteria',
             'email' => 'erox.bitcoin@gmail.com',
             'username' => 'erox',
+            'user_state' => '1',
+            'usertype' => '5',
             'password' => bcrypt('12345678'),
         ]);
 
-        User::factory(99)->create();
+        User::factory(199)->create();
 
     }
 }

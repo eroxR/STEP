@@ -13,4 +13,13 @@ class document extends Model
         public function documento(){
             return $this->morphTo();
         }
+
+        protected $fillable = [
+
+            'documentable_id',
+			'document_name',
+			'extension',
+			'directory',
+			'documentable_Type',
+        ];    
 }

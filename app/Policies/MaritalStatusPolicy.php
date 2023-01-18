@@ -3,7 +3,7 @@
 namespace App\Policies;
 
 use App\Models\User;
-use App\Models\marital_status;
+use App\Models\maritalStatus;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class MaritalStatusPolicy
@@ -25,10 +25,10 @@ class MaritalStatusPolicy
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\marital_status  $maritalStatus
+     * @param  \App\Models\maritalStatus  $maritalStatus
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, marital_status $maritalStatus)
+    public function view(User $user, maritalStatus $maritalStatus)
     {
         //
     }
@@ -48,10 +48,10 @@ class MaritalStatusPolicy
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\marital_status  $maritalStatus
+     * @param  \App\Models\maritalStatus  $maritalStatus
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, marital_status $maritalStatus)
+    public function update(User $user, maritalStatus $maritalStatus)
     {
         //
     }
@@ -60,10 +60,10 @@ class MaritalStatusPolicy
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\marital_status  $maritalStatus
+     * @param  \App\Models\maritalStatus  $maritalStatus
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, marital_status $maritalStatus)
+    public function delete(User $user, maritalStatus $maritalStatus)
     {
         //
     }
@@ -72,10 +72,10 @@ class MaritalStatusPolicy
      * Determine whether the user can restore the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\marital_status  $maritalStatus
+     * @param  \App\Models\maritalStatus  $maritalStatus
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, marital_status $maritalStatus)
+    public function restore(User $user, maritalStatus $maritalStatus)
     {
         //
     }
@@ -84,10 +84,10 @@ class MaritalStatusPolicy
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\marital_status  $maritalStatus
+     * @param  \App\Models\maritalStatus  $maritalStatus
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, marital_status $maritalStatus)
+    public function forceDelete(User $user, maritalStatus $maritalStatus)
     {
         //
     }

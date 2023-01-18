@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\historical_Five_Senses_Driving;
-use App\Http\Requests\Storehistorical_Five_Senses_DrivingRequest;
-use App\Http\Requests\Updatehistorical_Five_Senses_DrivingRequest;
+use App\Models\historicalFiveSensesDriving;
+use App\Http\Requests\StorehistoricalFiveSensesDrivingRequest;
+use App\Http\Requests\UpdatehistoricalFiveSensesDrivingRequest;
 
 class HistoricalFiveSensesDrivingController extends Controller
 {
@@ -31,10 +31,10 @@ class HistoricalFiveSensesDrivingController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\Storehistorical_Five_Senses_DrivingRequest  $request
+     * @param  \App\Http\Requests\StorehistoricalFiveSensesDrivingRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Storehistorical_Five_Senses_DrivingRequest $request)
+    public function store(StorehistoricalFiveSensesDrivingRequest $request)
     {
         //
     }
@@ -42,10 +42,10 @@ class HistoricalFiveSensesDrivingController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\historical_Five_Senses_Driving  $historical_Five_Senses_Driving
+     * @param  \App\Models\historicalFiveSensesDriving  $historicalFiveSensesDriving
      * @return \Illuminate\Http\Response
      */
-    public function show(historical_Five_Senses_Driving $historical_Five_Senses_Driving)
+    public function show(historicalFiveSensesDriving $historicalFiveSensesDriving)
     {
         //
     }
@@ -53,10 +53,10 @@ class HistoricalFiveSensesDrivingController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\historical_Five_Senses_Driving  $historical_Five_Senses_Driving
+     * @param  \App\Models\historicalFiveSensesDriving  $historicalFiveSensesDriving
      * @return \Illuminate\Http\Response
      */
-    public function edit(historical_Five_Senses_Driving $historical_Five_Senses_Driving)
+    public function edit(historicalFiveSensesDriving $historicalFiveSensesDriving)
     {
         //
     }
@@ -64,11 +64,11 @@ class HistoricalFiveSensesDrivingController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\Updatehistorical_Five_Senses_DrivingRequest  $request
-     * @param  \App\Models\historical_Five_Senses_Driving  $historical_Five_Senses_Driving
+     * @param  \App\Http\Requests\UpdatehistoricalFiveSensesDrivingRequest  $request
+     * @param  \App\Models\historicalFiveSensesDriving  $historicalFiveSensesDriving
      * @return \Illuminate\Http\Response
      */
-    public function update(Updatehistorical_Five_Senses_DrivingRequest $request, historical_Five_Senses_Driving $historical_Five_Senses_Driving)
+    public function update(UpdatehistoricalFiveSensesDrivingRequest $request, historicalFiveSensesDriving $historicalFiveSensesDriving)
     {
         //
     }
@@ -76,10 +76,10 @@ class HistoricalFiveSensesDrivingController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\historical_Five_Senses_Driving  $historical_Five_Senses_Driving
+     * @param  \App\Models\historicalFiveSensesDriving  $historicalFiveSensesDriving
      * @return \Illuminate\Http\Response
      */
-    public function destroy(historical_Five_Senses_Driving $historical_Five_Senses_Driving)
+    public function destroy(historicalFiveSensesDriving $historicalFiveSensesDriving)
     {
         //
     }

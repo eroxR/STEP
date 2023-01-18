@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\historical_Driving_Test;
-use App\Http\Requests\Storehistorical_Driving_TestRequest;
-use App\Http\Requests\Updatehistorical_Driving_TestRequest;
+use App\Models\historicalDrivingTest;
+use App\Http\Requests\StorehistoricalDrivingTestRequest;
+use App\Http\Requests\UpdatehistoricalDrivingTestRequest;
 
 class HistoricalDrivingTestController extends Controller
 {
@@ -31,10 +31,10 @@ class HistoricalDrivingTestController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\Storehistorical_Driving_TestRequest  $request
+     * @param  \App\Http\Requests\StorehistoricalDrivingTestRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Storehistorical_Driving_TestRequest $request)
+    public function store(StorehistoricalDrivingTestRequest $request)
     {
         //
     }
@@ -42,10 +42,10 @@ class HistoricalDrivingTestController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\historical_Driving_Test  $historical_Driving_Test
+     * @param  \App\Models\historicalDrivingTest  $historicalDrivingTest
      * @return \Illuminate\Http\Response
      */
-    public function show(historical_Driving_Test $historical_Driving_Test)
+    public function show(historicalDrivingTest $historicalDrivingTest)
     {
         //
     }
@@ -53,10 +53,10 @@ class HistoricalDrivingTestController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\historical_Driving_Test  $historical_Driving_Test
+     * @param  \App\Models\historicalDrivingTest  $historicalDrivingTest
      * @return \Illuminate\Http\Response
      */
-    public function edit(historical_Driving_Test $historical_Driving_Test)
+    public function edit(historicalDrivingTest $historicalDrivingTest)
     {
         //
     }
@@ -64,11 +64,11 @@ class HistoricalDrivingTestController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\Updatehistorical_Driving_TestRequest  $request
-     * @param  \App\Models\historical_Driving_Test  $historical_Driving_Test
+     * @param  \App\Http\Requests\UpdatehistoricalDrivingTestRequest  $request
+     * @param  \App\Models\historicalDrivingTest  $historicalDrivingTest
      * @return \Illuminate\Http\Response
      */
-    public function update(Updatehistorical_Driving_TestRequest $request, historical_Driving_Test $historical_Driving_Test)
+    public function update(UpdatehistoricalDrivingTestRequest $request, historicalDrivingTest $historicalDrivingTest)
     {
         //
     }
@@ -76,10 +76,10 @@ class HistoricalDrivingTestController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\historical_Driving_Test  $historical_Driving_Test
+     * @param  \App\Models\historicalDrivingTest  $historicalDrivingTest
      * @return \Illuminate\Http\Response
      */
-    public function destroy(historical_Driving_Test $historical_Driving_Test)
+    public function destroy(historicalDrivingTest $historicalDrivingTest)
     {
         //
     }

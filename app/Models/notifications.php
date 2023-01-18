@@ -17,5 +17,5 @@ class notifications extends Model
         //relación uno a muchos
         public function alertType(){
             return $this->belongsTo('App\Models\alertType');
-        }
+        }    
 }

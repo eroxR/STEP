@@ -5,7 +5,7 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\historical_Defensive_Driving>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\historicalDefensiveDriving>
  */
 class HistoricalDefensiveDrivingFactory extends Factory
 {

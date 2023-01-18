@@ -3,7 +3,7 @@
 namespace App\Policies;
 
 use App\Models\User;
-use App\Models\historical_eps;
+use App\Models\historicalEps;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class HistoricalEpsPolicy
@@ -25,10 +25,10 @@ class HistoricalEpsPolicy
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\historical_eps  $historicalEps
+     * @param  \App\Models\historicalEps  $historicalEps
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, historical_eps $historicalEps)
+    public function view(User $user, historicalEps $historicalEps)
     {
         //
     }
@@ -48,10 +48,10 @@ class HistoricalEpsPolicy
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\historical_eps  $historicalEps
+     * @param  \App\Models\historicalEps  $historicalEps
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, historical_eps $historicalEps)
+    public function update(User $user, historicalEps $historicalEps)
     {
         //
     }
@@ -60,10 +60,10 @@ class HistoricalEpsPolicy
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\historical_eps  $historicalEps
+     * @param  \App\Models\historicalEps  $historicalEps
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, historical_eps $historicalEps)
+    public function delete(User $user, historicalEps $historicalEps)
     {
         //
     }
@@ -72,10 +72,10 @@ class HistoricalEpsPolicy
      * Determine whether the user can restore the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\historical_eps  $historicalEps
+     * @param  \App\Models\historicalEps  $historicalEps
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, historical_eps $historicalEps)
+    public function restore(User $user, historicalEps $historicalEps)
     {
         //
     }
@@ -84,10 +84,10 @@ class HistoricalEpsPolicy
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\historical_eps  $historicalEps
+     * @param  \App\Models\historicalEps  $historicalEps
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, historical_eps $historicalEps)
+    public function forceDelete(User $user, historicalEps $historicalEps)
     {
         //
     }

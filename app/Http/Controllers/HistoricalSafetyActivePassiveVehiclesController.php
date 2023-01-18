@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\historical_Safety_Active_Passive_Vehicles;
-use App\Http\Requests\Storehistorical_Safety_Active_Passive_VehiclesRequest;
-use App\Http\Requests\Updatehistorical_Safety_Active_Passive_VehiclesRequest;
+use App\Models\historicalSafetyActivePassiveVehicles;
+use App\Http\Requests\StorehistoricalSafetyActivePassiveVehiclesRequest;
+use App\Http\Requests\UpdatehistoricalSafetyActivePassiveVehiclesRequest;
 
 class HistoricalSafetyActivePassiveVehiclesController extends Controller
 {
@@ -31,10 +31,10 @@ class HistoricalSafetyActivePassiveVehiclesController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\Storehistorical_Safety_Active_Passive_VehiclesRequest  $request
+     * @param  \App\Http\Requests\StorehistoricalSafetyActivePassiveVehiclesRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Storehistorical_Safety_Active_Passive_VehiclesRequest $request)
+    public function store(StorehistoricalSafetyActivePassiveVehiclesRequest $request)
     {
         //
     }
@@ -42,10 +42,10 @@ class HistoricalSafetyActivePassiveVehiclesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\historical_Safety_Active_Passive_Vehicles  $historical_Safety_Active_Passive_Vehicles
+     * @param  \App\Models\historicalSafetyActivePassiveVehicles  $historicalSafetyActivePassiveVehicles
      * @return \Illuminate\Http\Response
      */
-    public function show(historical_Safety_Active_Passive_Vehicles $historical_Safety_Active_Passive_Vehicles)
+    public function show(historicalSafetyActivePassiveVehicles $historicalSafetyActivePassiveVehicles)
     {
         //
     }
@@ -53,10 +53,10 @@ class HistoricalSafetyActivePassiveVehiclesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\historical_Safety_Active_Passive_Vehicles  $historical_Safety_Active_Passive_Vehicles
+     * @param  \App\Models\historicalSafetyActivePassiveVehicles  $historicalSafetyActivePassiveVehicles
      * @return \Illuminate\Http\Response
      */
-    public function edit(historical_Safety_Active_Passive_Vehicles $historical_Safety_Active_Passive_Vehicles)
+    public function edit(historicalSafetyActivePassiveVehicles $historicalSafetyActivePassiveVehicles)
     {
         //
     }
@@ -64,11 +64,11 @@ class HistoricalSafetyActivePassiveVehiclesController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\Updatehistorical_Safety_Active_Passive_VehiclesRequest  $request
-     * @param  \App\Models\historical_Safety_Active_Passive_Vehicles  $historical_Safety_Active_Passive_Vehicles
+     * @param  \App\Http\Requests\UpdatehistoricalSafetyActivePassiveVehiclesRequest  $request
+     * @param  \App\Models\historicalSafetyActivePassiveVehicles  $historicalSafetyActivePassiveVehicles
      * @return \Illuminate\Http\Response
      */
-    public function update(Updatehistorical_Safety_Active_Passive_VehiclesRequest $request, historical_Safety_Active_Passive_Vehicles $historical_Safety_Active_Passive_Vehicles)
+    public function update(UpdatehistoricalSafetyActivePassiveVehiclesRequest $request, historicalSafetyActivePassiveVehicles $historicalSafetyActivePassiveVehicles)
     {
         //
     }
@@ -76,10 +76,10 @@ class HistoricalSafetyActivePassiveVehiclesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\historical_Safety_Active_Passive_Vehicles  $historical_Safety_Active_Passive_Vehicles
+     * @param  \App\Models\historicalSafetyActivePassiveVehicles  $historicalSafetyActivePassiveVehicles
      * @return \Illuminate\Http\Response
      */
-    public function destroy(historical_Safety_Active_Passive_Vehicles $historical_Safety_Active_Passive_Vehicles)
+    public function destroy(historicalSafetyActivePassiveVehicles $historicalSafetyActivePassiveVehicles)
     {
         //
     }

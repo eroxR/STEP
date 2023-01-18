@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\contract;
 use App\Models\driver;
+use App\Models\passenger;
 use App\Models\permit;
 use App\Models\vehicle;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -20,37 +21,47 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
 
-        $this->call(AlertStatusSeeder::class);
-        $this->call(AlertTypeSeeder::class);
+
+        $this->call(CountrySeeder::class);
+        $this->call(ProvinceSeeder::class);
+        $this->call(CitySeeder::class);
         $this->call(ArlSeeder::class);
-        $this->call(BindingSeeder::class);
         $this->call(BloodTypeSeeder::class);
-        $this->call(ChargesSeeder::class);
+        $this->call(BondingSeeder::class);
+        $this->call(chargeSeeder::class);
         $this->call(CompensationBoxSeeder::class);
-        $this->call(ContractTypeSeeder::class);
         $this->call(EconomicActivitySeeder::class);
         $this->call(EducationalLevelSeeder::class);
         $this->call(EpsSeeder::class);
         $this->call(IdentificationSeeder::class);
         $this->call(LayoffsSeeder::class);
+        $this->call(LicenseCategorySeeder::class);
         $this->call(MaritalStatusSeeder::class);
         $this->call(PensionSeeder::class);
-        $this->call(ProductsServicesSeeder::class);
+        $this->call(ProductsAndServicesSeeder::class);
+
         $this->call(RelationshipSeeder::class);
         $this->call(SupplierCategorySeeder::class);
         $this->call(UsertypeSeeder::class);
+        $this->call(WorkAreaSeeder::class);
+        
+        $this->call(BrakeTypesSeeder::class);
+        $this->call(DimensionRimsSeeder::class);
         $this->call(VehicleClassSeeder::class);
         $this->call(VehicleTypeSeeder::class);
-        $this->call(WorkAreaSeeder::class);
+        
+        $this->call(ContractTypeSeeder::class);
         $this->call(PaymentTypeSeeder::class);
-        $this->call(countrySeeder::class);
-        $this->call(ProvincesSeeder::class);
-        $this->call(CitySeeder::class);
-        $this->call(UserSeeder::class);
 
-         driver::factory(75)->create();
-         vehicle::factory(45)->create();
-         contract::factory(70)->create();
-         permit::factory(135)->create();
+        $this->call(AlertStatusSeeder::class);
+        $this->call(AlertTypeSeeder::class);
+        
+        $this->call(UserSeeder::class);
+        
+         driver::factory(85)->create();
+         vehicle::factory(65)->create();
+         contract::factory(100)->create();
+         permit::factory(170)->create();
+         passenger::factory(200)->create();
     }
 }

@@ -1,5 +1,7 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
+
+/* @import 'nodemodules/node_modules/jquery-datetimepicker/jquery.datetimepicker.css'; */
 /* @import 'tailwindcss/utilities'; */
 
 /* estilos del dashboard */
@@ -188,6 +190,8 @@ img,video{max-width:100%;height:auto}
 
 .space-x-4>:not(template)~:not(template){--space-x-reverse:0;margin-right:calc(1rem*var(--space-x-reverse));margin-left:calc(1rem*(1 - var(--space-x-reverse)))}
 
+.space-x-4-N>:not(template)~:not(template){--space-x-reverse:0;margin-right:calc(1rem*var(--space-x-reverse));}
+
 .space-x-6>:not(template)~:not(template){--space-x-reverse:0;margin-right:calc(1.5rem*var(--space-x-reverse));margin-left:calc(1.5rem*(1 - var(--space-x-reverse)))}
 
 .divide-y>:not(template)~:not(template){--divide-y-reverse:0;border-top-width:calc(1px*(1 - var(--divide-y-reverse)));border-bottom-width:calc(1px*var(--divide-y-reverse))}
@@ -228,15 +232,23 @@ img,video{max-width:100%;height:auto}
 
 .bg-purple-600{--bg-opacity:1;background-color:#7e3af2;background-color:rgba(126,58,242,var(--bg-opacity))}
 
+.bg-green-600{--bg-opacity:1;background-color:#3ce719;background-color:rgba(60,231,25,var(--bg-opacity))}
+
 .hover\:bg-gray-100:hover{--bg-opacity:1;background-color:#f4f5f7;background-color:rgba(244,245,247,var(--bg-opacity))}
 
 .hover\:bg-purple-700:hover{--bg-opacity:1;background-color:#6c2bd9;background-color:rgba(108,43,217,var(--bg-opacity))}
+
+.hover\:bg-green-700:hover{--bg-opacity:1;background-color:#3ce719;background-color:rgba(60,231,25,var(--bg-opacity))}
 
 .focus\:bg-white:focus{--bg-opacity:1;background-color:#fff;background-color:rgba(255,255,255,var(--bg-opacity))}
 
 .active\:bg-transparent:active{background-color:transparent}
 
 .active\:bg-purple-600:active{--bg-opacity:1;background-color:#7e3af2;background-color:rgba(126,58,242,var(--bg-opacity))}
+
+.active\:bg-red-600:active{--bg-opacity:1;background-color:#d60606;background-color:rgba(214,6,6,var(--bg-opacity))}
+
+.active\:bg-green-600:active{--bg-opacity:1;background-color:#3ce719;background-color:rgba(60,231,25,var(--bg-opacity))}
 
 .theme-dark .dark\:bg-gray-700{--bg-opacity:1;background-color:#24262d;background-color:rgba(36,38,45,var(--bg-opacity))}
 
@@ -427,6 +439,12 @@ img,video{max-width:100%;height:auto}
 
 .mt-1{margin-top:.25rem}
 
+.mt-11{margin-top:2%}
+
+.-mt-11{margin-top:-2%}
+
+.-mt-3{margin-top:-1.25rem}
+
 .-mt-1{margin-top: -0.25rem; /* 4px */}
 
 .mr-1{margin-right:.25rem}
@@ -467,11 +485,15 @@ img,video{max-width:100%;height:auto}
 
 .mb-8{margin-bottom:2rem}
 
+.ml-8{margin-left: 2rem; /* 32px */}
+
 .mt-16{margin-top:4rem}
 
 .-mr-1{margin-right:-.25rem}
 
 .-ml-1{margin-left:-.25rem}
+
+.ml-80{margin-left: 20rem;} /* 320px */
 
 .-mb-4{margin-bottom:-1rem}
 
@@ -525,7 +547,11 @@ img,video{max-width:100%;height:auto}
 
 .px-2{padding-left:.5rem;padding-right:.5rem}
 
+.px-2-4{padding-left:.4rem;padding-right:.4rem}
+
 .py-3{padding-top:.75rem;padding-bottom:.75rem}
+
+.py-3-1{padding-top:.25rem;padding-bottom:.25rem}
 
 .px-3{padding-left:.75rem;padding-right:.75rem}
 
@@ -534,6 +560,8 @@ img,video{max-width:100%;height:auto}
 .px-4{padding-left:1rem;padding-right:1rem}
 
 .px-5{padding-left:1.25rem;padding-right:1.25rem}
+
+.px-5-1{padding-left:0.25rem;padding-right:0.25rem}
 
 .px-6{padding-left:1.5rem;padding-right:1.5rem}
 
@@ -711,6 +739,23 @@ img,video{max-width:100%;height:auto}
 
 .whitespace-no-wrap{white-space:nowrap}
 
+.mx-8{
+	margin-left: 2rem; /* 2px */
+	margin-right: 2rem; /* 2px */
+}
+
+.mx-10{	margin-left: 2.5rem; /* 40px */
+margin-right: 2.5rem; /* 40px */
+}
+
+.mx-13{	margin-left: 3rem; /* 56px */
+	margin-right: 3rem; /* 56px */
+	}
+
+.mx-14{	margin-left: 3.5rem; /* 56px */
+margin-right: 3.5rem; /* 56px */
+}
+
 .w-1{width:.25rem}
 
 .w-3{width:.75rem}
@@ -731,13 +776,139 @@ img,video{max-width:100%;height:auto}
 
 .w-full{width:100%}
 
+.w-98{width:98%}
+
+.w-10{width:15%}
+
+.w-15{width:15%}
+
 .z-10{z-index:10}
 
 .z-20{z-index:20}
 
 .z-30{z-index:30}
 
-.gap-6{grid-gap:1.5rem;gap:1.5rem}
+.grid-cols-1{	grid-template-columns: repeat(1, minmax(0, 1fr));}
+.grid-cols-2{	grid-template-columns: repeat(2, minmax(0, 1fr));}
+.grid-cols-3{	grid-template-columns: repeat(3, minmax(0, 1fr));}
+.grid-cols-4{	grid-template-columns: repeat(4, minmax(0, 1fr));}
+.grid-cols-5{	grid-template-columns: repeat(5, minmax(0, 1fr));}
+.grid-cols-6{	grid-template-columns: repeat(6, minmax(0, 1fr));}
+.grid-cols-7{	grid-template-columns: repeat(7, minmax(0, 1fr));}
+.grid-cols-8{	grid-template-columns: repeat(8, minmax(0, 1fr));}
+.grid-cols-9{	grid-template-columns: repeat(9, minmax(0, 1fr));}
+.grid-cols-10{	grid-template-columns: repeat(10, minmax(0, 1fr));}
+.grid-cols-11{	grid-template-columns: repeat(11, minmax(0, 1fr));}
+.grid-cols-12{	grid-template-columns: repeat(12, minmax(0, 1fr));}
+.grid-cols-none{	grid-template-columns: none;}
+
+.gap-0{	gap: 0px;}
+.gap-x-0{	column-gap: 0px;}
+.gap-y-0{	row-gap: 0px;}
+.gap-px{	gap: 1px;}
+.gap-x-px{	column-gap: 1px;}
+.gap-y-px{	row-gap: 1px;}
+.gap-0-5{	gap: 0.125rem; /* 2px */}
+.gap-x-0-5{	column-gap: 0.125rem; /* 2px */}
+.gap-y-0-5{	row-gap: 0.125rem; /* 2px */}
+.gap-1{	gap: 0.25rem; /* 4px */}
+.gap-x-1{	column-gap: 0.25rem; /* 4px */}
+.gap-y-1{	row-gap: 0.25rem; /* 4px */}
+.gap-1-5{	gap: 0.375rem; /* 6px */}
+.gap-x-1-5{	column-gap: 0.375rem; /* 6px */}
+.gap-y-1-5{	row-gap: 0.375rem; /* 6px */}
+.gap-2{	gap: 0.5rem; /* 8px */}
+.gap-x-2{	column-gap: 0.5rem; /* 8px */}
+.gap-y-2{	row-gap: 0.5rem; /* 8px */}
+.gap-2-5{	gap: 0.625rem; /* 10px */}
+.gap-x-2-5{	column-gap: 0.625rem; /* 10px */}
+.gap-y-2-5{	row-gap: 0.625rem; /* 10px */}
+.gap-3{	gap: 0.75rem; /* 12px */}
+.gap-x-3{	column-gap: 0.75rem; /* 12px */}
+.gap-y-3{	row-gap: 0.75rem; /* 12px */}
+.gap-3-5{	gap: 0.875rem; /* 14px */}
+.gap-x-3-5{	column-gap: 0.875rem; /* 14px */}
+.gap-y-3-5{	row-gap: 0.875rem; /* 14px */}
+.gap-4{	gap: 1rem; /* 16px */}
+.gap-x-4{	column-gap: 1rem; /* 16px */}
+.gap-y-4{	row-gap: 1rem; /* 16px */}
+.gap-5{	gap: 1.25rem; /* 20px */}
+.gap-x-5{	column-gap: 1.25rem; /* 20px */}
+.gap-y-5{	row-gap: 1.25rem; /* 20px */}
+.gap-6{	gap: 1.5rem; /* 24px */}
+.gap-x-6{	column-gap: 1.5rem; /* 24px */}
+.gap-y-6{	row-gap: 1.5rem; /* 24px */}
+.gap-7{	gap: 1.75rem; /* 28px */}
+.gap-x-7{	column-gap: 1.75rem; /* 28px */}
+.gap-y-7{	row-gap: 1.75rem; /* 28px */}
+.gap-8{	gap: 2rem; /* 32px */}
+.gap-x-8{	column-gap: 2rem; /* 32px */}
+.gap-y-8{	row-gap: 2rem; /* 32px */}
+.gap-9{	gap: 2.25rem; /* 36px */}
+.gap-x-9{	column-gap: 2.25rem; /* 36px */}
+.gap-y-9{	row-gap: 2.25rem; /* 36px */}
+.gap-10{	gap: 2.5rem; /* 40px */}
+.gap-x-10{	column-gap: 2.5rem; /* 40px */}
+.gap-y-10{	row-gap: 2.5rem; /* 40px */}
+.gap-11{	gap: 2.75rem; /* 44px */}
+.gap-x-11{	column-gap: 2.75rem; /* 44px */}
+.gap-y-11{	row-gap: 2.75rem; /* 44px */}
+.gap-12{	gap: 3rem; /* 48px */}
+.gap-x-12{	column-gap: 3rem; /* 48px */}
+.gap-y-12{	row-gap: 3rem; /* 48px */}
+.gap-14{	gap: 3.5rem; /* 56px */}
+.gap-x-14{	column-gap: 3.5rem; /* 56px */}
+.gap-y-14{	row-gap: 3.5rem; /* 56px */}
+.gap-16{	gap: 4rem; /* 64px */}
+.gap-x-16{	column-gap: 4rem; /* 64px */}
+.gap-y-16{	row-gap: 4rem; /* 64px */}
+.gap-20{	gap: 5rem; /* 80px */}
+.gap-x-20{	column-gap: 5rem; /* 80px */}
+.gap-y-20{	row-gap: 5rem; /* 80px */}
+.gap-24{	gap: 6rem; /* 96px */}
+.gap-x-24{	column-gap: 6rem; /* 96px */}
+.gap-y-24{	row-gap: 6rem; /* 96px */}
+.gap-28{	gap: 7rem; /* 112px */}
+.gap-x-28{	column-gap: 7rem; /* 112px */}
+.gap-y-28{	row-gap: 7rem; /* 112px */}
+.gap-32{	gap: 8rem; /* 128px */}
+.gap-x-32{	column-gap: 8rem; /* 128px */}
+.gap-y-32{	row-gap: 8rem; /* 128px */}
+.gap-36{	gap: 9rem; /* 144px */}
+.gap-x-36{	column-gap: 9rem; /* 144px */}
+.gap-y-36{	row-gap: 9rem; /* 144px */}
+.gap-40{	gap: 10rem; /* 160px */}
+.gap-x-40{	column-gap: 10rem; /* 160px */}
+.gap-y-40{	row-gap: 10rem; /* 160px */}
+.gap-44{	gap: 11rem; /* 176px */}
+.gap-x-44{	column-gap: 11rem; /* 176px */}
+.gap-y-44{	row-gap: 11rem; /* 176px */}
+.gap-48{	gap: 12rem; /* 192px */}
+.gap-x-48{	column-gap: 12rem; /* 192px */}
+.gap-y-48{	row-gap: 12rem; /* 192px */}
+.gap-52{	gap: 13rem; /* 208px */}
+.gap-x-52{	column-gap: 13rem; /* 208px */}
+.gap-y-52{	row-gap: 13rem; /* 208px */}
+.gap-56{	gap: 14rem; /* 224px */}
+.gap-x-56{	column-gap: 14rem; /* 224px */}
+.gap-y-56{	row-gap: 14rem; /* 224px */}
+.gap-60{	gap: 15rem; /* 240px */}
+.gap-x-60{	column-gap: 15rem; /* 240px */}
+.gap-y-60{	row-gap: 15rem; /* 240px */}
+.gap-64{	gap: 16rem; /* 256px */}
+.gap-x-64{	column-gap: 16rem; /* 256px */}
+.gap-y-64{	row-gap: 16rem; /* 256px */}
+.gap-72{	gap: 18rem; /* 288px */}
+.gap-x-72{	column-gap: 18rem; /* 288px */}
+.gap-y-72{	row-gap: 18rem; /* 288px */}
+.gap-80{	gap: 20rem; /* 320px */}
+.gap-x-80{	column-gap: 20rem; /* 320px */}
+.gap-y-80{	row-gap: 20rem; /* 320px */}
+.gap-96{	gap: 24rem; /* 384px */}
+.gap-x-96{	column-gap: 24rem; /* 384px */}
+.gap-y-96{	row-gap: 24rem; /* 384px */}
+
+/* .gap-6{grid-gap:1.5rem;gap:1.5rem} */
 
 .col-span-2{grid-column:span 2/span 2}
 
@@ -797,6 +968,8 @@ img,video{max-width:100%;height:auto}
 
 .sm\:m-4{margin:1rem}
 
+.sm\:display{display:block;}
+
 .sm\:mt-auto{margin-top:auto}
 
 .sm\:max-w-xl{max-width:36rem}
@@ -810,6 +983,8 @@ img,video{max-width:100%;height:auto}
 .sm\:w-auto{width:auto}
 
 .sm\:grid-cols-9{grid-template-columns:repeat(9,minmax(0,1fr))}}
+
+.sm\:ml-30{margin-left:30%};
 
 @media (min-width:768px){
     .md\:space-x-4>:not(template)~:not(template){
@@ -847,7 +1022,8 @@ img,video{max-width:100%;height:auto}
     }
 }
 
-@media (min-width:1024px){.lg\:mr-32{margin-right:8rem}}
+@media (min-width:1024px){.lg\:mr-32{margin-right:8rem}.lg\:hidden{display:none;}}
+
 
 @media (min-width:1280px){.xl\:grid-cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}}
 
@@ -857,9 +1033,21 @@ img,video{max-width:100%;height:auto}
 
 .border-b-fuchsia-800 {border-bottom: 1px solid rgb(134 25 143);}
 
+.border-b-green-800 {border-bottom: 1px solid #046c4e;}
+
+.border-b-yellow-800 {border-bottom: 1px solid #ffff00;}
+
+.border-b-acuamarine-800 {border-bottom: 1px solid #00ebdb;}
+
+.border-b-orange-800 {border-bottom: 1px solid #ffa500;}
+
+.border-t-fuchsia-800 {border-top: 1px solid rgb(134 25 143);}
+
 .border-bt-fuchsia-800 {border-bottom: 1px solid rgb(134 25 143);border-top: 1px solid rgb(134 25 143);}
 
 .border-gray-50-s{border: 0.05rem solid rgb(127, 131, 136);}
+
+.border-black{border: 0.1rem solid rgb(0, 0, 0);}
 
 .-ml-40{margin-left: -10rem; /* 160px */}
 
@@ -873,6 +1061,8 @@ line-height: 2.25rem; /* 36px */}
 .-ml-5{margin-left: -1.25rem; /* 20px */}
 
 .ml-5{margin-left: 1.25rem; /* 20px */}
+
+.ml-1-5{margin-left: 1.5%; /* 20px */}
 
 .-ml-7{margin-left: -1.75rem; /* 28px */}
 
@@ -924,10 +1114,723 @@ border-bottom-left-radius: 1rem; /* 16px */}
 
 .skew-y-3{transform: skewY(3deg);}
 
+.ml-26{margin-left: 26%;}
+
 .ml-3-5{margin-left: 0.875rem; /* 14px */}
 
 .-mt-1-2{margin-top: -0.22rem; /* 4px */}
 
 .mb-3-7{margin-bottom: 0.7rem; /* 12px */}
 
+.mt-9{margin-top: 2.25rem; /* 36px */}
+
+.-mt-9{margin-top: -2.25rem; /* 36px */}
+
+.bg-gray-900{background-color: rgb(17 24 39);}
+
+.rounded-2xl{border-radius: 1rem; /* 16px */}
+
+.border-ourple-50-s{border: 0.05rem solid rgb(134 25 143);}
+
+.w-9-12{width: 80%;}
+
+.w-9-14{width: 85%;}
+
+.h-4-7{height: 90%;}
+
+.ml-auto{margin-left: auto;}
+
+[x-cloak] {display: none !important;}
+
+.w-6-12{width: 50%;}
+
+.w-6-12-ml{width: 50%;margin-left:-2%;}
+
+.w-1-3{width: 33.333333%;}
+
+.w-1-2{width: 25%;}
+
+.w-15{width: 15%;}
+
+.w-3-4{width: 75%;}	
+
+.w90{width: 90%;}	
+
+.h500px{ height: 500px;}
+
+.text-4xl{font-size: 2.25rem; /* 36px */line-height: 2.5rem; /* 40px */}
+
+.text-4xl1{font-size: 1.75rem; /* 36px */line-height: 2.5rem;margin-top: -1%; /* 40px */}
+
+.bg-sky-600{background-color: rgb(2 132 199);}
+
+.bg-sky-700{background-color: rgb(3 105 161);}
+
+.bg-sky-300{background-color: rgb(125 211 252);}
+
+.bg-sky-100{background-color: rgb(224 242 254);}
+
+.bg-sky-400{background-color: rgb(56 189 248);}
+
+.text-sky-700{color: rgb(3 105 161);}
+
+.text-sky-100{color: rgb(224 242 254);}
+
+.text-yellow-700{color: rgb(161 98 7);}
+
+.text-yellow-100{color: rgb(254 249 195);}
+
+.bg-yellow-700{background-color: rgb(161 98 7);}
+
+.bg-yellow-100{background-color: rgb(254 249 195);}
+
+.bg-yellow-400{background-color: rgb(250 204 21);}
+
+.cursor-pointer{cursor: pointer;}
+
+.pl-4{padding-left: 1rem; /* 16px */}
+
+
 /* fin estilos del dashboard */
+
+.rounded-3xl{border-radius: 1.5rem;} /* 24px */
+
+.border-teal-400{border-color: rgb(45 212 191);}
+
+/* stilos select2 */
+
+.select2-container {
+	/* The container where the selectbox is housing*/
+	@apply relative box-border align-middle inline-block m-0 mb-2;
+}
+	.select2-container .select2-selection--single {
+		/* Selection box itself */
+		@apply box-border cursor-pointer block select-none shadow border rounded;
+	}
+
+		.select2-container .select2-selection--single .select2-selection__rendered {
+			/* DIV inside Selection box with text, clear button and arrow down*/
+			@apply block h-6 pl-1 pr-6 truncate;
+		}
+		.select2-container .select2-selection--single .select2-selection__clear {
+			/* The DIV where the X is housing to clear the chosen option */
+			@apply relative -m-1;
+		}
+	.select2-container[dir="rtl"] .select2-selection--single .select2-selection__rendered {
+		/*@apply;*/
+	}
+	
+	.select2-container .select2-selection--multiple {
+		@apply box-border overflow-hidden h-4 cursor-pointer block select-none;
+	}
+
+	.select2-container .select2-selection--multiple .select2-selection__rendered {
+		@apply inline-block pl-2 truncate whitespace-nowrap;
+	}
+	.select2-container .select2-search--inline {
+		/* Search box*/
+		@apply float-left;
+	}
+		.select2-container .select2-search--inline .select2-search__field {
+			@apply box-border border pl-1 my-1 w-full text-base;
+		}
+			.select2-container .select2-search--inline .select2-search__field::-webkit-search-cancel-button {
+				@apply appearance-none;
+			}
+
+.select2-dropdown {
+	/* Dropdown area when the arrow down is clicked */
+ 	@apply absolute block w-auto box-border bg-white border-solid border border-gray-600 z-50 float-left;
+}
+
+.select2-results {
+	@apply block;
+}
+
+.select2-results__options {
+	@apply list-none m-0 p-0;
+}
+
+.select2-results__option {
+	/* The rows with results that you see after dropdown.
+	Increase p-1 to p-2 to have more space between results */
+	@apply p-1 select-none;
+}
+	.select2-results__option[aria-selected] {
+    	@apply cursor-pointer;
+    }
+
+.select2-container--open .select2-dropdown {
+	/* Dropdown container opened and results are shown*/
+	@apply mt-3 left-0;
+}
+
+.select2-container--open .select2-dropdown--above {
+	/* The left and right borders of the option rows */
+	@apply rounded border-gray-400 shadow;
+}
+
+.select2-container--open .select2-dropdown--below {
+	/* The left and right borders of the option rows */
+	@apply rounded border-gray-400 shadow;
+}
+
+.select2-search--dropdown {
+	/* Search dropdown element*/
+	@apply block p-2;
+}
+	.select2-search--dropdown .select2-search__field {
+		/* Search box itself where you can enter text*/
+		@apply h-10 p-1 box-border rounded border-2 border-blue-300 outline-none;
+		width: 100%;
+	}
+    .select2-search--dropdown .select2-search__field::-webkit-search-cancel-button {
+		@apply appearance-none;
+	}
+.select2-search--dropdown.select2-search--hide {
+	@apply hidden;
+}
+
+.select2-close-mask {
+	@apply block w-12 min-w-full m-0 p-0;
+	border: 0;
+	position: fixed;
+	left: 0;
+	top: 0;
+	min-height: 100%;
+	height: auto;
+	width: auto;
+	opacity: 0;
+	z-index: 99;
+	background-color: #fff;
+	filter: alpha(opacity=0);
+}
+
+.select2-hidden-accessible {
+  border: 0 !important;
+  clip: rect(0 0 0 0) !important;
+  -webkit-clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important; }
+
+
+/* 
+	Default template settings:
+*/
+
+.select2-container--default .select2-selection--single {
+	/* Selection bar - Self */
+	@apply p-2 h-10 border-solid border bg-white; 
+}
+	.select2-container--default .select2-selection--single .select2-selection__rendered {
+	  	/* Selection bar - Text color of the item you selected from the results */
+	    @apply text-gray-700;
+	}
+	
+	.select2-container--default .select2-selection--single .select2-selection__clear {
+		/* Selection bar - Clear button - If this property is enabled*/
+    	@apply cursor-pointer float-right text-red-700;
+	}
+	.select2-container--default .select2-selection--single .select2-selection__placeholder {
+    	/* Selection bar - Color of the placeholder text before selection - If this property is enabled */
+    	@apply text-gray-600;
+	}
+	.select2-container--default .select2-selection--single .select2-selection__arrow {
+		/* Selection bar - DIV where the arrow pointing down is living*/
+		@apply absolute right-0 top-0 h-10 w-8;
+	}
+	    .select2-container--default .select2-selection--single .select2-selection__arrow b {
+	    	/* Arrow is a CSS triangle that does not exists in Tailwind without a package */
+			@apply absolute border-solid h-0 w-0 border-t-4 border-r-4 border-b-0 border-l-4;
+			border-color: #000 transparent transparent transparent;
+			left: 50%;
+			margin-left: -4px;
+			margin-top: -2px;
+			top: 50%;
+		}
+
+.select2-container--default[dir="rtl"] .select2-selection--single .select2-selection__clear {
+	/* Selection bar - Clear button - If this property is enabled from right to left*/
+	@apply float-left ml-4;
+}
+
+.select2-container--default[dir="rtl"] .select2-selection--single .select2-selection__arrow {
+	/* Placement of the dropdown arrow when in rtl mode */
+	@apply left-0 right-auto;
+}
+
+.select2-container--default.select2-container--disabled .select2-selection--single {
+	/* Selection by property disabled*/
+	@apply cursor-default bg-gray-300;
+}
+	.select2-container--default.select2-container--disabled .select2-selection--single .select2-selection__clear {
+		/* Selection bar - Hide the clear cross when selection bar is disabled*/
+		@apply hidden;
+	}
+
+.select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b {
+	border-color: transparent transparent #888 transparent;
+	border-width: 0 4px 5px 4px;
+}
+
+.select2-container--default .select2-selection--multiple {
+	/* @apply p-1 min-h-full h-full border-solid border rounded shadow bg-white;  */
+    @apply h-full block w-full py-2 px-4 mt-1 text-sm bg-black bg-opacity-50 dark:border-gray-600 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray form-input;
+    
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__rendered {
+	@apply box-border list-none m-0 px-1 min-w-full;
+    
+}
+.select2-container--default .select2-selection--multiple .select2-selection__rendered li {
+   @apply list-none px-2 py-1 leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100;
+}
+.select2-container--default .select2-selection--multiple .select2-selection__clear {
+    @apply float-right cursor-pointer mt-1 mr-2 p-1;
+}
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+    @apply bg-white border cursor-default rounded my-1 mr-1 px-2 float-left;
+}
+.select2-container--default .select2-selection--multiple .select2-selection__choice__display {
+    @apply  ml-3;
+}
+.select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+	@apply text-gray-700 cursor-pointer inline-block mr-1 h-6;
+}
+.select2-container--default .select2-selection--multiple .select2-selection__choice__remove:hover {
+    @apply text-black bg-red-700;
+}
+.select2-container--default.select2-container--focus .select2-selection--multiple {
+    @apply border-2 outline-none;
+}
+
+.select2-container--default.select2-container--disabled .select2-selection__choice__remove {
+	@apply hidden;
+}
+.select2-container--classic .select2-selection--multiple .select2-selection__choice {
+	@apply bg-gray-300 border-2 shadow rounded float-left cursor-default mt-1 mr-1 px-1;
+}
+.select2-container--default .select2-search--dropdown .select2-search__field {
+	/* The border of the search textbox */
+	@apply border-solid;
+}
+
+.select2-container--default .select2-search--inline .select2-search__field {
+	/* Search textbox */
+  @apply border-none bg-transparent outline-none shadow-none select-text;
+}
+
+.select2-container--default .select2-results > .select2-results__options {
+	/* Hight of the dropdown zone where the options or results are visible */
+	@apply h-full max-h-32 overflow-y-auto bg-black bg-opacity-50;
+}
+
+.select2-container--default .select2-results__option[role=group] {
+	/* No clue what this does */
+	@apply p-0;
+}
+
+.select2-container--default .select2-results__option[aria-disabled=true] {
+	@apply text-gray-300; 
+}
+
+.select2-container--default .select2-results__option[aria-selected=true] {
+	/* The already selected option row color */
+	@apply bg-gray-300;
+}
+.select2-results__option--selected {
+	@apply hidden;
+}
+.select2-container--default .select2-results__option .select2-results__option {
+	padding-left: 1em; 
+}
+	.select2-container--default .select2-results__option .select2-results__option .select2-results__group {
+		padding-left: 0;
+	}
+		.select2-container--default .select2-results__option .select2-results__option .select2-results__option {
+			margin-left: -1em;
+			padding-left: 2em;
+		}
+			.select2-container--default .select2-results__option .select2-results__option .select2-results__option .select2-results__option {
+				margin-left: -2em;
+				padding-left: 3em;
+			}
+				.select2-container--default .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option {
+					margin-left: -3em;
+					padding-left: 4em;
+				}
+					.select2-container--default .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option {
+						margin-left: -4em;
+						padding-left: 5em;
+					}
+						.select2-container--default .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option {
+							margin-left: -5em;
+							padding-left: 6em;
+						}
+
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+	/* Background color and text color of the options rows when select is open */
+	@apply bg-blue-500 text-white;
+}
+
+.select2-container--default .select2-results__group {
+	/* Have no idea what this is for */
+  @apply cursor-default block;
+  padding: 6px; }
+
+/* fin stilos select2 */
+
+
+/***************************************************estilos paso a paso*************************************************************************************/
+
+.f1 {
+	padding: 25px; 
+	-moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px;
+}
+.f1 h3 { margin-top: 0; margin-bottom: 5px; text-transform: uppercase; }
+
+.f1-steps { overflow: hidden; position: relative; margin-top: -4%; }
+
+.f1-progress { position: absolute; top: 24px; left: 0; width: 100%; height: 1px; background: #ddd; }
+.f1-progress-line { position: absolute; top: 0; left: 0; height: 1px; background: #f35b3f; }
+
+
+.f1-step { position: relative; float: left; width: 19%; padding: 0 5px; }
+
+.f1-step-user { position: relative; float: left; width: 9.5%; padding: 0 5px; }
+
+.f1-step-vehicle { position: relative; float: left; width: 23.9%; padding: 0 5px; }
+
+.f1-step-fuec { position: relative; float: left; width: 31.7%; padding: 0 5px; }
+
+
+.f1-step-icon {
+	display: inline-block; width: 40px; height: 40px; margin-top: 4px; background: #ddd;
+	font-size: 16px; color: #fff; line-height: 40px;
+	-moz-border-radius: 50%; -webkit-border-radius: 50%; border-radius: 50%;margin-left: 103%;
+}
+
+
+.f1-step.activated .f1-step-icon {
+	background: #fff; border: 1px solid #f35b3f; color: #f35b3f; line-height: 38px;
+}
+.f1-step-user.activated .f1-step-icon {
+	background: #fff; border: 1px solid #f35b3f; color: #f35b3f; line-height: 38px;
+}
+.f1-step-vehicle.activated .f1-step-icon {
+	background: #fff; border: 1px solid #f35b3f; color: #f35b3f; line-height: 38px;
+}
+.f1-step-fuec.activated .f1-step-icon {
+	background: #fff; border: 1px solid #f35b3f; color: #f35b3f; line-height: 38px;
+}
+
+
+.f1-step.active .f1-step-icon {
+	width: 48px; height: 48px; margin-top: 0; background: #f35b3f; font-size: 22px; line-height: 48px;
+}
+.f1-step-user.active .f1-step-icon {
+	width: 48px; height: 48px; margin-top: 0; background: #f35b3f; font-size: 22px; line-height: 48px;
+}
+.f1-step-vehicle.active .f1-step-icon {
+	width: 48px; height: 48px; margin-top: 0; background: #f35b3f; font-size: 22px; line-height: 48px;
+}
+.f1-step-fuec.active .f1-step-icon {
+	width: 48px; height: 48px; margin-top: 0; background: #f35b3f; font-size: 22px; line-height: 48px;
+}
+
+
+.f1-step p { color: #ccc; position: fixed; margin-left: 13.4%;}
+.f1-step.activated p { color: #f35b3f; }
+.f1-step.active p { color: #f35b3f; }
+
+.f1-step-user p { color: #ccc; position: fixed; margin-left: 6.4%;}
+.f1-step-user.activated p { color: #f35b3f; }
+.f1-step-user.active p { color: #f35b3f; }
+
+.f1-step-vehicle p { color: #ccc; position: fixed; margin-left: 6.4%;}
+.f1-step-vehicle.activated p { color: #f35b3f; }
+.f1-step-vehicle.active p { color: #f35b3f; }
+
+.f1-step-fuec p { color: #ccc; position: fixed; margin-left: 23.5%;}
+.f1-step-fuec.activated p { color: #f35b3f; }
+.f1-step-fuec.active p { color: #f35b3f; }
+
+
+.f1 fieldset { display: none; text-align: left; }
+
+.f1-buttons { text-align: right; }
+
+.f1 .input-error { border-color: #f35b3f; }
+
+.flicker {
+	animation: parpadear 2s infinite backwards;
+}
+
+.numcolor {
+	color: #000;
+}
+
+@keyframes parpadear {
+	to{
+		color: #00ebdb;
+		text-shadow: none;
+	}
+}
+
+.check1 {
+	margin-left: 5%;
+    margin-top: 5%;
+}
+
+.check2 {
+	margin-left: 55%;
+    margin-top: -11%;
+}
+
+.check3 {
+	margin-left: 5%;
+    margin-top: 2%;
+}
+
+.check4 {
+	margin-left: 55%;
+    margin-top: -4.9%;
+}
+
+/***************************************************estilos paso a paso*************************************************************************************/	
+
+.Active {
+	display: block;
+}
+
+.Inactive {
+	display: none;
+}
+
+.nextstep {
+	font-size: 250%;
+    margin-left: 30%;
+}
+
+.mnext {
+	margin: auto
+}
+
+.upload-ico{
+	position: absolute;
+    margin-left: 31.5%;
+    margin-top: -3%;
+	font-size: 2.8rem;
+	/* background: #000; */
+	border-radius: 10px;	
+}
+
+.edit-upload-ico{
+	position: relative;
+    /* padding: 10px; */
+    width: 31px;
+    /* background-color: #2499e3; */
+    margin-left: 91%;
+    margin-top: -100%;
+    font-size: 2.8rem;
+    border-radius: 10px;
+    height: 43px;
+    top: -20px;
+}
+
+.upload-input{
+    width: 100%;
+    height: 90%;
+    position: absolute;
+    margin-left: -98%;
+    margin-top: 1%;
+    opacity: 0;
+}
+
+.edit-upload-input{
+	position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0%;
+    bottom: 0%;
+    width: 100%;
+    height: 100%;
+    opacity: 0
+}
+
+
+
+/* **************************************prueba select multiple****************** */
+
+  .select-box-drive {
+	position: relative;
+	display: flex;
+	width: 100%;
+	flex-direction: column;
+  }
+  
+  .select-box-drive .options-container-drive {
+	background: #ffffff;
+	color: #000000;
+	max-height: 0;
+	width: 100%;
+	opacity: 0;
+	transition: all 0.4s;
+	border-radius: 8px;
+	overflow: hidden;
+  
+	order: 1;
+  
+	position: absolute;
+	z-index: 100;
+  }
+  
+  .selected-drive {
+	background: #ffffff;
+	border-radius: 8px;
+	margin-bottom: 8px;
+	color: #000000;
+	position: relative;
+  
+	order: 0;
+  }
+  
+  .selected-drive::after {
+	content: "";
+	/* background: url("img/arrow-down.svg"); */
+	background-size: contain;
+	background-repeat: no-repeat;
+  
+	position: absolute;
+	height: 100%;
+	width: 32px;
+	right: 10px;
+	top: 5px;
+  
+	transition: all 0.4s;
+  }
+  
+  .select-box-drive .options-container-drive.active {
+	max-height: 240px;
+	opacity: 1;
+	overflow-y: scroll;
+	margin-top: 64px;
+  }
+    
+  .select-box-drive .options-container-drive::-webkit-scrollbar {
+	width: 8px;
+	background: #0d141f;
+	border-radius: 0 8px 8px 0;
+  }
+  
+  .select-box-drive .options-container-drive::-webkit-scrollbar-thumb {
+	background: #525861;
+	border-radius: 0 8px 8px 0;
+  }
+  
+  .select-box-drive .option-drive,
+  .selected-drive {
+	padding: 12px 24px;
+	cursor: pointer;
+  }
+  
+  .select-box-drive .option-drive:hover {
+	background: #c9bc07;
+	color: #000;
+	border-radius: 10px;
+  }
+  
+  .select-box-drive label {
+	cursor: pointer;
+  }
+
+  /* ** */
+
+  .select-box-vehicle {
+	position: relative;
+	display: flex;
+	width: 100%;
+	flex-direction: column;
+  }
+  
+  .select-box-vehicle .options-container-vehicle {
+	background: #ffffff;
+	color: #000000;
+	max-height: 0;
+	width: 100%;
+	opacity: 0;
+	transition: all 0.4s;
+	border-radius: 8px;
+	overflow: hidden;
+  
+	order: 1;
+  
+	position: absolute;
+	z-index: 100;
+  }
+  
+  .selected-vehicle {
+	background: #ffffff;
+	border-radius: 8px;
+	margin-bottom: 8px;
+	color: #000000;
+	position: relative;
+  
+	order: 0;
+  }
+  
+  .selected-vehicle::after {
+	content: "";
+	/* background: url("img/arrow-down.svg"); */
+	background-size: contain;
+	background-repeat: no-repeat;
+  
+	position: absolute;
+	height: 100%;
+	width: 32px;
+	right: 10px;
+	top: 5px;
+  
+	transition: all 0.4s;
+  }
+  
+  .select-box-vehicle .options-container-vehicle.active {
+	max-height: 240px;
+	opacity: 1;
+	overflow-y: scroll;
+	margin-top: 64px;
+  }
+    
+  .select-box-vehicle .options-container-vehicle::-webkit-scrollbar {
+	width: 8px;
+	background: #0d141f;
+	border-radius: 0 8px 8px 0;
+  }
+  
+  .select-box-vehicle .options-container-vehicle::-webkit-scrollbar-thumb {
+	background: #525861;
+	border-radius: 0 8px 8px 0;
+  }
+  
+  .select-box-vehicle .option-vehicle,
+  .selected-vehicle {
+	padding: 12px 24px;
+	cursor: pointer;
+  }
+  
+  .select-box-vehicle .option-vehicle:hover {
+	background: #c9bc07;
+	color: #000;
+	border-radius: 10px;
+  }
+  
+  .select-box-vehicle label {
+	cursor: pointer;
+  }
+  

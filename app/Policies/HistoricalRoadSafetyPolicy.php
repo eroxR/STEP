@@ -3,7 +3,7 @@
 namespace App\Policies;
 
 use App\Models\User;
-use App\Models\historical_road_safety;
+use App\Models\historicalRoadSafety;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class HistoricalRoadSafetyPolicy
@@ -25,10 +25,10 @@ class HistoricalRoadSafetyPolicy
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\historical_road_safety  $historicalRoadSafety
+     * @param  \App\Models\historicalRoadSafety  $historicalRoadSafety
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, historical_road_safety $historicalRoadSafety)
+    public function view(User $user, historicalRoadSafety $historicalRoadSafety)
     {
         //
     }
@@ -48,10 +48,10 @@ class HistoricalRoadSafetyPolicy
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\historical_road_safety  $historicalRoadSafety
+     * @param  \App\Models\historicalRoadSafety  $historicalRoadSafety
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, historical_road_safety $historicalRoadSafety)
+    public function update(User $user, historicalRoadSafety $historicalRoadSafety)
     {
         //
     }
@@ -60,10 +60,10 @@ class HistoricalRoadSafetyPolicy
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\historical_road_safety  $historicalRoadSafety
+     * @param  \App\Models\historicalRoadSafety  $historicalRoadSafety
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, historical_road_safety $historicalRoadSafety)
+    public function delete(User $user, historicalRoadSafety $historicalRoadSafety)
     {
         //
     }
@@ -72,10 +72,10 @@ class HistoricalRoadSafetyPolicy
      * Determine whether the user can restore the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\historical_road_safety  $historicalRoadSafety
+     * @param  \App\Models\historicalRoadSafety  $historicalRoadSafety
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, historical_road_safety $historicalRoadSafety)
+    public function restore(User $user, historicalRoadSafety $historicalRoadSafety)
     {
         //
     }
@@ -84,10 +84,10 @@ class HistoricalRoadSafetyPolicy
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\historical_road_safety  $historicalRoadSafety
+     * @param  \App\Models\historicalRoadSafety  $historicalRoadSafety
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, historical_road_safety $historicalRoadSafety)
+    public function forceDelete(User $user, historicalRoadSafety $historicalRoadSafety)
     {
         //
     }
