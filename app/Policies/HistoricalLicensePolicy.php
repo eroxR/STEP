@@ -3,7 +3,7 @@
 namespace App\Policies;
 
 use App\Models\User;
-use App\Models\historical_License;
+use App\Models\historicalLicense;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class HistoricalLicensePolicy
@@ -25,10 +25,10 @@ class HistoricalLicensePolicy
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\historical_License  $historicalLicense
+     * @param  \App\Models\historicalLicense  $historicalLicense
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, historical_License $historicalLicense)
+    public function view(User $user, historicalLicense $historicalLicense)
     {
         //
     }
@@ -48,10 +48,10 @@ class HistoricalLicensePolicy
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\historical_License  $historicalLicense
+     * @param  \App\Models\historicalLicense  $historicalLicense
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, historical_License $historicalLicense)
+    public function update(User $user, historicalLicense $historicalLicense)
     {
         //
     }
@@ -60,10 +60,10 @@ class HistoricalLicensePolicy
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\historical_License  $historicalLicense
+     * @param  \App\Models\historicalLicense  $historicalLicense
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, historical_License $historicalLicense)
+    public function delete(User $user, historicalLicense $historicalLicense)
     {
         //
     }
@@ -72,10 +72,10 @@ class HistoricalLicensePolicy
      * Determine whether the user can restore the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\historical_License  $historicalLicense
+     * @param  \App\Models\historicalLicense  $historicalLicense
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, historical_License $historicalLicense)
+    public function restore(User $user, historicalLicense $historicalLicense)
     {
         //
     }
@@ -84,10 +84,10 @@ class HistoricalLicensePolicy
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\historical_License  $historicalLicense
+     * @param  \App\Models\historicalLicense  $historicalLicense
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, historical_License $historicalLicense)
+    public function forceDelete(User $user, historicalLicense $historicalLicense)
     {
         //
     }

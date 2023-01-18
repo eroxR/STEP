@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\historical_Land_Transport_Standards;
-use App\Http\Requests\Storehistorical_Land_Transport_StandardsRequest;
-use App\Http\Requests\Updatehistorical_Land_Transport_StandardsRequest;
+use App\Models\historicalLandTransportStandards;
+use App\Http\Requests\StorehistoricalLandTransportStandardsRequest;
+use App\Http\Requests\UpdatehistoricalLandTransportStandardsRequest;
 
 class HistoricalLandTransportStandardsController extends Controller
 {
@@ -31,10 +31,10 @@ class HistoricalLandTransportStandardsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\Storehistorical_Land_Transport_StandardsRequest  $request
+     * @param  \App\Http\Requests\StorehistoricalLandTransportStandardsRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Storehistorical_Land_Transport_StandardsRequest $request)
+    public function store(StorehistoricalLandTransportStandardsRequest $request)
     {
         //
     }
@@ -42,10 +42,10 @@ class HistoricalLandTransportStandardsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\historical_Land_Transport_Standards  $historical_Land_Transport_Standards
+     * @param  \App\Models\historicalLandTransportStandards  $historicalLandTransportStandards
      * @return \Illuminate\Http\Response
      */
-    public function show(historical_Land_Transport_Standards $historical_Land_Transport_Standards)
+    public function show(historicalLandTransportStandards $historicalLandTransportStandards)
     {
         //
     }
@@ -53,10 +53,10 @@ class HistoricalLandTransportStandardsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\historical_Land_Transport_Standards  $historical_Land_Transport_Standards
+     * @param  \App\Models\historicalLandTransportStandards  $historicalLandTransportStandards
      * @return \Illuminate\Http\Response
      */
-    public function edit(historical_Land_Transport_Standards $historical_Land_Transport_Standards)
+    public function edit(historicalLandTransportStandards $historicalLandTransportStandards)
     {
         //
     }
@@ -64,11 +64,11 @@ class HistoricalLandTransportStandardsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\Updatehistorical_Land_Transport_StandardsRequest  $request
-     * @param  \App\Models\historical_Land_Transport_Standards  $historical_Land_Transport_Standards
+     * @param  \App\Http\Requests\UpdatehistoricalLandTransportStandardsRequest  $request
+     * @param  \App\Models\historicalLandTransportStandards  $historicalLandTransportStandards
      * @return \Illuminate\Http\Response
      */
-    public function update(Updatehistorical_Land_Transport_StandardsRequest $request, historical_Land_Transport_Standards $historical_Land_Transport_Standards)
+    public function update(UpdatehistoricalLandTransportStandardsRequest $request, historicalLandTransportStandards $historicalLandTransportStandards)
     {
         //
     }
@@ -76,10 +76,10 @@ class HistoricalLandTransportStandardsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\historical_Land_Transport_Standards  $historical_Land_Transport_Standards
+     * @param  \App\Models\historicalLandTransportStandards  $historicalLandTransportStandards
      * @return \Illuminate\Http\Response
      */
-    public function destroy(historical_Land_Transport_Standards $historical_Land_Transport_Standards)
+    public function destroy(historicalLandTransportStandards $historicalLandTransportStandards)
     {
         //
     }

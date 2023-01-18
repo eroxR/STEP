@@ -11,12 +11,12 @@ class permit extends Model
 
         //relación muchos a muchos
         public function driver(){
-            return $this->belongsToMany('App\Models\driver');
+            return $this->belongsToMany(driver::class);
         }
     
         //relación muchos a muchos
         public function vehicle(){
-            return $this->belongsToMany('App\Models\vehicle');
+            return $this->belongsToMany(vehicle::class);
         }
     
          //relación uno a muchos polimorfica
@@ -33,4 +33,13 @@ class permit extends Model
         public function contract(){
             return $this->belongsTo('App\Models\contract');
         }
+
+        protected $fillable = [
+            'contract',
+            'permit_start_date',
+            'permit_end_date',
+            'permit_number',
+            'fuec_state',
+            'permit_code',
+        ];    
 }

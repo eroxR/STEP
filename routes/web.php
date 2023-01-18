@@ -1,5 +1,20 @@
 <?php
 
+use App\Http\Controllers\ContractController;
+use App\Http\Controllers\PermitController;
+use App\Http\Controllers\UserController;
+use App\Http\Livewire\Body;
+use App\Http\Livewire\Cambiocontraseña;
+use App\Http\Livewire\Contracts\ManageContracts;
+use App\Http\Livewire\Mantenimientocontrato;
+use App\Http\Livewire\Mantenimientofuec;
+use App\Http\Livewire\Mantenimientousuario;
+use App\Http\Livewire\Mantenimientovehiculos;
+use App\Http\Livewire\Manual;
+use App\Http\Livewire\Otraactividad;
+use App\Http\Livewire\Permissions\ManagePermissions;
+use App\Http\Livewire\Users\ManageUsers;
+use App\Http\Livewire\Vehicles\ManageVehicles;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +32,7 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -31,8 +47,82 @@ Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified'
-])->group(function () {
-    Route::get('/manual', function () {
-        return view('manual');
-    })->name('manual');
+])->group(function () {Route::get('manual', Manual::class)->name('manual');
+});
+
+
+Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->group(function () {Route::get('vehicles/manage-vehicles', ManageVehicles::class)->name('manage-vehicles');
+});
+
+Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->group(function () {Route::get('contracts/manage-contracts', ManageContracts::class)->name('manage-contracts');
+});
+
+// Route::middleware([
+//     'auth:sanctum',
+//     config('jetstream.auth_session'),
+//     'verified'
+// ])->group(function () {Route::get('/pdfs/pdf_contracts', [ContractController::class, 'pdf'])->name('pdfs.pdf_contracts');
+// });
+
+Route::get('pdfs/pdf-contracts/{id}', [ContractController::class, 'pdf'])->name('pdfs.pdf-contracts');
+
+Route::get('pdfs/pdf-fuec/{id}', [PermitController::class, 'pdf'])->name('pdfs.pdf-fuec');
+
+Route::get('pdfs/permit-public/{id}', [PermitController::class, 'publicfuec'])->name('pdfs.permit-public');
+
+Route::get('pdfs/index/{id}', [PermitController::class, 'index'])->name('pdfs.index');
+
+
+Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->group(function () {Route::get('permissions/manage-permissions', ManagePermissions::class)->name('manage-permissions');
+});
+
+Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->group(function () {Route::get('users/manage-users', ManageUsers::class)->name('manage-users');
+});
+
+// pruebas
+
+Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->group(function () {Route::get('/cambiocontraseña', Cambiocontraseña::class)->name('cambiocontraseña');
+});
+
+Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->group(function () {Route::get('/pruebas.listacontratos', function () {return view('pruebas.listacontratos');
+    })->name('pruebas.listacontratos');
+});
+
+Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->group(function () {Route::get('/pruebas.listafuec', function () {return view('pruebas.listafuec');
+    })->name('pruebas.listafuec');
+});
+
+Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->group(function () {Route::get('/pruebas.listaconductores', function () {return view('pruebas.listaconductores');
+    })->name('pruebas.listaconductores');
+});
+
+Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->group(function () {Route::get('/pruebas.listavinculados', function () {return view('pruebas.listavinculados');
+    })->name('pruebas.listavinculados');
+});
+
+Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->group(function () {Route::get('/pruebas.listavehiculos', function () {return view('pruebas.listavehiculos');
+    })->name('pruebas.listavehiculos');
+});
+
+Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->group(function () {Route::get('/pruebas.listapendiente', function () {return view('pruebas.listapendiente');
+    })->name('pruebas.listapendiente');
+});
+
+Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->group(function () {Route::get('/pruebas.mantenimientocontrato', Mantenimientocontrato::class)->name('pruebas.mantenimientocontrato');
+});
+
+Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->group(function () {Route::get('/pruebas.mantenimientofuec', Mantenimientofuec::class)->name('pruebas.mantenimientofuec');
+});
+
+Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->group(function () {Route::get('/pruebas.mantenimientousuario', Mantenimientousuario::class)->name('pruebas.mantenimientousuario');
+});
+
+Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->group(function () {Route::get('/pruebas.mantenimientovehiculos', Mantenimientovehiculos::class)->name('pruebas.mantenimientovehiculos');
+});
+
+Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->group(function () {Route::get('/pruebas.otraactividad', Otraactividad::class)->name('pruebas.otraactividad');
+});
+
+Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->group(function () {Route::get('/pruebas.listacontratos', function () {return view('pruebas.listacontratos');
+    })->name('pruebas.listacontratos');
 });

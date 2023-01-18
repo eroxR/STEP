@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\marital_status;
-use App\Http\Requests\Storemarital_statusRequest;
-use App\Http\Requests\Updatemarital_statusRequest;
+use App\Models\maritalStatus;
+use App\Http\Requests\StoremaritalStatusRequest;
+use App\Http\Requests\UpdatemaritalStatusRequest;
 
 class MaritalStatusController extends Controller
 {
@@ -31,10 +31,10 @@ class MaritalStatusController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\Storemarital_statusRequest  $request
+     * @param  \App\Http\Requests\StoremaritalStatusRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Storemarital_statusRequest $request)
+    public function store(StoremaritalStatusRequest $request)
     {
         //
     }
@@ -42,10 +42,10 @@ class MaritalStatusController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\marital_status  $marital_status
+     * @param  \App\Models\maritalStatus  $maritalStatus
      * @return \Illuminate\Http\Response
      */
-    public function show(marital_status $marital_status)
+    public function show(maritalStatus $maritalStatus)
     {
         //
     }
@@ -53,10 +53,10 @@ class MaritalStatusController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\marital_status  $marital_status
+     * @param  \App\Models\maritalStatus  $maritalStatus
      * @return \Illuminate\Http\Response
      */
-    public function edit(marital_status $marital_status)
+    public function edit(maritalStatus $maritalStatus)
     {
         //
     }
@@ -64,11 +64,11 @@ class MaritalStatusController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\Updatemarital_statusRequest  $request
-     * @param  \App\Models\marital_status  $marital_status
+     * @param  \App\Http\Requests\UpdatemaritalStatusRequest  $request
+     * @param  \App\Models\maritalStatus  $maritalStatus
      * @return \Illuminate\Http\Response
      */
-    public function update(Updatemarital_statusRequest $request, marital_status $marital_status)
+    public function update(UpdatemaritalStatusRequest $request, maritalStatus $maritalStatus)
     {
         //
     }
@@ -76,10 +76,10 @@ class MaritalStatusController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\marital_status  $marital_status
+     * @param  \App\Models\maritalStatus  $maritalStatus
      * @return \Illuminate\Http\Response
      */
-    public function destroy(marital_status $marital_status)
+    public function destroy(maritalStatus $maritalStatus)
     {
         //
     }

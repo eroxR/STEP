@@ -3,7 +3,7 @@
 namespace App\Policies;
 
 use App\Models\User;
-use App\Models\historical_Norm_Transit;
+use App\Models\historicalNormTransit;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class HistoricalNormTransitPolicy
@@ -25,10 +25,10 @@ class HistoricalNormTransitPolicy
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\historical_Norm_Transit  $historicalNormTransit
+     * @param  \App\Models\historicalNormTransit  $historicalNormTransit
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, historical_Norm_Transit $historicalNormTransit)
+    public function view(User $user, historicalNormTransit $historicalNormTransit)
     {
         //
     }
@@ -48,10 +48,10 @@ class HistoricalNormTransitPolicy
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\historical_Norm_Transit  $historicalNormTransit
+     * @param  \App\Models\historicalNormTransit  $historicalNormTransit
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, historical_Norm_Transit $historicalNormTransit)
+    public function update(User $user, historicalNormTransit $historicalNormTransit)
     {
         //
     }
@@ -60,10 +60,10 @@ class HistoricalNormTransitPolicy
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\historical_Norm_Transit  $historicalNormTransit
+     * @param  \App\Models\historicalNormTransit  $historicalNormTransit
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, historical_Norm_Transit $historicalNormTransit)
+    public function delete(User $user, historicalNormTransit $historicalNormTransit)
     {
         //
     }
@@ -72,10 +72,10 @@ class HistoricalNormTransitPolicy
      * Determine whether the user can restore the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\historical_Norm_Transit  $historicalNormTransit
+     * @param  \App\Models\historicalNormTransit  $historicalNormTransit
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, historical_Norm_Transit $historicalNormTransit)
+    public function restore(User $user, historicalNormTransit $historicalNormTransit)
     {
         //
     }
@@ -84,10 +84,10 @@ class HistoricalNormTransitPolicy
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\historical_Norm_Transit  $historicalNormTransit
+     * @param  \App\Models\historicalNormTransit  $historicalNormTransit
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, historical_Norm_Transit $historicalNormTransit)
+    public function forceDelete(User $user, historicalNormTransit $historicalNormTransit)
     {
         //
     }

@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\historical_pension;
-use App\Http\Requests\Storehistorical_pensionRequest;
-use App\Http\Requests\Updatehistorical_pensionRequest;
+use App\Models\historicalPension;
+use App\Http\Requests\StorehistoricalPensionRequest;
+use App\Http\Requests\UpdatehistoricalPensionRequest;
 
 class HistoricalPensionController extends Controller
 {
@@ -31,10 +31,10 @@ class HistoricalPensionController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\Storehistorical_pensionRequest  $request
+     * @param  \App\Http\Requests\StorehistoricalPensionRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Storehistorical_pensionRequest $request)
+    public function store(StorehistoricalPensionRequest $request)
     {
         //
     }
@@ -42,10 +42,10 @@ class HistoricalPensionController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\historical_pension  $historical_pension
+     * @param  \App\Models\historicalPension  $historicalPension
      * @return \Illuminate\Http\Response
      */
-    public function show(historical_pension $historical_pension)
+    public function show(historicalPension $historicalPension)
     {
         //
     }
@@ -53,10 +53,10 @@ class HistoricalPensionController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\historical_pension  $historical_pension
+     * @param  \App\Models\historicalPension  $historicalPension
      * @return \Illuminate\Http\Response
      */
-    public function edit(historical_pension $historical_pension)
+    public function edit(historicalPension $historicalPension)
     {
         //
     }
@@ -64,11 +64,11 @@ class HistoricalPensionController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\Updatehistorical_pensionRequest  $request
-     * @param  \App\Models\historical_pension  $historical_pension
+     * @param  \App\Http\Requests\UpdatehistoricalPensionRequest  $request
+     * @param  \App\Models\historicalPension  $historicalPension
      * @return \Illuminate\Http\Response
      */
-    public function update(Updatehistorical_pensionRequest $request, historical_pension $historical_pension)
+    public function update(UpdatehistoricalPensionRequest $request, historicalPension $historicalPension)
     {
         //
     }
@@ -76,10 +76,10 @@ class HistoricalPensionController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\historical_pension  $historical_pension
+     * @param  \App\Models\historicalPension  $historicalPension
      * @return \Illuminate\Http\Response
      */
-    public function destroy(historical_pension $historical_pension)
+    public function destroy(historicalPension $historicalPension)
     {
         //
     }

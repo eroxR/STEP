@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\historical_compensation_box;
-use App\Http\Requests\Storehistorical_compensation_boxRequest;
-use App\Http\Requests\Updatehistorical_compensation_boxRequest;
+use App\Models\historicalCompensationBox;
+use App\Http\Requests\StorehistoricalCompensationBoxRequest;
+use App\Http\Requests\UpdatehistoricalCompensationBoxRequest;
 
 class HistoricalCompensationBoxController extends Controller
 {
@@ -31,10 +31,10 @@ class HistoricalCompensationBoxController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\Storehistorical_compensation_boxRequest  $request
+     * @param  \App\Http\Requests\StorehistoricalCompensationBoxRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Storehistorical_compensation_boxRequest $request)
+    public function store(StorehistoricalCompensationBoxRequest $request)
     {
         //
     }
@@ -42,10 +42,10 @@ class HistoricalCompensationBoxController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\historical_compensation_box  $historical_compensation_box
+     * @param  \App\Models\historicalCompensationBox  $historicalCompensationBox
      * @return \Illuminate\Http\Response
      */
-    public function show(historical_compensation_box $historical_compensation_box)
+    public function show(historicalCompensationBox $historicalCompensationBox)
     {
         //
     }
@@ -53,10 +53,10 @@ class HistoricalCompensationBoxController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\historical_compensation_box  $historical_compensation_box
+     * @param  \App\Models\historicalCompensationBox  $historicalCompensationBox
      * @return \Illuminate\Http\Response
      */
-    public function edit(historical_compensation_box $historical_compensation_box)
+    public function edit(historicalCompensationBox $historicalCompensationBox)
     {
         //
     }
@@ -64,11 +64,11 @@ class HistoricalCompensationBoxController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\Updatehistorical_compensation_boxRequest  $request
-     * @param  \App\Models\historical_compensation_box  $historical_compensation_box
+     * @param  \App\Http\Requests\UpdatehistoricalCompensationBoxRequest  $request
+     * @param  \App\Models\historicalCompensationBox  $historicalCompensationBox
      * @return \Illuminate\Http\Response
      */
-    public function update(Updatehistorical_compensation_boxRequest $request, historical_compensation_box $historical_compensation_box)
+    public function update(UpdatehistoricalCompensationBoxRequest $request, historicalCompensationBox $historicalCompensationBox)
     {
         //
     }
@@ -76,10 +76,10 @@ class HistoricalCompensationBoxController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\historical_compensation_box  $historical_compensation_box
+     * @param  \App\Models\historicalCompensationBox  $historicalCompensationBox
      * @return \Illuminate\Http\Response
      */
-    public function destroy(historical_compensation_box $historical_compensation_box)
+    public function destroy(historicalCompensationBox $historicalCompensationBox)
     {
         //
     }

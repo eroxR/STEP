@@ -3,7 +3,7 @@
 namespace App\Policies;
 
 use App\Models\User;
-use App\Models\historical_Safety_Active_Passive_Vehicles;
+use App\Models\historicalSafetyActivePassiveVehicles;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class HistoricalSafetyActivePassiveVehiclesPolicy
@@ -25,10 +25,10 @@ class HistoricalSafetyActivePassiveVehiclesPolicy
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\historical_Safety_Active_Passive_Vehicles  $historicalSafetyActivePassiveVehicles
+     * @param  \App\Models\historicalSafetyActivePassiveVehicles  $historicalSafetyActivePassiveVehicles
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, historical_Safety_Active_Passive_Vehicles $historicalSafetyActivePassiveVehicles)
+    public function view(User $user, historicalSafetyActivePassiveVehicles $historicalSafetyActivePassiveVehicles)
     {
         //
     }
@@ -48,10 +48,10 @@ class HistoricalSafetyActivePassiveVehiclesPolicy
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\historical_Safety_Active_Passive_Vehicles  $historicalSafetyActivePassiveVehicles
+     * @param  \App\Models\historicalSafetyActivePassiveVehicles  $historicalSafetyActivePassiveVehicles
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, historical_Safety_Active_Passive_Vehicles $historicalSafetyActivePassiveVehicles)
+    public function update(User $user, historicalSafetyActivePassiveVehicles $historicalSafetyActivePassiveVehicles)
     {
         //
     }
@@ -60,10 +60,10 @@ class HistoricalSafetyActivePassiveVehiclesPolicy
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\historical_Safety_Active_Passive_Vehicles  $historicalSafetyActivePassiveVehicles
+     * @param  \App\Models\historicalSafetyActivePassiveVehicles  $historicalSafetyActivePassiveVehicles
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, historical_Safety_Active_Passive_Vehicles $historicalSafetyActivePassiveVehicles)
+    public function delete(User $user, historicalSafetyActivePassiveVehicles $historicalSafetyActivePassiveVehicles)
     {
         //
     }
@@ -72,10 +72,10 @@ class HistoricalSafetyActivePassiveVehiclesPolicy
      * Determine whether the user can restore the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\historical_Safety_Active_Passive_Vehicles  $historicalSafetyActivePassiveVehicles
+     * @param  \App\Models\historicalSafetyActivePassiveVehicles  $historicalSafetyActivePassiveVehicles
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, historical_Safety_Active_Passive_Vehicles $historicalSafetyActivePassiveVehicles)
+    public function restore(User $user, historicalSafetyActivePassiveVehicles $historicalSafetyActivePassiveVehicles)
     {
         //
     }
@@ -84,10 +84,10 @@ class HistoricalSafetyActivePassiveVehiclesPolicy
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\historical_Safety_Active_Passive_Vehicles  $historicalSafetyActivePassiveVehicles
+     * @param  \App\Models\historicalSafetyActivePassiveVehicles  $historicalSafetyActivePassiveVehicles
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, historical_Safety_Active_Passive_Vehicles $historicalSafetyActivePassiveVehicles)
+    public function forceDelete(User $user, historicalSafetyActivePassiveVehicles $historicalSafetyActivePassiveVehicles)
     {
         //
     }

@@ -5,7 +5,7 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\historical_pension>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\historicalPension>
  */
 class HistoricalPensionFactory extends Factory
 {

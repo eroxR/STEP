@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\historical_eps;
-use App\Http\Requests\Storehistorical_epsRequest;
-use App\Http\Requests\Updatehistorical_epsRequest;
+use App\Models\historicalEps;
+use App\Http\Requests\StorehistoricalEpsRequest;
+use App\Http\Requests\UpdatehistoricalEpsRequest;
 
 class HistoricalEpsController extends Controller
 {
@@ -31,10 +31,10 @@ class HistoricalEpsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\Storehistorical_epsRequest  $request
+     * @param  \App\Http\Requests\StorehistoricalEpsRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Storehistorical_epsRequest $request)
+    public function store(StorehistoricalEpsRequest $request)
     {
         //
     }
@@ -42,10 +42,10 @@ class HistoricalEpsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\historical_eps  $historical_eps
+     * @param  \App\Models\historicalEps  $historicalEps
      * @return \Illuminate\Http\Response
      */
-    public function show(historical_eps $historical_eps)
+    public function show(historicalEps $historicalEps)
     {
         //
     }
@@ -53,10 +53,10 @@ class HistoricalEpsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\historical_eps  $historical_eps
+     * @param  \App\Models\historicalEps  $historicalEps
      * @return \Illuminate\Http\Response
      */
-    public function edit(historical_eps $historical_eps)
+    public function edit(historicalEps $historicalEps)
     {
         //
     }
@@ -64,11 +64,11 @@ class HistoricalEpsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\Updatehistorical_epsRequest  $request
-     * @param  \App\Models\historical_eps  $historical_eps
+     * @param  \App\Http\Requests\UpdatehistoricalEpsRequest  $request
+     * @param  \App\Models\historicalEps  $historicalEps
      * @return \Illuminate\Http\Response
      */
-    public function update(Updatehistorical_epsRequest $request, historical_eps $historical_eps)
+    public function update(UpdatehistoricalEpsRequest $request, historicalEps $historicalEps)
     {
         //
     }
@@ -76,10 +76,10 @@ class HistoricalEpsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\historical_eps  $historical_eps
+     * @param  \App\Models\historicalEps  $historicalEps
      * @return \Illuminate\Http\Response
      */
-    public function destroy(historical_eps $historical_eps)
+    public function destroy(historicalEps $historicalEps)
     {
         //
     }

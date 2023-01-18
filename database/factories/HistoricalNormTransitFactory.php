@@ -5,7 +5,7 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\historical_Norm_Transit>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\historicalNormTransit>
  */
 class HistoricalNormTransitFactory extends Factory
 {

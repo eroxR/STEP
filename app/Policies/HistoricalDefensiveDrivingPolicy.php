@@ -3,7 +3,7 @@
 namespace App\Policies;
 
 use App\Models\User;
-use App\Models\historical_Defensive_Driving;
+use App\Models\historicalDefensiveDriving;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class HistoricalDefensiveDrivingPolicy
@@ -25,10 +25,10 @@ class HistoricalDefensiveDrivingPolicy
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\historical_Defensive_Driving  $historicalDefensiveDriving
+     * @param  \App\Models\historicalDefensiveDriving  $historicalDefensiveDriving
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, historical_Defensive_Driving $historicalDefensiveDriving)
+    public function view(User $user, historicalDefensiveDriving $historicalDefensiveDriving)
     {
         //
     }
@@ -48,10 +48,10 @@ class HistoricalDefensiveDrivingPolicy
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\historical_Defensive_Driving  $historicalDefensiveDriving
+     * @param  \App\Models\historicalDefensiveDriving  $historicalDefensiveDriving
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, historical_Defensive_Driving $historicalDefensiveDriving)
+    public function update(User $user, historicalDefensiveDriving $historicalDefensiveDriving)
     {
         //
     }
@@ -60,10 +60,10 @@ class HistoricalDefensiveDrivingPolicy
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\historical_Defensive_Driving  $historicalDefensiveDriving
+     * @param  \App\Models\historicalDefensiveDriving  $historicalDefensiveDriving
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, historical_Defensive_Driving $historicalDefensiveDriving)
+    public function delete(User $user, historicalDefensiveDriving $historicalDefensiveDriving)
     {
         //
     }
@@ -72,10 +72,10 @@ class HistoricalDefensiveDrivingPolicy
      * Determine whether the user can restore the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\historical_Defensive_Driving  $historicalDefensiveDriving
+     * @param  \App\Models\historicalDefensiveDriving  $historicalDefensiveDriving
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, historical_Defensive_Driving $historicalDefensiveDriving)
+    public function restore(User $user, historicalDefensiveDriving $historicalDefensiveDriving)
     {
         //
     }
@@ -84,10 +84,10 @@ class HistoricalDefensiveDrivingPolicy
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\historical_Defensive_Driving  $historicalDefensiveDriving
+     * @param  \App\Models\historicalDefensiveDriving  $historicalDefensiveDriving
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, historical_Defensive_Driving $historicalDefensiveDriving)
+    public function forceDelete(User $user, historicalDefensiveDriving $historicalDefensiveDriving)
     {
         //
     }

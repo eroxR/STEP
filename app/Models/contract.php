@@ -53,4 +53,43 @@ class contract extends Model
         public function permit(){
             return $this->hasMany('App\Models\permit');
         }
+
+        protected $fillable = [
+            'contract_number',			
+            'type_contract',
+			'route_trip_contract',
+			'date_start_contract',
+			'contract_end_date',
+			'contract_value',
+			'contracting_name',
+			'state_contract',
+			'identification',
+			'contract_document',
+			'expedition_identificationcard',
+			'contracting_phone',
+			'contracting_direction',
+			'legal_representative',
+			'legal_representative_expedition_identificationcard',
+			'passenger_quantity',
+			'total_disposition',
+			'quantity_vehicle',
+			'cooperation_contract',
+			'entity_name',
+			'secure_policy',
+			'tipe_pay',
+			'contract_signing_date',
+			'school_name',
+			'address_school',
+			'identification_represent_legal',
+			'identificationcard_represent_legal',
+			'trip_from',
+			'trip_to',
+			'place_of_origin',
+			'destination_place',
+			'return_place',
+			'identificationcard_representative_group',
+			'group_representative_name',
+			'dateofexpedition_representative_group',
+			'signed_contract',
+        ];    
 }

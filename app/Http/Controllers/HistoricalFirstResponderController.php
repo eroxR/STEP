@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\historical_First_Responder;
-use App\Http\Requests\Storehistorical_First_ResponderRequest;
-use App\Http\Requests\Updatehistorical_First_ResponderRequest;
+use App\Models\historicalFirstResponder;
+use App\Http\Requests\StorehistoricalFirstResponderRequest;
+use App\Http\Requests\UpdatehistoricalFirstResponderRequest;
 
 class HistoricalFirstResponderController extends Controller
 {
@@ -31,10 +31,10 @@ class HistoricalFirstResponderController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\Storehistorical_First_ResponderRequest  $request
+     * @param  \App\Http\Requests\StorehistoricalFirstResponderRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Storehistorical_First_ResponderRequest $request)
+    public function store(StorehistoricalFirstResponderRequest $request)
     {
         //
     }
@@ -42,10 +42,10 @@ class HistoricalFirstResponderController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\historical_First_Responder  $historical_First_Responder
+     * @param  \App\Models\historicalFirstResponder  $historicalFirstResponder
      * @return \Illuminate\Http\Response
      */
-    public function show(historical_First_Responder $historical_First_Responder)
+    public function show(historicalFirstResponder $historicalFirstResponder)
     {
         //
     }
@@ -53,10 +53,10 @@ class HistoricalFirstResponderController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\historical_First_Responder  $historical_First_Responder
+     * @param  \App\Models\historicalFirstResponder  $historicalFirstResponder
      * @return \Illuminate\Http\Response
      */
-    public function edit(historical_First_Responder $historical_First_Responder)
+    public function edit(historicalFirstResponder $historicalFirstResponder)
     {
         //
     }
@@ -64,11 +64,11 @@ class HistoricalFirstResponderController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\Updatehistorical_First_ResponderRequest  $request
-     * @param  \App\Models\historical_First_Responder  $historical_First_Responder
+     * @param  \App\Http\Requests\UpdatehistoricalFirstResponderRequest  $request
+     * @param  \App\Models\historicalFirstResponder  $historicalFirstResponder
      * @return \Illuminate\Http\Response
      */
-    public function update(Updatehistorical_First_ResponderRequest $request, historical_First_Responder $historical_First_Responder)
+    public function update(UpdatehistoricalFirstResponderRequest $request, historicalFirstResponder $historicalFirstResponder)
     {
         //
     }
@@ -76,10 +76,10 @@ class HistoricalFirstResponderController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\historical_First_Responder  $historical_First_Responder
+     * @param  \App\Models\historicalFirstResponder  $historicalFirstResponder
      * @return \Illuminate\Http\Response
      */
-    public function destroy(historical_First_Responder $historical_First_Responder)
+    public function destroy(historicalFirstResponder $historicalFirstResponder)
     {
         //
     }

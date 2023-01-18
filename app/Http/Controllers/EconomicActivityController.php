@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\economic_activity;
-use App\Http\Requests\Storeeconomic_activityRequest;
-use App\Http\Requests\Updateeconomic_activityRequest;
+use App\Models\economicActivity;
+use App\Http\Requests\StoreeconomicActivityRequest;
+use App\Http\Requests\UpdateeconomicActivityRequest;
 
 class EconomicActivityController extends Controller
 {
@@ -31,10 +31,10 @@ class EconomicActivityController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\Storeeconomic_activityRequest  $request
+     * @param  \App\Http\Requests\StoreeconomicActivityRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Storeeconomic_activityRequest $request)
+    public function store(StoreeconomicActivityRequest $request)
     {
         //
     }
@@ -42,10 +42,10 @@ class EconomicActivityController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\economic_activity  $economic_activity
+     * @param  \App\Models\economicActivity  $economicActivity
      * @return \Illuminate\Http\Response
      */
-    public function show(economic_activity $economic_activity)
+    public function show(economicActivity $economicActivity)
     {
         //
     }
@@ -53,10 +53,10 @@ class EconomicActivityController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\economic_activity  $economic_activity
+     * @param  \App\Models\economicActivity  $economicActivity
      * @return \Illuminate\Http\Response
      */
-    public function edit(economic_activity $economic_activity)
+    public function edit(economicActivity $economicActivity)
     {
         //
     }
@@ -64,11 +64,11 @@ class EconomicActivityController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\Updateeconomic_activityRequest  $request
-     * @param  \App\Models\economic_activity  $economic_activity
+     * @param  \App\Http\Requests\UpdateeconomicActivityRequest  $request
+     * @param  \App\Models\economicActivity  $economicActivity
      * @return \Illuminate\Http\Response
      */
-    public function update(Updateeconomic_activityRequest $request, economic_activity $economic_activity)
+    public function update(UpdateeconomicActivityRequest $request, economicActivity $economicActivity)
     {
         //
     }
@@ -76,10 +76,10 @@ class EconomicActivityController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\economic_activity  $economic_activity
+     * @param  \App\Models\economicActivity  $economicActivity
      * @return \Illuminate\Http\Response
      */
-    public function destroy(economic_activity $economic_activity)
+    public function destroy(economicActivity $economicActivity)
     {
         //
     }

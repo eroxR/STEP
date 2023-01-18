@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\historical_Defensive_Driving;
-use App\Http\Requests\Storehistorical_Defensive_DrivingRequest;
-use App\Http\Requests\Updatehistorical_Defensive_DrivingRequest;
+use App\Models\historicalDefensiveDriving;
+use App\Http\Requests\StorehistoricalDefensiveDrivingRequest;
+use App\Http\Requests\UpdatehistoricalDefensiveDrivingRequest;
 
 class HistoricalDefensiveDrivingController extends Controller
 {
@@ -31,10 +31,10 @@ class HistoricalDefensiveDrivingController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\Storehistorical_Defensive_DrivingRequest  $request
+     * @param  \App\Http\Requests\StorehistoricalDefensiveDrivingRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Storehistorical_Defensive_DrivingRequest $request)
+    public function store(StorehistoricalDefensiveDrivingRequest $request)
     {
         //
     }
@@ -42,10 +42,10 @@ class HistoricalDefensiveDrivingController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\historical_Defensive_Driving  $historical_Defensive_Driving
+     * @param  \App\Models\historicalDefensiveDriving  $historicalDefensiveDriving
      * @return \Illuminate\Http\Response
      */
-    public function show(historical_Defensive_Driving $historical_Defensive_Driving)
+    public function show(historicalDefensiveDriving $historicalDefensiveDriving)
     {
         //
     }
@@ -53,10 +53,10 @@ class HistoricalDefensiveDrivingController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\historical_Defensive_Driving  $historical_Defensive_Driving
+     * @param  \App\Models\historicalDefensiveDriving  $historicalDefensiveDriving
      * @return \Illuminate\Http\Response
      */
-    public function edit(historical_Defensive_Driving $historical_Defensive_Driving)
+    public function edit(historicalDefensiveDriving $historicalDefensiveDriving)
     {
         //
     }
@@ -64,11 +64,11 @@ class HistoricalDefensiveDrivingController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\Updatehistorical_Defensive_DrivingRequest  $request
-     * @param  \App\Models\historical_Defensive_Driving  $historical_Defensive_Driving
+     * @param  \App\Http\Requests\UpdatehistoricalDefensiveDrivingRequest  $request
+     * @param  \App\Models\historicalDefensiveDriving  $historicalDefensiveDriving
      * @return \Illuminate\Http\Response
      */
-    public function update(Updatehistorical_Defensive_DrivingRequest $request, historical_Defensive_Driving $historical_Defensive_Driving)
+    public function update(UpdatehistoricalDefensiveDrivingRequest $request, historicalDefensiveDriving $historicalDefensiveDriving)
     {
         //
     }
@@ -76,10 +76,10 @@ class HistoricalDefensiveDrivingController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\historical_Defensive_Driving  $historical_Defensive_Driving
+     * @param  \App\Models\historicalDefensiveDriving  $historicalDefensiveDriving
      * @return \Illuminate\Http\Response
      */
-    public function destroy(historical_Defensive_Driving $historical_Defensive_Driving)
+    public function destroy(historicalDefensiveDriving $historicalDefensiveDriving)
     {
         //
     }

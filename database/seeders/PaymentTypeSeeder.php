@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\payment_type;
+use App\Models\paymentType;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -17,15 +17,16 @@ class PaymentTypeSeeder extends Seeder
     {
         //
 
-        $tipoPago1 = new payment_type();
-        $tipoPago1->description_typePayment="Contado";
+        $tipoPago1 = new paymentType();
+        $tipoPago1->description_typePayment="De Contado";
         $tipoPago1->save();
         
-        $tipoPago2 = new payment_type();
-        $tipoPago2->description_typePayment="50% y 50%";
+        $tipoPago2 = new paymentType();
+        $tipoPago2->description_typePayment="el 50% a la firma del 
+        contrato y el resto al inicio del servicio";
         $tipoPago2->save();
         
-        $tipoPago3 = new payment_type();
+        $tipoPago3 = new paymentType();
         $tipoPago3->description_typePayment="Otro";
         $tipoPago3->save();
     }

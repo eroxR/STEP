@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\historical_Norm_Transit;
-use App\Http\Requests\Storehistorical_Norm_TransitRequest;
-use App\Http\Requests\Updatehistorical_Norm_TransitRequest;
+use App\Models\historicalNormTransit;
+use App\Http\Requests\StorehistoricalNormTransitRequest;
+use App\Http\Requests\UpdatehistoricalNormTransitRequest;
 
 class HistoricalNormTransitController extends Controller
 {
@@ -31,10 +31,10 @@ class HistoricalNormTransitController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\Storehistorical_Norm_TransitRequest  $request
+     * @param  \App\Http\Requests\StorehistoricalNormTransitRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Storehistorical_Norm_TransitRequest $request)
+    public function store(StorehistoricalNormTransitRequest $request)
     {
         //
     }
@@ -42,10 +42,10 @@ class HistoricalNormTransitController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\historical_Norm_Transit  $historical_Norm_Transit
+     * @param  \App\Models\historicalNormTransit  $historicalNormTransit
      * @return \Illuminate\Http\Response
      */
-    public function show(historical_Norm_Transit $historical_Norm_Transit)
+    public function show(historicalNormTransit $historicalNormTransit)
     {
         //
     }
@@ -53,10 +53,10 @@ class HistoricalNormTransitController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\historical_Norm_Transit  $historical_Norm_Transit
+     * @param  \App\Models\historicalNormTransit  $historicalNormTransit
      * @return \Illuminate\Http\Response
      */
-    public function edit(historical_Norm_Transit $historical_Norm_Transit)
+    public function edit(historicalNormTransit $historicalNormTransit)
     {
         //
     }
@@ -64,11 +64,11 @@ class HistoricalNormTransitController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\Updatehistorical_Norm_TransitRequest  $request
-     * @param  \App\Models\historical_Norm_Transit  $historical_Norm_Transit
+     * @param  \App\Http\Requests\UpdatehistoricalNormTransitRequest  $request
+     * @param  \App\Models\historicalNormTransit  $historicalNormTransit
      * @return \Illuminate\Http\Response
      */
-    public function update(Updatehistorical_Norm_TransitRequest $request, historical_Norm_Transit $historical_Norm_Transit)
+    public function update(UpdatehistoricalNormTransitRequest $request, historicalNormTransit $historicalNormTransit)
     {
         //
     }
@@ -76,10 +76,10 @@ class HistoricalNormTransitController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\historical_Norm_Transit  $historical_Norm_Transit
+     * @param  \App\Models\historicalNormTransit  $historicalNormTransit
      * @return \Illuminate\Http\Response
      */
-    public function destroy(historical_Norm_Transit $historical_Norm_Transit)
+    public function destroy(historicalNormTransit $historicalNormTransit)
     {
         //
     }

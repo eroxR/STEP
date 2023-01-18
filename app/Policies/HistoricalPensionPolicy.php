@@ -3,7 +3,7 @@
 namespace App\Policies;
 
 use App\Models\User;
-use App\Models\historical_pension;
+use App\Models\historicalPension;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class HistoricalPensionPolicy
@@ -25,10 +25,10 @@ class HistoricalPensionPolicy
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\historical_pension  $historicalPension
+     * @param  \App\Models\historicalPension  $historicalPension
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, historical_pension $historicalPension)
+    public function view(User $user, historicalPension $historicalPension)
     {
         //
     }
@@ -48,10 +48,10 @@ class HistoricalPensionPolicy
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\historical_pension  $historicalPension
+     * @param  \App\Models\historicalPension  $historicalPension
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, historical_pension $historicalPension)
+    public function update(User $user, historicalPension $historicalPension)
     {
         //
     }
@@ -60,10 +60,10 @@ class HistoricalPensionPolicy
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\historical_pension  $historicalPension
+     * @param  \App\Models\historicalPension  $historicalPension
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, historical_pension $historicalPension)
+    public function delete(User $user, historicalPension $historicalPension)
     {
         //
     }
@@ -72,10 +72,10 @@ class HistoricalPensionPolicy
      * Determine whether the user can restore the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\historical_pension  $historicalPension
+     * @param  \App\Models\historicalPension  $historicalPension
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, historical_pension $historicalPension)
+    public function restore(User $user, historicalPension $historicalPension)
     {
         //
     }
@@ -84,10 +84,10 @@ class HistoricalPensionPolicy
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\historical_pension  $historicalPension
+     * @param  \App\Models\historicalPension  $historicalPension
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, historical_pension $historicalPension)
+    public function forceDelete(User $user, historicalPension $historicalPension)
     {
         //
     }

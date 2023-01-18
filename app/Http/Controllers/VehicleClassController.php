@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\vehicle_class;
-use App\Http\Requests\Storevehicle_classRequest;
-use App\Http\Requests\Updatevehicle_classRequest;
+use App\Models\vehicleClass;
+use App\Http\Requests\StorevehicleClassRequest;
+use App\Http\Requests\UpdatevehicleClassRequest;
 
 class VehicleClassController extends Controller
 {
@@ -31,10 +31,10 @@ class VehicleClassController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\Storevehicle_classRequest  $request
+     * @param  \App\Http\Requests\StorevehicleClassRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Storevehicle_classRequest $request)
+    public function store(StorevehicleClassRequest $request)
     {
         //
     }
@@ -42,10 +42,10 @@ class VehicleClassController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\vehicle_class  $vehicle_class
+     * @param  \App\Models\vehicleClass  $vehicleClass
      * @return \Illuminate\Http\Response
      */
-    public function show(vehicle_class $vehicle_class)
+    public function show(vehicleClass $vehicleClass)
     {
         //
     }
@@ -53,10 +53,10 @@ class VehicleClassController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\vehicle_class  $vehicle_class
+     * @param  \App\Models\vehicleClass  $vehicleClass
      * @return \Illuminate\Http\Response
      */
-    public function edit(vehicle_class $vehicle_class)
+    public function edit(vehicleClass $vehicleClass)
     {
         //
     }
@@ -64,11 +64,11 @@ class VehicleClassController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\Updatevehicle_classRequest  $request
-     * @param  \App\Models\vehicle_class  $vehicle_class
+     * @param  \App\Http\Requests\UpdatevehicleClassRequest  $request
+     * @param  \App\Models\vehicleClass  $vehicleClass
      * @return \Illuminate\Http\Response
      */
-    public function update(Updatevehicle_classRequest $request, vehicle_class $vehicle_class)
+    public function update(UpdatevehicleClassRequest $request, vehicleClass $vehicleClass)
     {
         //
     }
@@ -76,10 +76,10 @@ class VehicleClassController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\vehicle_class  $vehicle_class
+     * @param  \App\Models\vehicleClass  $vehicleClass
      * @return \Illuminate\Http\Response
      */
-    public function destroy(vehicle_class $vehicle_class)
+    public function destroy(vehicleClass $vehicleClass)
     {
         //
     }

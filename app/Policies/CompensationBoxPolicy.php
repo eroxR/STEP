@@ -3,7 +3,7 @@
 namespace App\Policies;
 
 use App\Models\User;
-use App\Models\compensation_box;
+use App\Models\compensationBox;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class CompensationBoxPolicy
@@ -25,10 +25,10 @@ class CompensationBoxPolicy
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\compensation_box  $compensationBox
+     * @param  \App\Models\compensationBox  $compensationBox
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, compensation_box $compensationBox)
+    public function view(User $user, compensationBox $compensationBox)
     {
         //
     }
@@ -48,10 +48,10 @@ class CompensationBoxPolicy
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\compensation_box  $compensationBox
+     * @param  \App\Models\compensationBox  $compensationBox
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, compensation_box $compensationBox)
+    public function update(User $user, compensationBox $compensationBox)
     {
         //
     }
@@ -60,10 +60,10 @@ class CompensationBoxPolicy
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\compensation_box  $compensationBox
+     * @param  \App\Models\compensationBox  $compensationBox
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, compensation_box $compensationBox)
+    public function delete(User $user, compensationBox $compensationBox)
     {
         //
     }
@@ -72,10 +72,10 @@ class CompensationBoxPolicy
      * Determine whether the user can restore the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\compensation_box  $compensationBox
+     * @param  \App\Models\compensationBox  $compensationBox
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, compensation_box $compensationBox)
+    public function restore(User $user, compensationBox $compensationBox)
     {
         //
     }
@@ -84,10 +84,10 @@ class CompensationBoxPolicy
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\compensation_box  $compensationBox
+     * @param  \App\Models\compensationBox  $compensationBox
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, compensation_box $compensationBox)
+    public function forceDelete(User $user, compensationBox $compensationBox)
     {
         //
     }

@@ -3,7 +3,7 @@
 namespace App\Policies;
 
 use App\Models\User;
-use App\Models\historical_Land_Transport_Standards;
+use App\Models\historicalLandTransportStandards;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class HistoricalLandTransportStandardsPolicy
@@ -25,10 +25,10 @@ class HistoricalLandTransportStandardsPolicy
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\historical_Land_Transport_Standards  $historicalLandTransportStandards
+     * @param  \App\Models\historicalLandTransportStandards  $historicalLandTransportStandards
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, historical_Land_Transport_Standards $historicalLandTransportStandards)
+    public function view(User $user, historicalLandTransportStandards $historicalLandTransportStandards)
     {
         //
     }
@@ -48,10 +48,10 @@ class HistoricalLandTransportStandardsPolicy
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\historical_Land_Transport_Standards  $historicalLandTransportStandards
+     * @param  \App\Models\historicalLandTransportStandards  $historicalLandTransportStandards
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, historical_Land_Transport_Standards $historicalLandTransportStandards)
+    public function update(User $user, historicalLandTransportStandards $historicalLandTransportStandards)
     {
         //
     }
@@ -60,10 +60,10 @@ class HistoricalLandTransportStandardsPolicy
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\historical_Land_Transport_Standards  $historicalLandTransportStandards
+     * @param  \App\Models\historicalLandTransportStandards  $historicalLandTransportStandards
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, historical_Land_Transport_Standards $historicalLandTransportStandards)
+    public function delete(User $user, historicalLandTransportStandards $historicalLandTransportStandards)
     {
         //
     }
@@ -72,10 +72,10 @@ class HistoricalLandTransportStandardsPolicy
      * Determine whether the user can restore the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\historical_Land_Transport_Standards  $historicalLandTransportStandards
+     * @param  \App\Models\historicalLandTransportStandards  $historicalLandTransportStandards
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, historical_Land_Transport_Standards $historicalLandTransportStandards)
+    public function restore(User $user, historicalLandTransportStandards $historicalLandTransportStandards)
     {
         //
     }
@@ -84,10 +84,10 @@ class HistoricalLandTransportStandardsPolicy
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\historical_Land_Transport_Standards  $historicalLandTransportStandards
+     * @param  \App\Models\historicalLandTransportStandards  $historicalLandTransportStandards
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, historical_Land_Transport_Standards $historicalLandTransportStandards)
+    public function forceDelete(User $user, historicalLandTransportStandards $historicalLandTransportStandards)
     {
         //
     }

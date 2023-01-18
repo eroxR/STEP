@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\work_area;
-use App\Http\Requests\Storework_areaRequest;
-use App\Http\Requests\Updatework_areaRequest;
+use App\Models\workArea;
+use App\Http\Requests\StoreworkAreaRequest;
+use App\Http\Requests\UpdateworkAreaRequest;
 
 class WorkAreaController extends Controller
 {
@@ -31,10 +31,10 @@ class WorkAreaController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\Storework_areaRequest  $request
+     * @param  \App\Http\Requests\StoreworkAreaRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Storework_areaRequest $request)
+    public function store(StoreworkAreaRequest $request)
     {
         //
     }
@@ -42,10 +42,10 @@ class WorkAreaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\work_area  $work_area
+     * @param  \App\Models\workArea  $workArea
      * @return \Illuminate\Http\Response
      */
-    public function show(work_area $work_area)
+    public function show(workArea $workArea)
     {
         //
     }
@@ -53,10 +53,10 @@ class WorkAreaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\work_area  $work_area
+     * @param  \App\Models\workArea  $workArea
      * @return \Illuminate\Http\Response
      */
-    public function edit(work_area $work_area)
+    public function edit(workArea $workArea)
     {
         //
     }
@@ -64,11 +64,11 @@ class WorkAreaController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\Updatework_areaRequest  $request
-     * @param  \App\Models\work_area  $work_area
+     * @param  \App\Http\Requests\UpdateworkAreaRequest  $request
+     * @param  \App\Models\workArea  $workArea
      * @return \Illuminate\Http\Response
      */
-    public function update(Updatework_areaRequest $request, work_area $work_area)
+    public function update(UpdateworkAreaRequest $request, workArea $workArea)
     {
         //
     }
@@ -76,10 +76,10 @@ class WorkAreaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\work_area  $work_area
+     * @param  \App\Models\workArea  $workArea
      * @return \Illuminate\Http\Response
      */
-    public function destroy(work_area $work_area)
+    public function destroy(workArea $workArea)
     {
         //
     }

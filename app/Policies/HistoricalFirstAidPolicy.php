@@ -3,7 +3,7 @@
 namespace App\Policies;
 
 use App\Models\User;
-use App\Models\historical_First_Aid;
+use App\Models\historicalFirst_Aid;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class HistoricalFirstAidPolicy
@@ -25,10 +25,10 @@ class HistoricalFirstAidPolicy
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\historical_First_Aid  $historicalFirstAid
+     * @param  \App\Models\historicalFirst_Aid  $historicalFirstAid
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, historical_First_Aid $historicalFirstAid)
+    public function view(User $user, historicalFirst_Aid $historicalFirstAid)
     {
         //
     }
@@ -48,10 +48,10 @@ class HistoricalFirstAidPolicy
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\historical_First_Aid  $historicalFirstAid
+     * @param  \App\Models\historicalFirst_Aid  $historicalFirstAid
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, historical_First_Aid $historicalFirstAid)
+    public function update(User $user, historicalFirst_Aid $historicalFirstAid)
     {
         //
     }
@@ -60,10 +60,10 @@ class HistoricalFirstAidPolicy
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\historical_First_Aid  $historicalFirstAid
+     * @param  \App\Models\historicalFirst_Aid  $historicalFirstAid
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, historical_First_Aid $historicalFirstAid)
+    public function delete(User $user, historicalFirst_Aid $historicalFirstAid)
     {
         //
     }
@@ -72,10 +72,10 @@ class HistoricalFirstAidPolicy
      * Determine whether the user can restore the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\historical_First_Aid  $historicalFirstAid
+     * @param  \App\Models\historicalFirst_Aid  $historicalFirstAid
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, historical_First_Aid $historicalFirstAid)
+    public function restore(User $user, historicalFirst_Aid $historicalFirstAid)
     {
         //
     }
@@ -84,10 +84,10 @@ class HistoricalFirstAidPolicy
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\historical_First_Aid  $historicalFirstAid
+     * @param  \App\Models\historicalFirst_Aid  $historicalFirstAid
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, historical_First_Aid $historicalFirstAid)
+    public function forceDelete(User $user, historicalFirst_Aid $historicalFirstAid)
     {
         //
     }

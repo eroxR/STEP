@@ -3,7 +3,7 @@
 namespace App\Policies;
 
 use App\Models\User;
-use App\Models\historical_Distractions;
+use App\Models\historicalDistractions;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class HistoricalDistractionsPolicy
@@ -25,10 +25,10 @@ class HistoricalDistractionsPolicy
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\historical_Distractions  $historicalDistractions
+     * @param  \App\Models\historicalDistractions  $historicalDistractions
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, historical_Distractions $historicalDistractions)
+    public function view(User $user, historicalDistractions $historicalDistractions)
     {
         //
     }
@@ -48,10 +48,10 @@ class HistoricalDistractionsPolicy
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\historical_Distractions  $historicalDistractions
+     * @param  \App\Models\historicalDistractions  $historicalDistractions
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, historical_Distractions $historicalDistractions)
+    public function update(User $user, historicalDistractions $historicalDistractions)
     {
         //
     }
@@ -60,10 +60,10 @@ class HistoricalDistractionsPolicy
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\historical_Distractions  $historicalDistractions
+     * @param  \App\Models\historicalDistractions  $historicalDistractions
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, historical_Distractions $historicalDistractions)
+    public function delete(User $user, historicalDistractions $historicalDistractions)
     {
         //
     }
@@ -72,10 +72,10 @@ class HistoricalDistractionsPolicy
      * Determine whether the user can restore the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\historical_Distractions  $historicalDistractions
+     * @param  \App\Models\historicalDistractions  $historicalDistractions
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, historical_Distractions $historicalDistractions)
+    public function restore(User $user, historicalDistractions $historicalDistractions)
     {
         //
     }
@@ -84,10 +84,10 @@ class HistoricalDistractionsPolicy
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\historical_Distractions  $historicalDistractions
+     * @param  \App\Models\historicalDistractions  $historicalDistractions
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, historical_Distractions $historicalDistractions)
+    public function forceDelete(User $user, historicalDistractions $historicalDistractions)
     {
         //
     }

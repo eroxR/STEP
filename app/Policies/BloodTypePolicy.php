@@ -3,7 +3,7 @@
 namespace App\Policies;
 
 use App\Models\User;
-use App\Models\blood_type;
+use App\Models\bloodType;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class BloodTypePolicy
@@ -25,10 +25,10 @@ class BloodTypePolicy
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\blood_type  $bloodType
+     * @param  \App\Models\bloodType  $bloodType
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, blood_type $bloodType)
+    public function view(User $user, bloodType $bloodType)
     {
         //
     }
@@ -48,10 +48,10 @@ class BloodTypePolicy
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\blood_type  $bloodType
+     * @param  \App\Models\bloodType  $bloodType
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, blood_type $bloodType)
+    public function update(User $user, bloodType $bloodType)
     {
         //
     }
@@ -60,10 +60,10 @@ class BloodTypePolicy
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\blood_type  $bloodType
+     * @param  \App\Models\bloodType  $bloodType
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, blood_type $bloodType)
+    public function delete(User $user, bloodType $bloodType)
     {
         //
     }
@@ -72,10 +72,10 @@ class BloodTypePolicy
      * Determine whether the user can restore the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\blood_type  $bloodType
+     * @param  \App\Models\bloodType  $bloodType
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, blood_type $bloodType)
+    public function restore(User $user, bloodType $bloodType)
     {
         //
     }
@@ -84,10 +84,10 @@ class BloodTypePolicy
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\blood_type  $bloodType
+     * @param  \App\Models\bloodType  $bloodType
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, blood_type $bloodType)
+    public function forceDelete(User $user, bloodType $bloodType)
     {
         //
     }

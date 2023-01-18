@@ -16,7 +16,6 @@ class LayoffsSeeder extends Seeder
     public function run()
     {
         //
-
         $cesantias1 = new layoffs();
         $cesantias1->description_layoffs="Askandia S.A.";
         $cesantias1->save();

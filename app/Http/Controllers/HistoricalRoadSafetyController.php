@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\historical_road_safety;
-use App\Http\Requests\Storehistorical_road_safetyRequest;
-use App\Http\Requests\Updatehistorical_road_safetyRequest;
+use App\Models\historicalRoadSafety;
+use App\Http\Requests\StorehistoricalRoadSafetyRequest;
+use App\Http\Requests\UpdatehistoricalRoadSafetyRequest;
 
 class HistoricalRoadSafetyController extends Controller
 {
@@ -31,10 +31,10 @@ class HistoricalRoadSafetyController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\Storehistorical_road_safetyRequest  $request
+     * @param  \App\Http\Requests\StorehistoricalRoadSafetyRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Storehistorical_road_safetyRequest $request)
+    public function store(StorehistoricalRoadSafetyRequest $request)
     {
         //
     }
@@ -42,10 +42,10 @@ class HistoricalRoadSafetyController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\historical_road_safety  $historical_road_safety
+     * @param  \App\Models\historicalRoadSafety  $historicalRoadSafety
      * @return \Illuminate\Http\Response
      */
-    public function show(historical_road_safety $historical_road_safety)
+    public function show(historicalRoadSafety $historicalRoadSafety)
     {
         //
     }
@@ -53,10 +53,10 @@ class HistoricalRoadSafetyController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\historical_road_safety  $historical_road_safety
+     * @param  \App\Models\historicalRoadSafety  $historicalRoadSafety
      * @return \Illuminate\Http\Response
      */
-    public function edit(historical_road_safety $historical_road_safety)
+    public function edit(historicalRoadSafety $historicalRoadSafety)
     {
         //
     }
@@ -64,11 +64,11 @@ class HistoricalRoadSafetyController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\Updatehistorical_road_safetyRequest  $request
-     * @param  \App\Models\historical_road_safety  $historical_road_safety
+     * @param  \App\Http\Requests\UpdatehistoricalRoadSafetyRequest  $request
+     * @param  \App\Models\historicalRoadSafety  $historicalRoadSafety
      * @return \Illuminate\Http\Response
      */
-    public function update(Updatehistorical_road_safetyRequest $request, historical_road_safety $historical_road_safety)
+    public function update(UpdatehistoricalRoadSafetyRequest $request, historicalRoadSafety $historicalRoadSafety)
     {
         //
     }
@@ -76,10 +76,10 @@ class HistoricalRoadSafetyController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\historical_road_safety  $historical_road_safety
+     * @param  \App\Models\historicalRoadSafety  $historicalRoadSafety
      * @return \Illuminate\Http\Response
      */
-    public function destroy(historical_road_safety $historical_road_safety)
+    public function destroy(historicalRoadSafety $historicalRoadSafety)
     {
         //
     }

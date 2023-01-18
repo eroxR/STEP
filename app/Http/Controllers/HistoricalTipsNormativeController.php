@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\historical_Tips_Normative;
-use App\Http\Requests\Storehistorical_Tips_NormativeRequest;
-use App\Http\Requests\Updatehistorical_Tips_NormativeRequest;
+use App\Models\historicalTipsNormative;
+use App\Http\Requests\StorehistoricalTipsNormativeRequest;
+use App\Http\Requests\UpdatehistoricalTipsNormativeRequest;
 
 class HistoricalTipsNormativeController extends Controller
 {
@@ -31,10 +31,10 @@ class HistoricalTipsNormativeController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\Storehistorical_Tips_NormativeRequest  $request
+     * @param  \App\Http\Requests\StorehistoricalTipsNormativeRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Storehistorical_Tips_NormativeRequest $request)
+    public function store(StorehistoricalTipsNormativeRequest $request)
     {
         //
     }
@@ -42,10 +42,10 @@ class HistoricalTipsNormativeController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\historical_Tips_Normative  $historical_Tips_Normative
+     * @param  \App\Models\historicalTipsNormative  $historicalTipsNormative
      * @return \Illuminate\Http\Response
      */
-    public function show(historical_Tips_Normative $historical_Tips_Normative)
+    public function show(historicalTipsNormative $historicalTipsNormative)
     {
         //
     }
@@ -53,10 +53,10 @@ class HistoricalTipsNormativeController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\historical_Tips_Normative  $historical_Tips_Normative
+     * @param  \App\Models\historicalTipsNormative  $historicalTipsNormative
      * @return \Illuminate\Http\Response
      */
-    public function edit(historical_Tips_Normative $historical_Tips_Normative)
+    public function edit(historicalTipsNormative $historicalTipsNormative)
     {
         //
     }
@@ -64,11 +64,11 @@ class HistoricalTipsNormativeController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\Updatehistorical_Tips_NormativeRequest  $request
-     * @param  \App\Models\historical_Tips_Normative  $historical_Tips_Normative
+     * @param  \App\Http\Requests\UpdatehistoricalTipsNormativeRequest  $request
+     * @param  \App\Models\historicalTipsNormative  $historicalTipsNormative
      * @return \Illuminate\Http\Response
      */
-    public function update(Updatehistorical_Tips_NormativeRequest $request, historical_Tips_Normative $historical_Tips_Normative)
+    public function update(UpdatehistoricalTipsNormativeRequest $request, historicalTipsNormative $historicalTipsNormative)
     {
         //
     }
@@ -76,10 +76,10 @@ class HistoricalTipsNormativeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\historical_Tips_Normative  $historical_Tips_Normative
+     * @param  \App\Models\historicalTipsNormative  $historicalTipsNormative
      * @return \Illuminate\Http\Response
      */
-    public function destroy(historical_Tips_Normative $historical_Tips_Normative)
+    public function destroy(historicalTipsNormative $historicalTipsNormative)
     {
         //
     }

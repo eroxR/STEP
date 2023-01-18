@@ -5,7 +5,7 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\historical_Safety_Active_Passive_Vehicles>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\historicalSafetyActivePassiveVehicles>
  */
 class HistoricalSafetyActivePassiveVehiclesFactory extends Factory
 {

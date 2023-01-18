@@ -5,7 +5,7 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\historical_eps>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\historicalEps>
  */
 class HistoricalEpsFactory extends Factory
 {

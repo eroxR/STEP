@@ -17,19 +17,27 @@ class UsertypeSeeder extends Seeder
     {
         //
         $tipousuario1 = new usertype();
-		$tipousuario1->description_usertype="Aspirante";
+		$tipousuario1->description_usertype = "Cliente";
 		$tipousuario1->save();
 
 		$tipousuario2 = new usertype();
-		$tipousuario2->description_usertype="Cliente";
+		$tipousuario2->description_usertype = "Empleado";
 		$tipousuario2->save();
 
 		$tipousuario3 = new usertype();
-		$tipousuario3->description_usertype="Empleado";
+		$tipousuario3->description_usertype = "Proveedor";
 		$tipousuario3->save();
 
 		$tipousuario4 = new usertype();
-		$tipousuario4->description_usertype="Proveedor";	
+		$tipousuario4->description_usertype = "Vinculado";
 		$tipousuario4->save();
+
+		$tipousuario5 = new usertype();
+		$tipousuario5->description_usertype="Administrador";
+		$tipousuario5->save();
+
+        //$tipousuario5 = new usertype();
+		//$tipousuario5->description_usertype="Aspirante";
+		//$tipousuario5->save();
     }
 }

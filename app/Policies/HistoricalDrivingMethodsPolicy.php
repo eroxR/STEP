@@ -3,7 +3,7 @@
 namespace App\Policies;
 
 use App\Models\User;
-use App\Models\historical_Driving_Methods;
+use App\Models\historicalDrivingMethods;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class HistoricalDrivingMethodsPolicy
@@ -25,10 +25,10 @@ class HistoricalDrivingMethodsPolicy
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\historical_Driving_Methods  $historicalDrivingMethods
+     * @param  \App\Models\historicalDrivingMethods  $historicalDrivingMethods
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, historical_Driving_Methods $historicalDrivingMethods)
+    public function view(User $user, historicalDrivingMethods $historicalDrivingMethods)
     {
         //
     }
@@ -48,10 +48,10 @@ class HistoricalDrivingMethodsPolicy
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\historical_Driving_Methods  $historicalDrivingMethods
+     * @param  \App\Models\historicalDrivingMethods  $historicalDrivingMethods
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, historical_Driving_Methods $historicalDrivingMethods)
+    public function update(User $user, historicalDrivingMethods $historicalDrivingMethods)
     {
         //
     }
@@ -60,10 +60,10 @@ class HistoricalDrivingMethodsPolicy
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\historical_Driving_Methods  $historicalDrivingMethods
+     * @param  \App\Models\historicalDrivingMethods  $historicalDrivingMethods
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, historical_Driving_Methods $historicalDrivingMethods)
+    public function delete(User $user, historicalDrivingMethods $historicalDrivingMethods)
     {
         //
     }
@@ -72,10 +72,10 @@ class HistoricalDrivingMethodsPolicy
      * Determine whether the user can restore the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\historical_Driving_Methods  $historicalDrivingMethods
+     * @param  \App\Models\historicalDrivingMethods  $historicalDrivingMethods
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, historical_Driving_Methods $historicalDrivingMethods)
+    public function restore(User $user, historicalDrivingMethods $historicalDrivingMethods)
     {
         //
     }
@@ -84,10 +84,10 @@ class HistoricalDrivingMethodsPolicy
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\historical_Driving_Methods  $historicalDrivingMethods
+     * @param  \App\Models\historicalDrivingMethods  $historicalDrivingMethods
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, historical_Driving_Methods $historicalDrivingMethods)
+    public function forceDelete(User $user, historicalDrivingMethods $historicalDrivingMethods)
     {
         //
     }

@@ -5,7 +5,7 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\compensation_box>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\compensationBox>
  */
 class CompensationBoxFactory extends Factory
 {

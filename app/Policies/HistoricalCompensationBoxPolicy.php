@@ -3,7 +3,7 @@
 namespace App\Policies;
 
 use App\Models\User;
-use App\Models\historical_compensation_box;
+use App\Models\historicalCompensationBox;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class HistoricalCompensationBoxPolicy
@@ -25,10 +25,10 @@ class HistoricalCompensationBoxPolicy
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\historical_compensation_box  $historicalCompensationBox
+     * @param  \App\Models\historicalCompensationBox  $historicalCompensationBox
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, historical_compensation_box $historicalCompensationBox)
+    public function view(User $user, historicalCompensationBox $historicalCompensationBox)
     {
         //
     }
@@ -48,10 +48,10 @@ class HistoricalCompensationBoxPolicy
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\historical_compensation_box  $historicalCompensationBox
+     * @param  \App\Models\historicalCompensationBox  $historicalCompensationBox
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, historical_compensation_box $historicalCompensationBox)
+    public function update(User $user, historicalCompensationBox $historicalCompensationBox)
     {
         //
     }
@@ -60,10 +60,10 @@ class HistoricalCompensationBoxPolicy
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\historical_compensation_box  $historicalCompensationBox
+     * @param  \App\Models\historicalCompensationBox  $historicalCompensationBox
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, historical_compensation_box $historicalCompensationBox)
+    public function delete(User $user, historicalCompensationBox $historicalCompensationBox)
     {
         //
     }
@@ -72,10 +72,10 @@ class HistoricalCompensationBoxPolicy
      * Determine whether the user can restore the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\historical_compensation_box  $historicalCompensationBox
+     * @param  \App\Models\historicalCompensationBox  $historicalCompensationBox
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, historical_compensation_box $historicalCompensationBox)
+    public function restore(User $user, historicalCompensationBox $historicalCompensationBox)
     {
         //
     }
@@ -84,10 +84,10 @@ class HistoricalCompensationBoxPolicy
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\historical_compensation_box  $historicalCompensationBox
+     * @param  \App\Models\historicalCompensationBox  $historicalCompensationBox
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, historical_compensation_box $historicalCompensationBox)
+    public function forceDelete(User $user, historicalCompensationBox $historicalCompensationBox)
     {
         //
     }

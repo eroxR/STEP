@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\contract_type;
-use App\Http\Requests\Storecontract_typeRequest;
-use App\Http\Requests\Updatecontract_typeRequest;
+use App\Models\contractType;
+use App\Http\Requests\StorecontractTypeRequest;
+use App\Http\Requests\UpdatecontractTypeRequest;
 
 class ContractTypeController extends Controller
 {
@@ -31,10 +31,10 @@ class ContractTypeController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\Storecontract_typeRequest  $request
+     * @param  \App\Http\Requests\StorecontractTypeRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Storecontract_typeRequest $request)
+    public function store(StorecontractTypeRequest $request)
     {
         //
     }
@@ -42,10 +42,10 @@ class ContractTypeController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\contract_type  $contract_type
+     * @param  \App\Models\contractType  $contractType
      * @return \Illuminate\Http\Response
      */
-    public function show(contract_type $contract_type)
+    public function show(contractType $contractType)
     {
         //
     }
@@ -53,10 +53,10 @@ class ContractTypeController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\contract_type  $contract_type
+     * @param  \App\Models\contractType  $contractType
      * @return \Illuminate\Http\Response
      */
-    public function edit(contract_type $contract_type)
+    public function edit(contractType $contractType)
     {
         //
     }
@@ -64,11 +64,11 @@ class ContractTypeController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\Updatecontract_typeRequest  $request
-     * @param  \App\Models\contract_type  $contract_type
+     * @param  \App\Http\Requests\UpdatecontractTypeRequest  $request
+     * @param  \App\Models\contractType  $contractType
      * @return \Illuminate\Http\Response
      */
-    public function update(Updatecontract_typeRequest $request, contract_type $contract_type)
+    public function update(UpdatecontractTypeRequest $request, contractType $contractType)
     {
         //
     }
@@ -76,10 +76,10 @@ class ContractTypeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\contract_type  $contract_type
+     * @param  \App\Models\contractType  $contractType
      * @return \Illuminate\Http\Response
      */
-    public function destroy(contract_type $contract_type)
+    public function destroy(contractType $contractType)
     {
         //
     }

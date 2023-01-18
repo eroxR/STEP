@@ -3,7 +3,7 @@
 namespace App\Policies;
 
 use App\Models\User;
-use App\Models\historical_First_Responder;
+use App\Models\historicalFirstResponder;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class HistoricalFirstResponderPolicy
@@ -25,10 +25,10 @@ class HistoricalFirstResponderPolicy
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\historical_First_Responder  $historicalFirstResponder
+     * @param  \App\Models\historicalFirstResponder  $historicalFirstResponder
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, historical_First_Responder $historicalFirstResponder)
+    public function view(User $user, historicalFirstResponder $historicalFirstResponder)
     {
         //
     }
@@ -48,10 +48,10 @@ class HistoricalFirstResponderPolicy
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\historical_First_Responder  $historicalFirstResponder
+     * @param  \App\Models\historicalFirstResponder  $historicalFirstResponder
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, historical_First_Responder $historicalFirstResponder)
+    public function update(User $user, historicalFirstResponder $historicalFirstResponder)
     {
         //
     }
@@ -60,10 +60,10 @@ class HistoricalFirstResponderPolicy
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\historical_First_Responder  $historicalFirstResponder
+     * @param  \App\Models\historicalFirstResponder  $historicalFirstResponder
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, historical_First_Responder $historicalFirstResponder)
+    public function delete(User $user, historicalFirstResponder $historicalFirstResponder)
     {
         //
     }
@@ -72,10 +72,10 @@ class HistoricalFirstResponderPolicy
      * Determine whether the user can restore the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\historical_First_Responder  $historicalFirstResponder
+     * @param  \App\Models\historicalFirstResponder  $historicalFirstResponder
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, historical_First_Responder $historicalFirstResponder)
+    public function restore(User $user, historicalFirstResponder $historicalFirstResponder)
     {
         //
     }
@@ -84,10 +84,10 @@ class HistoricalFirstResponderPolicy
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\historical_First_Responder  $historicalFirstResponder
+     * @param  \App\Models\historicalFirstResponder  $historicalFirstResponder
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, historical_First_Responder $historicalFirstResponder)
+    public function forceDelete(User $user, historicalFirstResponder $historicalFirstResponder)
     {
         //
     }
