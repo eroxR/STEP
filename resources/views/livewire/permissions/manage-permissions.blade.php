@@ -4,7 +4,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="justify-center flex">
                 {{-- class="bg-white overflow-hidden shadow-xl sm:rounded-lg border-gray-50-s dark:bg-gray-800 dark:text-white" --}}
-                <h1 class="text-black dark:text-white text-4xl rounded-lg border-b-yellow-800 p-1">Manage Permissions
+                <h1 class="text-black dark:text-white text-4xl rounded-lg border-b-yellow-800 p-1">{{ __('Manage Permissions') }}
                 </h1>
             </div>
         </div>
@@ -17,7 +17,7 @@
 
                 <button @click="openModal"
                     class="px-2 py-1 font-semibold leading-tight text-black bg-sky-700 rounded-full dark:bg-sky-700 dark:text-white">
-                    create new permit
+                    {{ __('create new permit') }}
                 </button>
             </div>
 
@@ -45,7 +45,7 @@
                                 </th> --}}
                                 <th class="cursor-pointer px-4 py-3" wire:click="order('permit_number')">
 
-                                    permit number
+                                    {{ __('permit number') }}
 
                                     @if ($sort == 'permit_number')
 
@@ -61,7 +61,7 @@
                                 </th>
                                 <th class="cursor-pointer px-4 py-3" wire:click="order('contract_number')">
 
-                                    contract number
+                                    {{ __('contract number') }}
 
                                     @if ($sort == 'contract_number')
 
@@ -77,7 +77,7 @@
                                 </th>
                                 <th class="cursor-pointer px-4 py-3" wire:click="order('description_typeContract')">
 
-                                    description typeContract
+                                    {{ __('description typeContract') }}
 
                                     @if ($sort == 'description_typeContract')
 
@@ -93,7 +93,7 @@
                                 </th>
                                 <th class="cursor-pointer px-4 py-3" wire:click="order('permit_start_ate')">
 
-                                    permit start date
+                                    {{ __('permit start date') }}
 
                                     @if ($sort == 'permit_start_ate')
 
@@ -109,7 +109,7 @@
                                 </th>
                                 <th class="cursor-pointer px-4 py-3" wire:click="order('permit_end_date')">
 
-                                    permit end date
+                                    {{ __('permit end date') }}
 
                                     @if ($sort == 'permit_end_date')
 
@@ -125,7 +125,7 @@
                                 </th>
                                 <th class="cursor-pointer px-4 py-3" wire:click="order('fuec_state')">
 
-                                    fuec state
+                                    {{ __('fuec state') }}
 
                                     @if ($sort == 'fuec_state')
 
@@ -139,7 +139,7 @@
                                     @endif
 
                                 </th>
-                                <th class="px-4 py-3">Actions</th>
+                                <th class="px-4 py-3">{{ __('Actions') }}</th>
                             </tr>
                         </thead>
                         <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
@@ -347,11 +347,14 @@
             <header class="flex justify-center border-b-fuchsia-800 border-b">
                 <!-- Modal title -->
                 <p class="justify-start mb-2 text-lg font-semibold text-gray-700 dark:text-gray-300">
-                <h1 class="text-black dark:text-white text-4xl">Creating new permit<span class="typed"></span>
+                <h1 class="text-black dark:text-white text-4xl1">{{ __('Creating new permit') }}<span id="typed2" class="typed2">.</span>
+                    <span id="typed3" class="typed3">.</span>
+                    <span id="typed4" class="typed4">.</span>
+                    <span id="typed5" class="typed5">.</span>
                 </h1>
                 </p>
                 <button
-                    class="ml-auto px-5 py-3 text-sm font-medium leading-5 rounded-lg sm:w-auto sm:px-4 sm:py-2 bg-red-600 active:bg-red-600 hover:bg-red-700 focus:outline-none focus:shadow-outline-purple text-white"
+                    class="ml-auto px-5-1 py-3-1 text-sm  rounded-lg  bg-red-600 active:bg-red-600 hover:bg-red-700 focus:outline-none focus:shadow-outline-purple text-white"
                     aria-label="close" x-on:click="closeModal"onclick="limpiar(),restart();" wire:click="clear">
                     <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" role="img" aria-hidden="true">
                         <path
@@ -431,8 +434,7 @@
 
                                 <div class="w-6-12">
 
-                                    <label class="text-gray-700 dark:text-gray-400">Selecciona el tipo de
-                                        contrato</label>
+                                    <label class="text-gray-700 dark:text-gray-400">Selecciona el tipo de contrato</label>
 
                                     <select wire:model="typeContract" name="typeContract" id="typeContract"
                                         onchange="contractType()"
@@ -475,7 +477,7 @@
 
                                 <div class="w-6-12" id="divPermitStartDate" onchange="changeDate()">
                                     <label class="Inactive text-gray-700 dark:text-gray-400"
-                                        id="labelPermitStartDate">permit_start_date</label>
+                                        id="labelPermitStartDate">{{ __('permit start date') }}</label>
 
                                     <input readonly
                                         class="Inactive block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -486,7 +488,7 @@
 
                                 <div class="w-6-12" id="divPermitEndDate" onchange="changeDate()">
                                     <label class="Inactive text-gray-700 dark:text-gray-400"
-                                        id="labelPermitEndDate">permit_end_date</label>
+                                        id="labelPermitEndDate">{{ __('permit end date') }}</label>
 
                                     <input readonly
                                         class="Inactive block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -502,8 +504,8 @@
                                 <div class="w-full Inactive" id="divchangeDate">
                                     <label
                                         class="ml-26 px-2 font-semibold leading-tight text-red-700 bg-red-100 rounded-full dark:text-red-100 dark:bg-red-700"
-                                        id=""> You have changed your contract, remember to check the
-                                        dates</label> {{-- Has cambiado de contrato, recuerda verificar las fechas --}}
+                                        id=""> {{ __('You have changed your contract, remember to check the dates') }}
+                                    </label> 
                                 </div>
 
                             </div>
@@ -528,8 +530,8 @@
                                         conductor</label>
                                     <button id="chooseDrivers"
                                         class="Inactive ml-1-5 px-2 py-1 font-semibold leading-tight text-black bg-sky-700 rounded-full dark:bg-sky-700 dark:text-white"
-                                        type="button" onclick="enable('select2','chooseDrivers')">choose
-                                        drivers</button>
+                                        type="button" onclick="enable('select2','chooseDrivers')">{{ __('choose drivers') }}
+                                    </button>
 
                                     <select wire:model="driving" id="driving" name="driving" style="width: 100%"
                                         onchange="selectDriving()" class="select2 " multiple="muliple">
@@ -563,18 +565,19 @@
 
                                 <div class="w-full" id="divCars">
 
-                                    <label class="text-gray-700 dark:text-gray-400" id="labelCars">Selecciona los
-                                        Vehiculos</label>
+                                    <label class="text-gray-700 dark:text-gray-400" id="labelCars">Selecciona los Vehiculos
+                                    </label>
                                     <button id="chooseVehicles"
                                         class="Inactive ml-1-5 px-2 py-1 font-semibold leading-tight text-black bg-sky-700 rounded-full dark:bg-sky-700 dark:text-white"
-                                        type="button" onclick="enable('car','chooseVehicles')">choose
-                                        vehicles</button>
+                                        type="button" onclick="enable('car','chooseVehicles')">{{ __('choose vehicles') }}
+                                    </button>
 
                                     <select wire:model="cars" name="cars" style="width: 100%;" id="cars"
                                         onchange="selectCars()" class="car bg-green-700 bg-opacity-50"
                                         multiple="muliple">
                                         @foreach ($vehicles as $vehicle)
-                                            <option value="{{ $vehicle->id }}">placa: {{ $vehicle->plate_vehicle }}
+                                            <option value="{{ $vehicle->id }}">
+                                                placa: {{ $vehicle->plate_vehicle }}
                                                 lateral: {{ $vehicle->side_vehicle }}
                                                 SOAT:{{ $vehicle->secure_end_date }}
                                                 {{-- fecha fin tecno: {{ $vehicle->technomechanical_end_date }} --}}
@@ -605,12 +608,12 @@
                 <button x-on:click="closeModal"
                     class="w-full px-5 py-3 text-sm font-medium leading-5 text-gray-700 transition-colors duration-150 border border-gray-300 rounded-lg dark:text-gray-400 sm:px-4 sm:py-2 sm:w-auto active:bg-transparent hover:border-gray-500 focus:border-gray-500 active:text-gray-500 focus:outline-none focus:shadow-outline-gray"
                     wire:click="clear" onclick="limpiar(),restart();">
-                    Cancel
+                    {{ __('Cancel') }}
                 </button>
                 <button id="btnStore"
                     class="Inactive w-full px-5 py-3 text-sm font-medium leading-5 transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg sm:w-auto sm:px-4 sm:py-2 active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
                     wire:click="store" onclick="restart()" x-on:click="closeModal">
-                    Accept
+                    {{ __('Generate Permit') }}
                 </button>
             </div>
         </div>
@@ -629,22 +632,47 @@
             x-transition:enter-start="opacity-0 transform translate-y-1/2" x-transition:enter-end="opacity-100"
             x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100"
             x-transition:leave-end="opacity-0  transform translate-y-1/2"
-            class="scroll w-9-12 h-4-7 mt-6 px-6 py-4  bg-white rounded-t-lg dark:bg-gray-800 sm:rounded-lg sm:m-4 overflow-x-hidden overflow-y-auto"
+            class="w-9-12 h-4-7 mt-6 px-6 py-4  bg-white rounded-t-lg dark:bg-gray-800 sm:rounded-lg sm:m-4 "
             role="dialog">
             <!-- Remove header if you don't want a close icon. Use modal body to place modal tile. -->
             <header class="flex justify-center border-b-fuchsia-800 border-b">
                 <!-- Modal title -->
                 <p class="justify-start mb-2 text-lg font-semibold text-gray-700 dark:text-gray-300">
-                <h1 class="text-black dark:text-white text-4xl1">editing permit information number
+                <h1 class="text-black dark:text-white text-4xl1">{{ __('editing permit information number') }}
                     @if (!is_null($editPermit))
                         {{ $editPermit->permit_number }},
                     @endif
-                    contract number
+                    {{ __('number contract') }}
                     @if (!is_null($editPermit))
-                        {{ $editContrat }} type
-                        {{ $editContratype }}
-                    @endif
-                    <span class="typed2"></span>
+                        {{ $editContrat }} {{ __('type') }}
+
+                        @switch($editContratype)
+                            @case(1)
+                            Colegios
+                            @break
+
+                            @case(2)
+                            Empresas
+                            @break
+
+                            @case(3)
+                            Empresa Turismo
+                            @break
+
+                            @case(4)
+                            Ocacionales
+                            @break
+
+                            @case(5)
+                            Usuarios de Servicios de Salud
+                            @break
+
+                            @default
+                        @endswitch
+                    @endif<span id="typed2" class="typed2">.</span>
+                    <span id="typed3" class="typed3">.</span>
+                    <span id="typed4" class="typed4">.</span>
+                    <span id="typed5" class="typed5">.</span>
                 </h1>
                 </p>
                 <button onclick="closeModalEdit()"
@@ -658,177 +686,184 @@
                 </button>
             </header>
             <!-- Modal body -->
-            <div class="mt-4 mb-6" wire:ignore.self>
-                <!-- Modal description -->
+            <div class="scroll h-4-7 overflow-y-auto">
+                <div class="mt-4 mb-6" wire:ignore.self>
+                    <!-- Modal description -->
 
-                @if (!is_null($editPermit))
-                    <form role="form" action="" method="post" id="editFrmPermit"
-                        class="f1 px-4 my-32 max-w-3xl mx-auto space-y-6">
+                    @if (!is_null($editPermit))
+                        <form role="form" action="" method="post" id="editFrmPermit"
+                            class="f1 px-4 my-32 max-w-3xl mx-auto space-y-6">
 
-                        <!-- Modal description -->
-                        <div
-                            class="-mt-11 border-gray-50-s container px-4 py-3 bg-white rounded-lg shadow-md dark:bg-gray-800 h-9 ">
+                            <!-- Modal description -->
+                            <div
+                                class="-mt-11 border-gray-50-s container px-4 py-3 bg-white rounded-lg shadow-md dark:bg-gray-800 h-9 ">
 
-                            <!--paso 1 edit-->
-                            <p class="text-sm text-gray-700 dark:text-gray-400">
-                                paso 1
-                            </p>
-                            <div class="border-ourple-50-s rounded-2xl p-4">
+                                <!--paso 1 edit-->
+                                <p class="text-sm text-gray-700 dark:text-gray-400">
+                                    paso 1
+                                </p>
+                                <div class="border-ourple-50-s rounded-2xl p-4">
 
-                                <div class="flex space-x-4">
+                                    <div class="flex space-x-4">
 
-                                    <div class="w-6-12">
+                                        <div class="w-6-12">
 
-                                        <label class="text-gray-700 dark:text-gray-400">Tipo de
-                                            contrato</label>
+                                            <label class="text-gray-700 dark:text-gray-400">Tipo de contrato
+                                            </label>
 
-                                        <div class="border-ourple-50-s rounded-2xl p-4">
-                                            <p class="text-sm text-gray-700 dark:text-gray-400">
-                                                {{ $editContratype }}
-                                            </p>
+                                            <div class="border-ourple-50-s rounded-2xl p-4">
+                                                <p class="text-sm text-gray-700 dark:text-gray-400">
+                                                    {{ $editContratype }}
+                                                </p>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="w-6-12">
+
+                                            <label class="text-gray-700 dark:text-gray-400">Numero de contrato
+                                            </label>
+
+                                            <div class="border-ourple-50-s rounded-2xl p-4">
+                                                <p class="text-sm text-gray-700 dark:text-gray-400">
+                                                    {{ $editContrat }}
+                                                </p>
+                                            </div>
+
                                         </div>
 
                                     </div>
 
-                                    <div class="w-6-12">
 
-                                        <label class="text-gray-700 dark:text-gray-400">Numero de
-                                            contrato</label>
+                                    <div class="flex space-x-4">
 
-                                        <div class="border-ourple-50-s rounded-2xl p-4">
-                                            <p class="text-sm text-gray-700 dark:text-gray-400">
-                                                {{ $editContrat }}
-                                            </p>
+                                        <div class="w-6-12">
+                                            <label class="text-gray-700 dark:text-gray-400">{{ __('permit start date') }}</label>
+
+                                            <input
+                                                class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                placeholder="fecha inicio permiso" type="date"
+                                                name="permit_start_date" wire:model="editPermit.permit_start_date" />
+                                        </div>
+
+                                        <div class="w-6-12">
+                                            <label class="text-gray-700 dark:text-gray-400">{{ __('permit end date') }}</label>
+
+                                            <input
+                                                class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                placeholder="fecha fin permiso" type="date" name="permit_end_date"
+                                                wire:model="editPermit.permit_end_date" />
                                         </div>
 
                                     </div>
 
                                 </div>
+                                <!--fin del paso 1 edit-->
 
+                                <br>
+                                <!---paso 2 edit-->
+                                <p class="text-sm text-gray-700 dark:text-gray-400">
+                                    paso 2
+                                </p>
+                                <div class="border-ourple-50-s rounded-2xl p-4">
 
-                                <div class="flex space-x-4">
+                                    <div class="flex space-x-4">
 
-                                    <div class="w-6-12">
-                                        <label class="text-gray-700 dark:text-gray-400">permit_start_date</label>
+                                        <div class="w-full">
 
-                                        <input
-                                            class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                            placeholder="fecha inicio permiso" type="date"
-                                            name="permit_start_date" wire:model="editPermit.permit_start_date" />
-                                    </div>
+                                            <div class="select-box-drive">
+                                                <div
+                                                    class="options-container-drive border-ourple-50-s dark:bg-gray-800">
+                                                    @foreach ($drivers as $driver)
+                                                        <div class="option-drive dark:bg-gray-800 dark:text-white">
+                                                            <input type="checkbox" name="driverConduc" id=""
+                                                                wire:model.defer="editDrives"
+                                                                value="{{ $driver->id }}">
+                                                            <label>
+                                                                CC. {{ $driver->identificationcard }} -
+                                                                Nombre: {{ $driver->nameFull }}</label>
+                                                        </div>
+                                                    @endforeach
 
-                                    <div class="w-6-12">
-                                        <label class="text-gray-700 dark:text-gray-400">permit_end_date</label>
+                                                </div>
 
-                                        <input
-                                            class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                            placeholder="fecha fin permiso" type="date" name="permit_end_date"
-                                            wire:model="editPermit.permit_end_date" />
+                                                <div
+                                                    class="selected-drive dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300 dark:focus:shadow-outline-gray form-input">
+                                                    Edita los conductores para este permiso
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
                                     </div>
 
                                 </div>
+                                <!--fin del paso 2 edit-->
+
+                                <!--paso fin edit-->
+                                <p class="text-sm text-gray-700 dark:text-gray-400">
+                                    paso fin
+                                </p>
+                                <div class="border-ourple-50-s rounded-2xl p-4">
+
+                                    <div class="flex space-x-4">
+
+                                        <div class="w-full">
+
+                                            <div class="select-box-vehicle">
+                                                <div
+                                                    class="options-container-vehicle border-ourple-50-s dark:bg-gray-800">
+                                                    @foreach ($vehicles as $vehicle)
+                                                        <div class="option-vehicle dark:bg-gray-800 dark:text-white">
+                                                            <input type="checkbox" name="carVheicle" id=""
+                                                                wire:model.defer="editCars"
+                                                                value="{{ $vehicle->id }}">
+                                                            <label>placa:
+                                                                {{ $vehicle->plate_vehicle }}-
+                                                                lateral: {{ $vehicle->side_vehicle }}-
+                                                                SOAT: {{ $vehicle->secure_end_date }}-
+                                                                fecha fin tecno:
+                                                                {{ $vehicle->technomechanical_end_date }}
+                                                            </label>
+                                                        </div>
+                                                    @endforeach
+                                                </div>
+
+                                                <div
+                                                    class="selected-vehicle dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300 dark:focus:shadow-outline-gray form-input">
+                                                    Edita los vehículos para este permiso
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <!--fin edit-->
 
                             </div>
-                            <!--fin del paso 1 edit-->
 
-                            <br>
-                            <!---paso 2 edit-->
-                            <p class="text-sm text-gray-700 dark:text-gray-400">
-                                paso 2
-                            </p>
-                            <div class="border-ourple-50-s rounded-2xl p-4">
-
-                                <div class="flex space-x-4">
-
-                                    <div class="w-full">
-
-                                        <div class="select-box-drive">
-                                            <div class="options-container-drive border-ourple-50-s dark:bg-gray-800">
-                                                @foreach ($drivers as $driver)
-                                                    <div class="option-drive dark:bg-gray-800 dark:text-white">
-                                                        <input type="checkbox" name="driverConduc" id=""
-                                                            wire:model.defer="editDrives"
-                                                            value="{{ $driver->id }}">
-                                                        <label>
-                                                            CC. {{ $driver->identificationcard }} -
-                                                            Nombre: {{ $driver->nameFull }}</label>
-                                                    </div>
-                                                @endforeach
-
-                                            </div>
-
-                                            <div
-                                                class="selected-drive dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300 dark:focus:shadow-outline-gray form-input">
-                                                Edita los conductores para este permiso
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-                            </div>
-                            <!--fin del paso 2 edit-->
-
-                            <!--paso fin edit-->
-                            <p class="text-sm text-gray-700 dark:text-gray-400">
-                                paso fin
-                            </p>
-                            <div class="border-ourple-50-s rounded-2xl p-4">
-
-                                <div class="flex space-x-4">
-
-                                    <div class="w-full">
-
-                                        <div class="select-box-vehicle">
-                                            <div class="options-container-vehicle border-ourple-50-s dark:bg-gray-800">
-                                                @foreach ($vehicles as $vehicle)
-                                                    <div class="option-vehicle dark:bg-gray-800 dark:text-white">
-                                                        <input type="checkbox" name="carVheicle" id=""
-                                                            wire:model.defer="editCars" value="{{ $vehicle->id }}">
-                                                        <label>placa:
-                                                            {{ $vehicle->plate_vehicle }}-
-                                                            lateral: {{ $vehicle->side_vehicle }}-
-                                                            SOAT: {{ $vehicle->secure_end_date }}-
-                                                            fecha fin tecno: {{ $vehicle->technomechanical_end_date }}
-                                                        </label>
-                                                    </div>
-                                                @endforeach
-                                            </div>
-
-                                            <div
-                                                class="selected-vehicle dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300 dark:focus:shadow-outline-gray form-input">
-                                                Edita los vehículos para este permiso
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-                            </div>
-                            <!--fin edit-->
-
-                        </div>
-
-                    </form>
-                @endif
+                        </form>
+                    @endif
+                </div>
+                <div wire:ignore
+                    class="flex flex-col items-center justify-end px-6 py-3 space-y-4 sm:space-y-0 sm:space-x-6 sm:flex-row bg-gray-50 dark:bg-gray-800 border-t-fuchsia-800">
+                    <button
+                        class="w-full px-5 py-3 text-sm font-medium leading-5 text-gray-700 transition-colors duration-150 border border-gray-300 rounded-lg dark:text-gray-400 sm:px-4 sm:py-2 sm:w-auto active:bg-transparent hover:border-gray-500 focus:border-gray-500 active:text-gray-500 focus:outline-none focus:shadow-outline-gray"
+                        wire:click="clear" onclick="closeModalEdit()">
+                        {{ __('Cancel') }}
+                    </button>
+                    <button
+                        class="w-full px-5 py-3 text-sm font-medium leading-5 transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg sm:w-auto sm:px-4 sm:py-2 active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
+                        wire:click="update" onclick="closeModalEdit()">
+                        {{ __('Update FUEC') }}
+                    </button>
+                </div>
             </div>
-            <div wire:ignore
-                class="flex flex-col items-center justify-end px-6 py-3 -mx-6 -mb-4 space-y-4 sm:space-y-0 sm:space-x-6 sm:flex-row bg-gray-50 dark:bg-gray-800 border-t-fuchsia-800">
-                <button
-                    class="w-full px-5 py-3 text-sm font-medium leading-5 text-gray-700 transition-colors duration-150 border border-gray-300 rounded-lg dark:text-gray-400 sm:px-4 sm:py-2 sm:w-auto active:bg-transparent hover:border-gray-500 focus:border-gray-500 active:text-gray-500 focus:outline-none focus:shadow-outline-gray"
-                    wire:click="clear" onclick="closeModalEdit()">
-                    Cancel
-                </button>
-                <button
-                    class="w-full px-5 py-3 text-sm font-medium leading-5 transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg sm:w-auto sm:px-4 sm:py-2 active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
-                    wire:click="update" onclick="closeModalEdit()">
-                    Update FUEC
-                </button>
-            </div>
+
         </div>
     </div>
 
@@ -847,23 +882,6 @@
         // Livewire.on('prueba', () => {
         //     swal.fire('prueba', 'esto termina la función en php', 'error')
         // })
-
-        const typed = new Typed('.typed', {
-            strings: ['...'],
-            // stringsElement: '#cadenas-texto', // ID del elemento que contiene cadenas de texto a mostrar.
-            typeSpeed: 500, // Velocidad en mlisegundos para poner una letra,
-            startDelay: 100, // Tiempo de retraso en iniciar la animacion. Aplica tambien cuando termina y vuelve a iniciar,
-            backSpeed: false, // Velocidad en milisegundos para borrrar una letra,
-            smartBackspace: true, // Eliminar solamente las palabras que sean nuevas en una cadena de texto.
-            shuffle: false, // Alterar el orden en el que escribe las palabras.
-            backDelay: 100, // Tiempo de espera despues de que termina de escribir una palabra.
-            loop: true, // Repetir el array de strings
-            loopCount: false, // Cantidad de veces a repetir el array.  false = infinite
-            showCursor: false, // Mostrar cursor palpitanto
-            cursorChar: '|', // Caracter para el cursor
-            contentType: 'html', // 'html' o 'null' para texto sin formato
-        });
-
 
         // abriendo modal para editar
         Livewire.on('openModalEdit', () => {
@@ -931,6 +949,8 @@
         // con esta funcion se cierra la modal editar
         function closeModalEdit() {
 
+            scroll.scrollTop = 0;
+
             let selectedAlldrive = document.querySelectorAll(".selected-drive");
 
             selectedAlldrive.forEach((selected) => {
@@ -953,7 +973,6 @@
 
             });
 
-            scroll.scrollTop = 0;
             document.getElementById('modalEdit').classList.add('hidden');
         }
 
@@ -1053,7 +1072,7 @@
                 single = ' conductor y un vehiculo';
             }
 
-            var dateStart = document.getElementById('permit_start_date').value;
+            var dateStart = document.getElementById('fecha_inicio_permiso').value;
             var dateEnd = document.getElementById('permit_end_date').value;
 
             if (dateStart != "" || dateEnd != "") {

@@ -21,1567 +21,5495 @@
             margin: 0px;
         }
 
-        .parrafo2 {
-            font-size: 0.8rem;
+        .rff {
+            width: 50%;
+            text-align: start;
         }
 
-        .parrafo3 {
-            font-size: 0.8rem;
-        }
-
-        .parrafo2-2 {
-            font-size: 0.8rem;
-            margin-top: 5.7%;
-        }
-
-        .parrafo5 {
-            font-size: 0.8rem;
-            text-align: center;
-        }
-
-
-        .parrafo6 {
-            font-size: 0.8rem;
-        }
-
-        .parrafo6-1 {
-            margin-top: -1.9%;
-            font-size: 0.8rem;
-        }
-
-        .cabecera {
-            width: 98%;
-            margin-top: 0.5rem;
-            margin-left: 0.5rem;
-            height: 6rem;
-            display: flex;
-            align-items: center;
-            border: 1px solid rgb(0 0 0);
-            border-radius: 0.25rem;
-        }
-
-        .contenedormintransporte {
-            display: flex;
-            justify-content: center;
-            width: 37%;
-            height: 6rem;
-            border-right: 1px solid rgb(0 0 0);
-            padding-top: 1px;
-            padding-bottom: 1px;
-            padding-left: 1px;
-            padding-right: 1px;
-        }
-
-        .mintransporte {
-            width: 100%;
-            margin-top: 1rem;
-            height: 70%;
-        }
-
-        .contenedorlogo {
-            /* display: flex; */
-            margin-top: -13%;
-            margin-left: 35%;
-            justify-content: center;
-            width: 39%;
-            height: 6rem;
-            border-right: 1px solid rgb(0 0 0);
-        }
-
-        .logo {
-            width: 94%;
-            margin-top: 0.8rem;
-            margin-left: 0.9rem;
-            height: 70%;
-        }
-
-        .contenedortextoversion {
-            margin-top: -13%;
-            margin-left: 70%;
-            display: flex;
-            justify-content: center;
-            width: 28%;
-            height: 5rem;
-            align-items: center;
-        }
-
-        .textoversion {
-            width: 80%;
-            font-size: 14px;
-            margin-left: 3rem;
-        }
-
-        .contenedorlateral {
-            /* background-color: rgb(185 28 28); */
-            display: flex;
-            position: absolute;
-            width: 6.5rem;
-            height: 819px;
-        }
-
-        .contenedorqr {
-            position: absolute;
-            margin-top: 45rem;
-            margin-left: 0.6rem;
-        }
-
-        .qr {
-            width: 5, 7rem;
-        }
-
-        .textolateral5 {
-            transform: rotate(270deg);
-            margin-top: 31.7rem;
-            margin-left: -8.3rem;
-            width: 420px;
-            font-size: 0.7rem;
-            position: absolute;
-            color: #818080;
-        }
-
-        .textolateral4 {
-            transform: rotate(270deg);
-            margin-top: 32.4rem;
-            margin-left: -8.5rem;
-            width: 400px;
-            font-size: 0.7rem;
-            position: absolute;
-            color: #818080;
-        }
-
-        .textolateral3 {
-            transform: rotate(270deg);
-            margin-top: 36.4rem;
-            margin-left: -5.3rem;
-            width: 270px;
-            font-size: 0.7rem;
-            position: absolute;
-            color: #818080;
-        }
-
-        .textolateral2 {
-            transform: rotate(270deg);
-            margin-top: 38.6rem;
-            margin-left: -3.9rem;
-            width: 200px;
-            /* font-size: 13px; */
-            font-size: 0.7rem;
-            position: absolute;
-            color: #818080;
-        }
-
-        .textolateral1 {
-            transform: rotate(270deg);
-            margin-top: 42.5rem;
-            margin-left: -0.8rem;
-            width: 76px;
-            /* font-size: 13px; */
-            font-size: 0.7rem;
-            position: absolute;
-            color: #818080;
-        }
-
-        .contenedorcentral {
-            /* background-color: rgb(31 41 55); */
-            display: flex;
-            position: absolute;
-            /* width: 36.6rem; */
-            width: 40rem;
-            height: 819px;
-            margin-left: 6.5rem;
-            /* width: 52rem; */
-        }
-
-        .titulocontrato {
-            font-size: 12px;
-            text-align: center;
-        }
-
-        .cuadroinformacion {
-            /* margin: 0.3rem; */
-            border-top: 1px solid rgb(0 0 0);
-            border-right: 1px solid rgb(0 0 0);
-            border-left: 1px solid rgb(0 0 0);
-            border-radius: 2px;
-            text-align: center;
-            width: 100%;
-        }
-
-        .cuadroinformacion2 {
-            /* margin: 0.3rem; */
-            border-top: 1px solid rgb(0 0 0);
-            border-right: 1px solid rgb(0 0 0);
-            border-left: 1px solid rgb(0 0 0);
-            /* border-radius: 2px; */
-            text-align: center;
-            width: 100%;
-        }
-
-        .cuadroinformacion3 {
-            /* margin: 0.3rem; */
-            /* border-right: 1px solid rgb(0 0 0);
-            border-left: 1px solid rgb(0 0 0); */
-            border: 1px solid rgb(0 0 0);
-            border-radius: 2px;
-            text-align: center;
-            width: 100%;
-        }
-
-        .span1 {
-            /* width: 100%; */
-            padding: 1px;
-            border-bottom: 1px solid rgb(0 0 0);
-
-
-        }
-
-        .span2 {
-            /* padding: 1px; */
-            border-bottom: 1px solid rgb(0 0 0);
-            /* border-right: 1px solid rgb(0 0 0); */
-        }
-
-        .span3 {
-            /* padding: 1px; */
-            border-bottom: 1px solid rgb(0 0 0);
-            border-left: 1px solid rgb(0 0 0);
-        }
-
-        .span4 {
-            /* padding: 1px; */
-            border-bottom: 1px solid rgb(0 0 0);
-        }
-
-        .span5 {
-            /* padding: 1px; */
-            border-bottom: 1px solid rgb(0 0 0);
-            border-left: 1px solid rgb(0 0 0);
-        }
-
-        .span6 {
-            /* padding: 1px; */
-            border-bottom: 1px solid rgb(0 0 0);
-        }
-
-        .span7 {
-            /* padding: 1px; */
-            border-bottom: 1px solid rgb(0 0 0);
-            border-left: 1px solid rgb(0 0 0);
-        }
-
-        .span8 {
-            /* padding: 1px; */
-            border-bottom: 1px solid rgb(0 0 0);
-        }
-
-        .span9 {
-            /* padding: 1px; */
-            border-bottom: 1px solid rgb(0 0 0);
-            border-left: 1px solid rgb(0 0 0);
-        }
-
-        .span10 {
-            /* padding: 1px; */
-            border-bottom: 1px solid rgb(0 0 0);
-        }
-
-        .span11 {
-            /* padding: 1px; */
-            border-bottom: 1px solid rgb(0 0 0);
-        }
-
-        .span12 {
-            /* padding: 1px; */
-            border-bottom: 1px solid rgb(0 0 0);
-            border-left: 1px solid rgb(0 0 0);
-        }
-
-        .span11-1 {
-            /* padding: 1px; */
-            border-top: 1px solid rgb(0 0 0);
-            border-bottom: 1px solid rgb(0 0 0);
-        }
-
-        .span12-1 {
-            /* padding: 1px; */
-            border-top: 1px solid rgb(0 0 0);
-            border-bottom: 1px solid rgb(0 0 0);
-            border-left: 1px solid rgb(0 0 0);
-        }
-
-        .span13 {
-            /* padding: 1px; */
-            /* border-bottom: 1px solid rgb(0 0 0); */
-        }
-
-        .span14 {
-            /* padding: 1px; */
-            /* border-bottom: 1px solid rgb(0 0 0); */
-            border-left: 1px solid rgb(0 0 0);
-        }
-
-        .span13-1 {
-            /* padding: 1px; */
-            border-bottom: 1px solid rgb(0 0 0);
-        }
-
-        .span14-1 {
-            /* padding: 1px; */
-            border-bottom: 1px solid rgb(0 0 0);
-            border-left: 1px solid rgb(0 0 0);
-        }
-
-        .span15 {
-            /* padding: 1px; */
-            border-bottom: 1px solid rgb(0 0 0);
-        }
+        .marcadagua {
+            background-image: url('img/marcadagua.png');
+            background-position: top 50%;
+            background-repeat: no-repeat;
+            background-size: 95%;
 
-        .span16 {
-            /* padding: 1px; */
-            border-bottom: 1px solid rgb(0 0 0);
-            border-left: 1px solid rgb(0 0 0);
-        }
-
-        .span17 {
-            /* padding: 1px; */
-            border-bottom: 1px solid rgb(0 0 0);
-            border-left: 1px solid rgb(0 0 0);
-        }
-
-        .span18 {}
-
-        .span19 {
-            border-left: 1px solid rgb(0 0 0);
-        }
-
-        .span20 {
-            border-left: 1px solid rgb(0 0 0);
-        }
-
-        .span21 {
-            border-bottom: 1px solid rgb(0 0 0);
-        }
-
-        .span22 {
-            border-left: 1px solid rgb(0 0 0);
-            border-bottom: 1px solid rgb(0 0 0);
-        }
-
-        .span23 {}
-
-        .span24 {
-            border-left: 1px solid rgb(0 0 0);
-
-        }
-
-        .span23-1 {
-            border-bottom: 1px solid rgb(0 0 0);
-        }
-
-        .span24-1 {
-            border-left: 1px solid rgb(0 0 0);
-            border-bottom: 1px solid rgb(0 0 0);
-        }
-
-        .parrafo1 {
-            /* font-size: 15px; */
-        }
-
-        }
-
-        .planrodamiento {
-            border: 1px solid rgb(0 0 0);
-        }
-
-        .text27 {
-            margin-top: -0.1%;
-            /* margin-left: 0.7%; */
-            font-size: 14px;
-            text-align: center;
-        }
-
-        .text28 {
-            margin-top: 7%;
-            /* margin-left: 0.7%; */
-            font-size: 14px;
-            text-align: center;
-        }
-
-        .colum1 {
-            position: absolute;
-            width: 19%;
-            height: 1.9%;
-            /* margin-left: 16.7%; */
-            /* margin-top: 1%; */
-            border: 1px solid #000;
-            /* border-right: 1px solid rgb(0 0 0); */
-        }
-
-        .colum2 {
-            position: absolute;
-            width: 42.9%;
-            height: 1.9%;
-            margin-left: 19.2%;
-            /* margin-top: -6.9%; */
-            border: 1px solid #000;
-            /* border-right: 1px solid rgb(0 0 0); */
-        }
-
-        .colum3 {
-            position: absolute;
-            width: 22%;
-            height: 1.9%;
-            margin-left: 62.3%;
-            /* margin-top: -6.9%; */
-            border: 1px solid #000;
-            /* border-right: 1px solid rgb(0 0 0); */
-        }
-
-        .colum4 {
-            position: absolute;
-            width: 15%;
-            height: 1.9%;
-            margin-left: 84.5%;
-            /* margin-top: -6.9%; */
-            border: 1px solid #000;
-            /* border-right: 1px solid rgb(0 0 0); */
-        }
-
-        .colum5 {
-            position: absolute;
-            width: 19%;
-            height: 4%;
-            /* margin-left: 16.7%; */
-            margin-top: 2.8%;
-            border: 1px solid #000;
-            /* border-right: 1px solid rgb(0 0 0); */
-        }
-
-        .colum6 {
-            position: absolute;
-            width: 42.9%;
-            height: 4%;
-            margin-left: 19.2%;
-            margin-top: 2.8%;
-            border: 1px solid #000;
-            /* border-right: 1px solid rgb(0 0 0); */
-        }
-
-        .colum7 {
-            position: absolute;
-            width: 22%;
-            height: 4%;
-            margin-left: 62.3%;
-            margin-top: 2.8%;
-            border: 1px solid #000;
-            /* border-right: 1px solid rgb(0 0 0); */
-        }
-
-        .colum8 {
-            position: absolute;
-            width: 15%;
-            height: 4%;
-            margin-left: 84.5%;
-            margin-top: 2.8%;
-            border: 1px solid #000;
-            /* border-right: 1px solid rgb(0 0 0); */
-        }
-
-        .colum9 {
-            position: absolute;
-            width: 19%;
-            height: 1.9%;
-            /* margin-left: 16.7%; */
-            margin-top: 7.9%;
-            border: 1px solid #000;
-            /* border-right: 1px solid rgb(0 0 0); */
-        }
-
-        .colum10 {
-            position: absolute;
-            width: 42.9%;
-            height: 1.9%;
-            margin-left: 19.2%;
-            margin-top: 7.9%;
-            border: 1px solid #000;
-            /* border-right: 1px solid rgb(0 0 0); */
-        }
-
-        .colum11 {
-            position: absolute;
-            width: 22%;
-            height: 1.9%;
-            margin-left: 62.3%;
-            margin-top: 7.9%;
-            border: 1px solid #000;
-            /* border-right: 1px solid rgb(0 0 0); */
-        }
-
-        .colum12 {
-            position: absolute;
-            width: 15%;
-            height: 1.9%;
-            margin-left: 84.5%;
-            margin-top: 7.9%;
-            border: 1px solid #000;
-            /* border-right: 1px solid rgb(0 0 0); */
-        }
-
-        .colum13 {
-            position: absolute;
-            width: 19%;
-            height: 4%;
-            /* margin-left: 16.7%; */
-            margin-top: 10.6%;
-            border: 1px solid #000;
-            /* border-right: 1px solid rgb(0 0 0); */
-        }
-
-        .colum14 {
-            position: absolute;
-            width: 42.9%;
-            height: 4%;
-            margin-left: 19.2%;
-            margin-top: 10.6%;
-            border: 1px solid #000;
-            /* border-right: 1px solid rgb(0 0 0); */
-        }
-
-        .colum15 {
-            position: absolute;
-            width: 22%;
-            height: 4%;
-            margin-left: 62.3%;
-            margin-top: 10.6%;
-            border: 1px solid #000;
-            /* border-right: 1px solid rgb(0 0 0); */
-        }
-
-        .colum16 {
-            position: absolute;
-            width: 15%;
-            height: 4%;
-            margin-left: 84.5%;
-            margin-top: 10.6%;
-            border: 1px solid #000;
-            /* border-right: 1px solid rgb(0 0 0); */
-        }
-
-        .colum17 {
-            position: absolute;
-            width: 26%;
-            height: 1.9%;
-            /* margin-left: 16.7%; */
-            /* margin-top: 1%; */
-            border: 1px solid #000;
-            /* border-right: 1px solid rgb(0 0 0); */
-        }
-
-        .colum18 {
-            position: absolute;
-            width: 18%;
-            height: 1.9%;
-            margin-left: 26%;
-            /* margin-top: -6.9%; */
-            border: 1px solid #000;
-            /* border-right: 1px solid rgb(0 0 0); */
-        }
-
-        .colum19 {
-            position: absolute;
-            width: 17%;
-            height: 1.9%;
-            margin-left: 44%;
-            /* margin-top: -6.9%; */
-            border: 1px solid #000;
-            /* border-right: 1px solid rgb(0 0 0); */
-        }
-
-        .colum20 {
-            position: absolute;
-            width: 18%;
-            height: 1.9%;
-            margin-left: 61.3%;
-            /* margin-top: -6.9%; */
-            border: 1px solid #000;
-            /* border-right: 1px solid rgb(0 0 0); */
-        }
-
-        .colum21 {
-            position: absolute;
-            width: 20%;
-            height: 1.9%;
-            margin-left: 79.5%;
-            /* margin-top: -6.9%; */
-            border: 1px solid #000;
-            /* border-right: 1px solid rgb(0 0 0); */
-        }
-
-        .colum22 {
-            position: absolute;
-            width: 26%;
-            height: 1.9%;
-            /* margin-left: 16.7%; */
-            margin-top: 2.8%;
-            border: 1px solid #000;
-            /* border-right: 1px solid rgb(0 0 0); */
-        }
-
-        .colum23 {
-            position: absolute;
-            width: 18%;
-            height: 1.9%;
-            margin-left: 26%;
-            margin-top: 2.8%;
-            border: 1px solid #000;
-            /* border-right: 1px solid rgb(0 0 0); */
-        }
-
-        .colum24 {
-            position: absolute;
-            width: 17%;
-            height: 1.9%;
-            margin-left: 44%;
-            margin-top: 2.8%;
-            border: 1px solid #000;
-            /* border-right: 1px solid rgb(0 0 0); */
-        }
-
-        .colum25 {
-            position: absolute;
-            width: 18%;
-            height: 1.9%;
-            margin-left: 61.3%;
-            margin-top: 2.8%;
-            border: 1px solid #000;
-            /* border-right: 1px solid rgb(0 0 0); */
-        }
-
-        .colum26 {
-            position: absolute;
-            width: 20%;
-            height: 1.9%;
-            margin-left: 79.5%;
-            margin-top: 2.8%;
-            border: 1px solid #000;
-            /* border-right: 1px solid rgb(0 0 0); */
-        }
-
-        .firmacontratante {
-            margin-left: 60%;
-            margin-top: -19%;
-        }
-        }
-
-        .firmacontratante-1 {
-            position: absolute;
-            margin-left: 60%;
-            margin-top: -13%;
-        }
-
-        .contenedorfinal {
-            background-color: rgb(99 102 241);
-            display: flex;
-            position: absolute;
-            width: 6.5rem;
-            height: 819px;
-            margin-left: 43.1rem;
-        }
-
-        .footer {
-            width: 100%;
-            height: 10rem;
-            display: flex;
-            align-items: center;
-            /* border: 1px solid rgb(0 0 0);
-            border-radius: 0.25rem; */
-            margin-top: 53.4rem;
-            /* background-color: rgb(31 41 55); */
-        }
 
-        .imgfoter {
-            width: 99.8%;
-            height: 10rem;
-            /* margin-top: 0.1%; */
         }
     </style>
 </head>
 @foreach ($contracts as $contract)
 
     <body>
+        {{-- pagina 1 --}}
+        <x-contractframes typeContract="{{ $titlecontract }}">
+            @switch($contract->type_contract)
+                @case(1)
+                    <div
+                        style="display: flex;position: absolute;width: 76%;height: 819px;margin-left: 6.5rem;margin-top: -0.5rem;">
 
-        <x-contractframes>
-            <!-- texto central -->
-            <div class="contenedorcentral">
-                @if ($contract->type_contract == 1)
-                    <h6 class="titulocontrato">CONTRATO DE PRESTACIÓN DE SERVICIOS DE TRANSPORTE DE ESTUDIANTE GRUPO
-                        PADRES
-                        <br><span>#{{ $contract->contract_number }}</span>
-                    </h6>
-                @endif
+                        {{-- @if ($contract->type_contract == 1) --}}
+                        <h6 style="font-size: 95%;text-align: center;margin-top: 2%;">CONTRATO <span>NO.
+                                {{ $contract->contract_number }}</span>
+                        </h6>
+                        {{-- @endif --}}
 
-                @if ($contract->type_contract == 2)
-                    <h6 class="titulocontrato">CONTRATO DE PRESTACIÓN DE SERVICIOS DE TRANSPORTE ESPECIAL EMPRESARIAL
-                        <br><span>#{{ $contract->contract_number }}</span>
-                    </h6>
-                @endif
+                        <div>
+                            <div style="margin-top: -4%">
 
-                @if ($contract->type_contract == 3)
-                    <h6 class="titulocontrato">CONTRATO DE Empresa Turismo
-                        <br><span>#{{ $contract->contract_number }}</span>
-                    </h6>
-                @endif
-
-                @if ($contract->type_contract == 4)
-                    <h6 class="titulocontrato">CONTRATO DE PRESTACIÓN DE SERVICIOS DE TRANSPORTE ESPECIAL CON GRUPO
-                        ESPECÍFICO DE USUARIOS (TRANSPORTE DE PARTICULARES)
-                        <br><span>#{{ $contract->contract_number }}</span>
-                    </h6>
-                @endif
-
-                @if ($contract->type_contract == 5)
-                    <h6 class="titulocontrato">CONTRATO DE Usuarios de Servicios de Salud
-                        <br><span>#{{ $contract->contract_number }}</span>
-                    </h6>
-                @endif
-
-
-                <div>
-                    <table class="cuadroinformacion">
-                        <thead></thead>
-                        <tbody>
-                            <tr>
-                                <th class="span1" colspan="2">CONTRATANTE</th>
-                            </tr>
-                            <tr>
-                                <th class="span2" colspan="1">NOMBRE</th>
-                                <th class="span3" colspan="1"># IDENTIFICACIÓN</th>
-                            </tr>
-                            <tr>
-                                <td class="span4">{{ $contract->contracting_name }}</td>
-                                <td class="span5">{{ $contract->contract_document }}</td>
-                            </tr>
-                            <tr>
-                                <th class="span6">TELÉFONO</th>
-                                <th class="span7">DIRECCIÓN</th>
-                            </tr>
-                            <tr>
-                                <td class="span8">{{ $contract->contracting_phone }}</td>
-                                <td class="span9">{{ $contract->contracting_direction }}</td>
-                            </tr>
-                            <tr>
-                                <th class="span10" colspan="2">CONTRATISTA</th>
-                            </tr>
-                            <tr>
-                                <th class="span11">RAZON SOCIAL</th>
-                                <th class="span12">NIT</th>
-                            </tr>
-                            <tr>
-                                <td class="span13">STEP S.A.S.</td>
-                                <td class="span14">900973862-1</td>
-                            </tr>
-
-                            @if ($contract->type_contract == 2 || $contract->type_contract == 4)
-                                <tr>
-                                    <th class="span11-1">CANAL PQRS</th>
-                                    <th class="span12-1">SERVICIO AL CLIENTE</th>
-                                </tr>
-                                <tr>
-                                    <td class="span13-1"><a href="www.google.com">servicioalcliente@step.com.co</a></td>
-                                    <td class="span14-1">606 3303021</td>
-                                </tr>
-                                <tr>
-                                    <th class="span21">FECHA INICIO CONTRATO</th>
-                                    <th class="span22">FECHA FINAL CONTRATO</th>
-
-                                </tr>
-                                <tr>
-                                    <td class="span23-1">{{ $fstart }} </td>
-                                    <td class="span24-1">{{ $fend }}</td>
-                                </tr>
-                            @endif
-
-                    </table>
-
-                    @if ($contract->type_contract == 1)
-                        <table class="cuadroinformacion2">
-                            <tr>
-                                <th class="span15">PÓLIZA DE SEGURO</th>
-                                <th class="span16">CANAL PQRS</th>
-                                <th class="span17">SERVICIO AL CLIENTE</th>
-                            </tr>
-                            <tr>
-                                <td class="span18">{{ $contract->secure_policy }}</td>
-                                <td class="span19"><a href="www.google.com">servicioalcliente@step.com.co</a></td>
-                                <td class="span20">606 3303021</td>
-                            </tr>
-                        </table>
-
-
-                        <table class="cuadroinformacion3">
-                            <tr>
-                                <th class="span21">FECHA INICIO CONTRATO</th>
-                                <th class="span22">FECHA FINAL CONTRATO</th>
-
-                            </tr>
-                            <tr>
-                                <td class="span23">{{ $fstart }}</td>
-                                <td class="span24">{{ $fend }}</td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    @endif
-                </div>
-                <div>
-                    <p style="font-size: 0.8rem;" class="parrafo1">
-                        Entre los suscritos a saber, el <strong> CONTRATANTE,</strong>
-
-                        @if ($contract->type_contract == 1)
-                            <strong> {{ $contract->contracting_name }}
-                            </strong>
-                            identificado (a) con cédula de ciudadanía No. {{ $contract->contract_document }},
-                            <strong> {{ $contract->school_name }} </strong>
-                            ubicado en <strong> {{ $contract->address_school }} </strong> y
-                            representado legalmente por <strong> {{ $contract->legal_representative }} </strong>,
-                            quien se identifica con la
-                            cédula de ciudadanía Nº <strong> {{ $contract->identificationcard_represent_legal }}
-                                expedida en {{ $contract->expedition_identificationcard }} </strong>
-                        @endif
-
-                        @if ($contract->type_contract == 4)
-                            {{ $contract->contracting_name }} , identificado
-                            con cédula de ciudadanía No. {{ $contract->contract_document }} expedida en
-                            {{ $contract->expedition_identificationcard }}, quien actúa en nombre
-                            propio
-                        @endif
-
-
-
-                        @if ($contract->type_contract == 2)
-                            {{ $contract->contracting_name }}
-                            identificado con Nit. {{ $contract->contract_document }} ubicado en
-                            {{ $contract->contracting_direction }} y representado
-                            legalmente por {{ $contract->legal_representative }} quien se identifica con la cédula de
-                            ciudadanía
-                            No. {{ $contract->identificationcard_represent_legal }} expedida en
-                            {{ $contract->legal_representative_expedition_identificationcard }}
-                        @endif
-
-
-
-
-
-                        y el
-                        <strong> CONTRATISTA, STEP S.A.S. SERVICIO DE TRANSPORTE ESPECIAL DE PASAJEROS</strong>,
-                        legalmente constituida, habilitada como empresa de servicio público de transporte
-                        terrestre
-                        automotor en la modalidad de especial mediante la Resolución 036 del 10 de noviembre de
-                        2016
-                        del Ministerio de Transporte, identificada con el NIT No.<strong>900.973.862-1 </strong>
-                        y representada
-                        legalmente
-                        por la señora <strong>ALBA OSIRIS HIDALGO PESCADOR</strong> quien se identifica con la
-                        cédula de ciudadanía
-                        No. 42.077.205 expedida en Pereira, hemos celebrado el presente <strong>CONTRATO DE
-                            PRESTACIÓN
-                            DE SERVICIOS DE TRANSPORTE DE
-                            @if ($contract->type_contract == 1)
-                                ESTUDIANTE DEL INSTITUTO
-                        </strong>,
-@endif
-
-@if ($contract->type_contract == 2)
-    ESPECIAL EMPRESARIAL</strong>,
-@endif
-
-@if ($contract->type_contract == 4)
-    TRANSPORTE ESPECIAL CON GRUPO ESPECÍFICO DE USUARIOS (TRANSPORTE
-    DE PARTICULARES)</strong>,
-@endif
-
-
-de conformidad a la
-legislación nacional, libres de todo vicio y según las cláusulas que a continuación se
-describen:
-<strong>PRIMERA</strong>. <strong>OBJETO</strong>. El <strong>CONTRATISTA</strong>
-@if ($contract->type_contract == 1 || $contract->type_contract == 2)
-    se
-    compromete frente al contratante a prestar el servicio
-    de transporte especial colegio de los estudiantes, (según el listado adjunto) de acuerdo
-    a la
-    orden
-    de servicio en recorridos (Área metropolitana) y municipios del departamento de
-    Risaralda
-    durante
-    el {{$fyear}}. <strong>SEGUNDA: CONDICIONES PLAN DE RODAMIENTO. 1. DISPONIBILIDAD GENERAL
-        VEHÍCULAR</strong>. Para efectos de prestar el servicio el
-    <strong>CONTRATISTA</strong> colocará a disposición del
-    <strong>CONTRATANTE</strong>
-@endif
-
-@if ($contract->type_contract == 4)
-    se compromete para con el
-    contratante a transportar {{ $contract->passenger_quantity }} pasajeros según el listado adjunto, el cual hace
-    parte integral del presente
-    contrato, desde {{ $contract->trip_from }} hasta {{ $contract->trip_to }} y viceversa hacia su punto de origen.
-    <strong>SEGUNDA: CONDICIONES PLAN DE RODAMIENTO 1. DISPONIBILIDAD GENERAL ORDINARIA Y
-        EXTRAORDINARIA.</strong> El plan de rodamiento ordinario será el siguiente:
-
-    <div class="planrodamiento">
-        <div class="colum1">
-            <p class="text27"><strong>PLAN</strong> </p>
-        </div>
-        <div class="colum2">
-            <p class="text27"><strong>UBICACION</strong> </p>
-        </div>
-        <div class="colum3">
-            <p class="text27"><strong>FECHA</strong> </p>
-        </div>
-        <div class="colum4">
-            <p class="text27"><strong>HORA</strong> </p>
-        </div>
-
-        <div>
-            <div class="colum5">
-                <p class="text28">Lugar de Origen </p>
-            </div>
-            <div class="colum6">
-                <p class="text27"><strong>{{ $contract->place_of_origin }}</strong> </p>
-            </div>
-            <div class="colum7">
-                <p class="text28"><strong>{{ $fstart }}</strong></p>
-            </div>
-            <div class="colum8">
-                <p class="text28"><strong>14:15 PM</strong></p>
-            </div>
-        </div>
-
-        <div class="colum9">
-            <p class="text27">Lugar de Destino</p>
-        </div>
-        <div class="colum10">
-            <p class="text27"><strong>{{ $contract->destination_place }}</strong> </p>
-        </div>
-        <div class="colum11">
-            <p class="text27"><strong>{{ $fstart }}</strong></p>
-        </div>
-        <div class="colum12">
-            <p class="text27"><strong></strong></p>
-        </div>
-
-        <div>
-            <div class="colum13">
-                <p class="text28">Regreso </p>
-            </div>
-            <div class="colum14">
-                <p class="text27"><strong>{{ $contract->return_place }}</strong></p>
-            </div>
-            <div class="colum15">
-                <p class="text28"><strong>{{ $fend }}</strong></p>
-            </div>
-            <div class="colum16">
-                <p class="text28"><strong>16:.00 P.M</strong></p>
-            </div>
-        </div>
-    </div>
-@endif
-
-@if ($contract->type_contract == 1)
-    unos vehículos tipo MICROBUS,
-@endif
-@if ($contract->type_contract == 2)
-    vehículos tipo MICROBUS, BUS Y BUSETA,
-@endif
-
-@if ($contract->type_contract == 1 || $contract->type_contract == 2)
-    todos estos relacionados en
-    un documento anexo
-    al presente contrato, el <strong>CONTRATANTE</strong> entregará al momento de celebrar
-    el presente contrato, un listado de rutas según demanda a satisfacer y con
-@endif
-
-@if ($contract->type_contract == 1)
-    unas identificaciones,
-@endif
-
-@if ($contract->type_contract == 2)
-    una relación completa de los funcionarios, empleados o contratistas a transportar por
-    vehículo y acompañada de sus identificaciones,
-@endif
-
-@if ($contract->type_contract == 1 || $contract->type_contract == 2)
-    lugares de residencia,
-    y
-@endif
-
-</p>
-</div>
-</div>
-<!-- espacio final -->
-{{-- <div class="contenedorfinal">C</div> --}}
-</x-contractframes>
-<x-contractframes>
-    <!-- texto central -->
-    <div class="contenedorcentral">
-        <div>
-            <p sstyle="font-size: 7rem;" class="parrafo2">
-                @if ($contract->type_contract == 1 || $contract->type_contract == 2)
-                    números de contacto. Dicho listado podrá ser actualizado periódicamente siempre y cuando
-                    el
-                    <strong>CONTRATANTE</strong> lo haga por escrito y brinde por lo menos una semana al
-                    <strong>CONTRATISTA</strong> para
-                    proyectar las modificaciones a su plan de rodamiento necesarias para efectos de cubrir
-                    la
-                    demanda.
-                    <strong>PARÁGRAFO 1</strong>: El <strong>CONTRATISTA</strong> podrá participar de la
-                    creación de dicho documento adjunto,
-                    en especial como consultor o asesor y a través de su coordinador de rutas y prestación
-                    de
-                    servicio.
-                    <strong>PARÁGRAFO 2: OBSERVACIONES: 1)</strong> Los vehículos podrán ser cambiados sin
-                    perjuicio de que
-                    previamente le sea comunicada tal situación al <strong>CONTRATANTE. 2.</strong> Aunque
-                    el vehículo sea
-                    cambiado, este, al igual, continuará cumpliendo con todas las obligaciones de seguridad,
-                    técnicas y
-                    operativas exigidas por la normatividad vigente. <strong>3) EL CONTRATANTE</strong>
-                    podrá: <strong>A</strong> Solicitar el cambio
-                    inmediato de uno de los vehículos con que se preste el servicio si, según el marco
-                    legal, el
-                    mismo
-                    ni se encuentra en las condiciones mínimas, de seguridad técnicas y/u operativas para
-                    prestar el
-                    servicio .<strong>B</strong>. Solicitar el cambio del vehículo por cualquier otra razón
-                    y siempre cuando adjunte
-                    por
-                    escrito que deberá contener la razón por las cuales desean cambiar el vehículo pese a
-                    estar en
-                    óptimas condiciones técnicas operativas y de seguridad. <strong>TERCERA: CONDICIONES DEL
-                        PLAN DEL PLAN
-                        DE RODAMIENTO. 1. DISPONIBLIDAD GENERAL ORDINARIA Y
-                        EXTRAORDINARIA</strong>. Los estudiantes y funcionarios del
-                    <strong>CONTRATANTE</strong> que pongan a disposición
-                    del <strong>CONTRATISTA</strong> serán transportados de acuerdo a la orden del servicio.
-                    No habrá lugar a
-                    servicios extraordinarios sin previa autorización del <strong>CONTRATANTE. 2. RADIO
-                        OPERACIÓN
-                        TERRITORIAL</strong>: La prestación del servicio queda limitada a un radio terrestre
-                    en el área
-                    metropolita
-                    {{-- corregir --}} nana de Pereira, Dosquebradas La Virginia y los diferentes
-                    municipios del
-                    departamento de
-                    Risaralda. <strong>PARÁGRAFO 1</strong>: El cambio de horario o calendario académico que
-                    afecte la prestación
-                    del servicio y se realice incumplimiento los procedimientos previamente descritos dará
-                    lugar a
-                    la
-                    terminación unilateral del contrato por parte del <strong>CONTRATISTA. CUARTA. PLAN DE
-                        CONTIGENCIA. EL CONTRATISTA</strong> dispondrá de la aplicación del plan de
-                    contingencia respectivo,
-                    a fin de suplir los inconvenientes que puedan tener los vehículos que prestan el
-                    servicio al
-                    <strong>CONTRATANTE. QUINTA. OLBIGACIONES DEL CONTRATISTA 1)</strong> Cumplir
-                    estrictamente con
-                    los horarios establecidos. <strong>2)</strong> Recoger y entregar a los pasajeros en la
-                    puerta de la residencia o
-                    en
-                    la portería delos condominios sin ingresar a éstos. <strong>3)</strong> Llevar con
-                    seguridad, aseo y comodidad al
-                    pasajero, respetando las normas de tránsito y de transporte especial vigente. Llevar a
-                    una
-                    velocidad
-                    moderada durante todo el recorrido. <strong>5)</strong> Mantener el (los) vehículo (s)
-                    en excelentes condiciones
-                    de
-                    aseo, estado técnico mecánico, haciendo los respectivos mantenimientos preventivos.
-                    <strong>6)</strong> Tener
-                    conductores de certificada experiencia, habilidad, responsabilidad, cultura, seriedad y
-                    de
-                    conformidad con la ley. <strong>7)</strong> Expedir copia simple física o digital,
-                    previa solicitud en tal
-                    sentido del
-                    <strong>CONTRANTANTE</strong> de la póliza de responsabilidad civil contractual y
-                    extracontractual contratada,
-                    habilitación contrato, SOAT, licencia, de conducción del conductor y demás documentos
-                    que
-                    requiera para verificar el cumplimiento de la normatividad vigente en materia de
-                    transporte
-                    especial
-                    parte de los pasajeros que ocasionen daños de hasta 15% del parque automotor dispuestos
-                    para la
-                    prestación de servicio. <strong>B) POR PARTE DEL CONTRATANTE: 1)</strong> Por
-                    inconformidad expresa con la
-                    prestación del servicio, previa denuncia por escrito y por medio PQRS realizada al
-                    <strong>CONTRATISTA</strong>
-                    sin que este ejecute acciones o tome medidas correctivas, o explique justamente la
-                    situación. 2)
-                    Por
-                    incumplimiento con alguno de los compromisos adquiridos en el presente contrato.
-                    <strong>8)</strong> Llevar las
-                    puertas cerradas, recogiendo y dejando a los pasajeros en sitios seguros. <strong>SEXTA:
-                        OBLIGACIONES
-                        DEL CONTRATANTE: 1)</strong> Suministrar al <strong>CONTRATISTA</strong> toda la
-                    información necesaria, oportuna
-                    sobre lugares y horarios de servicio, como mínimo con cinco (05) días de anticipación.
-                @endif
-
-                @if ($contract->type_contract == 4)
-                    No habrá lugar a servicios extraordinarios sin previa autorización y un nuevo contrato independiente
-                    suscrito entre CONTRATANTE Y CONTRATISTA. <strong>2. DISPONIBILIDAD HORARIA</strong>. Según el plan
-                    de
-                    rodamiento descrito, el tiempo estimado de servicio y disponibilidad del (os) vehículo (s) será de
-                    horas,
-                    desde la fecha de iniciación hasta la terminación del contrato.
-                    <strong>TERCERA. CLASE Y NUMERO DE VEHÍCULOS</strong>. Para efectos de ejecutar el presente
-                    contrato, el
-                    <strong>CONTRATISTA</strong> pone a disposición del <strong>CONTRATANTE</strong> el (los) siguiente
-                    (s) vehículo (s):
-
-                    @foreach ($vehicles as $vehicle)
-                        <div class="datosVehiculo">
-                            <div class="colum17">
-                                <p class="text27"><strong>TIPO VEHÍCULO</strong> </p>
-                            </div>
-                            <div class="colum18">
-                                <p class="text27"><strong>MARCA</strong> </p>
-                            </div>
-                            <div class="colum19">
-                                <p class="text27"><strong>MODELO</strong> </p>
-                            </div>
-                            <div class="colum20">
-                                <p class="text27"><strong>PLACA</strong> </p>
-                            </div>
-                            <div class="colum21">
-                                <p class="text27"><strong>LATERAL</strong> </p>
-                            </div>
-
-                            <div>
-                                <div class="colum22">
-                                    <p class="text27">{{$vehicle->vehicle_type_name}} </p>
+                                <div
+                                    style="width: 100%;height: 3%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;background: #f1f0f0;">
+                                    <strong>CONTRATANTE</strong>
                                 </div>
-                                <div class="colum23">
-                                    <p class="text27"><strong>{{$vehicle->brand_vehicle}}</strong> </p>
+                            </div>
+                            <div style="margin-top: 4.1%;">
+
+                                <div
+                                    style="width: 50%;height:  3%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+                                    <strong> NOMBRE O RAZON SOCIAL</strong>
                                 </div>
-                                <div class="colum24">
-                                    <p class="text27"><strong>{{$vehicle->model_vehicle}}</strong></p>
+                                <div
+                                    style="width: 49.7%;height:  3%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+
+                                    <strong>IDENTIFICACIÓN ó NIT</strong>
+
                                 </div>
-                                <div class="colum25">
-                                    <p class="text27"><strong>{{$vehicle->plate_vehicle}}</strong></p>
+                            </div>
+                            <div style="margin-top: 4%;">
+
+                                <div
+                                    style="width: 50%;height:  3%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+                                    {{ $contract->contracting_name }}
                                 </div>
-                                <div class="colum26">
-                                    <p class="text27"><strong>{{$vehicle->side_vehicle}}</strong></p>
+                                <div
+                                    style="width: 49.7%;height:  3%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+                                    {{ $contract->contract_document }}
+                                </div>
+                            </div>
+                            <div style="margin-top: 3.9%;">
+
+                                <div
+                                    style="width: 50%;height:  3%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+                                    <strong>TELÉFONO Y CORREO ELECTRONICO</strong>
+                                </div>
+                                <div
+                                    style="width: 49.7%;height:  3%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+
+                                    <strong>DIRECCIÓN</strong>
+
+                                </div>
+                            </div>
+                            <div style="margin-top: 3.8%;">
+
+                                <div
+                                    style="width: 50%;height:  3%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+                                    {{ $contract->contracting_phone }} - pendiente campo correo
+                                </div>
+                                <div
+                                    style="width: 49.7%;height:  3%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+                                    {{ $contract->contracting_direction }}
+                                </div>
+                            </div>
+                            <div style="margin-top: 3.7%">
+
+                                <div
+                                    style="width: 100%;height: 3.3%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;background: #f1f0f0;">
+                                    <strong>CONTRATISTA</strong>
+                                </div>
+                            </div>
+                            <div style="margin-top: 3.9%;">
+
+                                <div
+                                    style="width: 50%;height:  3.4%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+                                    <strong> RAZON SOCIAL</strong>
+                                </div>
+                                <div
+                                    style="width: 49.7%;height:  3.4%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+                                    <strong>NIT</strong>
+                                </div>
+                            </div>
+                            <div style="margin-top: 3.8%;">
+
+                                <div
+                                    style="width: 50%;height:  3.4%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+                                    STEP S.A.S
+                                </div>
+                                <div
+                                    style="width: 49.7%;height:  3.4%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+                                    900.973.862-1
+                                </div>
+                            </div>
+                            <div style="margin-top: 3.7%;">
+
+                                <div
+                                    style="width: 33.3%;height:  3.5%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;background: #f1f0f0;">
+                                    <strong> PÓLIZA DE SEGURO</strong>
+                                </div>
+                                <div
+                                    style="width: 33%;height:  3.5%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;background: #f1f0f0;">
+                                    <strong> CANAL PQRS</strong>
+                                </div>
+                                <div
+                                    style="width: 33.1%;height:  3.5%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;background: #f1f0f0;">
+                                    <strong>SERVICIO AL CLIENTE</strong>
+                                </div>
+                            </div>
+                            <div style="margin-top: 3.7%;">
+
+                                <div
+                                    style="width: 33.3%;height:  3.6%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+                                    SEGUROS DEL ESTADO
+                                </div>
+                                <div
+                                    style="width: 33%;height:  3.6%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+                                    <a href="">sertepsapqr@step.com.co</a>
+                                </div>
+                                <div
+                                    style="width: 33.1%;height:  3.6%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+                                    3303821-3234197103
+                                </div>
+                            </div>
+                            <div style="margin-top: 3.6%;">
+
+                                <div
+                                    style="width: 50%;height:  3.8%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;background: #f1f0f0;">
+                                    <strong> FECHA INICIO CONTRATO</strong>
+                                </div>
+                                <div
+                                    style="width: 49.7%;height:  3.8%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;background: #f1f0f0;">
+                                    <strong>FECHA FINAL CONTRATO</strong>
+                                </div>
+                            </div>
+                            <div style="margin-top: 3.7%;">
+
+                                <div
+                                    style="width: 50%;height:  3.9%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+                                        {{ $contract->date_start_contract }}
+                                </div>
+                                <div
+                                    style="width: 49.7%;height:  3.9%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+                                        {{ $contract->contract_end_date }}
                                 </div>
                             </div>
                         </div>
-                    @endforeach
-                    <p class="parrafo2-2">
-                        <strong>PARÁGRAFO 1 OBSERVACIONES: 1</strong>. El vehículo podrá ser cambiado sin perjuicio de
-                        que
-                        previamente
-                        le sea comunicada tal situación al <strong>CONTRATANTE. 2</strong>. Aunque el vehículo sea
-                        cambiado,
-                        éste, al igual
-                        que todo el parque automotor, continuará cumpliendo con todas las especificaciones de seguridad,
-                        técnicas y operativas exigidas por la normatividad vigente. <strong>3</strong>. El
-                        <strong>CONTRATANTE</strong> podrá solicitar el
-                        cambio
-                        inmediato del vehículo si, según el marco legal, el mismo no se encuentra en las condiciones
-                        mínimas
+
+                        @switch($contract->contract_with)
+                            @case(1)
+                                <p style="font-size: 90%;text-align: justify;">
+                                    Entre los suscritos a saber, el <strong>CONTRATANTE</strong> {{ $contract->contracting_name }},
+                                    identificado (a) con cédula de ciudadanía No {{ $contract->contract_document }} expedida en ( {{ $contract->expedition_identificationcard }} )
+                                    quien actúa en nombre propio y como <strong>Representante</strong> del grupo de padres de familia
+                                    según listado
+                                    adjunto y aceptado por éstos, cuyos estudiantes representados se encuentran matriculados en la
+                                    <strong>INSTITUCION EDUCATIVA</strong> {{ $contract->school_name }} ubicada en {{ $contract->address_school }}
+                                     y que en lo sucesivo será <strong>INSTITUCION EDUCATIVA</strong> y el <strong>CONTRATISTA</strong>,
+                                    <strong>STEP S.A.S. SERVICIO DE TRANSPORTE ESPECIAL DE PASAJEROS</strong>, legalmente constituida,
+                                    habilitada como empresa de servicio público de transporte terrestre automotor en la modalidad de
+                                    especial mediante la Resolución 036 del 10 de noviembre de 2016 del Ministerio de Transporte,
+                                    identificada con el NIT No. <strong>900.973.862-1</strong> y representada legalmente por la señora
+                                    <strong>ALBA OSIRIS
+                                        HIDALGO PESCADOR</strong> quien se identifica con la cédula de ciudadanía No. 42.077.205
+                                    expedida en
+                                    Pereira, hemos celebrado el presente <strong>CONTRATO DE PRESTACIÓN DE SERVICIOS DE
+                                        TRANSPORTE DE ESTUDIANTE CON GRUPO DE PADRES</strong>, de conformidad a la legislación
+                                    nacional, libres de todo vicio y según las cláusulas que a continuación se describen:
+                                    <strong>PRIMERA</strong>.
+                                    <strong>OBJETO</strong>. El <strong>CONTRATISTA</strong> se compromete para con el contratante a
+                                    transportar #{{ $contract->passenger_quantity }} estudiantes,
+                                    desde el lugar de su residencia descrito en el documento adjunto - punto de origen - hasta las
+                                    instalaciones de la institución educativa - punto de destino común - y viceversa hacia su punto de
+                                    origen. <strong>SEGUNDA: CONDICIONES PLAN DE RODAMIENTO. 1. DISPONIBILIDAD GENERAL</strong>
+                                    <strong>ORDINARIA Y EXTRAORDINARIA</strong>. Los estudiantes de cada padre representado por el
+                                    <strong>CONTRATANTE</strong> serán transportados por el <strong>CONTRATISTA</strong> de manera
+                                    ordinaria de lunes a
+                                    viernes, durante los meses y días hábiles de conformidad con el calendario académico de la
+                                    <strong>INSTITUCIÓN EDUCATIVA</strong>. No habrá lugar a servicios extraordinarios sin previa
+                                    autorización de la
+
+                                </p>
+                            @break
+
+                            @case(2)
+                                <p style="font-size: 82%;text-align: justify;">
+                                    Entre los suscritos a saber <STRong>SERVICIO DE TRANSPORTE ESPECIAL DE PASAJEROS S.A.S.</STRong>
+                                    “<STRong>STEP S.A.S.</STRong>”, legalmente constituida, habilitada como empresa de servicio público
+                                    de transporte
+                                    terrestre automotor en la modalidad de especial mediante la Resolución 036 del 10 de noviembre de
+                                    2016 del Ministerio de Transporte, identificada con el NIT No. 900.973.862-1 y representada
+                                    legalmente por la señora ALBA OSIRIS HIDALGO PESCADOR quien se identifica con la cédula de
+                                    ciudadanía No. 42.077.205 de Pereira, y en adelante el <strong>CONTRATISTA</strong>, y
+                                    {{ $contract->contracting_name }}, identificado con CC o NIT {{ $contract->contract_document }} expedida
+                                    en {{ $contract->expedition_identificationcard }}, quien obra en nombre propio y en representación del grupo de estudiantes
+                                    universitarios mayores de edad, según lista anexa, quien en adelante se denominara el
+                                    <strong>CONTRATANTE</strong>, hemos celebrado el presente <strong>CONTRATO DE PRESTACIÓN DE
+                                        SERVICIOS
+                                        PARA TRANSPORTE ESPECIAL DE UN GRUPO DE ESTUDIANTES UNIVERSITARIOS
+                                        MAYORES DE EDAD</strong>, de conformidad a la legislación nacional, libres de todo vicio y según
+                                    las
+                                    cláusulas que a continuación se describen: <strong>PRIMERA: OBJETO.</strong> El
+                                    <strong>CONTRATISTA</strong> se compromete
+                                    para con el contratante a transportar {{ $contract->passenger_quantity }} pasajeros según el listado adjunto, el cual hace parte
+                                    integral
+                                    del presente contrato, desde {{ $contract->date_start_contract }} hasta {{ $contract->contract_end_date }} y viceversa hacia su
+                                    punto de origen. <strong>SEGUNDA: CONDICIONES PLAN DE RODAMIENTO 1. DISPONIBILIDAD
+                                        GENERAL ORDINARIA Y EXTRAORDINARIA.</strong> Los estudiantes Universitarios serán transportados
+                                    por EL CONTRATISTA de manera ordinaria de lunes a viernes durante los meses y días hábiles de
+                                    conformidad con el calendario académico. No habrá lugar a servicios extraordinarios sin previa
+                                    autorización y un nuevo contrato independiente suscrito entre CONTRATANTE Y CONTRATISTA.
+                                    <strong>2. DISPONIBILIDAD HORARIA.</strong> Según el plan de rodamiento descrito, el tiempo estimado
+                                    de
+                                    servicio y disponibilidad del (os) vehículo (s) será de __ horas, desde la fecha de iniciación hasta
+                                    la terminación del contrato. <strong>TERCERA: CLASE Y NUMERO DE VEHÍCULOS.</strong> Para efectos de
+                                    ejecutar el presente contrato, el <strong>CONTRATISTA</strong> pone a disposición del CONTRATANTE
+                                    los
+                                    siguiente (s) vehículo (s) que se detallan en hoja anexa. <strong>PARÁGRAFO 1 OBSERVACIONES:
+                                        1.</strong> El
+                                    vehículo podrá ser cambiado sin perjuicio de que previamente le sea comunicada tal situación al
+                                    <strong>CONTRATANTE. 2.</strong> Aunque el vehículo sea cambiado, éste, al igual que todo el parque
+                                    automotor,
+                                    continuará cumpliendo con todas las especificaciones de seguridad, técnicas y operativas exigidas
+                                    por la normatividad vigente. <strong>3.</strong> El <strong>CONTRATANTE</strong> podrá solicitar el
+                                    cambio inmediato del vehículo
+                                    si, según el marco legal, el mismo no se encuentra en las condiciones mínimas de seguridad,
+                                    técnicas y/u operativas para prestar el servicio. <strong>CUARTA: PLAN DE CONTINGENCIA.</strong> El
+
+                                </p>
+                            @break
+
+                            @case(3)
+                                <p style="font-size: 97%;text-align: justify;">
+                                    Entre los suscritos a saber, el <strong>CONTRATANTE</strong>, {{ $contract->contracting_name }} identificado(a)
+                                    con Cédula de Ciudadanía # {{ $contract->contract_document }}, quien actúa en nombre propio y como representante
+                                    y acudiente del beneficiario del contrato de transporte, del estudiante a continuación relacionado,
+                                    perteneciente a la institución educativa {{ $contract->school_name }} ubicada en el barrio {{ $contract->address_school }}
+                                    y que en lo sucesivo será el <strong>CONTRATANTE</strong> y el <strong>CONTRATISTA</strong>,
+                                    <strong>SERVICIO DE TRANSPORTE
+                                        ESPECIAL DE PASAJEROS S.A.S.</strong> “<strong>STEP S.A.S.</strong>”, legalmente constituida,
+                                    habilitada como
+                                    empresa de servicio público de transporte terrestre automotor en la modalidad de especial mediante
+                                    la Resolución 036 del 10 de noviembre de 2016 del Ministerio de Transporte, identificada con el NIT
+                                    No. <strong>900.973.862-1</strong> y representada legalmente por la señora <strong>ALBA OSIRIS
+                                        HIDALGO PESCADOR</strong>
+                                    quien se identifica con la Cédula de Ciudadanía # 42.077.205 de Pereira, hemos celebrado el
+                                    presente <strong>CONTRATO DE PRESTACIÓN DE SERVICIOS DE TRANSPORTE DE ESTUDIANTE
+                                        CON ACUDIENTE</strong>, de conformidad a la legislación nacional, libres de todo vicio y según
+                                    las
+                                    cláusulas que a continuación se describen: <strong>PRIMERA. OBJETO.</strong> El
+                                    <strong>CONTRATISTA</strong> se compromete
+                                    para con el <strong>CONTRATANTE</strong> a transportar al estudiante descrito a continuación, desde
+                                    su lugar de
+                                    residencia ubicado en {{ $contract->contracting_direction }} hasta las instalaciones de
+                                    la institución educativa y viceversa hacia su sitio de origen.
+
+                                </p>
+                            @break
+
+                            @case(4)
+                                <p style="font-size: 82%;text-align: justify;">
+                                    Entre los suscritos a saber <strong>SERVICIO DE TRANSPORTE ESPECIAL DE PASAJEROS S.A.S</strong>
+                                    “<strong>STEP S.A.S.</strong>”, legalmente constituida, habilitada como empresa de servicio público
+                                    de transporte
+                                    terrestre automotor en la modalidad de especial mediante la Resolución 036 del 10 de noviembre de
+                                    2016 del Ministerio de Transporte, identificada con el NIT No. 900973862-1 y representada
+                                    legalmente por la señora ALBA OSIRIS HIDALGO PESCADOR quien se identifica con la cédula de
+                                    ciudadanía No. 42077205 de Pereira, y en adelante el CONTRATATISTA, y
+                                    {{ $contract->contracting_name }} quien se identifica con CC {{ $contract->contract_document }} expedida
+                                    en {{ $contract->expedition_identificationcard }} quien obra en representación legal, de la institución
+                                    educativa {{ $contract->school_name }} quien en adelante se denominara
+                                    el CONTRATANTE, hemos celebrado el presente <strong>CONTRATO DE PRESTACIÓN DE SERVICIOS
+                                        PARA TRANSPORTE ESPECIAL DE ESTUDIANTES</strong>, de conformidad a la legislación nacional,
+                                    libres de todo vicio y según las cláusulas que a continuación se describen: <strong>PRIMERA. EL
+                                        CONTRATISTA</strong> se compromete frente al <strong>CONTRATANTE</strong> a prestar el servicio
+                                    de transporte
+                                    especial de estudiantes en la modalidad especial <strong>PRIMERA: OBJETO:</strong> El COLEGIO
+                                    autoriza y
+                                    permite a LA EMPRESA transportadora prestar el servicio de transporte a sus estudiantes durante
+                                    el año escolar {{ $contract->school_year }}, de acuerdo a los horarios y días en que debe funcionar el COLEGIO según las
+                                    disposiciones emanadas por las autoridades educativas y en las rutas previamente establecidas, las
+                                    que se presentan en un documento anexo a este Contrato y que hacen parte integral y constitutivo
+                                    del mismo. <strong>PARAGRAFO 1:</strong> Los estudiantes están representados para todos los efectos
+                                    legales,
+                                    por sus respectivos PADRES DE FAMILIA y/o ACUDIENTES responsables. <strong>SEGUNDA:
+                                        DISPONIBILIDAD VEHICULAR</strong> Para efectos de prestar el servicio, el
+                                    <strong>CONTRATISTA</strong> colocará a
+                                    disposición del <strong>CONTRATANTE</strong> vehículos tipo MICROBUS. <strong>PARÁGRAFO 1
+                                        OBSERVACIONES:
+                                        1).</strong> Los vehículos podrán ser cambiados sin perjuicio de que previamente le sea
+                                    comunicada tal
+                                    situación al <strong>CONTRATANTE. 2).</strong> Aunque el vehículo sea cambiado, este, al igual que
+                                    todo el parque
+                                    automotor, continuará cumpliendo con todas las especificaciones de seguridad, técnicas y operativas
+                                    exigidas por la normatividad vigente. <strong>3).</strong> El <strong>CONTRATANTE</strong> podrá:
+                                    <strong>A.</strong> Solicitar el cambio inmediato
+                                    de un vehículo con que se preste el servicio si, según el marco legal, el mismo no se encuentra en
+                                    las condiciones mínimas de seguridad, técnicas y/u operativas para prestar el servicio.
+                                    <strong>B.</strong> Solicitar
+                                    el
+                                    cambio de vehículo por cualquier otra razón siempre y cuando adjunte por escrito que deberá
+                                    contener, la razón o razones por las cuales desean cambiar el vehículo pese a estar en óptimas
+                                    condiciones técnicas, operativas y de seguridad. <strong>TERCERA: CONDICIONES PLAN DE</strong>
+
+                                </p>
+                            @break
+
+                            @default
+                        @endswitch
+
+                    </div>
+                @break
+
+                @case(2)
+                    <div style="display: flex;position: absolute;width: 76%;height: 819px;margin-left: 6.5rem;">
+
+                        <h6 style="font-size: 95%;text-align: center;margin-top: 2%;">CONTRATO <span>NO.
+                                {{ $contract->contract_number }}</span></h6>
+                        <div>
+                            <div style="margin-top: -4%">
+
+                                <div
+                                    style="width: 100%;height: 3%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;background: #f1f0f0;">
+                                    <strong>CONTRATANTE</strong>
+                                </div>
+                            </div>
+                            <div style="margin-top: 4.1%;">
+
+                                <div
+                                    style="width: 50%;height:  3%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+                                    <strong> NOMBRE O RAZON SOCIAL</strong>
+                                </div>
+                                <div
+                                    style="width: 49.7%;height:  3%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+
+                                    <strong>IDENTIFICACIÓN ó NIT</strong>
+
+                                </div>
+                            </div>
+                            <div style="margin-top: 4%;">
+
+                                <div
+                                    style="width: 50%;height:  3%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+                                    {{ $contract->contracting_name }}
+                                </div>
+                                <div
+                                    style="width: 49.7%;height:  3%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+                                    {{ $contract->contract_document }}
+                                </div>
+                            </div>
+                            <div style="margin-top: 3.9%;">
+
+                                <div
+                                    style="width: 50%;height:  3%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+                                    <strong>TELÉFONO Y CORREO ELECTRONICO</strong>
+                                </div>
+                                <div
+                                    style="width: 49.7%;height:  3%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+
+                                    <strong>DIRECCIÓN</strong>
+
+                                </div>
+                            </div>
+                            <div style="margin-top: 3.8%;">
+
+                                <div
+                                    style="width: 50%;height:  3%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+                                    {{ $contract->contracting_phone }} - pendiente campo correo
+                                </div>
+                                <div
+                                    style="width: 49.7%;height:  3%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+                                    {{ $contract->contracting_direction }}
+                                </div>
+                            </div>
+                            <div style="margin-top: 3.7%">
+
+                                <div
+                                    style="width: 100%;height: 3.3%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;background: #f1f0f0;">
+                                    <strong>CONTRATISTA</strong>
+                                </div>
+                            </div>
+                            <div style="margin-top: 3.9%;">
+
+                                <div
+                                    style="width: 50%;height:  3.4%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+                                    <strong> RAZON SOCIAL</strong>
+                                </div>
+                                <div
+                                    style="width: 49.7%;height:  3.4%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+                                    <strong>NIT</strong>
+                                </div>
+                            </div>
+                            <div style="margin-top: 3.8%;">
+
+                                <div
+                                    style="width: 50%;height:  3.4%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+                                    STEP S.A.S
+                                </div>
+                                <div
+                                    style="width: 49.7%;height:  3.4%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+                                    900.973.862-1
+                                </div>
+                            </div>
+                            <div style="margin-top: 3.7%;">
+
+                                <div
+                                    style="width: 50%;height:  3.5%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;background: #f1f0f0;">
+                                    <strong> CANAL PQRS</strong>
+                                </div>
+                                <div
+                                    style="width: 49.7%;height:  3.5%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;background: #f1f0f0;">
+                                    <strong>SERVICIO AL CLIENTE</strong>
+                                </div>
+                            </div>
+                            <div style="margin-top: 3.7%;">
+
+                                <div
+                                    style="width: 50%;height:  3.6%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+                                    <a href="">sertepsapqr@step.com.co</a>
+                                </div>
+                                <div
+                                    style="width: 49.7%;height:  3.6%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+                                    3303821-3234197103
+                                </div>
+                            </div>
+                            <div style="margin-top: 3.6%;">
+
+                                <div
+                                    style="width: 50%;height:  3.8%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;background: #f1f0f0;">
+                                    <strong> FECHA INICIO CONTRATO</strong>
+                                </div>
+                                <div
+                                    style="width: 49.7%;height:  3.8%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;background: #f1f0f0;">
+                                    <strong>FECHA FINAL CONTRATO</strong>
+                                </div>
+                            </div>
+                            <div style="margin-top: 3.7%;">
+
+                                <div
+                                    style="width: 50%;height:  3.9%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+                                    {{ $contract->date_start_contract }}
+                                </div>
+                                <div
+                                    style="width: 49.7%;height:  3.9%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+                                    {{ $contract->contract_end_date }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <p style="font-size: 88%;text-align: justify;">
+                            Entre los suscritos a saber, el <strong>CONTRATANTE</strong>, identificado con
+                            Nit , ubicado en , y representado legalmente por
+                            , quien se identifica con la cédula de
+                            No. expedida en ( ) y el <strong>CONTRATISTA</strong>, <strong>SERVICIO DE
+                                TRANSPORTE ESPECIAL DE PASAJEROS S.A.S. “STEP S.A.S.”,</strong> legalmente
+                            constituida, habilitada como empresa de servicio público de transporte terrestre automotor
+                            en la modalidad de especial mediante la Resolución 036 del 10 de noviembre de 2016 del
+                            Ministerio de Transporte, identificada con el NIT No. <strong>900973862-1</strong> y representada
+                            legalmente por la señora <strong>ALBA OSIRIS HIDALGO PESCADOR</strong> quien se identifica con la
+                            cédula de ciudadanía No. 42077205 de Pereira, hemos celebrado el presente
+                            <strong>CONTRATO DE PRESTACIÓN DE SERVICIOS DE TRANSPORTE DE ESPECIAL
+                                EMPRESARIAL</strong>, de conformidad a la legislación nacional, libres de todo vicio y según las
+                            cláusulas que a continuación se describen: <strong>PRIMERA. EL CONTRATISTA</strong> se
+                            compromete frente al <strong>CONTRATANTE</strong> a prestar el servicio de transporte especial
+                            empresarial de sus funcionarios, empleados o contratistas, (según el listado adjunto) de
+                            acuerdo a la orden del servicio en recorridos ( ) y
+                            municipios del departamento de durante el año 2019. <strong>SEGUNDA:
+                                DISPONIBILIDAD VEHICULAR</strong> Para efectos de prestar el servicio, el
+                            <strong>CONTRATISTA</strong>
+                            colocará a disposición del <strong>CONTRATANTE</strong> vehículos de tipo MICROBUS, vehículos
+                            tipo BUS Y BUSETA, todos estos relacionados en un documento anexo al presente
+                            contrato. , el <strong>CONTRATANTE</strong> entregará al momento de celebrar el presente contrato,
+                            un
+                            listado de rutas según demanda a satisfacer y con una relación completa de los
+                        </p>
+                    </div>
+                @break
+
+                @case(3)
+                    <div style="display: flex;position: absolute;width: 76%;height: 819px;margin-left: 6.5rem;">
+
+                        <h6 style="font-size: 95%;text-align: center;margin-top: 2%;">CONTRATO <span>NO.
+                                {{ $contract->contract_number }}</span></h6>
+
+                        <div>
+                            <div style="margin-top: -4%">
+
+                                <div
+                                    style="width: 100%;height: 3%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;background: #f1f0f0;">
+                                    <strong>CONTRATANTE</strong>
+                                </div>
+                            </div>
+                            <div style="margin-top: 4.1%;">
+
+                                <div
+                                    style="width: 50%;height:  3%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+                                    <strong> NOMBRE O RAZON SOCIAL</strong>
+                                </div>
+                                <div
+                                    style="width: 49.7%;height:  3%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+
+                                    <strong>IDENTIFICACIÓN ó NIT</strong>
+
+                                </div>
+                            </div>
+                            <div style="margin-top: 4%;">
+
+                                <div
+                                    style="width: 50%;height:  3%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+                                    {{ $contract->contracting_name }}
+                                </div>
+                                <div
+                                    style="width: 49.7%;height:  3%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+                                    {{ $contract->contract_document }}
+                                </div>
+                            </div>
+                            <div style="margin-top: 3.9%;">
+
+                                <div
+                                    style="width: 50%;height:  3%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+                                    <strong>TELÉFONO Y CORREO ELECTRONICO</strong>
+                                </div>
+                                <div
+                                    style="width: 49.7%;height:  3%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+
+                                    <strong>DIRECCIÓN</strong>
+
+                                </div>
+                            </div>
+                            <div style="margin-top: 3.8%;">
+
+                                <div
+                                    style="width: 50%;height:  3%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+                                    {{ $contract->contracting_phone }} - pendiente campo correo
+                                </div>
+                                <div
+                                    style="width: 49.7%;height:  3%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+                                    {{ $contract->contracting_direction }}
+                                </div>
+                            </div>
+                            <div style="margin-top: 3.7%">
+
+                                <div
+                                    style="width: 100%;height: 3.3%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;background: #f1f0f0;">
+                                    <strong>CONTRATISTA</strong>
+                                </div>
+                            </div>
+                            <div style="margin-top: 3.9%;">
+
+                                <div
+                                    style="width: 50%;height:  3.4%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+                                    <strong> RAZON SOCIAL</strong>
+                                </div>
+                                <div
+                                    style="width: 49.7%;height:  3.4%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+                                    <strong>NIT</strong>
+                                </div>
+                            </div>
+                            <div style="margin-top: 3.8%;">
+
+                                <div
+                                    style="width: 50%;height:  3.4%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+                                    STEP S.A.S
+                                </div>
+                                <div
+                                    style="width: 49.7%;height:  3.4%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+                                    900.973.862-1
+                                </div>
+                            </div>
+                            <div style="margin-top: 3.7%;">
+
+                                <div
+                                    style="width: 50%;height:  3.5%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;background: #f1f0f0;">
+                                    <strong> CANAL PQRS</strong>
+                                </div>
+                                <div
+                                    style="width: 49.7%;height:  3.5%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;background: #f1f0f0;">
+                                    <strong>SERVICIO AL CLIENTE</strong>
+                                </div>
+                            </div>
+                            <div style="margin-top: 3.7%;">
+
+                                <div
+                                    style="width: 50%;height:  3.6%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+                                    <a href="">sertepsapqr@step.com.co</a>
+                                </div>
+                                <div
+                                    style="width: 49.7%;height:  3.6%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+                                    3303821-3234197103
+                                </div>
+                            </div>
+                            <div style="margin-top: 3.6%;">
+
+                                <div
+                                    style="width: 50%;height:  3.8%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;background: #f1f0f0;">
+                                    <strong> FECHA INICIO CONTRATO</strong>
+                                </div>
+                                <div
+                                    style="width: 49.7%;height:  3.8%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;background: #f1f0f0;">
+                                    <strong>FECHA FINAL CONTRATO</strong>
+                                </div>
+                            </div>
+                            <div style="margin-top: 3.7%;">
+
+                                <div
+                                    style="width: 50%;height:  3.9%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+                                    {{ $contract->date_start_contract }}
+                                </div>
+                                <div
+                                    style="width: 49.7%;height:  3.9%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+                                    {{ $contract->contract_end_date }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <p style="font-size: 80%;text-align: justify;">
+                            Entre los suscritos a saber <strong>SERVICIO DE TRANSPORTE ESPECIAL DE PASAJEROS S.A.S.</strong>
+                            “<strong>STEP S.A.S</strong>.”, legalmente constituida, habilitada como empresa de servicio público
+                            de transporte
+                            terrestre automotor en la modalidad de especial mediante la Resolución 036 del 10 de noviembre de
+                            2016 del Ministerio de Transporte, identificada con el NIT No. 900973862-1 y representada
+                            legalmente por la señora ALBA OSIRIS HIDALGO PESCADOR quien se identifica con la cédula de
+                            ciudadanía No. 42077205 de Pereira, y en adelante el CONTRATATISTA, y
+                            ___________________________ quien se identifica con CC _____________ expedida en
+                            ____________ quien obra en representación legal y a nombre propio, de
+                            ___________________________ quien en adelante se denominara el CONTRATANTE, hemos
+                            <strong>celebrado el presente CONTRATO DE PRESTACIÓN DE SERVICIOS PARA TRANSPORTE
+                                ESPECIAL DE TURISTAS</strong>, de conformidad a la legislación nacional, libres de todo vicio y
+                            según las
+                            cláusulas que a continuación se describen: <strong>PRIMERA</strong>. <strong>EL CONTRATISTA</strong>
+                            se compromete frente
+                            al <strong>CONTRATANTE</strong> a prestar el servicio de transporte especial de pasajeros en la
+                            modalidad
+                            especial, según la orden de servicio (la cual puede ser enviada al correo o WhatsApp donde indique
+                            fechas, horas, sitios, anexe listado de pasajeros) las partes acuerdan como objeto contractual la
+                            prestación del servicio de transporte de personal de turistas locales, nacionales e internacionales,
+                            desde unos sitios de recogida previamente establecidos hasta unos sitios de llegada, teniendo luego
+                            en regreso al lugar de origen, que para ello se destine por parte del operador turístico a nivel
+                            nacional.
+                            <strong>SEGUNDA</strong>: <strong>DISPONIBILIDAD VEHICULAR</strong> Para efectos de prestar el
+                            servicio, el <strong>CONTRATISTA</strong>
+                            colocará a disposición del <strong>CONTRATANTE</strong> vehículos tipo _____________.
+                            <strong>PARÁGRAFO 1
+                                OBSERVACIONES</strong>: <strong>1)</strong>. Los vehículos podrán ser cambiados sin perjuicio de
+                            que previamente le sea
+                            comunicada tal situación al <strong>CONTRATANTE. 2).</strong> Aunque el vehículo sea cambiado, este,
+                            al igual
+                            que todo el parque automotor, continuará cumpliendo con todas las especificaciones de seguridad,
+                            técnicas y operativas exigidas por la normatividad vigente. <strong>3).</strong> El
+                            <strong>CONTRATANTE</strong> podrá: <strong>A.</strong> Solicitar
+                            el cambio inmediato de un vehículo con que se preste el servicio si, según el marco legal, el mismo
+                            no se encuentra en las condiciones mínimas de seguridad, técnicas y/u operativas para prestar el
+                            servicio. <strong>B.</strong> Solicitar el cambio de vehículo por cualquier otra razón siempre y
+                            cuando adjunte por
+                            escrito que deberá contener, la razón o razones por las cuales desean cambiar el vehículo pese a
+                            estar en óptimas condiciones técnicas, operativas y de seguridad. <strong>TERCERA</strong>:
+                            <strong>CONDICIONES
+                                PLAN DE RODAMIENTO. 1. DISPONIBILIDAD GENERAL ORDINARIA Y EXTRAORDINARIA.</strong>
+                            Todo servicio será pactado con anterioridad (huéspedes, turistas, empleados propios) de
+                        </p>
+                    </div>
+                @break
+
+                @case(4)
+                    <div style="display: flex;position: absolute;width: 76%;height: 819px;margin-left: 6.5rem;">
+
+
+                        <h6 style="font-size: 95%;text-align: center;margin-top: 2%;">CONTRATO <span>NO.
+                                {{ $contract->contract_number }}</span></h6>
+
+                        <div>
+                            <div style="margin-top: -4%">
+
+                                <div
+                                    style="width: 100%;height: 3%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;background: #f1f0f0;">
+                                    <strong>CONTRATANTE</strong>
+                                </div>
+                            </div>
+                            <div style="margin-top: 4.1%;">
+
+                                <div
+                                    style="width: 50%;height:  3%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+                                    <strong> NOMBRE O RAZON SOCIAL</strong>
+                                </div>
+                                <div
+                                    style="width: 49.7%;height:  3%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+
+                                    <strong>IDENTIFICACIÓN ó NIT</strong>
+
+                                </div>
+                            </div>
+                            <div style="margin-top: 4%;">
+
+                                <div
+                                    style="width: 50%;height:  3%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+                                    {{ $contract->contracting_name }}
+                                </div>
+                                <div
+                                    style="width: 49.7%;height:  3%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+                                    {{ $contract->contract_document }}
+                                </div>
+                            </div>
+                            <div style="margin-top: 3.9%;">
+
+                                <div
+                                    style="width: 50%;height:  3%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+                                    <strong>TELÉFONO Y CORREO ELECTRONICO</strong>
+                                </div>
+                                <div
+                                    style="width: 49.7%;height:  3%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+
+                                    <strong>DIRECCIÓN</strong>
+
+                                </div>
+                            </div>
+                            <div style="margin-top: 3.8%;">
+
+                                <div
+                                    style="width: 50%;height:  3%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+                                    {{ $contract->contracting_phone }} - pendiente campo correo
+                                </div>
+                                <div
+                                    style="width: 49.7%;height:  3%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+                                    {{ $contract->contracting_direction }}
+                                </div>
+                            </div>
+                            <div style="margin-top: 3.7%">
+
+                                <div
+                                    style="width: 100%;height: 3.3%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;background: #f1f0f0;">
+                                    <strong>CONTRATISTA</strong>
+                                </div>
+                            </div>
+                            <div style="margin-top: 3.9%;">
+
+                                <div
+                                    style="width: 50%;height:  3.4%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+                                    <strong> RAZON SOCIAL</strong>
+                                </div>
+                                <div
+                                    style="width: 49.7%;height:  3.4%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+                                    <strong>NIT</strong>
+                                </div>
+                            </div>
+                            <div style="margin-top: 3.8%;">
+
+                                <div
+                                    style="width: 50%;height:  3.4%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+                                    STEP S.A.S
+                                </div>
+                                <div
+                                    style="width: 49.7%;height:  3.4%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+                                    900.973.862-1
+                                </div>
+                            </div>
+                            <div style="margin-top: 3.7%;">
+
+                                <div
+                                    style="width: 50%;height:  3.5%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;background: #f1f0f0;">
+                                    <strong> CANAL PQRS</strong>
+                                </div>
+                                <div
+                                    style="width: 49.7%;height:  3.5%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;background: #f1f0f0;">
+                                    <strong>SERVICIO AL CLIENTE</strong>
+                                </div>
+                            </div>
+                            <div style="margin-top: 3.7%;">
+
+                                <div
+                                    style="width: 50%;height:  3.6%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+                                    <a href="">sertepsapqr@step.com.co</a>
+                                </div>
+                                <div
+                                    style="width: 49.7%;height:  3.6%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+                                    3303821-3234197103
+                                </div>
+                            </div>
+                            <div style="margin-top: 3.6%;">
+
+                                <div
+                                    style="width: 50%;height:  3.8%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;background: #f1f0f0;">
+                                    <strong> FECHA INICIO CONTRATO</strong>
+                                </div>
+                                <div
+                                    style="width: 49.7%;height:  3.8%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;background: #f1f0f0;">
+                                    <strong>FECHA FINAL CONTRATO</strong>
+                                </div>
+                            </div>
+                            <div style="margin-top: 3.7%;">
+
+                                <div
+                                    style="width: 50%;height:  3.9%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+                                    {{ $contract->date_start_contract }}
+                                </div>
+                                <div
+                                    style="width: 49.7%;height:  3.9%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+                                    {{ $contract->contract_end_date }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <p style="font-size: 82%;text-align: justify;">
+                            Entre los suscritos a saber, el <strong>CONTRATANTE</strong>, identificado con cédula de ciudadanía
+                            No
+                            ___________________ expedida en _____________________, quien actúa en nombre propio y el
+                            <strong>CONTRATISTA, STEP S.A.S. – SERVICIO DE TRANSPORTE ESPECIAL DE PASAJEROS S.A.S.,</strong>
+                            legalmente constituida, habilitada como empresa de servicio público de transporte terrestre
+                            automotor en
+                            la modalidad de especial mediante la Resolución 036 del 10 de noviembre de 2016 del Ministerio de
+                            Transporte, identificada con el NIT No. <strong>900.973.862-1</strong> y representada legalmente por
+                            la señora <strong>ALBA
+                                OSIRIS HIDALGO PESCADOR</strong> quien se identifica con la cédula de ciudadanía No. 42.077.205
+                            expedida
+                            en Pereira, hemos celebrado el presente <strong>CONTRATO DE PRESTACIÓN DE SERVICIOS DE
+                                TRANSPORTE ESPECIAL CON GRUPO ESPECÍFICO DE USUARIOS (TRANSPORTE DE
+                                PARTICULARES)</strong>, de conformidad a la legislación nacional, libres de todo vicio y según
+                            las cláusulas
+                            que
+                            a continuación se describen: <strong>PRIMERA. OBJETO.</strong> El <strong>CONTRATISTA</strong> se
+                            compromete para con el
+                            contratante a transportar __ pasajeros según el listado adjunto, el cual hace parte integral del
+                            presente
+                            contrato, desde ________________ hasta _________________ y viceversa hacia su punto de origen.
+                            <strong>SEGUNDA: CONDICIONES PLAN DE RODAMIENTO 1. DISPONIBILIDAD GENERAL ORDINARIA Y
+                                EXTRAORDINARIA.</strong> El plan de rodamiento ordinario será el siguiente:
+                        <div>
+                            <table
+                                style="width: 100%;border: solid 1px #000;border-collapse: collapse;margin-bottom: 1%;font-size: 75%;">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 18%;border: solid 1px #000;border-collapse: collapse;">
+                                            PLAN
+                                        </th>
+                                        <th style="width: 45%;border: solid 1px #000;border-collapse: collapse;">
+                                            UBICACION
+                                        </th>
+                                        <th style="width: 29%;border: solid 1px #000;border-collapse: collapse;">
+                                            FECHA
+                                        </th>
+                                        <th style="width: 10%;border: solid 1px #000;border-collapse: collapse;">
+                                            HORA
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="width: 18%;border: solid 1px #000;border-collapse: collapse;">
+                                            Lugar de Origen
+                                        </td>
+                                        <td style="width: 45%;border: solid 1px #000;border-collapse: collapse;">
+
+                                        </td>
+                                        <td style="width: 29%;border: solid 1px #000;border-collapse: collapse;">
+
+                                        </td>
+                                        <td style="width: 10%;border: solid 1px #000;border-collapse: collapse;">
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 18%;border: solid 1px #000;border-collapse: collapse;">
+                                            Lugar de Destino
+                                        </td>
+                                        <td style="width: 45%;border: solid 1px #000;border-collapse: collapse;">
+
+                                        </td>
+                                        <td style="width: 29%;border: solid 1px #000;border-collapse: collapse;">
+
+                                        </td>
+                                        <td style="width: 10%;border: solid 1px #000;border-collapse: collapse;">
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 18%;border: solid 1px #000;border-collapse: collapse;">
+                                            Regreso
+                                        </td>
+                                        <td style="width: 45%;border: solid 1px #000;border-collapse: collapse;">
+
+                                        </td>
+                                        <td style="width: 29%;border: solid 1px #000;border-collapse: collapse;">
+
+                                        </td>
+                                        <td style="width: 10%;border: solid 1px #000;border-collapse: collapse;">
+
+                                        </td>
+                                    </tr>
+                                </tbody>
+
+                            </table>
+                        </div>
+                        PLAN UBICACION FECHA HORA
+                        Lugar de Origen
+                        Lugar de Destino
+                        Regreso
+                        No habrá lugar a servicios extraordinarios sin previa autorización y un nuevo contrato independiente
+                        suscrito entre CONTRATANTE Y CONTRATISTA. <strong>2. DISPONIBILIDAD HORARIA.</strong> Según el plan
                         de
-                        seguridad, técnicas y/u operativas para prestar el servicio. <strong>CUARTA. PLAN DE
-                            CONTINGENCIA</strong>. El
-                        <strong>CONTRATISTA</strong> dispondrá de la aplicación del plan de contingencia respectivo, a
-                        fin
-                        de suplir los
-                        inconvenientes que puedan tener los vehículos que prestan el servicio al <strong>CONTRATANTE.
-                            QUINTA</strong>.
-                        <strong>OBLIGACIONES DEL CONTRATISTA 1</strong>. Cumplir estrictamente con los horarios
-                        establecidos. <strong>2</strong>. Recoger
-                        y entregar a los pasajeros de conformidad al plan de rodamiento y lista de pasajeros adjunta.
-                        <strong>3</strong>.
-                        Llevar
-                        con seguridad, aseo y comodidad al pasajero, respetando las normas de tránsito y de transporte
-                        especial
-                        vigente. <strong>4</strong>. Llevar una velocidad moderada durante todo el recorrido.
-                        <strong>5</strong>. Mantener su vehículo en
-                        excelentes condiciones de aseo, excelente estado técnico mecánico, haciendo los respectivos
-                        mantenimientos preventivos. <strong>6</strong>. Tener conductores de certificada experiencia,
-                        habilidad,
-                        responsabilidad,
-                        cultura, seriedad y de conformidad con la ley. <strong>7</strong>. Expedir copia simple física o
-                        digital, previa
-                        solicitud en tal
-                        sentido del <strong>CONTRATANTE</strong> de la póliza de responsabilidad civil contractual y
-                        extracontractual
-                        contratada,
-                        habilitación, contrato, SOAT, licencia de conducción del conductor y demás documentos que
-                        requiera
-                        para
-                        verificar el cumplimiento de la normatividad vigente en materia de transporte especial y
-                        transporte
-                        en
-                        general y sobre las condiciones de ejecución y cumplimiento del contrato. <strong>8</strong>.
-                        Llevar
-                        las puertas
-                        cerradas,
-                        recogiendo y dejando a los pasajeros según el plan de rodamiento. <strong>SEXTA: OBLIGACIONES
-                            DEL
-                            CONTRATANTE. 1</strong>. Asignar una persona que sea vigilante de que los pasajeros guarden
-                        la
-                        compostura
-                        y el orden durante la prestación del servicio, para tales efectos, socializará con ellos las
-                        normas
-                        básicas
-                        de conducta al interior del vehículo, este puede ser el mismo CONTRATANTE o designar a uno de
-                        los
-                        ocupantes del servicio. <strong>2</strong>. Pagar los daños que los (as) pasajeros ocasionen al
-                        vehículo durante la
-                        prestación del servicio. <strong>SÉPTIMA. VALOR DEL CONTRATO Y FORMA DE PAGO</strong>. Por el
-                        servicio
-                        prestado, las partes pactan que el <strong>CONTRATANTE</strong> pagará al
-                        <strong>CONTRATISTA</strong> la suma de {{$valueContractText}} PESOS MCTE. (${{ number_format($contract->contract_value, 2, ',', '.') }}) , los cuales pagará de la siguiente forma: {{$tipe_pay}}. El pago podrá realizarse a través de consignación
-                        bancaría en la
-                        cuenta corriente # 127669997810 del Banco Davivienda, a nombre de STEP S.A.S. informando del
-                        pago
-                        al <strong>CONTRATISTA</strong>, o directamente en la oficina del <strong>CONTRATISTA</strong> o
-                        al
-                        conductor del vehículo; en
-                        cualquier caso, deberá siempre conservar el comprobante del pago e informar al
-                        <strong>CONTRATISTA</strong> o exigir
-                        recibo o constancia del pago realizado. <strong>OCTAVA. ATENCION Y RESPUESTA ANTE
-                            EMERGENCIAS</strong>.
-                        El conductor actuará de acuerdo con el plan de atención y respuesta ante emergencia establecido
-                        por
-                        la
-                        EMPRESA, ante eventos como vendaval, avalancha, terremoto, inundación, y /o cualquier situación
-                        que
-                        no sea convencional de y de acuerdo a la movilidad. <strong>NOVENA. TRATAMIENTO DE LA PROPIEDAD
-                            DEL CLIENTE</strong>. Cuidar la propiedad del usuario del servicio de transporte mientras
-                        esté
-                        bajo su
-                        control,
-                        tales como componentes, instalaciones, equipos, herramientas, propiedad intelectual y datos
-                        personales;
-                        bajo las condiciones establecidas por <strong>LA EMPRESA</strong> en los requisitos para la
-                        prestación de este
-                        servicio,
-                        o por motivos de capacidad del vehículo prestador de este servicio, <strong>LA EMPRESA</strong>
-                        NO
-                        se pueda hace
-                        responsable de la Propiedad del cliente, se le comunicará esta condición a la persona asignada
-                        como
-                        responsable del grupo de usuarios del servicio.
-                    </p>
-                @endif
+                        rodamiento descrito, el tiempo estimado de servicio y disponibilidad del (os) vehículo (s) será de
+                        horas,
+                        desde la fecha de iniciación hasta la terminación del contrato.
+                        </p>
+                    </div>
+                @break
 
-            </p>
-        </div>
-    </div>
-    <!-- espacio final -->
-    {{-- <div class="contenedorfinal">C</div> --}}
-</x-contractframes>
-<x-contractframes>
-    <!-- texto central -->
-    <div class="contenedorcentral">
-        <div>
-            <p class="parrafo3">
-                @if ($contract->type_contract == 1 || $contract->type_contract == 2)
-                    <strong>2)</strong> Pagar los daños que los pasajeros ocasionan al vehículo durante la
-                    prestación del servicio.
-                    <strong>3)</strong>.
-                    Destinar los espa{cios internos del establecimiento con acceso vehicular al ascenso y
-                    descenso de
-                    pasajeros. <strong>4)</strong>. Contar con un Plan Estratégico de Seguridad Vial durante
-                    la prestación del
-                    servicio.
-                    <strong>SÉPTIMA. VALOR DEL CONTRATO Y FORMA PAGO</strong>. El pago se hará de acuerdo a
-                    la orden de
-                    servicio, la cual será facturada al finalizar cada periodo y será cancelada los primeros
-                    10 días
-                    del
-                    mes siguiente. El pago deberá realizarlo el <strong>CONTRATANTE</strong> a través de
-                    consignación bancaria en
-                    la cuenta corriente #127669997810 del banco Davivienda, informando del pago al
-                    <strong>CONTRATISTA</strong>
-                    o/y directamente en la oficina del <strong>CONTRATISTA</strong>, en cualquier caso,
-                    deberá siempre conservar el
-                    comprobante de la consignación e informar al <strong>CONTRATISTA</strong> o exigir
-                    recibo o
-                    constancia del pago por el pago realizado. De incurrir en mora, el
-                    <strong>CONTRATISTA</strong> le informará de
-                    tal situación y podrá suspender de inmediato la prestación del servicio y sin perjuicio
-                    de las
-                    demás
-                    acciones legales, que, para sus efectos, el presente contrato y sus anexos prestará
-                    mérito
-                    ejecutivo.
-                    La mora se liquidará con base en las reglas generales de los negocios mercantiles.
-                    <strong>PARÁGRAFO</strong>:
-                    Cualquier cambio en la cuenta bancaria será notificado por el
-                    <strong>CONTRATISTA</strong> a través de correo.
-                    <strong>OCTAVA. CAUSALES DE SUSPENSIÓN DEL SERVICIO</strong>: Será causales de
-                    suspensión parcial o
-                    total del servicio de transporte, las siguientes: <strong>1)</strong> Los actos de
-                    indisciplina o vandalismo por
-                    parte
-                    del pasajero dentro del bus, como daños en la cojinería, vidrios y en alguna otra parte
-                    del
-                    pasajero
-                    dentro del vehículo, o l tenencia de elementos inflamable, tóxicos, sustancias
-                    alucinógenas,
-                    embriagantes o explosivos. <strong>3)</strong> y en general por incurrir en conductas
-                    que afecten el normal
-                    comportamiento y cuidado. <strong>PARÁGRAFO: PROCEDIMIENTO DE DENUNCIA</strong>: El
-                    conductor o su
-                    acompañante, de haber, documentará y recolectará pruebas de lo sucedido, le comunicará
-                    la
-                    situación al coordinador de la ruta quien a su vez se pondrá en contacto con el
-                    <strong>CONTRATISTA</strong> y/o
-                    autoridad competente. Lo anterior sin perjuicio de las acciones legales que el tenga.
-                    <strong>NOVENA.
-                        VIGENCIA</strong>. El presente contrato tendrá una duración de {{ $difmont }}
+                @case(5)
+                    <div style="display: flex;position: absolute;width: 76%;height: 819px;margin-left: 6.5rem;">
 
-                    @if ($difmont > 1)
-                        meses
-                    @else
-                        mes
-                    @endif
+                        <h6 style="font-size: 95%;text-align: center;margin-top: 2%">CONTRATO <span>NO.
+                                {{ $contract->contract_number }}</span></h6>
+                        <div>
+                            <div style="margin-top: -4%">
 
+                                <div
+                                    style="width: 100%;height: 3%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;background: #f1f0f0;">
+                                    <strong>CONTRATANTE</strong>
+                                </div>
+                            </div>
+                            <div style="margin-top: 4.1%;">
 
-                    con ({{ $difday }})
-                    {{ $difdayletter }}
+                                <div
+                                    style="width: 50%;height:  3%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+                                    <strong> NOMBRE O RAZON SOCIAL</strong>
+                                </div>
+                                <div
+                                    style="width: 49.7%;height:  3%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
 
-                    @if ($difday > 1)
-                        días
-                    @else
-                        día
-                    @endif
+                                    <strong>IDENTIFICACIÓN ó NIT</strong>
 
+                                </div>
+                            </div>
+                            <div style="margin-top: 4%;">
 
-                    comenzando a ejecutarse el día {{ $fstart }} al {{ $fend }}. Por ningún
-                    motivo
-                    podrá prorrogarse automáticamente el presente contrato o cederse por la parte
-                    <strong>CONTRATANTE</strong>:
-                    Pese a lo anterior, cualquiera de las partes podrá, faltando un mes para concluir el
-                    contrato,
-                    enviar
-                    oferta comercial tendiente a la celebración de un nuevo contrato; por su parte si el
-                    contrato
-                    fue
-                    ejecutado con excelencia, el <strong>CONTRATANTE</strong> se compromete a preferir al
-                    <strong>CONTRATISTA</strong> en una
-                    nueva licitación y en caso de encontrarse en igualdad de condiciones frente a otros
-                    ofertantes
-                    ce
-                    <strong>DECIMA. TERMINACIÓN</strong>. Cualquiera de las partes podrá dar por terminado
-                    este contrato dando un
-                    preaviso a la otra parte por menos 20 días hábiles y previos a vencerse al mes.
-                    <strong>DECIMA PRIMERA.
-                        CAUSALES DE TERMINACIÓN CON JUSTA CAUSA Y UNILATERALES. A) POR PARTE DEL
-                        CONTRATISTA</strong>: 1) La mora del <strong>CONTRATANTE</strong> en el pago según
-                    lo consagrado en la cláusula
-                    séptima del presente contrato 2) Actos de indisciplina, irrespeto o vandalismo por parte
-                    de los
-                    pasajeros que ocasionan daños de hasta en el 15% del parque automotor dispuesto para la
-                    prestación del servicio. <strong>B) POR PARTE DEL CONTRATANTE</strong>: 1) Por
-                    inconformidad expresa con la
-                    prestación del servicio, previa denuncia por escrito y por medio PQRS realizada al
-                    <strong>CONTRATISTA</strong>
-                    sin que este ejecute acciones o tome medidas correctivas, o explique justamente la
-                    situación. 2)
-                    Por
-                    incumplimiento con alguno de los compromisos adquiridos en el presente contrato.
-                    <strong>DECIMA
-                        SEGUNDA. SOLUCIÓN D CONTROVERSIAS:</strong> Toda controversia, conflicto o
-                    diferencias relativas
-                    a este contrato, su ejecución y liquidación, se resolverán preferiblemente mediante los
-                    mecanismos
-                @endif
-                @if ($contract->type_contract == 4)
-                    DECIMA.CAUSALES DE SUSPENSIÓN DEL SERVICIO: Serán causales de suspensión parcial o total
-                    del servicio, las siguientes: 1. Los actos de indisciplina o vandalismo por parte de los pasajeros
-                    dentro del
-                    vehículo, como daños en la cojinería, vidrios, etc. 2. El comportamiento agresivo, indecente,
-                    violento por
-                    parte de los pasajeros dentro y/o con los ocupantes del vehículo, o la tenencia de elementos
-                    inflamables,
-                    tóxicos, sustancias alucinógenas o explosivos. 3. Conductas contra la moral y las buenas costumbres
-                    por
-                    parte de los pasajeros dentro del vehículo. PARÁGRAFO: PROCEDIMIENTO DE DENUNCIA: El
-                    acompañante o conductor documentará y recolectará pruebas de lo sucedido, le comunicará la situación
-                    a la empresa quien evaluará la situación e indicará el procedimiento a seguir según el evento que se
-                    presente a la persona responsable del grupo de pasajeros designada en el presente contrato, según
-                    listado adjunto, el cual forma parte integral del presente documento. o a la autoridad competente.
-                    Lo
-                    anterior sin perjuicio de las acciones legales que El CONTRATISTA o sus funcionarios tenga. DECIMA
-                    PRIMERA. DURACION DEL CONTRATO. El presente contrato tendrá una duración de 
-                    {{ $difday }}
-                    @if ($difday > 1)
-                        días
-                    @else
-                        día
-                    @endif
-                    ,
-                    comenzando a ejecutarse el día {{ $fstart }} hasta {{ $fend }} automáticamente el
-                    presente contrato o cederse por la parte CONTRATANTE. DECIMA SEGUNDA. TERMINACIÓN.
-                    Cualquiera de las partes podrá dar por terminado este contrato dando un preaviso con no menos de dos
-                    (2) días de antelación al servicio. En cualquier caso, no se devolverá suma alguna por concepto de
-                    depósito. DECIMA TERCERA. CAUSALES DE TERMINACIÓN CON JUSTA CAUSA Y
-                    UNILATERALES. A. POR PARTE DEL CONTRATISTA: 1. El no pago por parte del CONTRATANTE 2.
-                    Actos de indisciplina, irrespeto o vandalismo por parte de los pasajeros. B. POR PARTE DEL
-                    CONTRATANTE: 1. Por inconformidad con la prestación del servicio, previa denuncia por escrito al
-                    correo
-                    electrónico: servicioalcliente@step.com.co al WhatsApp # 323 419 7103 al CONTRATISTA sin que este
-                    ejecute acciones o tome medidas correctivas, o explique justamente la situación. 2. Por
-                    incumplimiento
-                    con alguno de los compromisos adquiridos en el presente contrato.
-                    <p class="parrafo5">
-                        ----------------------------------------- FIN
-                        CLAUSULADO-----------------------------------------
-                    </p>
-                    <p class="parrafo6-1">
-                        Para efectos de dejar constancia, <strong>CONTRATANTE</strong> y <strong>CONTRATISTA</strong>,
-                        libres de todo vicio y en
-                        pleno uso
-                        de nuestras facultades suscribimos y aceptamos el presente contrato en Dosquebradas a
-                        los
-                        {{ $firmeday }}
-                        @if ($firmeday == 1)
-                            día
-                        @else
-                            días
-                        @endif
-                        del mes de {{ $firmemonth }} del año {{ $firmeyear }}
+                                <div
+                                    style="width: 50%;height:  3%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+                                    {{ $contract->contracting_name }}
+                                </div>
+                                <div
+                                    style="width: 49.7%;height:  3%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+                                    {{ $contract->contract_document }}
+                                </div>
+                            </div>
+                            <div style="margin-top: 3.9%;">
+
+                                <div
+                                    style="width: 50%;height:  3%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+                                    <strong>TELÉFONO Y CORREO ELECTRONICO</strong>
+                                </div>
+                                <div
+                                    style="width: 49.7%;height:  3%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+
+                                    <strong>DIRECCIÓN</strong>
+
+                                </div>
+                            </div>
+                            <div style="margin-top: 3.8%;">
+
+                                <div
+                                    style="width: 50%;height:  3%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+                                    {{ $contract->contracting_phone }} - pendiente campo correo
+                                </div>
+                                <div
+                                    style="width: 49.7%;height:  3%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+                                    {{ $contract->contracting_direction }}
+                                </div>
+                            </div>
+                            <div style="margin-top: 3.7%">
+
+                                <div
+                                    style="width: 100%;height: 3.3%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;background: #f1f0f0;">
+                                    <strong>CONTRATISTA</strong>
+                                </div>
+                            </div>
+                            <div style="margin-top: 3.9%;">
+
+                                <div
+                                    style="width: 50%;height:  3.4%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+                                    <strong> RAZON SOCIAL</strong>
+                                </div>
+                                <div
+                                    style="width: 49.7%;height:  3.4%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+                                    <strong>NIT</strong>
+                                </div>
+                            </div>
+                            <div style="margin-top: 3.8%;">
+
+                                <div
+                                    style="width: 50%;height:  3.4%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+                                    STEP S.A.S
+                                </div>
+                                <div
+                                    style="width: 49.7%;height:  3.4%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+                                    900.973.862-1
+                                </div>
+                            </div>
+                            <div style="margin-top: 3.7%;">
+
+                                <div
+                                    style="width: 50%;height:  3.5%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;background: #f1f0f0;">
+                                    <strong> CANAL PQRS</strong>
+                                </div>
+                                <div
+                                    style="width: 49.7%;height:  3.5%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;background: #f1f0f0;">
+                                    <strong>SERVICIO AL CLIENTE</strong>
+                                </div>
+                            </div>
+                            <div style="margin-top: 3.7%;">
+
+                                <div
+                                    style="width: 50%;height:  3.6%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+                                    <a href="">sertepsapqr@step.com.co</a>
+                                </div>
+                                <div
+                                    style="width: 49.7%;height:  3.6%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+                                    3303821-3234197103
+                                </div>
+                            </div>
+                            <div style="margin-top: 3.6%;">
+
+                                <div
+                                    style="width: 50%;height:  3.8%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;background: #f1f0f0;">
+                                    <strong> FECHA INICIO CONTRATO</strong>
+                                </div>
+                                <div
+                                    style="width: 49.7%;height:  3.8%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;background: #f1f0f0;">
+                                    <strong>FECHA FINAL CONTRATO</strong>
+                                </div>
+                            </div>
+                            <div style="margin-top: 3.7%;">
+
+                                <div
+                                    style="width: 50%;height:  3.9%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+                                    {{ $contract->date_start_contract }}
+                                </div>
+                                <div
+                                    style="width: 49.7%;height:  3.9%;float: left;border: solid 1px #000;font-size: 14px;text-align: center;">
+                                    {{ $contract->contract_end_date }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <p style="font-size: 80%;text-align: justify;">
+                            Entre los suscritos a saber <strong>SERVICIO DE TRANSPORTE ESPECIAL DE PASAJEROS S.A.S.</strong>
+                            “<strong>STEP S.A.S.</strong>”, legalmente constituida, habilitada como empresa de servicio público
+                            de transporte
+                            terrestre automotor en la modalidad de especial mediante la Resolución 036 del 10 de noviembre de
+                            2016 del Ministerio de Transporte, identificada con el NIT No. 900.973.862-1 y representada
+                            legalmente por la señora ALBA OSIRIS HIDALGO PESCADOR quien se identifica con la cédula de
+                            ciudadanía No. 42.077.205 de Pereira, y en adelante el <strong>CONTRATISTA</strong>, y
+                            __________________________, identificado con CC o NIT _______________________ expedida
+                            en ______________, quien obra en nombre propio y en representación legal de
+                            ________________________________________quien en adelante se denominara el
+                            <strong>CONTRATANTE</strong>, hemos celebrado el presente <strong>CONTRATO DE PRESTACIÓN DE
+                                SERVICIOS
+                                PARA TRANSPORTE ESPECIAL DE USUARIOS DE SALUD</strong>, de conformidad a la legislación
+                            nacional, libres de todo vicio y según las cláusulas que a continuación se describen:
+                            <strong>PRIMERA:
+                                OBJETO DEL CONTRATO. El CONTRATISTA</strong> se compromete con EL CONTRATANTE, a
+                            transportar usuarios de salud con su acompañante, que no requieran de una ambulancia para su
+                            traslado asistencial básico o medicalizado desde _____________ hasta _________________ y
+                            viceversa hacia su punto de origen. <strong>SEGUNDA: CONDICIONES PLAN DE RODAMIENTO 1.
+                                DISPONIBILIDAD GENERAL ORDINARIA Y EXTRAORDINARIA.</strong> Los usuarios serán
+                            transportados por <strong>EL CONTRATISTA</strong> de manera ordinaria para los días y horarios que
+                            se pacte el
+                            servicio. No habrá lugar a servicios extraordinarios sin previa autorización y un nuevo contrato
+                            independiente suscrito entre CONTRATANTE Y CONTRATISTA. <strong>2. DISPONIBILIDAD HORARIA.</strong>
+                            Según el plan de rodamiento descrito, el tiempo estimado de servicio y disponibilidad del (os)
+                            vehículo (s) será de ___ horas, desde la fecha de iniciación hasta la terminación del contrato.
+                            <strong>TERCERA: CLASE Y NUMERO DE VEHÍCULOS.</strong> Para efectos de ejecutar el presente
+                            contrato, el
+                            <strong>CONTRATISTA</strong> pone a disposición del <strong>CONTRATANTE</strong> los siguiente (s)
+                            vehículo (s) que se detallan
+                            en hoja anexa. <strong>PARÁGRAFO 1. OBSERVACIONES: 1.</strong> El vehículo podrá ser cambiado sin
+                            perjuicio
+                            de que previamente le sea comunicada tal situación al <strong>CONTRATANTE. 2.</strong> Aunque el
+                            vehículo sea
+                            cambiado, éste, al igual que todo el parque automotor, continuará cumpliendo con todas las
+                            especificaciones de seguridad, técnicas y operativas exigidas por la normatividad vigente. 3. El
+                            <strong>CONTRATANTE</strong> podrá solicitar el cambio inmediato del vehículo si, según el marco
+                            legal, el mismo
+                            no se encuentra en las condiciones mínimas de seguridad, técnicas y/u operativas para prestar el
+                            servicio. <strong>CUARTA: PLAN DE CONTINGENCIA.</strong> El <strong>CONTRATISTA</strong> dispondrá
+                            de la aplicación del
+                            plan de contingencia respectivo, a fin de suplir los inconvenientes que puedan tener los vehículos
+                        </p>
+                    </div>
+                @break
+
+                @case(6)
+                    <div
+                        style="display: flex;position: absolute;width: 76%;height: 819px;margin-left: 6.5rem;margin-top: -7%;">
+
+                        <h4 style="text-align: center;">CONVENIO DE COLABORACIÓN EMPRESARIAL</h4>
+
+                        <h6 style="font-size: 95%;text-align: center;margin-top: -3%;">Convenio <span>NO.
+                                {{ $contract->contract_number }}</span></h6>
+
+                        <div style="text-align: center;margin-top: -7%;">
+                            <h4 style="font-size: 95%;">PREVISTA EN EL ARTÍCULO. 2.2.1.6.3.4 DEL DECRETO 1079 DE 2015 Y DEL
+                            </h4>
+                            <h4 style="font-size: 95%;margin-top: -3.9%;">ART.09 DEL DECRETO 431 DE 2017 PARA LA PRESTACION DE
+                            </h4>
+                            <h4 style="font-size: 95%;margin-top: -3.9%;">SERVICIOS ESPECIALES DE TRANSPORTE</h4>
+                        </div>
+
+                        <div>
+                            <table style="width: 100%;margin-bottom: 1%;font-size: 85%;">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 50%;text-align: left;">
+                                            EMPRESA CONTRATISTA:
+                                        </th>
+                                        <th style="width: 50%;text-align: left;">
+                                            STEP SAS -SERVICIO DE TRANSPORTE ESPECIAL DE
+                                            PASAJEROS SAS - Habilitada mediante la Resol.0036 de
+                                            Nov.10 De 2016
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="width: 50%;">
+                                            NIT
+                                        </td>
+                                        <td style="width: 50%;">
+                                            900.973.862-1
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 50%;">
+                                            GERENTE
+                                        </td>
+                                        <td style="width: 50%;">
+                                            ALBA OSIRIS HIDALGO PESCADOR
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 50%;">
+                                            CÉDULA
+                                        </td>
+                                        <td style="width: 50%;">
+                                            42.077.502 expedida en Pereira
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 50%;">
+                                            DIRECCIÓN
+                                        </td>
+                                        <td style="width: 50%;">
+                                            CR 2ª A # 8 26 Zona Industrial La Badea
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 50%;">
+                                            TELÉFONO
+                                        </td>
+                                        <td style="width: 50%;">
+                                            3234197103 - 3303821
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 50%;">
+                                            MUNICIPIO
+                                        </td>
+                                        <td style="width: 50%;">
+                                            Dosquebradas
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 50%;">
+                                            DENOMINADO
+                                        </td>
+                                        <td style="width: 50%;">
+                                            CONTRATISTA
+                                        </td>
+                                    </tr>
+                                </tbody>
+
+                            </table>
+                        </div>
+                        <div>
+                            <table style="width: 100%;margin-bottom: 1%;font-size: 85%;">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 50%;text-align: left;">
+                                            EMPRESA COLABORADORA
+                                        </th>
+                                        <th style="width: 50%;text-align: left;">
+                                            {{ $contract->contracting_name }}
+                                            {{-- MAXTRANSPORTE S.A.S - Habilitada mediante Resol. 006
+                                            de 12 de abril de 2017 --}}
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="width: 50%;">
+                                            NIT
+                                        </td>
+                                        <td style="width: 50%;">
+                                            {{ $contract->contract_document }}
+                                            {{-- 901.035.856-7 --}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 50%;">
+                                            GERENTE
+                                        </td>
+                                        <td style="width: 50%;">
+                                            DIANA YANETH ALZATE SALAZAR
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 50%;">
+                                            CÉDULA
+                                        </td>
+                                        <td style="width: 50%;">
+                                            41.916.949 Expedida en Armenia (Q)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 50%;">
+                                            DIRECCIÓN
+                                        </td>
+                                        <td style="width: 50%;">
+                                            {{ $contract->contracting_direction }}
+                                            {{-- cra 19 A 38 73 LT 1 --}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 50%;">
+                                            TELÉFONO
+                                        </td>
+                                        <td style="width: 50%;">
+                                            {{ $contract->contracting_phone }}
+                                            {{-- 3113721418 --}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 50%;">
+                                            MUNICIPIO
+                                        </td>
+                                        <td style="width: 50%;">
+                                            Armenia
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 50%;">
+                                            PLACA
+                                        </td>
+                                        <td style="width: 50%;">
+                                            TGM449
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 50%;">
+                                            MODELO
+                                        </td>
+                                        <td style="width: 50%;">
+                                            2004
+                                        </td>
+                                    </tr>
+                                </tbody>
+
+                            </table>
+                        </div>
+
+                        <p style="font-size: 88%;text-align: justify;">
+                            <strong>OBJETO:</strong> Por medio del presente, en conformidad a lo preceptuado por el Decreto 0431
+                            de marzo 14 de 2017, hemos acordado celebrar el presente <strong>CONVENIO DE
+                                COLABORACIÓN EMPRESARIAL</strong> para la racionalización del equipo y la mejor prestación
+                            del servicio de transporte especial, bajo la modalidad de asociación de empresas.
+                            <br>
+                            <br>
+                            <strong>NORMAS APLIC AB LES </strong>: Ley 336 de 1996, Decreto 1079 de 2015 y además
+                            las disposiciones pertinentes del Código Civil y Código de Comercio, por tratarse de
+                            una actividad privada y de carácter comercial. Debidamente facultado por los estatutos
+                            para este contrato se ha celebrado el presente convenio de <strong>COLABORACION
+                                EMPRESARIAL,</strong> para la prestación de servicios especiales, que se regirá por las
+                            siguientes clausulas:
+
+                            <strong>PRIMERA:</strong> El presente convenio tiene como finalidad posibilitar la realización en
+                            uso del
+                        </p>
+                    </div>
+                @break
+
+                @case(7)
+                    <div style="display: flex;position: absolute;width: 76%;height: 819px;margin-left: 6.5rem;">
+                        <p style="font-size: 88%;text-align: justify;">
+
+                        <table
+                            style="width: 100%;border: solid 1px #2768f3;border-collapse: collapse;font-size: 88%;text-align: center">
+
+                            <thead style="background: #2768f3;">
+                                <tr style="">
+                                    <th
+                                        style="width: 14.6%;border-bottom: solid 1px #2768f3;border-collapse: collapse;text-align: center;color: #fff;height: 6%;">
+                                        PLACA
+                                    </th>
+                                    <th
+                                        style="width: 14.6%;border-bottom: solid 1px #2768f3;border-collapse: collapse;text-align: center;color: #fff;height: 6%;">
+                                        MARCA
+                                    </th>
+                                    <th
+                                        style="width: 14.6%;border-bottom: solid 1px #2768f3;border-collapse: collapse;text-align: center;color: #fff;height: 6%;">
+                                        LÍNEA
+                                    </th>
+                                    <th
+                                        style="width: 14.6%;border-bottom: solid 1px #2768f3;border-collapse: collapse;text-align: center;color: #fff;height: 6%;">
+                                        MODELO
+                                    </th>
+                                    <th
+                                        style="width: 14.6%;border-bottom: solid 1px #2768f3;border-collapse: collapse;text-align: center;color: #fff;height: 6%;">
+                                        CILINDRAJE
+                                    </th>
+                                    <th
+                                        style="width: 26.6%;border-bottom: solid 1px #2768f3;border-collapse: collapse;text-align: center;color: #fff;height: 6%;">
+                                        VÍNCULO JURÍDICO
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="background: #a8dff8;">
+                                    <td
+                                        style="width: 16.6%;border: solid 1px #2768f3;border-collapse: collapse;text-align: center;">
+                                        SJS520
+                                    </td>
+                                    <td style="width: 16.6%;border: solid 1px #2768f3;border-collapse: collapse;">
+                                        KIA
+                                    </td>
+                                    <td
+                                        style="width: 16.6%;border: solid 1px #2768f3;border-collapse: collapse;text-align: center;">
+                                        PREGIO
+                                    </td>
+                                    <td style="width: 16.6%;border: solid 1px #2768f3;border-collapse: collapse;">
+                                        2005
+                                    </td>
+                                    <td style="width: 16.6%;border: solid 1px #2768f3;border-collapse: collapse;">
+                                        3.000
+                                    </td>
+                                    <td style="width: 16.6%;border: solid 1px #2768f3;border-collapse: collapse;">
+                                        PROPIETARIO
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
 
                         <br>
-                        <br>
-                    </p>
-                    <p class="parrafo6" style="width: 80%;text-align: center;"> <strong>ACEPTAMOS:</strong> </p>
 
-                    <div>
-                        <p class="parrafo6">
-                            <strong>CONTRATISTA:________________</strong>
-                            <br>
-                            <strong>ALBA OSIRIS HIDALGO PESCADOR</strong>
-                            <br>
-                            <strong>C.C. 42.077.205 expedida en Pereira</strong>
-                            <br>
-                            <strong>Representante Legal</strong>
+                        <table
+                            style="width: 100%;border: solid 1px #2768f3;border-collapse: collapse;font-size: 88%;text-align: center;">
+
+                            <thead>
+                                <tr style="background: #2768f3;">
+                                    <th
+                                        style="width: 18%;border-bottom: solid 1px #2768f3;border-collapse: collapse;color: #fff;height: 6%;">
+                                        COMBUSTIBLE
+                                    </th>
+                                    <th
+                                        style="width: 18%;border-bottom: solid 1px #2768f3;border-collapse: collapse;color: #fff;height: 6%;">
+                                        CLASE VEHÍCULO
+                                    </th>
+                                    <th
+                                        style="width: 18%;border-bottom: solid 1px #2768f3;border-collapse: collapse;color: #fff;height: 6%;">
+                                        NÚMERO MOTOR
+                                    </th>
+                                    <th
+                                        style="width: 28%;border-bottom: solid 1px #2768f3;border-collapse: collapse;color: #fff;height: 6%;">
+                                        NÚMERO CHASIS
+                                    </th>
+                                    <th
+                                        style="width: 18%;border-bottom: solid 1px #2768f3;border-collapse: collapse;color: #fff;height: 6%;">
+                                        CAPACIDAD
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="background: #a8dff8;">
+                                    <td style="width: 18%;border: solid 1px #2768f3;border-collapse: collapse;">
+                                        DIESEL
+                                    </td>
+                                    <td style="width: 18%;border: solid 1px #2768f3;border-collapse: collapse;">
+                                        MICROBUS
+                                    </td>
+                                    <td style="width: 18%;border: solid 1px #2768f3;border-collapse: collapse;">
+                                        JT548453
+                                    </td>
+                                    <td style="width: 28%;border: solid 1px #2768f3;border-collapse: collapse;">
+                                        KNHTS732257189620
+                                    </td>
+                                    <td style="width: 18%;border: solid 1px #2768f3;border-collapse: collapse;">
+                                        19 PSJ
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
 
                         </p>
                     </div>
-                    <div class="firmacontratante-1">
-                        <p class="parrafo6">
-                            <strong>CONTRATANTE:_______________</strong>
-                            <br>
-                            <strong>NOMBRE</strong>
-                            <br>
-                            <strong>C.C.</strong>
+                @break
+
+                @case(8)
+                    <div style="display: flex;position: absolute;width: 76%;height: 819px;margin-left: 6.5rem;">
+                        <p style="font-size: 88%;text-align: justify;">
+                            <embed src="{{ public_path('img/CONTRATO_VINCULACION.pdf') }}" type="application/pdf">
+                                
                         </p>
                     </div>
+                @break
 
-                    <br>
-                    <br>
+                @case(9)
+                    <div style="display: flex;position: absolute;width: 76%;height: 819px;margin-left: 6.5rem;">
+                        <p style="font-size: 88%;text-align: justify;">
+                            Entre los suscritos a saber, <strong>EL PROPIETARIO, MARTA CECILIA ROMERO CALVO</strong>
+                            identificado con la
+                            cédula de ciudadanía No.30.383.536, expedida en Riosucio (Caldas) con domicilio en el municipio de
+                            Manizales ( Caldas) , y <strong>LA EMPRESA: SERVICIO DE TRANSPORTE ESPECIAL DE PASAJEROS
+                                <strong>S.A.S.</strong> “STEP S.A.S.</strong>”, legalmente constituida, habilitada como empresa
+                            de servicio público de
+                            transporte terrestre automotor en la modalidad de especial, mediante la Resolución 036 del 10 de
+                            noviembre de 2016 del Ministerio de Transporte, identificada con el NIT No.
+                            <strong>900973862-1</strong> con
+                            domicilio
+                            en el municipio de Dosquebradas y representada legalmente por la señora ALBA OSIRIS HIDALGO
+                            PESCADOR, identificada con cédula de ciudadanía número 42.077.205 de Pereira, Risaralda, hemos
+                            celebrado el presente <strong>CONTRATO DE VINCULACIÓN DE FLOTA FLOTANTE, BAJO LA
+                                MODALIDAD DE AFILIACIÓN</strong>, que hará parte de la capacidad transportadora flotante; el
+                            vehículo
+                            automotor con las siguientes características:(Según Decreto 431, Artículo 2.2.1.6.7.1. Capacidad
+                            transportadora parágrafo 2)
 
-                    <p class="parrafo6 titulocontrato">
-                        <strong>
-                            LISTADO USUARIOS CONTRATO DE PRESTACIÓN DE SERVICIO DE TRANSPORTE ESPECIAL CON
-                            GRUPO ESPECÍFICO DE USUARIOS (TRANSPORTE DE PARTICULARES)
-                        </strong>
-                    </p>
+                        <table
+                            style="width: 100%;border: solid 1px #2768f3;border-collapse: collapse;font-size: 88%;text-align: center">
 
-                    <br>
+                            <thead style="background: #2768f3;">
+                                <tr style="">
+                                    <th
+                                        style="width: 14.6%;border-bottom: solid 1px #2768f3;border-collapse: collapse;text-align: center;color: #fff;height: 6%;">
+                                        PLACA
+                                    </th>
+                                    <th
+                                        style="width: 14.6%;border-bottom: solid 1px #2768f3;border-collapse: collapse;text-align: center;color: #fff;height: 6%;">
+                                        MARCA
+                                    </th>
+                                    <th
+                                        style="width: 14.6%;border-bottom: solid 1px #2768f3;border-collapse: collapse;text-align: center;color: #fff;height: 6%;">
+                                        LÍNEA
+                                    </th>
+                                    <th
+                                        style="width: 14.6%;border-bottom: solid 1px #2768f3;border-collapse: collapse;text-align: center;color: #fff;height: 6%;">
+                                        MODELO
+                                    </th>
+                                    <th
+                                        style="width: 14.6%;border-bottom: solid 1px #2768f3;border-collapse: collapse;text-align: center;color: #fff;height: 6%;">
+                                        CILINDRAJE
+                                    </th>
+                                    <th
+                                        style="width: 26.6%;border-bottom: solid 1px #2768f3;border-collapse: collapse;text-align: center;color: #fff;height: 6%;">
+                                        VÍNCULO JURÍDICO
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="background: #a8dff8;">
+                                    <td
+                                        style="width: 16.6%;border: solid 1px #2768f3;border-collapse: collapse;text-align: center;">
+                                        SJS520
+                                    </td>
+                                    <td style="width: 16.6%;border: solid 1px #2768f3;border-collapse: collapse;">
+                                        KIA
+                                    </td>
+                                    <td
+                                        style="width: 16.6%;border: solid 1px #2768f3;border-collapse: collapse;text-align: center;">
+                                        PREGIO
+                                    </td>
+                                    <td style="width: 16.6%;border: solid 1px #2768f3;border-collapse: collapse;">
+                                        2005
+                                    </td>
+                                    <td style="width: 16.6%;border: solid 1px #2768f3;border-collapse: collapse;">
+                                        3.000
+                                    </td>
+                                    <td style="width: 16.6%;border: solid 1px #2768f3;border-collapse: collapse;">
+                                        PROPIETARIO
+                                    </td>
+                                </tr>
 
-                    <p class="parrafo6">
-                        Adicionalmente, el <strong>CONTRATANTE</strong> designa a __{{$contract->group_representative_name}}__
-                        identificado(a) con Cédula
-                        de ciudadanía # __{{$contract->identificationcard_representative_group}}__, expedida en __{{$contract->dateofexpedition_representative_group}}__, como
-                        <strong>RESPONSABLE</strong>
-                        del grupo de usuarios del servicio, de la presente relación.
-                    </p>
+                            </tbody>
+                        </table>
 
-                    <br>
-                    <br>
-
-                    <p class="parrafo6">
-                        <strong>FIRMA RESPONSABLE GRUPO <br>
-                            Teléfono:</strong>
-                    </p>
-                @endif
-
-            </p>
-        </div>
-    </div>
-    <!-- espacio final -->
-    {{-- <div class="contenedorfinal">C</div> --}}
-</x-contractframes>
-@if ($contract->type_contract == 1 || $contract->type_contract == 2)
-    <x-contractframes>
-        <!-- texto central -->
-        <div class="contenedorcentral">
-            <div>
-                <p class="parrafo4">
-                    de arreglo directo y conciliación entre las partes involucradas, que para el caso serán:
-                    El
-                    representante legal de la empresa directamente y el <strong>CONTRATISTA</strong> o a
-                    quien este designe
-                </p>
-                <p class="parrafo5">
-                    ----------------------------------------- FIN
-                    CLAUSULADO-----------------------------------------
-                </p>
-                <p class="parrafo6">
-                    Para efectos de dejar constancia, CONTRATANTE y CONTRATISTA, libres de todo vicio y en
-                    pleno uso
-                    de nuestras facultades suscribimos y aceptamos el presente contrato en Dosquebradas a
-                    los
-                    {{ $firmeday }}
-                    @if ($firmeday == 1)
-                        día
-                    @else
-                        días
-                    @endif
-                    del mes de {{ $firmemonth }} del año {{ $firmeyear }}
-
-                    <br>
-                    <br>
-                </p>
-                <p style="width: 80%;text-align: center;"> <strong>ACEPTAMOS:</strong> </p>
-
-                <div>
-                    <p>
-                        <strong>CONTRATISTA:</strong>
                         <br>
-                        <strong>ALBA OSIRIS HIDALGO PESCADOR</strong>
+
+                        <table
+                            style="width: 100%;border: solid 1px #2768f3;border-collapse: collapse;font-size: 88%;text-align: center;">
+
+                            <thead>
+                                <tr style="background: #2768f3;">
+                                    <th
+                                        style="width: 18%;border-bottom: solid 1px #2768f3;border-collapse: collapse;color: #fff;height: 6%;">
+                                        COMBUSTIBLE
+                                    </th>
+                                    <th
+                                        style="width: 18%;border-bottom: solid 1px #2768f3;border-collapse: collapse;color: #fff;height: 6%;">
+                                        CLASE VEHÍCULO
+                                    </th>
+                                    <th
+                                        style="width: 18%;border-bottom: solid 1px #2768f3;border-collapse: collapse;color: #fff;height: 6%;">
+                                        NÚMERO MOTOR
+                                    </th>
+                                    <th
+                                        style="width: 28%;border-bottom: solid 1px #2768f3;border-collapse: collapse;color: #fff;height: 6%;">
+                                        NÚMERO CHASIS
+                                    </th>
+                                    <th
+                                        style="width: 18%;border-bottom: solid 1px #2768f3;border-collapse: collapse;color: #fff;height: 6%;">
+                                        CAPACIDAD
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="background: #a8dff8;">
+                                    <td style="width: 18%;border: solid 1px #2768f3;border-collapse: collapse;">
+                                        DIESEL
+                                    </td>
+                                    <td style="width: 18%;border: solid 1px #2768f3;border-collapse: collapse;">
+                                        MICROBUS
+                                    </td>
+                                    <td style="width: 18%;border: solid 1px #2768f3;border-collapse: collapse;">
+                                        JT548453
+                                    </td>
+                                    <td style="width: 28%;border: solid 1px #2768f3;border-collapse: collapse;">
+                                        KNHTS732257189620
+                                    </td>
+                                    <td style="width: 18%;border: solid 1px #2768f3;border-collapse: collapse;">
+                                        19 PSJ
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+                        <p style="font-size: 88%;text-align: justify;">
+                            Y de conformidad a la legislación nacional, las normas de derecho privado, libres de todo vicio y
+                            según
+                            las siguientes cláusulas: <strong>PRIMERA. OBJETO:</strong> A través del presente contrato,
+                            <strong>LA EMPRESA</strong> se
+                            compromete a incorporar a su parque automotor el vehículo del Propietario, el cual será utilizado
+                            para
+                            cumplir con el objeto social planteado por la empresa y bajo unos términos de rotación y
+                            remuneración
+                            equitativos, de conformidad con la normatividad vigente, entre ellas, artículo 2.2.1.6.8.1. y
+                            subsiguientes
+                            del decreto único reglamentario sector transporte. <strong>SEGUNDA: VIGENCIA.</strong> El presente
+                            contrato tendrá
+                            una duración de ( 2 ) años comenzando a ejecutarse el día 30 del mes Diciembre de 2022 y concluyendo
+                            el día 30 del mes Diciembre del 2024. <strong>TERCERA: FORMA EN LA QUE SE DARÁ OPERACIÓN A
+                                LOS VEHÍCULOS POR PARTE DE LA EMPRESA. LA EMPRESA</strong> operará a través de los contratos
+                            a ejecutar donde se prestará el servicio de transporte especial de pasajeros de conformidad con la
+                            habilitación dada por el ministerio de transporte, en cualquier parte del territorio nacional y
+                            siguiendo, en
+                            términos de rotación, un plan de rodamiento que mensualmente será remitido al PROPIETARIO.
+                            <strong>CUARTA: REMUNERACIÓN Y PAGOS A) A FAVOR DEL PROPIETARIO: EL PROPIETARIO</strong> no
+                            tendrá derecho a contraprestación alguna por la vinculación de su vehículo, porque <strong>LA
+                                EMPRESA</strong> toma
+                            el vehículo objeto del presente contrato <strong>POR LA MODALIDAD DE VINCULACIÓN DE FLOTA B) A
+                                FAVOR DE LA EMPRESA</strong>: 1) <strong>EL PROPIETARIO</strong> pagará a <strong>LA
+                                EMPRESA</strong> mensualmente durante los
+                            primeros cinco (5) días de cada mes de conformidad con las tablas de liquidación vigentes, durante
+                            la
+                            duración del presente contrato y según políticas internas aprobadas
+                        </p>
+
+                        </p>
+                    </div>
+                @break
+
+                @default
+            @endswitch
+        </x-contractframes>
+        {{-- pagina 2 --}}
+        <x-contractframes typeContract="{{ $titlecontract }}">
+            @switch($contract->type_contract)
+                @case(1)
+                    <div style="display: flex;position: absolute;width: 37.5rem;height: 819px;margin-left: 6.5rem;">
+
+                        @switch($contract->contract_with)
+                            @case(1)
+                                <p style="font-size: 90%;text-align: justify;">
+                                    <strong>INSTITUCIÓN EDUCATIVA</strong> y un nuevo contrato independiente suscrito entre
+                                    <strong>CONTRATANTE</strong> Y
+                                    <strong>CONTRATISTA</strong> o este último y un padre de familia a quien el primero represente.
+                                    <strong>2.
+                                        DISPONIBILIDAD HORARIA</strong>. El <strong>CONTRATISTA</strong> se obliga con el
+                                    <strong>CONTRATANTE</strong> a transportar a
+                                    los estudiantes iniciando el recorrido a las 5:10 a.m. colocándolos a disposición de la
+                                    <strong>INSTITUCION
+                                        EDUCATIVA</strong> antes del inicio jornada de académica a las 1:15 p.m. y/o recogerlo al
+                                    finalizar la misma,
+                                    a las12::40pm, siempre y cuando la escuela no cambie por más de cinco (5) días seguidos aspectos
+                                    tales como hora de ingreso y de salida de los estudiantes a no ser que dichos cambios cuenten con
+                                    la participación y aprobación previa del <strong>CONTRATISTA</strong> y se hagan con la suficiente
+                                    previsión de
+                                    tiempo. Para cambios cuya duración no se prolongue por más de cinco (5) días bastará con la
+                                    comunicación por escrito que haga el <strong>CONTRATANTE</strong> a través del correo electrónico
+                                    PQRS y con
+                                    mínimo 2 días hábiles al <strong>CONTRATISTA. PARÁGRAFO 1</strong>: El cambio de horario o
+                                    calendario
+                                    académico que afecte la prestación del servicio y se realice incumpliendo los procedimientos
+                                    previamente descritos dará lugar a la terminación unilateral del contrato por parte del
+                                    <strong>CONTRATISTA. TERCERA. CLASE Y NUMERO DE VEHÍCULOS</strong>. Para efectos de ejecutar el
+                                    presente contrato, el <strong>CONTRATISTA</strong> pone a disposición del
+                                    <strong>CONTRATANTE</strong> un vehiculo tipo microbus/buseta
+                                    <br>
+                                    <br>
+
+                                    <strong>PARÁGRAFO 1</strong> OBSERVACIONES: 1. El vehículo podrá ser cambiado sin perjuicio de que
+                                    previamente le sea comunicada tal situación al padre de familia. 2. Aunque el vehículo sea
+                                    cambiado, éste, al igual que todo el parque automotor, continuará cumpliendo con todas las
+                                    especificaciones de seguridad, técnicas y operativas exigidas por la normatividad vigente. 3. El
+                                    contratista podrá: A. Solicitar el cambio inmediato del vehículo si, según el marco legal, el mismo
+                                    no
+                                    se encuentra en las condiciones mínimas de seguridad, técnicas y/u operativas para prestar el
+                                    servicio. B. Solicitar el cambio de vehículo por cualquier otra razón siempre y cuando adjunte por
+                                    escrito con su evidencia con su firma el deseo en igual sentido de como mínimo la mitad más uno
+                                    de los padres de familia a quien este representa. Pese a lo anterior, el cambio de vehículo por el
+                                    literal 3. B. será facultativo de la empresa y según disposición que este tenga de su parque
+                                    automotor. <strong>CUARTA. PLAN DE CONTINGENCIA</strong>. El <strong>CONTRATISTA</strong> dispondrá
+                                    de la aplicación del
+                                    plan de contingencia respectivo, a fin de suplir los inconvenientes que puedan tener los vehículos
+                                    que prestan el servicio al <strong>CONTRATANTE. QUINTA. OBLIGACIONES DEL CONTRATISTA</strong> 1)
+                                    cumplir estrictamente con los horarios establecidos. 2) Recoger y entregar a los estudiantes en la
+                                    puerta de la residencia o en la portería de los conjuntos residenciales sin ingresar a éstos 3)
+                                    llevar
+                                    con seguridad, aseo y comodidad al pasajero, respetando las normas de tránsito y de transporte
+                                    especial vigentes. 4) Llevar una velocidad moderada durante todo el recorrido 5) Mantener su
+                                    vehículo en excelentes condiciones de aseo, estado técnico-mecánico, haciendo los respectivos
+                                    mantenimientos preventivos 6)Tener conductores y acompañantes de certificada experiencia,
+                                    habilidad, responsabilidad, cultura seriedad y de conformidad con la ley.7) Expedir copia simple
+                                    física o digital, previa solicitud en tal sentido del CONTRATANTE de la póliza de responsabilidad
+                                    civil contractual y extracontractual contratada, habilitación, contrato, SOAT, licencia de
+                                    conducción
+                                    del conductor y demás documentos que requiera para verificar el cumplimiento de la normatividad
+                                    vigente en materia de transporte especial y transporte en general y sobre condiciones de ejecución
+                                    y cumplimiento del contrato. 8) Llevar las puertas cerradas, recogiendo y dejando los estudiantes en
+                                </p>
+                            @break
+
+                            @case(2)
+                                <p style="font-size: 82%;text-align: justify;">
+                                    <strong>CONTRATISTA</strong> dispondrá de la aplicación del plan de contingencia respectivo, a fin
+                                    de suplir los
+                                    inconvenientes que puedan tener los vehículos que prestan el servicio al <strong>CONTRATANTE.
+                                        QUINTA:
+                                        OBLIGACIONES DEL CONTRATISTA 1.</strong> Cumplir estrictamente con los horarios establecidos.
+                                    <strong>2.</strong>
+                                    Recoger y entregar a los pasajeros de conformidad al plan de rodamiento y lista de pasajeros
+                                    adjunta. <strong>3.</strong> Llevar con seguridad, aseo y comodidad al pasajero, respetando las
+                                    normas de tránsito
+                                    y de transporte especial vigente. <strong>4.</strong> Llevar una velocidad moderada durante todo el
+                                    recorrido. <strong>5.</strong>
+                                    Mantener su vehículo en excelentes condiciones de aseo, excelente estado técnico mecánico,
+                                    haciendo los respectivos mantenimientos preventivos. <strong>6.</strong> Tener conductores de
+                                    certificada
+                                    experiencia, habilidad, responsabilidad, cultura, seriedad y de conformidad con la ley.
+                                    <strong>7.</strong> Expedir
+                                    copia simple física o digital, previa solicitud en tal sentido del <strong>CONTRATANTE</strong> de
+                                    la póliza de
+                                    responsabilidad civil contractual y extracontractual contratada, habilitación, contrato, SOAT,
+                                    licencia
+                                    de conducción del conductor y demás documentos que requiera para verificar el cumplimiento de la
+                                    normatividad vigente en materia de transporte especial y transporte en general y sobre las
+                                    condiciones de ejecución y cumplimiento del contrato. <strong>8.</strong> Llevar las puertas
+                                    cerradas, recogiendo y
+                                    dejando a los pasajeros según el plan de rodamiento. <strong>SEXTA: OBLIGACIONES DEL
+                                        CONTRATANTE. 1.</strong> Asignar una persona que sea vigilante de que los pasajeros guarden la
+                                    compostura y el orden durante la prestación del servicio, para tales efectos, socializará con ellos
+                                    las
+                                    normas básicas de conducta al interior del vehículo, este puede ser el mismo CONTRATANTE o
+                                    designar a uno de los ocupantes del servicio. <strong>2.</strong> Pagar los daños que los (as)
+                                    pasajeros ocasionen
+                                    al vehículo durante la prestación del servicio. <strong>SÉPTIMA: VALOR DEL CONTRATO Y FORMA DE
+                                        PAGO.</strong> El valor del transporte será la tarifa mensual acordada entre <strong>EL
+                                        CONTRATISTA</strong> y los
+                                    estudiantes Universitarios a quien <strong>EL CONTRATANTE</strong> representa, y será cancelado
+                                    durante los
+                                    primeros cinco (5) días de cada mes durante el periodo comprendido desde _________ de 20__
+                                    hasta ________ de 20__, incluyendo semana santa, vacaciones de mitad de año, semana de receso,
+                                    periodos de paro, incapacidades, según lo consignado en el documento adjunto. El pago podrá
+                                    realizarse, directamente en la oficina o al acompañante o conductor del vehículo; en cualquier caso,
+                                    deberá siempre conservar el comprobante de pago. El pago podrá realizarse también a través de
+                                    consignación bancaría en la cuenta corriente # 127669997810 del Banco Davivienda, a nombre de
+                                    STEP S.A.S. informando del pago al <strong>CONTRATISTA</strong>, o directamente en la oficina del
+                                    <strong>CONTRATISTA</strong> o al conductor del vehículo; en cualquier caso, deberá siempre
+                                    conservar el
+                                    comprobante del pago e informar al <strong>CONTRATISTA</strong> o exigir recibo o constancia del
+                                    pago realizado.
+                                    <strong>OCTAVA: ATENCION Y RESPUESTA ANTE EMERGENCIAS.</strong> El conductor actuará de acuerdo
+                                    con el plan de atención y respuesta ante emergencia establecido por la EMPRESA, ante eventos
+                                    como vendaval, avalancha, terremoto, inundación, y /o cualquier situación que no sea convencional
+                                    de y de acuerdo a la movilidad. <strong>NOVENA: TRATAMIENTO DE LA PROPIEDAD DEL CLIENTE.</strong>
+                                    Cuidar la propiedad del usuario del servicio de transporte mientras esté bajo su control, tales como
+                                    componentes, instalaciones, equipos, herramientas, propiedad intelectual y datos personales; bajo
+                                    las condiciones establecidas por <strong>LA EMPRESA</strong> en los requisitos para la prestación de
+                                    este servicio,
+                                    o por motivos de capacidad del vehículo prestador de este servicio, LA EMPRESA NO se hace
+                                    responsable de la Propiedad del cliente, se le comunicará esta condición a la persona asignada como
+                                    responsable del grupo de usuarios del servicio. <strong>DECIMA: CAUSALES DE SUSPENSIÓN DEL
+                                        SERVICIO:</strong> Serán causales de suspensión parcial o total del servicio, las siguientes:
+                                    <strong>1.</strong> Los actos de
+                                    indisciplina o vandalismo por parte de los pasajeros dentro del vehículo, como daños en la
+                                    cojinería,
+                                    vidrios, etc. <strong>2.</strong> El comportamiento agresivo, indecente, violento por parte de los
+                                    pasajeros dentro
+                                    y/o
+                                    con los ocupantes del vehículo, o la tenencia de elementos inflamables, tóxicos, sustancias
+                                    alucinógenas o explosivos. <strong>3.</strong> Conductas contra la moral y las buenas costumbres por
+                                    parte de los
+                                    pasajeros dentro del vehículo. <strong>PARÁGRAFO: PROCEDIMIENTO DE DENUNCIA:</strong> El acompañante
+                                    o conductor documentará y recolectará pruebas de lo sucedido, le comunicará la situación a la
+                                    empresa quien evaluará la situación e indicará el procedimiento a seguir según el evento que se
+                                    presente a la persona responsable del grupo de pasajeros designada en el presente contrato, según
+                                    listado adjunto, el cual forma parte integral del presente documento. o a la autoridad competente.
+                                    Lo
+                                </p>
+                            @break
+
+                            @case(3)
+                                <p style="font-size: 89%;text-align: justify;">
+
+                                <div>
+                                    <table
+                                        style="width: 100%;border: solid 1px #000;border-collapse: collapse;margin-bottom: 1%;font-size: 75%;">
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 45%;border: solid 1px #000;border-collapse: collapse;">
+                                                    NOMBRE ESTUDIANTE
+                                                </th>
+                                                <th style="width: 25%;border: solid 1px #000;border-collapse: collapse;">
+                                                    IDENTIFICACIÓN
+                                                </th>
+                                                <th style="width: 10%;border: solid 1px #000;border-collapse: collapse;">
+                                                    GRADO
+                                                </th>
+                                                <th style="width: 20%;border: solid 1px #000;border-collapse: collapse;">
+                                                    PARENTESCO
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td style="width: 45%;border: solid 1px #000;border-collapse: collapse;">
+                                                    prueba
+                                                </td>
+                                                <td style="width: 25%;border: solid 1px #000;border-collapse: collapse;">
+                                                    prueba
+                                                </td>
+                                                <td style="width: 10%;border: solid 1px #000;border-collapse: collapse;">
+                                                    prueba
+                                                </td>
+                                                <td style="width: 20%;border: solid 1px #000;border-collapse: collapse;">
+                                                    prueba
+                                                </td>
+                                            </tr>
+                                        </tbody>
+
+                                    </table>
+                                </div>
+
+                                Para efectos de dejar constancia, el estudiante será recibido por . Cualquier
+                                modificación en este aspecto deberá ser comunicada por escrito previamente al <strong>CONTRATISTA.
+                                    SEGUNDA: CONDICIONES PLAN DE RODAMIENTO. 1.DISPONIBILIDAD GENERAL
+                                    ORDINARIA Y EXTRAORDINARIA.</strong> El estudiante será transportado por el
+                                <strong>CONTRATISTA</strong> de
+                                manera ordinaria de lunes a viernes, durante los meses y días hábiles de conformidad con el
+                                calendario académico de la <strong>INSTITUCIÓN EDUCATIVA.</strong> No habrá lugar a servicios
+                                extraordinarios
+                                a no ser que exista un nuevo contrato independiente suscrito entre <strong>CONTRATANTE</strong> Y
+                                <strong>CONTRATISTA. 2. DISPONIBILIDAD HORARIA.</strong> El <strong>CONTRATISTA</strong> se obliga
+                                con el
+                                <strong>CONTRATANTE</strong> a transportar al estudiante, la cual debe estar en la Institución
+                                Educativa antes del
+                                inicio de la jornada académica a las am y al concluir la jornada académica a las pm, siempre
+                                y cuando el colegio no cambie por más de cinco (5) días seguidos aspectos tales como hora de
+                                ingreso y hora de salida de los estudiantes, a no ser que dichos cambios cuenten con la
+                                participación
+                                y aprobación previa del <strong>CONTRATISTA</strong> y se hagan con la suficiente previsión de
+                                tiempo, la cual
+                                deberá comunicarse al <strong>CONTRATISTA</strong> 30 días hábiles antes del cambio de horario. Para
+                                cambios
+                                cuya duración no se prolongue por más de cinco (5) días bastará con la comunicación por escrito
+                                que haga el <strong>CONTRATANTE</strong> a través del correo electrónico <a
+                                    href="">sertepsapqr@gmail.com</a> y con
+                                mínimo 2 días hábiles al <strong>CONTRATISTA</strong> informándole sobre el cambio y la necesidad de
+                                mover el
+                                horario de transporte. <strong>PARÁGRAFO 1:</strong> El cambio de horario o calendario académico que
+                                afecte la
+                                prestación del servicio y se realice incumpliendo los procedimientos previamente descritos dará
+                                lugar
+                                a la terminación unilateral del contrato por parte del <strong>CONTRATISTA</strong>.
+                                <strong>SEGUNDA. CLASE Y
+                                    NUMERO DE VEHÍCULOS.</strong> Para efectos de ejecutar el presente contrato, el
+                                <strong>CONTRATISTA</strong> pone
+                                a disposición del <strong>CONTRATANTE</strong> el siguiente vehículo:
+
+                                <br>
+                                <br>
+
+                                <div>
+                                    <table
+                                        style="width: 100%;border: solid 1px #000;border-collapse: collapse;margin-bottom: 1%;font-size: 75%;">
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 25%;border: solid 1px #000;border-collapse: collapse;">
+                                                    CLASE
+                                                </th>
+                                                <th style="width: 30%;border: solid 1px #000;border-collapse: collapse;">
+                                                    MARCA
+                                                </th>
+                                                <th style="width: 10%;border: solid 1px #000;border-collapse: collapse;">
+                                                    MODELO
+                                                </th>
+                                                <th style="width: 10%;border: solid 1px #000;border-collapse: collapse;">
+                                                    PLACA
+                                                </th>
+                                                <th style="width: 5%;border: solid 1px #000;border-collapse: collapse;">
+                                                    LATERAL
+                                                </th>
+                                                <th style="width: 20%;border: solid 1px #000;border-collapse: collapse;">
+                                                    CAPACIDAD
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td style="width: 25%;border: solid 1px #000;border-collapse: collapse;">
+                                                    prueba
+                                                </td>
+                                                <td style="width: 30%;border: solid 1px #000;border-collapse: collapse;">
+                                                    prueba
+                                                </td>
+                                                <td style="width: 10%;border: solid 1px #000;border-collapse: collapse;">
+                                                    prueba
+                                                </td>
+                                                <td style="width: 10%;border: solid 1px #000;border-collapse: collapse;">
+                                                    prueba
+                                                </td>
+                                                <td style="width: 5%;border: solid 1px #000;border-collapse: collapse;">
+                                                    prueba
+                                                </td>
+                                                <td style="width: 20%;border: solid 1px #000;border-collapse: collapse;">
+                                                    prueba
+                                                </td>
+                                            </tr>
+                                        </tbody>
+
+                                    </table>
+                                </div>
+
+                                <br>
+                                <p style="font-size: 89%;text-align: justify;">
+                                    <strong>PARÁGRAFO 1 OBSERVACIONES: 1.</strong> El vehículo podrá ser cambiado sin perjuicio de que
+                                    previamente le sea comunicada tal situación al <strong>CONTRATANTE. 2.</strong> Aunque el vehículo
+                                    sea
+                                    cambiado, este, al igual que todo el parque automotor, continuará cumpliendo con todas las
+                                    especificaciones de seguridad, técnicas y operativas exigidas por la normatividad vigente.
+                                    <strong>3.</strong> El
+                                    <strong>CONTRATANTE</strong> podrá: <strong>A.</strong> Solicitar el cambio inmediato del vehículo
+                                    si, según el marco legal, el
+                                    mismo no se encuentra en las condiciones mínimas de seguridad, técnicas y/u operativas para
+                                    prestar el servicio. <strong>B.</strong> Solicitar el cambio de vehículo por cualquier otra razón
+                                    siempre y cuando
+                                    adjunte por escrito evidencia con su firma el deseo en igual sentido de como mínimo la mitad más
+                                </p>
+
+                                </p>
+                            @break
+
+                            @case(4)
+                                <p style="font-size: 88%;text-align: justify;">
+                                    <strong>RODAMIENTO. 1. DISPONIBILIDAD GENERAL ORDINARIA Y EXTRAORDINARIA.</strong> Todo
+                                    servicio será pactado con anterioridad con el <strong>CONTRATANTE</strong> que ponga a disposición
+                                    del
+                                    <strong>CONTRATISTA</strong> serán transportados de acuerdo con las rutas establecidas. No habrá
+                                    lugar a
+                                    servicios extraordinarios sin previa autorización del <strong>CONTRATANTE</strong>. Los estudiantes
+                                    son
+                                    responsables de sus pertenencias (celulares, Tablet, portátiles, bolsos de mano, joyas, etc) no
+                                    revisamos el interior de maletas, por tal razón no se responde a reclamaciones de perdidas, el
+                                    estudiante será el único responsable de su contenido. <strong>2. RADIO DE OPERACIÓN
+                                        TERRITORIAL</strong>:
+                                    La prestación del servicio es a nivel nacional <strong>PARAGRAFO</strong>: Para este contrato la
+                                    Operación está
+                                    sujeta a la ruta previamente establecida. <strong>CUARTA. PLAN DE CONTINGENCIA.</strong> El
+                                    <strong>CONTRATISTA</strong>
+                                    dispondrá de la aplicación del plan de contingencia respectivo, a fin de suplir los inconvenientes
+                                    que
+                                    puedan tener los vehículos que prestan el servicio al <strong>CONTRATANTE. QUINTA. OBLIGACIONES
+                                        DEL CONTRATISTA 1)</strong> cumplir estrictamente con los horarios establecidos.
+                                    <strong>2)</strong> Recoger y entregar
+                                    a los estudiantes según las rutas establecidas por el contratante <strong>3)</strong> llevar con
+                                    seguridad, aseo y
+                                    comodidad al estudiante, respetando las normas de tránsito y de transporte especial vigente.
+                                    <strong>4)</strong>
+                                    Llevar una velocidad moderada durante todo el recorrido. <strong>5)</strong> Mantener el (los)
+                                    vehículo (s) en
+                                    excelentes condiciones de aseo, estado técnico mecánico, haciendo los respectivos mantenimientos
+                                    preventivos. <strong>6)</strong> Tener conductores de certificada experiencia, habilidad,
+                                    responsabilidad, cultura,
+                                    seriedad y de conformidad con la ley. <strong>7)</strong> Expedir copia simple física o digital,
+                                    previa solicitud en
+                                    tal
+                                    sentido del <strong>CONTRATANTE</strong> de la póliza de responsabilidad civil contractual y
+                                    extracontractual
+                                    contratada, habilitación, contrato, SOAT, licencia de conducción del conductor y demás documentos
+                                    que requiera para verificar el cumplimiento de la normatividad vigente en materia de transporte
+                                    especial. <strong>8)</strong> Llevar las puertas cerradas, recogiendo y dejando a los estudiantes en
+                                    los sitios
+                                    establecidos y seguros. <strong>9)</strong> Llevar en cada uno de los recorridos de los vehículos
+                                    una persona adulta
+                                    acompañante, con el fin de garantizar la protección, disciplina y cuidado de los estudiantes. Este
+                                    adulto acompañante será directamente contratado por el conductor o vinculado y remunerado como
+                                    costo adicional al servicio de transporte, según lo establece la Sección 10 del Capítulo 6 del
+                                    Decreto
+                                    Único Reglamentario del sector Transporte N°1079 de 2015. <strong>SEXTA: OBLIGACIONES DEL
+                                        CONTRATANTE: 1)</strong> Suministrar al <strong>CONTRATISTA</strong> toda la información
+                                    necesaria, oportuna sobre
+                                    lugares y horarios de servicio. <strong>2)</strong> Pagar los daños que los estudiantes ocasionen al
+                                    vehículo durante
+                                    la prestación del servicio. <strong>3)</strong>. Destinar los espacios internos del establecimiento
+                                    con acceso
+                                    vehicular,
+                                    al ascenso y descenso de estudiantes. <strong>4)</strong>. Contar con un Plan Estratégico de
+                                    Seguridad Vial durante
+                                    la prestación del servicio. <strong>5)</strong>. El Colegio debe dar instrucciones o manual de uso
+                                    apropiado de la
+                                    ruta el cual hace parte de este contrato. <strong>SÉPTIMA: VALOR DEL CONTRATO Y FORMA DE
+                                        PAGO.</strong>
+                                    El valor del presente contrato corresponde a la tarifa mensual a pagar durante 10 meses y fracción,
+                                    iniciando el de y concluyendo el de del presente año,
+                                    La empresa hará el cobro a cada padre responsable del estudiante para lo cual tendrá los primeros
+                                    5 días de cada mes. <strong>El Valor pactado para el año 2023 se refleja en la lista anexa la cual
+                                        hace
+                                        parte integral de este contrato. PARAGRAFO</strong>: Para ejecutar la ruta se debe contar con un
+                                    mínimo
+                                    de 10 niños. Los niños que utilicen el transporte en media ruta (ida o regreso) el valor que se
+                                    cobrará
+                                    será el 70% sobre el valor de la mensualidad del sector de residencia. El pago pueden realizarlo a
+                                    través de los diferentes medios de recaudo el cual se le informara a cada padre. De incurrir en
+                                    mora,
+                                    EL <strong>CONTRATISTA</strong> le informará de tal situación y podrá suspender de inmediato la
+                                    prestación del
+                                    servicio y sin perjuicio de las demás acciones legales, que, para sus efectos, el presente contrato
+                                    y
+                                    sus anexos prestará mérito ejecutivo. La mora se liquidará con base en las reglas generales de los
+                                    negocios mercantiles. <strong>PARÁGRAFO:</strong> Cualquier cambio en la cuenta bancaría será
+                                    notificado por el
+                                    <strong>CONTRATISTA</strong> a través de correo. <strong>OCTAVA. OBLIGACIONES DEL COLEGIO</strong>:
+                                    EL COLEGIO se
+                                    obliga a: <strong>1)</strong> Efectuar los procedimientos de vigilancia y control, requeridos para
+                                    mantener la
+                                    disciplina
+                                    y el orden de los estudiantes dentro del vehículo, garantizando el debido respeto por parte de los
+                                    estudiantes hacia los conductores. <strong>2)</strong> Se obliga a no transportar dentro de la ruta,
+                                    carga de ninguna
+                                    naturaleza u origen, que no sean estudiantes. <strong>3)</strong> Exigirle el PAZ y SALVO al
+                                    estudiante, por el
+                                    servicio
+                                    de transporte, en el momento de las matrículas o para efectuar el retiro de la institución.
+                                    <strong>NOVENA.
+
+                                </p>
+                            @break
+
+                            @default
+                        @endswitch
+
+                    </div>
+                @break
+
+                @case(2)
+                    <div style="display: flex;position: absolute;width: 37.5rem;height: 819px;margin-left: 6.5rem;">
+                        <p style="font-size: 88%;text-align: justify;">
+                            funcionarios, empleados o contratistas a transportar por vehículo y acompañada de sus
+                            identificaciones, lugares de residencia, y números de contacto. Dicho listado podrá ser
+                            actualizado periódicamente siempre y cuando el <strong>CONTRATANTE</strong> lo haga por escrito y
+                            brinde por lo menos una semana al <strong>CONTRATISTA</strong> para proyectar las modificaciones a
+                            su plan de rodamiento necesarias para efectos de cubrir la demanda. <strong>PARÁGRAFO 1:</strong> El
+                            <strong>CONTRATISTA</strong> podrá participar de la creación de dicho documento adjunto, en especial
+                            como consultor o asesor y a través de su coordinador de rutas, todo esto para efectos de
+                            facilitar la logística y eficiencia en el diseño de las rutas y prestación del servicio.
+                            <strong>PARÁGRAFO 2 OBSERVACIONES: 1)</strong>. Los vehículos podrán ser cambiados sin
+                            perjuicio de que previamente le sea comunicada tal situación al <strong>CONTRATANTE. 2).</strong>
+                            Aunque el vehículo sea cambiado, este, al igual que todo el parque automotor, continuará
+                            cumpliendo con todas las especificaciones de seguridad, técnicas y operativas exigidas
+                            por la normatividad vigente. <strong>3).</strong> El <strong>CONTRATANTE</strong> podrá:
+                            <strong>A</strong>. Solicitar el cambio
+                            inmediato de uno del vehículo con que se preste el servicio si, según el marco legal, el
+                            mismo no se encuentra en las condiciones mínimas de seguridad, técnicas y/u operativas
+                            para prestar el servicio. <strong>B</strong>. Solicitar el cambio de vehículo por cualquier otra
+                            razón siempre
+                            y cuando adjunte por escrito que deberá contener la razón o razones por las cuales
+                            desean cambiar el vehículo pese a estar en óptimas condiciones técnicas, operativas y de
+                            seguridad. <strong>TERCERA: CONDICIONES PLAN DE RODAMIENTO. 1. DISPONIBILIDAD
+                                GENERAL ORDINARIA Y EXTRAORDINARIA.</strong> Los funcionarios, empleados o
+                            contratistas del <strong>CONTRATANTE</strong> que ponga a disposición del
+                            <strong>CONTRATISTA</strong> serán
+                            transportados de acuerdo a la orden del servicio. No habrá lugar a servicios
+                            extraordinarios sin previa autorización del <strong>CONTRATANTE. 2. RADIO DE OPERACIÓN
+                                TERRITORIAL:</strong> La prestación del servicio queda limitada a un radio terrestre en el área
+                            metropolitana de Pereira, Dosquebradas, La Virginia y los diferentes municipios del
+                            departamento de Risaralda. <strong>PARÁGRAFO 1</strong>: El cambio de horario o calendario
+                            académico que afecte la prestación del servicio y se realice incumpliendo los
+                            procedimientos previamente descritos dará lugar a la terminación unilateral del contrato
+                            por parte del <strong>CONTRATISTA. CUARTA. PLAN DE CONTINGENCIA.</strong> El
+                            <strong>CONTRATISTA</strong>
+                            dispondrá de la aplicación del plan de contingencia respectivo, a fin de suplir los
+                            inconvenientes que puedan tener los vehículos que prestan el servicio al
+                            <strong>CONTRATANTE. QUINTA. OBLIGACIONES DEL CONTRATISTA 1)</strong> cumplir
+                            estrictamente con los horarios establecidos. <strong>2)</strong> Recoger y entregar a los pasajeros
+                            en la
+                            puerta de la residencia o en la portería de los condominios sin ingresar a éstos.
+                            <strong>3)</strong> llevar
+                            con seguridad, aseo y comodidad al pasajero, respetando las normas de tránsito y de
+                            transporte especial vigente. <strong>4)</strong> Llevar una velocidad moderada durante todo el
+                            recorrido.
+                            <strong>5)</strong> Mantener el (los) vehículo (s) en excelentes condiciones de aseo, estado técnico
+                            mecánico, haciendo los respectivos mantenimientos preventivos. <strong>6)</strong> Tener conductores
+                            de
+                            certificada experiencia, habilidad, responsabilidad, cultura, seriedad y de conformidad con
+                            la ley. <strong>7)</strong> Expedir copia simple física o digital, previa solicitud en tal sentido
+                            del
+                            <strong>CONTRATANTE</strong> de la póliza de responsabilidad civil contractual y extracontractual
+                            contratada, habilitación, contrato, SOAT, licencia de conducción del conductor y demás
+                            documentos que requiera para verificar el cumplimiento de la normatividad vigente en
+                            materia de transporte especial. <strong>8)</strong> Llevar las puertas cerradas, recogiendo y
+                            dejando a los
+                        </p>
+                    </div>
+                @break
+
+                @case(3)
+                    <div style="display: flex;position: absolute;width: 37.5rem;height: 819px;margin-left: 6.5rem;">
+                        <p style="font-size: 81%;text-align: justify;">
+                            <strong>CONTRATANTE</strong> que ponga a disposición del <strong>CONTRATISTA</strong> serán
+                            transportados de acuerdo con
+                            la orden del servicio. No habrá lugar a servicios extraordinarios sin previa autorización del
+                            <strong>CONTRATANTE</strong>. Los pasajeros son responsables de sus pertenencias (celulares, Tablet,
+                            portátiles,
+                            bolsos de mano, joyas, etc), el equipaje o maletas grandes va en los maleteros, y portaequipaje el
+                            cual debe ir embalado y marcado no revisamos el interior de maletas, por tal razón no se responde
+                            a reclamaciones de perdidas, el dueño será el único responsable de su contenido. <strong>2. RADIO DE
+                                OPERACIÓN TERRITORIAL:</strong> La prestación del servicio es a nivel nacional. <strong>CUARTA.
+                                PLAN DE
+                                CONTINGENCIA.</strong> El <strong>CONTRATISTA</strong> dispondrá de la aplicación del plan de
+                            contingencia respectivo,
+                            a fin de suplir los inconvenientes que puedan tener los vehículos que prestan el servicio al
+                            <strong>CONTRATANTE</strong>. <strong>QUINTA</strong>. <strong>OBLIGACIONES DEL CONTRATISTA
+                                1)</strong> cumplir estrictamente con los
+                            horarios establecidos. <strong>2)</strong> Recoger y entregar a los pasajeros según orden de
+                            servicio del contratante
+                            <strong>3)</strong> llevar con seguridad, aseo y comodidad al pasajero, respetando las normas de
+                            tránsito y de
+                            transporte especial vigente. <strong>4)</strong> Llevar una velocidad moderada durante todo el
+                            recorrido. <strong>5)</strong> Mantener
+                            el (los) vehículo (s) en excelentes condiciones de aseo, estado técnico mecánico, haciendo los
+                            respectivos mantenimientos preventivos. <strong>6)</strong> Tener conductores de certificada
+                            experiencia, habilidad,
+                            responsabilidad, cultura, seriedad y de conformidad con la ley. <strong>7)</strong> Expedir copia
+                            simple física o
+                            digital,
+                            previa solicitud en tal sentido del <strong>CONTRATANTE</strong> de la póliza de responsabilidad
+                            civil contractual y
+                            extracontractual contratada, habilitación, contrato, SOAT, licencia de conducción del conductor y
+                            demás documentos que requiera para verificar el cumplimiento de la normatividad vigente en materia
+                            de transporte especial. <strong>8)</strong> Llevar las puertas cerradas, recogiendo y dejando a los
+                            pasajeros en
+                            sitios
+                            seguros. <strong>SEXTA: OBLIGACIONES DEL CONTRATANTE: 1)</strong> Suministrar al
+                            <strong>CONTRATISTA</strong> toda la
+                            información necesaria, oportuna sobre lugares y horarios de servicio. <strong>2)</strong> Pagar los
+                            daños que los
+                            pasajeros ocasionen al vehículo durante la prestación del servicio. <strong>3)</strong>. Destinar
+                            los espacios
+                            internos
+                            del establecimiento con acceso vehicular, al ascenso y descenso de pasajeros. <strong>4)</strong>.
+                            Contar con un
+                            Plan Estratégico de Seguridad Vial durante la prestación del servicio <strong>SÉPTIMA. VALOR DEL
+                                CONTRATO Y FORMA DE PAGO.</strong> El valor del contrato es de ________________________, el pago
+                            deberá realizarlo el <strong>CONTRATANTE</strong> a través de consignación bancaría en la cuenta
+                            corriente
+                            #127669997810 del banco Davivienda, informando del pago al <strong>CONTRATISTA</strong> o/y
+                            directamente al
+                            conductor, previa orden del <strong>CONTRATISTA</strong>, en cualquier caso, deberá siempre
+                            conservar el
+                            comprobante de la consignación e informar al <strong>CONTRATISTA</strong> o exigir recibo o
+                            constancia del pago
+                            por el pago realizado. De incurrir en mora, EL <strong>CONTRATISTA</strong> le informará de tal
+                            situación y podrá
+                            suspender de inmediato la prestación del servicio y sin perjuicio de las demás acciones legales,
+                            que,
+                            para sus efectos, el presente contrato y sus anexos prestará mérito ejecutivo. La mora se liquidará
+                            con base en las reglas generales de los negocios mercantiles. <strong>PARÁGRAFO</strong>: Cualquier
+                            cambio en
+                            la cuenta bancaría será notificado por el <strong>CONTRATISTA</strong> a través de correo.
+                            <strong>OCTAVA. CAUSALES
+                                DE SUSPENSIÓN DEL SERVICIO</strong>: Serán causales de suspensión parcial o total del servicio
+                            de
+                            transporte, las siguientes: <strong>1)</strong> Los actos de indisciplina o vandalismo por parte del
+                            pasajero dentro
+                            del
+                            bus, como daños en la cojinería, vidrios y en alguna otra parte del interior del vehículo.
+                            <strong>2)</strong> El
+                            comportamiento agresivo o violento por parte del pasajero dentro del vehículo, o la tenencia de
+                            elementos inflamables, tóxicos, sustancias alucinógenas, embriagantes o explosivos, el
+                            <strong>CONTRATANTE</strong>, tendrá el 100% de la responsabilidad de estos pasajeros y sus
+                            pertenencias <strong>3)</strong> y
+                            en general por incurrir en conductas que afecten el normal comportamiento y cuidado.
+                            <strong>PARÁGRAFO</strong>: <strong>PROCEDIMIENTO DE DENUNCIA:</strong> El conductor documentará y
+                            recolectará
+                            pruebas de lo sucedido, le comunicará la situación al coordinador de ruta quien a su vez se pondrá
+                            en contacto con el <strong>CONTRATISTA</strong> y/o autoridad competente. Lo anterior sin perjuicio
+                            de las acciones
+                            legales que El CONTRATISTA tenga, un servicio o viaje se puede ver afectado por incurrir en
+                            acciones ilícitas de los pasajeros, si llegare a suceder y de comprobarse que la culpabilidad es de
+                            un pasajero el servicio se cobrara en el 100% de lo pactado <strong>NOVENA. VIGENCIA.</strong> El
+                            presente
+                            contrato tendrá una duración de 12 meses, comenzando a ejecutarse el día 1 del mes de enero del
+                            año 2021 y concluyendo el día 31 mes diciembre del año 2022. Por ningún motivo podrá prorrogarse
+                            automáticamente el presente contrato o cederse por la parte <strong>CONTRATANTE</strong>; pese a lo
+                            anterior,
+
+                        </p>
+                    </div>
+                @break
+
+                @case(4)
+                    <div style="display: flex;position: absolute;width: 37.5rem;height: 819px;margin-left: 6.5rem;">
+                        <p style="font-size: 82%;text-align: justify;">
+                            <strong>TERCERA. CLASE Y NUMERO DE VEHÍCULOS.</strong> Para efectos de ejecutar el presente
+                            contrato, el
+                            <strong>CONTRATISTA</strong> pone a disposición del <strong>CONTRATANTE</strong> el (los) siguiente
+                            (s) vehículo (s):
+
+                        <div>
+                            <table
+                                style="width: 100%;border: solid 1px #000;border-collapse: collapse;margin-bottom: 1%;font-size: 75%;">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 25%;border: solid 1px #000;border-collapse: collapse;">
+                                            TIPO VEHÍCULO
+                                        </th>
+                                        <th style="width: 35%;border: solid 1px #000;border-collapse: collapse;">
+                                            MARCA
+                                        </th>
+                                        <th style="width: 10%;border: solid 1px #000;border-collapse: collapse;">
+                                            MODELO
+                                        </th>
+                                        <th style="width: 20%;border: solid 1px #000;border-collapse: collapse;">
+                                            PLACA
+                                        </th>
+                                        <th style="width: 10%;border: solid 1px #000;border-collapse: collapse;">
+                                            LATERAL
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="width: 25%;border: solid 1px #000;border-collapse: collapse;">
+                                            prueba
+                                        </td>
+                                        <td style="width: 35%;border: solid 1px #000;border-collapse: collapse;">
+                                            prueba
+                                        </td>
+                                        <td style="width: 10%;border: solid 1px #000;border-collapse: collapse;">
+                                            prueba
+                                        </td>
+                                        <td style="width: 20%;border: solid 1px #000;border-collapse: collapse;">
+                                            prueba
+                                        </td>
+                                        <td style="width: 10%;border: solid 1px #000;border-collapse: collapse;">
+                                            prueba
+                                        </td>
+                                    </tr>
+                                </tbody>
+
+                            </table>
+                        </div>
+
+                        <p style="font-size: 80%;text-align: justify;">
+                            <strong>PARÁGRAFO 1 OBSERVACIONES: 1.</strong> El vehículo podrá ser cambiado sin perjuicio de que
+                            previamente
+                            le sea comunicada tal situación al <strong>CONTRATANTE. 2.</strong> Aunque el vehículo sea cambiado,
+                            éste, al igual
+                            que todo el parque automotor, continuará cumpliendo con todas las especificaciones de seguridad,
+                            técnicas y operativas exigidas por la normatividad vigente. <strong>3.</strong> El
+                            <strong>CONTRATANTE</strong> podrá solicitar el
+                            cambio
+                            inmediato del vehículo si, según el marco legal, el mismo no se encuentra en las condiciones mínimas
+                            de
+                            seguridad, técnicas y/u operativas para prestar el servicio. <strong>CUARTA. PLAN DE
+                                CONTINGENCIA.</strong> El
+                            <strong>CONTRATISTA</strong> dispondrá de la aplicación del plan de contingencia respectivo, a fin
+                            de suplir los
+                            inconvenientes que puedan tener los vehículos que prestan el servicio al <strong>CONTRATANTE.
+                                QUINTA.
+                                OBLIGACIONES DEL CONTRATISTA 1.</strong> Cumplir estrictamente con los horarios establecidos.
+                            <strong>2.</strong> Recoger
+                            y entregar a los pasajeros de conformidad al plan de rodamiento y lista de pasajeros adjunta.
+                            <strong>3.</strong>
+                            Llevar
+                            con seguridad, aseo y comodidad al pasajero, respetando las normas de tránsito y de transporte
+                            especial
+                            vigente. <strong>4.</strong> Llevar una velocidad moderada durante todo el recorrido.
+                            <strong>5.</strong> Mantener su vehículo en
+                            excelentes condiciones de aseo, excelente estado técnico mecánico, haciendo los respectivos
+                            mantenimientos preventivos. <strong>6.</strong> Tener conductores de certificada experiencia,
+                            habilidad,
+                            responsabilidad,
+                            cultura, seriedad y de conformidad con la ley. <strong>7.</strong> Expedir copia simple física o
+                            digital, previa
+                            solicitud en tal
+                            sentido del CONTRATANTE de la póliza de responsabilidad civil contractual y extracontractual
+                            contratada,
+                            habilitación, contrato, SOAT, licencia de conducción del conductor y demás documentos que requiera
+                            para
+                            verificar el cumplimiento de la normatividad vigente en materia de transporte especial y transporte
+                            en
+                            general y sobre las condiciones de ejecución y cumplimiento del contrato. <strong>8.</strong> Llevar
+                            las puertas
+                            cerradas,
+                            recogiendo y dejando a los pasajeros según el plan de rodamiento. <strong>SEXTA: OBLIGACIONES DEL
+                                CONTRATANTE. 1.</strong> Asignar una persona que sea vigilante de que los pasajeros guarden la
+                            compostura
+                            y el orden durante la prestación del servicio, para tales efectos, socializará con ellos las normas
+                            básicas
+                            de conducta al interior del vehículo, este puede ser el mismo CONTRATANTE o designar a uno de los
+                            ocupantes del servicio. <strong>2.</strong> Pagar los daños que los (as) pasajeros ocasionen al
+                            vehículo durante la
+                            prestación del servicio. <strong>SÉPTIMA. VALOR DEL CONTRATO Y FORMA DE PAGO.</strong> Por el
+                            servicio
+                            prestado, las partes pactan que el <strong>CONTRATANTE</strong> pagará al
+                            <strong>CONTRATISTA</strong> la suma de
+                            __________________________________________________PESOS MCTE. ($________________),
+                            los cuales pagará de la siguiente forma: el 50% a la firma del contrato y el resto al inicio del
+                            servicio. El
+                            pago podrá realizarse a través de consignación bancaría en la cuenta corriente # 127669997810 del
+                            Banco Davivienda, a nombre de STEP S.A.S. informando del pago al <strong>CONTRATISTA</strong>, o
+                            directamente en
+                            la oficina del <strong>CONTRATISTA</strong> o al conductor del vehículo; en cualquier caso, deberá
+                            siempre conservar
+                            el
+                            comprobante del pago e informar al <strong>CONTRATISTA</strong> o exigir recibo o constancia del
+                            pago realizado.
+                            <strong>OCTAVA. ATENCION Y RESPUESTA ANTE EMERGENCIAS.</strong> El conductor actuará de acuerdo con
+                            el
+                            plan de atención y respuesta ante emergencia establecido por la EMPRESA, ante eventos como vendaval,
+                            avalancha, terremoto, inundación, y /o cualquier situación que no sea convencional de y de acuerdo a
+                            la
+                            movilidad. <strong>NOVENA. TRATAMIENTO DE LA PROPIEDAD DEL CLIENTE.</strong> Cuidar la propiedad del
+                            usuario del servicio de transporte mientras esté bajo su control, tales como componentes,
+                            instalaciones,
+                            equipos, herramientas, propiedad intelectual y datos personales; bajo las condiciones establecidas
+                            por <strong>LA
+                                EMPRESA</strong> en los requisitos para la prestación de este servicio, o por motivos de
+                            capacidad del
+                            vehículo
+                            prestador de este servicio, LA EMPRESA NO se pueda hace responsable de la Propiedad del cliente, se
+                            le comunicará esta condición a la persona asignada como responsable del grupo de usuarios del
+                            servicio.
+                            <strong>DECIMA.CAUSALES DE SUSPENSIÓN DEL SERVICIO:</strong> Serán causales de suspensión parcial o
+                            total
+                            del servicio, las siguientes: <strong>1.</strong> Los actos de indisciplina o vandalismo por parte
+                            de los pasajeros
+                            dentro del
+                            vehículo, como daños en la cojinería, vidrios, etc. <strong>2.</strong> El comportamiento agresivo,
+                            indecente,
+                            violento por
+                            parte de los pasajeros dentro y/o con los ocupantes del vehículo, o la tenencia de elementos
+                            inflamables,
+                        </p>
+                        </p>
+                    </div>
+                @break
+
+                @case(5)
+                    <div style="display: flex;position: absolute;width: 37.5rem;height: 819px;margin-left: 6.5rem;">
+                        <p style="font-size: 80%;text-align: justify;">
+                            que prestan el servicio al <strong>CONTRATANTE. QUINTA: OBLIGACIONES DEL CONTRATISTA 1.</strong>
+                            Cumplir estrictamente con los horarios establecidos. <strong>2.</strong> Recoger y entregar a los
+                            pasajeros de
+                            conformidad al plan de rodamiento y lista de pasajeros adjunta. <strong>3.</strong> Llevar con
+                            seguridad, aseo y
+                            comodidad al pasajero, respetando las normas de tránsito y de transporte especial vigente.
+                            <strong>4.</strong> Llevar
+                            una velocidad moderada durante todo el recorrido. <strong>5.</strong> Mantener su vehículo en
+                            excelentes
+                            condiciones de aseo, excelente estado técnico mecánico, haciendo los respectivos mantenimientos
+                            preventivos. <strong>6.</strong> Tener conductores de certificada experiencia, habilidad,
+                            responsabilidad, cultura,
+                            seriedad y de conformidad con la ley. <strong>7.</strong> Expedir copia simple física o digital,
+                            previa solicitud en
+                            tal
+                            sentido del <strong>CONTRATANTE</strong> de la póliza de responsabilidad civil contractual y
+                            extracontractual
+                            contratada, habilitación, contrato, SOAT, licencia de conducción del conductor y demás documentos
+                            que requiera para verificar el cumplimiento de la normatividad vigente en materia de transporte
+                            especial y transporte en general y sobre las condiciones de ejecución y cumplimiento del contrato.
+                            <strong>8.</strong> Llevar las puertas cerradas, recogiendo y dejando a los pasajeros según el plan
+                            de rodamiento.
+                            <strong>SEXTA: OBLIGACIONES DEL CONTRATANTE. 1.</strong> Asignar una persona que sea vigilante de
+                            que
+                            los pasajeros guarden la compostura y el orden durante la prestación del servicio, para tales
+                            efectos,
+                            socializará con ellos las normas básicas de conducta al interior del vehículo, este puede ser el
+                            mismo
+                            CONTRATANTE o designar a uno de los ocupantes del servicio. <strong>2.</strong> Pagar los daños que
+                            los (as)
+                            pasajeros ocasionen al vehículo durante la prestación del servicio. <strong>SÉPTIMA: VALOR DEL
+                                CONTRATO Y FORMA DE PAGO.</strong> El valor del transporte será la tarifa mensual acordada entre
+                            <strong>EL
+                                CONTRATISTA</strong> y los usuarios a quien <strong>EL CONTRATANTE</strong> representa, y será
+                            cancelado durante
+                            los primeros cinco (5) días de cada mes durante el periodo comprendido desde _________ de 20__
+                            hasta ________ de 20__. El pago podrá realizarse, directamente en la oficina o al acompañante o
+                            conductor del vehículo; en cualquier caso, deberá siempre conservar el comprobante de pago. El
+                            pago podrá realizarse también a través de consignación bancaría en la cuenta corriente #
+                            127669997810 del Banco Davivienda, a nombre de STEP S.A.S. informando del pago al
+                            <strong>CONTRATISTA</strong>, o directamente en la oficina del <strong>CONTRATISTA</strong> o al
+                            conductor del vehículo; en
+                            cualquier caso, deberá siempre conservar el comprobante del pago e informar al
+                            <strong>CONTRATISTA</strong> o
+                            exigir recibo o constancia del pago realizado. <strong>OCTAVA: ATENCION Y RESPUESTA ANTE
+                                EMERGENCIAS.</strong> El conductor actuará de acuerdo con el plan de atención y respuesta ante
+                            emergencia establecido por la EMPRESA, ante eventos como vendaval, avalancha, terremoto,
+                            inundación, y /o cualquier situación que no sea convencional de y de acuerdo a la movilidad.
+                            <strong>NOVENA: TRATAMIENTO DE LA PROPIEDAD DEL CLIENTE.</strong> Cuidar la propiedad del usuario
+                            del
+                            servicio de transporte mientras esté bajo su control, tales como componentes, instalaciones,
+                            equipos,
+                            herramientas, propiedad intelectual y datos personales; bajo las condiciones establecidas por
+                            <strong>LA
+                                EMPRESA</strong> en los requisitos para la prestación de este servicio, o por motivos de
+                            capacidad del
+                            vehículo prestador de este servicio, LA EMPRESA NO se hace responsable de la Propiedad del
+                            cliente, se le comunicará esta condición a la persona asignada como responsable del grupo de
+                            usuarios del servicio. <strong>DECIMA: CAUSALES DE SUSPENSIÓN DEL SERVICIO:</strong> Serán causales
+                            de
+                            suspensión parcial o total del servicio, las siguientes: <strong>1.</strong> Los actos de
+                            indisciplina o vandalismo
+                            por
+                            parte de los pasajeros dentro del vehículo, como daños en la cojinería, vidrios, etc.
+                            <strong>2.</strong> El
+                            comportamiento agresivo, indecente, violento por parte de los pasajeros dentro y/o con los ocupantes
+                            del vehículo, o la tenencia de elementos inflamables, tóxicos, sustancias alucinógenas o explosivos.
+                            <strong>3.</strong> Conductas contra la moral y las buenas costumbres por parte de los pasajeros
+                            dentro del vehículo.
+                            <strong>PARÁGRAFO: PROCEDIMIENTO DE DENUNCIA:</strong> El acompañante o conductor documentará y
+                            recolectará pruebas de lo sucedido, le comunicará la situación a la empresa quien evaluará la
+                            situación e indicará el procedimiento a seguir según el evento que se presente a la persona
+                            responsable del grupo de pasajeros designada en el presente contrato, según listado adjunto, el cual
+                            forma parte integral del presente documento. o a la autoridad competente. Lo anterior sin perjuicio
+                            de las acciones legales que El <strong>CONTRATISTA</strong> o sus funcionarios tenga. <strong>DECIMA
+                                PRIMERA:
+                                DURACION DEL CONTRATO.</strong> El presente contrato tendrá una duración de ________ meses
+                            comenzando a ejecutarse el día___ de ______ de 20__ y concluyendo el día ___ de ________ de
+                            20___. Por ningún motivo podrá prorrogarse automáticamente el presente contrato o cederse por la
+
+                        </p>
+                    </div>
+                @break
+
+                @case(6)
+                    <div
+                        style="display: flex;position: absolute;width: 37.5rem;height: 819px;margin-left: 6.5rem;margin-top: -7%;">
+                        <p style="font-size: 88%;text-align: justify;">
+                            equipo automotor del COLABORADOR, y la necesidad del CONTRATISTA, para la mejor
+                            prestación del servicio transporte terrestre automotor especial de pasajeros, realizando
+                            viajes ocasionales, con los clientes contratados para desarrollar el objeto indicado, dentro y
+                            fuera del Departamento de Risaralda y para ejecutar el contrato del colegio LA
+                            INSTITUCION EDUCATIVA JUAN MANUEL GONZALES, INSTITUCION EDUCATIVA
+                            CRISTO REY, COLEGIO INEM FELIPE PEREZ
+                            <br>
+                            <br>
+                            <strong>SEGUNDA</strong>: DURACION Este contrato tendrá una duración igual al término del contrato
+                            que dio origen del presente convenio, el cual está vigente desde El 15 de febrero de
+                            202 hasta el 15 de noviembre del 202 .
+                            <br>
+                            <br>
+                            <strong>TERCERA</strong>: OBLIGACIONES DEL COLABORADOR A) Prestar los vehículos al
+                            CONTRATISTA, para los servicios que requiera y que dieron origen a la suscripción de
+                            este contrato, B) Mantener informado al CONTRATISTA, del estado de los vehículos y la
+                            situación de los conductores y de los equipos, serán las exigidas en la resolución
+                            N°007126 del 11 de octubre de 1995 C) Relacionar los vehículos que cumplan con todos
+                            los documentos y seguros exigidos por la ley y el Código Nacional de Tránsito, como son
+                            SOAT, Seguros de Responsabilidad Civil Contractual y Extracontractual, Tarjeta de
+                            Operación Vigente, Revisión Técnico Mecánica y Preventiva. D) Revisar e inspeccionar el
+                            estado de los vehículos.
+                            <br>
+                            <br>
+                            PARAGRAFO 1: Responder de acuerdo con la ley, por los riesgos que se causen en
+                            desarrollo del servicio de transporte con su automotor para la cual contará con los seguros
+                            de responsabilidad civil contractual y extracontractual vigentes y de los conductores de los
+                            vehículos de este convenio.
+                            PARAGRAFO 2: Los aportes al sistema de seguridad social integral de los
+                            conductores de los vehículos objeto de este convenio serán obligación del propietario y/o
+                            conductor del mismo a la empresa a la cual está afiliado.
+                            <br>
+                            <br>
+                            <strong>CUARTA</strong>: OBLIGACIONES DEL CONTRATISTA A) La responsabilidad de los
+                            servicios contratados por una persona jurídica o por una persona natural, que se van a
+                            prestar de acuerdo con este contrato, será exclusiva de la empresa de transporte
+                            CONTRATISTA, B) Vigilar que los conductores de los vehículos porten durante la
+                            operación el extracto del contrato conforme a lo requerido por el artículo 2.2.1.6.3.4 DEL
+                            DECRETO 1079 de 2015. C) EL CONTRATISTA solicitará cada 30 días PAZ y SALVO por
+                            gastos operativos expedido por la empresa COLABORADORA de los vehículos
+                            relacionados en el presente convenio para la expedición del FUEC, en conformidad por lo
+                            preceptuado en el Decreto 1079 de2015 y la Resolución 001069 de Abril 23 de 2015.
+                            <br>
+                            <br>
+                            PARAGRAFO: Sera obligación del CONTRATISTA radicar el presente convenio en la
+                            Dirección Regional del Ministerio de Transporte y a la Superintendencia de Puertos y
+                            Transportes, dando así cumplimiento a lo dispuesto en el inciso segundo del
+                            artículo2.2.1.6.3.4 DEL DECRETO 1079 DE 2015.
+                        </p>
+                    </div>
+                @break
+
+                @case(9)
+                    <div style="display: flex;position: absolute;width: 76%;height: 819px;margin-left: 6.5rem;">
+                        <p style="font-size: 88%;text-align: justify;">
+                            por la misma, en cada caso los siguientes conceptos: <strong>Parágrafo 1: Pago para renovación de
+                                tarjeta
+                                de operación:</strong> Los conceptos de este valor se describen en la siguiente tabla, los ítems
+                            del 1 al 7
+                            son obligatorios, el 8 y 9 son opcionales:
+
+                        <div style="display: flex;width: 38.7rem;border: solid 1px #000;">
+                            <div style="text-align: center;font-size: 88%;"><strong>TABLA DE APORTES VINCULADOS RENOVACIÓN
+                                    TARJETA OPERACIÓN</strong></div>
+                            <table style="width: 100%;border: solid 1px #000;border-collapse: collapse;font-size: 88%;">
+
+                                <thead>
+                                    <tr>
+                                        <th style="width: 10%;border: solid 1px #000;border-collapse: collapse;">
+                                            Ítem
+                                        </th>
+                                        <th style="width: 45%;border: solid 1px #000;border-collapse: collapse;">
+                                            Concepto
+                                        </th>
+                                        <th style="width: 15%;border: solid 1px #000;border-collapse: collapse;">
+                                            Tiempo
+                                        </th>
+                                        <th style="width: 30%;border: solid 1px #000;border-collapse: collapse;">
+                                            Valor
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td
+                                            style="width: 10%;border: solid 1px #000;border-collapse: collapse;text-align: center;">
+                                            1
+                                        </td>
+                                        <td style="width: 45%;border: solid 1px #000;border-collapse: collapse;">
+                                            Cuota Administrativa
+                                        </td>
+                                        <td
+                                            style="width: 15%;border: solid 1px #000;border-collapse: collapse;text-align: center;">
+                                            1 Mes
+                                        </td>
+                                        <td style="width: 30%;border: solid 1px #000;border-collapse: collapse;">
+                                            Por el período del contrato
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td
+                                            style="width: 10%;border: solid 1px #000;border-collapse: collapse;text-align: center;">
+                                            2
+                                        </td>
+                                        <td style="width: 45%;border: solid 1px #000;border-collapse: collapse;">
+                                            GPS
+                                        </td>
+                                        <td
+                                            style="width: 15%;border: solid 1px #000;border-collapse: collapse;text-align: center;">
+                                            6 Meses
+                                        </td>
+                                        <td style="width: 30%;border: solid 1px #000;border-collapse: collapse;">
+                                            Por el período del contrato
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td
+                                            style="width: 10%;border: solid 1px #000;border-collapse: collapse;text-align: center;">
+                                            3
+                                        </td>
+                                        <td style="width: 45%;border: solid 1px #000;border-collapse: collapse;">
+                                            Seguridad Social
+                                        </td>
+                                        <td
+                                            style="width: 15%;border: solid 1px #000;border-collapse: collapse;text-align: center;">
+                                            1 Mes
+                                        </td>
+                                        <td style="width: 30%;border: solid 1px #000;border-collapse: collapse;">
+                                            Por el período del contrato
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td
+                                            style="width: 10%;border: solid 1px #000;border-collapse: collapse;text-align: center;">
+                                            4
+                                        </td>
+                                        <td style="width: 45%;border: solid 1px #000;border-collapse: collapse;">
+                                            Salario Mínimo
+                                        </td>
+                                        <td
+                                            style="width: 15%;border: solid 1px #000;border-collapse: collapse;text-align: center;">
+                                            1 Mes
+                                        </td>
+                                        <td style="width: 30%;border: solid 1px #000;border-collapse: collapse;">
+                                            Por el período del contrato
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td
+                                            style="width: 10%;border: solid 1px #000;border-collapse: collapse;text-align: center;">
+                                            5
+                                        </td>
+                                        <td style="width: 45%;border: solid 1px #000;border-collapse: collapse;">
+                                            Auxilio de transporte
+                                        </td>
+                                        <td
+                                            style="width: 15%;border: solid 1px #000;border-collapse: collapse;text-align: center;">
+                                            1 Mes
+                                        </td>
+                                        <td style="width: 30%;border: solid 1px #000;border-collapse: collapse;">
+                                            Por el período del contrato
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td
+                                            style="width: 10%;border: solid 1px #000;border-collapse: collapse;text-align: center;">
+                                            6
+                                        </td>
+                                        <td style="width: 45%;border: solid 1px #000;border-collapse: collapse;">
+                                            Provisión Liquidación
+                                        </td>
+                                        <td
+                                            style="width: 15%;border: solid 1px #000;border-collapse: collapse;text-align: center;">
+                                            1 Mes
+                                        </td>
+                                        <td style="width: 30%;border: solid 1px #000;border-collapse: collapse;">
+                                            Por el período del contrato
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3"
+                                            style="width: 10%;border: solid 1px #000;border-collapse: collapse;text-align: center;">
+                                            <strong>Total Pago Renovación Tarjeta Operació</strong>
+                                        </td>
+                                        <td style="width: 30%;border: solid 1px #000;border-collapse: collapse;">
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td
+                                            style="width: 10%;border: solid 1px #000;border-collapse: collapse;text-align: center;">
+                                            7
+                                        </td>
+                                        <td style="width: 45%;border: solid 1px #000;border-collapse: collapse;">
+                                            Provisión Seguro Obligatorio
+                                        </td>
+                                        <td
+                                            style="width: 15%;border: solid 1px #000;border-collapse: collapse;text-align: center;">
+                                            1 Mes
+                                        </td>
+                                        <td style="width: 30%;border: solid 1px #000;border-collapse: collapse;">
+                                            Por el período del contrato
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td
+                                            style="width: 10%;border: solid 1px #000;border-collapse: collapse;text-align: center;">
+                                            8
+                                        </td>
+                                        <td style="width: 45%;border: solid 1px #000;border-collapse: collapse;">
+                                            Provisión RCC
+                                        </td>
+                                        <td
+                                            style="width: 15%;border: solid 1px #000;border-collapse: collapse;text-align: center;">
+                                            1 Mes
+                                        </td>
+                                        <td style="width: 30%;border: solid 1px #000;border-collapse: collapse;">
+                                            Por el período del contrato
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3"
+                                            style="width: 10%;border: solid 1px #000;border-collapse: collapse;text-align: center;">
+                                            <strong>Total Pago con Aprovisionamiento Seguros</strong>
+                                        </td>
+                                        <td style="width: 30%;border: solid 1px #000;border-collapse: collapse;">
+
+                                        </td>
+                                    </tr>
+                                </tbody>
+
+                            </table>
+                        </div>
+
+                        <p>
+                            <strong>Parágrafo 2: Pago aportes mensuales:</strong> Los conceptos de este valor se describen en la
+                            siguiente tabla,
+                            Los ítems del 1 al 6 son obligatorios, el 7 y 8 son opcionales.
+                        </p>
+
+                        <div style="display: flex;width: 38.7rem;border: solid 1px #000;">
+                            <div style="text-align: center;font-size: 88%;"><strong>TABLA DE APORTES VINCULADOS MES</strong>
+                            </div>
+                            <table style="width: 100%;border: solid 1px #000;border-collapse: collapse;font-size: 88%;">
+
+                                <thead>
+                                    <tr>
+                                        <th style="width: 10%;border: solid 1px #000;border-collapse: collapse;">
+                                            Ítem
+                                        </th>
+                                        <th style="width: 45%;border: solid 1px #000;border-collapse: collapse;">
+                                            Concepto
+                                        </th>
+                                        <th style="width: 15%;border: solid 1px #000;border-collapse: collapse;">
+                                            Tiempo
+                                        </th>
+                                        <th style="width: 30%;border: solid 1px #000;border-collapse: collapse;">
+                                            Valor
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td
+                                            style="width: 10%;border: solid 1px #000;border-collapse: collapse;text-align: center;">
+                                            1
+                                        </td>
+                                        <td style="width: 45%;border: solid 1px #000;border-collapse: collapse;">
+                                            Cuota Administrativa
+                                        </td>
+                                        <td
+                                            style="width: 15%;border: solid 1px #000;border-collapse: collapse;text-align: center;">
+                                            1 Mes
+                                        </td>
+                                        <td style="width: 30%;border: solid 1px #000;border-collapse: collapse;">
+                                            Por el período del contrato
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td
+                                            style="width: 10%;border: solid 1px #000;border-collapse: collapse;text-align: center;">
+                                            2
+                                        </td>
+                                        <td style="width: 45%;border: solid 1px #000;border-collapse: collapse;">
+                                            Seguridad Social
+                                        </td>
+                                        <td
+                                            style="width: 15%;border: solid 1px #000;border-collapse: collapse;text-align: center;">
+                                            1 Mes
+                                        </td>
+                                        <td style="width: 30%;border: solid 1px #000;border-collapse: collapse;">
+                                            Por el período del contrato
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td
+                                            style="width: 10%;border: solid 1px #000;border-collapse: collapse;text-align: center;">
+                                            3
+                                        </td>
+                                        <td style="width: 45%;border: solid 1px #000;border-collapse: collapse;">
+                                            Salario Mínimo
+                                        </td>
+                                        <td
+                                            style="width: 15%;border: solid 1px #000;border-collapse: collapse;text-align: center;">
+                                            1 Mes
+                                        </td>
+                                        <td style="width: 30%;border: solid 1px #000;border-collapse: collapse;">
+                                            Por el período del contrato
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td
+                                            style="width: 10%;border: solid 1px #000;border-collapse: collapse;text-align: center;">
+                                            4
+                                        </td>
+                                        <td style="width: 45%;border: solid 1px #000;border-collapse: collapse;">
+                                            Auxilio de transporte
+                                        </td>
+                                        <td
+                                            style="width: 15%;border: solid 1px #000;border-collapse: collapse;text-align: center;">
+                                            1 Mes
+                                        </td>
+                                        <td style="width: 30%;border: solid 1px #000;border-collapse: collapse;">
+                                            Por el período del contrato
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td
+                                            style="width: 10%;border: solid 1px #000;border-collapse: collapse;text-align: center;">
+                                            5
+                                        </td>
+                                        <td style="width: 45%;border: solid 1px #000;border-collapse: collapse;">
+                                            Provisión Liquidación
+                                        </td>
+                                        <td
+                                            style="width: 15%;border: solid 1px #000;border-collapse: collapse;text-align: center;">
+                                            1 Mes
+                                        </td>
+                                        <td style="width: 30%;border: solid 1px #000;border-collapse: collapse;">
+                                            Por el período del contrato
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3"
+                                            style="width: 10%;border: solid 1px #000;border-collapse: collapse;text-align: center;">
+                                            <strong>Total Pago Renovación Tarjeta Operació</strong>
+                                        </td>
+                                        <td style="width: 30%;border: solid 1px #000;border-collapse: collapse;">
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td
+                                            style="width: 10%;border: solid 1px #000;border-collapse: collapse;text-align: center;">
+                                            6
+                                        </td>
+                                        <td style="width: 45%;border: solid 1px #000;border-collapse: collapse;">
+                                            Provisión Seguro Obligatorio
+                                        </td>
+                                        <td
+                                            style="width: 15%;border: solid 1px #000;border-collapse: collapse;text-align: center;">
+                                            1 Mes
+                                        </td>
+                                        <td style="width: 30%;border: solid 1px #000;border-collapse: collapse;">
+                                            Por el período del contrato
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td
+                                            style="width: 10%;border: solid 1px #000;border-collapse: collapse;text-align: center;">
+                                            7
+                                        </td>
+                                        <td style="width: 45%;border: solid 1px #000;border-collapse: collapse;">
+                                            Provisión RCC
+                                        </td>
+                                        <td
+                                            style="width: 15%;border: solid 1px #000;border-collapse: collapse;text-align: center;">
+                                            1 Mes
+                                        </td>
+                                        <td style="width: 30%;border: solid 1px #000;border-collapse: collapse;">
+                                            Por el período del contrato
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3"
+                                            style="width: 10%;border: solid 1px #000;border-collapse: collapse;text-align: center;">
+                                            <strong>Total Pago con Aprovisionamiento Seguros</strong>
+                                        </td>
+                                        <td style="width: 30%;border: solid 1px #000;border-collapse: collapse;">
+
+                                        </td>
+                                    </tr>
+                                </tbody>
+
+                            </table>
+                        </div>
+
+                        <p>
+                            A los valores anteriores se cargará el valor de los (6) meses correspondiente al excedente GPS,
+                            además
+                            de los anteriores valores el <strong>PROPIETARIO</strong> deberá asumir en su momento costos tales,
+                            dotación para
+                            conductores, capacitaciones obligatorios, marcación y emblemas de vehículos, Sanción no asistencia
+                            capacitaciones, multas de puertos y transportes (IUIT), movilizar el vehículo sin FUEC, costo por
+                            expedición de tarjeta de operación, pólizas RCC Y RCE valor promedio de cada vehículo en caso de no
+                            realizar aprovisionamiento, exámenes médicos de ingresó, periódicos, retiro y complementarios del
+                            conductor, alcoholímetros, aprovechamiento de los contratos ejecutados a través de la empresa,
+                            cuando es convenio 7% y propios 3%, <strong>(Decreto 431, Artículo 2.2.1.6.4.1. Numeral 4). QUINTA:
+                        </p>
+                        </p>
+                    </div>
+                @break
+
+                @default
+            @endswitch
+        </x-contractframes>
+        {{-- pagina 3 --}}
+        <x-contractframes typeContract="{{ $titlecontract }}">
+            @switch($contract->type_contract)
+                @case(1)
+                    <div style="display: flex;position: absolute;width: 37.5rem;height: 819px;margin-left: 6.5rem;">
+
+                        @switch($contract->contract_with)
+                            @case(1)
+                                <p style="font-size: 88%;text-align: justify;">
+                                    sitios seguros (no en la mitad de la calle ni en huecos o areneros). 9) Nunca dejar al menor con una
+                                    persona distinta al acudiente o q quien éste señale o donde indique, en caso de no ser posible
+                                    verificar la situación, la empresa de transporte intentará contactar directamente con el padre de
+                                    familia o la institución, y de no ser posible, volverá con el menor al colegio una vez termine el
+                                    recorrido para efectos de normalizar la situación o solicitar acompañamiento de la autoridad
+                                    competente. <strong>PARÁGRAFO</strong>: El acompañante del vehículo no podrá separarse por más de 3
+                                    metros
+                                    de éste para recoger o entregar (Numeral 2) a un estudiante ya que con ello estaría descuidando a
+                                    los demás pasajeros del vehículo, es por lo anterior que cuando al acompañante del vehículo no le
+                                    sea posible recoger o entregar al estudiante en la residencia o portería respectiva, el padre, o a
+                                    quien este designe previamente, tendrá que aproximarse al vehículo con el estudiante tomado de la
+                                    mano o recibirlo allí. <strong>SEXTA: OBLIGACIONES DEL CONTRATANTE Y EN ESPECIAL LOS
+                                        PADRES A QUIEN ESTE REPRESENTA</strong>: 1) Suministrar al <strong>CONTRATISTA</strong> toda la
+                                    información
+                                    necesaria, oportuna sobre inasistencia del (a) estudiante o cambio de la persona indicando nombre
+                                    completo y número de identificación de quien estará pendiente de recoger al estudiante mínimo con
+                                    24 horas de anticipación y cuando haya cambio de dirección con mínimo diez (10) días con el fin de
+                                    asignar nueva ruta. 2) Ser vigilante para que los (as) estudiantes guarden la compostura y el orden
+                                    durante la prestación del servicio, para tales efectos, socializará con el estudiante las normas
+                                    básicas de conducta al interior del vehículo 3) Asumir la directriz: <strong>“EL (A) ESTUDIANTE
+                                        ESPERA
+                                        LA RUTA, NO LA RUTA ESPERA AL (A) ESTUDIANTE”</strong>. 4) Pagar los daños que los estudiantes
+                                    ocasionen al vehículo durante la prestación del servicio. <strong>SÉPTIMA. VALOR DEL CONTRATO Y
+                                        FORMA DE PAGO</strong>. El valor del transporte será la tarifa mensual acordada entre <strong>EL
+                                        CONTRATISTA</strong>
+                                    y los padres de familia a quien el <strong>CONTRATANTE</strong> representa, y será cancelado durante
+                                    los primeros
+                                    cinco (5) días de cada mes durante el periodo comprendido desde _______________de 2023 hasta
+                                    _________________ de 2023, <strong>incluyendo semana santa, vacaciones de mitad de año, semana
+                                        de receso, períodos de paro, incapacidades</strong>, según lo consignado en el documento
+                                    adjunto. Los
+                                    <strong>CONTRATANTES</strong> serán solidarios entre ellos. El pago podrá realizarse, directamente
+                                    en la oficina
+                                    o al acompañante o conductor del vehículo; en cualquier caso, deberá siempre conservar el
+                                    comprobante del pago realizado. <strong>OCTAVA. VIGENCIA.</strong> El presente contrato se inicia el
+                                    día ___
+                                    del mes _______________ de 2023 y concluye el día ___ del mes _______________ de 2023__.
+                                    Por ningún motivo podrá prorrogarse el presente contrato o cederse por la parte <strong>CONTRATANTE.
+                                        NOVENA. TERMINACIÓN</strong>. Cualquiera de las partes podrá dar por terminado este contrato
+                                    dando
+                                    un preaviso a la otra parte y en como mínimo en los últimos quince (15) días de cada mes. En caso
+                                    de que sea el representante de los padres de familia quien desee retirarse del contrato, este tendrá
+                                    que informar por escrito <strong>AL CONTRATISTA</strong> cuál de los padres de familia que continua
+                                    en la
+                                    ejecución del contrato, deberá ser quien continúe como representante del grupo de padres, de no
+                                    hacerlo, aun renunciando al servicio, continuará con las obligaciones derivadas del presente
+                                    contrato. <strong>DECIMA. CAUSALES DE TERMINACIÓN CON JUSTA CAUSA Y UNILATERALES. A)
+                                        POR PARTE DEL CONTRATISTA:</strong> 1) El no pago por parte del PADRE DE FAMILIA Y/O
+                                    ACUDIENTE 2) Actos de indisciplina, irrespeto o vandalismo por parte del estudiante. 3) Perdida del
+                                    equilibrio financiero para el sostenimiento de la ruta, el cual, para efectos de dejar constancia,
+                                    no
+                                    podrá operar con la mitad más uno de su capacidad total según su manual del usuario. <strong>B) POR
+                                        PARTE DEL CONTRATANTE:</strong> 1) Por inconformidad con la prestación del servicio, previa
+                                    denuncia
+                                    por escrito y por medio PQRS realizada al <strong>CONTRATISTA</strong> sin que este ejecute acciones
+                                    o tome
+                                    medidas correctivas, o explique justamente la situación. 2) Por incumplimiento con alguno de los
+                                    compromisos adquiridos en el presente contrato
+
+                                </p>
+                            @break
+
+                            @case(2)
+                                <p style="font-size: 80%;text-align: justify;">
+                                    anterior sin perjuicio de las acciones legales que El <strong>CONTRATISTA</strong> o sus
+                                    funcionarios tenga.
+                                    <strong>DECIMA PRIMERA: DURACION DEL CONTRATO.</strong> El presente contrato tendrá una duración de
+                                    ________ meses comenzando a ejecutarse el día___ de ______ de 20__ y concluyendo el día ___
+                                    de ________ de 20___. Por ningún motivo podrá prorrogarse automáticamente el presente contrato
+                                    o cederse por la parte <strong>CONTRATANTE. DECIMA SEGUNDA_ TERMINACIÓN.</strong> Cualquiera de las
+                                    partes podrá dar por terminado este contrato dando un preaviso con no menos de quince (15) días
+                                    de antelación al servicio. En cualquier caso, no se devolverá suma alguna por concepto de depósito.
+                                    <strong>DECIMA TERCERA: CAUSALES DE TERMINACIÓN CON JUSTA CAUSA Y UNILATERALES. A.
+                                        POR PARTE DEL CONTRATISTA: 1.</strong> El no pago por parte del <strong>CONTRATANTE 2.</strong>
+                                    Actos de
+                                    indisciplina, irrespeto o vandalismo por parte de los pasajeros. <strong>B. POR PARTE DEL
+                                        CONTRATANTE: 1.</strong> Por inconformidad con la prestación del servicio, previa denuncia por
+                                    escrito al
+                                    correo electrónico: <a href="">sertepsapqr@gmail.com</a> al WhatsApp # 323 419 7103 al
+                                    <strong>CONTRATISTA</strong> sin que
+                                    este ejecute acciones o tome medidas correctivas, o explique justamente la situación.
+                                    <strong>2.</strong> Por
+                                    incumplimiento con alguno de los compromisos adquiridos en el presente contrato.
+                                <p style="margin-left: 6.8%"> ----------------------------------- FIN CLAUSULADO
+                                    ------------------------------------</p>
+                                <p style="font-size: 84%;text-align: justify;">
+                                    Para efectos de dejar constancia, <strong>CONTRATANTE</strong> y <strong>CONTRATISTA</strong>,
+                                    libres de todo vicio y en pleno
+                                    uso de nuestras facultades suscribimos y aceptamos el presente contrato en _______________ a
+                                    los __ días del mes de _________________ del año 20____.
+                                </p>
+                                <br>
+                                <br>
+                                <br>
+
+                                <p style="margin-left: 7.8%;">
+                                    <strong> ACEPTAMOS:</strong>
+                                </p>
+
+                                <br>
+                                <br>
+                                <br>
+
+                                <p style="font-size: 86%;">
+                                    <strong> CONTRATISTA: <span style="margin-left: 31%;">CONTRATANTE:</span><br>
+                                        ALBA OSIRIS HIDALGO PESCADOR <span
+                                            style="margin-left: 9%;">_____________________________</span><br>
+                                        C.C. 42.077.205 expedida en Pereira <span style="margin-left: 10%;">C.C.:</span><br>
+                                        Representante Legal</strong>
+                                </p>
+
+                                </p>
+                            @break
+
+                            @case(3)
+                                <p style="font-size: 90%;text-align: justify;">
+                                    uno de los padres de familia a quien éste representa. Pese a lo anterior, el cambio de vehículo por
+                                    el literal <strong>3. B.</strong> Será facultativo de la empresa y según disposición que este tenga
+                                    de su parque
+                                    automotor. <strong>TERCERA.PLAN DE CONTINGENCIA.</strong> El <strong>CONTRATISTA</strong> dispondrá
+                                    de la aplicación
+                                    del plan de contingencia respectivo, a fin de suplir los inconvenientes que puedan tener los
+                                    vehículos
+                                    que prestan el servicio al <strong>CONTRATANTE. CUARTA. OBLIGACIONES DEL CONTRATISTA 1)</strong>
+                                    cumplir con los horarios establecidos. <strong>2)</strong> El servicio se prestará puerta a puerta
+                                    cuando las
+                                    condiciones se den; en calles peatonales el acudiente o padre de familia debe estar presenta o
+                                    atento
+                                    para dejar y recibir el menor, el ingreso a condominios y conjuntos cerrados estarán sujetos a
+                                    condiciones de movilidad dentro de éstos . <strong>3)</strong> llevar con seguridad, aseo y
+                                    comodidad al pasajero,
+                                    respetando las normas de tránsito y de transporte especial vigente. <strong>4)</strong> Llevar una
+                                    velocidad
+                                    moderada durante todo el recorrido. <strong>5)</strong> Mantener su vehículo en excelentes
+                                    condiciones de aseo,
+                                    estado técnico mecánico, haciendo los respectivos mantenimientos preventivos. <strong>6)</strong>
+                                    Tener
+                                    conductores y acompañantes de certificada experiencia, habilidad, responsabilidad, cultura, seriedad
+                                    y de conformidad con la ley. <strong>7)</strong> Expedir copia simple física o digital, previa
+                                    solicitud en tal
+                                    sentido del
+                                    <strong>CONTRATANTE</strong> de la póliza de responsabilidad civil contractual y extracontractual
+                                    contratada,
+                                    habilitación, contrato, SOAT, licencia de conducción del conductor y demás documentos que
+                                    requiera para verificar el cumplimiento de la normatividad vigente en materia de transporte especial
+                                    y transporte en general y sobre las condiciones de ejecución y cumplimiento del contrato.
+                                    <strong>8)</strong> Llevar
+                                    las puertas cerradas, recogiendo y dejando a los estudiantes en sitios seguros (no en la mitad de la
+                                    calle, ni en huecos o areneros) <strong>9)</strong>. Nunca dejar al menor con una persona distinta
+                                    al acudiente o a
+                                    quien éste señale o donde indique. En caso de no ser posible verificar la situación, la empresa de
+                                    transporte especial intentará contactar directamente con el padre de familia o la institución y de
+                                    no
+                                    ser posible, volverá con el menor al colegio una vez termine el recorrido para efectos de normalizar
+                                    la situación o solicitar acompañamiento de la autoridad competente. <strong>PARÁGRAFO:</strong> El
+                                    acompañante
+                                    del vehículo no podrá separarse por más de 3 metros de éste para recoger o entregar <strong>(Ver
+                                        Numeral
+                                        2)</strong> a un estudiante ya que con ello estaría descuidando a los demás pasajeros del
+                                    vehículo, es por
+                                    lo anterior que cuando al acompañante del vehículo no le sea posible recoger o entregar al
+                                    estudiante
+                                    en la residencia o portería respectiva, el padre, o a quien este designe previamente, tendrá que
+                                    aproximarse al vehículo con el estudiante tomado de la mano o recibirlo allí. <strong>QUINTA:
+                                        OBLIGACIONES DEL CONTRATANTE: 1)</strong> Suministrar al <strong>CONTRATISTA</strong> toda la
+                                    información
+                                    necesaria, oportuna sobre inasistencia del (a) estudiante o cambio de la persona, indicando nombre
+                                    completo y número de cédula, que estará pendiente de recoger al menor al terminar el recorrido
+                                    mínimo con 24 horas de anticipación, cuando haya cambio de dirección con mínimo diez (10) días
+                                    con el fin de asignar nueva ruta. <strong>2)</strong> Ser vigilante para que los (as) estudiantes
+                                    guarden la
+                                    compostura
+                                    y el orden durante la prestación del servicio, para tales efectos, socializará con el estudiante las
+                                    normas básicas de conducta al interior del vehículo. <strong>3)</strong> Asumir la directriz:
+                                    <strong>“EL(A) ESTUDIANTE
+                                        ESPERA LA RUTA, NO LA RUTA ESPERA AL ESTUDIANTE”. 5)</strong> Pagar los daños que los (as)
+                                    estudiantes ocasionen al vehículo durante la prestación del servicio. <strong>6)</strong> Pagar las
+                                    multas en las que
+                                    incurra el conductor del vehículo por incumplimiento de las normas de tránsito por parte de los (as)
+                                    estudiantes, como por ejemplo no portar el cinturón de seguridad.
+
+
+
+                                </p>
+                            @break
+
+                            @case(4)
+                                <p style="font-size: 80%;text-align: justify;">
+                                    OBLIGACIONES DEL PADRE DE FAMILIA Y/O ACUDIENTE</strong>: El Padre de Familia y/o Acudiente
+                                    responsable, se obliga a: <strong>1)</strong> Inscribir al estudiante para el servicio de
+                                    transporte, en el lugar
+                                    indicado
+                                    por el COLEGIO, firmando el respectivo Compromiso de pago, en el cual brindará toda la información
+                                    requerida para asignar apropiadamente la Ruta de Transporte al estudiante. <strong>2)</strong> Pagar
+                                    la Tarifa
+                                    mensual, durante los primeros cinco (5) días de cada mes del servicio prestado. <strong>3)</strong>
+                                    Informar por
+                                    escrito el cambio de dirección de residencia, con un mínimo de quince (15) días calendario de
+                                    anticipación al día del real cambio de dirección, con el objetivo de poder realizar los cambios en
+                                    la
+                                    Ruta de Transporte. Dejando establecido que el servicio quedará sujeto a la disponibilidad existente
+                                    en el momento, sin garantizar la prestación del mismo y sin dar lugar a pago de indemnización de
+                                    ninguna índole. <strong>4)</strong> Comprometerse a que el estudiante esté listo en el sitio y
+                                    horario previamente
+                                    acordado con la EMPRESA. El estudiante es quien debe esperar la Ruta, no la Ruta (o el conductor)
+                                    al estudiante. <strong>5)</strong> Comunicar al conductor, al Coordinador del COLEGIO, y el colegio
+                                    informara a su
+                                    vez al coordinador de la empresa, cuando el estudiante no pueda asistir al Colegio o cuando vaya a
+                                    ser retirado del mismo. <strong>PARAGRAFO 1:</strong> En el caso de presentarse el retiro no
+                                    justificado de un
+                                    estudiante, el PADRE DE FAMILIA y/o ACUDIENTE quedará comprometido a cancelar la Tarifa
+                                    completa del mes en el que se hizo el retiro y perderá el cupo adquirido. <strong>PARAGRAFO
+                                        2:</strong> El
+                                    incumplimiento en el pago por parte del PADRE DE FAMILIA y/o ACUDIENTE, dará derecho a la
+                                    EMPRESA a suspender la prestación del servicio de transporte, dando previo aviso con una
+                                    antelación no inferior a tres (3) días hábiles. <strong>DECIMA. CAUSALES DE SUSPENSIÓN DEL
+                                        SERVICIO:</strong> Serán causales de suspensión parcial o total del servicio de transporte, las
+                                    siguientes:
+                                    <strong>1)</strong> Los actos de indisciplina o vandalismo por parte del estudiante dentro del bus,
+                                    como daños en la
+                                    cojinería, vidrios y en alguna otra parte del interior del vehículo. <strong>2)</strong> El
+                                    comportamiento agresivo o
+                                    violento por parte del estudiante dentro del vehículo, o la tenencia de elementos inflamables,
+                                    tóxicos,
+                                    sustancias alucinógenas, embriagantes o explosivos, el <strong>CONTRATANTE</strong>, tendrá el 100%
+                                    de la
+                                    responsabilidad de estos estudiantes y sus pertenencias <strong>3)</strong> y en general por
+                                    incurrir en conductas
+                                    que afecten el normal comportamiento y cuidado. <strong>PARÁGRAFO: PROCEDIMIENTO DE
+                                        DENUNCIA:</strong> El conductor documentará y recolectará pruebas de lo sucedido, le comunicará
+                                    la
+                                    situación al coordinador de ruta quien a su vez se pondrá en contacto con el CONTRATISTA y/o
+                                    autoridad competente. Lo anterior sin perjuicio de las acciones legales que El
+                                    <strong>CONTRATISTA</strong> tenga,
+                                    un servicio o viaje se puede ver afectado por incurrir en acciones ilícitas de los estudiantes, si
+                                    llegare
+                                    a suceder y de comprobarse que la culpabilidad es de un estudiante el servicio se cobrara en el
+                                    100% de lo pactado. Por ningún motivo podrá prorrogarse automáticamente el presente contrato o
+                                    cederse por ninguna de las partes sin; pese a lo anterior, cualquiera de las partes podrá, faltando
+                                    un
+                                    mes para concluir el contrato, enviar oferta comercial pendiente a la celebración de un nuevo
+                                    contrato; por su parte, si el contrato fue ejecutado con excelencia, el <strong>CONTRATANTE</strong>
+                                    se
+                                    compromete a preferir al <strong>CONTRATISTA</strong> en una nueva licitación y en caso de
+                                    encontrarse en
+                                    igualdad de condiciones frente a otros ofertantes. <strong>DECIMA PRIMERA. TERMINACIÓN.</strong>
+                                    Cualquiera
+                                    de las partes podrá dar por terminado este contrato dando un preaviso a la otra parte de por lo
+                                    menos
+                                    20 días hábiles y previos a vencerse el mes. <strong>DECIMA SEGUNDA. CAUSALES DE TERMINACIÓN
+                                        CON JUSTA CAUSA Y UNILATERALES. A) POR PARTE DEL CONTRATISTA:</strong> 1) La mora del
+                                    <strong>CONTRATANTE</strong> en el pago y según lo consagrado en la cláusula séptima del presente
+                                    contrato 2)
+                                    Actos de indisciplina, irrespeto o vandalismo por parte de los estudiantes que ocasionen daños de
+                                    hasta en el 15% del parque automotor dispuesto para la prestación del servicio. <strong>B) POR PARTE
+                                        DEL CONTRATANTE:</strong> 1) Por inconformidad expresa con la prestación del servicio, previa
+                                    denuncia
+                                    por escrito y por medio PQRS realizada al <strong>CONTRATISTA</strong> sin que este ejecute acciones
+                                    o tome
+                                    medidas correctivas, o explique justamente la situación. 2) Por incumplimiento con alguno de los
+                                    compromisos adquiridos en el presente contrato. <strong>DECIMA TERCERA. MERITO EJECUTIVO</strong>:
+                                    el
+                                    presente contrato presta merito ejecutivo a favor de las partes por el incumplimiento de las
+                                    responsabilidades establecidas en el clausulado del presente contrato y queda aceptado a la firma
+                                    de este. <strong>DECIMA CUARTA. SOLUCIÓN DE CONTROVERSIAS:</strong> Toda controversia, conflicto o
+                                    diferencias relativas a este contrato, su ejecución y liquidación, se resolverán preferiblemente
+
+
+                                </p>
+                            @break
+
+                            @default
+                        @endswitch
+
+
+                    </div>
+                @break
+
+                @case(2)
+                    <div style="display: flex;position: absolute;width: 37.5rem;height: 819px;margin-left: 6.5rem;">
+                        <p style="font-size: 88%;text-align: justify;">
+                            pasajeros en sitios seguros. <strong>SEXTA: OBLIGACIONES DEL CONTRATANTE: 1)</strong>
+                            Suministrar al <strong>CONTRATISTA</strong> toda la información necesaria, oportuna sobre lugares y
+                            horarios de servicio, como mínimo con cinco (05) días de anticipación.
+                            <strong>2)</strong> Pagar los daños que los pasajeros ocasionen al vehículo durante la prestación
+                            del
+                            servicio. <strong>3).</strong> Destinar los espacios internos del establecimiento con acceso
+                            vehicular, al
+                            ascenso y descenso de pasajeros. <strong>4).</strong> Contar con un Plan Estratégico de Seguridad
+                            Vial
+                            durante la prestación del servicio <strong>SÉPTIMA. VALOR DEL CONTRATO Y FORMA DE
+                                PAGO</strong>. El valor _________ del contrato será de
+                            ____________________________________________. Pagados en la segunda mitad del
+                            presente año, de acuerdo a las órdenes de servicio, y con el respectivo anticipo, dentro de
+                            los primeros diez (10) días hábiles de acuerdo al servicio prestado. El pago deberá
+                            realizarlo el <strong>CONTRATANTE</strong> a través de consignación bancaría en la cuenta corriente
+                            #127669997810 del banco Davivienda, informando del pago al <strong>CONTRATISTA</strong> o/y
+                            directamente en la oficina del <strong>CONTRATISTA</strong>, en cualquier caso, deberá siempre
+                            conservar el comprobante de la consignación e informar al <strong>CONTRATISTA</strong> o exigir
+                            recibo
+                            o constancia del pago por el pago realizado. De incurrir en mora, EL <strong>CONTRATISTA</strong> le
+                            informará de tal situación y podrá suspender de inmediato la prestación del servicio y sin
+                            perjuicio de las demás acciones legales, que, para sus efectos, el presente contrato y sus
+                            anexos prestará mérito ejecutivo. La mora se liquidará con base en las reglas generales
+                            de los negocios mercantiles. <strong>PARÁGRAFO</strong>: Cualquier cambio en la cuenta bancaría será
+                            notificado por el <strong>CONTRATISTA</strong> a través de correo. <strong>OCTAVA. CAUSALES DE
+                                SUSPENSIÓN DEL SERVICIO</strong>: Serán causales de suspensión parcial o total del servicio
+                            de transporte, las siguientes: <strong>1)</strong> Los actos de indisciplina o vandalismo por parte
+                            del
+                            pasajero dentro del bus, como daños en la cojinería, vidrios y en alguna otra parte del
+                            interior del vehículo. <strong>2)</strong> El comportamiento agresivo o violento por parte del
+                            pasajero
+                            dentro del vehículo, o la tenencia de elementos inflamables, tóxicos, sustancias
+                            alucinógenas, embriagantes o explosivos. <strong>3)</strong> y en general por incurrir en conductas
+                            que
+                            afecten el normal comportamiento y cuidado. <strong>PARÁGRAFO: PROCEDIMIENTO DE
+                                DENUNCIA:</strong> El conductor o su acompañante, de haber, documentará y recolectará
+                            pruebas de lo sucedido, le comunicará la situación al coordinador de ruta quien a su vez
+                            se pondrá en contacto con el CONTRATISTA y/o autoridad competente. Lo anterior sin
+                            perjuicio de las acciones legales que El <strong>CONTRATISTA</strong> tenga. <strong>NOVENA.
+                                VIGENCIA.</strong> El
+                            presente contrato tendrá una duración de comenzando a ejecutarse el día del
+                            mes de
+                            de 2019 y concluyendo el día del mes de 2019. Por ningún motivo
+                            podrá prorrogarse automáticamente el presente contrato o cederse por la parte
+                            <strong>CONTRATANTE;</strong> pese a lo anterior, cualquiera de las partes podrá, faltando un mes
+                            para
+                            concluir el contrato, enviar oferta comercial tendiente a la celebración de un nuevo
+                            contrato; por su parte, si el contrato fue ejecutado con excelencia, el <strong>CONTRATANTE</strong>
+                            se
+                            compromete a preferir al <strong>CONTRATISTA</strong> en una nueva licitación y en caso de
+                            encontrarse en igualdad de condiciones frente a otros ofertantes. <strong>DECIMA.
+                                TERMINACIÓN.</strong> Cualquiera de las partes podrá dar por terminado este contrato dando un
+                            preaviso a la otra parte de por lo menos 20 días hábiles y previos a vencerse el mes.
+                            <strong>DECIMA PRIMERA. CAUSALES DE TERMINACIÓN CON JUSTA CAUSA Y
+                        </p>
+                    </div>
+                @break
+
+                @case(3)
+                    <div style="display: flex;position: absolute;width: 37.5rem;height: 819px;margin-left: 6.5rem;">
+                        <p style="font-size: 80%;text-align: justify;">
+                            cualquiera de las partes podrá, faltando un mes para concluir el contrato, enviar oferta comercial
+                            tendiente a la celebración de un nuevo contrato; por su parte, si el contrato fue ejecutado con
+                            excelencia, el <strong>CONTRATANTE</strong> se compromete a preferir al <strong>CONTRATISTA</strong>
+                            en una nueva licitación
+                            y en caso de encontrarse en igualdad de condiciones frente a otros ofertantes. <strong>DECIMA.
+                                TERMINACIÓN.</strong> Cualquiera de las partes podrá dar por terminado este contrato dando un
+                            preaviso
+                            a la otra parte de por lo menos 20 días hábiles y previos a vencerse el mes. <strong>DECIMA PRIMERA.
+                                CAUSALES DE TERMINACIÓN CON JUSTA CAUSA Y UNILATERALES. A) POR PARTE DEL
+                                CONTRATISTA: 1)</strong> La mora del <strong>CONTRATANTE</strong> en el pago y según lo
+                            consagrado en la cláusula
+                            séptima del presente contrato 2) Actos de indisciplina, irrespeto o vandalismo por parte de los
+                            pasajeros que ocasionen daños de hasta en el 15% del parque automotor dispuesto para la
+                            prestación del servicio. <strong>B) POR PARTE DEL CONTRATANTE</strong>: 1) Por inconformidad expresa
+                            con la
+                            prestación del servicio, previa denuncia por escrito y por medio PQRS realizada al
+                            <strong>CONTRATISTA</strong>
+                            sin que este ejecute acciones o tome medidas correctivas, o explique justamente la situación. 2) Por
+                            incumplimiento con alguno de los compromisos adquiridos en el presente contrato. <strong>DECIMA
+                                SEGUNDA. MERITO EJECUTIVO</strong>: el presente contrato presta merito ejecutivo a favor de las
+                            partes
+                            por el incumplimiento de las responsabilidades establecidas en el clausulado del presente contrato
+                            y queda aceptado a la firma de este. <strong>DECIMA TERCERA: SOLUCIÓN DE CONTROVERSIAS:</strong>
+                            Toda controversia, conflicto o diferencias relativas a este contrato, su ejecución y liquidación, se
+                            resolverán preferiblemente mediante los mecanismos de arreglo directo y conciliación entre las
+                            partes involucradas, que para el caso serán: El representante legal de la empresa directamente y el
+                            <strong>CONTRATISTA</strong> o a quien este designe.
+
+                        <p style="font-size: 86%;">---------------------------------------- <strong>AVISO
+                                DE PROTECCIÓN DE DATOS</strong> -------------------------------------</p>
+                        <p style="font-size: 82%;margin-top: -2%;">
+                            En mi calidad de titular de información personal, actuando libre y voluntariamente, al diligenciar
+                            los
+                            datos aquí solicitados, autorizo al STEP SAS – Servicio de Transporte Especial de Pasajeros s.a.s
+                            Dirección en la ciudad de Dosquebradas, teléfono 3303821 , con correo electrónico
+                            sertepsapqr@step.com.co; para que realice el tratamiento de mi información personal, en
+                            cumplimiento de la Ley 1581 de 2012 y a lo previsto en el numeral 3 y el parágrafo del artículo 10
+                            del Decreto 1377 de 2013.
+                            En todo caso en cualquier momento el titular de la información podrá revocar su consentimiento y
+                            ejercer su derecho a la supresión de datos personales consagrado en la Ley 1581 de 2012.
+                        </p>
+                        <p style="margin-left: 6.8%;font-size: 86%;"> -----------------------------------
+                            <strong>FIN CLAUSULADO</strong> ------------------------------------
+                        </p>
+                        <p style="font-size: 82%;margin-top: -2%;">
+                            Para efectos de dejar constancia, <strong>CONTRATANTE</strong> y <strong>CONTRATISTA</strong>,
+                            libres de
+                            todo vicio y en pleno
+                            uso de sus facultades suscribimos y aceptamos el presente contrato en Dosquebradas, Risaralda a
+                            los ____ días del mes de _____ del año 20___.
+                        </p>
+
                         <br>
-                        <strong>C.C. 42.077.205 expedida en Pereira</strong>
+
+                        <p style="margin-left: 7.8%;">
+                            <strong> ACEPTAMOS:</strong>
+                        </p>
+
                         <br>
-                        <strong>Representante Legal</strong>
 
-                    </p>
-                </div>
-                <div class="firmacontratante">
-                    <p>
-                        <strong>CONTRATANTE:</strong>
+                        <p style="font-size: 86%;">
+                            <strong> CONTRATISTA: <span style="margin-left: 31%;">CONTRATANTE:</span><br>
+                                ALBA OSIRIS HIDALGO PESCADOR <span
+                                    style="margin-left: 9%;">_____________________________</span><br>
+                                C.C. 42.077.205 expedida en Pereira <span style="margin-left: 10%;">C.C.:</span><br>
+                                Representante Legal</strong>
+                        </p>
+                        </p>
+                    </div>
+                @break
+
+                @case(4)
+                    <div style="display: flex;position: absolute;width: 37.5rem;height: 819px;margin-left: 6.5rem;">
+                        <p style="font-size: 82%;text-align: justify;">
+                            tóxicos, sustancias alucinógenas o explosivos. <strong>3.</strong> Conductas contra la moral y las
+                            buenas costumbres
+                            por
+                            parte de los pasajeros dentro del vehículo. <strong>PARÁGRAFO: PROCEDIMIENTO DE DENUNCIA:</strong>
+                            El
+                            acompañante o conductor documentará y recolectará pruebas de lo sucedido, le comunicará la situación
+                            a la empresa quien evaluará la situación e indicará el procedimiento a seguir según el evento que se
+                            presente a la persona responsable del grupo de pasajeros designada en el presente contrato, según
+                            listado adjunto, el cual forma parte integral del presente documento. o a la autoridad competente.
+                            Lo
+                            anterior sin perjuicio de las acciones legales que El <strong>CONTRATISTA</strong> o sus
+                            funcionarios tenga. <strong>DECIMA
+                                PRIMERA. DURACION DEL CONTRATO.</strong> El presente contrato tendrá una duración de __ ______ ,
+                            comenzando a ejecutarse el día___ de ______ de 201_ y concluyendo el día ___ de ________ de 201_ .
+                            Por ningún motivo podrá prorrogarse automáticamente el presente contrato o cederse por la parte
+                            <strong>CONTRATANTE. DECIMA SEGUNDA. TERMINACIÓN.</strong> Cualquiera de las partes podrá dar por
+                            terminado este contrato dando un preaviso con no menos de dos (2) días de antelación al servicio. En
+                            cualquier caso, no se devolverá suma alguna por concepto de depósito. <strong>DECIMA TERCERA.
+                                CAUSALES
+                                DE TERMINACIÓN CON JUSTA CAUSA Y UNILATERALES. A. POR PARTE DEL CONTRATISTA: 1.</strong>
+                            El no pago por parte del <strong>CONTRATANTE 2.</strong> Actos de indisciplina, irrespeto o
+                            vandalismo por parte de
+                            los
+                            pasajeros. <strong>B. POR PARTE DEL CONTRATANTE: 1.</strong> Por inconformidad con la prestación del
+                            servicio,
+                            previa denuncia por escrito al correo electrónico: <a
+                                href="">servicioalcliente@step.com.co</a> al WhatsApp # 323
+                            419
+                            7103 al <strong>CONTRATISTA</strong> sin que este ejecute acciones o tome medidas correctivas, o
+                            explique justamente
+                            la situación. <strong>2.</strong> Por incumplimiento con alguno de los compromisos adquiridos en el
+                            presente
+                            contrato.
+                        <p style="font-size: 78%;margin-left: 6.8%"> ----------------------------------- FIN CLAUSULADO
+                            ------------------------------------</p>
+                        <p style="font-size: 80%;margin-top: -2%;">
+                            Para efectos de dejar constancia, <strong>CONTRATANTE</strong> y <strong>CONTRATISTA</strong>,
+                            libres de todo vicio y en pleno uso
+                            de nuestras facultades suscribimos y aceptamos el presente contrato en _______________ a los __ días
+                            del mes de _________________ del año 201__.
+                        </p>
+
+
+
+                        <p style="margin-left: 7.8%;">
+                            <strong> ACEPTAMOS:</strong>
+                        </p>
+
+
+                        <p style="font-size: 86%;">
+                            <strong> CONTRATISTA: <span style="margin-left: 31%;">CONTRATANTE:</span><br>
+                                ALBA OSIRIS HIDALGO PESCADOR <span
+                                    style="margin-left: 9%;">_____________________________</span><br>
+                                C.C. 42.077.205 expedida en Pereira <span style="margin-left: 10%;">C.C.:</span><br>
+                                Representante Legal</strong>
+                        </p>
+
                         <br>
-                        _____________________________
+
+                        <p style="font-size: 80%;text-align: center;">
+                            <strong>LISTADO USUARIOS CONTRATO DE PRESTACIÓN DE SERVICIO DE TRANSPORTE ESPECIAL CON
+                                GRUPO ESPECÍFICO DE USUARIOS (TRANSPORTE DE PARTICULARES)</strong>
+                        </p>
+
                         <br>
-                        <strong>C.C.</strong>
-                    </p>
-                </div>
 
-            </div>
-        </div>
-        <!-- espacio final -->
-        {{-- <div class="contenedorfinal">C</div> --}}
-    </x-contractframes>
-@endif
+                        <p style="font-size: 80%;text-align: justify;">
+                            Adicionalmente, el <strong>CONTRATANTE</strong> designa a ______________________________
+                            identificado(a) con Cédula
+                            de ciudadanía # _________________________, expedida en ____________________, como
+                            <strong>RESPONSABLE</strong>
+                            del grupo de usuarios del servicio, de la presente relación.
+                        </p>
+
+                        <br>
+
+                        <p style="font-size: 80%;text-align: justify;">
+                            <strong>FIRMA RESPONSABLE GRUPO <br>
+                                Teléfono:</strong>
+                        </p>
+                        </p>
+                    </div>
+                @break
+
+                @case(5)
+                    <div style="display: flex;position: absolute;width: 37.5rem;height: 819px;margin-left: 6.5rem;">
+                        <p style="font-size: 80%;text-align: justify;">
+                            parte <strong>CONTRATANTE. DECIMA SEGUNDA: TERMINACIÓN.</strong> Cualquiera de las partes podrá dar
+                            por terminado este contrato dando un preaviso con no menos de quince (15) días de antelación al
+                            servicio. En cualquier caso, no se devolverá suma alguna por concepto de depósito. <strong>DECIMA
+                                TERCERA: CAUSALES DE TERMINACIÓN CON JUSTA CAUSA Y UNILATERALES. A. POR
+                                PARTE DEL CONTRATISTA: 1.</strong> El no pago por parte del <strong>CONTRATANTE 2.</strong>
+                            Actos de indisciplina,
+                            irrespeto o vandalismo por parte de los pasajeros. <strong>B. POR PARTE DEL CONTRATANTE: 1.</strong>
+                            Por
+                            inconformidad con la prestación del servicio, previa denuncia por escrito al correo electrónico:
+                            <a href="">sertepsapqr@gmail.com</a> al WhatsApp # 323 419 7103 al
+                            <strong>CONTRATISTA</strong> sin que este ejecute
+                            acciones o tome medidas correctivas, o explique justamente la situación. <strong>2.</strong> Por
+                            incumplimiento con
+                            alguno de los compromisos adquiridos en el presente contrato.
+                        <p style="margin-left: 6.8%;font-size: 86%;"> -----------------------------------
+                            <strong>FIN CLAUSULADO</strong> ------------------------------------
+                        </p>
+                        <p style="font-size: 82%;margin-top: -2%;">
+                            Para efectos de dejar constancia, <strong>CONTRATANTE</strong> y <strong>CONTRATISTA</strong>,
+                            libres de todo vicio y en pleno
+                            uso de nuestras facultades suscribimos y aceptamos el presente contrato en _______________ a
+                            los __ días del mes de _________________ del año 20____.
+                        </p>
+
+                        <br>
+
+                        <p style="margin-left: 7.8%;">
+                            <strong> ACEPTAMOS:</strong>
+                        </p>
+
+                        <br>
+
+                        <p style="font-size: 86%;">
+                            <strong> CONTRATISTA: <span style="margin-left: 31%;">CONTRATANTE:</span><br>
+                                ALBA OSIRIS HIDALGO PESCADOR <span
+                                    style="margin-left: 9%;">_____________________________</span><br>
+                                C.C. 42.077.205 expedida en Pereira <span style="margin-left: 10%;">C.C.:</span><br>
+                                Representante Legal</strong>
+                        </p>
+                        </p>
+                    </div>
+                @break
+
+                @case(6)
+                    <div
+                        style="display: flex;position: absolute;width: 37.5rem;height: 819px;margin-left: 6.5rem;margin-top: -7%;">
+                        <p style="font-size: 88%;text-align: justify;">
+                            <strong>QUINTA:</strong> PRECIO Y FORMA DE PAGO EL CONTRATISTA pagará mes vencido al
+                            propietario por su parque automotor afiliado a la empresa COLABORADORA las sumas
+                            acordadas correspondientes a los Servicios Prestados
+                            <br>
+                            <br>
+                            <strong>SEXTA:</strong>El presente convenio no genera relación ni vinculación laboral entre el
+                            COLABORADOR y el CONTRATISTA, así mismo tampoco genera relación o vínculo
+                            laboral entre el personal que el COLABORADOR designe para la ejecución del presente
+                            convenio.
+                            <br>
+                            <br>
+                            <strong>SEPTIMA</strong>. - EL CONTRATISTA solicitará cada 30 días PAZ y SALVO por gastos
+                            operativos expedido por la empresa COLABORADORA de los vehículos relacionados en el
+                            presente convenio para la expedición del FUEC, en conformidad por lo preceptuado en el
+                            Decreto 1079 de 2015 y la Resolución 001069 de Abril 23 de 2015.
+                            <br>
+                            <br>
+                            <strong>OCTAVA:</strong> VIGENCIA Cualquiera de las partes podrá dar por terminado el presente
+                            convenio unilateralmente con previo aviso de veinte (20) días hábiles.
+                            <br>
+                        <p style=""> ------------------------------------------ FIN CLAUSULADO
+                            ------------------------------------------</p>
+
+                        <p style="font-size: 88%;text-align: justify;">
+                            Para efectos de dejar constancia, CONTRATISTA y EMPRESA COLABORADORA, libres
+                            de todo vicio y en pleno uso de nuestras facultades suscribimos y aceptamos el presente
+                            contrato en Dosquebradas a los 5 días del mes de febrero del año 202 .
+
+                        </p>
+
+                        <br>
+                        <br>
+                        POR EL CONTRATITA
+                        <br>
+                        <br>
+                        ________________________________________ <br>
+                        TRANSPORTE ESPECIAL DE PASAJEROS S.A.S <br>
+                        REPRESENTANTE LEGAL <br>
+                        ALBA OSIRIS HIDALGO PESCADOR <br>
+                        <br>
+                        <br>
+
+                        POR EL COLABORADOR
+                        <br>
+                        <br>
+                        _________________________________ <br>
+                        MAXTRANSPORTE S.A.S <br>
+                        NIT. 901035856-7 <br>
+                        REPRESENTANTE LEGAL <br>
+                        DIANA YANETH ALZATE SALAZAR <br>
+                        </p>
+                    </div>
+                @break
+
+                @case(9)
+                    <div style="display: flex;position: absolute;width: 76%;height: 819px;margin-left: 6.5rem;">
+                        <p style="font-size: 84%;text-align: justify;">
+                            OBLIGACIONES DE LAS PARTES A. OBLIGACIONES DE LA EMPRESA</strong> 1) Expedir mensualmente
+                            al <strong>PROPIETARIO</strong> un extracto que contenga en forma discriminada los rubros y montos
+                            cobrados y
+                            pagados, por cada concepto detallado en el presente contrato. 2) Deberá llevar permanentemente
+                            actualizado su plan de rodamiento, el cual debe ser remitido en físico o digital al
+                            <strong>PROPIETARIO</strong> la
+                            primera semana de cada mes; a dicho plan deberá acompañarse el plan de rodamiento realmente
+                            ejecutado en el mes anterior. 3) Entregar <strong>al PROPIETARIO</strong>, el programa de revisión y
+                            mantenimiento
+                            preventivo diseñado e implementado por <strong>LA EMPRESA</strong>. 4) Capacitar a los conductores y
+                            personal
+                            encargado de operar los vehículos vinculados con el presente contrato. 5) Designar centro de
+                            mantenimiento para que el <strong>PROPIETARIO</strong> se acerque, con el propósito de que se cumpla
+                            con el
+                            programa de mantenimiento preventivo de la empresa. 6) Contratar directamente con empresas
+                            legalmente constituidas, los seguros reglamentarios de RCC y RCE, la plataforma tecnológica para el
+                            monitoreo y control de flota, la marcación de vehículos, para amparar la actividad del transporte.
+                            7) Los
+                            impuestos ordinarios que se causen con ocasión del servicio especial de transporte de pasajeros
+                            estarán
+                            a cargo de la empresa 8) Comunicarle al usuario del servicio de transporte, en caso de que, por
+                            motivos
+                            de capacidad del vehículo objeto de este contrato, <strong>LA EMPRESA</strong> no se hace
+                            responsable de la
+                            Propiedad del cliente (tales como componentes, instalaciones, equipos, herramientas, propiedad
+                            intelectual y datos personales). 9) La empresa adquirirá uniformes con distintivos de la empresa
+                            para
+                            los conductores. 10) Demás obligaciones contempladas en el artículo 2.2.1.6.8.13. del Decreto 1079 y
+                            demás normas que lo modifiquen. <strong>B. OBLIGACIONES DEL PROPIETARIO</strong> 1) La gestión del
+                            automotor
+                            corresponde al propietario del vehículo, el cual deberá mantenerlo en óptimas condiciones técnicas,
+                            mecánicas, de aseo, presentación y seguridad, so pena de que <strong>LA EMPRESA</strong> se abstenga
+                            legítimamente de incluirlo en su plan de rodamiento. 2) Cumplir estrictamente el programa de
+                            revisión y
+                            mantenimiento preventivo diseñado e implementado por <strong>LA EMPRESA</strong>, de lo contrario,
+                            <strong>LA EMPRESA</strong>
+                            podrá abstenerse legítimamente de incluirlo en su plan de rodamiento. 3) Realizar inspecciones
+                            diarias
+                            al vehículo y de existir alguna anormalidad, reportar a <strong>LA EMPRESA</strong> lo antes
+                            posible. Lo anterior
+                            deberá
+                            realizarse antes de que el vehículo salga a operación de conformidad con el plan de rodamiento. 4)
+                            Cumplir con los reglamentos, estatutos y normas que le sean aplicables de la empresa, asistir a las
+                            reuniones y capacitaciones a las que ésta convoque. 5) De llegar a tratar con los clientes de
+                            <strong>LA
+                                EMPRESA</strong>, hacerlo con respeto, dignidad y únicamente por medio de los mecanismos de
+                            comunicación
+                            que ésta establezca a través del Sistema de Gestión DE CALIDAD. 6) Permitir que <strong>LA
+                                EMPRESA</strong>
+                            inspeccione el vehículo de acuerdo con lo establecido en la Resolución 315 de febrero 6 del 2013
+                            expedida por el Ministerio de Transporte y realizar los correctivos a la mayor brevedad posible,
+                            donde
+                            <strong>LA EMPRESA</strong> lo indique. 7) Cuidar la propiedad del usuario del servicio de
+                            transporte mientras esté
+                            bajo su control, tales como componentes, instalaciones, equipos, herramientas, propiedad intelectual
+                            y
+                            datos personales, bajo las condiciones establecidas por la empresa en los requisitos para prestación
+                            de
+                            cada servicio. 8) Suministrar oportunamente los documentos referentes a reparaciones y partes
+                            cambiadas con el fin de mantener actualizada la ficha técnica del vehículo. 9) Suministrar los
+                            documentos que identifiquen el vehículo y/o AL <strong>PROPIETARIO</strong> para diligenciar ante
+                            las autoridades
+                            competentes la tarjeta de operación o cualquier otro documento indispensable en la operación del
+                            transporte. En caso de vencimiento de alguno de estos documentos, deberá aportarlos antes de sesenta
+                            (60) días del vencimiento. 10) Cumplir con los requisitos establecidos por <strong>LA
+                                EMPRESA</strong> a través del
+                            Sistema de Gestión de Calidad para cada servicio (Escolar, Empresarial, Grupo específico de
+                            usuarios,
+                            Turismo). 11) Comunicar a <strong>LA EMPRESA</strong> todo cambio que ocurra dentro de la prestación
+                            del servicio
+                            antes de su modificación. 12) <strong>LOS PROPIETARIOS</strong> suscribirán un pagaré en blanco que
+                            tendrá como
+                            objeto garantizar el pago de las obligaciones derivadas de la suscripción del presente contrato y
+                            demás
+                        </p>
+                    </div>
+                @break
+
+                @default
+            @endswitch
+        </x-contractframes>
+        {{-- pagina 4 --}}
+        @if ($contract->type_contract != 6)
+            <x-contractframes typeContract="{{ $titlecontract }}">
+                @switch($contract->type_contract)
+                    @case(1)
+                        @switch($contract->contract_with)
+                            @case(1)
+                                <div style="display: flex;position: absolute;width: 37.5rem;height: 819px;margin-left: 6.5rem;">
+
+                                    <p style="margin-left: 6.8%"> ----------------------------------- FIN CLAUSULADO
+                                        ------------------------------------</p>
+                                    <p style="font-size: 84%;text-align: justify;">
+                                        Para efectos de dejar constancia, CONTRATANTE y CONTRATISTA, libres de todo vicio y en pleno
+                                        uso de nuestras facultades suscribimos y aceptamos el presente contrato en Dosquebradas a los
+                                        días del mes de ________________ del año 2023__.
+                                    </p>
+                                    <br>
+                                    <br>
+                                    <br>
+
+                                    <p style="margin-left: 7.8%;">
+                                        <strong> ACEPTAMOS:</strong>
+                                    </p>
+
+                                    <br>
+                                    <br>
+                                    <br>
+
+                                    <p style="font-size: 86%;">
+                                        <strong> CONTRATISTA: <span style="margin-left: 31%;">CONTRATANTE:</span><br>
+                                            ALBA OSIRIS HIDALGO PESCADOR <span
+                                                style="margin-left: 9%;">_____________________________</span><br>
+                                            C.C. 42.077.205 expedida en Pereira <span style="margin-left: 10%;">C.C.:</span><br>
+                                            Representante Legal</strong>
+                                    </p>
 
 
 
+                                </div>
+                            @break
 
-</body>
+                            @case(2)
+                                <div style="display: flex;position: absolute;width: 38.7rem;height: 819px;margin-left: 6rem;">
+                                    <table style="width: 100%;border: solid 1px #000;border-collapse: collapse;margin-top: 4%;">
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 50%;border: solid 1px #000;border-collapse: collapse;">
+                                                    NOMBRE COMPLETO
+                                                </th>
+                                                <th style="width: 50%;border: solid 1px #000;border-collapse: collapse;">
+                                                    IDENTIFICACIÓN
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td style="width: 50%;border: solid 1px #000;border-collapse: collapse;">
+                                                    pruaba *35
+                                                </td>
+                                                <td style="width: 50%;border: solid 1px #000;border-collapse: collapse;">
+                                                    pruaba
+                                                </td>
+                                            </tr>
+                                        </tbody>
+
+                                    </table>
+                                </div>
+                            @break
+
+                            @case(3)
+                                <div style="display: flex;position: absolute;width: 37.5rem;height: 819px;margin-left: 6.5rem;">
+
+                                    <p style="font-size: 81%;text-align: justify;">
+                                        <strong>SEXTA. VALOR DEL CONTRATO Y FORMA DE PAGO.</strong> En los primeros cinco (5) días de
+                                        cada
+                                        mes, el <strong>CONTRATANTE</strong> pagará al <strong>CONTRATISTA</strong> la suma de
+                                        M/Cte. ($ ) durante los meses comprendidos entre enero y noviembre 30 del año
+                                        lectivo, <strong>INCLUYENDO SEMANA SANTA, VACACIONES DE MITAD DE AÑO, SEMANA DE
+                                            RECESO, PERÍODOS DE PARO, INCAPACIDADES.</strong> De incurrir en mora, <strong>EL
+                                            CONTRATISTA</strong>
+                                        podrá suspender de inmediato la prestación del servicio y sin perjuicio de las demás acciones
+                                        legales, que, para sus efectos, el presente contrato y sus anexos prestará mérito ejecutivo. El
+                                        pago
+                                        podrá realizarse a través de consignación bancaría en la Cuenta Corriente # 127669997810 del
+                                        Banco Davivienda, informando del pago al <strong>CONTRATISTA</strong>, directamente en la
+                                        oficina o al
+                                        acompañante o conductor del vehículo; en cualquier caso, deberá siempre conservar el comprobante
+                                        de la consignación e informar al <strong>CONTRATISTA</strong> o exigir recibo o constancia del
+                                        pago realizado.
+                                        <strong>SEPTIMA. CAUSALES DE SUSPENSIÓN DEL SERVICIO:</strong> Serán causales de suspensión
+                                        parcial
+                                        o total del servicio de transporte escolar, las siguientes: <strong>1)</strong> Los actos de
+                                        indisciplina o
+                                        vandalismo por
+                                        parte del estudiante dentro del vehículo, <strong>2)</strong> El comportamiento agresivo o
+                                        violento por parte del
+                                        estudiante dentro del vehículo, o la tenencia de elementos inflamables, tóxicos, sustancias
+                                        alucinógenas o explosivos. <strong>3)</strong> Conductas contra la moral y las buenas costumbres
+                                        por parte del
+                                        estudiante dentro del vehículo y en general por incurrir en conductas que afecten el normal
+                                        proceso
+                                        formativo, de acuerdo con lo establecido en el MANUAL DE USO DEL TRANSPORTE.
+                                        <strong>PARÁGRAFO 1: PROCEDIMIENTO DE DENUNCIA:</strong> El acompañante documentará y
+                                        recolectará
+                                        pruebas de lo sucedido, le comunicará la situación al coordinador de ruta quien a su vez se
+                                        pondrá
+                                        en contacto con el acudiente. Lo anterior sin perjuicio de las acciones legales que el
+                                        <strong>CONTRATISTA</strong>
+                                        tenga. <strong>PARAGRAFO 2</strong>: En caso de que el vehículo no tenga el cupo mínimo
+                                        requerido de pasajeros
+                                        (10), se procederá a la suspensión de la ruta; con previo aviso se hará saber al acudiente o
+                                        padre
+                                        de familia de dicha situación. <strong>OCTAVA.</strong> El presente contrato tendrá una duración
+                                        de ____ meses
+                                        comenzando a ejecutarse el día _____ del mes de ________________ del año 2019 y
+                                        concluyendo el día ___ del mes _____________ del año 2019. Por ningún motivo podrá prorrogarse
+                                        automáticamente el presente contrato o cederse por la parte <strong>CONTRATANTE. NOVENA.
+                                            TERMINACIÓN.</strong> Cualquiera de las partes podrá dar por terminado este contrato dando
+                                        un preaviso
+                                        a la otra parte como mínimo quince (15) días antes. <strong>DECIMA. CAUSALES DE TERMINACIÓN CON
+                                            JUSTA CAUSA Y UNILATERALES. A) POR PARTE DEL CONTRATISTA:</strong> 1) El no pago por parte
+                                        del PADRE DE FAMILIA y/o ACUDIENTE 2) Actos de indisciplina, irrespeto o vandalismo por parte
+                                        del estudiante. <strong>B) POR PARTE DEL CONTRATANTE:</strong> 1) Por inconformidad con la
+                                        prestación del
+                                        servicio, previa denuncia por escrito y por medio PQRS realizada al <strong>CONTRATISTA</strong>
+                                        sin que este
+                                        ejecute acciones o tome medidas correctivas, o explique justamente la situación. 2) Por
+                                        incumplimiento con alguno de los compromisos adquiridos en el presente contrato. <strong>DÉCIMA
+                                            PRIMERA. OBSERVACIONES:</strong> Como <strong>CONTRATISTA</strong>, me gustaría hacer las
+                                        siguientes
+                                        observaciones
+                                    <p style="margin-left: 4.8%;font-size: 86%;"> -----------------------------------------
+                                        <strong>FIN CLAUSULADO</strong> ---------------------------------------------
+                                    </p>
+                                    <p style="font-size: 82%;margin-top: -2%;">
+                                        Para efectos de dejar constancia, CONTRATANTE y CONTRATISTA, libres de todo vicio y en pleno
+                                        uso de nuestras facultades suscribimos y aceptamos el presente contrato en a los
+                                        días del mes de del año.
+                                    </p>
+                                    <p style="margin-left: 7.8%;">
+                                        <strong> ACEPTAMOS:</strong>
+                                    </p>
+
+                                    <p style="font-size: 86%;">
+                                        <strong> CONTRATISTA: <span style="margin-left: 31%;">CONTRATANTE:</span><br>
+                                            ALBA OSIRIS HIDALGO PESCADOR <span
+                                                style="margin-left: 9%;">_____________________________</span><br>
+                                            C.C. 42.077.205 expedida en Pereira <span style="margin-left: 10%;">C.C.:</span><br>
+                                            Representante Legal</strong>
+                                    </p>
+
+                                    </p>
+
+                                </div>
+                            @break
+
+                            @case(4)
+                                <div style="display: flex;position: absolute;width: 37.5rem;height: 819px;margin-left: 6.5rem;">
+
+                                    <p style="font-size: 80%;text-align: justify;">
+                                        mediante los mecanismos de arreglo directo y conciliación entre las partes involucradas, que
+                                        para el
+                                        caso serán: El representante legal de la empresa directamente y el <strong>CONTRATISTA</strong>
+                                        o a quien este
+                                        designe.
+                                    <p style="font-size: 86%;">---------------------------------------- <strong>AVISO
+                                            DE PROTECCIÓN DE DATOS</strong> -------------------------------------</p>
+                                    <p style="font-size: 82%;margin-top: -2%;">
+                                        En mi calidad de titular de información personal, actuando libre y voluntariamente, al
+                                        diligenciar los
+                                        datos aquí solicitados, autorizo al STEP SAS – Servicio de Transporte Especial de Estudiantes
+                                        s.a.s
+                                        Dirección en la ciudad de Dosquebradas, teléfono 3303821 , con correo electrónico
+                                        sertepsapqr@step.com.co; para que realice el tratamiento de mi información personal, en
+                                        cumplimiento de la Ley 1581 de 2012 y a lo previsto en el numeral 3 y el parágrafo del artículo
+                                        10
+                                        del Decreto 1377 de 2013.
+                                        En todo caso en cualquier momento el titular de la información podrá revocar su consentimiento y
+                                        ejercer su derecho a la supresión de datos personales consagrado en la Ley 1581 de 2012.
+                                    </p>
+                                    <p style="margin-left: 6.8%;font-size: 86%;"> -----------------------------------
+                                        <strong>FIN CLAUSULADO</strong> ------------------------------------
+                                    </p>
+                                    <p style="font-size: 82%;margin-top: -2%;">
+                                        Para efectos de dejar constancia, <strong>CONTRATANTE</strong> y <strong>CONTRATISTA</strong>,
+                                        libres de todo vicio y en pleno
+                                        uso de sus facultades suscribimos y aceptamos el presente contrato en Dosquebradas, Risaralda a
+                                        los días del mes de del año 2023.
+                                    </p>
+
+                                    <br>
+                                    <br>
+                                    <br>
+
+                                    <p style="margin-left: 7.8%;">
+                                        <strong> ACEPTAMOS:</strong>
+                                    </p>
+
+                                    <br>
+                                    <br>
+                                    <br>
+
+                                    <p style="font-size: 86%;">
+                                        <strong> CONTRATISTA: <span style="margin-left: 31%;">CONTRATANTE:</span><br>
+                                            ALBA OSIRIS HIDALGO PESCADOR <span
+                                                style="margin-left: 9%;">_____________________________</span><br>
+                                            C.C. 42.077.205 expedida en Pereira <span style="margin-left: 10%;">C.C.:</span><br>
+                                            Representante Legal</strong>
+                                    </p>
+                                    </p>
+
+                                </div>
+                            @break
+
+                            @default
+                        @endswitch
+                    @break
+
+                    @case(2)
+                        <div style="display: flex;position: absolute;width: 37.5rem;height: 819px;margin-left: 6.5rem;">
+                            <p style="font-size: 88%;text-align: justify;">
+                                UNILATERALES. A) POR PARTE DEL CONTRATISTA:</strong> 1) La mora del <strong>CONTRATANTE</strong>
+                                en el pago y según lo consagrado en la cláusula séptima del presente contrato 2) Actos
+                                de indisciplina, irrespeto o vandalismo por parte de los pasajeros que ocasionen daños de
+                                hasta en el 15% del parque automotor dispuesto para la prestación del servicio. <strong>B) POR
+                                    PARTE DEL CONTRATANTE</strong>: 1) Por inconformidad expresa con la prestación del
+                                servicio, previa denuncia por escrito y por medio PQRS realizada al <strong>CONTRATISTA</strong>
+                                sin
+                                que este ejecute acciones o tome medidas correctivas, o explique justamente la situación.
+                                2) Por incumplimiento con alguno de los compromisos adquiridos en el presente contrato.
+                                <strong>DECIMA SEGUNDA. SOLUCIÓN DE CONTROVERSIAS:</strong> Toda controversia, conflicto o
+                                diferencias relativas a este contrato, su ejecución y liquidación, se resolverán
+                                preferiblemente mediante los mecanismos de arreglo directo y conciliación entre las
+                                partes involucradas, que para el caso serán: El representante legal de la empresa
+                                directamente y el <strong>CONTRATISTA</strong> o a quien este designe.
+                            <p style="margin-left: 6.8%"> ----------------------------------- FIN CLAUSULADO
+                                ------------------------------------</p>
+                            Para efectos de dejar constancia, CONTRATANTE y CONTRATISTA, libres de todo vicio
+                            y en pleno uso de sus facultades suscribimos y aceptamos el presente contrato en
+                            Dosquebradas a los días del mes de del año 2019.
+                            <br>
+
+                            <p style="margin-left: 7.8%;">
+                                <strong> ACEPTAMOS:</strong>
+                            </p>
+                            <br>
+                            <br>
+                            <br>
+
+                            <p style="font-size: 86%;">
+                                <strong> CONTRATISTA: <span style="margin-left: 31%;">CONTRATANTE:</span><br>
+                                    ALBA OSIRIS HIDALGO PESCADOR <span
+                                        style="margin-left: 9%;">_____________________________</span><br>
+                                    C.C. 42.077.205 expedida en Pereira <span style="margin-left: 10%;">C.C.:</span><br>
+                                    Representante Legal</strong>
+                            </p>
+                            </p>
+                        </div>
+                    @break
+
+                    @case(3)
+                        <div style="display: flex;position: absolute;width: 38.7rem;height: 819px;margin-left: 6rem;">
+                            <table style="width: 100%;border: solid 1px #000;border-collapse: collapse;margin-top: 4%;">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 50%;border: solid 1px #000;border-collapse: collapse;">
+                                            NOMBRE COMPLETO
+                                        </th>
+                                        <th style="width: 50%;border: solid 1px #000;border-collapse: collapse;">
+                                            IDENTIFICACIÓN
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="width: 50%;border: solid 1px #000;border-collapse: collapse;">
+                                            pruaba *35
+                                        </td>
+                                        <td style="width: 50%;border: solid 1px #000;border-collapse: collapse;">
+                                            pruaba
+                                        </td>
+                                    </tr>
+                                </tbody>
+
+                            </table>
+                        </div>
+                    @break
+
+                    @case(4)
+                        <div style="display: flex;position: absolute;width: 38.7rem;height: 819px;margin-left: 6rem;">
+                            <table style="width: 100%;border: solid 1px #000;border-collapse: collapse;margin-top: 4%;">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 50%;border: solid 1px #000;border-collapse: collapse;">
+                                            NOMBRE COMPLETO
+                                        </th>
+                                        <th style="width: 50%;border: solid 1px #000;border-collapse: collapse;">
+                                            IDENTIFICACIÓN
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="width: 50%;border: solid 1px #000;border-collapse: collapse;">
+                                            pruaba *35
+                                        </td>
+                                        <td style="width: 50%;border: solid 1px #000;border-collapse: collapse;">
+                                            pruaba
+                                        </td>
+                                    </tr>
+                                </tbody>
+
+                            </table>
+                        </div>
+                    @break
+
+                    @case(5)
+                        <div style="display: flex;position: absolute;width: 38.7rem;height: 819px;margin-left: 6rem;">
+                            <table style="width: 100%;border: solid 1px #000;border-collapse: collapse;margin-top: 4%;">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 50%;border: solid 1px #000;border-collapse: collapse;">
+                                            NOMBRE COMPLETO
+                                        </th>
+                                        <th style="width: 50%;border: solid 1px #000;border-collapse: collapse;">
+                                            IDENTIFICACIÓN
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="width: 50%;border: solid 1px #000;border-collapse: collapse;">
+                                            pruaba *35
+                                        </td>
+                                        <td style="width: 50%;border: solid 1px #000;border-collapse: collapse;">
+                                            pruaba
+                                        </td>
+                                    </tr>
+                                </tbody>
+
+                            </table>
+                        </div>
+                    @break
+
+                    @case(6)
+                    @break
+
+                    @case(9)
+                        <div style="display: flex;position: absolute;width: 76%;height: 819px;margin-left: 6.5rem;">
+                            <p style="font-size: 84%;text-align: justify;">
+                                documentos que suscriban las partes sean o no con ocasión del presente contrato. Al cancelarse
+                                el
+                                contrato de vinculación por algunas de las partes éste pagaré no se devolverá hasta pasados
+                                cinco
+                                años 13) Los impuestos ordinarios del vehículo que se tengan con entidades territoriales o
+                                nacionales
+                                deberán ser pagados por <strong>LOS PROPIETARIOS</strong> y según la normatividad fiscal
+                                vigente.14 <strong>EL
+                                    PROPIETARIO</strong> no podrá vender, hacer traspaso, ceder la propiedad del vehículo que
+                                respalda este
+                                contrato cuando el conductor del vehículo este incapacitado, o en estudio médico para pensión
+                                15) <strong>EL
+                                    PROPIETARIO</strong> deberá guardar reserva frente a terceros de la información que conozca
+                                de <strong>LA
+                                    EMPRESA</strong> a razón de sus operaciones internas o de la prestación del servicio de
+                                transporte especial
+                                de sus pasajeros. 16) <strong>EL PROPIETARIO</strong> deberá cancelar de manera oportuna los
+                                valores definidos en
+                                la <strong>CLÁUSULA 4 REMUNERACIÓN Y PAGOS</strong>, parágrafos 1 y 2 respectivamente.
+                                </strong>SEXTA. DERECHOS
+                                DE LAS PARTES A. DERECHOS MUTUOS</strong> 1) La mora en el pago de acreencias de naturaleza
+                                dinerarias derivadas del presente contrato genera, a favor de la parte acreedora, un interés
+                                moratorio
+                                equivalente a la tasa máxima, legal y certificada por Superintendencia Financiera para los
+                                créditos
+                                bancarios corrientes. <strong>B. DERECHOS DE LA EMPRESA:</strong> 1) Abstenerse de incluir en su
+                                plan de
+                                rodamiento el vehículo vinculado por medio del presente contrato que no se encuentren en óptimas
+                                condiciones o que no hayan dado estricto cumplimiento al programa de mantenimiento preventivo de
+                                la
+                                empresa. 2) Ejercer el control efectivo durante la operación del vehículo que por medio del
+                                presente
+                                contrato sea vinculado a su flota. 3) en el caso que el conductor del vehículo ya sea contratado
+                                o el
+                                propietario sea el conductor resulte lesionado, enfermo, incapacitado, y como resultado de este
+                                tratamiento médico haya que reubicarlo dentro de la empresa, en una labor diferente a la
+                                contratada
+                                inicialmente por el propietario del vehículo, este rubro será descontado de los ingresos del
+                                vehículo por
+                                tal razón, la prohibición de la venta del vehículo, hasta tanto el incapacitado se mejore
+                                medicamente o
+                                resulte pensionado laboralmente, de no alcanzar con la propiedad del vehículo se deberá
+                                suscribir
+                                nuevos compromisos con la empresa para éstos eventos. Es de resaltar que la empresa adquiere
+                                anualmente pólizas de seguro que cubren siniestros de tipo laboral y de responsabilidad tanto
+                                contractual como extracontractual, pese a lo anterior, el propietario será deudor en un 100% de
+                                las
+                                sumas que deba pagar la empresa con ocasión a la utilización de su (s) vehículos del presente
+                                contrato,
+                                dando con ello, derecho a repetir en contra del propietario por lo pagado 4) <strong>LA
+                                    EMPRESA</strong> podrá
+                                verificar
+                                en la página web “ESTADO DE CUENTA IUIT POR PLACA” todos los vehículos que se encuentre dentro
+                                del parque automotor, y así mismo hacer saber al propietario de dicha consulta. 5) <strong>LA
+                                    EMPRESA</strong>,
+                                hará
+                                revisiones constantes a la plataforma del GPS-TRACKER dando cumplimiento al decreto 431(Artículo
+                                2.2.1.6.9.5.) numeral 10, cuando la empresa corroboré, verifiqué, compruebe, por cualquier medio
+                                que
+                                un vehículo vinculado a la empresa, esté prestando un servicio o movilizando el vehículo con
+                                pasajeros;
+                                sin el respectivo FUEC, le acarreará un llamado de atención, el cobro de una sanción de 01 SMMLV
+                                MENSUAL y se iniciará el proceso de desvinculación de dicho vehículo. <strong>DERECHOS DEL
+                                    PROPIETARIO</strong> 1) En caso de pérdida, hurto o destrucción del vehículo, tiene derecho
+                                a
+                                reemplazarlo
+                                por otro de la misma clase, bajo el mismo contrato de vinculación de flota, dentro del término
+                                de tres
+                                meses contado a partir de la fecha en que se cancela el registro inicial o matrícula del
+                                vehículo. Si el
+                                contrato de vinculación de flota vence antes de este término, se entenderá prorrogado hasta el
+                                cumplimiento de este término. <strong>SÉPTIMA. PROHIBICIONES DE LAS PARTES A. PROHIBICIONES DE
+                                    LA EMPRESA</strong> 1) No podrán generar en el contrato de vinculación ni a través de otros
+                                medios
+                                obligación
+                                pecuniaria alguna para permitir la desvinculación del vehículo. <strong>B. PROHIBICIONES DEL
+                                    PROPIETARIO</strong> 1) En ninguna circunstancia podrá celebrar contratos de prestación de
+                                servicio de
+                                transporte directamente con usuarios. 2) Cualquier tipo de perjuicio patrimonial a la honra o
+                                imagen
+                                corporativa que sufra la empresa producto de un acto que cometa <strong>EL PROPIETARIO</strong>,
+                                éste deberá
+
+                            </p>
+                        </div>
+                    @break
+
+                    @default
+                @endswitch
+            </x-contractframes>
+        @endif
+        {{-- pagina 5 --}}
+        @if ($contract->type_contract == 9)
+            <x-contractframes typeContract="{{ $titlecontract }}">
+                @switch($contract->type_contract)
+                    @case(1)
+                        @switch($contract->contract_with)
+                            @case(1)
+                                <div style="display: flex;position: absolute;width: 37.5rem;height: 819px;margin-left: 6.5rem;">
+
+                                    <p style="margin-left: 6.8%"> ----------------------------------- FIN CLAUSULADO
+                                        ------------------------------------</p>
+                                    <p style="font-size: 84%;text-align: justify;">
+                                        Para efectos de dejar constancia, CONTRATANTE y CONTRATISTA, libres de todo vicio y en pleno
+                                        uso de nuestras facultades suscribimos y aceptamos el presente contrato en Dosquebradas a los
+                                        días del mes de ________________ del año 2023__.
+                                    </p>
+                                    <br>
+                                    <br>
+                                    <br>
+
+                                    <p style="margin-left: 7.8%;">
+                                        <strong> ACEPTAMOS:</strong>
+                                    </p>
+
+                                    <br>
+                                    <br>
+                                    <br>
+
+                                    <p style="font-size: 86%;">
+                                        <strong> CONTRATISTA: <span style="margin-left: 31%;">CONTRATANTE:</span><br>
+                                            ALBA OSIRIS HIDALGO PESCADOR <span
+                                                style="margin-left: 9%;">_____________________________</span><br>
+                                            C.C. 42.077.205 expedida en Pereira <span style="margin-left: 10%;">C.C.:</span><br>
+                                            Representante Legal</strong>
+                                    </p>
+
+
+
+                                </div>
+                            @break
+
+                            @case(2)
+                                <div style="display: flex;position: absolute;width: 38.7rem;height: 819px;margin-left: 6rem;">
+                                    <table style="width: 100%;border: solid 1px #000;border-collapse: collapse;margin-top: 4%;">
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 50%;border: solid 1px #000;border-collapse: collapse;">
+                                                    NOMBRE COMPLETO
+                                                </th>
+                                                <th style="width: 50%;border: solid 1px #000;border-collapse: collapse;">
+                                                    IDENTIFICACIÓN
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td style="width: 50%;border: solid 1px #000;border-collapse: collapse;">
+                                                    pruaba *35
+                                                </td>
+                                                <td style="width: 50%;border: solid 1px #000;border-collapse: collapse;">
+                                                    pruaba
+                                                </td>
+                                            </tr>
+                                        </tbody>
+
+                                    </table>
+                                </div>
+                            @break
+
+                            @case(3)
+                                <div style="display: flex;position: absolute;width: 37.5rem;height: 819px;margin-left: 6.5rem;">
+
+                                    <p style="font-size: 81%;text-align: justify;">
+                                        <strong>SEXTA. VALOR DEL CONTRATO Y FORMA DE PAGO.</strong> En los primeros cinco (5) días de
+                                        cada
+                                        mes, el <strong>CONTRATANTE</strong> pagará al <strong>CONTRATISTA</strong> la suma de
+                                        M/Cte. ($ ) durante los meses comprendidos entre enero y noviembre 30 del año
+                                        lectivo, <strong>INCLUYENDO SEMANA SANTA, VACACIONES DE MITAD DE AÑO, SEMANA DE
+                                            RECESO, PERÍODOS DE PARO, INCAPACIDADES.</strong> De incurrir en mora, <strong>EL
+                                            CONTRATISTA</strong>
+                                        podrá suspender de inmediato la prestación del servicio y sin perjuicio de las demás acciones
+                                        legales, que, para sus efectos, el presente contrato y sus anexos prestará mérito ejecutivo. El
+                                        pago
+                                        podrá realizarse a través de consignación bancaría en la Cuenta Corriente # 127669997810 del
+                                        Banco Davivienda, informando del pago al <strong>CONTRATISTA</strong>, directamente en la
+                                        oficina o al
+                                        acompañante o conductor del vehículo; en cualquier caso, deberá siempre conservar el comprobante
+                                        de la consignación e informar al <strong>CONTRATISTA</strong> o exigir recibo o constancia del
+                                        pago realizado.
+                                        <strong>SEPTIMA. CAUSALES DE SUSPENSIÓN DEL SERVICIO:</strong> Serán causales de suspensión
+                                        parcial
+                                        o total del servicio de transporte escolar, las siguientes: <strong>1)</strong> Los actos de
+                                        indisciplina o
+                                        vandalismo por
+                                        parte del estudiante dentro del vehículo, <strong>2)</strong> El comportamiento agresivo o
+                                        violento por parte del
+                                        estudiante dentro del vehículo, o la tenencia de elementos inflamables, tóxicos, sustancias
+                                        alucinógenas o explosivos. <strong>3)</strong> Conductas contra la moral y las buenas costumbres
+                                        por parte del
+                                        estudiante dentro del vehículo y en general por incurrir en conductas que afecten el normal
+                                        proceso
+                                        formativo, de acuerdo con lo establecido en el MANUAL DE USO DEL TRANSPORTE.
+                                        <strong>PARÁGRAFO 1: PROCEDIMIENTO DE DENUNCIA:</strong> El acompañante documentará y
+                                        recolectará
+                                        pruebas de lo sucedido, le comunicará la situación al coordinador de ruta quien a su vez se
+                                        pondrá
+                                        en contacto con el acudiente. Lo anterior sin perjuicio de las acciones legales que el
+                                        <strong>CONTRATISTA</strong>
+                                        tenga. <strong>PARAGRAFO 2</strong>: En caso de que el vehículo no tenga el cupo mínimo
+                                        requerido de pasajeros
+                                        (10), se procederá a la suspensión de la ruta; con previo aviso se hará saber al acudiente o
+                                        padre
+                                        de familia de dicha situación. <strong>OCTAVA.</strong> El presente contrato tendrá una duración
+                                        de ____ meses
+                                        comenzando a ejecutarse el día _____ del mes de ________________ del año 2019 y
+                                        concluyendo el día ___ del mes _____________ del año 2019. Por ningún motivo podrá prorrogarse
+                                        automáticamente el presente contrato o cederse por la parte <strong>CONTRATANTE. NOVENA.
+                                            TERMINACIÓN.</strong> Cualquiera de las partes podrá dar por terminado este contrato dando
+                                        un preaviso
+                                        a la otra parte como mínimo quince (15) días antes. <strong>DECIMA. CAUSALES DE TERMINACIÓN CON
+                                            JUSTA CAUSA Y UNILATERALES. A) POR PARTE DEL CONTRATISTA:</strong> 1) El no pago por parte
+                                        del PADRE DE FAMILIA y/o ACUDIENTE 2) Actos de indisciplina, irrespeto o vandalismo por parte
+                                        del estudiante. <strong>B) POR PARTE DEL CONTRATANTE:</strong> 1) Por inconformidad con la
+                                        prestación del
+                                        servicio, previa denuncia por escrito y por medio PQRS realizada al <strong>CONTRATISTA</strong>
+                                        sin que este
+                                        ejecute acciones o tome medidas correctivas, o explique justamente la situación. 2) Por
+                                        incumplimiento con alguno de los compromisos adquiridos en el presente contrato. <strong>DÉCIMA
+                                            PRIMERA. OBSERVACIONES:</strong> Como <strong>CONTRATISTA</strong>, me gustaría hacer las
+                                        siguientes
+                                        observaciones
+                                    <p style="margin-left: 4.8%;font-size: 86%;"> -----------------------------------------
+                                        <strong>FIN CLAUSULADO</strong> ---------------------------------------------
+                                    </p>
+                                    <p style="font-size: 82%;margin-top: -2%;">
+                                        Para efectos de dejar constancia, CONTRATANTE y CONTRATISTA, libres de todo vicio y en pleno
+                                        uso de nuestras facultades suscribimos y aceptamos el presente contrato en a los
+                                        días del mes de del año.
+                                    </p>
+                                    <p style="margin-left: 7.8%;">
+                                        <strong> ACEPTAMOS:</strong>
+                                    </p>
+
+                                    <p style="font-size: 86%;">
+                                        <strong> CONTRATISTA: <span style="margin-left: 31%;">CONTRATANTE:</span><br>
+                                            ALBA OSIRIS HIDALGO PESCADOR <span
+                                                style="margin-left: 9%;">_____________________________</span><br>
+                                            C.C. 42.077.205 expedida en Pereira <span style="margin-left: 10%;">C.C.:</span><br>
+                                            Representante Legal</strong>
+                                    </p>
+
+                                    </p>
+
+                                </div>
+                            @break
+
+                            @case(4)
+                                <div style="display: flex;position: absolute;width: 37.5rem;height: 819px;margin-left: 6.5rem;">
+
+                                    <p style="font-size: 80%;text-align: justify;">
+                                        mediante los mecanismos de arreglo directo y conciliación entre las partes involucradas, que
+                                        para el
+                                        caso serán: El representante legal de la empresa directamente y el <strong>CONTRATISTA</strong>
+                                        o a quien este
+                                        designe.
+                                    <p style="font-size: 86%;">---------------------------------------- <strong>AVISO
+                                            DE PROTECCIÓN DE DATOS</strong> -------------------------------------</p>
+                                    <p style="font-size: 82%;margin-top: -2%;">
+                                        En mi calidad de titular de información personal, actuando libre y voluntariamente, al
+                                        diligenciar los
+                                        datos aquí solicitados, autorizo al STEP SAS – Servicio de Transporte Especial de Estudiantes
+                                        s.a.s
+                                        Dirección en la ciudad de Dosquebradas, teléfono 3303821 , con correo electrónico
+                                        sertepsapqr@step.com.co; para que realice el tratamiento de mi información personal, en
+                                        cumplimiento de la Ley 1581 de 2012 y a lo previsto en el numeral 3 y el parágrafo del artículo
+                                        10
+                                        del Decreto 1377 de 2013.
+                                        En todo caso en cualquier momento el titular de la información podrá revocar su consentimiento y
+                                        ejercer su derecho a la supresión de datos personales consagrado en la Ley 1581 de 2012.
+                                    </p>
+                                    <p style="margin-left: 6.8%;font-size: 86%;"> -----------------------------------
+                                        <strong>FIN CLAUSULADO</strong> ------------------------------------
+                                    </p>
+                                    <p style="font-size: 82%;margin-top: -2%;">
+                                        Para efectos de dejar constancia, <strong>CONTRATANTE</strong> y <strong>CONTRATISTA</strong>,
+                                        libres de todo vicio y en pleno
+                                        uso de sus facultades suscribimos y aceptamos el presente contrato en Dosquebradas, Risaralda a
+                                        los días del mes de del año 2023.
+                                    </p>
+
+                                    <br>
+                                    <br>
+                                    <br>
+
+                                    <p style="margin-left: 7.8%;">
+                                        <strong> ACEPTAMOS:</strong>
+                                    </p>
+
+                                    <br>
+                                    <br>
+                                    <br>
+
+                                    <p style="font-size: 86%;">
+                                        <strong> CONTRATISTA: <span style="margin-left: 31%;">CONTRATANTE:</span><br>
+                                            ALBA OSIRIS HIDALGO PESCADOR <span
+                                                style="margin-left: 9%;">_____________________________</span><br>
+                                            C.C. 42.077.205 expedida en Pereira <span style="margin-left: 10%;">C.C.:</span><br>
+                                            Representante Legal</strong>
+                                    </p>
+                                    </p>
+
+                                </div>
+                            @break
+
+                            @default
+                        @endswitch
+                    @break
+
+                    @case(2)
+                        <div style="display: flex;position: absolute;width: 37.5rem;height: 819px;margin-left: 6.5rem;">
+                            <p style="font-size: 88%;text-align: justify;">
+                                UNILATERALES. A) POR PARTE DEL CONTRATISTA:</strong> 1) La mora del <strong>CONTRATANTE</strong>
+                                en el pago y según lo consagrado en la cláusula séptima del presente contrato 2) Actos
+                                de indisciplina, irrespeto o vandalismo por parte de los pasajeros que ocasionen daños de
+                                hasta en el 15% del parque automotor dispuesto para la prestación del servicio. <strong>B) POR
+                                    PARTE DEL CONTRATANTE</strong>: 1) Por inconformidad expresa con la prestación del
+                                servicio, previa denuncia por escrito y por medio PQRS realizada al <strong>CONTRATISTA</strong>
+                                sin
+                                que este ejecute acciones o tome medidas correctivas, o explique justamente la situación.
+                                2) Por incumplimiento con alguno de los compromisos adquiridos en el presente contrato.
+                                <strong>DECIMA SEGUNDA. SOLUCIÓN DE CONTROVERSIAS:</strong> Toda controversia, conflicto o
+                                diferencias relativas a este contrato, su ejecución y liquidación, se resolverán
+                                preferiblemente mediante los mecanismos de arreglo directo y conciliación entre las
+                                partes involucradas, que para el caso serán: El representante legal de la empresa
+                                directamente y el <strong>CONTRATISTA</strong> o a quien este designe.
+                            <p style="margin-left: 6.8%"> ----------------------------------- FIN CLAUSULADO
+                                ------------------------------------</p>
+                            Para efectos de dejar constancia, CONTRATANTE y CONTRATISTA, libres de todo vicio
+                            y en pleno uso de sus facultades suscribimos y aceptamos el presente contrato en
+                            Dosquebradas a los días del mes de del año 2019.
+                            <br>
+
+                            <p style="margin-left: 7.8%;">
+                                <strong> ACEPTAMOS:</strong>
+                            </p>
+                            <br>
+                            <br>
+                            <br>
+
+                            <p style="font-size: 86%;">
+                                <strong> CONTRATISTA: <span style="margin-left: 31%;">CONTRATANTE:</span><br>
+                                    ALBA OSIRIS HIDALGO PESCADOR <span
+                                        style="margin-left: 9%;">_____________________________</span><br>
+                                    C.C. 42.077.205 expedida en Pereira <span style="margin-left: 10%;">C.C.:</span><br>
+                                    Representante Legal</strong>
+                            </p>
+                            </p>
+                        </div>
+                    @break
+
+                    @case(3)
+                        <div style="display: flex;position: absolute;width: 38.7rem;height: 819px;margin-left: 6rem;">
+                            <table style="width: 100%;border: solid 1px #000;border-collapse: collapse;margin-top: 4%;">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 50%;border: solid 1px #000;border-collapse: collapse;">
+                                            NOMBRE COMPLETO
+                                        </th>
+                                        <th style="width: 50%;border: solid 1px #000;border-collapse: collapse;">
+                                            IDENTIFICACIÓN
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="width: 50%;border: solid 1px #000;border-collapse: collapse;">
+                                            pruaba *35
+                                        </td>
+                                        <td style="width: 50%;border: solid 1px #000;border-collapse: collapse;">
+                                            pruaba
+                                        </td>
+                                    </tr>
+                                </tbody>
+
+                            </table>
+                        </div>
+                    @break
+
+                    @case(4)
+                        <div style="display: flex;position: absolute;width: 38.7rem;height: 819px;margin-left: 6rem;">
+                            <table style="width: 100%;border: solid 1px #000;border-collapse: collapse;margin-top: 4%;">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 50%;border: solid 1px #000;border-collapse: collapse;">
+                                            NOMBRE COMPLETO
+                                        </th>
+                                        <th style="width: 50%;border: solid 1px #000;border-collapse: collapse;">
+                                            IDENTIFICACIÓN
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="width: 50%;border: solid 1px #000;border-collapse: collapse;">
+                                            pruaba *35
+                                        </td>
+                                        <td style="width: 50%;border: solid 1px #000;border-collapse: collapse;">
+                                            pruaba
+                                        </td>
+                                    </tr>
+                                </tbody>
+
+                            </table>
+                        </div>
+                    @break
+
+                    @case(5)
+                        <div style="display: flex;position: absolute;width: 38.7rem;height: 819px;margin-left: 6rem;">
+                            <table style="width: 100%;border: solid 1px #000;border-collapse: collapse;margin-top: 4%;">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 50%;border: solid 1px #000;border-collapse: collapse;">
+                                            NOMBRE COMPLETO
+                                        </th>
+                                        <th style="width: 50%;border: solid 1px #000;border-collapse: collapse;">
+                                            IDENTIFICACIÓN
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="width: 50%;border: solid 1px #000;border-collapse: collapse;">
+                                            pruaba *35
+                                        </td>
+                                        <td style="width: 50%;border: solid 1px #000;border-collapse: collapse;">
+                                            pruaba
+                                        </td>
+                                    </tr>
+                                </tbody>
+
+                            </table>
+                        </div>
+                    @break
+
+                    @case(6)
+                    @break
+
+                    @case(9)
+                        <div style="display: flex;position: absolute;width: 76%;height: 819px;margin-left: 6.5rem;">
+                            <p style="font-size: 98%;text-align: justify;">
+                                responder por ello, sin perjuicio de otras situaciones se considerará como un perjuicio para la
+                                empresa
+                                utilizar el vehículo sin autorización de ésta, es decir, sin portar el FUEC, modificar los
+                                emblemas y/o
+                                distintivos de <strong>LA EMPRESA</strong>A o instalarlos en sitios no autorizados por la misma.
+                                3) Ceder el presente
+                                contrato, transferir o limitar la propiedad del vehículo automotor sin autorización previa, de
+                                requerir
+                                autorización para tales fines, ésta será solicitada por medio de una carta detallada y enviada a
+                                <strong>LA
+                                    EMPRESA</strong> quien tendrá un mes para resolverla, de no resolver en dicho término, se
+                                presume aceptada
+                                la cesión del contrato, la transferencia o limitación de la propiedad del vehículo automotor, si
+                                <strong>LA
+                                    EMPRESA</strong> admite tales acciones, <strong>EL PROPIETARIO</strong> deberá cancelar a
+                                favor de <strong>LA EMPRESA</strong> la suma
+                                de 2 Salarios Mínimos Legales Mensuales Vigentes al momento de proferirse la aceptación de la
+                                empresa y para perfeccionar esta; de no admitirse o de no haber solicitado autorización, el
+                                <strong>PROPIETARIO</strong> no podrá ceder el presente contrato, transferir o limitar la
+                                propiedad del vehículo
+                                automotor y de hacerlo, el negocio jurídico en cuestión no será válido, por lo tanto, LA EMPRESA
+                                unilateralmente desvincular el vehículo sin perjuicio de que EL PROPIETARIO adeude por concepto
+                                de
+                                penalidad el equivalente a 2 Salarios Mínimos Legales Mensuales Vigentes a la <strong>EMPRESA.
+                                    OCTAVA:
+                                    SANCIONES.</strong> Se aplicará el siguiente régimen sancionatorio, de acuerdo con la tabla
+                                adjunta; para
+                                proceder a la aplicación de estas sanciones se deberá realizar los descargos respectivos y el
+                                comité de
+                                disciplina determinará la sanción a aplicar y las medidas preventivas, el momento de aplicación
+                                y
+                                notificación al afectado – <strong>TABLA DE SANCIONES</strong>
+
+                            <table
+                                style="width: 100%;border: solid 1px #000;border-collapse: collapse;font-size: 75%;text-align: center;">
+
+                                <thead>
+                                    <tr>
+                                        <th style="width: 10%;border: solid 1px #000;border-collapse: collapse;">
+                                            ITEMS
+                                        </th>
+                                        <th style="width: 45%;border: solid 1px #000;border-collapse: collapse;">
+                                            FALTA COMETIDA
+                                        </th>
+                                        <th style="width: 15%;border: solid 1px #000;border-collapse: collapse;">
+                                            DÍAS SIN FUEC
+                                        </th>
+                                        <th style="width: 30%;border: solid 1px #000;border-collapse: collapse;">
+                                            PENALES Y ADMINISTRATIVAS
+                                        </th>
+                                        <th style="width: 30%;border: solid 1px #000;border-collapse: collapse;">
+                                            SANCIÓN ECONÓMICA
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td
+                                            style="width: 10%;border: solid 1px #000;border-collapse: collapse;text-align: center;">
+                                            1
+                                        </td>
+                                        <td style="width: 45%;border: solid 1px #000;border-collapse: collapse;">
+                                            No asistir a las capacitaciones
+                                            requeridas por la actividad económica
+                                            de la empresa
+                                        </td>
+                                        <td
+                                            style="width: 15%;border: solid 1px #000;border-collapse: collapse;text-align: center;">
+                                            N/A
+                                        </td>
+                                        <td style="width: 30%;border: solid 1px #000;border-collapse: collapse;">
+                                            N/A
+                                        </td>
+                                        <td style="width: 30%;border: solid 1px #000;border-collapse: collapse;">
+                                            1 SMMLV
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td
+                                            style="width: 10%;border: solid 1px #000;border-collapse: collapse;text-align: center;">
+                                            2
+                                        </td>
+                                        <td style="width: 45%;border: solid 1px #000;border-collapse: collapse;">
+                                            Movilizar el vehículo sin FUEC
+                                        </td>
+                                        <td
+                                            style="width: 15%;border: solid 1px #000;border-collapse: collapse;text-align: center;">
+                                            N/A
+                                        </td>
+                                        <td style="width: 30%;border: solid 1px #000;border-collapse: collapse;">
+                                            N/A
+                                        </td>
+                                        <td style="width: 30%;border: solid 1px #000;border-collapse: collapse;">
+                                            1 SMMLV
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td
+                                            style="width: 10%;border: solid 1px #000;border-collapse: collapse;text-align: center;">
+                                            3
+                                        </td>
+                                        <td style="width: 45%;border: solid 1px #000;border-collapse: collapse;">
+                                            Reiteración Movilizar el vehículo sin FUEC
+                                        </td>
+                                        <td
+                                            style="width: 15%;border: solid 1px #000;border-collapse: collapse;text-align: center;">
+                                            N/A
+                                        </td>
+                                        <td style="width: 30%;border: solid 1px #000;border-collapse: collapse;">
+                                            Desvinculaciones administrativas
+                                        </td>
+                                        <td style="width: 30%;border: solid 1px #000;border-collapse: collapse;">
+                                            Las estipuladas en el contrato de vinculación
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td
+                                            style="width: 10%;border: solid 1px #000;border-collapse: collapse;text-align: center;">
+                                            4
+                                        </td>
+                                        <td style="width: 45%;border: solid 1px #000;border-collapse: collapse;">
+                                            Falsedad en documentos Privado o públic
+                                        </td>
+                                        <td
+                                            style="width: 15%;border: solid 1px #000;border-collapse: collapse;text-align: center;">
+                                            N/A
+                                        </td>
+                                        <td style="width: 30%;border: solid 1px #000;border-collapse: collapse;">
+                                            Desvinculación administrativa
+                                        </td>
+                                        <td style="width: 30%;border: solid 1px #000;border-collapse: collapse;">
+                                            Las estipuladas en el contrato de vinculación
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td
+                                            style="width: 10%;border: solid 1px #000;border-collapse: collapse;text-align: center;">
+                                            5
+                                        </td>
+                                        <td style="width: 45%;border: solid 1px #000;border-collapse: collapse;">
+                                            No cumplir con las actividades del programa de mantenimiento vehicular, Protocolo
+                                            diario de alistamiento
+                                        </td>
+                                        <td
+                                            style="width: 15%;border: solid 1px #000;border-collapse: collapse;text-align: center;">
+                                            Suspensión del FUEC
+                                        </td>
+                                        <td style="width: 30%;border: solid 1px #000;border-collapse: collapse;">
+                                            N/A
+                                        </td>
+                                        <td style="width: 30%;border: solid 1px #000;border-collapse: collapse;">
+                                            N/A
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td
+                                            style="width: 10%;border: solid 1px #000;border-collapse: collapse;text-align: center;">
+                                            6
+                                        </td>
+                                        <td style="width: 45%;border: solid 1px #000;border-collapse: collapse;">
+                                            Manipularlo- apagarlo Plataforma de GPS Identificado por primera vez
+                                        </td>
+                                        <td
+                                            style="width: 15%;border: solid 1px #000;border-collapse: collapse;text-align: center;">
+                                            Suspensión del FUEC por 15 días
+                                        </td>
+                                        <td style="width: 30%;border: solid 1px #000;border-collapse: collapse;">
+                                            Cancelación del contrato con justa causa del conductor no propietario
+                                        </td>
+                                        <td style="width: 30%;border: solid 1px #000;border-collapse: collapse;">
+                                            N/A
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td
+                                            style="width: 10%;border: solid 1px #000;border-collapse: collapse;text-align: center;">
+                                            7
+                                        </td>
+                                        <td style="width: 45%;border: solid 1px #000;border-collapse: collapse;">
+                                            Reiteración Manipularlo- apagarlo Plataforma de GPS
+                                        </td>
+                                        <td
+                                            style="width: 15%;border: solid 1px #000;border-collapse: collapse;text-align: center;">
+                                            N/A
+                                        </td>
+                                        <td style="width: 30%;border: solid 1px #000;border-collapse: collapse;">
+                                            Desvinculación administrativa
+                                        </td>
+                                        <td style="width: 30%;border: solid 1px #000;border-collapse: collapse;">
+                                            Las estipuladas en el contrato de vinculación
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+
+                            </p>
+                        </div>
+                    @break
+
+                    @default
+                @endswitch
+            </x-contractframes>
+        @endif
+        {{-- pagina 6 --}}
+        @if ($contract->type_contract == 9)
+            <x-contractframes typeContract="{{ $titlecontract }}">
+                @switch($contract->type_contract)
+                    @case(1)
+                        @switch($contract->contract_with)
+                            @case(1)
+                                <div style="display: flex;position: absolute;width: 37.5rem;height: 819px;margin-left: 6.5rem;">
+
+                                    <p style="margin-left: 6.8%"> ----------------------------------- FIN CLAUSULADO
+                                        ------------------------------------</p>
+                                    <p style="font-size: 84%;text-align: justify;">
+                                        Para efectos de dejar constancia, CONTRATANTE y CONTRATISTA, libres de todo vicio y en pleno
+                                        uso de nuestras facultades suscribimos y aceptamos el presente contrato en Dosquebradas a los
+                                        días del mes de ________________ del año 2023__.
+                                    </p>
+                                    <br>
+                                    <br>
+                                    <br>
+
+                                    <p style="margin-left: 7.8%;">
+                                        <strong> ACEPTAMOS:</strong>
+                                    </p>
+
+                                    <br>
+                                    <br>
+                                    <br>
+
+                                    <p style="font-size: 86%;">
+                                        <strong> CONTRATISTA: <span style="margin-left: 31%;">CONTRATANTE:</span><br>
+                                            ALBA OSIRIS HIDALGO PESCADOR <span
+                                                style="margin-left: 9%;">_____________________________</span><br>
+                                            C.C. 42.077.205 expedida en Pereira <span style="margin-left: 10%;">C.C.:</span><br>
+                                            Representante Legal</strong>
+                                    </p>
+
+
+
+                                </div>
+                            @break
+
+                            @case(2)
+                                <div style="display: flex;position: absolute;width: 38.7rem;height: 819px;margin-left: 6rem;">
+                                    <table style="width: 100%;border: solid 1px #000;border-collapse: collapse;margin-top: 4%;">
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 50%;border: solid 1px #000;border-collapse: collapse;">
+                                                    NOMBRE COMPLETO
+                                                </th>
+                                                <th style="width: 50%;border: solid 1px #000;border-collapse: collapse;">
+                                                    IDENTIFICACIÓN
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td style="width: 50%;border: solid 1px #000;border-collapse: collapse;">
+                                                    pruaba *35
+                                                </td>
+                                                <td style="width: 50%;border: solid 1px #000;border-collapse: collapse;">
+                                                    pruaba
+                                                </td>
+                                            </tr>
+                                        </tbody>
+
+                                    </table>
+                                </div>
+                            @break
+
+                            @case(3)
+                                <div style="display: flex;position: absolute;width: 37.5rem;height: 819px;margin-left: 6.5rem;">
+
+                                    <p style="font-size: 81%;text-align: justify;">
+                                        <strong>SEXTA. VALOR DEL CONTRATO Y FORMA DE PAGO.</strong> En los primeros cinco (5) días de
+                                        cada
+                                        mes, el <strong>CONTRATANTE</strong> pagará al <strong>CONTRATISTA</strong> la suma de
+                                        M/Cte. ($ ) durante los meses comprendidos entre enero y noviembre 30 del año
+                                        lectivo, <strong>INCLUYENDO SEMANA SANTA, VACACIONES DE MITAD DE AÑO, SEMANA DE
+                                            RECESO, PERÍODOS DE PARO, INCAPACIDADES.</strong> De incurrir en mora, <strong>EL
+                                            CONTRATISTA</strong>
+                                        podrá suspender de inmediato la prestación del servicio y sin perjuicio de las demás acciones
+                                        legales, que, para sus efectos, el presente contrato y sus anexos prestará mérito ejecutivo. El
+                                        pago
+                                        podrá realizarse a través de consignación bancaría en la Cuenta Corriente # 127669997810 del
+                                        Banco Davivienda, informando del pago al <strong>CONTRATISTA</strong>, directamente en la
+                                        oficina o al
+                                        acompañante o conductor del vehículo; en cualquier caso, deberá siempre conservar el comprobante
+                                        de la consignación e informar al <strong>CONTRATISTA</strong> o exigir recibo o constancia del
+                                        pago realizado.
+                                        <strong>SEPTIMA. CAUSALES DE SUSPENSIÓN DEL SERVICIO:</strong> Serán causales de suspensión
+                                        parcial
+                                        o total del servicio de transporte escolar, las siguientes: <strong>1)</strong> Los actos de
+                                        indisciplina o
+                                        vandalismo por
+                                        parte del estudiante dentro del vehículo, <strong>2)</strong> El comportamiento agresivo o
+                                        violento por parte del
+                                        estudiante dentro del vehículo, o la tenencia de elementos inflamables, tóxicos, sustancias
+                                        alucinógenas o explosivos. <strong>3)</strong> Conductas contra la moral y las buenas costumbres
+                                        por parte del
+                                        estudiante dentro del vehículo y en general por incurrir en conductas que afecten el normal
+                                        proceso
+                                        formativo, de acuerdo con lo establecido en el MANUAL DE USO DEL TRANSPORTE.
+                                        <strong>PARÁGRAFO 1: PROCEDIMIENTO DE DENUNCIA:</strong> El acompañante documentará y
+                                        recolectará
+                                        pruebas de lo sucedido, le comunicará la situación al coordinador de ruta quien a su vez se
+                                        pondrá
+                                        en contacto con el acudiente. Lo anterior sin perjuicio de las acciones legales que el
+                                        <strong>CONTRATISTA</strong>
+                                        tenga. <strong>PARAGRAFO 2</strong>: En caso de que el vehículo no tenga el cupo mínimo
+                                        requerido de pasajeros
+                                        (10), se procederá a la suspensión de la ruta; con previo aviso se hará saber al acudiente o
+                                        padre
+                                        de familia de dicha situación. <strong>OCTAVA.</strong> El presente contrato tendrá una duración
+                                        de ____ meses
+                                        comenzando a ejecutarse el día _____ del mes de ________________ del año 2019 y
+                                        concluyendo el día ___ del mes _____________ del año 2019. Por ningún motivo podrá prorrogarse
+                                        automáticamente el presente contrato o cederse por la parte <strong>CONTRATANTE. NOVENA.
+                                            TERMINACIÓN.</strong> Cualquiera de las partes podrá dar por terminado este contrato dando
+                                        un preaviso
+                                        a la otra parte como mínimo quince (15) días antes. <strong>DECIMA. CAUSALES DE TERMINACIÓN CON
+                                            JUSTA CAUSA Y UNILATERALES. A) POR PARTE DEL CONTRATISTA:</strong> 1) El no pago por parte
+                                        del PADRE DE FAMILIA y/o ACUDIENTE 2) Actos de indisciplina, irrespeto o vandalismo por parte
+                                        del estudiante. <strong>B) POR PARTE DEL CONTRATANTE:</strong> 1) Por inconformidad con la
+                                        prestación del
+                                        servicio, previa denuncia por escrito y por medio PQRS realizada al <strong>CONTRATISTA</strong>
+                                        sin que este
+                                        ejecute acciones o tome medidas correctivas, o explique justamente la situación. 2) Por
+                                        incumplimiento con alguno de los compromisos adquiridos en el presente contrato. <strong>DÉCIMA
+                                            PRIMERA. OBSERVACIONES:</strong> Como <strong>CONTRATISTA</strong>, me gustaría hacer las
+                                        siguientes
+                                        observaciones
+                                    <p style="margin-left: 4.8%;font-size: 86%;"> -----------------------------------------
+                                        <strong>FIN CLAUSULADO</strong> ---------------------------------------------
+                                    </p>
+                                    <p style="font-size: 82%;margin-top: -2%;">
+                                        Para efectos de dejar constancia, CONTRATANTE y CONTRATISTA, libres de todo vicio y en pleno
+                                        uso de nuestras facultades suscribimos y aceptamos el presente contrato en a los
+                                        días del mes de del año.
+                                    </p>
+                                    <p style="margin-left: 7.8%;">
+                                        <strong> ACEPTAMOS:</strong>
+                                    </p>
+
+                                    <p style="font-size: 86%;">
+                                        <strong> CONTRATISTA: <span style="margin-left: 31%;">CONTRATANTE:</span><br>
+                                            ALBA OSIRIS HIDALGO PESCADOR <span
+                                                style="margin-left: 9%;">_____________________________</span><br>
+                                            C.C. 42.077.205 expedida en Pereira <span style="margin-left: 10%;">C.C.:</span><br>
+                                            Representante Legal</strong>
+                                    </p>
+
+                                    </p>
+
+                                </div>
+                            @break
+
+                            @case(4)
+                                <div style="display: flex;position: absolute;width: 37.5rem;height: 819px;margin-left: 6.5rem;">
+
+                                    <p style="font-size: 80%;text-align: justify;">
+                                        mediante los mecanismos de arreglo directo y conciliación entre las partes involucradas, que
+                                        para el
+                                        caso serán: El representante legal de la empresa directamente y el <strong>CONTRATISTA</strong>
+                                        o a quien este
+                                        designe.
+                                    <p style="font-size: 86%;">---------------------------------------- <strong>AVISO
+                                            DE PROTECCIÓN DE DATOS</strong> -------------------------------------</p>
+                                    <p style="font-size: 82%;margin-top: -2%;">
+                                        En mi calidad de titular de información personal, actuando libre y voluntariamente, al
+                                        diligenciar los
+                                        datos aquí solicitados, autorizo al STEP SAS – Servicio de Transporte Especial de Estudiantes
+                                        s.a.s
+                                        Dirección en la ciudad de Dosquebradas, teléfono 3303821 , con correo electrónico
+                                        sertepsapqr@step.com.co; para que realice el tratamiento de mi información personal, en
+                                        cumplimiento de la Ley 1581 de 2012 y a lo previsto en el numeral 3 y el parágrafo del artículo
+                                        10
+                                        del Decreto 1377 de 2013.
+                                        En todo caso en cualquier momento el titular de la información podrá revocar su consentimiento y
+                                        ejercer su derecho a la supresión de datos personales consagrado en la Ley 1581 de 2012.
+                                    </p>
+                                    <p style="margin-left: 6.8%;font-size: 86%;"> -----------------------------------
+                                        <strong>FIN CLAUSULADO</strong> ------------------------------------
+                                    </p>
+                                    <p style="font-size: 82%;margin-top: -2%;">
+                                        Para efectos de dejar constancia, <strong>CONTRATANTE</strong> y <strong>CONTRATISTA</strong>,
+                                        libres de todo vicio y en pleno
+                                        uso de sus facultades suscribimos y aceptamos el presente contrato en Dosquebradas, Risaralda a
+                                        los días del mes de del año 2023.
+                                    </p>
+
+                                    <br>
+                                    <br>
+                                    <br>
+
+                                    <p style="margin-left: 7.8%;">
+                                        <strong> ACEPTAMOS:</strong>
+                                    </p>
+
+                                    <br>
+                                    <br>
+                                    <br>
+
+                                    <p style="font-size: 86%;">
+                                        <strong> CONTRATISTA: <span style="margin-left: 31%;">CONTRATANTE:</span><br>
+                                            ALBA OSIRIS HIDALGO PESCADOR <span
+                                                style="margin-left: 9%;">_____________________________</span><br>
+                                            C.C. 42.077.205 expedida en Pereira <span style="margin-left: 10%;">C.C.:</span><br>
+                                            Representante Legal</strong>
+                                    </p>
+                                    </p>
+
+                                </div>
+                            @break
+
+                            @default
+                        @endswitch
+                    @break
+
+                    @case(2)
+                        <div style="display: flex;position: absolute;width: 37.5rem;height: 819px;margin-left: 6.5rem;">
+                            <p style="font-size: 88%;text-align: justify;">
+                                UNILATERALES. A) POR PARTE DEL CONTRATISTA:</strong> 1) La mora del <strong>CONTRATANTE</strong>
+                                en el pago y según lo consagrado en la cláusula séptima del presente contrato 2) Actos
+                                de indisciplina, irrespeto o vandalismo por parte de los pasajeros que ocasionen daños de
+                                hasta en el 15% del parque automotor dispuesto para la prestación del servicio. <strong>B) POR
+                                    PARTE DEL CONTRATANTE</strong>: 1) Por inconformidad expresa con la prestación del
+                                servicio, previa denuncia por escrito y por medio PQRS realizada al <strong>CONTRATISTA</strong>
+                                sin
+                                que este ejecute acciones o tome medidas correctivas, o explique justamente la situación.
+                                2) Por incumplimiento con alguno de los compromisos adquiridos en el presente contrato.
+                                <strong>DECIMA SEGUNDA. SOLUCIÓN DE CONTROVERSIAS:</strong> Toda controversia, conflicto o
+                                diferencias relativas a este contrato, su ejecución y liquidación, se resolverán
+                                preferiblemente mediante los mecanismos de arreglo directo y conciliación entre las
+                                partes involucradas, que para el caso serán: El representante legal de la empresa
+                                directamente y el <strong>CONTRATISTA</strong> o a quien este designe.
+                            <p style="margin-left: 6.8%"> ----------------------------------- FIN CLAUSULADO
+                                ------------------------------------</p>
+                            Para efectos de dejar constancia, CONTRATANTE y CONTRATISTA, libres de todo vicio
+                            y en pleno uso de sus facultades suscribimos y aceptamos el presente contrato en
+                            Dosquebradas a los días del mes de del año 2019.
+                            <br>
+
+                            <p style="margin-left: 7.8%;">
+                                <strong> ACEPTAMOS:</strong>
+                            </p>
+                            <br>
+                            <br>
+                            <br>
+
+                            <p style="font-size: 86%;">
+                                <strong> CONTRATISTA: <span style="margin-left: 31%;">CONTRATANTE:</span><br>
+                                    ALBA OSIRIS HIDALGO PESCADOR <span
+                                        style="margin-left: 9%;">_____________________________</span><br>
+                                    C.C. 42.077.205 expedida en Pereira <span style="margin-left: 10%;">C.C.:</span><br>
+                                    Representante Legal</strong>
+                            </p>
+                            </p>
+                        </div>
+                    @break
+
+                    @case(3)
+                        <div style="display: flex;position: absolute;width: 38.7rem;height: 819px;margin-left: 6rem;">
+                            <table style="width: 100%;border: solid 1px #000;border-collapse: collapse;margin-top: 4%;">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 50%;border: solid 1px #000;border-collapse: collapse;">
+                                            NOMBRE COMPLETO
+                                        </th>
+                                        <th style="width: 50%;border: solid 1px #000;border-collapse: collapse;">
+                                            IDENTIFICACIÓN
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="width: 50%;border: solid 1px #000;border-collapse: collapse;">
+                                            pruaba *35
+                                        </td>
+                                        <td style="width: 50%;border: solid 1px #000;border-collapse: collapse;">
+                                            pruaba
+                                        </td>
+                                    </tr>
+                                </tbody>
+
+                            </table>
+                        </div>
+                    @break
+
+                    @case(4)
+                        <div style="display: flex;position: absolute;width: 38.7rem;height: 819px;margin-left: 6rem;">
+                            <table style="width: 100%;border: solid 1px #000;border-collapse: collapse;margin-top: 4%;">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 50%;border: solid 1px #000;border-collapse: collapse;">
+                                            NOMBRE COMPLETO
+                                        </th>
+                                        <th style="width: 50%;border: solid 1px #000;border-collapse: collapse;">
+                                            IDENTIFICACIÓN
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="width: 50%;border: solid 1px #000;border-collapse: collapse;">
+                                            pruaba *35
+                                        </td>
+                                        <td style="width: 50%;border: solid 1px #000;border-collapse: collapse;">
+                                            pruaba
+                                        </td>
+                                    </tr>
+                                </tbody>
+
+                            </table>
+                        </div>
+                    @break
+
+                    @case(5)
+                        <div style="display: flex;position: absolute;width: 38.7rem;height: 819px;margin-left: 6rem;">
+                            <table style="width: 100%;border: solid 1px #000;border-collapse: collapse;margin-top: 4%;">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 50%;border: solid 1px #000;border-collapse: collapse;">
+                                            NOMBRE COMPLETO
+                                        </th>
+                                        <th style="width: 50%;border: solid 1px #000;border-collapse: collapse;">
+                                            IDENTIFICACIÓN
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="width: 50%;border: solid 1px #000;border-collapse: collapse;">
+                                            pruaba *35
+                                        </td>
+                                        <td style="width: 50%;border: solid 1px #000;border-collapse: collapse;">
+                                            pruaba
+                                        </td>
+                                    </tr>
+                                </tbody>
+
+                            </table>
+                        </div>
+                    @break
+
+                    @case(6)
+                    @break
+
+                    @case(9)
+                        <div style="display: flex;position: absolute;width: 76%;height: 819px;margin-left: 6.5rem;">
+                            <p style="font-size: 88%;text-align: justify;">
+
+
+
+                            <table
+                                style="width: 100%;border: solid 1px #000;border-collapse: collapse;font-size: 75%;text-align: center;">
+
+                                {{-- <thead>
+                                        <tr>
+                                            <th style="width: 10%;border: solid 1px #000;border-collapse: collapse;">
+                                                ITEMS
+                                            </th>
+                                            <th style="width: 45%;border: solid 1px #000;border-collapse: collapse;">
+                                                FALTA COMETIDA
+                                            </th>
+                                            <th style="width: 15%;border: solid 1px #000;border-collapse: collapse;">
+                                                DÍAS SIN FUEC
+                                            </th>
+                                            <th style="width: 30%;border: solid 1px #000;border-collapse: collapse;">
+                                                PENALES Y ADMINISTRATIVAS
+                                            </th>
+                                            <th style="width: 30%;border: solid 1px #000;border-collapse: collapse;">
+                                                SANCIÓN ECONÓMICA
+                                            </th>
+                                        </tr>
+                                    </thead> --}}
+                                <tbody>
+                                    <tr>
+                                        <td
+                                            style="width: 10%;border: solid 1px #000;border-collapse: collapse;text-align: center;">
+                                            7
+                                        </td>
+                                        <td style="width: 27%;border: solid 1px #000;border-collapse: collapse;">
+                                            Reiteración Manipularlo- apagarlo Plataforma de GPS
+                                        </td>
+                                        <td
+                                            style="width: 21%;border: solid 1px #000;border-collapse: collapse;text-align: center;">
+                                            N/A
+                                        </td>
+                                        <td style="width: 21%;border: solid 1px #000;border-collapse: collapse;">
+                                            Desvinculación administrativa
+                                        </td>
+                                        <td style="width: 21%;border: solid 1px #000;border-collapse: collapse;">
+                                            Las estipuladas en el contrato de vinculación
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td
+                                            style="width: 10%;border: solid 1px #000;border-collapse: collapse;text-align: center;">
+                                            8
+                                        </td>
+                                        <td style="width: 27%;border: solid 1px #000;border-collapse: collapse;">
+                                            No asistir oportunamente al llamado de la empresa a la inspección y revisión visual
+                                            del vehículo
+                                        </td>
+                                        <td
+                                            style="width: 21%;border: solid 1px #000;border-collapse: collapse;text-align: center;">
+                                            Suspensión del FUEC por 3 días
+                                        </td>
+                                        <td style="width: 21%;border: solid 1px #000;border-collapse: collapse;">
+                                            N/A
+                                        </td>
+                                        <td style="width: 21%;border: solid 1px #000;border-collapse: collapse;">
+                                            Las sanciones impuestas a la empresa por los entes de control o de certificación
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td
+                                            style="width: 10%;border: solid 1px #000;border-collapse: collapse;text-align: center;">
+                                            9
+                                        </td>
+                                        <td style="width: 27%;border: solid 1px #000;border-collapse: collapse;">
+                                            Irrespetar al personal de la empresa
+                                        </td>
+                                        <td
+                                            style="width: 21%;border: solid 1px #000;border-collapse: collapse;text-align: center;">
+                                            3 días sin FUEC
+                                        </td>
+                                        <td style="width: 21%;border: solid 1px #000;border-collapse: collapse;">
+                                            N/A
+                                        </td>
+                                        <td style="width: 21%;border: solid 1px #000;border-collapse: collapse;">
+                                            N/A
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td
+                                            style="width: 10%;border: solid 1px #000;border-collapse: collapse;text-align: center;">
+                                            10
+                                        </td>
+                                        <td style="width: 27%;border: solid 1px #000;border-collapse: collapse;">
+                                            Irrespetar a clientes
+                                        </td>
+                                        <td
+                                            style="width: 21%;border: solid 1px #000;border-collapse: collapse;text-align: center;">
+                                            Irrespetar a clientes
+                                        </td>
+                                        <td style="width: 21%;border: solid 1px #000;border-collapse: collapse;">
+                                            N/A
+                                        </td>
+                                        <td style="width: 21%;border: solid 1px #000;border-collapse: collapse;">
+                                            N/A
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td
+                                            style="width: 10%;border: solid 1px #000;border-collapse: collapse;text-align: center;">
+                                            11
+                                        </td>
+                                        <td style="width: 27%;border: solid 1px #000;border-collapse: collapse;">
+                                            Modificar emblemas, marcación de los vehículos
+                                        </td>
+                                        <td
+                                            style="width: 21%;border: solid 1px #000;border-collapse: collapse;text-align: center;">
+                                            Modificar emblemas, marcación de los vehículos
+                                        </td>
+                                        <td style="width: 21%;border: solid 1px #000;border-collapse: collapse;">
+                                            N/A
+                                        </td>
+                                        <td style="width: 21%;border: solid 1px #000;border-collapse: collapse;">
+                                            N/A
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td
+                                            style="width: 10%;border: solid 1px #000;border-collapse: collapse;text-align: center;">
+                                            12
+                                        </td>
+                                        <td style="width: 27%;border: solid 1px #000;border-collapse: collapse;">
+                                            Vender o hacer traspaso del vehículo sin autorización de la empresa
+                                        </td>
+                                        <td
+                                            style="width: 21%;border: solid 1px #000;border-collapse: collapse;text-align: center;">
+                                            N/A
+                                        </td>
+                                        <td style="width: 21%;border: solid 1px #000;border-collapse: collapse;">
+                                            Desvinculación de mutuo acuerdo
+                                        </td>
+                                        <td style="width: 21%;border: solid 1px #000;border-collapse: collapse;">
+                                            Las estipuladas en el contrato de vinculación
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td
+                                            style="width: 10%;border: solid 1px #000;border-collapse: collapse;text-align: center;">
+                                            13
+                                        </td>
+                                        <td style="width: 27%;border: solid 1px #000;border-collapse: collapse;">
+                                            Las estipuladas en el contrato de vinculación
+                                        </td>
+                                        <td
+                                            style="width: 21%;border: solid 1px #000;border-collapse: collapse;text-align: center;">
+                                            Las estipuladas en el contrato de vinculación
+                                        </td>
+                                        <td style="width: 21%;border: solid 1px #000;border-collapse: collapse;">
+                                            N/A
+                                        </td>
+                                        <td style="width: 21%;border: solid 1px #000;border-collapse: collapse;">
+                                            N/A
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+
+                            </table>
+
+                            <p style="font-size: 96%;text-align: justify;">
+                                <strong>NOVENA: LIBERTAD DEL VEHÍCULO. EL PROPIETARIO</strong> manifiesta que el vehículo
+                                descrito con
+                                anterioridad proviene de actividades lícitas, se encuentra libre de embargos, secuestros,
+                                pleitos,
+                                limitaciones a su propiedad, y además se encuentra a paz y salvo frente al cumplimiento de
+                                cualquier
+                                tipo de obligación de naturaleza civil, penal, administrativa, de tránsito y fiscal. De igual
+                                forma, <strong>EL
+                                    PROPIETARIO</strong> se compromete a mantenerlo en tal estado durante la vigencia del
+                                presente contrato, de
+                                tal forma que, durante la vigencia del presente contrato, el vehículo referenciado con
+                                anterioridad, no
+                                podrá fungir como garantía real y patrimonial frente a obligaciones constituidas con terceros.
+                                De resultar
+                                embargado o perturbada la tenencia, uso y goce del vehículo referenciado con anterioridad, el
+                                <strong>PROPIETARIO</strong> tendrá 15 días hábiles para devolverlo a su estado original
+                                recuperando el statu con <strong>LA
+                                    EMPRESA</strong>, de lo contrario <strong>L PROPIETARIO</strong> adeuda 1 Salario Mínimo
+                                Mensual Legal Vigente sin
+                                perjuicio de la eventual terminación del contrato con justa causa que <strong>LA
+                                    EMPRESA</strong> podrá solicitar.
+                                <strong>DÉCIMA. CAUSALES DE TERMINACIÓN CON JUSTA CAUSA DEL PRESENTE CONTRATO.</strong> Sin
+                                perjuicio de las responsabilidades penales, civiles que surjan: <strong>A) POR PARTE DE LA
+                                    EMPRESA</strong>: 1) El
+                                incumplimiento del <strong>PROPIETARIO</strong> de cualquiera de las obligaciones, prohibiciones
+                                o deberes fijados
+                                por medio del presente contrato y demás documentos conexos al presente contrato y suscritos
+                                entre las
+                                partes. 2) Siendo <strong>PROPIETARIO</strong>, actuar por acción, omisión o extralimitación en
+                                perjuicio de la
+                                empresa, sus bienes, imagen o la de los socios y su honra. 3) Por autorización de desvinculación
+                                expedida por el Ministerio de Transporte. <strong>B) POR PARTE DEL PROPIETARIO</strong>: 1) El
+                                incumplimiento
+                                de <strong>LA EMPRESA</strong> de cualquiera de los deberes fijados por medio del presente
+                                contrato y demás
+                                documentos conexos a este y suscritos entre las partes. <strong>PARÁGRAFO 1</strong> Sin
+                                perjuicio de la
+                                responsabilidad civil y comercial que de ello se derive, cualquiera de las partes puede terminar
+                            </p>
+
+                            </p>
+                        </div>
+                    @break
+
+                    @default
+                @endswitch
+            </x-contractframes>
+        @endif
+        {{-- pagina 7 --}}
+        @if ($contract->type_contract == 9)
+            <x-contractframes typeContract="{{ $titlecontract }}">
+                @switch($contract->type_contract)
+                    @case(1)
+                        @switch($contract->contract_with)
+                            @case(1)
+                                <div style="display: flex;position: absolute;width: 37.5rem;height: 819px;margin-left: 6.5rem;">
+
+                                    <p style="margin-left: 6.8%"> ----------------------------------- FIN CLAUSULADO
+                                        ------------------------------------</p>
+                                    <p style="font-size: 84%;text-align: justify;">
+                                        Para efectos de dejar constancia, CONTRATANTE y CONTRATISTA, libres de todo vicio y en pleno
+                                        uso de nuestras facultades suscribimos y aceptamos el presente contrato en Dosquebradas a los
+                                        días del mes de ________________ del año 2023__.
+                                    </p>
+                                    <br>
+                                    <br>
+                                    <br>
+
+                                    <p style="margin-left: 7.8%;">
+                                        <strong> ACEPTAMOS:</strong>
+                                    </p>
+
+                                    <br>
+                                    <br>
+                                    <br>
+
+                                    <p style="font-size: 86%;">
+                                        <strong> CONTRATISTA: <span style="margin-left: 31%;">CONTRATANTE:</span><br>
+                                            ALBA OSIRIS HIDALGO PESCADOR <span
+                                                style="margin-left: 9%;">_____________________________</span><br>
+                                            C.C. 42.077.205 expedida en Pereira <span style="margin-left: 10%;">C.C.:</span><br>
+                                            Representante Legal</strong>
+                                    </p>
+
+
+
+                                </div>
+                            @break
+
+                            @case(2)
+                                <div style="display: flex;position: absolute;width: 38.7rem;height: 819px;margin-left: 6rem;">
+                                    <table style="width: 100%;border: solid 1px #000;border-collapse: collapse;margin-top: 4%;">
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 50%;border: solid 1px #000;border-collapse: collapse;">
+                                                    NOMBRE COMPLETO
+                                                </th>
+                                                <th style="width: 50%;border: solid 1px #000;border-collapse: collapse;">
+                                                    IDENTIFICACIÓN
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td style="width: 50%;border: solid 1px #000;border-collapse: collapse;">
+                                                    pruaba *35
+                                                </td>
+                                                <td style="width: 50%;border: solid 1px #000;border-collapse: collapse;">
+                                                    pruaba
+                                                </td>
+                                            </tr>
+                                        </tbody>
+
+                                    </table>
+                                </div>
+                            @break
+
+                            @case(3)
+                                <div style="display: flex;position: absolute;width: 37.5rem;height: 819px;margin-left: 6.5rem;">
+
+                                    <p style="font-size: 81%;text-align: justify;">
+                                        <strong>SEXTA. VALOR DEL CONTRATO Y FORMA DE PAGO.</strong> En los primeros cinco (5) días de
+                                        cada
+                                        mes, el <strong>CONTRATANTE</strong> pagará al <strong>CONTRATISTA</strong> la suma de
+                                        M/Cte. ($ ) durante los meses comprendidos entre enero y noviembre 30 del año
+                                        lectivo, <strong>INCLUYENDO SEMANA SANTA, VACACIONES DE MITAD DE AÑO, SEMANA DE
+                                            RECESO, PERÍODOS DE PARO, INCAPACIDADES.</strong> De incurrir en mora, <strong>EL
+                                            CONTRATISTA</strong>
+                                        podrá suspender de inmediato la prestación del servicio y sin perjuicio de las demás acciones
+                                        legales, que, para sus efectos, el presente contrato y sus anexos prestará mérito ejecutivo. El
+                                        pago
+                                        podrá realizarse a través de consignación bancaría en la Cuenta Corriente # 127669997810 del
+                                        Banco Davivienda, informando del pago al <strong>CONTRATISTA</strong>, directamente en la
+                                        oficina o al
+                                        acompañante o conductor del vehículo; en cualquier caso, deberá siempre conservar el comprobante
+                                        de la consignación e informar al <strong>CONTRATISTA</strong> o exigir recibo o constancia del
+                                        pago realizado.
+                                        <strong>SEPTIMA. CAUSALES DE SUSPENSIÓN DEL SERVICIO:</strong> Serán causales de suspensión
+                                        parcial
+                                        o total del servicio de transporte escolar, las siguientes: <strong>1)</strong> Los actos de
+                                        indisciplina o
+                                        vandalismo por
+                                        parte del estudiante dentro del vehículo, <strong>2)</strong> El comportamiento agresivo o
+                                        violento por parte del
+                                        estudiante dentro del vehículo, o la tenencia de elementos inflamables, tóxicos, sustancias
+                                        alucinógenas o explosivos. <strong>3)</strong> Conductas contra la moral y las buenas costumbres
+                                        por parte del
+                                        estudiante dentro del vehículo y en general por incurrir en conductas que afecten el normal
+                                        proceso
+                                        formativo, de acuerdo con lo establecido en el MANUAL DE USO DEL TRANSPORTE.
+                                        <strong>PARÁGRAFO 1: PROCEDIMIENTO DE DENUNCIA:</strong> El acompañante documentará y
+                                        recolectará
+                                        pruebas de lo sucedido, le comunicará la situación al coordinador de ruta quien a su vez se
+                                        pondrá
+                                        en contacto con el acudiente. Lo anterior sin perjuicio de las acciones legales que el
+                                        <strong>CONTRATISTA</strong>
+                                        tenga. <strong>PARAGRAFO 2</strong>: En caso de que el vehículo no tenga el cupo mínimo
+                                        requerido de pasajeros
+                                        (10), se procederá a la suspensión de la ruta; con previo aviso se hará saber al acudiente o
+                                        padre
+                                        de familia de dicha situación. <strong>OCTAVA.</strong> El presente contrato tendrá una duración
+                                        de ____ meses
+                                        comenzando a ejecutarse el día _____ del mes de ________________ del año 2019 y
+                                        concluyendo el día ___ del mes _____________ del año 2019. Por ningún motivo podrá prorrogarse
+                                        automáticamente el presente contrato o cederse por la parte <strong>CONTRATANTE. NOVENA.
+                                            TERMINACIÓN.</strong> Cualquiera de las partes podrá dar por terminado este contrato dando
+                                        un preaviso
+                                        a la otra parte como mínimo quince (15) días antes. <strong>DECIMA. CAUSALES DE TERMINACIÓN CON
+                                            JUSTA CAUSA Y UNILATERALES. A) POR PARTE DEL CONTRATISTA:</strong> 1) El no pago por parte
+                                        del PADRE DE FAMILIA y/o ACUDIENTE 2) Actos de indisciplina, irrespeto o vandalismo por parte
+                                        del estudiante. <strong>B) POR PARTE DEL CONTRATANTE:</strong> 1) Por inconformidad con la
+                                        prestación del
+                                        servicio, previa denuncia por escrito y por medio PQRS realizada al <strong>CONTRATISTA</strong>
+                                        sin que este
+                                        ejecute acciones o tome medidas correctivas, o explique justamente la situación. 2) Por
+                                        incumplimiento con alguno de los compromisos adquiridos en el presente contrato. <strong>DÉCIMA
+                                            PRIMERA. OBSERVACIONES:</strong> Como <strong>CONTRATISTA</strong>, me gustaría hacer las
+                                        siguientes
+                                        observaciones
+                                    <p style="margin-left: 4.8%;font-size: 86%;"> -----------------------------------------
+                                        <strong>FIN CLAUSULADO</strong> ---------------------------------------------
+                                    </p>
+                                    <p style="font-size: 82%;margin-top: -2%;">
+                                        Para efectos de dejar constancia, CONTRATANTE y CONTRATISTA, libres de todo vicio y en pleno
+                                        uso de nuestras facultades suscribimos y aceptamos el presente contrato en a los
+                                        días del mes de del año.
+                                    </p>
+                                    <p style="margin-left: 7.8%;">
+                                        <strong> ACEPTAMOS:</strong>
+                                    </p>
+
+                                    <p style="font-size: 86%;">
+                                        <strong> CONTRATISTA: <span style="margin-left: 31%;">CONTRATANTE:</span><br>
+                                            ALBA OSIRIS HIDALGO PESCADOR <span
+                                                style="margin-left: 9%;">_____________________________</span><br>
+                                            C.C. 42.077.205 expedida en Pereira <span style="margin-left: 10%;">C.C.:</span><br>
+                                            Representante Legal</strong>
+                                    </p>
+
+                                    </p>
+
+                                </div>
+                            @break
+
+                            @case(4)
+                                <div style="display: flex;position: absolute;width: 37.5rem;height: 819px;margin-left: 6.5rem;">
+
+                                    <p style="font-size: 80%;text-align: justify;">
+                                        mediante los mecanismos de arreglo directo y conciliación entre las partes involucradas, que
+                                        para el
+                                        caso serán: El representante legal de la empresa directamente y el <strong>CONTRATISTA</strong>
+                                        o a quien este
+                                        designe.
+                                    <p style="font-size: 86%;">---------------------------------------- <strong>AVISO
+                                            DE PROTECCIÓN DE DATOS</strong> -------------------------------------</p>
+                                    <p style="font-size: 82%;margin-top: -2%;">
+                                        En mi calidad de titular de información personal, actuando libre y voluntariamente, al
+                                        diligenciar los
+                                        datos aquí solicitados, autorizo al STEP SAS – Servicio de Transporte Especial de Estudiantes
+                                        s.a.s
+                                        Dirección en la ciudad de Dosquebradas, teléfono 3303821 , con correo electrónico
+                                        sertepsapqr@step.com.co; para que realice el tratamiento de mi información personal, en
+                                        cumplimiento de la Ley 1581 de 2012 y a lo previsto en el numeral 3 y el parágrafo del artículo
+                                        10
+                                        del Decreto 1377 de 2013.
+                                        En todo caso en cualquier momento el titular de la información podrá revocar su consentimiento y
+                                        ejercer su derecho a la supresión de datos personales consagrado en la Ley 1581 de 2012.
+                                    </p>
+                                    <p style="margin-left: 6.8%;font-size: 86%;"> -----------------------------------
+                                        <strong>FIN CLAUSULADO</strong> ------------------------------------
+                                    </p>
+                                    <p style="font-size: 82%;margin-top: -2%;">
+                                        Para efectos de dejar constancia, <strong>CONTRATANTE</strong> y <strong>CONTRATISTA</strong>,
+                                        libres de todo vicio y en pleno
+                                        uso de sus facultades suscribimos y aceptamos el presente contrato en Dosquebradas, Risaralda a
+                                        los días del mes de del año 2023.
+                                    </p>
+
+                                    <br>
+                                    <br>
+                                    <br>
+
+                                    <p style="margin-left: 7.8%;">
+                                        <strong> ACEPTAMOS:</strong>
+                                    </p>
+
+                                    <br>
+                                    <br>
+                                    <br>
+
+                                    <p style="font-size: 86%;">
+                                        <strong> CONTRATISTA: <span style="margin-left: 31%;">CONTRATANTE:</span><br>
+                                            ALBA OSIRIS HIDALGO PESCADOR <span
+                                                style="margin-left: 9%;">_____________________________</span><br>
+                                            C.C. 42.077.205 expedida en Pereira <span style="margin-left: 10%;">C.C.:</span><br>
+                                            Representante Legal</strong>
+                                    </p>
+                                    </p>
+
+                                </div>
+                            @break
+
+                            @default
+                        @endswitch
+                    @break
+
+                    @case(2)
+                        <div style="display: flex;position: absolute;width: 37.5rem;height: 819px;margin-left: 6.5rem;">
+                            <p style="font-size: 88%;text-align: justify;">
+                                UNILATERALES. A) POR PARTE DEL CONTRATISTA:</strong> 1) La mora del <strong>CONTRATANTE</strong>
+                                en el pago y según lo consagrado en la cláusula séptima del presente contrato 2) Actos
+                                de indisciplina, irrespeto o vandalismo por parte de los pasajeros que ocasionen daños de
+                                hasta en el 15% del parque automotor dispuesto para la prestación del servicio. <strong>B) POR
+                                    PARTE DEL CONTRATANTE</strong>: 1) Por inconformidad expresa con la prestación del
+                                servicio, previa denuncia por escrito y por medio PQRS realizada al <strong>CONTRATISTA</strong>
+                                sin
+                                que este ejecute acciones o tome medidas correctivas, o explique justamente la situación.
+                                2) Por incumplimiento con alguno de los compromisos adquiridos en el presente contrato.
+                                <strong>DECIMA SEGUNDA. SOLUCIÓN DE CONTROVERSIAS:</strong> Toda controversia, conflicto o
+                                diferencias relativas a este contrato, su ejecución y liquidación, se resolverán
+                                preferiblemente mediante los mecanismos de arreglo directo y conciliación entre las
+                                partes involucradas, que para el caso serán: El representante legal de la empresa
+                                directamente y el <strong>CONTRATISTA</strong> o a quien este designe.
+                            <p style="margin-left: 6.8%"> ----------------------------------- FIN CLAUSULADO
+                                ------------------------------------</p>
+                            Para efectos de dejar constancia, CONTRATANTE y CONTRATISTA, libres de todo vicio
+                            y en pleno uso de sus facultades suscribimos y aceptamos el presente contrato en
+                            Dosquebradas a los días del mes de del año 2019.
+                            <br>
+
+                            <p style="margin-left: 7.8%;">
+                                <strong> ACEPTAMOS:</strong>
+                            </p>
+                            <br>
+                            <br>
+                            <br>
+
+                            <p style="font-size: 86%;">
+                                <strong> CONTRATISTA: <span style="margin-left: 31%;">CONTRATANTE:</span><br>
+                                    ALBA OSIRIS HIDALGO PESCADOR <span
+                                        style="margin-left: 9%;">_____________________________</span><br>
+                                    C.C. 42.077.205 expedida en Pereira <span style="margin-left: 10%;">C.C.:</span><br>
+                                    Representante Legal</strong>
+                            </p>
+                            </p>
+                        </div>
+                    @break
+
+                    @case(3)
+                        <div style="display: flex;position: absolute;width: 38.7rem;height: 819px;margin-left: 6rem;">
+                            <table style="width: 100%;border: solid 1px #000;border-collapse: collapse;margin-top: 4%;">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 50%;border: solid 1px #000;border-collapse: collapse;">
+                                            NOMBRE COMPLETO
+                                        </th>
+                                        <th style="width: 50%;border: solid 1px #000;border-collapse: collapse;">
+                                            IDENTIFICACIÓN
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="width: 50%;border: solid 1px #000;border-collapse: collapse;">
+                                            pruaba *35
+                                        </td>
+                                        <td style="width: 50%;border: solid 1px #000;border-collapse: collapse;">
+                                            pruaba
+                                        </td>
+                                    </tr>
+                                </tbody>
+
+                            </table>
+                        </div>
+                    @break
+
+                    @case(4)
+                        <div style="display: flex;position: absolute;width: 38.7rem;height: 819px;margin-left: 6rem;">
+                            <table style="width: 100%;border: solid 1px #000;border-collapse: collapse;margin-top: 4%;">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 50%;border: solid 1px #000;border-collapse: collapse;">
+                                            NOMBRE COMPLETO
+                                        </th>
+                                        <th style="width: 50%;border: solid 1px #000;border-collapse: collapse;">
+                                            IDENTIFICACIÓN
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="width: 50%;border: solid 1px #000;border-collapse: collapse;">
+                                            pruaba *35
+                                        </td>
+                                        <td style="width: 50%;border: solid 1px #000;border-collapse: collapse;">
+                                            pruaba
+                                        </td>
+                                    </tr>
+                                </tbody>
+
+                            </table>
+                        </div>
+                    @break
+
+                    @case(5)
+                        <div style="display: flex;position: absolute;width: 38.7rem;height: 819px;margin-left: 6rem;">
+                            <table style="width: 100%;border: solid 1px #000;border-collapse: collapse;margin-top: 4%;">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 50%;border: solid 1px #000;border-collapse: collapse;">
+                                            NOMBRE COMPLETO
+                                        </th>
+                                        <th style="width: 50%;border: solid 1px #000;border-collapse: collapse;">
+                                            IDENTIFICACIÓN
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="width: 50%;border: solid 1px #000;border-collapse: collapse;">
+                                            pruaba *35
+                                        </td>
+                                        <td style="width: 50%;border: solid 1px #000;border-collapse: collapse;">
+                                            pruaba
+                                        </td>
+                                    </tr>
+                                </tbody>
+
+                            </table>
+                        </div>
+                    @break
+
+                    @case(6)
+                    @break
+
+                    @case(9)
+                        <div style="display: flex;position: absolute;width: 76%;height: 819px;margin-left: 6.5rem;">
+                            <p style="font-size: 88%;text-align: justify;">
+                                unilateralmente el contrato de vinculación. Tal decisión deberá ser informada a través de correo
+                                certificado a la dirección del domicilio registrada en el presente documento con una antelación
+                                no menor
+                                de 60 días calendario a la terminación del contrato o al plazo en el cual se espera darlo por
+                                terminado.
+                                <strong>DÉCIMA PRIMERA ANEXOS:</strong> Son anexos del presente contrato: 1) Documento que
+                                prueba el título
+                                que el <strong>PROPIETARIO</strong>, tiene sobre el vehículo referenciado con anterioridad. 2)
+                                Fotocopia cédula
+                                de
+                                ciudadanía del <strong>PROPIETARIO</strong>, Técnico-mecánico, SOAT y demás pólizas de seguro
+                                vigentes a la
+                                fecha, del vehículo. <strong>DÉCIMA SEGUNDA. SOLUCIÓN DE CONTROVERSIAS:</strong> Toda
+                                controversia,
+                                conflicto o diferencias relativas a este contrato, su ejecución y liquidación, se resolverán
+                                preferentemente, haciendo uso de los mecanismos alternativos de solución del conflicto
+                                estipulados en
+                                la norma y aplicables al caso concreto; inicialmente se intentará un arreglo directo, luego la
+                                conciliación
+                                en derecho y de no ser posible, se seguirán entonces las reglas generales del derecho procesal
+                                Colombiano contenidas en el Código General del Proceso.
+                            <p style="margin-left: 6.8%"> ----------------------------------- FIN CLAUSULADO
+                                ------------------------------------</p>
+                            <p style="font-size: 84%;text-align: justify;">
+                                Para efectos de dejar constancia: 1) Del presente se extienden tantas copias o ejemplares como
+                                partes
+                                suscribientes. 2) <strong>LA EMPRESA</strong> y <strong>EL PROPIETARIO</strong> , libres de todo
+                                vicio y en pleno uso de sus
+                                facultades suscribimos y aceptamos el presente contrato en Dosquebradas el día 30 de Diciembre
+                                del
+                                2022.
+                            </p>
+
+                            <br>
+                            <br>
+                            <br>
+
+                            <p style="margin-left: 7.8%;">
+                                <strong> ACEPTAMOS:</strong>
+                            </p>
+
+                            <br>
+                            <br>
+                            <br>
+
+                            <p style="font-size: 80%;">
+                                <strong> LA EMPRESA: <span style="margin-left: 40%;">EL PROPIETARIO:</span>
+                                    <div></div><br>
+                                    ALBA OSIRIS HIDALGO PESCADOR <span
+                                        style="margin-left: 16%;">Firma:________________________HUELLA</span><br>
+                                    C.C. 42.077.205 expedida en Pereira <span
+                                        style="margin-left: 16.7%;">Nombre:______________________________</span><br>
+                                    Representante Legal<span
+                                        style="margin-left: 32.6%;">Dirección:_____________________________</span><br>
+                                    <span style="margin-left: 53.5%;">Teléfonos:_____________________________</span>
+                                </strong>
+                            </p>
+                            </p>
+                        </div>
+                    @break
+
+                    @default
+                @endswitch
+            </x-contractframes>
+        @endif
+    </body>
 @endforeach
 
 </html>

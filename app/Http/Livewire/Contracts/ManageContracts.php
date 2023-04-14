@@ -10,17 +10,24 @@ use App\Models\vehicle;
 use Livewire\Component;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
+use Livewire\WithPagination;
 use Livewire\Redirector;
 use PDF;
 
 class ManageContracts extends Component
 {
+    use WithPagination;
+
+    public function paginationView()
+    {
+        return 'livewire.tailwind';
+    }
 
     public $search = "";
     public $sort = 'id';
     public $direction = 'desc';
-    public $contract_number, $type_contract, $state_contract, $date_start_contract, $contract_end_date, $contracting_name, $school_name, $destination_place, $contract_value, $route_trip_contract, $contract_document, $expedition_identificationcard,
-        $contracting_phone, $contracting_direction, $legal_representative, $passenger_quantity, $total_disposition, $quantity_vehicle, $contract_signing_date, $identificationcard_represent_legal, $trip_from, $trip_to, $place_of_origin, $return_place,
+    public $contract_number, $type_contract, $state_contract, $date_start_contract, $contract_end_date, $contracting_name, $school_name, $contract_value, $route_trip_contract, $contract_document, $expedition_identificationcard,
+        $contracting_phone, $contracting_direction, $legal_representative, $passenger_quantity, $total_disposition, $quantity_vehicle, $contract_signing_date, $identificationcard_represent_legal,
         $legal_representative_expedition_identificationcard, $tipe_pay, $identification, $address_school, $secure_policy, $entity_name, $cooperation_contract, $identification_legal_representative, $identification_representative_group, $identificationcard_representative_group,
         $group_representative_name, $dateofexpedition_representative_group, $vehicle;
 
@@ -58,11 +65,11 @@ class ManageContracts extends Component
         'editContracts.address_school'  => 'required',
         'editContracts.identification_represent_legal'  => 'required',
         'editContracts.identificationcard_represent_legal'  => 'required',
-        'editContracts.trip_from'  => 'required',
-        'editContracts.trip_to'  => 'required',
-        'editContracts.place_of_origin'  => 'required',
-        'editContracts.destination_place'  => 'required',
-        'editContracts.return_place'  => 'required',
+        // 'editContracts.trip_from'  => 'required',
+        // 'editContracts.trip_to'  => 'required',
+        // 'editContracts.place_of_origin'  => 'required',
+        // 'editContracts.destination_place'  => 'required',
+        // 'editContracts.return_place'  => 'required',
         'editContracts.identificationcard_representative_group'  => 'required',
         'editContracts.group_representative_name'  => 'required',
         'editContracts.dateofexpedition_representative_group'  => 'required',
@@ -75,42 +82,9 @@ class ManageContracts extends Component
             ->limit(1)->value('contract_number');
         $this->contract_number = $this->contract_number + 1;
 
-        // switch ($this->type_contract) {
-        //     case '1':
-
-        //         $newContraN = DB::select('select contract_number from contracts where type_contract = 1 ORDER BY contract_number DESC LIMIT 1');
-        //         $valor = $newContraN[0]->contract_number;
-        //         $this->identify_contract = $valor + 1;
-        //         break;
-
-        //     case '2':
-        //         $newContraN = DB::select('select contract_number from contracts where type_contract = 2 ORDER BY contract_number DESC LIMIT 1');
-        //         $valor = $newContraN[0]->contract_number;
-        //         $this->identify_contract = $valor + 1;
-        //         break;
-
-        //     case '3':
-        //         $newContraN = DB::select('select contract_number from contracts where type_contract = 3 ORDER BY contract_number DESC LIMIT 1');
-        //         $valor = $newContraN[0]->contract_number;
-        //         $this->identify_contract = $valor + 1;
-        //         break;
-
-        //     case '4':
-        //         $newContraN = DB::select('select contract_number from contracts where type_contract = 4 ORDER BY contract_number DESC LIMIT 1');
-        //         $valor = $newContraN[0]->contract_number;
-        //         $this->identify_contract = $valor + 1;
-        //         break;
-
-        //     case '5':
-        //         $newContraN = db::select('select contract_number from contracts where type_contract = 5 ORDER BY contract_number DESC LIMIT 1');
-        //         $valor = $newContraN[0]->contract_number;
-        //         $this->identify_contract = $valor + 1;
-        //         break;
-
-        //     default:
-        //         # code...
-        //         break;
-        // }
+        if ($this->type_contract == 1){
+            $this->secure_policy = 'SEGUROS DEL ESTADO';
+        }
 
         contract::create([
 
@@ -141,11 +115,11 @@ class ManageContracts extends Component
             'identification_represent_legal' => $this->identification_legal_representative,
             'legal_representative_expedition_identificationcard' => $this->legal_representative_expedition_identificationcard,
             'identificationcard_represent_legal' => $this->identificationcard_represent_legal,
-            'trip_from' => $this->trip_from,
-            'trip_to' => $this->trip_to,
-            'place_of_origin' => $this->place_of_origin,
-            'destination_place' => $this->destination_place,
-            'return_place' => $this->return_place,
+            // 'trip_from' => $this->trip_from,
+            // 'trip_to' => $this->trip_to,
+            // 'place_of_origin' => $this->place_of_origin,
+            // 'destination_place' => $this->destination_place,
+            // 'return_place' => $this->return_place,
             'identification_representative_group' => $this->identification_representative_group,
             'identificationcard_representative_group' => $this->identificationcard_representative_group,
             'group_representative_name' => $this->group_representative_name,
@@ -223,17 +197,17 @@ class ManageContracts extends Component
     {
 
         $contracts = contract::join('contract_types', 'contracts.type_contract', '=', 'contract_types.id')
-            ->select('contracts.id', 'description_typeContract', 'state_contract', 'date_start_contract', 'contract_end_date', 'contracting_name', 'contract_value', 'school_name', 'destination_place', 'contract_number')
+            ->select('contracts.id', 'contract_name', 'state_contract', 'date_start_contract', 'contract_end_date', 'contracting_name', 'contract_value', 'school_name', 'route_trip_contract', 'contract_number')
             ->where('contract_number', 'like', '%' . $this->search . '%')
-            ->orwhere('description_typeContract', 'like', '%' . $this->search . '%')
+            ->orwhere('contract_name', 'like', '%' . $this->search . '%')
             ->orwhere('state_contract', 'like', '%' . $this->search . '%')
             ->orwhere('date_start_contract', 'like', '%' . $this->search . '%')
             ->orwhere('contract_end_date', 'like', '%' . $this->search . '%')
             ->orwhere('contracting_name', 'like', '%' . $this->search . '%')
             ->orwhere('school_name', 'like', '%' . $this->search . '%')
-            ->orwhere('destination_place', 'like', '%' . $this->search . '%')
+            ->orwhere('route_trip_contract', 'like', '%' . $this->search . '%')
             ->orwhere('contract_value', 'like', '%' . $this->search . '%')
-            ->orderBy($this->sort, $this->direction)->get();
+            ->orderBy($this->sort, $this->direction)->paginate(5);
 
         $type_contracts = contractType::all();
 
@@ -293,11 +267,11 @@ class ManageContracts extends Component
             'identification_legal_representative',
             'legal_representative_expedition_identificationcard',
             'identificationcard_represent_legal',
-            'trip_from',
-            'trip_to',
-            'place_of_origin',
-            'destination_place',
-            'return_place',
+            // 'trip_from',
+            // 'trip_to',
+            // 'place_of_origin',
+            // 'destination_place',
+            // 'return_place',
             'identification_representative_group',
             'identificationcard_representative_group',
             'group_representative_name',

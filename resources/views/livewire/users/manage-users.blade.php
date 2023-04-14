@@ -1,29 +1,123 @@
+
 <div>
 
+    {{-- <div class="flex flex-col overflow-x-auto">
+        <div class="sm:-mx-6 lg:-mx-8">
+          <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
+            <div class="overflow-x-auto">
+                @livewire('user-table') 
+            </div>
+          </div>
+        </div>
+    </div> --}}
 
-    <div class="py-12 mb-2 mt-4">
+    {{-- @livewire('user-table')  --}}
+
+    <div class="py-12 ">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="justify-center flex">
-                {{-- class="bg-white overflow-hidden shadow-xl sm:rounded-lg border-gray-50-s dark:bg-gray-800 dark:text-white" --}}
                 <h1 class="text-black dark:text-white text-4xl rounded-lg border-b-acuamarine-800 p-1">
-                    Manage Users</h1>
+                    {{ __('Manage Users') }}</h1>
             </div>
         </div>
-        <div class="w-full overflow-hidden rounded-lg shadow-xs mt-4">
-            <div class="px-4 py-2 mb-2 mt-1 ml-2 flex items-center border-b-fuchsia-800 border-b">
-                {{-- <h1 class="text-black dark:text-white">cambio de contraseña desde livewire</h1> --}}
-                <input
-                    class="flex-1 mr-4 pl-8 pr-2 text-sm text-gray-700 placeholder-gray-600 bg-gray-100 border-0 rounded-md dark:placeholder-gray-500 dark:focus:shadow-outline-gray dark:focus:placeholder-gray-600 dark:bg-gray-700 dark:text-gray-200 focus:placeholder-gray-500 focus:bg-white focus:border-purple-300 focus:outline-none focus:shadow-outline-purple form-input"
-                    type="text" placeholder="Escribe una consulta sobre la tabla" wire:model="search">
+        <div class="px-4 pb-3 mb-2 mt-1 ml-2 flex items-center border-b-fuchsia-800 border-b">
+            {{-- <input
+                class="flex-1 mr-4 pl-8 pr-2 text-sm text-gray-700 placeholder-gray-600 bg-gray-100 border-0 rounded-md dark:placeholder-gray-500 dark:focus:shadow-outline-gray dark:focus:placeholder-gray-600 dark:bg-gray-700 dark:text-gray-200 focus:placeholder-gray-500 focus:bg-white focus:border-purple-300 focus:outline-none focus:shadow-outline-purple form-input"
+                type="text" placeholder="Escribe una consulta sobre la tabla" wire:model="search"> --}}
+ 
+            {{--<button @click="openModal"
+                class="px-2 py-1 font-semibold leading-tight text-black bg-sky-700 rounded-full dark:bg-sky-700 dark:text-white">
+                {{ __('create new user') }}
+            </button> --}}
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-xs mt-4">
 
-                <button @click="openModal"
-                    class="px-2 py-1 font-semibold leading-tight text-black bg-sky-700 rounded-full dark:bg-sky-700 dark:text-white">
-                    create new user
-                </button>
-            </div>
 
-            <div class="w-full overflow-x-auto">
-                @if ($users->count())
+            <div class="w-full overflow-x-auto" wire:ignore>
+
+                    <table id="example"
+                        class="stripe dark:border-gray-700 bg-gray-50 dark:text-white dark:bg-gray-800"
+                        style="width:100%; padding-top: 1em;  padding-bottom: 1em;">
+                        <thead>
+                            <tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
+                                <th class="pl-4 py-2" data-priority="0">{{ __('Actions') }}</th>
+                                <th class="pl-4 py-2" data-priority="1">ID</th>
+                                <th class="pl-4 py-2" data-priority="2">{{ __('Names') }}</th>
+                                <th class="pl-4 py-2" data-priority="3">{{ __('identification') }}</th>
+                                <th class="pl-4 py-2" data-priority="4">{{ __('identificationcard') }}</th>
+                                <th class="pl-4 py-2" data-priority="5">{{ __('usertype') }}</th>
+                                <th class="pl-4 py-2" data-priority="6">{{ __('charge') }}</th>
+                                <th class="pl-4 py-2" data-priority="7">{{ __('user state') }}</th>
+                                <th class="pl-4 py-2" data-priority="8">{{ __('user entry date') }}</th>
+                                <th class="pl-4 py-2" data-priority="9">{{ __('email') }}</th>
+                                <th class="pl-4 py-2" data-priority="10">{{ __('username') }}</th>
+                                <th class="pl-4 py-2" data-priority="11">{{ __('age') }}</th>
+                                <th class="pl-4 py-2" data-priority="12">{{ __('type_sex') }}</th>
+                                <th class="pl-4 py-2" data-priority="13">{{ __('country') }}</th>
+                                <th class="pl-4 py-2" data-priority="14">{{ __('Department') }}</th>
+                                <th class="pl-4 py-2" data-priority="15">{{ __('city') }}</th>
+                                <th class="pl-4 py-2" data-priority="16">{{ __('address') }}</th>
+                                <th class="pl-4 py-2" data-priority="17">{{ __('phone') }}</th>
+                                <th class="pl-4 py-2" data-priority="18">{{ __('phone_cellular') }}</th>
+                                <th class="pl-4 py-2" data-priority="19">{{ __('eps') }}</th>
+                                <th class="pl-4 py-2" data-priority="20">{{ __('eps_status') }}</th>
+                                <th class="pl-4 py-2" data-priority="21">{{ __('date_eps') }}</th>
+                                <th class="pl-4 py-2" data-priority="22">{{ __('blood_type') }}</th>
+                                <th class="pl-4 py-2" data-priority="23">{{ __('pension') }}</th>
+                                <th class="pl-4 py-2" data-priority="24">{{ __('pension_status') }}</th>
+                                <th class="pl-4 py-2" data-priority="25">{{ __('date_pension') }}</th>
+                                <th class="pl-4 py-2" data-priority="26">{{ __('layoffs') }}</th>
+                                <th class="pl-4 py-2" data-priority="27">{{ __('status_layoffs') }}</th>
+                                <th class="pl-4 py-2" data-priority="28">{{ __('date_layoffs') }}</th>
+                                <th class="pl-4 py-2" data-priority="29">{{ __('arl') }}</th>
+                                <th class="pl-4 py-2" data-priority="30">{{ __('arl_status') }}</th>
+                                <th class="pl-4 py-2" data-priority="31">{{ __('arl_date') }}</th>
+                                <th class="pl-4 py-2" data-priority="32">{{ __('compensationbox') }}</th>
+                                <th class="pl-4 py-2" data-priority="33">{{ __('compensationbox_status') }}</th>
+                                <th class="pl-4 py-2" data-priority="34">{{ __('date_compensationbox') }}</th>
+                                <th class="pl-4 py-2" data-priority="35">{{ __('date_withdrawal_user') }}</th>
+                                <th class="pl-4 py-2" data-priority="36">{{ __('civil_status') }}</th>
+                                <th class="pl-4 py-2" data-priority="37">{{ __('family_document_type') }}</th>
+                                <th class="pl-4 py-2" data-priority="38">{{ __('family_names') }}</th>
+                                <th class="pl-4 py-2" data-priority="39">{{ __('relationship') }}</th>
+                                <th class="pl-4 py-2" data-priority="40">{{ __('family_address') }}</th>
+                                <th class="pl-4 py-2" data-priority="41">{{ __('family_phone') }}</th>
+                                <th class="pl-4 py-2" data-priority="42">{{ __('family_phone_cellular') }}</th>
+                                <th class="pl-4 py-2" data-priority="43">{{ __('city_birth') }}</th>
+                                <th class="pl-4 py-2" data-priority="44">{{ __('place_expedition_identificationcard') }}</th>
+                                <th class="pl-4 py-2" data-priority="45">{{ __('identificationcard_family') }}</th>
+                                <th class="pl-4 py-2" data-priority="46">{{ __('bonding_type') }}</th>
+                                <th class="pl-4 py-2" data-priority="47">{{ __('weight') }}</th>
+                                <th class="pl-4 py-2" data-priority="48">{{ __('pant_size') }}</th>
+                                <th class="pl-4 py-2" data-priority="49">{{ __('shirt_size') }}</th>
+                                <th class="pl-4 py-2" data-priority="50">{{ __('shoe_size') }}</th>
+                                <th class="pl-4 py-2" data-priority="51">{{ __('education_level') }}</th>
+                                <th class="pl-4 py-2" data-priority="52">{{ __('educational_institution') }}</th>
+                                <th class="pl-4 py-2" data-priority="53">{{ __('last_year') }}</th>
+                                <th class="pl-4 py-2" data-priority="54">{{ __('study_end_date') }}</th>
+                                <th class="pl-4 py-2" data-priority="55">{{ __('obtained_title') }}</th>
+                                <th class="pl-4 py-2" data-priority="56">{{ __('last_company_name') }}</th>
+                                <th class="pl-4 py-2" data-priority="57">{{ __('charges_last_company') }}</th>
+                                <th class="pl-4 py-2" data-priority="58">{{ __('start_date_last_company') }}</th>
+                                <th class="pl-4 py-2" data-priority="59">{{ __('date_end_last_company') }}</th>
+                                <th class="pl-4 py-2" data-priority="60">{{ __('functions_performed') }}</th>
+                                <th class="pl-4 py-2" data-priority="61">{{ __('company_name_provider') }}</th>
+                                <th class="pl-4 py-2" data-priority="62">{{ __('commercial_reason_supplier') }}</th>
+                                <th class="pl-4 py-2" data-priority="63">{{ __('supplier_web_page') }}</th>
+                                <th class="pl-4 py-2" data-priority="64">{{ __('economic_activity') }}</th>
+                                <th class="pl-4 py-2" data-priority="65">{{ __('products_and_services') }}</th>
+                                <th class="pl-4 py-2" data-priority="66">{{ __('salary') }}</th>
+                                <th class="pl-4 py-2" data-priority="67">{{ __('aid_transport') }}</th>
+                                <th class="pl-4 py-2" data-priority="68">{{ __('work_area') }}</th>
+
+                            </tr>
+                        </thead>
+                        <tbody {{-- class="dark:bg-gray-800 dark:text-white" --}}>
+                        </tbody>
+
+                    </table>
+
+                {{-- @if ($users->count())
                     <table class="w-full">
                         <thead>
                             <tr
@@ -46,7 +140,7 @@
                                 </th>
                                 <th class="cursor-pointer px-3 py-2" wire:click="order('firstname')">
 
-                                    Name
+                                    {{ __('Name') }}
 
                                     @if ($sort == 'firstname')
 
@@ -62,7 +156,7 @@
                                 </th>
                                 <th class="cursor-pointer px-3 py-2" wire:click="order('identificationcard')">
 
-                                    identificationcard
+                                    {{ __('identificationcard') }}
 
                                     @if ($sort == 'identificationcard')
 
@@ -78,7 +172,7 @@
                                 </th>
                                 <th class="cursor-pointer px-3 py-2" wire:click="order('description_usertype')">
 
-                                    usertype
+                                    {{ __('usertype') }}
 
                                     @if ($sort == 'description_usertype')
 
@@ -94,7 +188,7 @@
                                 </th>
                                 <th class="cursor-pointer px-3 py-2" wire:click="order('user_state')">
 
-                                    user state
+                                    {{ __('user state') }}
 
                                     @if ($sort == 'user_state')
 
@@ -111,7 +205,7 @@
                                 </th>
                                 <th class="cursor-pointer px-3 py-2" wire:click="order('user_entry_date')">
 
-                                    user entry date
+                                    {{ __('user entry date') }}
 
                                     @if ($sort == 'user_entry_date')
 
@@ -128,7 +222,7 @@
                                 </th>
                                 <th class="cursor-pointer px-3 py-2" wire:click="order('username')">
 
-                                    username
+                                    {{ __('username') }}
 
                                     @if ($sort == 'username')
 
@@ -145,7 +239,7 @@
                                 </th>
                                 <th class="cursor-pointer px-3 py-2" wire:click="order('email')">
 
-                                    email
+                                    {{ __('email') }}
 
                                     @if ($sort == 'email')
 
@@ -162,7 +256,7 @@
                                 </th>
                                 <th class="px-3 py-2">
 
-                                    Actions</th>
+                                    {{ __('Actions') }}</th>
                             </tr>
                         </thead>
                         <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
@@ -174,7 +268,6 @@
                                     </td>
                                     <td class="px-2 py-1">
                                         <div class="flex items-center text-sm">
-                                            <!-- Avatar with inset shadow -->
                                             <div class="relative  w-8 h-8 mr-3 rounded-full md:block">
                                                 @if ($user->profile_photo_path != '')
                                                     <img src="{{ asset($user->profile_photo_path) }}" alt=""
@@ -215,14 +308,32 @@
                                         @if ($user->user_state == '1')
                                             <span
                                                 class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">
-                                                ACTIVE
+                                                {{ __('ACTIVE') }}
                                             </span>
                                         @else
                                             <span
                                                 class="px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-full dark:text-red-100 dark:bg-red-700">
-                                                INACTIVE
+                                                {{ __('INACTIVE') }}
                                             </span>
                                         @endif
+                                    </td>
+                                    <td class="px-2 py-1 text-sm">
+                                        {{ $user->user_entry_date }}
+                                    </td>
+                                    <td class="px-2 py-1 text-sm">
+                                        {{ $user->user_entry_date }}
+                                    </td>
+                                    <td class="px-2 py-1 text-sm">
+                                        {{ $user->user_entry_date }}
+                                    </td>
+                                    <td class="px-2 py-1 text-sm">
+                                        {{ $user->user_entry_date }}
+                                    </td>
+                                    <td class="px-2 py-1 text-sm">
+                                        {{ $user->user_entry_date }}
+                                    </td>
+                                    <td class="px-2 py-1 text-sm">
+                                        {{ $user->user_entry_date }}
                                     </td>
                                     <td class="px-2 py-1 text-sm">
                                         {{ $user->user_entry_date }}
@@ -237,7 +348,7 @@
                                         <div class="flex items-center space-x-4 text-sm">
                                             <button id="edit" onclick="edit({{ $user }})"
                                                 class="inline-flex items-center justify-center  bg-yellow-700 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-yellow-400 focus:outline-none focus:bg-yellow-700 focus:ring focus:ring-red-200 active:bg-yellow-700 readonly:opacity-25 transition"
-                                                {{-- flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray" --}} aria-label="Edit">
+                                                 aria-label="Edit">
                                                 <svg class="w-5 h-5" aria-hidden="true" fill="currentColor"
                                                     viewBox="0 0 20 20">
                                                     <path
@@ -247,7 +358,7 @@
                                             </button>
                                             <button onclick="deletes({{ $user->id }})"
                                                 class="inline-flex items-center justify-center  bg-red-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 active:bg-red-600 readonly:opacity-25 transition"
-                                                {{-- flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray" --}} aria-label="Delete">
+                                                aria-label="Delete">
                                                 <svg class="w-5 h-5" aria-hidden="true" fill="currentColor"
                                                     viewBox="0 0 20 20">
                                                     <path fill-rule="evenodd"
@@ -265,9 +376,9 @@
                     <div class="px-6 py-4 text-black dark:text-white">
                         No existe Usuarios que coincidan con lo que estas buscando...
                     </div>
-                @endif
+                @endif --}}
             </div>
-            <div
+            {{-- <div
                 class="grid px-4 py-3 text-xs font-semibold tracking-wide text-gray-500 uppercase border-t dark:border-gray-700 bg-gray-50 sm:grid-cols-9 dark:text-gray-400 dark:bg-gray-800">
                 <span class="flex items-center col-span-3">
                     Showing 21-30 of 100
@@ -336,7 +447,7 @@
                         </ul>
                     </nav>
                 </span>
-            </div>
+            </div> --}}
         </div>
 
     </div>
@@ -362,7 +473,10 @@
             <header class="flex justify-center border-b-fuchsia-800 border-b">
                 <!-- Modal title -->
                 <p class="justify-start mb-2 text-lg font-semibold text-gray-700 dark:text-gray-300">
-                <h1 class="text-black dark:text-white text-4xl1">Creating new user<span class="typed"></span></h1>
+                <h1 class="text-black dark:text-white text-4xl1">{{ __('Creating new user') }}<span id="typed2" class="typed2">.</span>
+                    <span id="typed3" class="typed3">.</span>
+                    <span id="typed4" class="typed4">.</span>
+                    <span id="typed5" class="typed5">.</span></h1>
                 </p>
                 <button
                     class="ml-auto px-5-1 py-3-1 text-sm  rounded-lg  bg-red-600 active:bg-red-600 hover:bg-red-700 focus:outline-none focus:shadow-outline-purple text-white"
@@ -596,7 +710,7 @@
 
                                 <div class="w-6-12 Inactive" id="divSupplierName">
                                     <label id="labelSupplierName"
-                                        class="Inactive text-gray-700 dark:text-gray-400">supplier_name
+                                        class="Inactive text-gray-700 dark:text-gray-400">{{ __('supplier name') }}
                                         <input
                                             class="Inactive block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                                             placeholder="Nombre del proveedor" type="text" id="supplier_name"
@@ -609,11 +723,11 @@
 
                                 <div class="w-6-12" id="divIdentification">
                                     <label id="labelIdentification"
-                                        class="Inactive text-gray-700 dark:text-gray-400">identification</label>
+                                        class="Inactive text-gray-700 dark:text-gray-400">{{ __('identification') }}</label>
                                     <select wire:model.defer="identification" id="identification"
                                         name="identification"
                                         class="Inactive block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
-                                        <option value="0">IDENTIFICACIÓN</option>
+                                        <option value="0">Tipo de Identificación</option>
                                         @foreach ($identifications as $identification)
                                             <option value="{{ $identification->id }}">
                                                 {{ $identification->description_identification }}</option>
@@ -623,7 +737,7 @@
 
                                 <div class="w-6-12" id="divContractDocument">
                                     <label id="labeIdentificationcard"
-                                        class="Inactive text-gray-700 dark:text-gray-400">identificationcard</label>
+                                        class="Inactive text-gray-700 dark:text-gray-400">{{ __('identificationcard') }}</label>
 
                                     <input
                                         class="Inactive block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -638,7 +752,7 @@
 
                                 <div class="w-6-12">
                                     <label id="labelFirstname"
-                                        class="Inactive text-gray-700 dark:text-gray-400">firstname</label>
+                                        class="Inactive text-gray-700 dark:text-gray-400">{{ __('firstname') }}</label>
 
                                     <input
                                         class="Inactive block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -648,7 +762,7 @@
 
                                 <div class="w-6-12">
                                     <label id="labelSecondname"
-                                        class="Inactive text-gray-700 dark:text-gray-400">secondname</label>
+                                        class="Inactive text-gray-700 dark:text-gray-400">{{ __('secondname') }}</label>
 
                                     <input
                                         class="Inactive block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -662,7 +776,7 @@
 
                                 <div class="w-6-12">
                                     <label id="labelLastname"
-                                        class="Inactive text-gray-700 dark:text-gray-400">lastname</label>
+                                        class="Inactive text-gray-700 dark:text-gray-400">{{ __('lastname') }}</label>
 
                                     <input
                                         class="Inactive block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -672,7 +786,7 @@
 
                                 <div class="w-6-12">
                                     <label id="labelMotherslastname"
-                                        class="Inactive text-gray-700 dark:text-gray-400">motherslastname</label>
+                                        class="Inactive text-gray-700 dark:text-gray-400">{{ __('motherslastname') }}</label>
 
                                     <input
                                         class="Inactive block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -686,7 +800,7 @@
 
                                 <div class="w-6-12">
                                     <label id="labelCompanyNameProvider"
-                                        class="Inactive text-gray-700 dark:text-gray-400">company_name_provider</label>
+                                        class="Inactive text-gray-700 dark:text-gray-400">{{ __('company name provider') }}</label>
 
                                     <input
                                         class="Inactive block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -697,7 +811,7 @@
 
                                 <div class="w-6-12">
                                     <label id="labelCommercialReasonSupplier"
-                                        class="Inactive text-gray-700 dark:text-gray-400">commercial_reason_supplier</label>
+                                        class="Inactive text-gray-700 dark:text-gray-400">{{ __('commercial reason supplier') }}</label>
 
                                     <input
                                         class="Inactive block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -714,7 +828,7 @@
                                 <div class="w-6-12">
 
                                     <label id="labelSupplierCategory"
-                                        class="Inactive text-gray-700 dark:text-gray-400">supplier_category</label>
+                                        class="Inactive text-gray-700 dark:text-gray-400">{{ __('supplier category') }}</label>
 
                                     <select wire:model.defer="supplier_category" id="supplier_category"
                                         name="supplier_category"
@@ -734,7 +848,7 @@
                                 <div class="w-6-12">
 
                                     <label id="labelProductsAndServices"
-                                        class="Inactive text-gray-700 dark:text-gray-400">products_and_services</label>
+                                        class="Inactive text-gray-700 dark:text-gray-400">{{ __('products and services') }}</label>
 
                                     <select wire:model.defer="products_and_services" id="products_and_services"
                                         name="products_and_services"
@@ -757,7 +871,7 @@
 
                                 <div class="w-6-12">
                                     <label id="labelEconomicActivity"
-                                        class="Inactive text-gray-700 dark:text-gray-400">economic_activity</label>
+                                        class="Inactive text-gray-700 dark:text-gray-400">{{ __('economic activity') }}</label>
 
                                     <select wire:model.defer="economic_activity" id="economic_activity"
                                         name="economic_activity"
@@ -776,7 +890,7 @@
 
                                 <div class="w-6-12">
                                     <label id="labelSupplierDescription"
-                                        class="Inactive text-gray-700 dark:text-gray-400">supplier_description</label>
+                                        class="Inactive text-gray-700 dark:text-gray-400">{{ __('supplier description') }}</label>
 
                                     <textarea
                                         class="Inactive block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -803,7 +917,7 @@
 
                                 <div wire:ignore class="w-6-12 Inactive" id="divPlaceExpeditionIdentificationcard">
                                     <label id="labelPlaceExpeditionIdentificationcard"
-                                        class="Inactive text-gray-700 dark:text-gray-400">place_expedition_identificationcard</label>
+                                        class="Inactive text-gray-700 dark:text-gray-400">{{ __('place expedition identificationcard') }}</label>
 
                                     <input
                                         class="Inactive block w-98 py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -862,8 +976,9 @@
                                 <div class="w-6-12">
 
                                     <label id="labelDepartment" wire:loading.remove wire:target="country"
-                                        class="text-gray-700 dark:text-gray-400">Department</label><span wire:loading
-                                        wire:target="country" class="text-gray-700 dark:text-gray-400">Cargando
+                                        class="text-gray-700 dark:text-gray-400">{{ __('Department') }}</label><span
+                                        wire:loading wire:target="country"
+                                        class="text-gray-700 dark:text-gray-400">Cargando
                                         Departamentos...</span>
 
                                     <select wire:model="Department" id="Department" name="Department"
@@ -882,8 +997,9 @@
                                 <div class="w-6-12">
 
                                     <label id="labelCity" wire:loading.remove wire:target="Department"
-                                        class="text-gray-700 dark:text-gray-400">city</label><span wire:loading
-                                        wire:target="Department" class="text-gray-700 dark:text-gray-400">Cargando
+                                        class="text-gray-700 dark:text-gray-400">{{ __('city') }}</label><span
+                                        wire:loading wire:target="Department"
+                                        class="text-gray-700 dark:text-gray-400">Cargando
                                         Ciudades...</span>
 
                                     <select wire:model="city" id="city" name="city"
@@ -905,7 +1021,8 @@
                             <div class="flex space-x-4" wire:ignore>
 
                                 <div class="w-3-4" id="divAddress">
-                                    <label id="labelAddress" class="text-gray-700 dark:text-gray-400">address</label>
+                                    <label id="labelAddress"
+                                        class="text-gray-700 dark:text-gray-400">{{ __('address') }}</label>
 
                                     <input
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -941,7 +1058,8 @@
                             <div class="flex space-x-4" wire:ignore>
 
                                 <div class="w-6-12">
-                                    <label id="labelPhone" class="text-gray-700 dark:text-gray-400">phone</label>
+                                    <label id="labelPhone"
+                                        class="text-gray-700 dark:text-gray-400">{{ __('phone') }}</label>
 
                                     <input
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -951,7 +1069,7 @@
 
                                 <div class="w-6-12">
                                     <label id="labelPhoneCellular"
-                                        class="text-gray-700 dark:text-gray-400">phone_cellular</label>
+                                        class="text-gray-700 dark:text-gray-400">{{ __('phone cellular') }}</label>
 
                                     <input
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -981,7 +1099,7 @@
 
                                 <div class="w-6-12">
                                     <label id="labelBirthdate"
-                                        class="text-gray-700 dark:text-gray-400">birthdate</label>
+                                        class="text-gray-700 dark:text-gray-400">{{ __('birthdate') }}</label>
 
                                     <input readonly
                                         class=" block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -992,7 +1110,7 @@
                                 <div class="w-6-12">
 
                                     <label id="labelCityBirth"
-                                        class="text-gray-700 dark:text-gray-400">city_birth</label>
+                                        class="text-gray-700 dark:text-gray-400">{{ __('city birth') }}</label>
 
                                     <select wire:model.defer="city_birth" id="city_birth" name="city_birth"
                                         class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
@@ -1012,7 +1130,8 @@
                             <div class="flex space-x-4">
 
                                 <div class="w-1-2">
-                                    <label id="labelWeight" class="text-gray-700 dark:text-gray-400">weight</label>
+                                    <label id="labelWeight"
+                                        class="text-gray-700 dark:text-gray-400">{{ __('weight') }}</label>
 
                                     <input
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -1023,7 +1142,7 @@
 
                                 <div class="w-1-2">
                                     <label id="labelPantSize"
-                                        class="text-gray-700 dark:text-gray-400">pant_size</label>
+                                        class="text-gray-700 dark:text-gray-400">{{ __('pant size') }}</label>
 
                                     <input
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -1033,7 +1152,7 @@
 
                                 <div class="w-1-2">
                                     <label id="labelShirtSize"
-                                        class="text-gray-700 dark:text-gray-400">shirt_size</label>
+                                        class="text-gray-700 dark:text-gray-400">{{ __('shirt size') }}</label>
 
                                     <input
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -1043,7 +1162,7 @@
 
                                 <div class="w-1-2">
                                     <label id="labelShoeSize"
-                                        class="text-gray-700 dark:text-gray-400">shoe_size</label>
+                                        class="text-gray-700 dark:text-gray-400">{{ __('shoe size') }}</label>
 
                                     <input
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -1058,7 +1177,7 @@
                                 <div class="w-6-12">
 
                                     <label id="labelCivilStatus"
-                                        class="text-gray-700 dark:text-gray-400">civil_status</label>
+                                        class="text-gray-700 dark:text-gray-400">{{ __('civil status') }}</label>
 
                                     <select wire:model.defer="civil_status" id="civil_status" name="civil_status"
                                         class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
@@ -1076,7 +1195,7 @@
                                 <div class="w-6-12">
 
                                     <label id="labelWorkArea"
-                                        class="text-gray-700 dark:text-gray-400">work_area</label>
+                                        class="text-gray-700 dark:text-gray-400">{{ __('work area') }}</label>
 
                                     <select wire:model.defer="work_area" id="work_area" name="work_area"
                                         class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
@@ -1098,7 +1217,7 @@
                                 <div class="w-1-3">
 
                                     <label id="labelBindingType"
-                                        class="text-gray-700 dark:text-gray-400">binding_type</label>
+                                        class="text-gray-700 dark:text-gray-400">{{ __('binding type') }}</label>
 
                                     <select wire:model.defer="bonding_type" id="binding_type" name="binding_type"
                                         class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
@@ -1114,7 +1233,8 @@
 
 
                                 <div class="w-1-3">
-                                    <label id="labelSalary" class="text-gray-700 dark:text-gray-400">salary</label>
+                                    <label id="labelSalary"
+                                        class="text-gray-700 dark:text-gray-400">{{ __('salary') }}</label>
 
                                     <input
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -1124,7 +1244,7 @@
 
                                 <div class="w-1-3">
                                     <label id="labelAidTransport"
-                                        class="text-gray-700 dark:text-gray-400">aid_transport</label>
+                                        class="text-gray-700 dark:text-gray-400">{{ __('aid transport') }}</label>
 
                                     <input
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -1151,7 +1271,7 @@
 
                                 <div class="w-6-12">
                                     <label id="labelEducationLevel"
-                                        class="text-gray-700 dark:text-gray-400">education_level</label>
+                                        class="text-gray-700 dark:text-gray-400">{{ __('education level') }}</label>
 
                                     <select wire:model.defer="education_level" id="education_level"
                                         name="education_level"
@@ -1168,7 +1288,7 @@
 
                                 <div class="w-6-12">
                                     <label id="labelEducationalInstitution"
-                                        class="text-gray-700 dark:text-gray-400">educational_institution</label>
+                                        class="text-gray-700 dark:text-gray-400">{{ __('educational institution') }}</label>
 
                                     <input
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -1183,7 +1303,7 @@
 
                                 <div class="w-6-12">
                                     <label id="labelLastYear"
-                                        class="text-gray-700 dark:text-gray-400">last_year</label>
+                                        class="text-gray-700 dark:text-gray-400">{{ __('last year') }}</label>
 
                                     <input
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -1193,7 +1313,7 @@
 
                                 <div class="w-6-12">
                                     <label id="labelStudyEndDate"
-                                        class="text-gray-700 dark:text-gray-400">study_end_date</label>
+                                        class="text-gray-700 dark:text-gray-400">{{ __('study end date') }}</label>
 
                                     <input readonly
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -1208,7 +1328,7 @@
 
                                 <div class="w-6-12">
                                     <label id="labelObtainedTitle"
-                                        class="text-gray-700 dark:text-gray-400">obtained_title</label>
+                                        class="text-gray-700 dark:text-gray-400">{{ __('obtained title') }}</label>
 
                                     <input
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -1218,7 +1338,7 @@
 
                                 <div class="w-6-12">
                                     <label id="labelLastCompanyName"
-                                        class="text-gray-700 dark:text-gray-400">last_company_name</label>
+                                        class="text-gray-700 dark:text-gray-400">{{ __('last company name') }}</label>
 
                                     <input
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -1233,7 +1353,7 @@
 
                                 <div class="w-6-12">
                                     <label id="labelChargesLastCompany"
-                                        class="text-gray-700 dark:text-gray-400">charges_last_company</label>
+                                        class="text-gray-700 dark:text-gray-400">{{ __('charges last company') }}</label>
 
                                     <input
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -1244,7 +1364,7 @@
 
                                 <div class="w-6-12">
                                     <label id="labelStartDateLastCompany"
-                                        class="text-gray-700 dark:text-gray-400">start_date_last_company</label>
+                                        class="text-gray-700 dark:text-gray-400">{{ __('start date last company') }}</label>
 
                                     <input readonly
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -1274,7 +1394,7 @@
 
                                 <div class="w-6-12">
                                     <label id="labelDateEndLastCompany"
-                                        class="text-gray-700 dark:text-gray-400">date_end_last_company</label>
+                                        class="text-gray-700 dark:text-gray-400">{{ __('date end last company') }}</label>
 
                                     <input readonly
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -1287,7 +1407,7 @@
                                 <div class="w-6-12">
 
                                     <label id="labelFunctionsPerformed"
-                                        class="text-gray-700 dark:text-gray-400">functions_performed</label>
+                                        class="text-gray-700 dark:text-gray-400">{{ __('functions performed') }}</label>
 
                                     <textarea
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -1303,7 +1423,7 @@
 
                                 <div class="w-1-3">
                                     <label id="labelFamilyDocumentType"
-                                        class="Inactive text-gray-700 dark:text-gray-400">family_document_type</label>
+                                        class="Inactive text-gray-700 dark:text-gray-400">{{ __('family document type') }}</label>
                                     <select wire:model.defer="family_document_type" id="family_document_type"
                                         name="family_document_type"
                                         class="Inactive block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
@@ -1318,7 +1438,7 @@
 
                                 <div class="w-1-3" id="divContractDocument">
                                     <label id="labeIdentificationcardFamily"
-                                        class="Inactive text-gray-700 dark:text-gray-400">identificationcard_family</label>
+                                        class="Inactive text-gray-700 dark:text-gray-400">{{ __('identificationcard family') }}</label>
 
                                     <input
                                         class="Inactive block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -1329,11 +1449,11 @@
 
                                 <div class="w-1-3">
                                     <label id="labelRelationship"
-                                        class="text-gray-700 dark:text-gray-400">relationship</label>
+                                        class="text-gray-700 dark:text-gray-400">{{ __('relationship') }}</label>
 
                                     <select wire:model.defer="relationship" id="relationship" name="relationship"
                                         class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
-                                        <option value="0">Selecciona el tipo de contrato</option>
+                                        <option value="0">Selecciona la frelación con el familiar</option>
 
                                         @foreach ($relationships as $relationship)
                                             <option value="{{ $relationship->id }}">
@@ -1350,7 +1470,7 @@
 
                                 <div class="w-6-12">
                                     <label id="labelFamilyNames"
-                                        class="text-gray-700 dark:text-gray-400">family_names</label>
+                                        class="text-gray-700 dark:text-gray-400">{{ __('family names') }}</label>
 
                                     <input
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -1360,7 +1480,7 @@
 
                                 <div class="w-6-12">
                                     <label id="labelFamilyAddress"
-                                        class="text-gray-700 dark:text-gray-400">family_address</label>
+                                        class="text-gray-700 dark:text-gray-400">{{ __('family address') }}</label>
 
                                     <input
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -1375,7 +1495,7 @@
 
                                 <div class="w-6-12">
                                     <label id="labelFamilyPhone"
-                                        class="text-gray-700 dark:text-gray-400">family_phone</label>
+                                        class="text-gray-700 dark:text-gray-400">{{ __('family phone') }}</label>
 
                                     <input
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -1385,7 +1505,7 @@
 
                                 <div class="w-6-12">
                                     <label id="labelFamilyPhoneCellular"
-                                        class="text-gray-700 dark:text-gray-400">family_phone_cellular</label>
+                                        class="text-gray-700 dark:text-gray-400">{{ __('family phone cellular') }}</label>
 
                                     <input
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -1413,7 +1533,7 @@
                             <div class="flex space-x-4">
 
                                 <div class="w-6-12">
-                                    <label id="labelEps" class="text-gray-700 dark:text-gray-400">eps</label>
+                                    <label id="labelEps" class="text-gray-700 dark:text-gray-400">EPS</label>
 
                                     <select wire:model.defer="eps" id="eps" name="eps"
                                         class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
@@ -1427,28 +1547,10 @@
                                     </select>
                                 </div>
 
-                                <div class="w-6-12 ">
-
-                                    <label id="labelEpsStatus" class="text-gray-700 dark:text-gray-400">Selecciona el
-                                        estado de la
-                                        eps</label>
-
-                                    <select wire:model.defer="eps_status" id="eps_status" name="eps_status"
-                                        class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
-                                        <option value="">Selecciona el estado de la eps</option>
-                                        <option value="1">ACTIVO</option>
-                                        <option value="2">PENDIENTE</option>
-                                        <option value="3">INACTIVO</option>
-                                    </select>
-
-                                </div>
-
-                            </div>
-
-                            <div class="flex space-x-4">
-
+                                
                                 <div class="w-6-12">
-                                    <label id="labelDateEps" class="text-gray-700 dark:text-gray-400">date_eps</label>
+                                    <label id="labelDateEps"
+                                        class="text-gray-700 dark:text-gray-400">{{ __('date eps') }}</label>
 
                                     <input readonly
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -1456,9 +1558,13 @@
                                         name="date_eps" wire:model.defer="date_eps" />
                                 </div>
 
+                            </div>
+
+                            <div class="flex space-x-4">
+
                                 <div class="w-6-12">
                                     <label id="labelBloodType"
-                                        class="text-gray-700 dark:text-gray-400">blood_type</label>
+                                        class="text-gray-700 dark:text-gray-400">{{ __('blood type') }}</label>
 
                                     <select wire:model.defer="blood_type" id="blood_type" name="blood_type"
                                         class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
@@ -1477,7 +1583,7 @@
                             <div class="flex space-x-4">
 
                                 <div class="w-6-12">
-                                    <label id="labelPension" class="text-gray-700 dark:text-gray-400">pension</label>
+                                    <label id="labelPension" class="text-gray-700 dark:text-gray-400">PENSION</label>
 
                                     <select wire:model.defer="pension" id="pension" name="pension"
                                         class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
@@ -1489,32 +1595,12 @@
                                         @endforeach
 
                                     </select>
-                                </div>
-
-                                <div class="w-6-12 ">
-
-                                    <label id="labelPensionStatus" class="text-gray-700 dark:text-gray-400">Selecciona
-                                        el estado de la
-                                        pension</label>
-
-                                    <select wire:model.defer="pension_status" id="pension_status"
-                                        name="pension_status"
-                                        class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
-                                        <option value="">Selecciona el estado de la pension</option>
-                                        <option value="1">ACTIVO</option>
-                                        <option value="2">PENDIENTE</option>
-                                        <option value="3">INACTIVO</option>
-                                    </select>
 
                                 </div>
-
-                            </div>
-
-                            <div class="flex space-x-4">
 
                                 <div class="w-6-12">
                                     <label id="labelDatePension"
-                                        class="text-gray-700 dark:text-gray-400">date_pension</label>
+                                        class="text-gray-700 dark:text-gray-400">{{ __('date pension') }}</label>
 
                                     <input readonly
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -1523,22 +1609,11 @@
                                         onchange="fechasSet('date_pension')" />
                                 </div>
 
-                                <div class="w-6-12">
-                                    <label id="labelLayoffs" class="text-gray-700 dark:text-gray-400">layoffs</label>
-
-                                    <select wire:model.defer="layoffs" id="layoffs" name="layoffs"
-                                        class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
-                                        <option value="0">Selecciona el tipo de cesantias</option>
-
-                                        @foreach ($layoffes as $layoff)
-                                            <option value="{{ $layoff->id }}">
-                                                {{ $layoff->description_layoffs }}</option>
-                                        @endforeach
-
-                                    </select>
-                                </div>
-
                             </div>
+
+                            {{-- <div class="flex space-x-4">
+
+                            </div> --}}
 
                             <br>
                             <div class="f1-buttons">
@@ -1556,26 +1631,25 @@
 
                             <div class="flex space-x-4">
 
-                                <div class="w-6-12 ">
+                                <div class="w-6-12">
+                                    <label id="labelLayoffs"
+                                        class="text-gray-700 dark:text-gray-400">{{ __('layoffs') }}</label>
 
-                                    <label id="labelStatusLayoffs" class="text-gray-700 dark:text-gray-400">Selecciona
-                                        el estado de la
-                                        status_layoffs</label>
-
-                                    <select wire:model.defer="status_layoffs" id="status_layoffs"
-                                        name="status_layoffs"
+                                    <select wire:model.defer="layoffs" id="layoffs" name="layoffs"
                                         class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
-                                        <option value="">Selecciona el estado de las cesantias</option>
-                                        <option value="1">ACTIVO</option>
-                                        <option value="2">PENDIENTE</option>
-                                        <option value="3">INACTIVO</option>
-                                    </select>
+                                        <option value="0">Selecciona el tipo de cesantias</option>
 
+                                        @foreach ($layoffes as $layoff)
+                                            <option value="{{ $layoff->id }}">
+                                                {{ $layoff->description_layoffs }}</option>
+                                        @endforeach
+
+                                    </select>
                                 </div>
 
                                 <div class="w-6-12">
                                     <label id="labelDateLayoffs"
-                                        class="text-gray-700 dark:text-gray-400">date_layoffs</label>
+                                        class="text-gray-700 dark:text-gray-400">{{ __('date layoffs') }}</label>
 
                                     <input readonly
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -1589,7 +1663,7 @@
                             <div class="flex space-x-4">
 
                                 <div class="w-6-12">
-                                    <label id="labelArl" class="text-gray-700 dark:text-gray-400">arl</label>
+                                    <label id="labelArl" class="text-gray-700 dark:text-gray-400">ARL</label>
 
                                     <select wire:model.defer="arl" id="arl" name="arl"
                                         class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
@@ -1603,28 +1677,9 @@
                                     </select>
                                 </div>
 
-                                <div class="w-6-12 ">
-
-                                    <label id="labelArlStatus" class="text-gray-700 dark:text-gray-400">Selecciona el
-                                        estado de la
-                                        arl_status</label>
-
-                                    <select wire:model.defer="arl_status" id="arl_status" name="arl_status"
-                                        class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
-                                        <option value="">Selecciona el estado de la arl</option>
-                                        <option value="1">ACTIVO</option>
-                                        <option value="2">PENDIENTE</option>
-                                        <option value="3">INACTIVO</option>
-                                    </select>
-
-                                </div>
-
-                            </div>
-
-                            <div class="flex space-x-4">
-
                                 <div class="w-6-12">
-                                    <label id="labelArlDate" class="text-gray-700 dark:text-gray-400">arl_date</label>
+                                    <label id="labelArlDate"
+                                        class="text-gray-700 dark:text-gray-400">{{ __('arl date') }}</label>
 
                                     <input readonly
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -1633,9 +1688,13 @@
                                         onchange="fechasSet('arl_date')" />
                                 </div>
 
+                            </div>
+
+                            <div class="flex space-x-4">
+
                                 <div class="w-6-12">
-                                    <label id="labelCompensationbox"
-                                        class="text-gray-700 dark:text-gray-400">compensationbox</label>
+                                    <label id="labelCompensationbox" class="text-gray-700 dark:text-gray-400">
+                                        {{ __('compensationbox') }}</label>
 
                                     <select wire:model.defer="compensationbox" id="compensationbox"
                                         name="compensationbox"
@@ -1650,36 +1709,14 @@
                                     </select>
                                 </div>
 
-                            </div>
-
-                            <div class="flex space-x-4">
-
-                                <div class="w-6-12 ">
-
-                                    <label id="labelCompensationboxStatus"
-                                        class="text-gray-700 dark:text-gray-400">Selecciona el estado de la
-                                        compensationbox_status</label>
-
-                                    <select wire:model.defer="compensationbox_status" id="compensationbox_status"
-                                        name="compensationbox_status"
-                                        class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
-                                        <option value="">Selecciona el estado de la caja de compensación</option>
-                                        <option value="1">ACTIVO</option>
-                                        <option value="2">PENDIENTE</option>
-                                        <option value="3">INACTIVO</option>
-                                    </select>
-
-                                </div>
-
                                 <div class="w-6-12">
                                     <label id="labelDateCompensationbox"
-                                        class="text-gray-700 dark:text-gray-400">date_compensationbox</label>
+                                        class="text-gray-700 dark:text-gray-400">{{ __('date compensationbox') }}</label>
 
                                     <input
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                        placeholder="Dirección del familiar" type="text"
-                                        id="date_compensationbox" name="date_compensationbox"
-                                        wire:model.defer="date_compensationbox"
+                                        placeholder="Dirección del familiar" type="text" id="date_compensationbox"
+                                        name="date_compensationbox" wire:model.defer="date_compensationbox"
                                         onchange="fechasSet('date_compensationbox')" />
                                 </div>
 
@@ -1703,7 +1740,7 @@
 
                                 <div class="w-6-12">
                                     <label id="labelLicenseNumber"
-                                        class="text-gray-700 dark:text-gray-400">license_number</label>
+                                        class="text-gray-700 dark:text-gray-400">{{ __('license number') }}</label>
 
                                     <input
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -1714,7 +1751,7 @@
 
                                 <div class="w-6-12">
                                     <label id="labelLicenseCategory"
-                                        class="text-gray-700 dark:text-gray-400">license_category</label>
+                                        class="text-gray-700 dark:text-gray-400">{{ __('license category') }}</label>
 
                                     <select wire:model.defer="license_category" id="license_category"
                                         name="license_category"
@@ -1737,7 +1774,7 @@
 
                                 <div class="w-6-12">
                                     <label id="labelLicenseExpiration"
-                                        class="text-gray-700 dark:text-gray-400">license_expiration</label>
+                                        class="text-gray-700 dark:text-gray-400">{{ __('license expiration') }}</label>
 
                                     <input readonly
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -1758,7 +1795,7 @@
 
                                 <div class="w-6-12">
                                     <label id="labelCertificateDrugsAlchoolemia"
-                                        class="text-gray-700 dark:text-gray-400">certificate_drugs_alchoolemia</label>
+                                        class="text-gray-700 dark:text-gray-400">{{ __('certificate drugs alchoolemia') }}</label>
 
                                     <input readonly
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -1783,7 +1820,7 @@
 
                                 <div class="w-6-12">
                                     <label id="labelSIMITQueries"
-                                        class="text-gray-700 dark:text-gray-400">SIMIT_queries</label>
+                                        class="text-gray-700 dark:text-gray-400">{{ __('SIMIT queries') }}</label>
 
                                     <input readonly
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -1803,7 +1840,7 @@
 
                                 <div class="w-6-12">
                                     <label id="labelDrivingExam"
-                                        class="text-gray-700 dark:text-gray-400">driving_exam</label>
+                                        class="text-gray-700 dark:text-gray-400">{{ __('driving exam') }}</label>
 
                                     <input readonly
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -1827,7 +1864,7 @@
 
                                 <div class="w-6-12">
                                     <label id="labelNormOverlandTransportationAutomotive"
-                                        class="text-gray-700 dark:text-gray-400">Norm_Overland_Transportation_Automotive</label>
+                                        class="text-gray-700 dark:text-gray-400">{{ __('Norm Overland Transportation Automotive') }}</label>
 
                                     <input readonly
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -1850,7 +1887,7 @@
 
                                 <div class="w-6-12">
                                     <label id="labelRulesTransit"
-                                        class="text-gray-700 dark:text-gray-400">Rules_Transit</label>
+                                        class="text-gray-700 dark:text-gray-400">{{ __('Rules Transit') }}</label>
 
                                     <input readonly
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -1888,7 +1925,7 @@
 
                                 <div class="w-6-12">
                                     <label id="labelNormativeTips"
-                                        class="text-gray-700 dark:text-gray-400">Normative_Tips</label>
+                                        class="text-gray-700 dark:text-gray-400">{{ __('Normative Tips') }}</label>
 
                                     <input readonly
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -1909,7 +1946,7 @@
 
                                 <div class="w-6-12">
                                     <label id="labelDrivingMethods"
-                                        class="text-gray-700 dark:text-gray-400">Driving_Methods</label>
+                                        class="text-gray-700 dark:text-gray-400">{{ __('Driving Methods') }}</label>
 
                                     <input readonly
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -1934,7 +1971,7 @@
 
                                 <div class="w-6-12">
                                     <label id="labelDefensiveDriving"
-                                        class="text-gray-700 dark:text-gray-400">Defensive_driving</label>
+                                        class="text-gray-700 dark:text-gray-400">{{ __('Defensive driving') }}</label>
 
                                     <input readonly
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -1955,7 +1992,7 @@
 
                                 <div class="w-6-12">
                                     <label id="labelDistractions"
-                                        class="text-gray-700 dark:text-gray-400">distractions</label>
+                                        class="text-gray-700 dark:text-gray-400">{{ __('distractions') }}</label>
 
                                     <input readonly
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -1979,7 +2016,7 @@
 
                                 <div class="w-6-12">
                                     <label id="labelFirstaid"
-                                        class="text-gray-700 dark:text-gray-400">First_aid</label>
+                                        class="text-gray-700 dark:text-gray-400">{{ __('First aid') }}</label>
 
                                     <input readonly
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -1999,7 +2036,7 @@
 
                                 <div class="w-6-12">
                                     <label id="labelFirstResponder"
-                                        class="text-gray-700 dark:text-gray-400">First_Responder</label>
+                                        class="text-gray-700 dark:text-gray-400">{{ __('First Responder') }}</label>
 
                                     <input readonly
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -2024,7 +2061,7 @@
 
                                 <div class="w-6-12">
                                     <label id="labelfiveSensesDriving"
-                                        class="text-gray-700 dark:text-gray-400">five_senses_driving</label>
+                                        class="text-gray-700 dark:text-gray-400">{{ __('five senses driving') }}</label>
 
                                     <input readonly
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -2046,7 +2083,7 @@
 
                                 <div class="w-6-12">
                                     <label id="labelActivePassiveSecurityVehicle"
-                                        class="text-gray-700 dark:text-gray-400">Active_Passive_Security_vehicle</label>
+                                        class="text-gray-700 dark:text-gray-400">{{ __('Active Passive Security vehicle') }}</label>
 
                                     <input readonly
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -2089,7 +2126,7 @@
 
                                 <div class="w-6-12">
                                     <label id="labelRoadSafety"
-                                        class="text-gray-700 dark:text-gray-400">Road_safety</label>
+                                        class="text-gray-700 dark:text-gray-400">{{ __('Road safety') }}</label>
 
                                     <input readonly
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -2108,7 +2145,8 @@
                                 </div>
 
                                 <div class="w-6-12">
-                                    <label id="labelLinked" class="text-gray-700 dark:text-gray-400">Linked</label>
+                                    <label id="labelLinked"
+                                        class="text-gray-700 dark:text-gray-400">{{ __('Linked') }}</label>
 
                                     <select wire:model.defer="Linked" id="Linked" name="Linked"
                                         class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
@@ -2130,7 +2168,7 @@
 
                                 <div class="w-6-12">
                                     <label id="labelUserEntryDate"
-                                        class="text-gray-700 dark:text-gray-400">user_entry_date</label>
+                                        class="text-gray-700 dark:text-gray-400">{{ __('user entry date') }}</label>
 
                                     <input readonly
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -2142,7 +2180,7 @@
 
                                 <div class="w-6-12">
                                     <label id="labelDateWithdrawalUser"
-                                        class="text-gray-700 dark:text-gray-400">date_withdrawal_user</label>
+                                        class="text-gray-700 dark:text-gray-400">{{ __('date withdrawal user') }}</label>
 
                                     <input readonly
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -2159,7 +2197,7 @@
 
                                 <div class="w-6-12">
                                     <label id="labelProfilePhotoPath"
-                                        class="text-gray-700 dark:text-gray-400">profile_photo_path</label>
+                                        class="text-gray-700 dark:text-gray-400">{{ __('profile photo path') }}</label>
 
                                     <input
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -2169,7 +2207,8 @@
                                 </div>
 
                                 <div class="w-6-12">
-                                    <label id="labelEmail" class="text-gray-700 dark:text-gray-400">email</label>
+                                    <label id="labelEmail"
+                                        class="text-gray-700 dark:text-gray-400">{{ __('email') }}</label>
 
                                     <input
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -2179,11 +2218,11 @@
 
                             </div>
 
-                            <div class="flex space-x-4" wire:ignore>
+                            {{-- <div class="flex space-x-4" wire:ignore>
 
                                 <div class="w-6-12">
                                     <label id="labelUsername"
-                                        class="text-gray-700 dark:text-gray-400">username</label>
+                                        class="text-gray-700 dark:text-gray-400">{{ __('username') }}</label>
 
                                     <input
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -2193,7 +2232,7 @@
 
                                 <div class="w-6-12">
                                     <label id="labelPassword"
-                                        class="text-gray-700 dark:text-gray-400">password</label>
+                                        class="text-gray-700 dark:text-gray-400">{{ __('password') }}</label>
 
                                     <input
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -2202,7 +2241,7 @@
                                         wire:model.defer="password" />
                                 </div>
 
-                            </div>
+                            </div> --}}
 
                             <br>
                             <div class="f1-buttons">
@@ -2224,12 +2263,12 @@
                 <button id="btnStore"
                     class="Inactive w-full px-5 py-3 text-sm font-medium leading-5 transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg sm:w-auto sm:px-4 sm:py-2 active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
                     wire:click="store" onclick="restart()" x-on:click="closeModal">
-                    Accept
+                    {{ __('Create User') }}
                 </button>
                 <button x-on:click="closeModal" onclick="restart()"
                     class="w-full px-5 py-3 text-sm font-medium leading-5 text-gray-700 transition-colors duration-150 border border-gray-300 rounded-lg dark:text-gray-400 sm:px-4 sm:py-2 sm:w-auto active:bg-transparent hover:border-gray-500 focus:border-gray-500 active:text-gray-500 focus:outline-none focus:shadow-outline-gray"
                     wire:click="clear">
-                    Cancel
+                    {{ __('Cancel') }}
                 </button>
             </div>
         </div>
@@ -2249,17 +2288,19 @@
             x-transition:enter-start="opacity-0 transform translate-y-1/2" x-transition:enter-end="opacity-100"
             x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100"
             x-transition:leave-end="opacity-0  transform translate-y-1/2"
-            class="scroll w-9-12 h-4-7 mt-6 px-6 py-4  bg-white rounded-t-lg dark:bg-gray-800 sm:rounded-lg sm:m-4 overflow-x-hidden overflow-y-auto"
+            class="w-9-12 h-4-7 mt-6 px-6 py-4  bg-white rounded-t-lg dark:bg-gray-800 sm:rounded-lg sm:m-4"
             role="dialog">
             <!-- Remove header if you don't want a close icon. Use modal body to place modal tile. -->
             <header class="flex justify-center border-b-fuchsia-800 border-b">
                 <!-- Modal title -->
                 <p class="justify-start mb-2 text-lg font-semibold text-gray-700 dark:text-gray-300">
-                <h1 class="text-black dark:text-white text-4xl1">Editing the information of the user
+                <h1 class="text-black dark:text-white text-4xl1">{{ __('Editing the information of the user') }}
                     @if (!is_null($editUsers))
                         {{ $editUsers->firstname }} {{ $editUsers->lastname }}
-                    @endif
-                    <span class="typed2"></span>
+                    @endif<span id="typed2" class="typed2">.</span>
+                    <span id="typed3" class="typed3">.</span>
+                    <span id="typed4" class="typed4">.</span>
+                    <span id="typed5" class="typed5">.</span>
                 </h1>
                 </p>
                 <button onclick="closeModalEdit()"
@@ -2274,1611 +2315,1703 @@
                 </button>
             </header>
             <!-- Modal body -->
-            <div class="-mt-11 mb-6">
-                <!-- Modal description -->
+            <div class="scroll h-4-7 overflow-y-auto">
+                <div class="-mt-11 mb-6">
+                    <!-- Modal description -->
 
-                @if (!is_null($editUsers))
-                    <form role="form" action="" method="post" id="editfrmUser"
-                        class="f1 px-4 my-32 max-w-3xl mx-auto space-y-6">
+                    @if (!is_null($editUsers))
+                        <form role="form" action="" method="post" id="editfrmUser"
+                            class="f1 px-4 my-32 max-w-3xl mx-auto space-y-6">
 
-                        <div
-                            class="mt-11 border-gray-50-s container px-4 py-3 bg-white rounded-lg shadow-md dark:bg-gray-800 overflow-auto h-9 ">
+                            <div
+                                class="mt-11 border-gray-50-s container px-4 py-3 bg-white rounded-lg shadow-md dark:bg-gray-800 overflow-auto h-9 ">
 
-                            <!--paso 1 edit-->
-                            <p class="text-sm text-gray-700 dark:text-gray-400">
-                                paso 1
-                            </p>
-                            <div class="border-ourple-50-s rounded-2xl p-4">
+                                <!--paso 1 edit-->
+                                <p class="text-sm text-gray-700 dark:text-gray-400">
+                                    paso 1
+                                </p>
+                                <div class="border-ourple-50-s rounded-2xl p-4">
 
-                                {{-- <br> --}}
-                                <div class="flex space-x-4 ">
+                                    {{-- <br> --}}
+                                    <div class="flex space-x-4 ">
 
-                                    <div class="w-6-12 ">
+                                        <div class="w-6-12 ">
 
-                                        <label class="text-gray-700 dark:text-gray-400">tipo de
-                                            usuario</label>
-                                        <div class="border-ourple-50-s rounded-2xl p-4">
-                                            <p class="text-sm text-gray-700 dark:text-gray-400">
-                                                @if ($editUsers->usertype == 1)
-                                                    Cliente
-                                                @else
-                                                    @if ($editUsers->usertype == 2)
-                                                        Empleado
+                                            <label class="text-gray-700 dark:text-gray-400">tipo de
+                                                usuario</label>
+                                            <div class="border-ourple-50-s rounded-2xl p-4">
+                                                <p class="text-sm text-gray-700 dark:text-gray-400">
+                                                    @if ($editUsers->usertype == 1)
+                                                        Cliente
                                                     @else
-                                                        @if ($editUsers->usertype == 3)
-                                                            Proveedor
+                                                        @if ($editUsers->usertype == 2)
+                                                            Empleado
                                                         @else
-                                                            @if ($editUsers->usertype == 4)
-                                                                Vinculado
+                                                            @if ($editUsers->usertype == 3)
+                                                                Proveedor
+                                                            @else
+                                                                @if ($editUsers->usertype == 4)
+                                                                    Vinculado
+                                                                @endif
+
                                                             @endif
 
                                                         @endif
 
                                                     @endif
 
+                                                </p>
+                                            </div>
+
+                                        </div>
+
+                                        @if ($editUsers->usertype == 2)
+                                            <div class="w-6-12 ">
+
+                                                <label class=" text-gray-700 dark:text-gray-400">Selecciona un
+                                                    Cargo</label>
+
+                                                @if ($editUsers->charge == 5)
+                                                    <div class="border-ourple-50-s rounded-2xl p-4">
+                                                        <p class="text-sm text-gray-700 dark:text-gray-400">
+                                                            CO - Conductor(a)
+                                                        </p>
+                                                    </div>
+                                                @else
+                                                    <select wire:model="editUsers.charge" onchange="typeCharge()"
+                                                        class=" block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
+                                                        <option value="0">Selecciona un Cargo</option>
+
+                                                        @foreach ($charges as $charge)
+                                                            @if ($charge->id != 5)
+                                                                <option value="{{ $charge->id }}">
+                                                                    {{ $charge->code_charge }} -
+                                                                    {{ $charge->description_charge }}</option>
+                                                            @endif
+                                                        @endforeach
+
+                                                    </select>
                                                 @endif
 
-                                            </p>
-                                        </div>
+                                            </div>
+                                        @endif
+
+                                        @if ($editUsers->usertype == 3)
+                                            <div class="w-6-12 ">
+                                                <label class=" text-gray-700 dark:text-gray-400">supplier_name
+                                                    <input
+                                                        class=" block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                        placeholder="Nombre del proveedor" type="text"
+                                                        name="supplier_name" wire:model="editUsers.supplier_name" />
+                                            </div>
+                                        @endif
 
                                     </div>
 
-                                    @if ($editUsers->usertype == 2)
-                                        <div class="w-6-12 ">
+                                    @if ($editUsers->usertype == 1 || $editUsers->usertype == 2 || $editUsers->usertype == 4)
 
-                                            <label class=" text-gray-700 dark:text-gray-400">Selecciona un
-                                                Cargo</label>
+                                        <div class="flex space-x-4 ">
 
-                                            @if ($editUsers->charge == 5)
+
+
+                                            <div class="w-6-12">
+                                                <label
+                                                    class=" text-gray-700 dark:text-gray-400">{{ __('identification') }}</label>
+                                                <select wire:model="editUsers.identification" name="identification"
+                                                    class=" block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
+                                                    <option value="0">IDENTIFICACIÓN</option>
+                                                    @foreach ($identifications as $identification)
+                                                        <option value="{{ $identification->id }}">
+                                                            {{ $identification->description_identification }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+
+
+
+                                            <div class="w-6-12">
+                                                <label
+                                                    class=" text-gray-700 dark:text-gray-400">{{ __('identificationcard') }}</label>
+
                                                 <div class="border-ourple-50-s rounded-2xl p-4">
                                                     <p class="text-sm text-gray-700 dark:text-gray-400">
-                                                        CO - Conductor(a)
+                                                        {{ $editUsers->identificationcard }}
                                                     </p>
                                                 </div>
-                                            @else
-                                                <select wire:model="editUsers.charge" onchange="typeCharge()"
-                                                    class=" block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
-                                                    <option value="0">Selecciona un Cargo</option>
+                                            </div>
 
-                                                    @foreach ($charges as $charge)
-                                                        @if ($charge->id != 5)
-                                                            <option value="{{ $charge->id }}">
-                                                                {{ $charge->code_charge }} -
-                                                                {{ $charge->description_charge }}</option>
-                                                        @endif
+
+
+                                        </div>
+
+                                        <div class="flex space-x-4 ">
+
+                                            <div class="w-6-12">
+                                                <label
+                                                    class=" text-gray-700 dark:text-gray-400">{{ __('firstname') }}</label>
+
+                                                <input
+                                                    class=" block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                    placeholder="Primer nombre" type="text"
+                                                    wire:model="editUsers.firstname" />
+                                            </div>
+
+                                            <div class="w-6-12">
+                                                <label
+                                                    class=" text-gray-700 dark:text-gray-400">{{ __('secondname') }}</label>
+
+                                                <input
+                                                    class=" block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                    placeholder="Segundo nombre" type="text" name="secondname"
+                                                    wire:model="editUsers.secondname" />
+                                            </div>
+
+                                        </div>
+
+                                        <div class="flex space-x-4 ">
+
+                                            <div class="w-6-12">
+                                                <label
+                                                    class=" text-gray-700 dark:text-gray-400">{{ __('lastname') }}</label>
+
+                                                <input
+                                                    class=" block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                    placeholder="Apellido paterno" type="text"
+                                                    wire:model="editUsers.lastname" />
+                                            </div>
+
+                                            <div class="w-6-12">
+                                                <label
+                                                    class=" text-gray-700 dark:text-gray-400">{{ __('motherslastname') }}</label>
+
+                                                <input
+                                                    class=" block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                    placeholder="Apellido materno" type="text"
+                                                    name="motherslastname" wire:model="editUsers.motherslastname" />
+                                            </div>
+
+                                        </div>
+
+                                    @endif
+
+                                    @if ($editUsers->usertype == 3)
+
+                                        <div class="flex space-x-4 ">
+
+                                            <div class="w-6-12">
+                                                <label
+                                                    class=" text-gray-700 dark:text-gray-400">{{ __('company name provider') }}</label>
+
+                                                <input
+                                                    class=" block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                    placeholder="nombre de la empresa proveedor" type="text"
+                                                    name="company_name_provider"
+                                                    wire:model="editUsers.company_name_provider" />
+                                            </div>
+
+                                            <div class="w-6-12">
+                                                <label
+                                                    class=" text-gray-700 dark:text-gray-400">{{ __('commercial reason supplier') }}</label>
+
+                                                <input
+                                                    class=" block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                    placeholder="proveedor de razón comercial" type="text"
+                                                    name="commercial_reason_supplier"
+                                                    wire:model="editUsers.commercial_reason_supplier" />
+                                            </div>
+
+                                        </div>
+
+                                        <div class="flex space-x-4 ">
+
+
+                                            <div class="w-6-12">
+
+                                                <label
+                                                    class=" text-gray-700 dark:text-gray-400">{{ __('supplier category') }}</label>
+
+                                                <select wire:model="editUsers.supplier_category"
+                                                    name="supplier_category"
+                                                    class=" block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
+                                                    <option value="0">Selecciona la descripción de la categoria
+                                                    </option>
+
+                                                    @foreach ($supplierCategories as $id => $supplierCategory)
+                                                        <option value="{{ $id }}">
+                                                            {{ $supplierCategory }}
+                                                        </option>
                                                     @endforeach
 
                                                 </select>
-                                            @endif
+
+                                            </div>
+
+                                            <div class="w-6-12">
+
+                                                <label
+                                                    class=" text-gray-700 dark:text-gray-400">{{ __('products and services') }}</label>
+
+                                                <select wire:model="editUsers.products_and_services"
+                                                    name="products_and_services"
+                                                    class=" block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
+                                                    <option value="0">Selecciona una actividad económica</option>
+
+                                                    @foreach ($productsAndServices as $productsAndService)
+                                                        <option value="{{ $productsAndService->id }}">
+                                                            {{ $productsAndService->ProductandService_description }}
+                                                        </option>
+                                                    @endforeach
+
+                                                </select>
+
+                                            </div>
+
 
                                         </div>
-                                    @endif
 
-                                    @if ($editUsers->usertype == 3)
-                                        <div class="w-6-12 ">
-                                            <label class=" text-gray-700 dark:text-gray-400">supplier_name
-                                                <input
+                                        <div class="flex space-x-4 ">
+
+                                            <div class="w-6-12">
+                                                <label
+                                                    class=" text-gray-700 dark:text-gray-400">{{ __('economic activity') }}</label>
+
+                                                <select wire:model="editUsers.economic_activity"
+                                                    name="economic_activity"
+                                                    class=" block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
+                                                    <option value="0">Selecciona una actividad económica</option>
+
+                                                    @foreach ($economicActivitys as $economicActivity)
+                                                        <option value="{{ $economicActivity->id }}">
+                                                            {{ $economicActivity->EconomicActivity_number }} -
+                                                            {{ $economicActivity->description_EconomicActivity }}
+                                                        </option>
+                                                    @endforeach
+
+                                                </select>
+
+                                            </div>
+
+                                            <div class="w-6-12">
+                                                <label
+                                                    class=" text-gray-700 dark:text-gray-400">{{ __('supplier description') }}</label>
+
+                                                <textarea
                                                     class=" block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                    placeholder="Nombre del proveedor" type="text"
-                                                    name="supplier_name" wire:model="editUsers.supplier_name" />
-                                        </div>
-                                    @endif
-
-                                </div>
-
-                                @if ($editUsers->usertype == 1 || $editUsers->usertype == 2 || $editUsers->usertype == 4)
-
-                                    <div class="flex space-x-4 ">
-
-
-
-                                        <div class="w-6-12">
-                                            <label class=" text-gray-700 dark:text-gray-400">identification</label>
-                                            <select wire:model="editUsers.identification" name="identification"
-                                                class=" block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
-                                                <option value="0">IDENTIFICACIÓN</option>
-                                                @foreach ($identifications as $identification)
-                                                    <option value="{{ $identification->id }}">
-                                                        {{ $identification->description_identification }}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-
-
-
-                                        <div class="w-6-12">
-                                            <label
-                                                class=" text-gray-700 dark:text-gray-400">identificationcard</label>
-
-                                            <div class="border-ourple-50-s rounded-2xl p-4">
-                                                <p class="text-sm text-gray-700 dark:text-gray-400">
-                                                    {{ $editUsers->identificationcard }}
-                                                </p>
-                                            </div>
-                                        </div>
-
-
-
-                                    </div>
-
-                                    <div class="flex space-x-4 ">
-
-                                        <div class="w-6-12">
-                                            <label class=" text-gray-700 dark:text-gray-400">firstname</label>
-
-                                            <input
-                                                class=" block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="Primer nombre" type="text"
-                                                wire:model="editUsers.firstname" />
-                                        </div>
-
-                                        <div class="w-6-12">
-                                            <label class=" text-gray-700 dark:text-gray-400">secondname</label>
-
-                                            <input
-                                                class=" block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="Segundo nombre" type="text" name="secondname"
-                                                wire:model="editUsers.secondname" />
-                                        </div>
-
-                                    </div>
-
-                                    <div class="flex space-x-4 ">
-
-                                        <div class="w-6-12">
-                                            <label class=" text-gray-700 dark:text-gray-400">lastname</label>
-
-                                            <input
-                                                class=" block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="Apellido paterno" type="text"
-                                                wire:model="editUsers.lastname" />
-                                        </div>
-
-                                        <div class="w-6-12">
-                                            <label class=" text-gray-700 dark:text-gray-400">motherslastname</label>
-
-                                            <input
-                                                class=" block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="Apellido materno" type="text"
-                                                name="motherslastname" wire:model="editUsers.motherslastname" />
-                                        </div>
-
-                                    </div>
-
-                                @endif
-
-                                @if ($editUsers->usertype == 3)
-
-                                    <div class="flex space-x-4 ">
-
-                                        <div class="w-6-12">
-                                            <label
-                                                class=" text-gray-700 dark:text-gray-400">company_name_provider</label>
-
-                                            <input
-                                                class=" block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="nombre de la empresa proveedor" type="text"
-                                                name="company_name_provider"
-                                                wire:model="editUsers.company_name_provider" />
-                                        </div>
-
-                                        <div class="w-6-12">
-                                            <label
-                                                class=" text-gray-700 dark:text-gray-400">commercial_reason_supplier</label>
-
-                                            <input
-                                                class=" block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="proveedor de razón comercial" type="text"
-                                                name="commercial_reason_supplier"
-                                                wire:model="editUsers.commercial_reason_supplier" />
-                                        </div>
-
-                                    </div>
-
-                                    <div class="flex space-x-4 ">
-
-
-                                        <div class="w-6-12">
-
-                                            <label class=" text-gray-700 dark:text-gray-400">supplier_category</label>
-
-                                            <select wire:model="editUsers.supplier_category"
-                                                name="supplier_category"
-                                                class=" block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
-                                                <option value="0">Selecciona la descripción de la categoria
-                                                </option>
-
-                                                @foreach ($supplierCategories as $id => $supplierCategory)
-                                                    <option value="{{ $id }}">
-                                                        {{ $supplierCategory }}
-                                                    </option>
-                                                @endforeach
-
-                                            </select>
-
-                                        </div>
-
-                                        <div class="w-6-12">
-
-                                            <label
-                                                class=" text-gray-700 dark:text-gray-400">products_and_services</label>
-
-                                            <select wire:model="editUsers.products_and_services"
-                                                name="products_and_services"
-                                                class=" block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
-                                                <option value="0">Selecciona una actividad económica</option>
-
-                                                @foreach ($productsAndServices as $productsAndService)
-                                                    <option value="{{ $productsAndService->id }}">
-                                                        {{ $productsAndService->ProductandService_description }}
-                                                    </option>
-                                                @endforeach
-
-                                            </select>
-
-                                        </div>
-
-
-                                    </div>
-
-                                    <div class="flex space-x-4 ">
-
-                                        <div class="w-6-12">
-                                            <label class=" text-gray-700 dark:text-gray-400">economic_activity</label>
-
-                                            <select wire:model="editUsers.economic_activity"
-                                                name="economic_activity"
-                                                class=" block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
-                                                <option value="0">Selecciona una actividad económica</option>
-
-                                                @foreach ($economicActivitys as $economicActivity)
-                                                    <option value="{{ $economicActivity->id }}">
-                                                        {{ $economicActivity->EconomicActivity_number }} -
-                                                        {{ $economicActivity->description_EconomicActivity }}</option>
-                                                @endforeach
-
-                                            </select>
-
-                                        </div>
-
-                                        <div class="w-6-12">
-                                            <label
-                                                class=" text-gray-700 dark:text-gray-400">supplier_description</label>
-
-                                            <textarea
-                                                class=" block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                name="supplier_description" cols="1" rows="1" placeholder="descripción del proveedor"
-                                                wire:model="editUsers.supplier_description">
-                                    </textarea>
-                                        </div>
-
-                                    </div>
-
-                                @endif
-
-                            </div>
-                            <!--fin del paso 1 edit-->
-                            <br>
-                            <!---paso 2 edit-->
-                            <p class="text-sm text-gray-700 dark:text-gray-400">
-                                paso 2
-                            </p>
-                            <div class="border-ourple-50-s rounded-2xl p-4">
-                                <div class="flex space-x-4-N">
-
-                                    @if ($editUsers->usertype == 1 || $editUsers->usertype == 2 || $editUsers->usertype == 4)
-                                        <div class="w-6-12 ">
-                                            <label
-                                                class=" text-gray-700 dark:text-gray-400">place_expedition_identificationcard</label>
-
-                                            <input
-                                                class=" block w-98 py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="categoría de proveedor" type="text"
-                                                name="place_expedition_identificationcard"
-                                                wire:model="editUsers.place_expedition_identificationcard" />
-                                        </div>
-                                    @endif
-
-                                    @if ($editUsers->usertype == 3)
-                                        <div class="w-6-12 ">
-                                            <label class=" text-gray-700 dark:text-gray-400">Nit</label>
-
-                                            <input
-                                                class=" block w-98 py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="Nit de proveedor" type="text" name="nit"
-                                                wire:model="editUsers.nit" />
-                                        </div>
-                                    @endif
-
-                                    <div class="w-6-12">
-
-                                        <label class="text-gray-700 dark:text-gray-400">Selecciona un
-                                            pais</label>
-
-                                        <select wire:model="editUsers.country" name="country"
-                                            class="block w-98 ml-1-5 py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
-                                            <option value="0">Selecciona un pais</option>
-                                            <option value="114">CO - Colombia</option>
-                                        </select>
-
-                                    </div>
-
-
-                                </div>
-
-                                <div class="flex space-x-4">
-
-                                    <div class="w-6-12">
-
-                                        <label wire:loading.remove wire:target="country"
-                                            class="text-gray-700 dark:text-gray-400">Department</label><span
-                                            wire:loading wire:target="country"
-                                            class="text-gray-700 dark:text-gray-400">Cargando
-                                            Departamentos...</span>
-
-                                        <select wire:model="editUsers.Department" name="Department"
-                                            class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
-                                            <option value="0">Selecciona una Departamento</option>
-                                            @foreach ($provinces as $province)
-                                                <option value="{{ $province->id }}">
-                                                    {{ $province->department_name }}</option>
-                                            @endforeach
-                                        </select>
-
-                                    </div>
-
-                                    <div class="w-6-12">
-
-                                        <label wire:loading.remove wire:target="Department"
-                                            class="text-gray-700 dark:text-gray-400">city</label><span wire:loading
-                                            wire:target="Department"
-                                            class="text-gray-700 dark:text-gray-400">Cargando
-                                            Ciudades...</span>
-
-                                        <select wire:model="editUsers.city" name="city"
-                                            class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
-                                            <option value="0">Selecciona una Ciudad</option>
-                                            @foreach ($cities as $city)
-                                                <option value="{{ $city->id }}">
-                                                    {{ $city->city_name }}</option>
-                                            @endforeach
-                                        </select>
-
-                                    </div>
-
-
-                                </div>
-
-                                <div class="flex space-x-4">
-
-                                    <div class="@if ($editUsers->usertype == 3) w-full @else w-3-4 @endif">
-                                        <label class="text-gray-700 dark:text-gray-400">address</label>
-
-                                        <input
-                                            class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                            placeholder="Dirección" type="text" name="address"
-                                            wire:model="editUsers.address" />
-                                    </div>
-
-                                    @if ($editUsers->usertype == 1 || $editUsers->usertype == 2 || $editUsers->usertype == 4)
-                                        <div class="w-1-3">
-
-                                            <label class="text-gray-700 dark:text-gray-400">Selecciona el tipo
-                                                de Sexo</label>
-
-                                            <div class="form-check check1">
-                                                <input class="form-check-input" type="radio" name="type_sex"
-                                                    id="sexeditM" value="M" wire:model="editUsers.type_sex">
-                                                <label class="form-check-label" for="sexM">
-                                                    Masculino
-                                                </label>
-                                            </div>
-                                            <div class="form-check check2">
-                                                <input class="form-check-input" type="radio" name="type_sex"
-                                                    id="sexeditF" value="F" wire:model="editUsers.type_sex">
-                                                <label class="form-check-label" for="sexF">
-                                                    Femenino
-                                                </label>
+                                                    name="supplier_description" cols="1" rows="1" placeholder="descripción del proveedor"
+                                                    wire:model="editUsers.supplier_description">
+                                        </textarea>
                                             </div>
 
                                         </div>
+
                                     @endif
 
                                 </div>
-
-                                <div class="flex space-x-4">
-
-                                    <div class="w-6-12">
-                                        <label class="text-gray-700 dark:text-gray-400">phone</label>
-
-                                        <input
-                                            class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                            placeholder="phone" type="tel" name="phone"
-                                            wire:model="editUsers.phone" />
-                                    </div>
-
-                                    <div class="w-6-12">
-                                        <label class="text-gray-700 dark:text-gray-400">phone_cellular</label>
-
-                                        <input
-                                            class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                            placeholder="phone_cellular" type="tel" name="phone_cellular"
-                                            wire:model="editUsers.phone_cellular" />
-                                    </div>
-
-                                </div>
-                            </div>
-                            <!--fin del paso 2 edit-->
-
-                            <!--paso 3 edit-->
-                            @if ($editUsers->usertype == 2)
+                                <!--fin del paso 1 edit-->
                                 <br>
+                                <!---paso 2 edit-->
                                 <p class="text-sm text-gray-700 dark:text-gray-400">
-                                    paso 3
+                                    paso 2
                                 </p>
                                 <div class="border-ourple-50-s rounded-2xl p-4">
+                                    <div class="flex space-x-4-N">
+
+                                        @if ($editUsers->usertype == 1 || $editUsers->usertype == 2 || $editUsers->usertype == 4)
+                                            <div class="w-6-12 ">
+                                                <label
+                                                    class=" text-gray-700 dark:text-gray-400">{{ __('place expedition identificationcard') }}</label>
+
+                                                <input
+                                                    class=" block w-98 py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                    placeholder="categoría de proveedor" type="text"
+                                                    name="place_expedition_identificationcard"
+                                                    wire:model="editUsers.place_expedition_identificationcard" />
+                                            </div>
+                                        @endif
+
+                                        @if ($editUsers->usertype == 3)
+                                            <div class="w-6-12 ">
+                                                <label class=" text-gray-700 dark:text-gray-400">Nit</label>
+
+                                                <input
+                                                    class=" block w-98 py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                    placeholder="Nit de proveedor" type="text" name="nit"
+                                                    wire:model="editUsers.nit" />
+                                            </div>
+                                        @endif
+
+                                        <div class="w-6-12">
+
+                                            <label class="text-gray-700 dark:text-gray-400">Selecciona un
+                                                pais</label>
+
+                                            <select wire:model="editUsers.country" name="country"
+                                                class="block w-98 ml-1-5 py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
+                                                <option value="0">Selecciona un pais</option>
+                                                <option value="114">CO - Colombia</option>
+                                            </select>
+
+                                        </div>
+
+
+                                    </div>
 
                                     <div class="flex space-x-4">
 
                                         <div class="w-6-12">
-                                            <label class="text-gray-700 dark:text-gray-400">birthdate</label>
 
-                                            <input
-                                                class=" block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="birthdate" type="text" name="birthdate"
-                                                wire:model="editUsers.birthdate" />
+                                            <label wire:loading.remove wire:target="country"
+                                                class="text-gray-700 dark:text-gray-400">{{ __('Department') }}</label><span
+                                                wire:loading wire:target="country"
+                                                class="text-gray-700 dark:text-gray-400">Cargando
+                                                Departamentos...</span>
+
+                                            <select wire:model="editUsers.Department" name="Department"
+                                                class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
+                                                <option value="0">Selecciona una Departamento</option>
+                                                @foreach ($provinces as $province)
+                                                    <option value="{{ $province->id }}">
+                                                        {{ $province->department_name }}</option>
+                                                @endforeach
+                                            </select>
+
                                         </div>
 
                                         <div class="w-6-12">
 
-                                            <label class="text-gray-700 dark:text-gray-400">city_birth</label>
+                                            <label wire:loading.remove wire:target="Department"
+                                                class="text-gray-700 dark:text-gray-400">{{ __('city') }}</label><span
+                                                wire:loading wire:target="Department"
+                                                class="text-gray-700 dark:text-gray-400">Cargando
+                                                Ciudades...</span>
 
-                                            <select wire:model="editUsers.city_birth" name="city_birth"
+                                            <select wire:model="editUsers.city" name="city"
                                                 class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
                                                 <option value="0">Selecciona una Ciudad</option>
-
                                                 @foreach ($cities as $city)
                                                     <option value="{{ $city->id }}">
                                                         {{ $city->city_name }}</option>
                                                 @endforeach
-
                                             </select>
 
                                         </div>
+
 
                                     </div>
 
                                     <div class="flex space-x-4">
 
-                                        <div class="w-1-2">
-                                            <label class="text-gray-700 dark:text-gray-400">weight</label>
+                                        <div class="@if ($editUsers->usertype == 3) w-full @else w-3-4 @endif">
+                                            <label
+                                                class="text-gray-700 dark:text-gray-400">{{ __('address') }}</label>
 
                                             <input
                                                 class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="peso" type="text" name="weight" step="0.01"
-                                                min="0" max="10" maxlength="5"
-                                                wire:model="editUsers.weight" />
+                                                placeholder="Dirección" type="text" name="address"
+                                                wire:model="editUsers.address" />
                                         </div>
 
-                                        <div class="w-1-2">
-                                            <label class="text-gray-700 dark:text-gray-400">pant_size</label>
+                                        @if ($editUsers->usertype == 1 || $editUsers->usertype == 2 || $editUsers->usertype == 4)
+                                            <div class="w-1-3">
 
-                                            <input
-                                                class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="talla de pantalón" type="text" name="pant_size"
-                                                maxlength="5" wire:model="editUsers.pant_size" />
-                                        </div>
+                                                <label class="text-gray-700 dark:text-gray-400">Selecciona el tipo
+                                                    de Sexo</label>
 
-                                        <div class="w-1-2">
-                                            <label class="text-gray-700 dark:text-gray-400">shirt_size</label>
+                                                <div class="form-check check1">
+                                                    <input class="form-check-input" type="radio" name="type_sex"
+                                                        id="sexeditM" value="M"
+                                                        wire:model="editUsers.type_sex">
+                                                    <label class="form-check-label" for="sexM">
+                                                        Masculino
+                                                    </label>
+                                                </div>
+                                                <div class="form-check check2">
+                                                    <input class="form-check-input" type="radio" name="type_sex"
+                                                        id="sexeditF" value="F"
+                                                        wire:model="editUsers.type_sex">
+                                                    <label class="form-check-label" for="sexF">
+                                                        Femenino
+                                                    </label>
+                                                </div>
 
-                                            <input
-                                                class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="Talla de camisa" type="text" name="shirt_size"
-                                                maxlength="5" wire:model="editUsers.shirt_size" />
-                                        </div>
-
-                                        <div class="w-1-2">
-                                            <label class="text-gray-700 dark:text-gray-400">shoe_size</label>
-
-                                            <input
-                                                class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="calzado del zapato" type="text" name="shoe_size"
-                                                maxlength="5" wire:model="editUsers.shoe_size" />
-                                        </div>
+                                            </div>
+                                        @endif
 
                                     </div>
 
                                     <div class="flex space-x-4">
 
                                         <div class="w-6-12">
+                                            <label
+                                                class="text-gray-700 dark:text-gray-400">{{ __('phone') }}</label>
 
-                                            <label class="text-gray-700 dark:text-gray-400">civil_status</label>
-
-                                            <select wire:model="editUsers.civil_status" name="civil_status"
-                                                class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
-                                                <option value="0">Selecciona un estado civil</option>
-
-                                                @foreach ($maritalstatus as $maritalstat)
-                                                    <option value="{{ $maritalstat->id }}">
-                                                        {{ $maritalstat->description_maritalstatus }}</option>
-                                                @endforeach
-
-                                            </select>
-
+                                            <input
+                                                class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                placeholder="phone" type="tel" name="phone"
+                                                wire:model="editUsers.phone" />
                                         </div>
 
                                         <div class="w-6-12">
-
-                                            <label class="text-gray-700 dark:text-gray-400">work_area</label>
-
-                                            <select wire:model="editUsers.work_area" name="work_area"
-                                                class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
-                                                <option value="0">Selecciona el area de trabajo</option>
-
-                                                @foreach ($workAreas as $workArea)
-                                                    <option value="{{ $workArea->id }}">
-                                                        {{ $workArea->workarea_description }}</option>
-                                                @endforeach
-
-                                            </select>
-
-                                        </div>
-
-                                    </div>
-
-                                    <div class="flex space-x-4">
-
-                                        <div class="w-1-3">
-
-                                            <label class="text-gray-700 dark:text-gray-400">binding_type</label>
-
-                                            <select wire:model="editUsers.bonding_type" name="binding_type"
-                                                class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
-                                                <option value="0">Selecciona el tipo de contrato</option>
-
-                                                @foreach ($bondingTypes as $bondingType)
-                                                    <option value="{{ $bondingType->id }}">
-                                                        {{ $bondingType->bonding_type_description }}</option>
-                                                @endforeach
-
-                                            </select>
-                                        </div>
-
-
-                                        <div class="w-1-3">
-                                            <label class="text-gray-700 dark:text-gray-400">salary</label>
+                                            <label
+                                                class="text-gray-700 dark:text-gray-400">{{ __('phone cellular') }}</label>
 
                                             <input
                                                 class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="lugar de retorno" type="number" name="salary"
-                                                wire:model="editUsers.salary" />
-                                        </div>
-
-                                        <div class="w-1-3">
-                                            <label class="text-gray-700 dark:text-gray-400">aid_transport</label>
-
-                                            <input
-                                                class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="lugar de destino" type="number" name="aid_transport"
-                                                wire:model="editUsers.aid_transport" />
+                                                placeholder="phone_cellular" type="tel" name="phone_cellular"
+                                                wire:model="editUsers.phone_cellular" />
                                         </div>
 
                                     </div>
                                 </div>
-                            @endif
-                            <!--fin del paso 3 edit-->
+                                <!--fin del paso 2 edit-->
 
-                            <!---paso 4 edit-->
-                            @if ($editUsers->usertype == 2)
-                                <br>
-                                <p class="text-sm text-gray-700 dark:text-gray-400">
-                                    paso 4
-                                </p>
-                                <div class="border-ourple-50-s rounded-2xl p-4">
+                                <!--paso 3 edit-->
+                                @if ($editUsers->usertype == 2)
+                                    <br>
+                                    <p class="text-sm text-gray-700 dark:text-gray-400">
+                                        paso 3
+                                    </p>
+                                    <div class="border-ourple-50-s rounded-2xl p-4">
 
-                                    <div class="flex space-x-4">
+                                        <div class="flex space-x-4">
 
-                                        <div class="w-6-12">
-                                            <label class="text-gray-700 dark:text-gray-400">education_level</label>
+                                            <div class="w-6-12">
+                                                <label
+                                                    class="text-gray-700 dark:text-gray-400">{{ __('birthdate') }}</label>
 
-                                            <select wire:model="editUsers.education_level" name="education_level"
-                                                class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
-                                                <option value="0">Selecciona el tipo de contrato</option>
+                                                <input
+                                                    class=" block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                    placeholder="birthdate" type="text" name="birthdate"
+                                                    wire:model="editUsers.birthdate" />
+                                            </div>
 
-                                                @foreach ($educationLevels as $educationLevel)
-                                                    <option value="{{ $educationLevel->id }}">
-                                                        {{ $educationLevel->description_levelEducation }}</option>
-                                                @endforeach
+                                            <div class="w-6-12">
 
-                                            </select>
+                                                <label
+                                                    class="text-gray-700 dark:text-gray-400">{{ __('city birth') }}</label>
+
+                                                <select wire:model="editUsers.city_birth" name="city_birth"
+                                                    class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
+                                                    <option value="0">Selecciona una Ciudad</option>
+
+                                                    @foreach ($cities as $city)
+                                                        <option value="{{ $city->id }}">
+                                                            {{ $city->city_name }}</option>
+                                                    @endforeach
+
+                                                </select>
+
+                                            </div>
+
                                         </div>
 
-                                        <div class="w-6-12">
-                                            <label
-                                                class="text-gray-700 dark:text-gray-400">educational_institution</label>
+                                        <div class="flex space-x-4">
 
-                                            <input
-                                                class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="Institución educativa" type="text"
-                                                name="educational_institution"
-                                                wire:model="editUsers.educational_institution" />
+                                            <div class="w-1-2">
+                                                <label
+                                                    class="text-gray-700 dark:text-gray-400">{{ __('weight') }}</label>
+
+                                                <input
+                                                    class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                    placeholder="peso" type="text" name="weight"
+                                                    step="0.01" min="0" max="10" maxlength="5"
+                                                    wire:model="editUsers.weight" />
+                                            </div>
+
+                                            <div class="w-1-2">
+                                                <label
+                                                    class="text-gray-700 dark:text-gray-400">{{ __('pant size') }}</label>
+
+                                                <input
+                                                    class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                    placeholder="talla de pantalón" type="text"
+                                                    name="pant_size" maxlength="5"
+                                                    wire:model="editUsers.pant_size" />
+                                            </div>
+
+                                            <div class="w-1-2">
+                                                <label
+                                                    class="text-gray-700 dark:text-gray-400">{{ __('shirt size') }}</label>
+
+                                                <input
+                                                    class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                    placeholder="Talla de camisa" type="text" name="shirt_size"
+                                                    maxlength="5" wire:model="editUsers.shirt_size" />
+                                            </div>
+
+                                            <div class="w-1-2">
+                                                <label
+                                                    class="text-gray-700 dark:text-gray-400">{{ __('shoe size') }}</label>
+
+                                                <input
+                                                    class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                    placeholder="calzado del zapato" type="text"
+                                                    name="shoe_size" maxlength="5"
+                                                    wire:model="editUsers.shoe_size" />
+                                            </div>
+
                                         </div>
 
+                                        <div class="flex space-x-4">
+
+                                            <div class="w-6-12">
+
+                                                <label
+                                                    class="text-gray-700 dark:text-gray-400">{{ __('civil status') }}</label>
+
+                                                <select wire:model="editUsers.civil_status" name="civil_status"
+                                                    class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
+                                                    <option value="0">Selecciona un estado civil</option>
+
+                                                    @foreach ($maritalstatus as $maritalstat)
+                                                        <option value="{{ $maritalstat->id }}">
+                                                            {{ $maritalstat->description_maritalstatus }}</option>
+                                                    @endforeach
+
+                                                </select>
+
+                                            </div>
+
+                                            <div class="w-6-12">
+
+                                                <label
+                                                    class="text-gray-700 dark:text-gray-400">{{ __('work area') }}</label>
+
+                                                <select wire:model="editUsers.work_area" name="work_area"
+                                                    class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
+                                                    <option value="0">Selecciona el area de trabajo</option>
+
+                                                    @foreach ($workAreas as $workArea)
+                                                        <option value="{{ $workArea->id }}">
+                                                            {{ $workArea->workarea_description }}</option>
+                                                    @endforeach
+
+                                                </select>
+
+                                            </div>
+
+                                        </div>
+
+                                        <div class="flex space-x-4">
+
+                                            <div class="w-1-3">
+
+                                                <label
+                                                    class="text-gray-700 dark:text-gray-400">{{ __('binding type') }}</label>
+
+                                                <select wire:model="editUsers.bonding_type" name="binding_type"
+                                                    class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
+                                                    <option value="0">Selecciona el tipo de contrato</option>
+
+                                                    @foreach ($bondingTypes as $bondingType)
+                                                        <option value="{{ $bondingType->id }}">
+                                                            {{ $bondingType->bonding_type_description }}</option>
+                                                    @endforeach
+
+                                                </select>
+                                            </div>
+
+
+                                            <div class="w-1-3">
+                                                <label
+                                                    class="text-gray-700 dark:text-gray-400">{{ __('salary') }}</label>
+
+                                                <input
+                                                    class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                    placeholder="lugar de retorno" type="number" name="salary"
+                                                    wire:model="editUsers.salary" />
+                                            </div>
+
+                                            <div class="w-1-3">
+                                                <label
+                                                    class="text-gray-700 dark:text-gray-400">{{ __('aid transport') }}</label>
+
+                                                <input
+                                                    class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                    placeholder="lugar de destino" type="number"
+                                                    name="aid_transport" wire:model="editUsers.aid_transport" />
+                                            </div>
+
+                                        </div>
                                     </div>
+                                @endif
+                                <!--fin del paso 3 edit-->
 
-                                    <div class="flex space-x-4">
+                                <!---paso 4 edit-->
+                                @if ($editUsers->usertype == 2)
+                                    <br>
+                                    <p class="text-sm text-gray-700 dark:text-gray-400">
+                                        paso 4
+                                    </p>
+                                    <div class="border-ourple-50-s rounded-2xl p-4">
 
-                                        <div class="w-6-12">
-                                            <label class="text-gray-700 dark:text-gray-400">last_year</label>
+                                        <div class="flex space-x-4">
 
-                                            <input
-                                                class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="ultimo año cursado" type="text" name="last_year"
-                                                maxlength="4" wire:model="editUsers.last_year" />
+                                            <div class="w-6-12">
+                                                <label
+                                                    class="text-gray-700 dark:text-gray-400">{{ __('education level') }}</label>
+
+                                                <select wire:model="editUsers.education_level"
+                                                    name="education_level"
+                                                    class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
+                                                    <option value="0">Selecciona el tipo de contrato</option>
+
+                                                    @foreach ($educationLevels as $educationLevel)
+                                                        <option value="{{ $educationLevel->id }}">
+                                                            {{ $educationLevel->description_levelEducation }}</option>
+                                                    @endforeach
+
+                                                </select>
+                                            </div>
+
+                                            <div class="w-6-12">
+                                                <label
+                                                    class="text-gray-700 dark:text-gray-400">{{ __('educational institution') }}</label>
+
+                                                <input
+                                                    class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                    placeholder="Institución educativa" type="text"
+                                                    name="educational_institution"
+                                                    wire:model="editUsers.educational_institution" />
+                                            </div>
+
                                         </div>
 
-                                        <div class="w-6-12">
-                                            <label class="text-gray-700 dark:text-gray-400">study_end_date</label>
+                                        <div class="flex space-x-4">
 
-                                            <input
-                                                class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="fecha de finalización" type="text"
-                                                name="study_end_date" wire:model="editUsers.study_end_date" />
+                                            <div class="w-6-12">
+                                                <label
+                                                    class="text-gray-700 dark:text-gray-400">{{ __('last year') }}</label>
+
+                                                <input
+                                                    class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                    placeholder="ultimo año cursado" type="text"
+                                                    name="last_year" maxlength="4"
+                                                    wire:model="editUsers.last_year" />
+                                            </div>
+
+                                            <div class="w-6-12">
+                                                <label
+                                                    class="text-gray-700 dark:text-gray-400">{{ __('study end date') }}</label>
+
+                                                <input
+                                                    class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                    placeholder="fecha de finalización" type="text"
+                                                    name="study_end_date" wire:model="editUsers.study_end_date" />
+                                            </div>
+
                                         </div>
 
+                                        <div class="flex space-x-4">
+
+                                            <div class="w-6-12">
+                                                <label
+                                                    class="text-gray-700 dark:text-gray-400">{{ __('obtained title') }}</label>
+
+                                                <input
+                                                    class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                    placeholder="titulo obtenido" type="text"
+                                                    name="obtained_title" wire:model="editUsers.obtained_title" />
+                                            </div>
+
+                                            <div class="w-6-12">
+                                                <label
+                                                    class="text-gray-700 dark:text-gray-400">{{ __('last company name') }}</label>
+
+                                                <input
+                                                    class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                    placeholder="Ultima empresa donde trabajaste" type="text"
+                                                    name="last_company_name"
+                                                    wire:model="editUsers.last_company_name" />
+                                            </div>
+
+                                        </div>
+
+                                        <div class="flex space-x-4">
+
+                                            <div class="w-6-12">
+                                                <label
+                                                    class="text-gray-700 dark:text-gray-400">{{ __('charges last company') }}</label>
+
+                                                <input
+                                                    class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                    placeholder="cargo de la ultima empresa" type="text"
+                                                    name="charges_last_company"
+                                                    wire:model="editUsers.charges_last_company" />
+                                            </div>
+
+                                            <div class="w-6-12">
+                                                <label
+                                                    class="text-gray-700 dark:text-gray-400">{{ __('start date last company') }}</label>
+
+                                                <input
+                                                    class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                    placeholder="fecha de ingreso conrato de la ultima empresa"
+                                                    type="text" name="start_date_last_company"
+                                                    wire:model="editUsers.start_date_last_company" />
+                                            </div>
+
+                                        </div>
                                     </div>
+                                @endif
+                                <!--fin del paso 4 edit-->
 
-                                    <div class="flex space-x-4">
+                                <!--paso 5 edit-->
+                                @if ($editUsers->usertype == 2)
+                                    <br>
+                                    <p class="text-sm text-gray-700 dark:text-gray-400">
+                                        paso 5
+                                    </p>
+                                    <div class="border-ourple-50-s rounded-2xl p-4">
 
-                                        <div class="w-6-12">
-                                            <label class="text-gray-700 dark:text-gray-400">obtained_title</label>
+                                        <div class="flex space-x-4">
 
-                                            <input
-                                                class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="titulo obtenido" type="text" name="obtained_title"
-                                                wire:model="editUsers.obtained_title" />
-                                        </div>
+                                            <div class="w-6-12">
+                                                <label
+                                                    class="text-gray-700 dark:text-gray-400">{{ __('date end last company') }}</label>
 
-                                        <div class="w-6-12">
-                                            <label class="text-gray-700 dark:text-gray-400">last_company_name</label>
+                                                <input
+                                                    class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                    placeholder="fecha de finalización contrato de la ultima empresa"
+                                                    type="text" name="date_end_last_company"
+                                                    wire:model="editUsers.date_end_last_company" />
+                                            </div>
 
-                                            <input
-                                                class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="Ultima empresa donde trabajaste" type="text"
-                                                name="last_company_name" wire:model="editUsers.last_company_name" />
-                                        </div>
+                                            <div class="w-6-12">
 
-                                    </div>
+                                                <label
+                                                    class="text-gray-700 dark:text-gray-400">{{ __('functions performed') }}</label>
 
-                                    <div class="flex space-x-4">
-
-                                        <div class="w-6-12">
-                                            <label
-                                                class="text-gray-700 dark:text-gray-400">charges_last_company</label>
-
-                                            <input
-                                                class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="cargo de la ultima empresa" type="text"
-                                                name="charges_last_company"
-                                                wire:model="editUsers.charges_last_company" />
-                                        </div>
-
-                                        <div class="w-6-12">
-                                            <label
-                                                class="text-gray-700 dark:text-gray-400">start_date_last_company</label>
-
-                                            <input
-                                                class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="fecha de ingreso conrato de la ultima empresa"
-                                                type="text" name="start_date_last_company"
-                                                wire:model="editUsers.start_date_last_company" />
-                                        </div>
-
-                                    </div>
-                                </div>
-                            @endif
-                            <!--fin del paso 4 edit-->
-
-                            <!--paso 5 edit-->
-                            @if ($editUsers->usertype == 2)
-                                <br>
-                                <p class="text-sm text-gray-700 dark:text-gray-400">
-                                    paso 5
-                                </p>
-                                <div class="border-ourple-50-s rounded-2xl p-4">
-
-                                    <div class="flex space-x-4">
-
-                                        <div class="w-6-12">
-                                            <label
-                                                class="text-gray-700 dark:text-gray-400">date_end_last_company</label>
-
-                                            <input
-                                                class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="fecha de finalización contrato de la ultima empresa"
-                                                type="text" name="date_end_last_company"
-                                                wire:model="editUsers.date_end_last_company" />
-                                        </div>
-
-                                        <div class="w-6-12">
-
-                                            <label
-                                                class="text-gray-700 dark:text-gray-400">functions_performed</label>
-
-                                            <textarea
-                                                class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                name="functions_performed" cols="1" rows="1" placeholder="funciones realizadas"
-                                                wire:model="editUsers.functions_performed">
-                                </textarea>
-                                        </div>
-
-                                    </div>
-
-
-                                    <div class="flex space-x-4">
-
-                                        <div class="w-1-3">
-                                            <label
-                                                class=" text-gray-700 dark:text-gray-400">family_document_type</label>
-                                            <select wire:model="editUsers.family_document_type"
-                                                name="family_document_type"
-                                                class=" block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
-                                                <option value="0">Documento del familiar</option>
-                                                @foreach ($identifications as $identification)
-                                                    <option value="{{ $identification->id }}">
-                                                        {{ $identification->description_identification }}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-
-
-                                        <div class="w-1-3">
-                                            <label
-                                                class=" text-gray-700 dark:text-gray-400">identificationcard_family</label>
-
-                                            <input
-                                                class=" block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="documento" type="text"
-                                                name="identificationcard_family"
-                                                wire:model="editUsers.identificationcard_family" />
-                                        </div>
-
-                                        <div class="w-1-3">
-                                            <label class="text-gray-700 dark:text-gray-400">relationship</label>
-
-                                            <select wire:model="editUsers.relationship" name="relationship"
-                                                class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
-                                                <option value="0">Selecciona el tipo de contrato</option>
-
-                                                @foreach ($relationships as $relationship)
-                                                    <option value="{{ $relationship->id }}">
-                                                        {{ $relationship->description_relationship }}</option>
-                                                @endforeach
-
-                                            </select>
-                                        </div>
-
-                                    </div>
-
-
-                                    <div class="flex space-x-4">
-
-                                        <div class="w-6-12">
-                                            <label class="text-gray-700 dark:text-gray-400">family_names</label>
-
-                                            <input
-                                                class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="Nombre completo del familiar" type="text"
-                                                name="family_names" wire:model="editUsers.family_names" />
-                                        </div>
-
-                                        <div class="w-6-12">
-                                            <label class="text-gray-700 dark:text-gray-400">family_address</label>
-
-                                            <input
-                                                class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="Dirección del familiar" type="text"
-                                                name="family_address" wire:model="editUsers.family_address" />
-                                        </div>
-
-                                    </div>
-
-
-                                    <div class="flex space-x-4">
-
-                                        <div class="w-6-12">
-                                            <label class="text-gray-700 dark:text-gray-400">family_phone</label>
-
-                                            <input
-                                                class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="telefono del familiar" type="tel"
-                                                name="family_phone" wire:model="editUsers.family_phone" />
-                                        </div>
-
-                                        <div class="w-6-12">
-                                            <label
-                                                class="text-gray-700 dark:text-gray-400">family_phone_cellular</label>
-
-                                            <input
-                                                class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="telefono celular del familiar" type="tel"
-                                                name="family_phone_cellular"
-                                                wire:model.="editUsers.family_phone_cellular" />
-                                        </div>
-
-                                    </div>
-                                </div>
-                            @endif
-
-                            <!--fin del paso 5 edit-->
-
-                            <!--paso 6 edit-->
-                            @if ($editUsers->usertype == 2)
-                                <br>
-                                <p class="text-sm text-gray-700 dark:text-gray-400">
-                                    paso 6
-                                </p>
-                                <div class="border-ourple-50-s rounded-2xl p-4">
-
-                                    <div class="flex space-x-4">
-
-                                        <div class="w-6-12">
-                                            <label class="text-gray-700 dark:text-gray-400">eps</label>
-
-                                            <select wire:model="editUsers.eps" name="eps"
-                                                class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
-                                                <option value="0">Selecciona la eps del usuario</option>
-
-                                                @foreach ($epses as $eps)
-                                                    <option value="{{ $eps->id }}">
-                                                        {{ $eps->description_eps }}</option>
-                                                @endforeach
-
-                                            </select>
-                                        </div>
-
-                                        <div class="w-6-12 ">
-
-                                            <label class="text-gray-700 dark:text-gray-400">Selecciona el
-                                                estado de la
-                                                eps</label>
-
-                                            <select wire:model="editUsers.eps_status" name="eps_status"
-                                                class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
-                                                <option value="">Selecciona el estado de la eps</option>
-                                                <option value="1">ACTIVO</option>
-                                                <option value="2">PENDIENTE</option>
-                                                <option value="3">INACTIVO</option>
-                                            </select>
+                                                <textarea
+                                                    class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                    name="functions_performed" cols="1" rows="1" placeholder="funciones realizadas"
+                                                    wire:model="editUsers.functions_performed">
+                                    </textarea>
+                                            </div>
 
                                         </div>
 
-                                    </div>
 
-                                    <div class="flex space-x-4">
+                                        <div class="flex space-x-4">
 
-                                        <div class="w-6-12">
-                                            <label class="text-gray-700 dark:text-gray-400">date_eps</label>
+                                            <div class="w-1-3">
+                                                <label
+                                                    class=" text-gray-700 dark:text-gray-400">{{ __('family document type') }}</label>
+                                                <select wire:model="editUsers.family_document_type"
+                                                    name="family_document_type"
+                                                    class=" block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
+                                                    <option value="0">Documento del familiar</option>
+                                                    @foreach ($identifications as $identification)
+                                                        <option value="{{ $identification->id }}">
+                                                            {{ $identification->description_identification }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
 
-                                            <input
-                                                class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="Dirección del familiar" type="date"
-                                                name="date_eps" wire:model="editUsers.date_eps" />
-                                        </div>
 
-                                        <div class="w-6-12">
-                                            <label class="text-gray-700 dark:text-gray-400">blood_type</label>
+                                            <div class="w-1-3">
+                                                <label
+                                                    class=" text-gray-700 dark:text-gray-400">{{ __('identificationcard family') }}</label>
 
-                                            <select wire:model="editUsers.blood_type" name="blood_type"
-                                                class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
-                                                <option value="0">Selecciona el tipo de sangre</option>
+                                                <input
+                                                    class=" block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                    placeholder="documento" type="text"
+                                                    name="identificationcard_family"
+                                                    wire:model="editUsers.identificationcard_family" />
+                                            </div>
 
-                                                @foreach ($bloodTypes as $bloodType)
-                                                    <option value="{{ $bloodType->id }}">
-                                                        {{ $bloodType->blood_type_description }}</option>
-                                                @endforeach
+                                            <div class="w-1-3">
+                                                <label
+                                                    class="text-gray-700 dark:text-gray-400">{{ __('relationship') }}</label>
 
-                                            </select>
-                                        </div>
+                                                <select wire:model="editUsers.relationship" name="relationship"
+                                                    class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
+                                                    <option value="0">Selecciona el tipo de contrato</option>
 
-                                    </div>
+                                                    @foreach ($relationships as $relationship)
+                                                        <option value="{{ $relationship->id }}">
+                                                            {{ $relationship->description_relationship }}</option>
+                                                    @endforeach
 
-                                    <div class="flex space-x-4">
-
-                                        <div class="w-6-12">
-                                            <label class="text-gray-700 dark:text-gray-400">pension</label>
-
-                                            <select wire:model="editUsers.pension" name="pension"
-                                                class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
-                                                <option value="0">Selecciona la pension del usuario</option>
-
-                                                @foreach ($pensions as $pension)
-                                                    <option value="{{ $pension->id }}">
-                                                        {{ $pension->description_pension }}</option>
-                                                @endforeach
-
-                                            </select>
-                                        </div>
-
-                                        <div class="w-6-12 ">
-
-                                            <label class="text-gray-700 dark:text-gray-400">Selecciona
-                                                el estado de la
-                                                pension</label>
-
-                                            <select wire:model="editUsers.pension_status" name="pension_status"
-                                                class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
-                                                <option value="">Selecciona el estado de la pension</option>
-                                                <option value="1">ACTIVO</option>
-                                                <option value="2">PENDIENTE</option>
-                                                <option value="3">INACTIVO</option>
-                                            </select>
+                                                </select>
+                                            </div>
 
                                         </div>
 
-                                    </div>
 
-                                    <div class="flex space-x-4">
+                                        <div class="flex space-x-4">
 
-                                        <div class="w-6-12">
-                                            <label class="text-gray-700 dark:text-gray-400">date_pension</label>
+                                            <div class="w-6-12">
+                                                <label
+                                                    class="text-gray-700 dark:text-gray-400">{{ __('family names') }}</label>
 
-                                            <input
-                                                class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="Dirección del familiar" type="date"
-                                                name="date_pension" wire:model="editUsers.date_pension" />
-                                        </div>
+                                                <input
+                                                    class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                    placeholder="Nombre completo del familiar" type="text"
+                                                    name="family_names" wire:model="editUsers.family_names" />
+                                            </div>
 
-                                        <div class="w-6-12">
-                                            <label class="text-gray-700 dark:text-gray-400">layoffs</label>
+                                            <div class="w-6-12">
+                                                <label
+                                                    class="text-gray-700 dark:text-gray-400">{{ __('family address') }}</label>
 
-                                            <select wire:model="editUsers.layoffs" name="layoffs"
-                                                class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
-                                                <option value="0">Selecciona el tipo de cesantias</option>
-
-                                                @foreach ($layoffes as $layoff)
-                                                    <option value="{{ $layoff->id }}">
-                                                        {{ $layoff->description_layoffs }}</option>
-                                                @endforeach
-
-                                            </select>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            @endif
-
-                            <!--fin del paso 6 edit-->
-
-                            <!--paso 7 edit-->
-                            @if ($editUsers->usertype == 2)
-                                <br>
-                                <p class="text-sm text-gray-700 dark:text-gray-400">
-                                    paso 7
-                                </p>
-                                <div class="border-ourple-50-s rounded-2xl p-4">
-
-                                    <div class="flex space-x-4">
-
-                                        <div class="w-6-12 ">
-
-                                            <label class="text-gray-700 dark:text-gray-400">Selecciona
-                                                el estado de la
-                                                status_layoffs</label>
-
-                                            <select wire:model="editUsers.status_layoffs" name="status_layoffs"
-                                                class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
-                                                <option value="">Selecciona el estado de las cesantias</option>
-                                                <option value="1">ACTIVO</option>
-                                                <option value="2">PENDIENTE</option>
-                                                <option value="3">INACTIVO</option>
-                                            </select>
+                                                <input
+                                                    class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                    placeholder="Dirección del familiar" type="text"
+                                                    name="family_address" wire:model="editUsers.family_address" />
+                                            </div>
 
                                         </div>
 
-                                        <div class="w-6-12">
-                                            <label class="text-gray-700 dark:text-gray-400">date_layoffs</label>
 
-                                            <input
-                                                class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="Fecha del inicio de las cesantias" type="date"
-                                                name="date_layoffs" wire:model="editUsers.date_layoffs" />
-                                        </div>
+                                        <div class="flex space-x-4">
 
-                                    </div>
+                                            <div class="w-6-12">
+                                                <label
+                                                    class="text-gray-700 dark:text-gray-400">{{ __('family phone') }}</label>
 
-                                    <div class="flex space-x-4">
+                                                <input
+                                                    class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                    placeholder="telefono del familiar" type="tel"
+                                                    name="family_phone" wire:model="editUsers.family_phone" />
+                                            </div>
 
-                                        <div class="w-6-12">
-                                            <label class="text-gray-700 dark:text-gray-400">arl</label>
+                                            <div class="w-6-12">
+                                                <label
+                                                    class="text-gray-700 dark:text-gray-400">{{ __('family phone cellular') }}</label>
 
-                                            <select wire:model="editUsers.arl" name="arl"
-                                                class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
-                                                <option value="0">Selecciona la arl del usuario</option>
-
-                                                @foreach ($arls as $arl)
-                                                    <option value="{{ $arl->id }}">
-                                                        {{ $arl->description_arl }}</option>
-                                                @endforeach
-
-                                            </select>
-                                        </div>
-
-                                        <div class="w-6-12 ">
-
-                                            <label class="text-gray-700 dark:text-gray-400">Selecciona el
-                                                estado de la
-                                                arl_status</label>
-
-                                            <select wire:model="editUsers.arl_status" name="arl_status"
-                                                class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
-                                                <option value="">Selecciona el estado de la arl</option>
-                                                <option value="1">ACTIVO</option>
-                                                <option value="2">PENDIENTE</option>
-                                                <option value="3">INACTIVO</option>
-                                            </select>
+                                                <input
+                                                    class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                    placeholder="telefono celular del familiar" type="tel"
+                                                    name="family_phone_cellular"
+                                                    wire:model.="editUsers.family_phone_cellular" />
+                                            </div>
 
                                         </div>
-
-                                    </div>
-
-                                    <div class="flex space-x-4">
-
-                                        <div class="w-6-12">
-                                            <label class="text-gray-700 dark:text-gray-400">arl_date</label>
-
-                                            <input
-                                                class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="Fecha del inicio de la arl" type="date"
-                                                name="arl_date" wire:model="editUsers.arl_date" />
-                                        </div>
-
-                                        <div class="w-6-12">
-                                            <label class="text-gray-700 dark:text-gray-400">compensationbox</label>
-
-                                            <select wire:model="editUsers.compensationbox" name="compensationbox"
-                                                class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
-                                                <option value="0">Selecciona el tipo de caja de compensación
-                                                </option>
-
-                                                @foreach ($compensationboxes as $compensationbox)
-                                                    <option value="{{ $compensationbox->id }}">
-                                                        {{ $compensationbox->description_compensationbox }}</option>
-                                                @endforeach
-
-                                            </select>
-                                        </div>
-
-                                    </div>
-
-                                    <div class="flex space-x-4">
-
-                                        <div class="w-6-12 ">
-
-                                            <label class="text-gray-700 dark:text-gray-400">Selecciona el estado de la
-                                                compensationbox_status</label>
-
-                                            <select wire:model="editUsers.compensationbox_status"
-                                                name="compensationbox_status"
-                                                class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
-                                                <option value="">Selecciona el estado de la caja de compensación
-                                                </option>
-                                                <option value="1">ACTIVO</option>
-                                                <option value="2">PENDIENTE</option>
-                                                <option value="3">INACTIVO</option>
-                                            </select>
-
-                                        </div>
-
-                                        <div class="w-6-12">
-                                            <label
-                                                class="text-gray-700 dark:text-gray-400">date_compensationbox</label>
-
-                                            <input
-                                                class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="Dirección del familiar" type="date"
-                                                name="date_compensationbox"
-                                                wire:model="editUsers.date_compensationbox" />
-                                        </div>
-
-                                    </div>
-                                </div>
-                            @endif
-
-                            <!--fin del paso 7 edit-->
-
-                            <!--paso 8 edit-->
-                            @if ($editUsers->charge == 5)
-                                <br>
-                                <p class="text-sm text-gray-700 dark:text-gray-400">
-                                    paso 8
-                                </p>
-                                <div class="border-ourple-50-s rounded-2xl p-4">
-
-                                    <div class="flex space-x-4">
-
-                                        <div class="w-6-12">
-                                            <label class="text-gray-700 dark:text-gray-400">license_number</label>
-
-                                            <input
-                                                class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="numero de licencia conductor" type="number"
-                                                name="license_number" wire:model="license_number2" />
-
-                                        </div>
-
-                                        <div class="w-6-12">
-                                            <label class="text-gray-700 dark:text-gray-400">license_category</label>
-
-                                            <select wire:model="license_category2" name="license_category"
-                                                class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
-                                                <option value="0">Selecciona la categoria de licencia de
-                                                    conducción
-                                                </option>
-
-                                                @foreach ($licenseCategories as $licenseCategory)
-                                                    <option value="{{ $licenseCategory->id }}">
-                                                        {{ $licenseCategory->code_licenseCategory }} -
-                                                        {{ $licenseCategory->description_licenseCategory }}</option>
-                                                @endforeach
-
-                                            </select>
-                                        </div>
-
-                                    </div>
-
-                                    <div class="flex space-x-4">
-
-                                        <div class="w-6-12">
-                                            <label class="text-gray-700 dark:text-gray-400">license_expiration</label>
-
-                                            <input
-                                                class="block w90 py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="Fecha del certificado de espiracion_licencia"
-                                                type="date" name="license_expiration"
-                                                wire:model="license_expiration2" />
-
-                                            <span class=" edit-upload-ico fas fa-file-upload" {{-- @if ($doclicense != '') icon-blue @else icon-green @endif" --}}
-                                                aria-hidden="true" fill="none" stroke-linecap="round"
-                                                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
-                                                stroke="currentColor" id="Doclicense2">
-                                                <input wire:model="Doclicense" id="InputDoclicense2"
-                                                    onchange="updateDocument('0','Licencia')"
-                                                    class="edit-upload-input" type="file">
-                                            </span>
-                                        </div>
-
-                                        <div class="w-6-12">
-                                            <label
-                                                class="text-gray-700 dark:text-gray-400">certificate_drugs_alchoolemia</label>
-
-                                            <input
-                                                class="block w90 py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="Fecha del certificado de drogas_alchoolemia"
-                                                type="date" name="certificate_drugs_alchoolemia"
-                                                wire:model="certificate_drugs_alchoolemia2" />
-
-                                            <span class=" edit-upload-ico fas fa-file-upload" {{-- @if ($docAlchoolemia != '') icon-blue @else icon-green @endif" --}}
-                                                aria-hidden="true" fill="none" stroke-linecap="round"
-                                                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
-                                                stroke="currentColor" id="DocAlchoolemia2">
-                                                <input wire:model="DocAlchoolemia"
-                                                    onchange="updateDocument('1','alchoolemia')"
-                                                    class="edit-upload-input" type="file">
-                                            </span>
-                                        </div>
-
-                                    </div>
-
-                                    <div class="flex space-x-4">
-
-                                        <div class="w-6-12">
-                                            <label class="text-gray-700 dark:text-gray-400">SIMIT_queries</label>
-
-                                            <input
-                                                class="block w90 py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="Fecha del certificado de Consultas_SIMIT"
-                                                type="date" name="SIMIT_queries" wire:model="SIMIT_queries2" />
-
-                                            <span class=" edit-upload-ico fas fa-file-upload" {{-- @if ($docSimitQueries != '') icon-blue @else icon-green @endif" --}}
-                                                aria-hidden="true" fill="none" stroke-linecap="round"
-                                                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
-                                                stroke="currentColor" id="DocSimitQueries2">
-                                                <input wire:model="DocSimitQueries"
-                                                    onchange="updateDocument('2','SIMIT')" class="edit-upload-input"
-                                                    type="file">
-                                            </span>
-                                        </div>
-
-                                        <div class="w-6-12">
-                                            <label class="text-gray-700 dark:text-gray-400">driving_exam</label>
-
-                                            <input
-                                                class="block w90 py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="Fecha del certificado del Examen_Conduccion"
-                                                type="date" name="driving_exam" wire:model="driving_exam2" />
-
-                                            <span class=" edit-upload-ico fas fa-file-upload" {{-- @if ($docdrivingExam != '') icon-blue @else icon-green @endif" --}}
-                                                aria-hidden="true" fill="none" stroke-linecap="round"
-                                                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
-                                                stroke="currentColor" id="DocdrivingExam2">
-                                                <input wire:model="DocdrivingExam"
-                                                    onchange="updateDocument('3','Examen')"
-                                                    class="edit-upload-input" type="file">
-                                            </span>
-                                        </div>
-
-                                    </div>
-
-                                    <div class="flex space-x-4">
-
-                                        <div class="w-6-12">
-                                            <label
-                                                class="text-gray-700 dark:text-gray-400">Norm_Overland_Transportation_Automotive</label>
-
-                                            <input
-                                                class="block w90 py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="Fecha del certificado de las Norma_Transporte_terrestre_automotor"
-                                                type="date" name="Norm_Overland_Transportation_Automotive"
-                                                wire:model="Norm_Overland_Transportation_Automotive2" />
-
-                                            <span class=" edit-upload-ico fas fa-file-upload" {{-- @if ($docNormOverlandTransportationAutomotive != '') icon-blue @else icon-green @endif" --}}
-                                                aria-hidden="true" fill="none" stroke-linecap="round"
-                                                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
-                                                stroke="currentColor" id="DocNormOverlandTransportationAutomotive2">
-                                                <input wire:model="DocNormOverlandTransportationAutomotive"
-                                                    onchange="updateDocument('4','Norma_Transporte')"
-                                                    class="edit-upload-input" type="file">
-                                            </span>
-                                        </div>
-
-                                        <div class="w-6-12">
-                                            <label class="text-gray-700 dark:text-gray-400">Rules_Transit</label>
-
-                                            <input
-                                                class="block w90 py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="Fecha del certificado de Normas_Transito"
-                                                type="date" name="Rules_Transit" wire:model="Rules_Transit2" />
-
-                                            <span class=" edit-upload-ico fas fa-file-upload" {{-- @if ($docRulesTransit != '') icon-blue @else icon-green @endif" --}}
-                                                aria-hidden="true" fill="none" stroke-linecap="round"
-                                                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
-                                                stroke="currentColor" id="DocRulesTransit2">
-                                                <input wire:model="DocRulesTransit"
-                                                    onchange="updateDocument('5','Normas_Transito')"
-                                                    class="edit-upload-input" type="file">
-                                            </span>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            @endif
-
-                            <!--fin del paso 8 edit-->
-
-                            <!--paso 9 edit-->
-                            @if ($editUsers->charge == 5)
-                                <br>
-                                <p class="text-sm text-gray-700 dark:text-gray-400">
-                                    paso 9
-                                </p>
-                                <div class="border-ourple-50-s rounded-2xl p-4">
-
-                                    <div class="flex space-x-4">
-
-                                        <div class="w-6-12">
-                                            <label class="text-gray-700 dark:text-gray-400">Normative_Tips</label>
-
-                                            <input
-                                                class="block w90 py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="Fecha del certificado de Tips_normativos"
-                                                type="date" name="Normative_Tips"
-                                                wire:model="Normative_Tips2" />
-
-                                            <span class=" edit-upload-ico fas fa-file-upload" {{-- @if ($docNormativeTips != '') icon-blue @else icon-green @endif" --}}
-                                                aria-hidden="true" fill="none" stroke-linecap="round"
-                                                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
-                                                stroke="currentColor" id="DocNormativeTips2">
-                                                <input wire:model="DocNormativeTips"
-                                                    onchange="updateDocument('6','Tips_normativos')"
-                                                    class="edit-upload-input" type="file">
-                                            </span>
-                                        </div>
-
-                                        <div class="w-6-12">
-                                            <label class="text-gray-700 dark:text-gray-400">Driving_Methods</label>
-
-                                            <input
-                                                class="block w90 py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="Fecha del certificado de Metodos_Conduccion"
-                                                type="date" name="Driving_Methods"
-                                                wire:model="Driving_Methods2" />
-
-                                            <span class=" edit-upload-ico fas fa-file-upload" {{-- @if ($docDrivingMethods != '') icon-blue @else icon-green @endif" --}}
-                                                aria-hidden="true" fill="none" stroke-linecap="round"
-                                                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
-                                                stroke="currentColor" id="DocDrivingMethods2">
-                                                <input wire:model="DocDrivingMethods"
-                                                    onchange="updateDocument('7','Metodos_Conduccion')"
-                                                    class="edit-upload-input" type="file">
-                                            </span>
-                                        </div>
-
-                                    </div>
-
-                                    <div class="flex space-x-4">
-
-                                        <div class="w-6-12">
-                                            <label class="text-gray-700 dark:text-gray-400">Defensive_driving</label>
-
-                                            <input
-                                                class="block w90 py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="Fecha del certificado de Manejo_Defensivo"
-                                                type="date" name="Defensive_driving"
-                                                wire:model="Defensive_driving2" />
-
-                                            <span class=" edit-upload-ico fas fa-file-upload" {{-- @if ($docDefensiveDriving != '') icon-blue @else icon-green @endif" --}}
-                                                aria-hidden="true" fill="none" stroke-linecap="round"
-                                                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
-                                                stroke="currentColor" id="DocDefensiveDriving2">
-                                                <input wire:model="DocDefensiveDriving"
-                                                    onchange="updateDocument('8','Defensivo')"
-                                                    class="edit-upload-input" type="file">
-                                            </span>
-                                        </div>
-
-                                        <div class="w-6-12">
-                                            <label class="text-gray-700 dark:text-gray-400">distractions</label>
-
-                                            <input
-                                                class="block w90 py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="Fecha del certificado de Distracciones" type="date"
-                                                name="distractions" wire:model="distractions2" />
-
-                                            <span class=" edit-upload-ico fas fa-file-upload" {{-- @if ($docdistractions != '') icon-blue @else icon-green @endif" --}}
-                                                aria-hidden="true" fill="none" stroke-linecap="round"
-                                                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
-                                                stroke="currentColor" id="Docdistractions2">
-                                                <input wire:model="Docdistractions"
-                                                    onchange="updateDocument('9','Distracciones')"
-                                                    class="edit-upload-input" type="file">
-                                            </span>
-                                        </div>
-
-                                    </div>
-
-                                    <div class="flex space-x-4">
-
-                                        <div class="w-6-12">
-                                            <label class="text-gray-700 dark:text-gray-400">First_aid</label>
-
-                                            <input
-                                                class="block w90 py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="Fecha del certificado de Primeros_Auxilios"
-                                                type="date" name="First_aid" wire:model="First_aid2" />
-
-                                            <span class=" edit-upload-ico fas fa-file-upload" {{-- @if ($docFirstAid != '') icon-blue @else icon-green @endif" --}}
-                                                aria-hidden="true" fill="none" stroke-linecap="round"
-                                                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
-                                                stroke="currentColor" id="DocFirstAid2">
-                                                <input wire:model="DocFirstAid"
-                                                    onchange="updateDocument('10','Primeros_Auxilios')"
-                                                    class="edit-upload-input" type="file">
-                                            </span>
-                                        </div>
-
-                                        <div class="w-6-12">
-                                            <label class="text-gray-700 dark:text-gray-400">First_Responder</label>
-
-                                            <input
-                                                class="block w90 py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="Fecha del certificado de Primero_Respondiente"
-                                                type="date" name="First_Responder"
-                                                wire:model="First_Responder2" />
-
-                                            <span class=" edit-upload-ico fas fa-file-upload" {{-- @if ($docFirstResponder != '') icon-blue @else icon-green @endif" --}}
-                                                aria-hidden="true" fill="none" stroke-linecap="round"
-                                                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
-                                                stroke="currentColor" id="DocFirstResponder2">
-                                                <input wire:model="DocFirstResponder"
-                                                    onchange="updateDocument('11','Primero_Respondiente')"
-                                                    class="edit-upload-input" type="file">
-                                            </span>
-                                        </div>
-
-                                    </div>
-
-                                    <div class="flex space-x-4">
-
-                                        <div class="w-6-12">
-                                            <label
-                                                class="text-gray-700 dark:text-gray-400">five_senses_driving</label>
-
-                                            <input
-                                                class="block w90 py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="Fecha del certificado de los cinco_sentidos_conduccion"
-                                                type="date" name="five_senses_driving"
-                                                wire:model="five_senses_driving2" />
-
-                                            <span class=" edit-upload-ico fas fa-file-upload" {{-- @if ($docfiveSensesDriving != '') icon-blue @else icon-green @endif" --}}
-                                                aria-hidden="true" fill="none" stroke-linecap="round"
-                                                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
-                                                stroke="currentColor" id="DocfiveSensesDriving2">
-                                                <input wire:model="DocfiveSensesDriving"
-                                                    onchange="updateDocument('12','Cinco_Sentidos')"
-                                                    class="edit-upload-input" type="file">
-                                            </span>
-                                        </div>
-
-                                        <div class="w-6-12">
-                                            <label
-                                                class="text-gray-700 dark:text-gray-400">Active_Passive_Security_vehicle</label>
-
-                                            <input
-                                                class="block w90 py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="Fecha del certificado de la Seguridad_activa_pasiva_vehiculo"
-                                                type="date" name="Active_Passive_Security_vehicle"
-                                                wire:model="Active_Passive_Security_vehicle2" />
-
-                                            <span class=" edit-upload-ico fas fa-file-upload" {{-- @if ($docActivePassiveSecurityVehicle != '') icon-blue @else icon-green @endif" --}}
-                                                aria-hidden="true" fill="none" stroke-linecap="round"
-                                                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
-                                                stroke="currentColor" id="DocActivePassiveSecurityVehicle2">
-                                                <input wire:model="DocActivePassiveSecurityVehicle"
-                                                    id="InputDocActivePassiveSecurityVehicle2"
-                                                    onchange="updateDocument('13','Seguridad_activa_pasiva')"
-                                                    class="edit-upload-input" type="file">
-                                            </span>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            @endif
-                            <!--fin del paso 9 edit-->
-                            <br>
-                            <!--paso fin edit-->
-                            <p class="text-sm text-gray-700 dark:text-gray-400">
-                                paso fin
-                            </p>
-                            <div class="border-ourple-50-s rounded-2xl p-4">
-
-                                @if ($editUsers->charge == 5)
-                                    <div class="flex space-x-4">
-
-                                        <div class="w-6-12">
-                                            <label class="text-gray-700 dark:text-gray-400">Road_safety</label>
-
-                                            <input
-                                                class="block w90 py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="Fecha del certificado de la Seguridad_Vial"
-                                                type="date" name="Road_safety" wire:model="Road_safety2" />
-
-                                            <span class=" edit-upload-ico fas fa-file-upload" {{-- @if ($docRoadSafety != '') icon-blue @else icon-green @endif" --}}
-                                                aria-hidden="true" fill="none" stroke-linecap="round"
-                                                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
-                                                stroke="currentColor" id="DocRoadSafety2">
-                                                <input wire:model="DocRoadSafety" id="InputDocRoadSafety2"
-                                                    onchange="updateDocument('14','Seguridad_Vial')"
-                                                    class="edit-upload-input" type="file">
-                                            </span>
-                                        </div>
-
-                                        <div class="w-6-12">
-                                            <label class="text-gray-700 dark:text-gray-400">Linked</label>
-
-                                            <select wire:model="Linked2" name="Linked"
-                                                class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
-                                                <option value="0">Selecciona el vinculado asociado a este
-                                                    conductor
-                                                </option>
-
-                                                @foreach ($linkers as $linker)
-                                                    <option value="{{ $linker->id }}">
-                                                        {{ $linker->owner }} </option>
-                                                @endforeach
-
-                                            </select>
-
-                                        </div>
-
                                     </div>
                                 @endif
 
-                                <div class="flex space-x-4">
+                                <!--fin del paso 5 edit-->
 
-                                    <div class="w-6-12">
-                                        <label class="text-gray-700 dark:text-gray-400">user_entry_date</label>
+                                <!--paso 6 edit-->
+                                @if ($editUsers->usertype == 2)
+                                    <br>
+                                    <p class="text-sm text-gray-700 dark:text-gray-400">
+                                        paso 6
+                                    </p>
+                                    <div class="border-ourple-50-s rounded-2xl p-4">
 
-                                        <div class="border-ourple-50-s rounded-2xl p-4">
-                                            <p class="text-sm text-gray-700 dark:text-gray-400">
-                                                {{ $editUsers->user_entry_date }}
-                                            </p>
+                                        <div class="flex space-x-4">
+
+                                            <div class="w-6-12">
+                                                <label class="text-gray-700 dark:text-gray-400">EPS</label>
+
+                                                <select wire:model="editUsers.eps" name="eps"
+                                                    class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
+                                                    <option value="0">Selecciona la eps del usuario</option>
+
+                                                    @foreach ($epses as $eps)
+                                                        <option value="{{ $eps->id }}">
+                                                            {{ $eps->description_eps }}</option>
+                                                    @endforeach
+
+                                                </select>
+                                            </div>
+
+                                            <div class="w-6-12 ">
+
+                                                <label class="text-gray-700 dark:text-gray-400">Selecciona el
+                                                    estado de la
+                                                    eps</label>
+
+                                                <select wire:model="editUsers.eps_status" name="eps_status"
+                                                    class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
+                                                    <option value="">Selecciona el estado de la eps</option>
+                                                    <option value="1">ACTIVO</option>
+                                                    <option value="2">PENDIENTE</option>
+                                                    <option value="3">INACTIVO</option>
+                                                </select>
+
+                                            </div>
+
+                                        </div>
+
+                                        <div class="flex space-x-4">
+
+                                            <div class="w-6-12">
+                                                <label
+                                                    class="text-gray-700 dark:text-gray-400">{{ __('date eps') }}</label>
+
+                                                <input
+                                                    class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                    placeholder="Dirección del familiar" type="date"
+                                                    name="date_eps" wire:model="editUsers.date_eps" />
+                                            </div>
+
+                                            <div class="w-6-12">
+                                                <label
+                                                    class="text-gray-700 dark:text-gray-400">{{ __('blood type') }}</label>
+
+                                                <select wire:model="editUsers.blood_type" name="blood_type"
+                                                    class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
+                                                    <option value="0">Selecciona el tipo de sangre</option>
+
+                                                    @foreach ($bloodTypes as $bloodType)
+                                                        <option value="{{ $bloodType->id }}">
+                                                            {{ $bloodType->blood_type_description }}</option>
+                                                    @endforeach
+
+                                                </select>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="flex space-x-4">
+
+                                            <div class="w-6-12">
+                                                <label class="text-gray-700 dark:text-gray-400">PENSION</label>
+
+                                                <select wire:model="editUsers.pension" name="pension"
+                                                    class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
+                                                    <option value="0">Selecciona la pension del usuario</option>
+
+                                                    @foreach ($pensions as $pension)
+                                                        <option value="{{ $pension->id }}">
+                                                            {{ $pension->description_pension }}</option>
+                                                    @endforeach
+
+                                                </select>
+                                            </div>
+
+                                            <div class="w-6-12 ">
+
+                                                <label class="text-gray-700 dark:text-gray-400">Selecciona
+                                                    el estado de la
+                                                    pension</label>
+
+                                                <select wire:model="editUsers.pension_status" name="pension_status"
+                                                    class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
+                                                    <option value="">Selecciona el estado de la pension</option>
+                                                    <option value="1">ACTIVO</option>
+                                                    <option value="2">PENDIENTE</option>
+                                                    <option value="3">INACTIVO</option>
+                                                </select>
+
+                                            </div>
+
+                                        </div>
+
+                                        <div class="flex space-x-4">
+
+                                            <div class="w-6-12">
+                                                <label
+                                                    class="text-gray-700 dark:text-gray-400">{{ __('date pension') }}</label>
+
+                                                <input
+                                                    class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                    placeholder="Dirección del familiar" type="date"
+                                                    name="date_pension" wire:model="editUsers.date_pension" />
+                                            </div>
+
+                                            <div class="w-6-12">
+                                                <label
+                                                    class="text-gray-700 dark:text-gray-400">{{ __('layoffs') }}</label>
+
+                                                <select wire:model="editUsers.layoffs" name="layoffs"
+                                                    class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
+                                                    <option value="0">Selecciona el tipo de cesantias</option>
+
+                                                    @foreach ($layoffes as $layoff)
+                                                        <option value="{{ $layoff->id }}">
+                                                            {{ $layoff->description_layoffs }}</option>
+                                                    @endforeach
+
+                                                </select>
+                                            </div>
+
                                         </div>
                                     </div>
+                                @endif
 
-                                    <div class="w-6-12">
-                                        <label class="text-gray-700 dark:text-gray-400">date_withdrawal_user</label>
+                                <!--fin del paso 6 edit-->
 
-                                        <input
-                                            class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                            placeholder="Fecha fin de contrato con STEP" type="text"
-                                            name="date_withdrawal_user"
-                                            wire:model="editUsers.date_withdrawal_user" />
-                                    </div>
+                                <!--paso 7 edit-->
+                                @if ($editUsers->usertype == 2)
+                                    <br>
+                                    <p class="text-sm text-gray-700 dark:text-gray-400">
+                                        paso 7
+                                    </p>
+                                    <div class="border-ourple-50-s rounded-2xl p-4">
 
+                                        <div class="flex space-x-4">
 
-                                </div>
+                                            <div class="w-6-12 ">
 
-                                <div class="flex space-x-4">
+                                                <label class="text-gray-700 dark:text-gray-400">Selecciona
+                                                    el estado de la
+                                                    status_layoffs</label>
 
-                                    <div class="w-6-12">
-                                        <label class="text-gray-700 dark:text-gray-400">profile_photo_path</label>
+                                                <select wire:model="editUsers.status_layoffs" name="status_layoffs"
+                                                    class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
+                                                    <option value="">Selecciona el estado de las cesantias
+                                                    </option>
+                                                    <option value="1">ACTIVO</option>
+                                                    <option value="2">PENDIENTE</option>
+                                                    <option value="3">INACTIVO</option>
+                                                </select>
 
-                                        <input
-                                            class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                            placeholder="Selecciona una foto de perfil para este usuario"
-                                            type="file" name="profile_photo_path"
-                                            wire:model="editUsers.profile_photo_path" />
-                                    </div>
+                                            </div>
 
-                                    <div class="w-6-12">
-                                        <label class="text-gray-700 dark:text-gray-400">email</label>
+                                            <div class="w-6-12">
+                                                <label
+                                                    class="text-gray-700 dark:text-gray-400">{{ __('date layoffs') }}</label>
 
-                                        <input
-                                            class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                            placeholder="Escribe un correo electronico" type="email"
-                                            name="email" wire:model="editUsers.email" />
-                                    </div>
+                                                <input
+                                                    class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                    placeholder="Fecha del inicio de las cesantias" type="date"
+                                                    name="date_layoffs" wire:model="editUsers.date_layoffs" />
+                                            </div>
 
-                                </div>
+                                        </div>
 
-                                <div class="flex space-x-4">
+                                        <div class="flex space-x-4">
 
-                                    <div class="w-6-12">
-                                        <label class="text-gray-700 dark:text-gray-400">username</label>
+                                            <div class="w-6-12">
+                                                <label class="text-gray-700 dark:text-gray-400">ARL</label>
 
-                                        <div class="border-ourple-50-s rounded-2xl p-4">
-                                            <p class="text-sm text-gray-700 dark:text-gray-400">
-                                                {{ $editUsers->username }}
-                                            </p>
+                                                <select wire:model="editUsers.arl" name="arl"
+                                                    class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
+                                                    <option value="0">Selecciona la arl del usuario</option>
+
+                                                    @foreach ($arls as $arl)
+                                                        <option value="{{ $arl->id }}">
+                                                            {{ $arl->description_arl }}</option>
+                                                    @endforeach
+
+                                                </select>
+                                            </div>
+
+                                            <div class="w-6-12 ">
+
+                                                <label class="text-gray-700 dark:text-gray-400">Selecciona el
+                                                    estado de la
+                                                    arl_status</label>
+
+                                                <select wire:model="editUsers.arl_status" name="arl_status"
+                                                    class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
+                                                    <option value="">Selecciona el estado de la arl</option>
+                                                    <option value="1">ACTIVO</option>
+                                                    <option value="2">PENDIENTE</option>
+                                                    <option value="3">INACTIVO</option>
+                                                </select>
+
+                                            </div>
+
+                                        </div>
+
+                                        <div class="flex space-x-4">
+
+                                            <div class="w-6-12">
+                                                <label
+                                                    class="text-gray-700 dark:text-gray-400">{{ __('arl date') }}</label>
+
+                                                <input
+                                                    class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                    placeholder="Fecha del inicio de la arl" type="date"
+                                                    name="arl_date" wire:model="editUsers.arl_date" />
+                                            </div>
+
+                                            <div class="w-6-12">
+                                                <label
+                                                    class="text-gray-700 dark:text-gray-400">{{ __('compensationbox') }}</label>
+
+                                                <select wire:model="editUsers.compensationbox"
+                                                    name="compensationbox"
+                                                    class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
+                                                    <option value="0">Selecciona el tipo de caja de compensación
+                                                    </option>
+
+                                                    @foreach ($compensationboxes as $compensationbox)
+                                                        <option value="{{ $compensationbox->id }}">
+                                                            {{ $compensationbox->description_compensationbox }}
+                                                        </option>
+                                                    @endforeach
+
+                                                </select>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="flex space-x-4">
+
+                                            <div class="w-6-12 ">
+
+                                                <label class="text-gray-700 dark:text-gray-400">Selecciona el estado
+                                                    de la
+                                                    compensationbox_status</label>
+
+                                                <select wire:model="editUsers.compensationbox_status"
+                                                    name="compensationbox_status"
+                                                    class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
+                                                    <option value="">Selecciona el estado de la caja de
+                                                        compensación
+                                                    </option>
+                                                    <option value="1">ACTIVO</option>
+                                                    <option value="2">PENDIENTE</option>
+                                                    <option value="3">INACTIVO</option>
+                                                </select>
+
+                                            </div>
+
+                                            <div class="w-6-12">
+                                                <label
+                                                    class="text-gray-700 dark:text-gray-400">{{ __('date compensationbox') }}</label>
+
+                                                <input
+                                                    class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                    placeholder="Dirección del familiar" type="date"
+                                                    name="date_compensationbox"
+                                                    wire:model="editUsers.date_compensationbox" />
+                                            </div>
+
                                         </div>
                                     </div>
+                                @endif
 
-                                    {{-- <div class="w-6-12">
-                                    <label class="text-gray-700 dark:text-gray-400">password</label>
+                                <!--fin del paso 7 edit-->
 
-                                    <input
-                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                        placeholder="Escribe la contraseña del usuario para el sistema"
-                                        type="password" name="password" wire:model="editUsers.password" />
-                                    </div> --}}
+                                <!--paso 8 edit-->
+                                @if ($editUsers->charge == 5)
+                                    <br>
+                                    <p class="text-sm text-gray-700 dark:text-gray-400">
+                                        paso 8
+                                    </p>
+                                    <div class="border-ourple-50-s rounded-2xl p-4">
+
+                                        <div class="flex space-x-4">
+
+                                            <div class="w-6-12">
+                                                <label
+                                                    class="text-gray-700 dark:text-gray-400">{{ __('license number') }}</label>
+
+                                                <input
+                                                    class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                    placeholder="numero de licencia conductor" type="number"
+                                                    name="license_number" wire:model="license_number2" />
+
+                                            </div>
+
+                                            <div class="w-6-12">
+                                                <label
+                                                    class="text-gray-700 dark:text-gray-400">{{ __('license category') }}</label>
+
+                                                <select wire:model="license_category2" name="license_category"
+                                                    class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
+                                                    <option value="0">Selecciona la categoria de licencia de
+                                                        conducción
+                                                    </option>
+
+                                                    @foreach ($licenseCategories as $licenseCategory)
+                                                        <option value="{{ $licenseCategory->id }}">
+                                                            {{ $licenseCategory->code_licenseCategory }} -
+                                                            {{ $licenseCategory->description_licenseCategory }}
+                                                        </option>
+                                                    @endforeach
+
+                                                </select>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="flex space-x-4">
+
+                                            <div class="w-6-12">
+                                                <label
+                                                    class="text-gray-700 dark:text-gray-400">{{ __('license expiration') }}</label>
+
+                                                <input
+                                                    class="block w90 py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                    placeholder="Fecha del certificado de espiracion_licencia"
+                                                    type="date" name="license_expiration"
+                                                    wire:model="license_expiration2" />
+
+                                                <span class=" edit-upload-ico fas fa-file-upload"
+                                                    {{-- @if ($doclicense != '') icon-blue @else icon-green @endif" --}} aria-hidden="true" fill="none"
+                                                    stroke-linecap="round" stroke-linejoin="round"
+                                                    stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
+                                                    id="Doclicense2">
+                                                    <input wire:model="Doclicense" id="InputDoclicense2"
+                                                        onchange="updateDocument('0','Licencia')"
+                                                        class="edit-upload-input" type="file">
+                                                </span>
+                                            </div>
+
+                                            <div class="w-6-12">
+                                                <label
+                                                    class="text-gray-700 dark:text-gray-400">{{ __('certificate drugs alchoolemia') }}</label>
+
+                                                <input
+                                                    class="block w90 py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                    placeholder="Fecha del certificado de drogas_alchoolemia"
+                                                    type="date" name="certificate_drugs_alchoolemia"
+                                                    wire:model="certificate_drugs_alchoolemia2" />
+
+                                                <span class=" edit-upload-ico fas fa-file-upload"
+                                                    {{-- @if ($docAlchoolemia != '') icon-blue @else icon-green @endif" --}} aria-hidden="true" fill="none"
+                                                    stroke-linecap="round" stroke-linejoin="round"
+                                                    stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
+                                                    id="DocAlchoolemia2">
+                                                    <input wire:model="DocAlchoolemia"
+                                                        onchange="updateDocument('1','alchoolemia')"
+                                                        class="edit-upload-input" type="file">
+                                                </span>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="flex space-x-4">
+
+                                            <div class="w-6-12">
+                                                <label
+                                                    class="text-gray-700 dark:text-gray-400">{{ __('SIMIT queries') }}</label>
+
+                                                <input
+                                                    class="block w90 py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                    placeholder="Fecha del certificado de Consultas_SIMIT"
+                                                    type="date" name="SIMIT_queries"
+                                                    wire:model="SIMIT_queries2" />
+
+                                                <span class=" edit-upload-ico fas fa-file-upload"
+                                                    {{-- @if ($docSimitQueries != '') icon-blue @else icon-green @endif" --}} aria-hidden="true" fill="none"
+                                                    stroke-linecap="round" stroke-linejoin="round"
+                                                    stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
+                                                    id="DocSimitQueries2">
+                                                    <input wire:model="DocSimitQueries"
+                                                        onchange="updateDocument('2','SIMIT')"
+                                                        class="edit-upload-input" type="file">
+                                                </span>
+                                            </div>
+
+                                            <div class="w-6-12">
+                                                <label
+                                                    class="text-gray-700 dark:text-gray-400">{{ __('driving exam') }}</label>
+
+                                                <input
+                                                    class="block w90 py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                    placeholder="Fecha del certificado del Examen_Conduccion"
+                                                    type="date" name="driving_exam"
+                                                    wire:model="driving_exam2" />
+
+                                                <span class=" edit-upload-ico fas fa-file-upload"
+                                                    {{-- @if ($docdrivingExam != '') icon-blue @else icon-green @endif" --}} aria-hidden="true" fill="none"
+                                                    stroke-linecap="round" stroke-linejoin="round"
+                                                    stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
+                                                    id="DocdrivingExam2">
+                                                    <input wire:model="DocdrivingExam"
+                                                        onchange="updateDocument('3','Examen')"
+                                                        class="edit-upload-input" type="file">
+                                                </span>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="flex space-x-4">
+
+                                            <div class="w-6-12">
+                                                <label
+                                                    class="text-gray-700 dark:text-gray-400">{{ __('Norm Overland Transportation Automotive') }}</label>
+
+                                                <input
+                                                    class="block w90 py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                    placeholder="Fecha del certificado de las Norma_Transporte_terrestre_automotor"
+                                                    type="date" name="Norm_Overland_Transportation_Automotive"
+                                                    wire:model="Norm_Overland_Transportation_Automotive2" />
+
+                                                <span class=" edit-upload-ico fas fa-file-upload"
+                                                    {{-- @if ($docNormOverlandTransportationAutomotive != '') icon-blue @else icon-green @endif" --}} aria-hidden="true" fill="none"
+                                                    stroke-linecap="round" stroke-linejoin="round"
+                                                    stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
+                                                    id="DocNormOverlandTransportationAutomotive2">
+                                                    <input wire:model="DocNormOverlandTransportationAutomotive"
+                                                        onchange="updateDocument('4','Norma_Transporte')"
+                                                        class="edit-upload-input" type="file">
+                                                </span>
+                                            </div>
+
+                                            <div class="w-6-12">
+                                                <label
+                                                    class="text-gray-700 dark:text-gray-400">{{ __('Rules Transit') }}</label>
+
+                                                <input
+                                                    class="block w90 py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                    placeholder="Fecha del certificado de Normas_Transito"
+                                                    type="date" name="Rules_Transit"
+                                                    wire:model="Rules_Transit2" />
+
+                                                <span class=" edit-upload-ico fas fa-file-upload"
+                                                    {{-- @if ($docRulesTransit != '') icon-blue @else icon-green @endif" --}} aria-hidden="true" fill="none"
+                                                    stroke-linecap="round" stroke-linejoin="round"
+                                                    stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
+                                                    id="DocRulesTransit2">
+                                                    <input wire:model="DocRulesTransit"
+                                                        onchange="updateDocument('5','Normas_Transito')"
+                                                        class="edit-upload-input" type="file">
+                                                </span>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                @endif
+
+                                <!--fin del paso 8 edit-->
+
+                                <!--paso 9 edit-->
+                                @if ($editUsers->charge == 5)
+                                    <br>
+                                    <p class="text-sm text-gray-700 dark:text-gray-400">
+                                        paso 9
+                                    </p>
+                                    <div class="border-ourple-50-s rounded-2xl p-4">
+
+                                        <div class="flex space-x-4">
+
+                                            <div class="w-6-12">
+                                                <label
+                                                    class="text-gray-700 dark:text-gray-400">{{ __('Normative Tips') }}</label>
+
+                                                <input
+                                                    class="block w90 py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                    placeholder="Fecha del certificado de Tips_normativos"
+                                                    type="date" name="Normative_Tips"
+                                                    wire:model="Normative_Tips2" />
+
+                                                <span class=" edit-upload-ico fas fa-file-upload"
+                                                    {{-- @if ($docNormativeTips != '') icon-blue @else icon-green @endif" --}} aria-hidden="true" fill="none"
+                                                    stroke-linecap="round" stroke-linejoin="round"
+                                                    stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
+                                                    id="DocNormativeTips2">
+                                                    <input wire:model="DocNormativeTips"
+                                                        onchange="updateDocument('6','Tips_normativos')"
+                                                        class="edit-upload-input" type="file">
+                                                </span>
+                                            </div>
+
+                                            <div class="w-6-12">
+                                                <label
+                                                    class="text-gray-700 dark:text-gray-400">{{ __('Driving Methods') }}</label>
+
+                                                <input
+                                                    class="block w90 py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                    placeholder="Fecha del certificado de Metodos_Conduccion"
+                                                    type="date" name="Driving_Methods"
+                                                    wire:model="Driving_Methods2" />
+
+                                                <span class=" edit-upload-ico fas fa-file-upload"
+                                                    {{-- @if ($docDrivingMethods != '') icon-blue @else icon-green @endif" --}} aria-hidden="true" fill="none"
+                                                    stroke-linecap="round" stroke-linejoin="round"
+                                                    stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
+                                                    id="DocDrivingMethods2">
+                                                    <input wire:model="DocDrivingMethods"
+                                                        onchange="updateDocument('7','Metodos_Conduccion')"
+                                                        class="edit-upload-input" type="file">
+                                                </span>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="flex space-x-4">
+
+                                            <div class="w-6-12">
+                                                <label
+                                                    class="text-gray-700 dark:text-gray-400">{{ __('Defensive driving') }}</label>
+
+                                                <input
+                                                    class="block w90 py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                    placeholder="Fecha del certificado de Manejo_Defensivo"
+                                                    type="date" name="Defensive_driving"
+                                                    wire:model="Defensive_driving2" />
+
+                                                <span class=" edit-upload-ico fas fa-file-upload"
+                                                    {{-- @if ($docDefensiveDriving != '') icon-blue @else icon-green @endif" --}} aria-hidden="true" fill="none"
+                                                    stroke-linecap="round" stroke-linejoin="round"
+                                                    stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
+                                                    id="DocDefensiveDriving2">
+                                                    <input wire:model="DocDefensiveDriving"
+                                                        onchange="updateDocument('8','Defensivo')"
+                                                        class="edit-upload-input" type="file">
+                                                </span>
+                                            </div>
+
+                                            <div class="w-6-12">
+                                                <label
+                                                    class="text-gray-700 dark:text-gray-400">{{ __('distractions') }}</label>
+
+                                                <input
+                                                    class="block w90 py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                    placeholder="Fecha del certificado de Distracciones"
+                                                    type="date" name="distractions"
+                                                    wire:model="distractions2" />
+
+                                                <span class=" edit-upload-ico fas fa-file-upload"
+                                                    {{-- @if ($docdistractions != '') icon-blue @else icon-green @endif" --}} aria-hidden="true" fill="none"
+                                                    stroke-linecap="round" stroke-linejoin="round"
+                                                    stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
+                                                    id="Docdistractions2">
+                                                    <input wire:model="Docdistractions"
+                                                        onchange="updateDocument('9','Distracciones')"
+                                                        class="edit-upload-input" type="file">
+                                                </span>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="flex space-x-4">
+
+                                            <div class="w-6-12">
+                                                <label
+                                                    class="text-gray-700 dark:text-gray-400">{{ __('First aid') }}</label>
+
+                                                <input
+                                                    class="block w90 py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                    placeholder="Fecha del certificado de Primeros_Auxilios"
+                                                    type="date" name="First_aid" wire:model="First_aid2" />
+
+                                                <span class=" edit-upload-ico fas fa-file-upload"
+                                                    {{-- @if ($docFirstAid != '') icon-blue @else icon-green @endif" --}} aria-hidden="true" fill="none"
+                                                    stroke-linecap="round" stroke-linejoin="round"
+                                                    stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
+                                                    id="DocFirstAid2">
+                                                    <input wire:model="DocFirstAid"
+                                                        onchange="updateDocument('10','Primeros_Auxilios')"
+                                                        class="edit-upload-input" type="file">
+                                                </span>
+                                            </div>
+
+                                            <div class="w-6-12">
+                                                <label
+                                                    class="text-gray-700 dark:text-gray-400">{{ __('First Responder') }}</label>
+
+                                                <input
+                                                    class="block w90 py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                    placeholder="Fecha del certificado de Primero_Respondiente"
+                                                    type="date" name="First_Responder"
+                                                    wire:model="First_Responder2" />
+
+                                                <span class=" edit-upload-ico fas fa-file-upload"
+                                                    {{-- @if ($docFirstResponder != '') icon-blue @else icon-green @endif" --}} aria-hidden="true" fill="none"
+                                                    stroke-linecap="round" stroke-linejoin="round"
+                                                    stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
+                                                    id="DocFirstResponder2">
+                                                    <input wire:model="DocFirstResponder"
+                                                        onchange="updateDocument('11','Primero_Respondiente')"
+                                                        class="edit-upload-input" type="file">
+                                                </span>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="flex space-x-4">
+
+                                            <div class="w-6-12">
+                                                <label
+                                                    class="text-gray-700 dark:text-gray-400">{{ __('five senses driving') }}</label>
+
+                                                <input
+                                                    class="block w90 py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                    placeholder="Fecha del certificado de los cinco_sentidos_conduccion"
+                                                    type="date" name="five_senses_driving"
+                                                    wire:model="five_senses_driving2" />
+
+                                                <span class=" edit-upload-ico fas fa-file-upload"
+                                                    {{-- @if ($docfiveSensesDriving != '') icon-blue @else icon-green @endif" --}} aria-hidden="true" fill="none"
+                                                    stroke-linecap="round" stroke-linejoin="round"
+                                                    stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
+                                                    id="DocfiveSensesDriving2">
+                                                    <input wire:model="DocfiveSensesDriving"
+                                                        onchange="updateDocument('12','Cinco_Sentidos')"
+                                                        class="edit-upload-input" type="file">
+                                                </span>
+                                            </div>
+
+                                            <div class="w-6-12">
+                                                <label
+                                                    class="text-gray-700 dark:text-gray-400">{{ __('Active Passive Security vehicle') }}</label>
+
+                                                <input
+                                                    class="block w90 py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                    placeholder="Fecha del certificado de la Seguridad_activa_pasiva_vehiculo"
+                                                    type="date" name="Active_Passive_Security_vehicle"
+                                                    wire:model="Active_Passive_Security_vehicle2" />
+
+                                                <span class=" edit-upload-ico fas fa-file-upload"
+                                                    {{-- @if ($docActivePassiveSecurityVehicle != '') icon-blue @else icon-green @endif" --}} aria-hidden="true" fill="none"
+                                                    stroke-linecap="round" stroke-linejoin="round"
+                                                    stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
+                                                    id="DocActivePassiveSecurityVehicle2">
+                                                    <input wire:model="DocActivePassiveSecurityVehicle"
+                                                        id="InputDocActivePassiveSecurityVehicle2"
+                                                        onchange="updateDocument('13','Seguridad_activa_pasiva')"
+                                                        class="edit-upload-input" type="file">
+                                                </span>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                @endif
+                                <!--fin del paso 9 edit-->
+                                <br>
+                                <!--paso fin edit-->
+                                <p class="text-sm text-gray-700 dark:text-gray-400">
+                                    paso fin
+                                </p>
+                                <div class="border-ourple-50-s rounded-2xl p-4">
+
+                                    @if ($editUsers->charge == 5)
+                                        <div class="flex space-x-4">
+
+                                            <div class="w-6-12">
+                                                <label
+                                                    class="text-gray-700 dark:text-gray-400">{{ __('Road safety') }}</label>
+
+                                                <input
+                                                    class="block w90 py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                    placeholder="Fecha del certificado de la Seguridad_Vial"
+                                                    type="date" name="Road_safety" wire:model="Road_safety2" />
+
+                                                <span class=" edit-upload-ico fas fa-file-upload"
+                                                    {{-- @if ($docRoadSafety != '') icon-blue @else icon-green @endif" --}} aria-hidden="true" fill="none"
+                                                    stroke-linecap="round" stroke-linejoin="round"
+                                                    stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
+                                                    id="DocRoadSafety2">
+                                                    <input wire:model="DocRoadSafety" id="InputDocRoadSafety2"
+                                                        onchange="updateDocument('14','Seguridad_Vial')"
+                                                        class="edit-upload-input" type="file">
+                                                </span>
+                                            </div>
+
+                                            <div class="w-6-12">
+                                                <label
+                                                    class="text-gray-700 dark:text-gray-400">{{ __('Linked') }}</label>
+
+                                                <select wire:model="Linked2" name="Linked"
+                                                    class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
+                                                    <option value="0">Selecciona el vinculado asociado a este
+                                                        conductor
+                                                    </option>
+
+                                                    @foreach ($linkers as $linker)
+                                                        <option value="{{ $linker->id }}">
+                                                            {{ $linker->owner }} </option>
+                                                    @endforeach
+
+                                                </select>
+
+                                            </div>
+
+                                        </div>
+                                    @endif
+
+                                    <div class="flex space-x-4">
+
+                                        <div class="w-6-12">
+                                            <label
+                                                class="text-gray-700 dark:text-gray-400">{{ __('user entry date') }}</label>
+
+                                            <div class="border-ourple-50-s rounded-2xl p-4">
+                                                <p class="text-sm text-gray-700 dark:text-gray-400">
+                                                    {{ $editUsers->user_entry_date }}
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="w-6-12">
+                                            <label
+                                                class="text-gray-700 dark:text-gray-400">{{ __('date withdrawal user') }}</label>
+
+                                            <input
+                                                class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                placeholder="Fecha fin de contrato con STEP" type="text"
+                                                name="date_withdrawal_user"
+                                                wire:model="editUsers.date_withdrawal_user" />
+                                        </div>
+
+
+                                    </div>
+
+                                    <div class="flex space-x-4">
+
+                                        <div class="w-6-12">
+                                            <label
+                                                class="text-gray-700 dark:text-gray-400">{{ __('profile photo path') }}</label>
+
+                                            <input
+                                                class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                placeholder="Selecciona una foto de perfil para este usuario"
+                                                type="file" name="profile_photo_path"
+                                                wire:model="editUsers.profile_photo_path" />
+                                        </div>
+
+                                        <div class="w-6-12">
+                                            <label
+                                                class="text-gray-700 dark:text-gray-400">{{ __('email') }}</label>
+
+                                            <input
+                                                class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                placeholder="Escribe un correo electronico" type="email"
+                                                name="email" wire:model="editUsers.email" />
+                                        </div>
+
+                                    </div>
+
+                                    <div class="flex space-x-4">
+
+                                        <div class="w-6-12">
+                                            <label
+                                                class="text-gray-700 dark:text-gray-400">{{ __('username') }}</label>
+
+                                            <div class="border-ourple-50-s rounded-2xl p-4">
+                                                <p class="text-sm text-gray-700 dark:text-gray-400">
+                                                    {{ $editUsers->username }}
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        {{-- <div class="w-6-12">
+                                        <label class="text-gray-700 dark:text-gray-400">password</label>
+    
+                                        <input
+                                            class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                            placeholder="Escribe la contraseña del usuario para el sistema"
+                                            type="password" name="password" wire:model="editUsers.password" />
+                                        </div> --}}
+
+                                    </div>
 
                                 </div>
+                                <!--fin edit-->
 
                             </div>
-                            <!--fin edit-->
 
-                        </div>
-
-                    </form>
-                @endif
+                        </form>
+                    @endif
 
 
+                </div>
+                <div
+                    class="flex flex-col items-center justify-end px-6 py-3-1 space-y-4 sm:space-y-0 sm:space-x-6 sm:flex-row bg-gray-50 dark:bg-gray-800 border-t-fuchsia-800">
+                    <button id="btnUpdate"
+                        class="w-full px-5 py-3 text-sm font-medium leading-5 transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg sm:w-auto sm:px-4 sm:py-2 active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
+                        wire:click="update" onclick="closeModalEdit()">
+                        {{ __('Update User') }}
+                    </button>
+                    <button wire:click="clear"
+                        class="w-full px-5 py-3 text-sm font-medium leading-5 text-gray-700 transition-colors duration-150 border border-gray-300 rounded-lg dark:text-gray-400 sm:px-4 sm:py-2 sm:w-auto active:bg-transparent hover:border-gray-500 focus:border-gray-500 active:text-gray-500 focus:outline-none focus:shadow-outline-gray"
+                        onclick="closeModalEdit()">
+                        {{ __('Cancel') }}
+                    </button>
+                </div>
             </div>
-            <div
-                class="flex flex-col items-center justify-end px-6 py-3-1 -mx-6 -mb-4 space-y-4 sm:space-y-0 sm:space-x-6 sm:flex-row bg-gray-50 dark:bg-gray-800 border-t-fuchsia-800">
-                <button id="btnUpdate"
-                    class="w-full px-5 py-3 text-sm font-medium leading-5 transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg sm:w-auto sm:px-4 sm:py-2 active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
-                    wire:click="update" onclick="closeModalEdit()">
-                    Accept
-                </button>
-                <button wire:click="clear"
-                    class="w-full px-5 py-3 text-sm font-medium leading-5 text-gray-700 transition-colors duration-150 border border-gray-300 rounded-lg dark:text-gray-400 sm:px-4 sm:py-2 sm:w-auto active:bg-transparent hover:border-gray-500 focus:border-gray-500 active:text-gray-500 focus:outline-none focus:shadow-outline-gray"
-                    onclick="closeModalEdit()">
-                    Cancel
-                </button>
-            </div>
+
         </div>
     </div>
 
@@ -3891,23 +4024,607 @@
 
 @section('scripts')
     <script>
-        jQuery.datetimepicker.setLocale('es');
 
-        const typed = new Typed('.typed', {
-            strings: ['...'],
-            // stringsElement: '#cadenas-texto', // ID del elemento que contiene cadenas de texto a mostrar.
-            typeSpeed: 500, // Velocidad en mlisegundos para poner una letra,
-            startDelay: 100, // Tiempo de retraso en iniciar la animacion. Aplica tambien cuando termina y vuelve a iniciar,
-            backSpeed: false, // Velocidad en milisegundos para borrrar una letra,
-            smartBackspace: true, // Eliminar solamente las palabras que sean nuevas en una cadena de texto.
-            shuffle: false, // Alterar el orden en el que escribe las palabras.
-            backDelay: 100, // Tiempo de espera despues de que termina de escribir una palabra.
-            loop: true, // Repetir el array de strings
-            loopCount: false, // Cantidad de veces a repetir el array.  false = infinite
-            showCursor: false, // Mostrar cursor palpitanto
-            cursorChar: '|', // Caracter para el cursor
-            contentType: 'html', // 'html' o 'null' para texto sin formato
+        $(document).ready(function() {
+
+                        
+            var table = $('#example').DataTable({
+                lengthMenu: [
+                    [5, 10, 50, 100, 200, -1],
+                    [5, 10, 50, 100, 200, "∞"]
+                ],
+                responsive: true,
+                autoWidth: false,
+                autoFill: true,
+                // stateSave: true,
+                "order": [[ 1, "desc" ]],
+                dom: "<'ui stackable grid'"+
+                        "<'row'"+
+                            "<'eight wide column'l>"+
+                            "<'ml30'B>"+
+                            "<'right aligned eight wide column'f>"+
+                        ">"+
+                        "<'row dt-table'"+
+                            "<'sixteen wide column'tr>"+
+                        ">"+
+                        "<'row'"+
+                            "<'seven wide column'i>"+
+                            "<'right aligned nine wide column'p>"+
+                        ">"+
+                    ">",
+                buttons: [
+                        // {
+                        // extend:    'copyHtml5',
+                        // text:      '<i class="far fa-copy"></i>',
+                        // titleAttr: 'copiar',
+                        // className: "dark:bg-gray-800 dark:text-white"
+                        // },
+                        {
+                            text: '<button @click="openModal" class=""> crear usuario nuevo</button>',
+                            titleAttr: 'Crear usuario',
+                            className: "buttons-crear font-semibold leading-tight text-black bg-sky-700 rounded-full dark:bg-sky-700 dark:text-white"
+                        },
+                        {
+                            extend:    'excelHtml5',
+                            text:      '<i class="fa fa-file-excel"></i>',
+                            titleAttr: 'Excel',
+                            filename: 'listado de usuarios',
+                            className: "dark:bg-gray-800 dark:text-white",
+                            
+                        },
+                        {
+                            extend:    'print',
+                            text:      '<i class="fas fa-print"></i>',
+                            titleAttr: 'Imprimir',
+                            filename: 'listado de usuarios',
+                            className: "dark:bg-gray-800 dark:text-white"
+                        },
+                        {
+                            extend:    'pdfHtml5',
+                            text:      '<i class="fa fa-file-pdf"></i>',
+                            titleAttr: 'PDF',
+                            filename: 'listado de usuarios',
+                            className: "dark:bg-gray-800 dark:text-white text-gray-800 rounded-md"
+                        },
+                        {
+                            extend: 'colvis',
+                            text: '±columnas',
+                            collectionLayout: 'fixed columns',
+                            collectionTitle: 'Control de visibilidad de columna',
+                            className: "dark:bg-gray-800 dark:text-white"
+                        }
+                ],
+                columnDefs: [
+                    {"targets": [1],"visible": false,"searchable": false},
+                    {"targets": [3],"visible": false,"searchable": false},
+                    // {"targets": [10],"visible": false,"searchable": false},
+                    // {"targets": [12],"visible": false,"searchable": false},
+                    // {"targets": [13],"visible": false,"searchable": false},
+                    // {"targets": [14],"visible": false,"searchable": false},
+                    // {"targets": [15],"visible": false,"searchable": false},
+                    // {"targets": [16],"visible": false,"searchable": false},
+                    // {"targets": [17],"visible": false,"searchable": false},
+                    // {"targets": [18],"visible": false,"searchable": false},
+                    // {"targets": [19],"visible": false,"searchable": false},
+                    // {"targets": [20],"visible": false,"searchable": false},
+                    // {"targets": [21],"visible": false,"searchable": false},
+                    // {"targets": [22],"visible": false,"searchable": false},
+                    // {"targets": [23],"visible": false,"searchable": false},
+                    // {"targets": [24],"visible": false,"searchable": false},
+                    // {"targets": [25],"visible": false,"searchable": false},
+                    // {"targets": [26],"visible": false,"searchable": false},
+                    // {"targets": [27],"visible": false,"searchable": false},
+                    // {"targets": [28],"visible": false,"searchable": false},
+                    // {"targets": [29],"visible": false,"searchable": false},
+                    // {"targets": [30],"visible": false,"searchable": false},
+                    // {"targets": [31],"visible": false,"searchable": false},
+                    // {"targets": [32],"visible": false,"searchable": false},
+                    // {"targets": [33],"visible": false,"searchable": false},
+                    // {"targets": [34],"visible": false,"searchable": false},
+                    // {"targets": [35],"visible": false,"searchable": false},
+                    // {"targets": [36],"visible": false,"searchable": false},
+                    // {"targets": [37],"visible": false,"searchable": false},
+                    // {"targets": [38],"visible": false,"searchable": false},
+                    // {"targets": [39],"visible": false,"searchable": false},
+                    // {"targets": [40],"visible": false,"searchable": false},
+                    // {"targets": [41],"visible": false,"searchable": false},
+                    // {"targets": [42],"visible": false,"searchable": false},
+                    // {"targets": [43],"visible": false,"searchable": false},
+                    // {"targets": [44],"visible": false,"searchable": false},
+                    // {"targets": [45],"visible": false,"searchable": false},
+                    // {"targets": [46],"visible": false,"searchable": false},
+                    // {"targets": [47],"visible": false,"searchable": false},
+                    // {"targets": [48],"visible": false,"searchable": false},
+                    // {"targets": [49],"visible": false,"searchable": false},
+                    // {"targets": [50],"visible": false,"searchable": false},
+                    // {"targets": [51],"visible": false,"searchable": false},
+                    // {"targets": [52],"visible": false,"searchable": false},
+                    // {"targets": [53],"visible": false,"searchable": false},
+                    // {"targets": [54],"visible": false,"searchable": false},
+                    // {"targets": [55],"visible": false,"searchable": false},
+                    // {"targets": [56],"visible": false,"searchable": false},
+                    // {"targets": [57],"visible": false,"searchable": false},
+                    // {"targets": [58],"visible": false,"searchable": false},
+                    // {"targets": [59],"visible": false,"searchable": false},
+                    // {"targets": [60],"visible": false,"searchable": false},
+                    // {"targets": [61],"visible": false,"searchable": false},
+                    // {"targets": [62],"visible": false,"searchable": false},
+                    // {"targets": [63],"visible": false,"searchable": false},
+                    // {"targets": [64],"visible": false,"searchable": false},
+                    // {"targets": [65],"visible": false,"searchable": false},
+                    // {"targets": [66],"visible": false,"searchable": false},
+                    // {"targets": [67],"visible": false,"searchable": false},
+                    // {"targets": [68],"visible": false,"searchable": false},
+                ],    
+                "drawCallback": function(settings) 
+                {
+                    $('.dataTables_wrapper .dataTables_filter input').addClass(
+                        "mr-4 pl-8 pr-2 text-sm text-gray-700 placeholder-gray-600 bg-gray-100 border-0 rounded-md dark:placeholder-gray-500 dark:focus:shadow-outline-gray dark:focus:placeholder-gray-600 dark:bg-gray-700 dark:text-gray-200 focus:placeholder-gray-500 focus:bg-white focus:border-purple-300 focus:outline-none focus:shadow-outline-purple form-input"
+                    );
+                    $('#example_length').removeClass("dataTables_length");
+                    $('#example_length').addClass("dark:text-white float-left");
+                    $('#example_filter').removeClass("dataTables_filter");
+                    $('#example_filter').addClass("dark:text-white float-right text-right");
+                    $('#example_info').removeClass("dataTables_info");
+                    $('#example_info').addClass("dark:text-white pt-7 float-left clear-both");
+                    $('#example tbody>tr>td').addClass("dark:bg-gray-800 dark:text-white");
+                    $('.dataTables_wrapper .dataTables_paginate .paginate_button').addClass("dark:bg-gray-800 dark:text-white");
+                },
+                language: {
+                    "emptyTable": "Tabla Vacia",
+                    "info": "",
+                    "infoEmpty": "Sin informacion",
+                    "lengthMenu": "Mostrar _MENU_ registros por pagina",
+                    "loadingRecords": "Cargando...",
+                    "decimal": ".",
+                    "infoFiltered": "filtrado de _MAX_ entradas totales",
+                    "infoPostFix": "Mostrando del _START_ al _END_ de _TOTAL_ registros",
+                    "infoThousands": ",",
+                    "paginate": {
+                        "first": "Primero",
+                        "last": "Último",
+                        "next": "Siguiente",
+                        "previous": "Anterior"
+                    },
+                    "processing": "Procesando...",
+                    "search": "Buscar:",
+                    "thousands": ",",
+                    "zeroRecords": "No se encontro información",
+                },
+                ajax: "{{ route('datatable.user') }}",
+                columns: [
+                    {
+                    
+                        "render": function(data, type, row) {
+
+                            return  "<div class='flex items-center space-x-4 text-sm'>" +
+                                           "<button id='edit' onclick='edit(" + row['id'] + ")'" +
+                                               "class='inline-flex items-center justify-center  bg-yellow-700 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-yellow-400 focus:outline-none focus:bg-yellow-700 focus:ring focus:ring-red-200 active:bg-yellow-700 readonly:opacity-25 transition' aria-label='Edit'>" +
+                                               "<svg class='w-5 h-5' aria-hidden='true' fill='currentColor'" +
+                                                   "viewBox='0 0 20 20'>" +
+                                                   "<path fill-rule='evenodd'" +
+                                                       "d='M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z'>" +
+                                                   "</path>" +
+                                               "</svg>" +
+                                           "</button>" +
+                                           "<button onclick='deletes(" + row['id'] + ")'" +
+                                               "class='inline-flex items-center justify-center  bg-red-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 active:bg-red-600 readonly:opacity-25 transition' aria-label='Delete'>" +
+                                               "<svg class='w-5 h-5' aria-hidden='true' fill='currentColor'" +
+                                                   "viewBox='0 0 20 20'>" +
+                                                   "<path fill-rule='evenodd'" +
+                                                       "d='M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z'" +
+                                                       "clip-rule='evenodd'></path>" +
+                                               "</svg>" +
+                                           "</button>" +
+                                       "</div>";
+                                   },"className": "dark:bg-gray-800 dark:text-white border-b"
+                    },
+                    {
+                        data: 'id',
+                        "className": "dark:bg-gray-800 dark:text-white border-b"
+                    },
+                    {
+                        "render": function(data, type, row) {
+                            if (row['usertype'] == 3) {
+                                // return 1;
+                                if (row['supplier_name'] == "" || row['supplier_name'] == null) {
+                                    return "";
+                                } else {
+                                    // return 1;
+                                    if (row['profile_photo_path'] == null || row['profile_photo_path'] == "") {
+                                        // return "si hay imagen empresa" + row['profile_photo_path'];
+                                        return ( 
+                                            "<div class='lex items-center text-sm'>" +
+                                                "<div class='relative  w-8 h-8 mr-3 rounded-full md:block'>" +                                                        
+                                                            "<img src='{{ asset('img/l_logo_step.png') }}' alt=''" +
+                                                                "class='object-cover w-full h-full rounded-full' loading='lazy'>" +
+                                                        "<div class='absolute inset-0 rounded-full shadow-inner'" +
+                                                            "aria-hidden='true'>" +
+                                                        "</div>" +
+                                                "</div>" +
+                                                "<div class='flex items-center text-sm'>" +
+                                                    "<div>" +
+                                                        "<p class='text-xs text-gray-600 dark:text-gray-400'>" + row['supplier_name'] + "</p>" +
+                                                    "</div>" +
+                                                "</div>" +
+                                            "</div>"); 
+
+                                    } else {
+                                        // return "no hay imagen empresa";
+
+                                        return (  
+                                            "<div class='flex items-center text-sm'>" +
+                                                "<div class='relative  w-8 h-8 mr-3 rounded-full md:block'>" +
+                                                            "<img src='" + row['profile_photo_path'] + "' alt=''" +
+                                                                "class='object-cover w-full h-full rounded-full' loading='lazy'>" +
+                                                        "<div class='absolute inset-0 rounded-full shadow-inner'" +
+                                                            "aria-hidden='true'>" +
+                                                        "</div>" +
+                                                "</div>" +
+                                                "<div class='flex items-center text-sm'>" +
+                                                    "<div>" +
+                                                        "<p class='font-semibold'>" + row['supplier_name'] + "</p>" +
+                                                    "</div>" +
+                                                "</div>" +
+                                            "</div>");  
+
+                                    }
+                                }
+                            } else {
+                                // return 0;
+                                if (row['firstname'] == "" || row['firstname'] == null) {
+                                    return "";
+                                } else {                                  
+                                    // return 2;
+                                        if (row['profile_photo_path'] == null || row['profile_photo_path'] == "") {
+                                            // return "si hay imagen usuario" + row['profile_photo_path'];                                            
+                                            return ( 
+                                                "<div class='flex items-center text-sm'>" +
+                                                    "<div class='relative  w-8 h-8 mr-3 rounded-full md:block'>" +                                                        
+                                                                "<img src='{{ asset('img/l_logo_step.png') }}' alt=''" +
+                                                                    "class='object-cover w-full h-full rounded-full' loading='lazy'>" +
+                                                            "<div class='absolute inset-0 rounded-full shadow-inner'" +
+                                                                "aria-hidden='true'>" +
+                                                            "</div>" +
+                                                    "</div>" +
+                                                    "<div class='flex items-center text-sm'>" +
+                                                        "<div>" +
+                                                                "<p class='font-semibold'>" + row['firstname'] + "</p>" +
+                                                                "<p class='text-xs text-gray-600 dark:text-gray-400'>" +
+                                                                    row['lastname'] +
+                                                                "</p>" +
+                                                        "</div>" +
+                                                    "</div>" +
+                                                "</div>");
+
+                                        } else {
+                                            // return "no hay imagen usuario";
+
+                                            return ( 
+                                                "<div class='flex items-center text-sm'>" +
+                                                    "<div class='relative  w-8 h-8 mr-3 rounded-full md:block'>" +
+                                                                "<img src='" + row['profile_photo_path'] + "' alt=''" +
+                                                                    "class='object-cover w-full h-full rounded-full' loading='lazy'>" +
+                                                            "<div class='absolute inset-0 rounded-full shadow-inner'" +
+                                                                "aria-hidden='true'>" +
+                                                            "</div>" +
+                                                    "</div>" +
+                                                    "<div class='flex items-center text-sm'>" +
+                                                        "<div>" +
+                                                                "<p class='font-semibold'>" + row['firstname'] + "</p>" +
+                                                                "<p class='text-xs text-gray-600 dark:text-gray-400'>" +
+                                                                    row['lastname'] +
+                                                                "</p>" +
+                                                        "</div>" +
+                                                    "</div>" +
+                                                "</div>");
+                                        }
+                                }
+                            }
+                        },"className": "dark:bg-gray-800 dark:text-white border-b"
+                    },
+                    {
+                        "render": function(data, type, row) {
+                                if (row['description_identification'] == null || row['description_identification'] == "") {
+                                    return ""
+                                } else {
+                                    return row['description_identification'];
+                                }
+                            },
+                            "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+
+                        "render": function(data, type, row) {
+                            if (row['usertype'] == 3) {
+                                return row['nit'];
+                            } else {
+                                return row['identificationcard'];
+                            }
+                        },
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        data: 'description_usertype',
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        "render": function(data, type, row) {
+                            if (row['description_charge'] == null || row['description_charge'] == "") {
+                                return ""
+                            } else {
+                                return row['description_charge'];
+                            }
+                        },
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        "render": function(data, type, row) {
+                            if (row['user_state'] == 1) {
+                                return "<span class='px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100 '>{{ __('ACTIVE') }}</span>";
+                            } else {
+                                return "<span class='px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-full dark:text-red-100 dark:bg-red-700 '>{{ __('INACTIVE') }}</span>";
+                            }
+                        },
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        data: 'user_entry_date',
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        data: 'email',
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        data: 'username',
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        "render": function(data, type, row) {
+                            return (row['age'] + "<p class='text-xs text-gray-600 dark:text-gray-400'> Años</p>");
+                                },"className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+
+                        "render": function(data, type, row) {
+                                if (row['type_sex'] == "M") {
+                                    return "<span class='px-2 py-1 font-semibold leading-tight text-white bg-blue-600 rounded-full dark:bg-blue-600 dark:text-white '>{{ __('MASCULINE') }}</span>";
+                                } else {
+                                    return "<span class='px-2 py-1 font-semibold leading-tight text-white bg-yellow-700 rounded-full dark:bg-yellow-700 dark:text-white '>{{ __('FEMENINE') }}</span>";
+                                }
+                            },
+                            "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        "render": function(data, type, row) {
+                                if (row['country_name'] == null || row['country_name'] == "") {
+                                    return ""
+                                } else {
+                                    return row['country_name'];
+                                }
+                            },"className": "dark:bg-gray-800 dark:text-white text-center border-b"
+                    },
+                    {
+                        "render": function(data, type, row) {
+                                if (row['department_name'] == null || row['department_name'] == "") {
+                                    return ""
+                                } else {
+                                    return row['department_name'];
+                                }
+                            },"className": "dark:bg-gray-800 dark:text-white text-center border-b"
+                    },
+                    {
+                        "render": function(data, type, row) {
+                                if (row['city_name'] == null || row['city_name'] == "") {
+                                    return ""
+                                } else {
+                                    return row['city_name'];
+                                }
+                            },"className": "dark:bg-gray-800 dark:text-white text-center border-b"
+                    },
+                    {data: 'address',"className": "dark:bg-gray-800 dark:text-white text-center"},
+                    {data: 'phone',"className": "dark:bg-gray-800 dark:text-white text-center"},
+                    {data: 'phone_cellular',"className": "dark:bg-gray-800 dark:text-white text-center"},
+                    {
+                        "render": function(data, type, row) {
+                                if (row['description_eps'] == null || row['description_eps'] == "") {
+                                    return ""
+                                } else {
+                                    return row['description_eps'];
+                                }
+                            },"className": "dark:bg-gray-800 dark:text-white text-center border-b"
+                    },
+                    {data: 'eps_status',"className": "dark:bg-gray-800 dark:text-white text-center"},
+                    {data: 'date_eps',"className": "dark:bg-gray-800 dark:text-white text-center"},
+                    {
+                        "render": function(data, type, row) {
+                                if (row['blood_type_description'] == null || row['blood_type_description'] == "") {
+                                    return ""
+                                } else {
+                                    return row['blood_type_description'];
+                                }
+                            },"className": "dark:bg-gray-800 dark:text-white text-center border-b"
+                    },
+                    {
+                        "render": function(data, type, row) {
+                                if (row['description_pension'] == null || row['description_pension'] == "") {
+                                    return ""
+                                } else {
+                                    return row['description_pension'];
+                                }
+                            },"className": "dark:bg-gray-800 dark:text-white text-center border-b"
+                    },
+                    {data: 'pension_status',"className": "dark:bg-gray-800 dark:text-white text-center"},
+                    {data: 'date_pension',"className": "dark:bg-gray-800 dark:text-white text-center"},
+                    {
+                        "render": function(data, type, row) {
+                                if (row['description_layoffs'] == null || row['description_layoffs'] == "") {
+                                    return ""
+                                } else {
+                                    return row['description_layoffs'];
+                                }
+                            },"className": "dark:bg-gray-800 dark:text-white text-center border-b"
+                    },
+                    {data: 'status_layoffs',"className": "dark:bg-gray-800 dark:text-white text-center"},
+                    {data: 'date_layoffs',"className": "dark:bg-gray-800 dark:text-white text-center"},
+                    {
+                        "render": function(data, type, row) {
+                                if (row['description_arl'] == null || row['description_arl'] == "") {
+                                    return ""
+                                } else {
+                                    return row['description_arl'];
+                                }
+                            },"className": "dark:bg-gray-800 dark:text-white text-center border-b"
+                    },
+                    {data: 'arl_status',"className": "dark:bg-gray-800 dark:text-white text-center"},
+                    {data: 'arl_date',"className": "dark:bg-gray-800 dark:text-white text-center"},
+                    {
+                        "render": function(data, type, row) {
+                                if (row['description_compensationbox'] == null || row['description_compensationbox'] == "") {
+                                    return ""
+                                } else {
+                                    return row['description_compensationbox'];
+                                }
+                            },"className": "dark:bg-gray-800 dark:text-white text-center border-b"
+                    },
+                    {data: 'compensationbox_status',"className": "dark:bg-gray-800 dark:text-white text-center"},
+                    {data: 'date_compensationbox',"className": "dark:bg-gray-800 dark:text-white text-center"},
+                    {data: 'date_withdrawal_user',"className": "dark:bg-gray-800 dark:text-white text-center"},
+                    {
+                        "render": function(data, type, row) {
+                                if (row['description_maritalstatus'] == null || row['description_maritalstatus'] == "") {
+                                    return ""
+                                } else {
+                                    return row['description_maritalstatus'];
+                                }
+                            },"className": "dark:bg-gray-800 dark:text-white text-center border-b"
+                    },
+                    {
+                        "render": function(data, type, row) {
+                                if (row['description_identification'] == null || row['description_identification'] == "") {
+                                    return ""
+                                } else {
+                                    return row['description_identification'];
+                                }
+                            },
+                            "className": "dark:bg-gray-800 dark:text-white text-center border-b"
+                    },
+                    {data: 'family_names',"className": "dark:bg-gray-800 dark:text-white text-center"},
+                    {
+                        "render": function(data, type, row) {
+                                if (row['description_relationship'] == null || row['description_relationship'] == "") {
+                                    return ""
+                                } else {
+                                    return row['description_relationship'];
+                                }
+                            },"className": "dark:bg-gray-800 dark:text-white text-center border-b"
+                    },
+                    {data: 'family_address',"className": "dark:bg-gray-800 dark:text-white text-center"},
+                    {data: 'family_phone',"className": "dark:bg-gray-800 dark:text-white text-center"},
+                    {data: 'family_phone_cellular',"className": "dark:bg-gray-800 dark:text-white text-center"},
+                    {
+                        "render": function(data, type, row) {
+                                if (row['city_birth'] == null || row['city_birth'] == "") {
+                                    return ""
+                                } else {
+                                    return row['city_birth'];
+                                }
+                            },"className": "dark:bg-gray-800 dark:text-white text-center border-b"
+                    },
+                    {data: 'place_expedition_identificationcard',"className": "dark:bg-gray-800 dark:text-white text-center"},
+                    {data: 'identificationcard_family',"className": "dark:bg-gray-800 dark:text-white text-center"},
+                    {
+                        "render": function(data, type, row) {
+                                if (row['bonding_type_description'] == null || row['bonding_type_description'] == "") {
+                                    return ""
+                                } else {
+                                    return row['bonding_type_description'];
+                                }
+                            },"className": "dark:bg-gray-800 dark:text-white text-center border-b"
+                    },
+                    {data: 'weight',"className": "dark:bg-gray-800 dark:text-white text-center"},
+                    {data: 'pant_size',"className": "dark:bg-gray-800 dark:text-white text-center"},
+                    {data: 'shirt_size',"className": "dark:bg-gray-800 dark:text-white text-center"},
+                    {data: 'shoe_size',"className": "dark:bg-gray-800 dark:text-white text-center"},
+                    {
+                        "render": function(data, type, row) {
+                                if (row['description_levelEducation'] == null || row['description_levelEducation'] == "") {
+                                    return ""
+                                } else {
+                                    return row['description_levelEducation'];
+                                }
+                            },"className": "dark:bg-gray-800 dark:text-white text-center border-b"
+                    },
+                    {data: 'educational_institution',"className": "dark:bg-gray-800 dark:text-white text-center"},
+                    {data: 'last_year',"className": "dark:bg-gray-800 dark:text-white text-center"},
+                    {data: 'study_end_date',"className": "dark:bg-gray-800 dark:text-white text-center"},
+                    {data: 'obtained_title',"className": "dark:bg-gray-800 dark:text-white text-center"},
+                    {data: 'last_company_name',"className": "dark:bg-gray-800 dark:text-white text-center"},
+                    {data: 'charges_last_company',"className": "dark:bg-gray-800 dark:text-white text-center"},
+                    {data: 'start_date_last_company',"className": "dark:bg-gray-800 dark:text-white text-center"},
+                    {data: 'date_end_last_company',"className": "dark:bg-gray-800 dark:text-white text-center"},
+                    {data: 'functions_performed',"className": "dark:bg-gray-800 dark:text-white text-center"},
+                    {data: 'company_name_provider',"className": "dark:bg-gray-800 dark:text-white text-center"},
+                    {data: 'commercial_reason_supplier',"className": "dark:bg-gray-800 dark:text-white text-center"},
+                    {data: 'supplier_web_page',"className": "dark:bg-gray-800 dark:text-white text-center"},
+                    {
+                        "render": function(data, type, row) {
+                                if (row['description_EconomicActivity'] == null || row['description_EconomicActivity'] == "") {
+                                    return ""
+                                } else {
+                                    return row['description_EconomicActivity'];
+                                }
+                            },"className": "dark:bg-gray-800 dark:text-white text-center border-b"
+                    },
+                    {
+                        "render": function(data, type, row) {
+                                if (row['ProductandService_description'] == null || row['ProductandService_description'] == "") {
+                                    return ""
+                                } else {
+                                    return row['ProductandService_description'];
+                                }
+                            },"className": "dark:bg-gray-800 dark:text-white text-center border-b"
+                    },
+                    {data: 'salary',render: DataTable.render.number( null, null, 2, '$' ),"className": "dark:bg-gray-800 dark:text-white text-center"},
+                    {data: 'aid_transport',render: DataTable.render.number( null, null, 2, '$' ),"className": "dark:bg-gray-800 dark:text-white text-center"},
+                    {
+                        "render": function(data, type, row) {
+                                if (row['workarea_description'] == null || row['workarea_description'] == "") {
+                                    return ""
+                                } else {
+                                    return row['workarea_description'];
+                                }
+                            },"className": "dark:bg-gray-800 dark:text-white text-center border-b"
+                    },
+                ]
+            }).columns.adjust().responsive.recalc();
+
+            $('a.toggle-vis').on('click', function(e) {
+                e.preventDefault();
+
+                // Get the column API object
+                var column = table.column($(this).attr('data-column'));
+
+                // Toggle the visibility
+                column.visible(!column.visible());
+            });
+
+            $('#example tbody').on('click', 'tr', function() {
+
+                var tr = $(this).closest('tr');
+                var row = table.row(tr);
+                if (row.child.isShown()) {
+                    $('table.dataTable.dtr-inline.collapsed>tbody>tr>td.child').removeClass("child");
+                    $('table.dataTable.dtr-inline.collapsed>tbody>tr>td').addClass(
+                        "dark:bg-gray-800 dark:text-white");
+                }
+            });
+
+
         });
+
+        jQuery.datetimepicker.setLocale('es');
 
         // abriendo modal para editar
         Livewire.on('openModalEdit', () => {
@@ -4488,50 +5205,30 @@
             // console.log(current_active_step_a);
             $('#frmUser').trigger("reset");
 
-            documentOn('license_expiration', 'Doclicense');
-            documentAbove('InputDoclicense', 'Doclicense');
+            let certif = ['license_expiration', 'certificate_drugs_alchoolemia', 'SIMIT_queries', 'driving_exam',
+                'Norm_Overland_Transportation_Automotive', 'Rules_Transit', 'Normative_Tips', 'Driving_Methods',
+                'Defensive_driving', 'distractions', 'First_aid', 'First_Responder', 'five_senses_driving',
+                'Active_Passive_Security_vehicle', 'Road_safety'
+            ]
+            let doc = ['Doclicense', 'DocAlchoolemia', 'DocSimitQueries', 'DocdrivingExam',
+                'DocNormOverlandTransportationAutomotive',
+                'DocRulesTransit', 'DocNormativeTips', 'DocDrivingMethods', 'DocDefensiveDriving', 'Docdistractions',
+                'DocFirstAid', 'DocFirstResponder', 'DocfiveSensesDriving', 'DocActivePassiveSecurityVehicle',
+                'DocRoadSafety'
+            ]
+            let inp = ['InputDoclicense', 'InputDocAlchoolemia', 'InputDocSimitQueries', 'InputDocdrivingExam',
+                'InputDocNormOverlandTransportationAutomotive', 'InputDocRulesTransit', 'InputDocNormativeTips',
+                'InputDocDrivingMethods', 'InputDocDefensiveDriving', 'InputDocdistractions', 'InputDocFirstAid',
+                'InputDocFirstResponder', 'InputDocfiveSensesDriving', 'InputDocActivePassiveSecurityVehicle',
+                'InputDocRoadSafety'
+            ]
 
-            documentOn('certificate_drugs_alchoolemia', 'DocAlchoolemia');
-            documentAbove('InputDocAlchoolemia', 'DocAlchoolemia');
+            for (let i = 0; i < certif.length; i++) {
 
-            documentOn('SIMIT_queries', 'DocSimitQueries');
-            documentAbove('InputDocSimitQueries', 'DocSimitQueries');
+                documentOn(certif[i], doc[i]);
+                documentAbove(inp[i], doc[i]);
 
-            documentOn('driving_exam', 'DocdrivingExam');
-            documentAbove('InputDocdrivingExam', 'DocdrivingExam');
-
-            documentOn('Norm_Overland_Transportation_Automotive', 'DocNormOverlandTransportationAutomotive');
-            documentAbove('InputDocNormOverlandTransportationAutomotive', 'DocNormOverlandTransportationAutomotive');
-
-            documentOn('Rules_Transit', 'DocRulesTransit');
-            documentAbove('InputDocRulesTransit', 'DocRulesTransit');
-
-            documentOn('Normative_Tips', 'DocNormativeTips');
-            documentAbove('InputDocNormativeTips', 'DocNormativeTips');
-
-            documentOn('Driving_Methods', 'DocDrivingMethods');
-            documentAbove('InputDocDrivingMethods', 'DocDrivingMethods');
-
-            documentOn('Defensive_driving', 'DocDefensiveDriving');
-            documentAbove('InputDocDefensiveDriving', 'DocDefensiveDriving');
-
-            documentOn('distractions', 'Docdistractions');
-            documentAbove('InputDocdistractions', 'Docdistractions');
-
-            documentOn('First_aid', 'DocFirstAid');
-            documentAbove('InputDocFirstAid', 'DocFirstAid');
-
-            documentOn('First_Responder', 'DocFirstResponder');
-            documentAbove('InputDocFirstResponder', 'DocFirstResponder');
-
-            documentOn('five_senses_driving', 'DocfiveSensesDriving');
-            documentAbove('InputDocfiveSensesDriving', 'DocfiveSensesDriving');
-
-            documentOn('Active_Passive_Security_vehicle', 'DocActivePassiveSecurityVehicle');
-            documentAbove('InputDocActivePassiveSecurityVehicle', 'DocActivePassiveSecurityVehicle');
-
-            documentOn('Road_safety', 'DocRoadSafety');
-            documentAbove('InputDocRoadSafety', 'DocRoadSafety');
+            }
 
             $('.f1 fieldset').fadeOut(400, function() {
                 // change icons
@@ -4595,151 +5292,139 @@
         //     });
         // }
 
+        var camps = [
+            'labelUsertype', 'usertype', 'divCharge', 'labelCharge', 'charge', 'divSupplierName', 'labelSupplierName',
+            'supplier_name',
+            'divIdentification', 'labelIdentification', 'identification', 'divContractDocument',
+            'labeIdentificationcard', 'identificationcard',
+            'labelFirstname', 'firstname', 'labelSecondname', 'secondname', 'labelLastname', 'lastname',
+            'labelMotherslastname', 'motherslastname',
+            'labelCompanyNameProvider', 'company_name_provider', 'labelCommercialReasonSupplier',
+            'commercial_reason_supplier',
+            'labelSupplierCategory', 'supplier_category', 'labelProductsAndServices', 'products_and_services',
+            'labelEconomicActivity',
+            'economic_activity', 'labelSupplierDescription', 'supplier_description',
+            'divPlaceExpeditionIdentificationcard',
+            'labelPlaceExpeditionIdentificationcard', 'place_expedition_identificationcard', 'divNit', 'labelNit',
+            'nit', 'labelCountry', 'country',
+            'labelDepartment', 'Department', 'labelCity', 'city', 'divAddress', 'labelAddress', 'address', 'divCheck',
+            'labelCheck', 'sexM', 'sexF',
+            'labelSexF', 'labelPhone', 'phone', 'labelPhoneCellular', 'phone_cellular', 'labelBirthdate', 'birthdate',
+            'labelCityBirth', 'city_birth',
+            'labelWeight', 'weight', 'labelPantSize', 'pant_size', 'labelShirtSize', 'shirt_size', 'labelShoeSize',
+            'shoe_size', 'labelCivilStatus',
+            'civil_status', 'labelWorkArea', 'work_area', 'labelBindingType', 'binding_type', 'labelSalary', 'salary',
+            'labelAidTransport',
+            'aid_transport', 'labelEducationLevel', 'education_level', 'labelEducationalInstitution',
+            'educational_institution', 'labelLastYear',
+            'last_year', 'labelStudyEndDate', 'study_end_date', 'labelObtainedTitle', 'obtained_title',
+            'labelLastCompanyName', 'last_company_name',
+            'labelChargesLastCompany', 'charges_last_company', 'labelStartDateLastCompany', 'start_date_last_company',
+            'labelDateEndLastCompany',
+            'date_end_last_company', 'labelFunctionsPerformed', 'functions_performed', 'labelFamilyDocumentType',
+            'family_document_type', 'labelSexM',
+            'labeIdentificationcardFamily', 'identificationcard_family', 'labelRelationship', 'relationship',
+            'labelFamilyNames', 'family_names',
+            'labelFamilyAddress', 'family_address', 'labelFamilyPhone', 'family_phone', 'labelFamilyPhoneCellular',
+            'family_phone_cellular', 'labelEps',
+            'eps', 'labelDateEps', 'date_eps', 'labelBloodType', 'blood_type', 'labelPension', 'pension',
+            'labelDatePension', 'date_pension', 'labelLayoffs',
+            'layoffs', 'labelDateLayoffs', 'date_layoffs', 'labelArl', 'arl', 'labelArlDate', 'arl_date',
+            'labelCompensationbox', 'compensationbox',
+            'labelDateCompensationbox', 'date_compensationbox', 'labelLicenseNumber', 'license_number',
+            'labelLicenseCategory', 'license_category',
+            'labelLicenseExpiration', 'license_expiration', 'finalUser1', 'passfinalUser1',
+            'labelCertificateDrugsAlchoolemia',
+            'certificate_drugs_alchoolemia', 'finalUser2', 'passfinalUser2', 'labelSIMITQueries', 'SIMIT_queries',
+            'finalUser3', 'passfinalUser3',
+            'labelDrivingExam', 'driving_exam', 'step2', 'pass2', 'labelNormOverlandTransportationAutomotive',
+            'Norm_Overland_Transportation_Automotive',
+            'step3', 'pass3', 'labelRulesTransit', 'Rules_Transit', 'change', 'change', 'labelNormativeTips',
+            'Normative_Tips',
+            'change', 'change', 'labelDrivingMethods', 'Driving_Methods', 'change', 'change',
+            'labelDefensiveDriving', 'Defensive_driving', 'change', 'change', 'labelDistractions', 'distractions',
+            'change', 'change', 'labelFirstaid', 'First_aid', 'change', 'change', 'labelFirstResponder',
+            'First_Responder', 'change', 'change', 'labelfiveSensesDriving', 'five_senses_driving', 'change',
+            'change', 'labelActivePassiveSecurityVehicle', 'Active_Passive_Security_vehicle', 'change',
+            'change', 'labelRoadSafety', 'Road_safety', 'change', 'change', 'labelLinked', 'Linked',
+            'labelUserEntryDate', 'user_entry_date', 'labelDateWithdrawalUser', 'date_withdrawal_user',
+            'labelProfilePhotoPath', 'profile_photo_path'
+
+        ]
+
+        clave = [];
+
         function typeUser() {
 
             var userType = document.getElementById('usertype').value;
             // console.log(userType);
 
             switch (userType) {
-                // case '1':
-                // // removes
-                // viewhideinputs('divCharge', 'Inactive', 'Active');
-                // viewhideinputs('labelCharge', 'Inactive', 'Active');
-                // viewhideinputs('charge', 'Inactive', 'Active');
-                // viewhideinputs('labelCompanyNameProvider', 'Inactive', 'Active');
-                // viewhideinputs('company_name_provider', 'Inactive', 'Active');
-                // viewhideinputs('labelSupplierCategory', 'Inactive', 'Active');
-                // viewhideinputs('supplier_category', 'Inactive', 'Active');
-                // viewhideinputs('labelProductsAndServices', 'Inactive', 'Active');
-                // viewhideinputs('products_and_services', 'Inactive', 'Active');
-                // viewhideinputs('labelEconomicActivity', 'Inactive', 'Active');
-                // viewhideinputs('economic_activity', 'Inactive', 'Active');
-                // viewhideinputs('labelSupplierDescription', 'Inactive', 'Active');
-                // viewhideinputs('supplier_description', 'Inactive', 'Active');
-                // viewhideinputs('labelCommercialReasonSupplier', 'Inactive', 'Active');
-                // viewhideinputs('commercial_reason_supplier', 'Inactive', 'Active');
-                // viewhideinputs('divSupplierName', 'Inactive', 'Active');
-                // viewhideinputs('labelSupplierName', 'Inactive', 'Active');
-                // viewhideinputs('supplier_name', 'Inactive', 'Active');
-
-                // viewhideinputs('labelBirthdate', 'Inactive', 'Active');
-                // viewhideinputs('birthdate', 'Inactive', 'Active');
-                // viewhideinputs('labelCityBirth', 'Inactive', 'Active');
-                // viewhideinputs('city_birth', 'Inactive', 'Active');
-                // viewhideinputs('labelWeight', 'Inactive', 'Active');
-                // viewhideinputs('weight', 'Inactive', 'Active');
-                // viewhideinputs('labelPantSize', 'Inactive', 'Active');
-                // viewhideinputs('pant_size', 'Inactive', 'Active');
-                // viewhideinputs('labelShirtSize', 'Inactive', 'Active');
-                // viewhideinputs('shirt_size', 'Inactive', 'Active');
-                // viewhideinputs('labelShoeSize', 'Inactive', 'Active');
-                // viewhideinputs('shoe_size', 'Inactive', 'Active');
-                // viewhideinputs('labelCivilStatus', 'Inactive', 'Active');
-                // viewhideinputs('civil_status', 'Inactive', 'Active');
-                // viewhideinputs('labelWorkArea', 'Inactive', 'Active');
-                // viewhideinputs('work_area', 'Inactive', 'Active');
-                // viewhideinputs('labelBindingType', 'Inactive', 'Active');
-                // viewhideinputs('binding_type', 'Inactive', 'Active');
-                // viewhideinputs('labelSalary', 'Inactive', 'Active');
-                // viewhideinputs('salary', 'Inactive', 'Active');
-                // viewhideinputs('labelAidTransport', 'Inactive', 'Active');
-                // viewhideinputs('aid_transport', 'Inactive', 'Active');
-
-
-                // // adds
-                // document.getElementById('fieldset1Buttons').classList.remove('Inactive');
-
-                // viewhideinputs('labelIdentification', 'Active', 'Inactive');
-                // viewhideinputs('identification', 'Active', 'Inactive');
-                // viewhideinputs('labeIdentificationcard', 'Active', 'Inactive');
-                // viewhideinputs('identificationcard', 'Active', 'Inactive');
-                // viewhideinputs('labelFirstname', 'Active', 'Inactive');
-                // viewhideinputs('firstname', 'Active', 'Inactive');
-                // viewhideinputs('labelSecondname', 'Active', 'Inactive');
-                // viewhideinputs('secondname', 'Active', 'Inactive');
-                // viewhideinputs('labelLastname', 'Active', 'Inactive');
-                // viewhideinputs('lastname', 'Active', 'Inactive');
-                // viewhideinputs('labelMotherslastname', 'Active', 'Inactive');
-                // viewhideinputs('motherslastname', 'Active', 'Inactive');
-
-                // viewhideinputs('labelPlaceExpeditionIdentificationcard', 'Active', 'Inactive');
-                // viewhideinputs('place_expedition_identificationcard', 'Active', 'Inactive');
-                // viewhideinputs('labelCountry', 'Active', 'Inactive');
-                // viewhideinputs('country', 'Active', 'Inactive');
-                // viewhideinputs('labelDepartment', 'Active', 'Inactive');
-                // viewhideinputs('Department', 'Active', 'Inactive');
-                // viewhideinputs('labelCity', 'Active', 'Inactive');
-                // viewhideinputs('city', 'Active', 'Inactive');
-                // viewhideinputs('labelAddress', 'Active', 'Inactive');
-                // viewhideinputs('address', 'Active', 'Inactive');
-                // viewhideinputs('labelCheck', 'Active', 'Inactive');
-                // viewhideinputs('sexM', 'Active', 'Inactive');
-                // viewhideinputs('labelSexM', 'Active', 'Inactive');
-                // viewhideinputs('sexF', 'Active', 'Inactive');
-                // viewhideinputs('labelSexF', 'Active', 'Inactive');
-                // viewhideinputs('labelPhone', 'Active', 'Inactive');
-                // viewhideinputs('phone', 'Active', 'Inactive');
-                // viewhideinputs('labelPhoneCellular', 'Active', 'Inactive');
-                // viewhideinputs('phone_cellular', 'Active', 'Inactive');
-
-
-                // break;
-
                 case '1':
+                    clave = [];
+                    clave.push(2, 3, 4, 22, 23, 26, 27, 28, 29, 30, 31, 32, 33, 24, 25, 5, 6, 7, 37, 38, 39, 58, 59, 60, 61,
+                        62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85,
+                        86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 103, 104, 107, 108, 105, 106,
+                        109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127,
+                        128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 145, 146, 149, 150,
+                        153, 154, 157, 158, 161, 162, 165, 166, 169, 170, 173, 174, 177, 178, 181, 182, 185, 186, 189,
+                        190, 193, 194, 197, 198, 201, 202, 159, 160, 151, 152, 147, 148); //1-4
 
-
-                    changeInput(1, 'divCharge', 'labelCompanyNameProvider', 'labelBirthdate', 'labelLicenseNumber', '', '',
-                        'labelIdentification', '', '', '');
-
-
-                    // removes
-
-                    // adds
+                    changeInput(1);
                     document.getElementById('fieldset1Buttons').classList.remove('Inactive');
-
 
                     break;
 
                 case '2':
-                    // removes
+                    clave = [];
+                    clave.push(22, 23, 26, 27, 28, 29, 30, 31, 32, 33, 24, 25, 5, 6, 7, 37, 38, 39, 143, 144, 147, 148, 151,
+                        152); //2
 
-
-                    // adds
                     document.getElementById('fieldset1Buttons').classList.remove('Inactive');
-                    changeInput(2, '', 'labelCompanyNameProvider', '', 'labelLicenseNumber', '', '', 'labelIdentification',
-                        'divCharge', '', '');
 
+                    changeInput(2);
                     break;
 
                 case '3':
-                    // removes
+                    clave = [];
+                    clave.push(2, 3, 4, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 7677, 78,
+                        79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100101, 103,
+                        104, 107, 108, 105, 106, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119120, 121, 122,
+                        123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137138, 139, 140, 141,
+                        142, 145, 146, 149, 150, 153, 154, 157, 158, 161, 162, 165, 166, 169170, 173, 174, 177, 178,
+                        181, 182, 185, 186, 189, 190, 193, 194, 197, 198, 201, 202, 8, 910, 11, 12, 13, 14, 15, 16, 17,
+                        18, 19, 20, 21, 35, 36, 50, 51, 102, 52, 53, 34, 49, 159, 160, 151, 152, 147, 148); //3
 
-
-                    // adds
                     document.getElementById('fieldset1Buttons').classList.remove('Inactive');
-                    changeInput(3, 'divCharge', '', 'labelBirthdate', 'labelLicenseNumber', 'labelIdentification',
-                        'labelPlaceExpeditionIdentificationcard', '', '', 'labelCompanyNameProvider', '');
 
+                    changeInput(3);
                     //
                     break;
 
 
                 case '4':
-                    // removes
+                    clave = [];
+                    clave.push(2, 3, 4, 22, 23, 26, 27, 28, 29, 30, 31, 32, 33, 24, 25, 5, 6, 7, 37, 38, 39, 58, 59, 60, 61,
+                        62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85,
+                        86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 103, 104, 107, 108, 105, 106,
+                        109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127,
+                        128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 145, 146, 149, 150,
+                        153, 154, 157, 158, 161, 162, 165, 166, 169, 170, 173, 174, 177, 178, 181, 182, 185, 186, 189,
+                        190, 193, 194, 197, 198, 201, 202, 159, 160, 151, 152, 147, 148); //1-4
 
-                    // adds
                     document.getElementById('fieldset1Buttons').classList.remove('Inactive');
-                    changeInput(4, 'divCharge', 'labelCompanyNameProvider', 'labelBirthdate', 'labelLicenseNumber', '', '',
-                        'labelIdentification', '', '', '');
-
+                    changeInput(4);
                     break;
 
                 default:
-
+                    clave = [];
+                    clave.push(2, 3, 4, 22, 23, 26, 27, 28, 29, 30, 31, 32, 33, 24, 25, 5, 6, 7, 37, 38, 39, 137, 138, 139,
+                        140, 141, 142, 145, 146, 149, 150, 153, 154, 157, 158, 161, 162, 165, 166, 169, 170, 173, 174,
+                        177, 178, 181, 182, 185, 186, 189, 190, 193, 194, 197, 198, 201, 202, 8, 9, 10, 11, 12, 13, 14,
+                        15, 16, 17, 18, 19, 20, 21, 35, 36, 40, 41, 42, 43, 44, 45, 46, 47, 48, 50, 51, 102, 52, 53, 54,
+                        55, 56, 57, 143, 144, 147, 148, 151, 152, 143); //0
                     viewhideinputs('fieldset1Buttons', 'Inactive', 'Active');
-                    changeInput(0, 'divCharge', 'labelCompanyNameProvider', '', 'labelLicenseNumber', 'labelIdentification',
-                        'labelPlaceExpeditionIdentificationcard', '', '', '', '');
-
+                    changeInput(0);
                     break;
             }
 
@@ -4752,14 +5437,20 @@
 
             switch (charges) {
                 case '5':
-
-                    changeInput(5, '', '', '', '', '', '', '', '', '', 'labelLicenseNumber');
-
+                    // console.log('entro');
+                    // changeInput(5, '', '', '', '', '', '', '', '', '', 'labelLicenseNumber');
+                    clave = [];
+                    clave.push(5, 6, 7, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 37, 38, 39, 147, 148, 143, 144, 151, 152); //5
+                    changeInput(5);
                     break;
 
                 default:
-                    changeInput(6, '', '', '', 'labelLicenseNumber', '', '', '', '', '', '');
-
+                    clave = [];
+                    clave.push(137, 138, 139, 140, 141, 142, 145, 146, 149, 150, 153, 154, 157, 158, 161, 162, 165, 166,
+                        169, 170, 173, 174, 177, 178, 181, 182, 185, 186, 189, 190, 193, 194, 197, 198, 201, 202, 143,
+                        144, 151, 152, 5, 6, 7, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 37, 38, 39); //6
+                    // changeInput(6, '', '', '', 'labelLicenseNumber', '', '', '', '', '', '');
+                    changeInput(6);
                     break;
             }
 
@@ -4772,491 +5463,48 @@
             document.getElementById(id).classList.add(adhere);
         }
 
-        function changeInput(opcion, clave1, clave2, clave3, clave4, clave5, clave6, clave7, clave8, clave9, clave10) {
+        function changeInput(opcion) {
 
-            // removes
+            let change = false;
+            prueba = [];
 
-            if (opcion == 0 || opcion == 1 || opcion == 3 || opcion == 4) {
-                // console.log('si existe');
+            // console.log(camps[clave[0]] + '-' + clave + '-' + change);
+            for (let i = 0; i < camps.length; i++) {
 
-                var id = clave1;
-                for (var i = 1; i <= 3; i++) {
-                    // console.log('posición' + [i]);
-                    viewhideinputs(id, 'Inactive', 'Active');
+                let j = 0;
+                while (j <= clave.length) {
 
-                    if (id == 'divCharge') {
-                        id = 'labelCharge';
-                    } else if (id == 'labelCharge') {
-                        id = 'charge';
+                    if (camps[i] == camps[clave[j]]) {
+                        j = clave.length;
+                        change = true;
                     } else {
-                        id = 'divCharge';
-                    }
-                }
-            }
-
-            if (opcion == 0 || opcion == 1 || opcion == 2 || opcion == 4) {
-                // console.log('si existe');
-
-                var id = clave2;
-                for (var i = 1; i <= 18; i++) {
-                    // console.log('posición' + [i]);
-                    viewhideinputs(id, 'Inactive', 'Active');
-
-                    if (id == 'labelCompanyNameProvider') {
-                        id = 'company_name_provider';
-
-                    } else if (id == 'company_name_provider') {
-                        id = 'labelSupplierCategory';
-
-                    } else if (id == 'labelSupplierCategory') {
-                        id = 'supplier_category';
-
-                    } else if (id == 'supplier_category') {
-                        id = 'labelProductsAndServices';
-
-                    } else if (id == 'labelProductsAndServices') {
-                        id = 'products_and_services';
-
-                    } else if (id == 'products_and_services') {
-                        id = 'labelEconomicActivity';
-
-                    } else if (id == 'labelEconomicActivity') {
-                        id = 'economic_activity';
-
-                    } else if (id == 'economic_activity') {
-                        id = 'labelSupplierDescription';
-
-                    } else if (id == 'labelSupplierDescription') {
-                        id = 'supplier_description';
-
-                    } else if (id == 'supplier_description') {
-                        id = 'labelCommercialReasonSupplier';
-
-                    } else if (id == 'labelCommercialReasonSupplier') {
-                        id = 'commercial_reason_supplier';
-
-                    } else if (id == 'commercial_reason_supplier') {
-                        id = 'divSupplierName';
-
-                    } else if (id == 'divSupplierName') {
-                        id = 'labelSupplierName';
-
-                    } else if (id == 'labelSupplierName') {
-                        id = 'supplier_name';
-
-                    } else if (id == 'supplier_name') {
-                        id = 'divNit';
-
-                    } else if (id == 'divNit') {
-                        id = 'labelNit';
-
-                    } else if (id == 'labelNit') {
-                        id = 'nit';
-
-                    } else if (id == 'nit') {
-                        id = 'labelCompanyNameProvider';
-
-                    }
-                }
-            }
-
-            if (opcion == 1 || opcion == 3 || opcion == 4) {
-                // console.log('si existe');
-
-                var id = clave3;
-                for (var i = 1; i <= 86; i++) {
-                    // console.log('posición' + [i]);
-                    viewhideinputs(id, 'Inactive', 'Active');
-
-                    if (id == 'labelBirthdate') {
-                        id = 'birthdate';
-                    } else if (id == 'birthdate') {
-                        id = 'labelCityBirth';
-                    } else if (id == 'labelCityBirth') {
-                        id = 'city_birth';
-                    } else if (id == 'city_birth') {
-                        id = 'labelWeight';
-                    } else if (id == 'labelWeight') {
-                        id = 'weight';
-                    } else if (id == 'weight') {
-                        id = 'labelPantSize';
-                    } else if (id == 'labelPantSize') {
-                        id = 'pant_size';
-                    } else if (id == 'pant_size') {
-                        id = 'labelShirtSize';
-                    } else if (id == 'labelShirtSize') {
-                        id = 'shirt_size';
-                    } else if (id == 'shirt_size') {
-                        id = 'labelShoeSize';
-                    } else if (id == 'labelShoeSize') {
-                        id = 'shoe_size';
-                    } else if (id == 'shoe_size') {
-                        id = 'labelCivilStatus';
-                    } else if (id == 'labelCivilStatus') {
-                        id = 'civil_status';
-                    } else if (id == 'civil_status') {
-                        id = 'labelWorkArea';
-                    } else if (id == 'labelWorkArea') {
-                        id = 'work_area';
-                    } else if (id == 'work_area') {
-                        id = 'labelBindingType';
-                    } else if (id == 'labelBindingType') {
-                        id = 'binding_type';
-                    } else if (id == 'binding_type') {
-                        id = 'labelSalary';
-                    } else if (id == 'labelSalary') {
-                        id = 'salary';
-                    } else if (id == 'salary') {
-                        id = 'labelAidTransport';
-                    } else if (id == 'labelAidTransport') {
-                        id = 'aid_transport';
-                    } else if (id == 'aid_transport') {
-                        id = 'labelEducationLevel';
-                    } else if (id == 'labelEducationLevel') {
-                        id = 'education_level';
-                    } else if (id == 'education_level') {
-                        id = 'labelEducationalInstitution';
-                    } else if (id == 'labelEducationalInstitution') {
-                        id = 'educational_institution';
-                    } else if (id == 'educational_institution') {
-                        id = 'labelLastYear';
-                    } else if (id == 'labelLastYear') {
-                        id = 'last_year';
-                    } else if (id == 'last_year') {
-                        id = 'labelStudyEndDate';
-                    } else if (id == 'labelStudyEndDate') {
-                        id = 'study_end_date';
-                    } else if (id == 'study_end_date') {
-                        id = 'labelObtainedTitle';
-                    } else if (id == 'labelObtainedTitle') {
-                        id = 'obtained_title';
-                    } else if (id == 'obtained_title') {
-                        id = 'labelLastCompanyName';
-                    } else if (id == 'labelLastCompanyName') {
-                        id = 'last_company_name';
-                    } else if (id == 'last_company_name') {
-                        id = 'labelChargesLastCompany';
-                    } else if (id == 'labelChargesLastCompany') {
-                        id = 'charges_last_company';
-                    } else if (id == 'charges_last_company') {
-                        id = 'labelStartDateLastCompany';
-                    } else if (id == 'labelStartDateLastCompany') {
-                        id = 'start_date_last_company';
-                    } else if (id == 'start_date_last_company') {
-                        id = 'labelDateEndLastCompany';
-                    } else if (id == 'labelDateEndLastCompany') {
-                        id = 'date_end_last_company';
-                    } else if (id == 'date_end_last_company') {
-                        id = 'labelFunctionsPerformed';
-                    } else if (id == 'labelFunctionsPerformed') {
-                        id = 'functions_performed';
-                    } else if (id == 'functions_performed') {
-                        id = 'labelFamilyDocumentType';
-                    } else if (id == 'labelFamilyDocumentType') {
-                        id = 'family_document_type';
-                    } else if (id == 'family_document_type') {
-                        id = 'labelFamilyNames';
-                    } else if (id == 'labelFamilyNames') {
-                        id = 'family_names';
-                    } else if (id == 'family_names') {
-                        id = 'labelRelationship';
-                    } else if (id == 'labelRelationship') {
-                        id = 'relationship';
-                    } else if (id == 'relationship') {
-                        id = 'labelFamilyAddress';
-                    } else if (id == 'labelFamilyAddress') {
-                        id = 'family_address';
-                    } else if (id == 'family_address') {
-                        id = 'labelFamilyPhone';
-                    } else if (id == 'labelFamilyPhone') {
-                        id = 'family_phone';
-                    } else if (id == 'family_phone') {
-                        id = 'labelFamilyPhoneCellular';
-                    } else if (id == 'labelFamilyPhoneCellular') {
-                        id = 'family_phone_cellular';
-                    } else if (id == 'family_phone_cellular') {
-                        id = 'labelEps';
-                    } else if (id == 'labelEps') {
-                        id = 'eps';
-                    } else if (id == 'eps') {
-                        id = 'labelEpsStatus';
-                    } else if (id == 'labelEpsStatus') {
-                        id = 'eps_status';
-                    } else if (id == 'eps_status') {
-                        id = 'labelDateEps';
-                    } else if (id == 'labelDateEps') {
-                        id = 'date_eps';
-                    } else if (id == 'date_eps') {
-                        id = 'labelBloodType';
-                    } else if (id == 'labelBloodType') {
-                        id = 'blood_type';
-                    } else if (id == 'blood_type') {
-                        id = 'labelPension';
-                    } else if (id == 'labelPension') {
-                        id = 'pension';
-                    } else if (id == 'pension') {
-                        id = 'labelPensionStatus';
-                    } else if (id == 'labelPensionStatus') {
-                        id = 'pension_status';
-                    } else if (id == 'pension_status') {
-                        id = 'labelDatePension';
-                    } else if (id == 'labelDatePension') {
-                        id = 'date_pension';
-                    } else if (id == 'date_pension') {
-                        id = 'labelLayoffs';
-                    } else if (id == 'labelLayoffs') {
-                        id = 'layoffs';
-                    } else if (id == 'layoffs') {
-                        id = 'labelStatusLayoffs';
-                    } else if (id == 'labelStatusLayoffs') {
-                        id = 'status_layoffs';
-                    } else if (id == 'status_layoffs') {
-                        id = 'labelDateLayoffs';
-                    } else if (id == 'labelDateLayoffs') {
-                        id = 'date_layoffs';
-                    } else if (id == 'date_layoffs') {
-                        id = 'labelArl';
-                    } else if (id == 'labelArl') {
-                        id = 'arl';
-                    } else if (id == 'arl') {
-                        id = 'labelArlStatus';
-                    } else if (id == 'labelArlStatus') {
-                        id = 'arl_status';
-                    } else if (id == 'arl_status') {
-                        id = 'labelArlDate';
-                    } else if (id == 'labelArlDate') {
-                        id = 'arl_date';
-                    } else if (id == 'arl_date') {
-                        id = 'labelCompensationbox';
-                    } else if (id == 'labelCompensationbox') {
-                        id = 'compensationbox';
-                    } else if (id == 'compensationbox') {
-                        id = 'labelCompensationboxStatus';
-                    } else if (id == 'labelCompensationboxStatus') {
-                        id = 'compensationbox_status';
-                    } else if (id == 'compensationbox_status') {
-                        id = 'labelDateCompensationbox';
-                    } else if (id == 'labelDateCompensationbox') {
-                        id = 'date_compensationbox';
-                    } else if (id == 'date_compensationbox') {
-                        id = 'labelBirthdate';
+                        change = false;
                     }
 
+                    j++;
                 }
-            }
-
-            if (opcion == 0 || opcion == 1 || opcion == 2 || opcion == 3 || opcion == 4 || opcion == 6) {
-                // console.log('si existe');
-
-                var id = clave4;
-                for (var i = 1; i <= 36; i++) {
-                    // console.log('posición' + [i]);
-                    viewhideinputs(id, 'Inactive', 'Active');
-
-                    if (id == 'labelLicenseNumber') {
-                        id = 'license_number';
-                    } else if (id == 'license_number') {
-                        id = 'labelLicenseCategory';
-                    } else if (id == 'labelLicenseCategory') {
-                        id = 'license_category';
-                    } else if (id == 'license_category') {
-                        id = 'labelLicenseExpiration';
-                    } else if (id == 'labelLicenseExpiration') {
-                        id = 'license_expiration';
-                    } else if (id == 'license_expiration') {
-                        id = 'labelCertificateDrugsAlchoolemia';
-                    } else if (id == 'labelCertificateDrugsAlchoolemia') {
-                        id = 'certificate_drugs_alchoolemia';
-                    } else if (id == 'certificate_drugs_alchoolemia') {
-                        id = 'labelSIMITQueries';
-                    } else if (id == 'labelSIMITQueries') {
-                        id = 'SIMIT_queries';
-                    } else if (id == 'SIMIT_queries') {
-                        id = 'labelDrivingExam';
-                    } else if (id == 'labelDrivingExam') {
-                        id = 'driving_exam';
-                    } else if (id == 'driving_exam') {
-                        id = 'labelNormOverlandTransportationAutomotive';
-                    } else if (id == 'labelNormOverlandTransportationAutomotive') {
-                        id = 'Norm_Overland_Transportation_Automotive';
-                    } else if (id == 'Norm_Overland_Transportation_Automotive') {
-                        id = 'labelRulesTransit';
-                    } else if (id == 'labelRulesTransit') {
-                        id = 'Rules_Transit';
-                    } else if (id == 'Rules_Transit') {
-                        id = 'labelNormativeTips';
-                    } else if (id == 'labelNormativeTips') {
-                        id = 'Normative_Tips';
-                    } else if (id == 'Normative_Tips') {
-                        id = 'labelDrivingMethods';
-                    } else if (id == 'labelDrivingMethods') {
-                        id = 'Driving_Methods';
-                    } else if (id == 'Driving_Methods') {
-                        id = 'labelDefensiveDriving';
-                    } else if (id == 'labelDefensiveDriving') {
-                        id = 'Defensive_driving';
-                    } else if (id == 'Defensive_driving') {
-                        id = 'labelDistractions';
-                    } else if (id == 'labelDistractions') {
-                        id = 'distractions';
-                    } else if (id == 'distractions') {
-                        id = 'labelFirstaid';
-                    } else if (id == 'labelFirstaid') {
-                        id = 'First_aid';
-                    } else if (id == 'First_aid') {
-                        id = 'labelFirstResponder';
-                    } else if (id == 'labelFirstResponder') {
-                        id = 'First_Responder';
-                    } else if (id == 'First_Responder') {
-                        id = 'labelfiveSensesDriving';
-                    } else if (id == 'labelfiveSensesDriving') {
-                        id = 'five_senses_driving';
-                    } else if (id == 'five_senses_driving') {
-                        id = 'labelActivePassiveSecurityVehicle';
-                    } else if (id == 'labelActivePassiveSecurityVehicle') {
-                        id = 'Active_Passive_Security_vehicle';
-                    } else if (id == 'Active_Passive_Security_vehicle') {
-                        id = 'labelRoadSafety';
-                    } else if (id == 'labelRoadSafety') {
-                        id = 'Road_safety';
-                    } else if (id == 'Road_safety') {
-                        id = 'labelLinked';
-                    } else if (id == 'labelLinked') {
-                        id = 'Linked';
-                    } else if (id == 'Linked') {
-                        id = 'labelLicenseNumber';
-
+                if (camps[i] == 'change') {
+                    // console.log('cambiar');
+                } else {
+                    // console.log(camps[i]);
+                    if (change == true) {
+                        viewhideinputs(camps[i], 'Inactive', 'Active');
+                    } else {
+                        viewhideinputs(camps[i], 'Active', 'Inactive');
                     }
                 }
-            }
 
-            if (opcion == 0 || opcion == 3) {
-                // console.log('si existe');
-
-                var id = clave5;
-                for (var i = 1; i <= 12; i++) {
-                    // console.log('posición' + [i]);
-                    viewhideinputs(id, 'Inactive', 'Active');
-
-                    if (id == 'labelIdentification') {
-                        id = 'identification';
-                    } else if (id == 'identification') {
-                        id = 'labeIdentificationcard';
-                    } else if (id == 'labeIdentificationcard') {
-                        id = 'identificationcard';
-                    } else if (id == 'identificationcard') {
-                        id = 'labelFirstname';
-                    } else if (id == 'labelFirstname') {
-                        id = 'firstname';
-                    } else if (id == 'firstname') {
-                        id = 'labelSecondname';
-                    } else if (id == 'labelSecondname') {
-                        id = 'secondname';
-                    } else if (id == 'secondname') {
-                        id = 'labelLastname';
-                    } else if (id == 'labelLastname') {
-                        id = 'lastname';
-                    } else if (id == 'lastname') {
-                        id = 'labelMotherslastname';
-                    } else if (id == 'labelMotherslastname') {
-                        id = 'motherslastname';
-                    } else if (id == 'motherslastname') {
-                        id = 'labelIdentification';
-
-                    }
-                }
-            }
-
-            if (opcion == 0) {
-                // console.log('si existe');
-
-                var id = clave6;
-                for (var i = 1; i <= 19; i++) {
-                    // console.log('posición' + [i]);
-                    viewhideinputs(id, 'Inactive', 'Active');
-
-                    if (id == 'labelPlaceExpeditionIdentificationcard') {
-                        id = 'place_expedition_identificationcard';
-                    } else if (id == 'place_expedition_identificationcard') {
-                        id = 'labelCountry';
-                    } else if (id == 'labelCountry') {
-                        id = 'country';
-                    } else if (id == 'country') {
-                        id = 'labelDepartment';
-                    } else if (id == 'labelDepartment') {
-                        id = 'Department';
-                    } else if (id == 'Department') {
-                        id = 'labelCity';
-                    } else if (id == 'labelCity') {
-                        id = 'city';
-                    } else if (id == 'city') {
-                        id = 'labelAddress';
-                    } else if (id == 'labelAddress') {
-                        id = 'address';
-                    } else if (id == 'address') {
-                        id = 'labelCheck';
-                    } else if (id == 'labelCheck') {
-                        id = 'sexM';
-                    } else if (id == 'sexM') {
-                        id = 'labelSexM';
-                    } else if (id == 'labelSexM') {
-                        id = 'sexF';
-                    } else if (id == 'sexF') {
-                        id = 'labelSexF';
-                    } else if (id == 'labelSexF') {
-                        id = 'labelPhone';
-                    } else if (id == 'labelPhone') {
-                        id = 'phone';
-                    } else if (id == 'phone') {
-                        id = 'labelPhoneCellular';
-                    } else if (id == 'labelPhoneCellular') {
-                        id = 'phone_cellular';
-                    } else if (id == 'phone_cellular') {
-                        id = 'labelPlaceExpeditionIdentificationcard';
-
-                    }
-                }
-            }
-
-            if (opcion == 3) {
-                // console.log('si existe');
-
-                var id = clave6;
-                for (var i = 1; i <= 9; i++) {
-                    // console.log('posición' + [i]);
-                    viewhideinputs(id, 'Inactive', 'Active');
-
-                    if (id == 'labelPlaceExpeditionIdentificationcard') {
-                        id = 'place_expedition_identificationcard';
-                    } else if (id == 'place_expedition_identificationcard') {
-                        id = 'labelCheck';
-                    } else if (id == 'labelCheck') {
-                        id = 'sexM';
-                    } else if (id == 'sexM') {
-                        id = 'labelSexM';
-                    } else if (id == 'labelSexM') {
-                        id = 'sexF';
-                    } else if (id == 'sexF') {
-                        id = 'labelSexF';
-                    } else if (id == 'labelSexF') {
-                        id = 'divPlaceExpeditionIdentificationcard';
-                    } else if (id == 'divPlaceExpeditionIdentificationcard') {
-                        id = 'divCheck';
-                    } else if (id == 'divCheck') {
-                        id = 'labelPlaceExpeditionIdentificationcard';
-                    }
-                }
             }
 
             if (opcion == 0 || opcion == 2 || opcion == 6) {
-
+                // console.log('si');
                 // viewhideinputs('step3', 'Active', 'Inactive');
-                viewhideinputs('finalUser1', 'Inactive', 'Active');
-                viewhideinputs('passfinalUser1', 'Inactive', 'Active');
-                viewhideinputs('finalUser2', 'Inactive', 'Active');
-                viewhideinputs('passfinalUser2', 'Inactive', 'Active');
-                viewhideinputs('finalUser3', 'Inactive', 'Active');
-                viewhideinputs('passfinalUser3', 'Inactive', 'Active');
+                // viewhideinputs('finalUser1', 'Inactive', 'Active');
+                // viewhideinputs('passfinalUser1', 'Inactive', 'Active');
+                // viewhideinputs('finalUser2', 'Inactive', 'Active');
+                // viewhideinputs('passfinalUser2', 'Inactive', 'Active');
+                // viewhideinputs('finalUser3', 'Inactive', 'Active');
+                // viewhideinputs('passfinalUser3', 'Inactive', 'Active');
 
                 for (var i = 1; i <= 10; i++) {
                     var noSteps = 'step' + [i];
@@ -5269,353 +5517,6 @@
                 }
             }
 
-
-            // adds
-
-            if (opcion == 1 || opcion == 2 || opcion == 4) {
-                // console.log('si existe');
-
-                var id = clave7;
-                for (var i = 1; i <= 33; i++) {
-                    // console.log('posición' + [i]);
-                    viewhideinputs(id, 'Active', 'Inactive');
-
-                    if (id == 'labelIdentification') {
-                        id = 'identification';
-                    } else if (id == 'identification') {
-                        id = 'labeIdentificationcard';
-                    } else if (id == 'labeIdentificationcard') {
-                        id = 'identificationcard';
-                    } else if (id == 'identificationcard') {
-                        id = 'labelFirstname';
-                    } else if (id == 'labelFirstname') {
-                        id = 'firstname';
-                    } else if (id == 'firstname') {
-                        id = 'labelSecondname';
-                    } else if (id == 'labelSecondname') {
-                        id = 'secondname';
-                    } else if (id == 'secondname') {
-                        id = 'labelLastname';
-                    } else if (id == 'labelLastname') {
-                        id = 'lastname';
-                    } else if (id == 'lastname') {
-                        id = 'labelMotherslastname';
-                    } else if (id == 'labelMotherslastname') {
-                        id = 'motherslastname';
-                    } else if (id == 'motherslastname') {
-                        id = 'divPlaceExpeditionIdentificationcard';
-                    } else if (id == 'divPlaceExpeditionIdentificationcard') {
-                        id = 'labelPlaceExpeditionIdentificationcard';
-                    } else if (id == 'labelPlaceExpeditionIdentificationcard') {
-                        id = 'place_expedition_identificationcard';
-                    } else if (id == 'place_expedition_identificationcard') {
-                        id = 'labelCountry';
-                    } else if (id == 'labelCountry') {
-                        id = 'country';
-                    } else if (id == 'country') {
-                        id = 'labelDepartment';
-                    } else if (id == 'labelDepartment') {
-                        id = 'Department';
-                    } else if (id == 'Department') {
-                        id = 'labelCity';
-                    } else if (id == 'labelCity') {
-                        id = 'city';
-                    } else if (id == 'city') {
-                        id = 'labelAddress';
-                    } else if (id == 'labelAddress') {
-                        id = 'address';
-                    } else if (id == 'address') {
-                        id = 'divCheck';
-                    } else if (id == 'divCheck') {
-                        id = 'labelCheck';
-                    } else if (id == 'labelCheck') {
-                        id = 'sexM';
-                    } else if (id == 'sexM') {
-                        id = 'labelSexM';
-                    } else if (id == 'labelSexM') {
-                        id = 'sexF';
-                    } else if (id == 'sexF') {
-                        id = 'labelSexF';
-                    } else if (id == 'labelSexF') {
-                        id = 'labelPhone';
-                    } else if (id == 'labelPhone') {
-                        id = 'phone';
-                    } else if (id == 'phone') {
-                        id = 'labelPhoneCellular';
-                    } else if (id == 'labelPhoneCellular') {
-                        id = 'phone_cellular';
-                    } else if (id == 'phone_cellular') {
-                        id = 'labelIdentification';
-                    }
-                }
-            }
-
-            if (opcion == 2) {
-                // console.log('si existe');
-
-                var id = clave8;
-                for (var i = 1; i <= 91; i++) {
-                    // console.log('posición' + [i]);
-                    viewhideinputs(id, 'Active', 'Inactive');
-
-                    if (id == 'divCharge') {
-                        id = 'labelCharge';
-                    } else if (id == 'labelCharge') {
-                        id = 'charge';
-                    } else if (id == 'charge') {
-                        id = 'labelBirthdate';
-                    } else if (id == 'labelBirthdate') {
-                        id = 'birthdate';
-                    } else if (id == 'birthdate') {
-                        id = 'labelCityBirth';
-                    } else if (id == 'labelCityBirth') {
-                        id = 'city_birth';
-                    } else if (id == 'city_birth') {
-                        id = 'labelWeight';
-                    } else if (id == 'labelWeight') {
-                        id = 'weight';
-                    } else if (id == 'weight') {
-                        id = 'labelPantSize';
-                    } else if (id == 'labelPantSize') {
-                        id = 'pant_size';
-                    } else if (id == 'pant_size') {
-                        id = 'labelShirtSize';
-                    } else if (id == 'labelShirtSize') {
-                        id = 'shirt_size';
-                    } else if (id == 'shirt_size') {
-                        id = 'labelShoeSize';
-                    } else if (id == 'labelShoeSize') {
-                        id = 'shoe_size';
-                    } else if (id == 'shoe_size') {
-                        id = 'labelCivilStatus';
-                    } else if (id == 'labelCivilStatus') {
-                        id = 'civil_status';
-                    } else if (id == 'civil_status') {
-                        id = 'labelWorkArea';
-                    } else if (id == 'labelWorkArea') {
-                        id = 'work_area';
-                    } else if (id == 'work_area') {
-                        id = 'labelBindingType';
-                    } else if (id == 'labelBindingType') {
-                        id = 'binding_type';
-                    } else if (id == 'binding_type') {
-                        id = 'labelSalary';
-                    } else if (id == 'labelSalary') {
-                        id = 'salary';
-                    } else if (id == 'salary') {
-                        id = 'labelAidTransport';
-                    } else if (id == 'labelAidTransport') {
-                        id = 'aid_transport';
-                    } else if (id == 'aid_transport') {
-                        id = 'labelEducationLevel';
-                    } else if (id == 'labelEducationLevel') {
-                        id = 'education_level';
-                    } else if (id == 'education_level') {
-                        id = 'labelEducationalInstitution';
-                    } else if (id == 'labelEducationalInstitution') {
-                        id = 'educational_institution';
-                    } else if (id == 'educational_institution') {
-                        id = 'labelLastYear';
-                    } else if (id == 'labelLastYear') {
-                        id = 'last_year';
-                    } else if (id == 'last_year') {
-                        id = 'labelStudyEndDate';
-                    } else if (id == 'labelStudyEndDate') {
-                        id = 'study_end_date';
-                    } else if (id == 'study_end_date') {
-                        id = 'labelObtainedTitle';
-                    } else if (id == 'labelObtainedTitle') {
-                        id = 'obtained_title';
-                    } else if (id == 'obtained_title') {
-                        id = 'labelLastCompanyName';
-                    } else if (id == 'labelLastCompanyName') {
-                        id = 'last_company_name';
-                    } else if (id == 'last_company_name') {
-                        id = 'labelChargesLastCompany';
-                    } else if (id == 'labelChargesLastCompany') {
-                        id = 'charges_last_company';
-                    } else if (id == 'charges_last_company') {
-                        id = 'labelStartDateLastCompany';
-                    } else if (id == 'labelStartDateLastCompany') {
-                        id = 'start_date_last_company';
-                    } else if (id == 'start_date_last_company') {
-                        id = 'labelDateEndLastCompany';
-                    } else if (id == 'labelDateEndLastCompany') {
-                        id = 'date_end_last_company';
-                    } else if (id == 'date_end_last_company') {
-                        id = 'labelFunctionsPerformed';
-                    } else if (id == 'labelFunctionsPerformed') {
-                        id = 'functions_performed';
-                    } else if (id == 'functions_performed') {
-                        id = 'labelFamilyDocumentType';
-                    } else if (id == 'labelFamilyDocumentType') {
-                        id = 'family_document_type';
-                    } else if (id == 'family_document_type') {
-                        id = 'labelFamilyNames';
-                    } else if (id == 'labelFamilyNames') {
-                        id = 'family_names';
-                    } else if (id == 'family_names') {
-                        id = 'labelRelationship';
-                    } else if (id == 'labelRelationship') {
-                        id = 'relationship';
-                    } else if (id == 'relationship') {
-                        id = 'labelFamilyAddress';
-                    } else if (id == 'labelFamilyAddress') {
-                        id = 'family_address';
-                    } else if (id == 'family_address') {
-                        id = 'labelFamilyPhone';
-                    } else if (id == 'labelFamilyPhone') {
-                        id = 'family_phone';
-                    } else if (id == 'family_phone') {
-                        id = 'labelFamilyPhoneCellular';
-                    } else if (id == 'labelFamilyPhoneCellular') {
-                        id = 'family_phone_cellular';
-                    } else if (id == 'family_phone_cellular') {
-                        id = 'labelEps';
-                    } else if (id == 'labelEps') {
-                        id = 'eps';
-                    } else if (id == 'eps') {
-                        id = 'labelEpsStatus';
-                    } else if (id == 'labelEpsStatus') {
-                        id = 'eps_status';
-                    } else if (id == 'eps_status') {
-                        id = 'labelDateEps';
-                    } else if (id == 'labelDateEps') {
-                        id = 'date_eps';
-                    } else if (id == 'date_eps') {
-                        id = 'labelBloodType';
-                    } else if (id == 'labelBloodType') {
-                        id = 'blood_type';
-                    } else if (id == 'blood_type') {
-                        id = 'labelPension';
-                    } else if (id == 'labelPension') {
-                        id = 'pension';
-                    } else if (id == 'pension') {
-                        id = 'labelPensionStatus';
-                    } else if (id == 'labelPensionStatus') {
-                        id = 'pension_status';
-                    } else if (id == 'pension_status') {
-                        id = 'labelDatePension';
-                    } else if (id == 'labelDatePension') {
-                        id = 'date_pension';
-                    } else if (id == 'date_pension') {
-                        id = 'labelLayoffs';
-                    } else if (id == 'labelLayoffs') {
-                        id = 'layoffs';
-                    } else if (id == 'layoffs') {
-                        id = 'labelStatusLayoffs';
-                    } else if (id == 'labelStatusLayoffs') {
-                        id = 'status_layoffs';
-                    } else if (id == 'status_layoffs') {
-                        id = 'labelDateLayoffs';
-                    } else if (id == 'labelDateLayoffs') {
-                        id = 'date_layoffs';
-                    } else if (id == 'date_layoffs') {
-                        id = 'labelArl';
-                    } else if (id == 'labelArl') {
-                        id = 'arl';
-                    } else if (id == 'arl') {
-                        id = 'labelArlStatus';
-                    } else if (id == 'labelArlStatus') {
-                        id = 'arl_status';
-                    } else if (id == 'arl_status') {
-                        id = 'labelArlDate';
-                    } else if (id == 'labelArlDate') {
-                        id = 'arl_date';
-                    } else if (id == 'arl_date') {
-                        id = 'labelCompensationbox';
-                    } else if (id == 'labelCompensationbox') {
-                        id = 'compensationbox';
-                    } else if (id == 'compensationbox') {
-                        id = 'labelCompensationboxStatus';
-                    } else if (id == 'labelCompensationboxStatus') {
-                        id = 'compensationbox_status';
-                    } else if (id == 'compensationbox_status') {
-                        id = 'labelDateCompensationbox';
-                    } else if (id == 'labelDateCompensationbox') {
-                        id = 'date_compensationbox';
-                    } else if (id == 'date_compensationbox') {
-                        id = 'labeIdentificationcardFamily';
-                    } else if (id == 'labeIdentificationcardFamily') {
-                        id = 'identificationcard_family';
-                    } else if (id == 'identificationcard_family') {
-                        id = 'divCharge';
-                    }
-                }
-            }
-
-            if (opcion == 3) {
-                // console.log('si existe');
-
-                var id = clave9;
-                for (var i = 1; i <= 30; i++) {
-                    // console.log('posición' + [i]);
-                    viewhideinputs(id, 'Active', 'Inactive');
-
-                    if (id == 'labelCompanyNameProvider') {
-                        id = 'company_name_provider';
-                    } else if (id == 'company_name_provider') {
-                        id = 'labelSupplierCategory';
-                    } else if (id == 'labelSupplierCategory') {
-                        id = 'supplier_category';
-                    } else if (id == 'supplier_category') {
-                        id = 'labelProductsAndServices';
-                    } else if (id == 'labelProductsAndServices') {
-                        id = 'products_and_services';
-                    } else if (id == 'products_and_services') {
-                        id = 'labelEconomicActivity';
-                    } else if (id == 'labelEconomicActivity') {
-                        id = 'economic_activity';
-                    } else if (id == 'economic_activity') {
-                        id = 'labelSupplierDescription';
-                    } else if (id == 'labelSupplierDescription') {
-                        id = 'supplier_description';
-                    } else if (id == 'supplier_description') {
-                        id = 'labelCommercialReasonSupplier';
-                    } else if (id == 'labelCommercialReasonSupplier') {
-                        id = 'commercial_reason_supplier';
-                    } else if (id == 'commercial_reason_supplier') {
-                        id = 'divSupplierName';
-                    } else if (id == 'divSupplierName') {
-                        id = 'labelSupplierName';
-                    } else if (id == 'labelSupplierName') {
-                        id = 'supplier_name';
-                    } else if (id == 'supplier_name') {
-                        id = 'labelPhone';
-                    } else if (id == 'labelPhone') {
-                        id = 'phone';
-                    } else if (id == 'phone') {
-                        id = 'labelPhoneCellular';
-                    } else if (id == 'labelPhoneCellular') {
-                        id = 'phone_cellular';
-                    } else if (id == 'phone_cellular') {
-                        id = 'labelCountry';
-                    } else if (id == 'labelCountry') {
-                        id = 'country';
-                    } else if (id == 'country') {
-                        id = 'labelDepartment';
-                    } else if (id == 'labelDepartment') {
-                        id = 'Department';
-                    } else if (id == 'Department') {
-                        id = 'labelCity';
-                    } else if (id == 'labelCity') {
-                        id = 'city';
-                    } else if (id == 'city') {
-                        id = 'labelAddress';
-                    } else if (id == 'labelAddress') {
-                        id = 'address';
-                    } else if (id == 'address') {
-                        id = 'divNit';
-                    } else if (id == 'divNit') {
-                        id = 'labelNit';
-                    } else if (id == 'labelNit') {
-                        id = 'nit';
-                    } else if (id == 'nit') {
-                        id = 'labelCompanyNameProvider';
-                    }
-                }
-            }
-
             if (opcion == 3) {
                 document.getElementById('divAddress').classList.add('w-full');
                 document.getElementById('divAddress').classList.remove('w-3-4');
@@ -5624,103 +5525,18 @@
                 document.getElementById('divAddress').classList.remove('w-full');
             }
 
-            if (opcion == 5) {
-                // console.log('si existe');
-
-                var id = clave10;
-                for (var i = 1; i <= 36; i++) {
-                    // console.log('posición' + [i]);
-                    viewhideinputs(id, 'Active', 'Inactive');
-
-                    if (id == 'labelLicenseNumber') {
-                        id = 'license_number';
-                    } else if (id == 'license_number') {
-                        id = 'labelLicenseCategory';
-                    } else if (id == 'labelLicenseCategory') {
-                        id = 'license_category';
-                    } else if (id == 'license_category') {
-                        id = 'labelLicenseExpiration';
-                    } else if (id == 'labelLicenseExpiration') {
-                        id = 'license_expiration';
-                    } else if (id == 'license_expiration') {
-                        id = 'labelCertificateDrugsAlchoolemia';
-                    } else if (id == 'labelCertificateDrugsAlchoolemia') {
-                        id = 'certificate_drugs_alchoolemia';
-                    } else if (id == 'certificate_drugs_alchoolemia') {
-                        id = 'labelSIMITQueries';
-                    } else if (id == 'labelSIMITQueries') {
-                        id = 'SIMIT_queries';
-                    } else if (id == 'SIMIT_queries') {
-                        id = 'labelDrivingExam';
-                    } else if (id == 'labelDrivingExam') {
-                        id = 'driving_exam';
-                    } else if (id == 'driving_exam') {
-                        id = 'labelNormOverlandTransportationAutomotive';
-                    } else if (id == 'labelNormOverlandTransportationAutomotive') {
-                        id = 'Norm_Overland_Transportation_Automotive';
-                    } else if (id == 'Norm_Overland_Transportation_Automotive') {
-                        id = 'labelRulesTransit';
-                    } else if (id == 'labelRulesTransit') {
-                        id = 'Rules_Transit';
-                    } else if (id == 'Rules_Transit') {
-                        id = 'labelNormativeTips';
-                    } else if (id == 'labelNormativeTips') {
-                        id = 'Normative_Tips';
-                    } else if (id == 'Normative_Tips') {
-                        id = 'labelDrivingMethods';
-                    } else if (id == 'labelDrivingMethods') {
-                        id = 'Driving_Methods';
-                    } else if (id == 'Driving_Methods') {
-                        id = 'labelDefensiveDriving';
-                    } else if (id == 'labelDefensiveDriving') {
-                        id = 'Defensive_driving';
-                    } else if (id == 'Defensive_driving') {
-                        id = 'labelDistractions';
-                    } else if (id == 'labelDistractions') {
-                        id = 'distractions';
-                    } else if (id == 'distractions') {
-                        id = 'labelFirstaid';
-                    } else if (id == 'labelFirstaid') {
-                        id = 'First_aid';
-                    } else if (id == 'First_aid') {
-                        id = 'labelFirstResponder';
-                    } else if (id == 'labelFirstResponder') {
-                        id = 'First_Responder';
-                    } else if (id == 'First_Responder') {
-                        id = 'labelfiveSensesDriving';
-                    } else if (id == 'labelfiveSensesDriving') {
-                        id = 'five_senses_driving';
-                    } else if (id == 'five_senses_driving') {
-                        id = 'labelActivePassiveSecurityVehicle';
-                    } else if (id == 'labelActivePassiveSecurityVehicle') {
-                        id = 'Active_Passive_Security_vehicle';
-                    } else if (id == 'Active_Passive_Security_vehicle') {
-                        id = 'labelRoadSafety';
-                    } else if (id == 'labelRoadSafety') {
-                        id = 'Road_safety';
-                    } else if (id == 'Road_safety') {
-                        id = 'labelLinked';
-                    } else if (id == 'labelLinked') {
-                        id = 'Linked';
-                    } else if (id == 'Linked') {
-                        id = 'labelLicenseNumber';
-
-                    }
-                }
-            }
-
             if (opcion == 1 || opcion == 4 || opcion == 3) {
 
-                viewhideinputs('step2', 'Active', 'Inactive');
-                viewhideinputs('pass2', 'Active', 'Inactive');
-                viewhideinputs('step3', 'Inactive', 'Active');
-                viewhideinputs('pass3', 'Inactive', 'Active');
-                viewhideinputs('finalUser3', 'Inactive', 'Active');
-                viewhideinputs('passfinalUser3', 'Inactive', 'Active');
-                viewhideinputs('finalUser2', 'Inactive', 'Active');
-                viewhideinputs('passfinalUser2', 'Inactive', 'Active');
-                viewhideinputs('finalUser1', 'Active', 'Inactive');
-                viewhideinputs('passfinalUser1', 'Active', 'Inactive');
+                // viewhideinputs('step2', 'Active', 'Inactive');
+                // viewhideinputs('pass2', 'Active', 'Inactive');
+                // viewhideinputs('step3', 'Inactive', 'Active');
+                // viewhideinputs('pass3', 'Inactive', 'Active');
+                // viewhideinputs('finalUser3', 'Inactive', 'Active');
+                // viewhideinputs('passfinalUser3', 'Inactive', 'Active');
+                // viewhideinputs('finalUser2', 'Inactive', 'Active');
+                // viewhideinputs('passfinalUser2', 'Inactive', 'Active');
+                // viewhideinputs('finalUser1', 'Active', 'Inactive');
+                // viewhideinputs('passfinalUser1', 'Active', 'Inactive');
                 contador = 4;
                 for (var i = 4; i <= 10; i++) {
                     var noSteps = 'step' + [i];
@@ -5732,38 +5548,19 @@
                 }
             }
 
-            // if (opcion == 3) {
-            //     viewhideinputs('finalUser1', 'Inactive', 'Active');
-            //     viewhideinputs('passfinalUser1', 'Inactive', 'Active');
-            //     viewhideinputs('finalUser2', 'Inactive', 'Active');
-            //     viewhideinputs('passfinalUser2', 'Inactive', 'Active');
-            //     viewhideinputs('step2', 'Inactive', 'Active');
-            //     viewhideinputs('finalUser3', 'Active', 'Inactive');
-            //     viewhideinputs('passfinalUser3', 'Active', 'Inactive');
-            //     contador = 2;
-            //     for (var i = 3; i <= 10; i++) {
-            //         var noSteps = 'step' + [i];
-            //         var noText = 'pass' + contador;
-            //         console.log(noText);
-            //         document.getElementById(noSteps).classList.add('Inactive');
-            //         document.getElementById(noText).classList.add('Inactive');
-            //         contador = contador + 1;
-            //     }
-            // }
-
             if (opcion == 5 || opcion == 6) {
 
                 var Chargenum = document.getElementById('charge').value;
-
+                // console.log(Chargenum);
                 if (Chargenum != 5) {
-                    viewhideinputs('finalUser1', 'Inactive', 'Active');
-                    viewhideinputs('passfinalUser1', 'Inactive', 'Active');
-                    viewhideinputs('step2', 'Active', 'Inactive');
-                    viewhideinputs('step3', 'Active', 'Inactive');
-                    viewhideinputs('finalUser3', 'Inactive', 'Active');
-                    viewhideinputs('passfinalUser3', 'Inactive', 'Active');
-                    viewhideinputs('finalUser2', 'Active', 'Inactive');
-                    viewhideinputs('passfinalUser2', 'Active', 'Inactive');
+                    // viewhideinputs('finalUser1', 'Inactive', 'Active');
+                    // viewhideinputs('passfinalUser1', 'Inactive', 'Active');
+                    // viewhideinputs('step2', 'Active', 'Inactive');
+                    // viewhideinputs('step3', 'Active', 'Inactive');
+                    // viewhideinputs('finalUser3', 'Inactive', 'Active');
+                    // viewhideinputs('passfinalUser3', 'Inactive', 'Active');
+                    // viewhideinputs('finalUser2', 'Active', 'Inactive');
+                    // viewhideinputs('passfinalUser2', 'Active', 'Inactive');
                     contador = 8;
                     for (var i = 8; i <= 10; i++) {
 
@@ -5776,14 +5573,14 @@
                     }
                 } else {
 
-                    viewhideinputs('finalUser2', 'Inactive', 'Active');
-                    viewhideinputs('passfinalUser2', 'Inactive', 'Active');
-                    viewhideinputs('finalUser1', 'Inactive', 'Active');
-                    viewhideinputs('passfinalUser1', 'Inactive', 'Active');
-                    viewhideinputs('step2', 'Active', 'Inactive');
-                    viewhideinputs('step3', 'Active', 'Inactive');
-                    viewhideinputs('finalUser3', 'Inactive', 'Active');
-                    viewhideinputs('passfinalUser3', 'Inactive', 'Active');
+                    // viewhideinputs('finalUser2', 'Inactive', 'Active');
+                    // viewhideinputs('passfinalUser2', 'Inactive', 'Active');
+                    // viewhideinputs('finalUser1', 'Inactive', 'Active');
+                    // viewhideinputs('passfinalUser1', 'Inactive', 'Active');
+                    // viewhideinputs('step2', 'Active', 'Inactive');
+                    // viewhideinputs('step3', 'Active', 'Inactive');
+                    // viewhideinputs('finalUser3', 'Inactive', 'Active');
+                    // viewhideinputs('passfinalUser3', 'Inactive', 'Active');
 
                     for (var i = 8; i <= 10; i++) {
                         var noSteps = 'step' + [i];
@@ -5795,6 +5592,7 @@
 
 
             }
+
         }
 
         jQuery('#birthdate').datetimepicker({

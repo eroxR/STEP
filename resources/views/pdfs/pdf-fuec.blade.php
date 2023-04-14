@@ -1564,14 +1564,14 @@
             margin-left: 2%;
             margin-right: 2%;
             margin-top: 2.6%;
-            /* background: #867f7f; */
+            /* background: #dddada; */
             /* border: solid 1px #000; */
         }
 
         .boxDatosDrive1 {
             margin-left: 2%;
             margin-right: 2%;
-            margin-top: 4.6%;
+            margin-top: 7.1%;
             /* background: #867f7f; */
             /* border: solid 1px #000; */
         }
@@ -1579,14 +1579,38 @@
         .boxDatosDrive2 {
             margin-left: 2%;
             margin-right: 2%;
-            margin-top: ;
+            margin-top: 6.5%;
             /* background: #b60000; */
             /* border: solid 1px #000; */
         }
 
+        .boxDatosDrive3 {
+            margin-left: 2%;
+            margin-right: 2%;
+            margin-top: 5.9%;
+            /* background: #b60000; */
+            /* border: solid 1px #000; */
+        }
+
+        .boxDatosDrive4 {
+            margin-left: 2%;
+            margin-right: 2%;
+            margin-top: 5.3%;
+            /* background: #b60000; */
+            /* border: solid 1px #000; */
+        }
+
+        .boxDatosDrive5 {
+            margin-left: 2%;
+            margin-right: 2%;
+            margin-top: 4.9%;
+            /* background: #b60000; */
+            /* border: solid 1px #000; */
+        }
+        
         .boxConductor {
             width: 20%;
-            height: 7%;
+            height: 10%;
             float: left;
             /* background: #ec059f; */
             border-left: solid 1px #000;
@@ -1598,7 +1622,7 @@
 
         .boxNombreC {
             width: 27%;
-            height: 7%;
+            height: 10%;
             float: left;
             /* background: #01f794; */
             border-left: solid 1px #000;
@@ -1610,7 +1634,7 @@
 
         .boxCedulaC {
             width: 13%;
-            height: 7%;
+            height: 10%;
             float: left;
             /* background: #08f008; */
             border-left: solid 1px #000;
@@ -1622,7 +1646,7 @@
 
         .boxLicenciaC {
             width: 26%;
-            height: 7%;
+            height: 10%;
             float: left;
             /* background: #c7570d; */
             border-left: solid 1px #000;
@@ -1634,27 +1658,13 @@
 
         .boxVigenciaC {
             width: 13.5%;
-            height: 7%;
+            height: 10%;
             float: left;
             /* background: #000000; */
             border: solid 1px #000;
             font-size: 12px;
             text-align: center;
             /* color: #fff; */
-        }
-
-        .boxDatosDrive2 {
-            margin-left: 2%;
-            margin-right: 2%;
-            margin-top: 4.6%;
-            /* background: #867f7f; */
-        }
-
-        .boxDatosDrive3 {
-            margin-left: 2%;
-            margin-right: 2%;
-            margin-top: 4.4%;
-            /* background: #867f7f; */
         }
 
         .boxResContratante1 {
@@ -1667,14 +1677,35 @@
         .boxResContratante2 {
             margin-left: 2%;
             margin-right: 2%;
-            margin-top: 4.3%;
+            margin-top: 6.5%;
             /* background: #867f7f; */
         }
 
         .boxResContratante3 {
             margin-left: 2%;
             margin-right: 2%;
-            margin-top: 4.3%;
+            margin-top: 5.9%;
+            /* background: #867f7f; */
+        }
+
+        .boxResContratante4 {
+            margin-left: 2%;
+            margin-right: 2%;
+            margin-top: 5.3%;
+            /* background: #867f7f; */
+        }
+
+        .boxResContratante5 {
+            margin-left: 2%;
+            margin-right: 2%;
+            margin-top: 5%;
+            /* background: #867f7f; */
+        }
+
+        .boxResContratante6 {
+            margin-left: 2%;
+            margin-right: 2%;
+            margin-top: 4.4%;
             /* background: #867f7f; */
         }
 
@@ -1715,7 +1746,7 @@
         }
 
         .boxTelefonoR {
-            width: 26%;
+            width: 13.5%;
             height: 11%;
             float: left;
             /* background: #0dc79f; */
@@ -1727,7 +1758,7 @@
         }
 
         .boxDireccionR {
-            width: 13.5%;
+            width: 26%;
             height: 11%;
             float: left;
             /* background: #460342; */
@@ -1748,7 +1779,7 @@
         .boxDatosEmpresa2 {
             margin-left: 2%;
             margin-right: 2%;
-            margin-top: 6.9%;
+            margin-top: 6.4%;
             /* background: #867f7f; */
 
         }
@@ -1756,14 +1787,35 @@
         .boxDatosEmpresa3 {
             margin-left: 2%;
             margin-right: 2%;
-            margin-top: 6.9%;
+            margin-top: 6%;
             /* background: #867f7f; */
 
         }
 
+        .boxDatosEmpresa4 {
+            margin-left: 2%;
+            margin-right: 2%;
+            margin-top: 5.3%;
+            /* background: #867f7f; */
+        }
+
+        .boxDatosEmpresa5 {
+            margin-left: 2%;
+            margin-right: 2%;
+            margin-top: 4.8%;
+            /* background: #867f7f; */
+        }
+
+        .boxDatosEmpresa6 {
+            margin-left: 2%;
+            margin-right: 2%;
+            margin-top: 4.4%;
+            /* background: #867f7f; */
+        }
+
         .boxInfo {
             width: 45%;
-            height: 13%;
+            height: 18%;
             float: left;
             /* background: #c7570d; */
             font-size: 11px;
@@ -1773,7 +1825,7 @@
 
         .boxFirma {
             width: 55%;
-            height: 13%;
+            height: 18%;
             float: left;
             /* background: #65b6e6; */
             /* font-size: 12px; */
@@ -2001,7 +2053,9 @@
                     <div class="boxFirma">
                         <img class="firm" src="{{ public_path('img/Signature.png') }}" alt="">
                     </div>
-                </div>
+                </div> 
+
+                {{-- comentar --}}
 
             </div>
         @endforeach
@@ -2009,322 +2063,6 @@
     </body>
 @endforeach
 
-@foreach ($permits as $permit)
 
-
-    <body>
-        <!-- pagina 1-->
-        @foreach ($contractdatas as $contractdata)
-            <div class="contenedorprincipal">
-
-                <div class="cabecera">
-                    <!-- rounded  -->
-                    <div class="contenedormintransporte">
-                        <img class="mintransporte" src="{{ public_path('img/Mintransporte_Colombia.svg') }}"
-                            alt="">
-                        {{-- <img src="{{ asset('img/Mintransporte_Colombia.svg') }}" alt=""> --}}
-                    </div>
-
-                    <div class="contenedorlogo">
-                        <!-- bg-gray-100 -->
-                        <img class="logo" src="{{ public_path('img/logo.png') }}" alt="">
-                        {{-- <img src="{{ asset('img/logo.png') }}" alt=""> --}}
-                    </div>
-
-                </div>
-                <table>
-                    <tr>
-                        <td class="span1" colspan="1">
-                            <p class="text1">
-                                FORMATO ÚNICO DEL EXTRACTO DE CONTRATO DEL SERVICIO PUBLICO DE TRANSPORTE TERRESTRE
-                                AUTOMOTOR
-                                ESPECIAL<span class="text2">No. {{ $permit->permit_code }}</span>
-                            </p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="span2" colspan="1">
-                            <p class="text3">RAZON SOCIAL DE LA EMPRESA DE TRANSPORTE ESPECIAL:</p>
-                            <p class="text4">SERVICIO DE TRANSPORTE ESPECIAL DE PASAJEROS STEP S.A.S <span
-                                    class="text5">NIT:
-                                    900973862-1</span></p>
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="span2">
-                            <p class="text6">
-                                CONTRATO No.: <span class="text7"> {{ $contract_number }}</span>
-                            </p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="span2">
-                            <p class="text6">
-                                CONTRATANTE: {{ $contractdata->contracting_name }}
-                                <span class="text8"> NIT/CC: {{ $contractdata->contract_document }}</span>
-                            </p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="span2">
-                            <p class="text6">
-                                OBJETO CONTRATO: <span class="text9">
-                                    @if ($tipeContracts == 1)
-                                        Colegios
-                                    @else
-                                        @if ($tipeContracts == 2)
-                                            Empresas
-                                        @else
-                                            @if ($tipeContracts == 3)
-                                                Empresas Turismo
-                                            @else
-                                                @if ($tipeContracts == 4)
-                                                    CONTRATO PARA UN GRUPO ESPECÍFICO DE USUARIOS (TRANSPORTE DE
-                                                    PARTICULARES)
-                                                @else
-                                                    @if ($tipeContracts == 5)
-                                                        Usuarios de Servicios de Salud
-                                                    @endif
-                                                @endif
-                                            @endif
-                                        @endif
-                                    @endif
-                                </span>
-                            </p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="span2">
-                            <p class="text6">
-                                ¿CON DISPOSICIÓN TOTAL?: <span
-                                    class="text9">{{ $contractdata->total_disposition }}</span>
-                            </p>
-                        </td>
-                    </tr>
-                    <tr style="height: 19%">
-                        <td class="span2">
-                            <p class="text6">
-                                ORIGEN: <span class="text9"> {{ $contractdata->place_of_origin }}</span>
-                            </p>
-                            <p class="text13">
-                                DESTINO: <span class="text9"> {{ $contractdata->destination_place }}</span>
-                            </p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="span2">
-                            <p class="text6">
-                                CONVENIO: <span class="text10">CONSORCIO:</span> <span class="text11">UNION
-                                    TEMPORAL:</span> <span class="text12">CON:</span>
-                            </p>
-                        </td>
-                    </tr>
-                </table>
-                <table class="fechas">
-                    <tr>
-                        <td class="span4" colspan="4">
-                            <p class="text6">
-
-                            </p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="1" class="span7">
-                            <p class="text14">FECHA INICIAL</p>
-                        </td>
-                        <td colspan="1" class="span8">
-                            <p class="text15">Día <br> <span> {{ $permitStartday }} </span></p>
-                        </td>
-                        <td colspan="1" class="span8">
-                            <p class="text15">Mes <br> <span> {{ $permitStartmonth }} </span></p>
-                        </td>
-                        <td colspan="1" class="span8">
-                            <p class="text15">Año <br> <span> {{ $permitStartyear }} </span></p>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td colspan="1" class="span7">
-                            <p class="text14">FECHA VENCIMIENTO</p>
-                        </td>
-                        <td colspan="1" class="span8">
-                            <p class="text15">Día <br> <span> {{ $permitEndday }} </span></p>
-                        </td>
-                        <td colspan="1" class="span8">
-                            <p class="text15">Mes <br> <span> {{ $permitEndmonth }} </span></p>
-                        </td>
-                        <td colspan="1" class="span8">
-                            <p class="text15">Año <br> <span> {{ $permitEndyear }} </span> </p>
-                        </td>
-                    </tr>
-                </table>
-                <div class="fechas">
-                    <div class="bordes peding absolute">
-                        <p class="text">
-                            VIGENCIA DEL CONTRATO
-                        </p>
-                    </div>
-                </div>
-                @foreach ($vehicledatas as $vehicledata)
-                    <table class="caracteristicas">
-                        <tr>
-                            <td class="span5" colspan="6">
-                                <p class="text16">
-                                    CARACTERISTICAS DEL VEHICULO
-                                </p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="1" class="span6">
-                                <p class="text18">PLACA</p>
-                            </td>
-                            <td colspan="1" class="span6">
-                                <p class="text17">MODELO</p>
-                            </td>
-                            <td colspan="2" class="span6">
-                                <p class="text17">MARCA</p>
-                            </td>
-                            <td colspan="2" class="span6">
-                                <p class="text17">CLASE</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="1" class="span6">
-                                <p class="text18">{{ $vehicledata->plate_vehicle }}</p>
-                            </td>
-                            <td colspan="1" class="span6">
-                                <p class="text17">{{ $vehicledata->model_vehicle }}</p>
-                            </td>
-                            <td colspan="2" class="span6">
-                                <p class="text17">{{ $vehicledata->brand_vehicle }}</p>
-                            </td>
-                            <td colspan="2" class="span6">
-                                <p class="text17">{{ $vehicledata->vehicle_type_name }}</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="2" class="span6">
-                                <p class="text19">NUMERO INTERNO</p>
-                            </td>
-                            <td colspan="6" class="span6">
-                                <p class="text20">TARJETA DE OPERACION</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="2" class="span6">
-                                <p class="text19">{{ $vehicledata->side_vehicle }}</p>
-                            </td>
-                            <td colspan="6" class="span6">
-                                <p class="text20">{{ $vehicledata->card_operation }}</p>
-                            </td>
-                        </tr>
-                    </table>
-                @endforeach
-                <table class="conductor">
-                    @foreach ($driverdatas as $driverdata)
-                        <tr>
-                            <td rowspan="3" class="span9">
-                                <p class="text22">DATOS DEL <br>
-                                    CONDUCTOR {{ $contador = $contador + 1 }}
-                                </p>
-                            </td>
-                            <td class="span10-1">
-                                <p class="text21">NOMBRES Y APELLIDOS</p>
-                            </td>
-                            <td class="span10-2">
-                                <p class="text21">No. CEDULA</p>
-                            </td>
-                            <td class="span10-3">
-                                <p class="text21">No. LICENCIA DE CONDUCCION</p>
-                            </td>
-                            <td class="span10-4">
-                                <p class="text21">VIGENCIA</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td rowspan="2" class="span11">
-                                <p class="text22">{{ $driverdata->operator }}</p>
-                            </td>
-                            <td rowspan="2" class="span11">
-                                <p class="text22">{{ $driverdata->identificationcard }}</p>
-                            </td>
-                            <td rowspan="2" class="span11">
-                                <p class="text22">{{ $driverdata->license_number }}</p>
-                            </td>
-                            <td rowspan="2" class="span11">
-                                <p class="text22">{{ $driverdata->license_expiration }}</p>
-                            </td>
-                        </tr>
-                        <br>
-                    @endforeach
-
-                </table>
-
-                <div class="responsablecontrato-1 marginF-{{ $contador }}">
-                    <div>
-                        <div class="span12">
-                            <p class="text26">RESPONSABLE DEL
-                                CONTRATO
-                            </p>
-                        </div>
-                        <div class="colum1">
-                            <p class="text27">NOMBRES Y APELLIDOS</p>
-                        </div>
-                        <div class="colum2">
-                            <p class="text27">No. CEDULA</p>
-                        </div>
-                        <div class="colum3">
-                            <p class="text27">TELEFONO</p>
-                        </div>
-                        <div class="colum4">
-                            <p class="text27">DIRECCION</p>
-                        </div>
-
-                        <div>
-                            <div class="colum5">
-                                <p class="text27">{{ $contractdata->contracting_name }} </p>
-                            </div>
-                            <div class="colum6">
-                                <p class="text27">{{ $contractdata->contract_document }}</p>
-                            </div>
-                            <div class="colum7">
-                                <p class="text27">{{ $contractdata->contracting_phone }}</p>
-                            </div>
-                            <div class="colum8">
-                                <p class="text27">{{ $contractdata->contracting_direction }}</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="piepagina">
-                        <!-- rounded  -->
-                        <div class="infoempresa">
-                            <p class="text-fin">TRANSPORTE ESPECIAL DE PASAJEROS STEP S.A.S</p>
-                            <p class="text-fin">Cra 2A #8-26 EDS Biomax La Badea</p>
-                            <p class="text-fin">Correo Electrónico: sertepsa2016@gmail.com</p>
-                            <p class="text-fin">Teléfono: 323 4197103</p>
-                        </div>
-
-                        <div class="contenedorlogofirma">
-                            <!-- bg-gray-100 -->
-                            <img class="logofinal" src="{{ public_path('img/logo.png') }}" alt="">
-                            <img class="firma" src="{{ public_path('img/Signature.png') }}" alt="">
-                            <img class="qr" src="{{ public_path('img/QR.png') }}" alt="">
-                        </div>
-
-                    </div>
-
-                </div>
-            </div>
-        @endforeach
-        <div class="textout-contenedor">
-            <p class="textout">Firma Digital señalada en la ley 527 de 1997 y el Decreto 2364 de 2012 o las normas que
-                los
-                modifiquen</p>
-        </div>
-
-    </body>
-@endforeach
 
 </html>

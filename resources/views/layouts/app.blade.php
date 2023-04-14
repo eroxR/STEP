@@ -58,7 +58,111 @@
     </body>
 </html> --}}
 
+<script>
+    function data() {
+        function getThemeFromLocalStorage() {
+            // if user already changed the theme, use it
+            if (window.localStorage.getItem('dark')) {
+                return JSON.parse(window.localStorage.getItem('dark'));
+            }
 
+            // else return their preferences
+            return (
+                !!window.matchMedia &&
+                window.matchMedia('(prefers-color-scheme: dark)').matches
+            );
+        }
+
+        function getMenuFromLocalStorage() {
+            // if user already changed the theme, use it
+            if (window.localStorage.getItem('isSideMenuOpen')) {
+                return JSON.parse(window.localStorage.getItem('isSideMenuOpen'));
+            }
+        }
+
+        function setThemeToLocalStorage(value) {
+            window.localStorage.setItem('dark', value);
+        }
+
+        function setMenuToLocalStorage(value) {
+            window.localStorage.setItem('isSideMenuOpen', value);
+        }
+
+        return {
+            dark: getThemeFromLocalStorage(),
+            toggleTheme() {
+                this.dark = !this.dark;
+                setThemeToLocalStorage(this.dark);
+            },
+            tuser: 0,
+            typeUser(valor) {
+                console.log(valor);
+            },
+            show: false,
+            flotan: '',
+            view: 'manuals',
+            minidisplay: 'block fixed mt5 -ml-7 border transition-colors duration-150 text-white  text-sm bg-gray-900 px-2 py-1 rounded-md',
+            minidisplay2: 'block fixed mt0 -ml-7 border transition-colors duration-150 text-white  text-sm bg-gray-900 px-2 py-1 rounded-md',
+            selectdisplay: 'absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg',
+            changesView(v) {
+                view = v;
+                console.log(view);
+            },
+            // variable: null,
+            // titleflotan(id) {
+
+            // },
+            isSideMenuOpen: getMenuFromLocalStorage(),
+            toggleSideMenu() {
+                this.isSideMenuOpen = !this.isSideMenuOpen;
+                setMenuToLocalStorage(this.isSideMenuOpen);
+            },
+            // closeSideMenu() {
+            //     this.isSideMenuOpen = false;
+            // },
+            isNotificationsMenuOpen: false,
+            toggleNotificationsMenu() {
+                this.isNotificationsMenuOpen = !this.isNotificationsMenuOpen;
+            },
+            closeNotificationsMenu() {
+                this.isNotificationsMenuOpen = false;
+            },
+            isProfileMenuOpen: false,
+            toggleProfileMenu() {
+                this.isProfileMenuOpen = !this.isProfileMenuOpen;
+            },
+            closeProfileMenu() {
+                this.isProfileMenuOpen = false;
+            },
+            isPagesMenuOpen: false,
+            togglePagesMenu() {
+                this.isPagesMenuOpen = !this.isPagesMenuOpen;
+            },
+            // Modal
+            isModalOpen: false,
+            isModalOpen2: false,
+            // trapCleanup: null,
+            openModal() {
+                this.isModalOpen = true;
+                // this.trapCleanup = focusTrap(document.querySelector('#modal'));
+                // console.log(isModalOpen2);
+            },
+            closeModal() {
+                this.isModalOpen = false;
+                // this.trapCleanup();
+                // console.log(isModalOpen2);
+            },
+            openModal2() {
+                this.isModalOpen2 = true;
+                // this.trapCleanup = focusTrap(document.querySelector('#modal'));
+            },
+            closeModal2() {
+                this.isModalOpen2 = false;
+                // this.trapCleanup();
+            },
+        };
+    }
+</script>
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" :class="{ 'theme-dark': dark }" x-data="data()"
     lang="en" x-cloak>
@@ -81,6 +185,9 @@
     <link rel="stylesheet" href="{{ asset('datetimepicker-master/jquery.datetimepicker.css') }}" />
     {{-- <link rel="stylesheet" href="{{ asset('virtualSelect/virtual-select.min.css') }}" /> --}}
     <link rel="stylesheet" href="{{ asset('css/mobiscroll.javascript.min.css') }}" />
+    <link href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/buttons/2.3.6/css/buttons.dataTables.min.css" rel="stylesheet">
 
     {{-- <link rel="stylesheet" type="text/css" href="/jquery.datetimepicker.css"/> --}}
     {{-- <link  rel=”stylesheet”  href=”https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css”   /> --}}
@@ -99,9 +206,7 @@
 </head>
 
 <body>
-    <div class="flex h-screen bg-gray-50 dark:bg-gray-900 " 
-    {{-- :class="{ 'overflow-hidden': isSideMenuOpen }" --}}
-    >
+    <div class="flex h-screen bg-gray-50 dark:bg-gray-900 " {{-- :class="{ 'overflow-hidden': isSideMenuOpen }" --}}>
         {{--
 <aside x-cloak
 class="z-20 w-48 bg-white dark:bg-gray-800  border-r-fuchsia-800 rounded-r-md overflow-y-auto"{{-- class="fixed inset-y-0 z-20 flex-shrink-0 mt-16 overflow-y-auto bg-white dark:bg-gray-800 md:hidden" --}}
@@ -629,7 +734,7 @@ x-transition:leave-end="opacity-0 transform -translate-x-20">
                                             stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                             viewBox="0 0 24 24" stroke="currentColor"
                                             :class="{ 'text-2-2xl': isSideMenuOpen, '-ml-3-5': !isSideMenuOpen }">
-                                            <i class="fas fa-book icon-green"
+                                            <i class="fas fa-book icon-coffee"
                                                 :class="{ 'text-3xl': !isSideMenuOpen }"></i>
                                         </span>
                                         <span class="ml-4"
@@ -637,26 +742,40 @@ x-transition:leave-end="opacity-0 transform -translate-x-20">
                                                 isSideMenuOpen &&
                                                 flotan !=
                                                 'manuals' ? 'hidden' : ''">
-                                            manuals
+                                            {{ __('manuals') }}
                                         </span>
                                     </a>
                                 </li>
                                 <li class="flex ml-8">
-                                    <a x-on:mouseover="flotan='change_password'" x-on:mouseleave="flotan=''"
+                                    <a x-on:mouseover="flotan='PESV'" x-on:mouseleave="flotan=''"
                                         class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                                        href="{{ route('cambiocontraseña') }}" @click="changesView('changePassword')">
+                                        href="{{ route('pesv') }}" @click="changesView('PESV')">
                                         <span class="text-2-2xl" aria-hidden="true" fill="none"
                                             stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                             viewBox="0 0 24 24" stroke="currentColor"
                                             :class="{ 'text-2-2xl': isSideMenuOpen, '-ml-3-5': !isSideMenuOpen }">
-                                            <i class="fas fa-unlock-alt icon-red"
+                                            {{-- <i class="fas fa-traffic-light " --}}
+                                            <i class="fas fa-route icon-blue"
                                                 :class="{ 'text-3xl': !isSideMenuOpen }"></i>
+                                            {{-- <svg class="icon-black" width="40" height="40" viewBox="0 0 800 800" fill="#FF0000" xmlns="http://www.w3.org/2000/svg">
+                                                    <g clip-path="url(#clip0_2_3)">
+                                                    <path d="M399.996 165.014C357.987 165.014 323.807 199.193 323.807 241.204C323.807 283.216 357.987 317.394 399.996 317.394C442.006 317.394 476.185 283.216 476.185 241.204C476.185 199.193 442.007 165.014 399.996 165.014ZM399.996 264.429C387.191 264.429 376.773 254.01 376.773 241.204C376.773 228.399 387.193 217.98 399.996 217.98C412.801 217.98 423.22 228.399 423.22 241.204C423.22 254.01 412.802 264.429 399.996 264.429Z" fill="#FF0000"/>
+                                                    <path d="M399.996 358.094C357.987 358.094 323.807 392.273 323.807 434.284C323.807 476.295 357.987 510.473 399.996 510.473C442.006 510.473 476.185 476.295 476.185 434.284C476.185 392.273 442.007 358.094 399.996 358.094ZM399.996 457.504C387.191 457.504 376.773 447.085 376.773 434.281C376.773 421.476 387.193 411.057 399.996 411.057C412.801 411.057 423.22 421.476 423.22 434.281C423.22 447.085 412.802 457.504 399.996 457.504Z" fill="#ECAC08"/>
+                                                    <path d="M399.996 551.17C357.987 551.17 323.807 585.348 323.807 627.359C323.807 669.368 357.985 703.548 399.996 703.548C442.007 703.548 476.185 669.37 476.185 627.359C476.185 585.348 442.007 551.17 399.996 551.17ZM399.996 650.584C387.191 650.584 376.773 640.165 376.773 627.361C376.773 614.556 387.191 604.137 399.996 604.137C412.801 604.137 423.22 614.556 423.22 627.361C423.22 640.165 412.802 650.584 399.996 650.584Z" fill="#27FA15"/>
+                                                    <path d="M667.75 411.437V328.435C667.75 313.81 655.892 301.952 641.267 301.952H587.232L659.995 229.191C664.956 224.227 667.745 217.489 667.745 210.466V127.464C667.745 112.839 655.887 100.981 641.262 100.981H550.251V100.127C550.251 85.5017 538.393 73.6439 523.768 73.6439H516.131C503.526 31.1204 464.12 0 417.562 0H382.435C335.877 0 296.471 31.1204 283.868 73.6439H276.23C261.605 73.6439 249.747 85.5017 249.747 100.127V100.981H158.733C144.108 100.981 132.25 112.839 132.25 127.464V210.466C132.25 217.491 135.039 224.227 140.008 229.191L212.769 301.952H158.733C144.108 301.952 132.25 313.81 132.25 328.435V411.437C132.25 418.462 135.039 425.198 140.008 430.162L212.772 502.923H158.733C144.108 502.923 132.25 514.781 132.25 529.406V612.406C132.25 619.431 135.039 626.167 140.008 631.131L242.432 733.555C245.324 736.447 248.727 738.5 252.344 739.775C261.369 774.383 292.888 800 330.28 800H469.715C507.11 800 538.628 774.381 547.651 739.775C551.268 738.5 554.671 736.447 557.564 733.555L659.987 631.131C664.953 626.165 667.745 619.429 667.745 612.406V529.406C667.745 514.781 655.887 502.923 641.262 502.923H587.226L659.99 430.162C664.958 425.196 667.75 418.46 667.75 411.437ZM249.744 665.967L185.214 601.437V555.889H249.744V665.967ZM249.744 464.995L185.214 400.468V354.918H249.744V464.995ZM249.744 264.026L185.214 199.496V153.947H249.744V264.026ZM382.434 52.9657H417.56C434.16 52.9657 448.879 61.1298 457.943 73.6455H342.052C351.115 61.1282 365.834 52.9657 382.434 52.9657ZM497.284 719.467C497.284 734.669 484.915 747.037 469.713 747.037H330.279C315.077 747.037 302.708 734.669 302.708 719.467V126.61H497.282L497.284 719.467ZM550.25 153.947H614.779V199.497L550.25 264.027V153.947ZM614.779 555.889V601.437L550.25 665.967V555.89H614.779V555.889ZM614.779 400.468L550.25 464.995V354.918H614.779V400.468Z" fill="black"/>
+                                                    </g>
+                                                    <defs>
+                                                    <clipPath id="clip0_2_3">
+                                                    <rect width="800" height="800" fill="white"/>
+                                                    </clipPath>
+                                                    </defs>
+                                                    </svg> --}}
                                         </span>
                                         <span class="ml-4"
-                                            :class="!isSideMenuOpen && flotan == 'change_password' ? minidisplay : '' || !
+                                            :class="!isSideMenuOpen && flotan == 'PESV' ? minidisplay : '' || !
                                                 isSideMenuOpen &&
-                                                flotan != 'change_password' ? 'hidden' : ''">
-                                            change password
+                                                flotan != 'PESV' ? 'hidden' : ''">
+                                            {{ __('PESV') }}
                                         </span>
                                     </a>
                                 </li>
@@ -679,7 +798,7 @@ x-transition:leave-end="opacity-0 transform -translate-x-20">
                                                 :class="!isSideMenuOpen && flotan == 'Information_lists' ? minidisplay : '' || !
                                                     isSideMenuOpen &&
                                                     flotan != 'Information_lists' ? 'hidden' : ''">
-                                                Information lists.
+                                                {{ __('Information lists.') }}
                                             </span>
                                         </span>
                                         <svg class="text-2-2xl" aria-hidden="true" fill="currentColor"
@@ -711,15 +830,15 @@ x-transition:leave-end="opacity-0 transform -translate-x-20">
                                                         :class="{ '-ml-5': !isSideMenuOpen }">
                                                         <a x-on:mouseover="flotan='List_Contracts'"
                                                             x-on:mouseleave="flotan=''" class="w-full"
-                                                            href="{{ route('pruebas.listacontratos') }}">
+                                                            href="{{ route('list-contracts') }}">
                                                             <i class="fas fa-fw fa-database icon-green"
                                                                 :class="{ 'text-3xl': !isSideMenuOpen }"></i>
                                                             <span
                                                                 :class="!isSideMenuOpen && flotan == 'List_Contracts' ?
-                                                                    minidisplay : '' || !
+                                                                    minidisplay2 : '' || !
                                                                     isSideMenuOpen && flotan != 'List_Contracts' ?
                                                                     'hidden' : ''">
-                                                                List of Contracts
+                                                                {{ __('List of Contracts') }}
                                                             </span>
                                                         </a>
                                                     </li>
@@ -729,15 +848,16 @@ x-transition:leave-end="opacity-0 transform -translate-x-20">
                                                         :class="{ '-ml-5': !isSideMenuOpen }">
                                                         <a x-on:mouseover="flotan='Fuec_List'"
                                                             x-on:mouseleave="flotan=''" class="w-full"
-                                                            href="{{ route('pruebas.listafuec') }}">
+                                                            href="{{ route('list-fuec') }}">
                                                             <i class="fas fa-fw fa-database icon-yellow"
                                                                 :class="{ 'text-3xl': !isSideMenuOpen }"></i>
                                                             <span
-                                                                :class="!isSideMenuOpen && flotan == 'Fuec_List' ? minidisplay :
+                                                                :class="!isSideMenuOpen && flotan == 'Fuec_List' ?
+                                                                    minidisplay2 :
                                                                     '' || !
                                                                     isSideMenuOpen &&
                                                                     flotan != 'Fuec_List' ? 'hidden' : ''">
-                                                                Fuec List
+                                                                {{ __('Fuec List') }}
                                                             </span>
                                                         </a>
                                                     </li>
@@ -747,15 +867,15 @@ x-transition:leave-end="opacity-0 transform -translate-x-20">
                                                         :class="{ '-ml-5': !isSideMenuOpen }">
                                                         <a x-on:mouseover="flotan='Driver_List'"
                                                             x-on:mouseleave="flotan=''" class="w-full"
-                                                            href="{{ route('pruebas.listaconductores') }}">
+                                                            href="{{ route('list-drivers') }}">
                                                             <i class="fas fa-fw fa-database icon-red"
                                                                 :class="{ 'text-3xl': !isSideMenuOpen }"></i>
                                                             <span
                                                                 :class="!isSideMenuOpen && flotan == 'Driver_List' ?
-                                                                    minidisplay : '' || !
+                                                                    minidisplay2 : '' || !
                                                                     isSideMenuOpen &&
                                                                     flotan != 'Driver_List' ? 'hidden' : ''">
-                                                                Driver List
+                                                                {{ __('Driver List') }}
                                                             </span>
                                                         </a>
                                                     </li>
@@ -765,15 +885,15 @@ x-transition:leave-end="opacity-0 transform -translate-x-20">
                                                         :class="{ '-ml-5': !isSideMenuOpen }">
                                                         <a x-on:mouseover="flotan='Linked_List'"
                                                             x-on:mouseleave="flotan=''" class="w-full"
-                                                            href="{{ route('pruebas.listavinculados') }}">
+                                                            href="{{ route('list-linked') }}">
                                                             <i class="fas fa-fw fa-database icon-purple"
                                                                 :class="{ 'text-3xl': !isSideMenuOpen }"></i>
                                                             <span
                                                                 :class="!isSideMenuOpen && flotan == 'Linked_List' ?
-                                                                    minidisplay : '' || !
+                                                                    minidisplay2 : '' || !
                                                                     isSideMenuOpen &&
                                                                     flotan != 'Linked_List' ? 'hidden' : ''">
-                                                                Linked List
+                                                                {{ __('Linked List') }}
                                                             </span>
                                                         </a>
                                                     </li>
@@ -783,15 +903,15 @@ x-transition:leave-end="opacity-0 transform -translate-x-20">
                                                         :class="{ '-ml-5': !isSideMenuOpen }">
                                                         <a x-on:mouseover="flotan='List_vehicles'"
                                                             x-on:mouseleave="flotan=''" class="w-full"
-                                                            href="{{ route('pruebas.listavehiculos') }}">
+                                                            href="{{ route('list-vehicles') }}">
                                                             <i class="fas fa-fw fa-database icon-gray"
                                                                 :class="{ 'text-3xl': !isSideMenuOpen }"></i>
                                                             <span
                                                                 :class="!isSideMenuOpen && flotan == 'List_vehicles' ?
-                                                                    minidisplay : '' || !
+                                                                    minidisplay2 : '' || !
                                                                     isSideMenuOpen && flotan != 'List_vehicles' ?
                                                                     'hidden' : ''">
-                                                                List of vehicles
+                                                                {{ __('List of vehicles') }}
                                                             </span>
 
                                                         </a>
@@ -807,10 +927,10 @@ x-transition:leave-end="opacity-0 transform -translate-x-20">
                                                                 :class="{ 'text-3xl': !isSideMenuOpen }"></i>
                                                             <span
                                                                 :class="!isSideMenuOpen && flotan == 'pending_list' ?
-                                                                    minidisplay : '' || !
+                                                                    minidisplay2 : '' || !
                                                                     isSideMenuOpen &&
                                                                     flotan != 'pending_list' ? 'hidden' : ''">
-                                                                pending list
+                                                                {{ __('pending list') }}
                                                             </span>
                                                         </a>
                                                     </li>
@@ -836,7 +956,7 @@ x-transition:leave-end="opacity-0 transform -translate-x-20">
                                             :class="!isSideMenuOpen && flotan == 'Manage_Contract' ? minidisplay : '' || !
                                                 isSideMenuOpen &&
                                                 flotan != 'Manage_Contract' ? 'hidden' : ''">
-                                            Manage Contract
+                                            {{ __('Manage Contract') }}
                                         </span>
                                     </a>
                                 </li>
@@ -856,7 +976,7 @@ x-transition:leave-end="opacity-0 transform -translate-x-20">
                                                 isSideMenuOpen &&
                                                 flotan !=
                                                 'Manage_Fuec' ? 'hidden' : ''">
-                                            Manage Fuec
+                                            {{ __('Manage Fuec') }}
                                         </span>
                                     </a>
                                 </li>
@@ -876,7 +996,7 @@ x-transition:leave-end="opacity-0 transform -translate-x-20">
                                                 isSideMenuOpen &&
                                                 flotan !=
                                                 'Manage_User' ? 'hidden' : ''">
-                                            Manage User
+                                            {{ __('Manage User') }}
                                         </span>
                                     </a>
                                 </li>
@@ -895,11 +1015,31 @@ x-transition:leave-end="opacity-0 transform -translate-x-20">
                                             :class="!isSideMenuOpen && flotan == 'ManageTechnicalSheet' ? minidisplay : '' || !
                                                 isSideMenuOpen &&
                                                 flotan != 'ManageTechnicalSheet' ? 'hidden' : ''">
-                                            Manage Technical Sheet
+                                            {{ __('Manage Technical Sheet') }}
                                         </span>
                                     </a>
                                 </li>
                                 <li class="flex ml-8">
+                                    <a x-on:mouseover="flotan='plan_rodamiento'" x-on:mouseleave="flotan=''"
+                                        class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                                        href="{{ route('pruebas.otraactividad') }}">
+                                        <span class="text-2-2xl" aria-hidden="true" fill="none"
+                                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            viewBox="0 0 24 24" stroke="currentColor"
+                                            :class="{ 'text-2-2xl': isSideMenuOpen, '-ml-3-5': !isSideMenuOpen }">
+                                            <i class="fas fa-calendar-alt icon-pink"
+                                                :class="{ 'text-3xl': !isSideMenuOpen }"></i>
+                                        </span>
+                                        <span class="ml-4"
+                                            :class="!isSideMenuOpen && flotan == 'plan_rodamiento' ? minidisplay : '' || !
+                                                isSideMenuOpen &&
+                                                flotan !=
+                                                'plan_rodamiento' ? 'hidden' : ''">
+                                            {{ __('Bearing plan') }}
+                                        </span>
+                                    </a>
+                                </li>
+                                {{-- <li class="flex ml-8">
                                     <a x-on:mouseover="flotan='Other_activity'" x-on:mouseleave="flotan=''"
                                         class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                                         href="{{ route('pruebas.otraactividad') }}">
@@ -916,6 +1056,84 @@ x-transition:leave-end="opacity-0 transform -translate-x-20">
                                                 flotan !=
                                                 'Other_activity' ? 'hidden' : ''">
                                             Other activity
+                                        </span>
+                                    </a>
+                                </li> --}}
+                                <li class="flex ml-8">
+                                    <a x-on:mouseover="flotan='totals'" x-on:mouseleave="flotan=''"
+                                        class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                                        href="{{ route('totals') }}" @click="changesView('totals')">
+                                        <span class="text-2-2xl" aria-hidden="true" fill="none"
+                                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            viewBox="0 0 24 24" stroke="currentColor"
+                                            :class="{ 'text-2-2xl': isSideMenuOpen, '-ml-3-5': !isSideMenuOpen }">
+                                            <i class="fas fa-list-ol icon-greenaquamarine"
+                                                :class="{ 'text-3xl': !isSideMenuOpen }"></i>
+                                        </span>
+                                        <span class="ml-4"
+                                            :class="!isSideMenuOpen && flotan == 'totals' ? minidisplay : '' || !
+                                                isSideMenuOpen &&
+                                                flotan != 'totals' ? 'hidden' : ''">
+                                            {{ __('Totals') }}
+                                        </span>
+                                    </a>
+                                </li>
+                                <li class="flex ml-8">
+                                    <a x-on:mouseover="flotan='accounting'" x-on:mouseleave="flotan=''"
+                                        class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                                        href="{{ route('cambiocontraseña') }}" @click="changesView('accounting')">
+                                        <span class="text-2-2xl" aria-hidden="true" fill="none"
+                                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            viewBox="0 0 24 24" stroke="currentColor"
+                                            :class="{ 'text-2-2xl': isSideMenuOpen, '-ml-3-5': !isSideMenuOpen }">
+                                            <i class="fas fa-money-check-alt icon-gold"
+                                                :class="{ 'text-3xl': !isSideMenuOpen }"></i>
+                                        </span>
+                                        <span class="ml-4"
+                                            :class="!isSideMenuOpen && flotan == 'accounting' ? minidisplay : '' || !
+                                                isSideMenuOpen &&
+                                                flotan != 'accounting' ? 'hidden' : ''">
+                                            {{ __('Accounting') }}
+                                        </span>
+                                    </a>
+                                </li>
+                                <li class="flex ml-8">
+                                    <a x-on:mouseover="flotan='change_password'" x-on:mouseleave="flotan=''"
+                                        class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                                        href="{{ route('cambiocontraseña') }}"
+                                        @click="changesView('changePassword')">
+                                        <span class="text-2-2xl" aria-hidden="true" fill="none"
+                                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            viewBox="0 0 24 24" stroke="currentColor"
+                                            :class="{ 'text-2-2xl': isSideMenuOpen, '-ml-3-5': !isSideMenuOpen }">
+                                            <i class="fas fa-unlock-alt icon-red"
+                                                :class="{ 'text-3xl': !isSideMenuOpen }"></i>
+                                        </span>
+                                        <span class="ml-4"
+                                            :class="!isSideMenuOpen && flotan == 'change_password' ? minidisplay : '' || !
+                                                isSideMenuOpen &&
+                                                flotan != 'change_password' ? 'hidden' : ''">
+                                            change password
+                                        </span>
+                                    </a>
+                                </li>
+                                <li class="flex ml-8">
+                                    <a x-on:mouseover="flotan='Testing'" x-on:mouseleave="flotan=''"
+                                        class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                                        href="{{ route('list.ListContracts') }}">
+                                        <span class="text-2-2xl" aria-hidden="true" fill="none"
+                                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            viewBox="0 0 24 24" stroke="currentColor"
+                                            :class="{ 'text-2-2xl': isSideMenuOpen, '-ml-3-5': !isSideMenuOpen }">
+                                            <i class="fas fa-keyboard icon-gray"
+                                                :class="{ 'text-3xl': !isSideMenuOpen }"></i>
+                                        </span>
+                                        <span class="ml-4"
+                                            :class="!isSideMenuOpen && flotan == 'Testing' ? minidisplay : '' || !
+                                                isSideMenuOpen &&
+                                                flotan !=
+                                                'Testing' ? 'hidden' : ''">
+                                            Testing
                                         </span>
                                     </a>
                                 </li>
@@ -1005,8 +1223,9 @@ x-transition:leave-end="opacity-0 transform -translate-x-20">
                             <button class="align-middle rounded-full focus:outline-none"
                                 x-on:click="toggleProfileMenu" x-on:click.away="closeProfileMenu"
                                 aria-label="Account" aria-haspopup="true">
-                                <img class="object-cover w-8 h-8 rounded-full" {{-- src="https://images.unsplash.com/photo-1502378735452-bc7d86632805?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&s=aa3a807e1bbdfd4364d1f449eaa96d82" --}}
-                                    src="{{ asset('img/l_logo_step.png') }}" alt="" aria-hidden="true" />
+
+                                    <img class="object-cover w-8 h-8 rounded-full" src=" @if (Auth::user()->profile_photo_path != "") {{ asset( Auth::user()->profile_photo_path ) }} @else {{ asset('img/l_logo_step.png') }} @endif" alt="" aria-hidden="true" />
+                                                                        
                             </button>
                             <template x-if="isProfileMenuOpen">
                                 <ul x-transition:leave="transition ease-in duration-150"
@@ -1024,7 +1243,7 @@ x-transition:leave-end="opacity-0 transform -translate-x-20">
                                                     d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z">
                                                 </path>
                                             </svg>
-                                            <span>Profile</span>
+                                            <span> {{ __('Profile') }}</span>
                                         </a>
                                     </li>
                                     <li class="flex">
@@ -1038,7 +1257,7 @@ x-transition:leave-end="opacity-0 transform -translate-x-20">
                                                 </path>
                                                 <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
                                             </svg>
-                                            <span>Settings</span>
+                                            <span> {{ __('Settings') }}</span>
                                         </a>
                                     </li>
                                     <li class="flex">
@@ -1066,543 +1285,10 @@ x-transition:leave-end="opacity-0 transform -translate-x-20">
                 </div>
             </header>
 
-            <main class="h-full overflow-y-auto">
-                <div class="container px-6 mx-auto grid">
+            <main class="h-4-7 overflow-y-auto">
 
-
+                <div class="container px-6 mx-auto ">
                     {{ $slot }}
-                    {{-- <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
-                            Dashboard
-                        </h2> --}}
-                    <!-- CTA -->
-                    {{-- <a class="flex items-center justify-between p-4 mb-8 text-sm font-semibold text-purple-100 bg-purple-600 rounded-lg shadow-md focus:outline-none focus:shadow-outline-purple"
-                            href="https://github.com/estevanmaito/windmill-dashboard">
-                            <div class="flex items-center">
-                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                    <path
-                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
-                                    </path>
-                                </svg>
-                                <span>Star this project on GitHub</span>
-                            </div>
-                            <span>View more &RightArrow;</span>
-                        </a> --}}
-                    <!-- Cards -->
-                    {{-- <div class="grid gap-6 mb-8 md:grid-cols-2 xl:grid-cols-4">
-                            <!-- Card -->
-                            <div class="flex items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800">
-                                <div
-                                    class="p-3 mr-4 text-orange-500 bg-orange-100 rounded-full dark:text-orange-100 dark:bg-orange-500">
-                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                                        <path
-                                            d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z">
-                                        </path>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <p class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400">
-                                        Total clients
-                                    </p>
-                                    <p class="text-lg font-semibold text-gray-700 dark:text-gray-200">
-                                        6389
-                                    </p>
-                                </div>
-                            </div>
-                            <!-- Card -->
-                            <div class="flex items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800">
-                                <div
-                                    class="p-3 mr-4 text-green-500 bg-green-100 rounded-full dark:text-green-100 dark:bg-green-500">
-                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd"
-                                            d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z"
-                                            clip-rule="evenodd"></path>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <p class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400">
-                                        Account balance
-                                    </p>
-                                    <p class="text-lg font-semibold text-gray-700 dark:text-gray-200">
-                                        $ 46,760.89
-                                    </p>
-                                </div>
-                            </div>
-                            <!-- Card -->
-                            <div class="flex items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800">
-                                <div
-                                    class="p-3 mr-4 text-blue-500 bg-blue-100 rounded-full dark:text-blue-100 dark:bg-blue-500">
-                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                                        <path
-                                            d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z">
-                                        </path>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <p class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400">
-                                        New sales
-                                    </p>
-                                    <p class="text-lg font-semibold text-gray-700 dark:text-gray-200">
-                                        376
-                                    </p>
-                                </div>
-                            </div>
-                            <!-- Card -->
-                            <div class="flex items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800">
-                                <div
-                                    class="p-3 mr-4 text-teal-500 bg-teal-100 rounded-full dark:text-teal-100 dark:bg-teal-500">
-                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd"
-                                            d="M18 5v8a2 2 0 01-2 2h-5l-5 4v-4H4a2 2 0 01-2-2V5a2 2 0 012-2h12a2 2 0 012 2zM7 8H5v2h2V8zm2 0h2v2H9V8zm6 0h-2v2h2V8z"
-                                            clip-rule="evenodd"></path>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <p class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400">
-                                        Pending contacts
-                                    </p>
-                                    <p class="text-lg font-semibold text-gray-700 dark:text-gray-200">
-                                        35
-                                    </p>
-                                </div>
-                            </div>
-                        </div> --}}
-
-                    <!-- New Table -->
-                    {{-- <div class="w-full overflow-hidden rounded-lg shadow-xs">
-                            <div class="w-full overflow-x-auto">
-                                <table class="w-full whitespace-no-wrap">
-                                    <thead>
-                                        <tr
-                                            class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
-                                            <th class="px-4 py-3">Client</th>
-                                            <th class="px-4 py-3">Amount</th>
-                                            <th class="px-4 py-3">Status</th>
-                                            <th class="px-4 py-3">Date</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
-                                        <tr class="text-gray-700 dark:text-gray-400">
-                                            <td class="px-4 py-3">
-                                                <div class="flex items-center text-sm">
-                                                    <!-- Avatar with inset shadow -->
-                                                    <div class="relative hidden w-8 h-8 mr-3 rounded-full md:block">
-                                                        <img class="object-cover w-full h-full rounded-full"
-                                                            src="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&ixid=eyJhcHBfaWQiOjE3Nzg0fQ"
-                                                            alt="" loading="lazy" />
-                                                        <div class="absolute inset-0 rounded-full shadow-inner"
-                                                            aria-hidden="true"></div>
-                                                    </div>
-                                                    <div>
-                                                        <p class="font-semibold">Hans Burger</p>
-                                                        <p class="text-xs text-gray-600 dark:text-gray-400">
-                                                            10x Developer
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="px-4 py-3 text-sm">
-                                                $ 863.45
-                                            </td>
-                                            <td class="px-4 py-3 text-xs">
-                                                <span
-                                                    class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">
-                                                    Approved
-                                                </span>
-                                            </td>
-                                            <td class="px-4 py-3 text-sm">
-                                                6/10/2020
-                                            </td>
-                                        </tr>
-
-                                        <tr class="text-gray-700 dark:text-gray-400">
-                                            <td class="px-4 py-3">
-                                                <div class="flex items-center text-sm">
-                                                    <!-- Avatar with inset shadow -->
-                                                    <div class="relative hidden w-8 h-8 mr-3 rounded-full md:block">
-                                                        <img class="object-cover w-full h-full rounded-full"
-                                                            src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&facepad=3&fit=facearea&s=707b9c33066bf8808c934c8ab394dff6"
-                                                            alt="" loading="lazy" />
-                                                        <div class="absolute inset-0 rounded-full shadow-inner"
-                                                            aria-hidden="true"></div>
-                                                    </div>
-                                                    <div>
-                                                        <p class="font-semibold">Jolina Angelie</p>
-                                                        <p class="text-xs text-gray-600 dark:text-gray-400">
-                                                            Unemployed
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="px-4 py-3 text-sm">
-                                                $ 369.95
-                                            </td>
-                                            <td class="px-4 py-3 text-xs">
-                                                <span
-                                                    class="px-2 py-1 font-semibold leading-tight text-orange-700 bg-orange-100 rounded-full dark:text-white dark:bg-orange-600">
-                                                    Pending
-                                                </span>
-                                            </td>
-                                            <td class="px-4 py-3 text-sm">
-                                                6/10/2020
-                                            </td>
-                                        </tr>
-
-                                        <tr class="text-gray-700 dark:text-gray-400">
-                                            <td class="px-4 py-3">
-                                                <div class="flex items-center text-sm">
-                                                    <!-- Avatar with inset shadow -->
-                                                    <div class="relative hidden w-8 h-8 mr-3 rounded-full md:block">
-                                                        <img class="object-cover w-full h-full rounded-full"
-                                                            src="https://images.unsplash.com/photo-1551069613-1904dbdcda11?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&ixid=eyJhcHBfaWQiOjE3Nzg0fQ"
-                                                            alt="" loading="lazy" />
-                                                        <div class="absolute inset-0 rounded-full shadow-inner"
-                                                            aria-hidden="true"></div>
-                                                    </div>
-                                                    <div>
-                                                        <p class="font-semibold">Sarah Curry</p>
-                                                        <p class="text-xs text-gray-600 dark:text-gray-400">
-                                                            Designer
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="px-4 py-3 text-sm">
-                                                $ 86.00
-                                            </td>
-                                            <td class="px-4 py-3 text-xs">
-                                                <span
-                                                    class="px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-full dark:text-red-100 dark:bg-red-700">
-                                                    Denied
-                                                </span>
-                                            </td>
-                                            <td class="px-4 py-3 text-sm">
-                                                6/10/2020
-                                            </td>
-                                        </tr>
-
-                                        <tr class="text-gray-700 dark:text-gray-400">
-                                            <td class="px-4 py-3">
-                                                <div class="flex items-center text-sm">
-                                                    <!-- Avatar with inset shadow -->
-                                                    <div class="relative hidden w-8 h-8 mr-3 rounded-full md:block">
-                                                        <img class="object-cover w-full h-full rounded-full"
-                                                            src="https://images.unsplash.com/photo-1551006917-3b4c078c47c9?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&ixid=eyJhcHBfaWQiOjE3Nzg0fQ"
-                                                            alt="" loading="lazy" />
-                                                        <div class="absolute inset-0 rounded-full shadow-inner"
-                                                            aria-hidden="true"></div>
-                                                    </div>
-                                                    <div>
-                                                        <p class="font-semibold">Rulia Joberts</p>
-                                                        <p class="text-xs text-gray-600 dark:text-gray-400">
-                                                            Actress
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="px-4 py-3 text-sm">
-                                                $ 1276.45
-                                            </td>
-                                            <td class="px-4 py-3 text-xs">
-                                                <span
-                                                    class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">
-                                                    Approved
-                                                </span>
-                                            </td>
-                                            <td class="px-4 py-3 text-sm">
-                                                6/10/2020
-                                            </td>
-                                        </tr>
-
-                                        <tr class="text-gray-700 dark:text-gray-400">
-                                            <td class="px-4 py-3">
-                                                <div class="flex items-center text-sm">
-                                                    <!-- Avatar with inset shadow -->
-                                                    <div class="relative hidden w-8 h-8 mr-3 rounded-full md:block">
-                                                        <img class="object-cover w-full h-full rounded-full"
-                                                            src="https://images.unsplash.com/photo-1546456073-6712f79251bb?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&ixid=eyJhcHBfaWQiOjE3Nzg0fQ"
-                                                            alt="" loading="lazy" />
-                                                        <div class="absolute inset-0 rounded-full shadow-inner"
-                                                            aria-hidden="true"></div>
-                                                    </div>
-                                                    <div>
-                                                        <p class="font-semibold">Wenzel Dashington</p>
-                                                        <p class="text-xs text-gray-600 dark:text-gray-400">
-                                                            Actor
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="px-4 py-3 text-sm">
-                                                $ 863.45
-                                            </td>
-                                            <td class="px-4 py-3 text-xs">
-                                                <span
-                                                    class="px-2 py-1 font-semibold leading-tight text-gray-700 bg-gray-100 rounded-full dark:text-gray-100 dark:bg-gray-700">
-                                                    Expired
-                                                </span>
-                                            </td>
-                                            <td class="px-4 py-3 text-sm">
-                                                6/10/2020
-                                            </td>
-                                        </tr>
-
-                                        <tr class="text-gray-700 dark:text-gray-400">
-                                            <td class="px-4 py-3">
-                                                <div class="flex items-center text-sm">
-                                                    <!-- Avatar with inset shadow -->
-                                                    <div class="relative hidden w-8 h-8 mr-3 rounded-full md:block">
-                                                        <img class="object-cover w-full h-full rounded-full"
-                                                            src="https://images.unsplash.com/photo-1502720705749-871143f0e671?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&s=b8377ca9f985d80264279f277f3a67f5"
-                                                            alt="" loading="lazy" />
-                                                        <div class="absolute inset-0 rounded-full shadow-inner"
-                                                            aria-hidden="true"></div>
-                                                    </div>
-                                                    <div>
-                                                        <p class="font-semibold">Dave Li</p>
-                                                        <p class="text-xs text-gray-600 dark:text-gray-400">
-                                                            Influencer
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="px-4 py-3 text-sm">
-                                                $ 863.45
-                                            </td>
-                                            <td class="px-4 py-3 text-xs">
-                                                <span
-                                                    class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">
-                                                    Approved
-                                                </span>
-                                            </td>
-                                            <td class="px-4 py-3 text-sm">
-                                                6/10/2020
-                                            </td>
-                                        </tr>
-
-                                        <tr class="text-gray-700 dark:text-gray-400">
-                                            <td class="px-4 py-3">
-                                                <div class="flex items-center text-sm">
-                                                    <!-- Avatar with inset shadow -->
-                                                    <div class="relative hidden w-8 h-8 mr-3 rounded-full md:block">
-                                                        <img class="object-cover w-full h-full rounded-full"
-                                                            src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&ixid=eyJhcHBfaWQiOjE3Nzg0fQ"
-                                                            alt="" loading="lazy" />
-                                                        <div class="absolute inset-0 rounded-full shadow-inner"
-                                                            aria-hidden="true"></div>
-                                                    </div>
-                                                    <div>
-                                                        <p class="font-semibold">Maria Ramovic</p>
-                                                        <p class="text-xs text-gray-600 dark:text-gray-400">
-                                                            Runner
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="px-4 py-3 text-sm">
-                                                $ 863.45
-                                            </td>
-                                            <td class="px-4 py-3 text-xs">
-                                                <span
-                                                    class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">
-                                                    Approved
-                                                </span>
-                                            </td>
-                                            <td class="px-4 py-3 text-sm">
-                                                6/10/2020
-                                            </td>
-                                        </tr>
-
-                                        <tr class="text-gray-700 dark:text-gray-400">
-                                            <td class="px-4 py-3">
-                                                <div class="flex items-center text-sm">
-                                                    <!-- Avatar with inset shadow -->
-                                                    <div class="relative hidden w-8 h-8 mr-3 rounded-full md:block">
-                                                        <img class="object-cover w-full h-full rounded-full"
-                                                            src="https://images.unsplash.com/photo-1566411520896-01e7ca4726af?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&ixid=eyJhcHBfaWQiOjE3Nzg0fQ"
-                                                            alt="" loading="lazy" />
-                                                        <div class="absolute inset-0 rounded-full shadow-inner"
-                                                            aria-hidden="true"></div>
-                                                    </div>
-                                                    <div>
-                                                        <p class="font-semibold">Hitney Wouston</p>
-                                                        <p class="text-xs text-gray-600 dark:text-gray-400">
-                                                            Singer
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="px-4 py-3 text-sm">
-                                                $ 863.45
-                                            </td>
-                                            <td class="px-4 py-3 text-xs">
-                                                <span
-                                                    class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">
-                                                    Approved
-                                                </span>
-                                            </td>
-                                            <td class="px-4 py-3 text-sm">
-                                                6/10/2020
-                                            </td>
-                                        </tr>
-
-                                        <tr class="text-gray-700 dark:text-gray-400">
-                                            <td class="px-4 py-3">
-                                                <div class="flex items-center text-sm">
-                                                    <!-- Avatar with inset shadow -->
-                                                    <div class="relative hidden w-8 h-8 mr-3 rounded-full md:block">
-                                                        <img class="object-cover w-full h-full rounded-full"
-                                                            src="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&ixid=eyJhcHBfaWQiOjE3Nzg0fQ"
-                                                            alt="" loading="lazy" />
-                                                        <div class="absolute inset-0 rounded-full shadow-inner"
-                                                            aria-hidden="true"></div>
-                                                    </div>
-                                                    <div>
-                                                        <p class="font-semibold">Hans Burger</p>
-                                                        <p class="text-xs text-gray-600 dark:text-gray-400">
-                                                            10x Developer
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="px-4 py-3 text-sm">
-                                                $ 863.45
-                                            </td>
-                                            <td class="px-4 py-3 text-xs">
-                                                <span
-                                                    class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">
-                                                    Approved
-                                                </span>
-                                            </td>
-                                            <td class="px-4 py-3 text-sm">
-                                                6/10/2020
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div
-                                class="grid px-4 py-3 text-xs font-semibold tracking-wide text-gray-500 uppercase border-t dark:border-gray-700 bg-gray-50 sm:grid-cols-9 dark:text-gray-400 dark:bg-gray-800">
-                                <span class="flex items-center col-span-3">
-                                    Showing 21-30 of 100
-                                </span>
-                                <span class="col-span-2"></span>
-                                <!-- Pagination -->
-                                <span class="flex col-span-4 mt-2 sm:mt-auto sm:justify-end">
-                                    <nav aria-label="Table navigation">
-                                        <ul class="inline-flex items-center">
-                                            <li>
-                                                <button
-                                                    class="px-3 py-1 rounded-md rounded-l-lg focus:outline-none focus:shadow-outline-purple"
-                                                    aria-label="Previous">
-                                                    <svg aria-hidden="true" class="w-4 h-4 fill-current"
-                                                        viewBox="0 0 20 20">
-                                                        <path
-                                                            d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
-                                                            clip-rule="evenodd" fill-rule="evenodd"></path>
-                                                    </svg>
-                                                </button>
-                                            </li>
-                                            <li>
-                                                <button
-                                                    class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple">
-                                                    1
-                                                </button>
-                                            </li>
-                                            <li>
-                                                <button
-                                                    class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple">
-                                                    2
-                                                </button>
-                                            </li>
-                                            <li>
-                                                <button
-                                                    class="px-3 py-1 text-white transition-colors duration-150 bg-purple-600 border border-r-0 border-purple-600 rounded-md focus:outline-none focus:shadow-outline-purple">
-                                                    3
-                                                </button>
-                                            </li>
-                                            <li>
-                                                <button
-                                                    class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple">
-                                                    4
-                                                </button>
-                                            </li>
-                                            <li>
-                                                <span class="px-3 py-1">...</span>
-                                            </li>
-                                            <li>
-                                                <button
-                                                    class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple">
-                                                    8
-                                                </button>
-                                            </li>
-                                            <li>
-                                                <button
-                                                    class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple">
-                                                    9
-                                                </button>
-                                            </li>
-                                            <li>
-                                                <button
-                                                    class="px-3 py-1 rounded-md rounded-r-lg focus:outline-none focus:shadow-outline-purple"
-                                                    aria-label="Next">
-                                                    <svg class="w-4 h-4 fill-current" aria-hidden="true"
-                                                        viewBox="0 0 20 20">
-                                                        <path
-                                                            d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                                                            clip-rule="evenodd" fill-rule="evenodd"></path>
-                                                    </svg>
-                                                </button>
-                                            </li>
-                                        </ul>
-                                    </nav>
-                                </span>
-                            </div>
-                        </div> --}}
-
-                    <!-- Charts -->
-                    {{-- <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
-                            Charts
-                        </h2> --}}
-                    {{-- <div class="grid gap-6 mb-8 md:grid-cols-2">
-                            <div class="min-w-0 p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800">
-                                <h4 class="mb-4 font-semibold text-gray-800 dark:text-gray-300">
-                                    Revenue
-                                </h4>
-                                <canvas id="pie"></canvas>
-                                <div class="flex justify-center mt-4 space-x-3 text-sm text-gray-600 dark:text-gray-400">
-                                    <!-- Chart legend -->
-                                    <div class="flex items-center">
-                                        <span class="inline-block w-3 h-3 mr-1 bg-blue-500 rounded-full"></span>
-                                        <span>Shirts</span>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <span class="inline-block w-3 h-3 mr-1 bg-teal-600 rounded-full"></span>
-                                        <span>Shoes</span>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <span class="inline-block w-3 h-3 mr-1 bg-purple-600 rounded-full"></span>
-                                        <span>Bags</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="min-w-0 p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800">
-                                <h4 class="mb-4 font-semibold text-gray-800 dark:text-gray-300">
-                                    Traffic
-                                </h4>
-                                <canvas id="line"></canvas>
-                                <div class="flex justify-center mt-4 space-x-3 text-sm text-gray-600 dark:text-gray-400">
-                                    <!-- Chart legend -->
-                                    <div class="flex items-center">
-                                        <span class="inline-block w-3 h-3 mr-1 bg-teal-600 rounded-full"></span>
-                                        <span>Organic</span>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <span class="inline-block w-3 h-3 mr-1 bg-purple-600 rounded-full"></span>
-                                        <span>Paid</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> --}}
                 </div>
             </main>
 
@@ -1617,11 +1303,26 @@ x-transition:leave-end="opacity-0 transform -translate-x-20">
     {{-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> --}}
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="{{ asset('datetimepicker-master/build/jquery.datetimepicker.full.js') }}"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+
+<script src="https://cdn.datatables.net/buttons/2.3.6/js/dataTables.buttons.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.html5.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.print.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.colVis.min.js"></script>
+
+
     {{-- <script src="{{ asset('virtualSelect/virtual-select.min.js') }}"></script> --}}
     {{-- <script src="C:/xampp/htdocs/step/node_modules/jquery-datetimepicker/build/jquery.datetimepicker.full.min.js"></script> --}}
     {{-- @livewire('contac-modal') --}}
     {{-- <Livewire:contac-modal/> --}}
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    {{-- <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script> --}}
     {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"></script> --}}
     {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"></script> --}}
     {{-- <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script> --}}
@@ -1639,6 +1340,7 @@ x-transition:leave-end="opacity-0 transform -translate-x-20">
             footer: '<a href="">Why do I have this issue?</a>'
             });
         </script> --}}
+
 
 </body>
 
