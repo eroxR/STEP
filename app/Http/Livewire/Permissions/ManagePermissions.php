@@ -24,6 +24,7 @@ class ManagePermissions extends Component
     public $driving = [];
     public $cars = [];
     public $editCars = [], $editDrives = [], $firstCars, $firstDrives, $editContratype, $editContrat;
+
     public $contractSelects = null, $carsSelect = null, $editPermit = null, $driveSelect = null;
 
     protected $listeners = ['limitOfCars', 'destroy', 'edit'];
