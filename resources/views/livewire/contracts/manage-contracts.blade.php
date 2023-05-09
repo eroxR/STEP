@@ -1,10 +1,9 @@
 <div>
-
     <div class="py-12 mb-2 mt-4">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="justify-center flex">
                 {{-- class="bg-white overflow-hidden shadow-xl sm:rounded-lg border-gray-50-s dark:bg-gray-800 dark:text-white" --}}
-                <h1 class="text-black dark:text-white text-4xl rounded-lg border-b-green-800 p-1">Manage Contracts</h1>
+                <h1 class="text-black dark:text-white text-4xl rounded-lg border-b-green-800 p-1">{{ __('Manage Contracts') }}</h1>
                 {{-- background: black;
                 border-radius: 3px;
                 padding: 0.3rem; --}}
@@ -19,7 +18,7 @@
 
                 <button @click="openModal"
                     class="px-2 py-1 font-semibold leading-tight text-black bg-sky-700 rounded-full dark:bg-sky-700 dark:text-white">
-                    create new contract
+                     {{ __('create new contract') }}
                 </button>
             </div>
 
@@ -47,7 +46,7 @@
                                 </th> --}}
                                 <th class="cursor-pointer px-2 py-3" wire:click="order('contract_number')">
 
-                                    contract number
+                                    {{ __('contract number') }}
 
                                     @if ($sort == 'contract_number')
 
@@ -63,7 +62,7 @@
                                 </th>
                                 <th class="cursor-pointer px-2 py-3" wire:click="order('description_typeContract')">
 
-                                    description typeContract
+                                    {{ __('description typeContract') }}
 
                                     @if ($sort == 'description_typeContract')
 
@@ -79,7 +78,7 @@
                                 </th>
                                 <th class="cursor-pointer px-2 py-3" wire:click="order('state_contract')">
 
-                                    state contract
+                                    {{ __('state contract') }}
 
                                     @if ($sort == 'state_contract')
 
@@ -95,7 +94,7 @@
                                 </th>
                                 <th class="cursor-pointer px-2 py-3" wire:click="order('date_start_contract')">
 
-                                    date start contract
+                                    {{ __('date start contract') }}
 
                                     @if ($sort == 'date_start_contract')
 
@@ -111,7 +110,7 @@
                                 </th>
                                 <th class="cursor-pointer px-2 py-3" wire:click="order('contract_end_date')">
 
-                                    contract end date
+                                    {{ __('contract end date') }}
 
                                     @if ($sort == 'contract_end_date')
 
@@ -127,7 +126,7 @@
                                 </th>
                                 <th class="cursor-pointer px-2 py-3" wire:click="order('contracting_name')">
 
-                                    contracting name
+                                    {{ __('contracting name') }}
 
                                     @if ($sort == 'contracting_name')
 
@@ -143,7 +142,7 @@
                                 </th>
                                 <th class="cursor-pointer px-2 py-3" wire:click="order('school_name')">
 
-                                    school name
+                                    {{ __('school name') }}
 
                                     @if ($sort == 'school_name')
 
@@ -157,9 +156,9 @@
                                     @endif
 
                                 </th>
-                                <th class="cursor-pointer px-2 py-3" wire:click="order('destination_place')">
+                                <th class="cursor-pointer px-2 py-3" wire:click="order('route_trip_contract')">
 
-                                    destination place
+                                    {{ __('route trip contract') }}
 
                                     @if ($sort == 'destination_place')
 
@@ -175,7 +174,7 @@
                                 </th>
                                 <th class="cursor-pointer px-2 py-3" wire:click="order('contract_value')">
 
-                                    contract value
+                                    {{ __('contract value') }}
 
                                     @if ($sort == 'contract_value')
 
@@ -189,7 +188,7 @@
                                     @endif
 
                                 </th>
-                                <th class="px-2 py-3">Actions</th>
+                                <th class="px-2 py-3">{{ __('Actions') }}</th>
                             </tr>
                         </thead>
                         <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
@@ -203,7 +202,7 @@
                                         {{ $contract->contract_number }}
                                     </td>
                                     <td class="px-4 py-3 text-sm">
-                                        {{ $contract->description_typeContract }}
+                                        {{ $contract->contract_name }}
                                     </td>
                                     <td class="px-4 py-3 text-xs">
                                         {{-- ['INICIAL','CANCELADO','EN CURSO','FINALIZADO','PENDIENTE'] --}}
@@ -260,7 +259,7 @@
                                         {{ $contract->school_name }}
                                     </td>
                                     <td class="px-4 py-3 text-sm">
-                                        {{ $contract->destination_place }}
+                                        {{ $contract->route_trip_contract }}
                                     </td>
                                     <td class="px-4 py-3 text-sm">
                                         ${{ number_format($contract->contract_value, 2, ',', '.') }}
@@ -287,6 +286,19 @@
                                                         clip-rule="evenodd"></path>
                                                 </svg>
                                             </button>
+                                            <button onclick="view({{ $contract->id }})"
+                                                class="inline-flex items-center justify-center  bg-blue-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 active:bg-red-600 disabled:opacity-25 transition"
+                                                {{-- flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray" --}} aria-label="view">
+                                                <svg class="w-5 h-5" fill="none" stroke="currentColor"
+                                                    stroke-width="1.5" viewBox="0 0 24 24"
+                                                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z">
+                                                    </path>
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                                </svg>
+                                            </button>
                                         </div>
                                     </td>
                                 </tr>
@@ -295,19 +307,19 @@
                     </table>
                 @else
                     <div class="px-6 py-4 text-black dark:text-white">
-                        No existe Contratos que coincidan con lo que estas buscando...
+                        {{ __('There are no Contracts that match what you are looking for...') }}
                     </div>
                 @endif
 
             </div>
             <div
                 class="grid px-4 py-3 text-xs font-semibold tracking-wide text-gray-500 uppercase border-t dark:border-gray-700 bg-gray-50 sm:grid-cols-9 dark:text-gray-400 dark:bg-gray-800">
-                <span class="flex items-center col-span-3">
+                {{-- <span class="flex items-center col-span-3">
                     Showing 21-30 of 100
                 </span>
-                <span class="col-span-2"></span>
+                <span class="col-span-2"></span> --}}
                 <!-- Pagination -->
-                <span class="flex col-span-4 mt-2 sm:mt-auto sm:justify-end">
+                {{-- <span class="flex col-span-4 mt-2 sm:mt-auto sm:justify-end">
                     <nav aria-label="Table navigation">
                         <ul class="inline-flex items-center">
                             <li>
@@ -368,7 +380,8 @@
                             </li>
                         </ul>
                     </nav>
-                </span>
+                </span> --}}
+                {{ $contracts->links('livewire.tailwind') }}
             </div>
         </div>
 
@@ -394,7 +407,10 @@
             <header class="flex justify-center border-b-fuchsia-800 border-b">
                 <!-- Modal title -->
                 <p class="justify-start mb-2 text-lg font-semibold text-gray-700 dark:text-gray-300">
-                <h1 class="text-black dark:text-white text-4xl1">Creating new contract<span class="typed"></span>
+                <h1 class="text-black dark:text-white text-4xl1">{{ __('Creating new contract') }}<span id="typed2" class="typed2">.</span>
+                    <span id="typed3" class="typed3">.</span>
+                    <span id="typed4" class="typed4">.</span>
+                    <span id="typed5" class="typed5">.</span>
                 </h1>
                 </p>
                 <button
@@ -504,7 +520,7 @@
 
                             <div class="flex space-x-4 justify-center">
 
-                                <div class="w-1-3 ">
+                                <div class="w-6-12">
 
                                     <select wire:model.defer="type_contract" onchange="typeContract()"
                                         id="type_contract" name="type_contract"
@@ -514,6 +530,23 @@
                                             <option value="{{ $type_contract->id }}">
                                                 {{ $type_contract->description_typeContract }}</option>
                                         @endforeach
+                                        <option value="6">Convenio Empresarial</option>
+                                        <option value="7">Anexo</option>
+                                        <option value="8">Otro si</option>
+                                        <option value="9">Contrato de Vinculación</option>
+                                    </select>
+
+                                </div>
+                                <div class="w-6-12 " id="divContract_with">
+
+                                    <select wire:model.defer="contract_with"
+                                        id="contract_with" name="contract_with"
+                                        class="Inactive block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
+                                        <option value="0">Contrato Con </option>
+                                        <option value="1">Con Grupo PADRES</option>
+                                        <option value="2">Con UNIVERSITARIOS</option>
+                                        <option value="3">Con ESTUDIANTE CON ACUDIENTE</option>
+                                        <option value="4">Con RECTOR O REPRESENTANTE LEGAL Del Colegio</option>
                                     </select>
 
                                 </div>
@@ -521,11 +554,11 @@
 
                             <div class="flex space-x-4 ">
 
-                                <div class="w-6-12 Inactive" id="divIdentification">
-                                    <label class="text-gray-700 dark:text-gray-400">identification</label>
+                                <div class="w-6-12"  id="divIdentification">
+                                    <label id="labelIdentification" class="Inactive text-gray-700 dark:text-gray-400">Tipo de Identificación</label>
                                     <select wire:model.defer="identification" id="identification"
                                         name="identification"
-                                        class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
+                                        class="Inactive block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
                                         <option value="0">IDENTIFICACIÓN</option>
                                         @foreach ($identifications as $identification)
                                             <option value="{{ $identification->id }}">
@@ -534,12 +567,12 @@
                                     </select>
                                 </div>
 
-                                <div class="w-6-12 Inactive" id="divContractDocument">
+                                <div class="w-6-12" id="divContractDocument">
                                     <label id="labelContractDocument"
-                                        class="text-gray-700 dark:text-gray-400">contract_document</label>
+                                        class="Inactive text-gray-700 dark:text-gray-400">{{ __('contract document') }}</label>
 
                                     <input
-                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                        class="Inactive block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                                         placeholder="documento del contratante" type="number" id="contract_document"
                                         name="contract_document" wire:model.defer="contract_document" />
                                 </div>
@@ -548,22 +581,22 @@
 
                             <div class="flex space-x-4">
 
-                                <div class="w-6-12 Inactive" id="divContractingName">
+                                <div class="w-6-12 " id="divContractingName">
                                     <label id="labelContractingName"
-                                        class="text-gray-700 dark:text-gray-400">contracting_name</label>
+                                        class="Inactive text-gray-700 dark:text-gray-400">{{ __('contracting name') }}</label>
 
                                     <input
-                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                        class="Inactive block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                                         placeholder="nombre del contratante" type="text" id="contracting_name"
                                         name="contracting_name" wire:model.defer="contracting_name" />
                                 </div>
 
-                                <div class="w-6-12 Inactive" id="divExpeditionIdentificationcard">
+                                <div class="w-6-12 " id="divExpeditionIdentificationcard">
                                     <label id="labelExpeditionIdentificationcard"
-                                        class="text-gray-700 dark:text-gray-400">expedition_identificationcard</label>
+                                        class="Inactive text-gray-700 dark:text-gray-400">{{ __('expedition identificationcard') }}</label>
 
                                     <input
-                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                        class="Inactive block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                                         placeholder="fecha expedición cedula" type="text"
                                         id="expedition_identificationcard" name="expedition_identificationcard"
                                         wire:model.defer="expedition_identificationcard" />
@@ -573,22 +606,22 @@
 
                             <div class="flex space-x-4">
 
-                                <div class="w-6-12  Inactive" id="divContractingDirection">
+                                <div class="w-6-12" id="divContractingDirection">
                                     <label id="labelContractingDirection"
-                                        class="text-gray-700 dark:text-gray-400">contracting_direction</label>
+                                        class="Inactive text-gray-700 dark:text-gray-400">{{ __('contracting direction') }}</label>
 
                                     <input
-                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                        class="Inactive block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                                         placeholder="dirección contratante" type="text" id="contracting_direction"
                                         name="contracting_direction" wire:model.defer="contracting_direction" />
                                 </div>
 
-                                <div class="w-6-12  Inactive" id="divContractingPhone">
+                                <div class="w-6-12" id="divContractingPhone">
                                     <label id="labelContractingPhone"
-                                        class="text-gray-700 dark:text-gray-400">contracting_phone</label>
+                                        class="Inactive text-gray-700 dark:text-gray-400">{{ __('contracting phone') }}</label>
 
                                     <input
-                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                        class="Inactive block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                                         placeholder="telefono contratante" type="tel" id="contracting_phone"
                                         name="contracting_phone" wire:model.defer="contracting_phone" />
                                 </div>
@@ -611,7 +644,7 @@
 
                                 <div class="w-6-12" id="divSchoolName">
                                     <label id="labelSchoolName"
-                                        class="text-gray-700 dark:text-gray-400">school_name</label>
+                                        class="text-gray-700 dark:text-gray-400">{{ __('school name') }}</label>
 
                                     <input
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -621,7 +654,7 @@
 
                                 <div class="w-6-12" id="divAddressSchool">
                                     <label id="labelAddressSchool"
-                                        class="text-gray-700 dark:text-gray-400">address_school</label>
+                                        class="text-gray-700 dark:text-gray-400">{{ __('address school') }}</label>
 
                                     <input
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -631,11 +664,11 @@
 
                             </div>
 
-                            <div class="flex space-x-4">
+                            {{-- <div class="flex space-x-4">
 
                                 <div class="w-full" id="divSecurePolicy">
                                     <label id="labelSecurePolicy"
-                                        class="text-gray-700 dark:text-gray-400">secure_policy</label>
+                                        class="text-gray-700 dark:text-gray-400">{{ __('secure policy') }}</label>
 
                                     <input
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -643,13 +676,13 @@
                                         name="secure_policy" wire:model.defer="secure_policy" />
                                 </div>
 
-                            </div>
+                            </div> --}}
 
-                            <div class="flex space-x-4">
+                            {{-- <div class="flex space-x-4">
 
                                 <div class="w-full" id="divCooperationContract">
                                     <label id="labelCooperationContract"
-                                        class="text-gray-700 dark:text-gray-400">cooperation_contract</label>
+                                        class="text-gray-700 dark:text-gray-400">{{ __('cooperation contract') }}</label>
 
                                     <input
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -657,16 +690,16 @@
                                         name="cooperation_contract" wire:model.defer="cooperation_contract" />
                                 </div>
 
-                            </div>
+                            </div> --}}
 
-                            <div class="flex space-x-4 justify-center Inacyive" id="nextstep">
+                            {{-- <div class="flex space-x-4 justify-center Inactive" id="nextstep">
 
                                 <div class="w-1-3 mnext">
 
-                                    <p class="text-gray-700 dark:text-gray-400 nextstep">next step</p>
+                                    <p class="text-gray-700 dark:text-gray-400 nextstep">{{ __('next step') }}</p>
 
                                 </div>
-                            </div>
+                            </div> --}}
                             <div class="flex space-x-4">
 
                                 <div class="w-full" id="divVehicle">
@@ -688,30 +721,16 @@
 
                             </div>
 
-                            <br>
-                            <div class="f1-buttons">
-                                <button id="previous2" type="button"
-                                    class="btn btn-previous ml-auto px-5 py-3 text-sm font-medium leading-5 rounded-lg sm:w-auto sm:px-4 sm:py-2 bg-red-600 active:bg-red-600 hover:bg-red-700 focus:outline-none focus:shadow-outline-purple text-white">Atrás</button>
-                                <button type="button"
-                                    class="btn btn-next w-full px-5 py-3 text-sm font-medium leading-5 transition-colors duration-150 bg-green-600 border border-transparent rounded-lg sm:w-auto sm:px-4 sm:py-2 active:bg-green-600 hover:bg-green-700 focus:outline-none focus:shadow-outline-purple">Siguiente</button>
-                            </div>
-                        </fieldset>
-                        <!--fin del paso 2 -->
-
-
-                        <!--paso 3 -->
-                        <fieldset>
-
                             <div class="flex space-x-4" id="divIdentificationLegalRepresentative">
 
                                 <div class="w-6-12">
                                     <label id="labelIdentificationLegalRepresentative"
-                                        class="text-gray-700 dark:text-gray-400">identification_legal_representative</label>
+                                        class="text-gray-700 dark:text-gray-400">{{ __('identification legal representative') }}</label>
                                     <select wire:model.defer="identification_legal_representative"
                                         id="identification_legal_representative"
                                         name="identification_legal_representative"
                                         class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
-                                        <option value="0">IDENTIFICACIÓN</option>
+                                        <option value="0">Tipo de Identificación</option>
                                         @foreach ($identifications as $identification)
                                             <option value="{{ $identification->id }}">
                                                 {{ $identification->description_identification }}</option>
@@ -721,7 +740,7 @@
 
                                 <div class="w-6-12">
                                     <label id="labelIdentificationcardRepresentLegal"
-                                        class="text-gray-700 dark:text-gray-400">identificationcard_represent_legal</label>
+                                        class="text-gray-700 dark:text-gray-400">{{ __('identificationcard represent legal') }}</label>
 
                                     <input
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -737,7 +756,7 @@
 
                                 <div class="w-6-12">
                                     <label id="labelLegalRepresentative"
-                                        class="text-gray-700 dark:text-gray-400">legal_representative</label>
+                                        class="text-gray-700 dark:text-gray-400">{{ __('legal representative') }}</label>
 
                                     <input
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -747,7 +766,7 @@
 
                                 <div class="w-6-12">
                                     <label id="labelLegalRepresentativeExpeditionIdentificationcard"
-                                        class="text-gray-700 dark:text-gray-400">legal_representative_expedition_identificationcard</label>
+                                        class="text-gray-700 dark:text-gray-400">{{ __('legal representative expedition identificationcard') }}</label>
 
                                     <input
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -763,12 +782,12 @@
 
                                 <div class="w-6-12" id="divIdentificationRepresentativeGroup">
                                     <label id="labelIdentificationRepresentativeGroup"
-                                        class="text-gray-700 dark:text-gray-400">identification_representative_group</label>
+                                        class="text-gray-700 dark:text-gray-400">{{ __('identification representative group') }}</label>
                                     <select wire:model.defer="identification_representative_group"
                                         id="identification_representative_group"
                                         name="identification_representative_group"
                                         class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
-                                        <option value="0">IDENTIFICACIÓN</option>
+                                        <option value="0">Tipo de Identificación</option>
                                         @foreach ($identifications as $identification)
                                             <option value="{{ $identification->id }}">
                                                 {{ $identification->description_identification }}</option>
@@ -778,7 +797,7 @@
 
                                 <div class="w-6-12" id="divIdentificationcardRepresentativeGroup">
                                     <label id="labelIdentificationcardRepresentativeGroup"
-                                        class="text-gray-700 dark:text-gray-400">identificationcard_representative_group</label>
+                                        class="text-gray-700 dark:text-gray-400">{{ __('identificationcard representative group') }}</label>
 
                                     <input
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -794,7 +813,7 @@
 
                                 <div class="w-6-12" id="divGroupRepresentativeName">
                                     <label id="labelGroupRepresentativeName"
-                                        class="text-gray-700 dark:text-gray-400">group_representative_name</label>
+                                        class="text-gray-700 dark:text-gray-400">{{ __('group representative name') }}</label>
 
                                     <input
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -805,7 +824,7 @@
 
                                 <div class="w-6-12" id="divDateofexpeditionRepresentativeGroup">
                                     <label id="labelDateofexpeditionRepresentativeGroup"
-                                        class="text-gray-700 dark:text-gray-400">dateofexpedition_representative_group</label>
+                                        class="text-gray-700 dark:text-gray-400">{{ __('dateofexpedition representative group') }}</label>
 
                                     <input
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -817,88 +836,144 @@
 
                             </div>
 
-                            <br>
-                            <div class="f1-buttons">
-                                <button id="previous3" type="button"
-                                    class="btn btn-previous ml-auto px-5 py-3 text-sm font-medium leading-5 rounded-lg sm:w-auto sm:px-4 sm:py-2 bg-red-600 active:bg-red-600 hover:bg-red-700 focus:outline-none focus:shadow-outline-purple text-white">Atrás</button>
-                                <button type="button"
-                                    class="btn btn-next w-full px-5 py-3 text-sm font-medium leading-5 transition-colors duration-150 bg-green-600 border border-transparent rounded-lg sm:w-auto sm:px-4 sm:py-2 active:bg-green-600 hover:bg-green-700 focus:outline-none focus:shadow-outline-purple">Siguiente</button>
-                            </div>
-                        </fieldset>
-                        <!--fin del paso 3 -->
-
-                        <!---paso 4 -->
-                        <fieldset>
-
-                            <div class="flex space-x-4">
+                            <div class="flex space-x-4" id="divRouteTrip">
 
                                 <div class="w-full">
-                                    <label class="text-gray-700 dark:text-gray-400">route_trip_contract</label>
+                                    <label id="labelRouteTrip" class="text-gray-700 dark:text-gray-400">{{ __('route trip contract') }}</label>
 
                                     <textarea
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                        name="" id="" cols="1" rows="1" placeholder="ruta del contrato"
+                                        name="" id="route_trip_contract" cols="1" rows="1" placeholder="ruta del contrato"
                                         wire:model.defer="route_trip_contract">
                                         </textarea>
                                 </div>
 
                             </div>
 
+                            <br>
+                            <div class="f1-buttons">
+                                <button id="previous2" type="button"
+                                    class="btn btn-previous ml-auto px-5 py-3 text-sm font-medium leading-5 rounded-lg sm:w-auto sm:px-4 sm:py-2 bg-red-600 active:bg-red-600 hover:bg-red-700 focus:outline-none focus:shadow-outline-purple text-white">Atrás</button>
+                                <button type="button"
+                                    class="btn btn-next w-full px-5 py-3 text-sm font-medium leading-5 transition-colors duration-150 bg-green-600 border border-transparent rounded-lg sm:w-auto sm:px-4 sm:py-2 active:bg-green-600 hover:bg-green-700 focus:outline-none focus:shadow-outline-purple">Siguiente</button>
+                            </div>
+                        </fieldset>
+                        <!--fin del paso 2 -->
+
+
+                        <!--paso 3 -->
+                        <fieldset>
+
                             <div class="flex space-x-4">
 
                                 <div class="w-6-12">
-                                    <label class="text-gray-700 dark:text-gray-400">trip_from</label>
+                                    <label class="text-gray-700 dark:text-gray-400">{{ __('date start contract') }}</label>
 
                                     <input
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                        placeholder="viaje desde" type="text" wire:model.defer="trip_from" />
+                                        placeholder="date_start_contract" type="date"
+                                        wire:model.defer="date_start_contract" />
                                 </div>
 
                                 <div class="w-6-12">
-
-                                    <label class="text-gray-700 dark:text-gray-400">trip_to</label>
+                                    <label class="text-gray-700 dark:text-gray-400">{{ __('contract end date') }}</label>
 
                                     <input
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                        placeholder="viaje hasta" type="text" wire:model.defer="trip_to" />
+                                        placeholder="fecha fin contrato" type="date"
+                                        wire:model.defer="contract_end_date" />
+                                </div>
+                            </div>
 
+                            <div class="flex space-x-4" id="">
+
+                                <div class="w-6-12">
+                                    <label id="labelQuantityVehicle" class="text-gray-700 dark:text-gray-400">{{ __('quantity vehicle') }}</label>
+
+                                    <input
+                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                        placeholder="quantity_vehicle" type="number"
+                                        id="quantity_vehicle"
+                                        wire:model.defer="quantity_vehicle" />
                                 </div>
 
+                                <div class="w-6-12" id="divPassengerQuantity">
+                                    <label id="labelPassengerQuantity" class="text-gray-700 dark:text-gray-400">{{ __('passenger quantity') }}</label>
+
+                                    <input
+                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                        placeholder="passenger_quantity" type="number" id="passenger_quantity"
+                                        wire:model.defer="passenger_quantity" />
+                                </div>
                             </div>
 
                             <div class="flex space-x-4">
 
-                                <div class="w-1-3">
-                                    <label class="text-gray-700 dark:text-gray-400">place_of_origin</label>
-
-                                    <input
-                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                        placeholder="lugar de inicio" type="text"
-                                        wire:model.defer="place_of_origin" />
+                                <div class="w-6-12">
+                                    <label id="labelTotalDisposition" class="text-gray-700 dark:text-gray-400">{{ __('total disposition') }}</label>
+                                    <select wire:model.defer="total_disposition" id="total_disposition"
+                                        class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
+                                        <option value="0">Selecciona si necesita Disposición Total</option>
+                                        <option value="SI">SI</option>
+                                        <option value="NO">NO</option>
+                                    </select>
                                 </div>
 
-                                <div class="w-1-3">
-                                    <label class="text-gray-700 dark:text-gray-400">return_place</label>
+                                <div class="w-6-12">
+                                    <label  id="labelSigningDate" class="text-gray-700 dark:text-gray-400">{{ __('contract signing date') }}</label>
 
                                     <input
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                        placeholder="lugar de retorno" type="text"
-                                        wire:model.defer="return_place" />
+                                        placeholder="contract_signing_date" type="date" id="contract_signing_date" 
+                                        wire:model.defer="contract_signing_date" />
+                                </div>
+                            </div>
+
+                            <div class="flex space-x-4">
+
+                                <div class="w-6-12">
+                                    <label id="labelTipePay" class="text-gray-700 dark:text-gray-400">{{ __('tipe pay') }}</label>
+                                    <select wire:model.defer="tipe_pay" id="tipe_pay"
+                                        class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
+                                        <option value="0">Selecciona el tipo de pago</option>
+                                        @foreach ($payment_types as $payment_type)
+                                            <option value="{{ $payment_type->id }}">
+                                                {{ $payment_type->description_typePayment }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
 
-                                <div class="w-1-3">
-                                    <label class="text-gray-700 dark:text-gray-400">destination_place</label>
+                                <div class="w-6-12">
+                                    <label id="labelContractValue" class="text-gray-700 dark:text-gray-400">{{ __('contract value') }}</label>
 
                                     <input
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                        placeholder="lugar de destino" type="text"
-                                        wire:model.defer="destination_place" />
+                                        placeholder="Valor contrato" type="number" id="contract_value"
+                                        wire:model.defer="contract_value" />
                                 </div>
                             </div>
 
                             <br>
                             <div class="f1-buttons">
-                                <button id="previous4" type="button"
+                                <button type="button" id="" onclick="passenger()"
+                                    class="text-white w-full px-5 py-3 text-sm font-medium leading-5 transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg sm:w-auto sm:px-4 sm:py-2 active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">Adjuntar
+                                    Pasajeros</button>
+                                <button type="button" id="previous5"
+                                    class="btn btn-previous ml-auto px-5 py-3 text-sm font-medium leading-5 rounded-lg sm:w-auto sm:px-4 sm:py-2 bg-red-600 active:bg-red-600 hover:bg-red-700 focus:outline-none focus:shadow-outline-purple text-white">Atrás</button>
+                                <button type="button" id="btnFinalize"
+                                    class="btn btn-Finalize w-full px-5 py-3 text-sm font-medium leading-5 transition-colors duration-150 bg-green-600 border border-transparent rounded-lg sm:w-auto sm:px-4 sm:py-2 active:bg-green-600 hover:bg-green-700 focus:outline-none focus:shadow-outline-purple">Finalizar</button>
+                            </div>
+
+                        </fieldset>
+                        <!--fin del paso 3 -->
+
+                        <!---paso 4 -->
+                        <fieldset>
+
+
+                            <br>
+                            <div class="f1-buttons">
+                                <button id="previous3" type="button"
                                     class="btn btn-previous ml-auto px-5 py-3 text-sm font-medium leading-5 rounded-lg sm:w-auto sm:px-4 sm:py-2 bg-red-600 active:bg-red-600 hover:bg-red-700 focus:outline-none focus:shadow-outline-purple text-white">Atrás</button>
                                 <button type="button"
                                     class="btn btn-next w-full px-5 py-3 text-sm font-medium leading-5 transition-colors duration-150 bg-green-600 border border-transparent rounded-lg sm:w-auto sm:px-4 sm:py-2 active:bg-green-600 hover:bg-green-700 focus:outline-none focus:shadow-outline-purple">Siguiente</button>
@@ -910,101 +985,14 @@
                         <!--paso fin -->
                         <fieldset>
 
-                            <div class="flex space-x-4">
-
-                                <div class="w-6-12">
-                                    <label class="text-gray-700 dark:text-gray-400">date_start_contract</label>
-
-                                    <input
-                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                        placeholder="date_start_contract" type="date"
-                                        wire:model.defer="date_start_contract" />
-                                </div>
-
-                                <div class="w-6-12">
-                                    <label class="text-gray-700 dark:text-gray-400">contract_end_date</label>
-
-                                    <input
-                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                        placeholder="fecha fin contrato" type="date"
-                                        wire:model.defer="contract_end_date" />
-                                </div>
-                            </div>
-
-                            <div class="flex space-x-4">
-
-                                <div class="w-6-12">
-                                    <label class="text-gray-700 dark:text-gray-400">quantity_vehicle</label>
-
-                                    <input
-                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                        placeholder="quantity_vehicle" type="number"
-                                        wire:model.defer="quantity_vehicle" />
-                                </div>
-
-                                <div class="w-6-12">
-                                    <label class="text-gray-700 dark:text-gray-400">passenger_quantity</label>
-
-                                    <input
-                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                        placeholder="passenger_quantity" type="number"
-                                        wire:model.defer="passenger_quantity" />
-                                </div>
-                            </div>
-
-                            <div class="flex space-x-4">
-
-                                <div class="w-6-12">
-                                    <label class="text-gray-700 dark:text-gray-400">total_disposition</label>
-                                    <select wire:model.defer="total_disposition"
-                                        class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
-                                        <option value="0">Selecciona si necesita Disposición Total</option>
-                                        <option value="SI">SI</option>
-                                        <option value="NO">NO</option>
-                                    </select>
-                                </div>
-
-                                <div class="w-6-12">
-                                    <label class="text-gray-700 dark:text-gray-400">contract_signing_date</label>
-
-                                    <input
-                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                        placeholder="contract_signing_date" type="date"
-                                        wire:model.defer="contract_signing_date" />
-                                </div>
-                            </div>
-
-                            <div class="flex space-x-4">
-
-                                <div class="w-6-12">
-                                    <label class="text-gray-700 dark:text-gray-400">tipe_pay</label>
-                                    <select wire:model.defer="tipe_pay"
-                                        class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
-                                        <option value="0">Selecciona el tipo de pago</option>
-                                        @foreach ($payment_types as $payment_type)
-                                            <option value="{{ $payment_type->id }}">
-                                                {{ $payment_type->description_typePayment }}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-
-                                <div class="w-6-12">
-                                    <label class="text-gray-700 dark:text-gray-400">contract_value</label>
-
-                                    <input
-                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                        placeholder="Valor contrato" type="number"
-                                        wire:model.defer="contract_value" />
-                                </div>
-                            </div>
-
                             <br>
                             <div class="f1-buttons">
-                                <button type="button" id="previous5"
+                                <button id="previous4" type="button"
                                     class="btn btn-previous ml-auto px-5 py-3 text-sm font-medium leading-5 rounded-lg sm:w-auto sm:px-4 sm:py-2 bg-red-600 active:bg-red-600 hover:bg-red-700 focus:outline-none focus:shadow-outline-purple text-white">Atrás</button>
-                                <button type="button" id="btnFinalize"
-                                    class="btn btn-Finalize w-full px-5 py-3 text-sm font-medium leading-5 transition-colors duration-150 bg-green-600 border border-transparent rounded-lg sm:w-auto sm:px-4 sm:py-2 active:bg-green-600 hover:bg-green-700 focus:outline-none focus:shadow-outline-purple">Finalizar</button>
+                                <button type="button"
+                                    class="btn btn-next w-full px-5 py-3 text-sm font-medium leading-5 transition-colors duration-150 bg-green-600 border border-transparent rounded-lg sm:w-auto sm:px-4 sm:py-2 active:bg-green-600 hover:bg-green-700 focus:outline-none focus:shadow-outline-purple">Siguiente</button>
                             </div>
+
                         </fieldset>
                         <!--fin -->
 
@@ -1018,12 +1006,12 @@
                 <button id="btnStore" type="submit"
                     class="Inactive w-full px-5 py-3 text-sm font-medium leading-5 transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg sm:w-auto sm:px-4 sm:py-2 active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
                     wire:click="store" onclick="restart();" x-on:click="closeModal">
-                    Generate Contract
+                    {{ __('Generate Contract') }}
                 </button>
                 <button x-on:click="closeModal"
                     class="w-full px-5 py-3 text-sm font-medium leading-5 text-gray-700 transition-colors duration-150 border border-gray-300 rounded-lg dark:text-gray-400 sm:px-4 sm:py-2 sm:w-auto active:bg-transparent hover:border-gray-500 focus:border-gray-500 active:text-gray-500 focus:outline-none focus:shadow-outline-gray"
                     wire:click="clear" onclick="restart();">
-                    Cancel
+                    {{ __('Cancel') }}
                 </button>
             </div>
         </div>
@@ -1042,22 +1030,24 @@
             x-transition:enter-start="opacity-0 transform translate-y-1/2" x-transition:enter-end="opacity-100"
             x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100"
             x-transition:leave-end="opacity-0  transform translate-y-1/2"
-            class="scroll w-9-12 h-4-7 mt-6 px-6 py-4  bg-white rounded-t-lg dark:bg-gray-800 sm:rounded-lg sm:m-4 overflow-x-hidden overflow-y-auto"
+            class="w-9-12 h-4-7 mt-6 px-6 py-4  bg-white rounded-t-lg dark:bg-gray-800 sm:rounded-lg sm:m-4"
             role="dialog">
             <!-- Remove header if you don't want a close icon. Use modal body to place modal tile. -->
             <header class="flex justify-center border-b-fuchsia-800 border-b">
                 <!-- Modal title -->
                 <p class="justify-start mb-2 text-lg font-semibold text-gray-700 dark:text-gray-300">
-                <h1 class="text-black dark:text-white text-4xl1">Editing contract information type
-                    <!-- editando información del contrato typo xxx numero xxx -->
+                <h1 class="text-black dark:text-white text-4xl1">{{ __('Editing the information') }}
+                    
                     @if (!is_null($editContracts))
                         {{ $descriptionTypeContract }}
                     @endif
-                    number
+                    {{ __('number') }}
                     @if (!is_null($editContracts))
                         {{ $editContracts->contract_number }}
-                    @endif
-                    <span class="typed2"></span>
+                    @endif<span id="typed2" class="typed2">.</span>
+                    <span id="typed3" class="typed3">.</span>
+                    <span id="typed4" class="typed4">.</span>
+                    <span id="typed5" class="typed5">.</span>
                 </h1>
                 </p>
                 <button onclick="closeModalEdit()"
@@ -1071,227 +1061,49 @@
                 </button>
             </header>
             <!-- Modal body -->
-            <div class="mt-4 mb-6">
+            <div class="scroll h-4-7 overflow-y-auto">
 
-                @if (!is_null($editContracts))
+                <div class="mt-4 mb-6">
+
+                    @if (!is_null($editContracts))
 
 
-                    <form role="form" action="" method="post" id="editfrmContracts"
-                        class="f1 px-4 my-32 max-w-3xl mx-auto space-y-6">
+                        <form role="form" action="" method="post" id="editfrmContracts"
+                            class="f1 px-4 my-32 max-w-3xl mx-auto space-y-6">
 
-                        <!-- Modal description -->
-                        <div
-                            class="mt-11 border-gray-50-s container px-4 py-3 bg-white rounded-lg shadow-md dark:bg-gray-800 overflow-auto h-9 ">
+                            <!-- Modal description -->
+                            <div
+                                class="mt-11 border-gray-50-s container px-4 py-3 bg-white rounded-lg shadow-md dark:bg-gray-800 overflow-auto h-9 ">
 
-                            <!--paso 1 edit-->
-                            <p class="text-sm text-gray-700 dark:text-gray-400">
-                                paso 1
-                            </p>
-                            <div class="border-ourple-50-s rounded-2xl p-4">
-                                <div class="flex space-x-4 justify-center">
+                                <!--paso 1 edit-->
+                                <p class="text-sm text-gray-700 dark:text-gray-400">
+                                    paso 1
+                                </p>
+                                <div class="border-ourple-50-s rounded-2xl p-4">
+                                    <div class="flex space-x-4 justify-center">
 
-                                    <div class="w-1-3 ">
+                                        <div class="w-1-3 ">
 
-                                        <div class="border-ourple-50-s rounded-2xl p-4">
-                                            <p class="text-sm text-gray-700 dark:text-gray-400">
-                                                @foreach ($type_contracts as $type_contract)
-                                                    @if ($editContracts->type_contract == $type_contract->id)
-                                                        {{ $type_contract->description_typeContract }}
-                                                    @endif
-                                                @endforeach
-                                            </p>
+                                            <div class="border-ourple-50-s rounded-2xl p-4">
+                                                <p class="text-sm text-gray-700 dark:text-gray-400">
+                                                    @foreach ($type_contracts as $type_contract)
+                                                        @if ($editContracts->type_contract == $type_contract->id)
+                                                            {{ $type_contract->description_typeContract }}
+                                                        @endif
+                                                    @endforeach
+                                                </p>
+                                            </div>
+
                                         </div>
-
-                                    </div>
-                                </div>
-
-                                <div class="flex space-x-4 ">
-
-                                    <div class="w-6-12 ">
-                                        <label class="text-gray-700 dark:text-gray-400">identification</label>
-                                        <select wire:model="editContracts.identification" name="identification"
-                                            class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
-                                            <option value="0">IDENTIFICACIÓN</option>
-                                            @foreach ($identifications as $identification)
-                                                <option value="{{ $identification->id }}">
-                                                    {{ $identification->description_identification }}</option>
-                                            @endforeach
-                                        </select>
                                     </div>
 
-                                    <div class="w-6-12 ">
-                                        <label class="text-gray-700 dark:text-gray-400">contract_document</label>
+                                    <div class="flex space-x-4 ">
 
-                                        <input
-                                            class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                            placeholder="documento del contratante" type="number"
-                                            name="contract_document" wire:model="editContracts.contract_document" />
-                                    </div>
-
-                                </div>
-
-                                <div class="flex space-x-4">
-
-                                    <div class="w-6-12 ">
-                                        <label class="text-gray-700 dark:text-gray-400">contracting_name</label>
-
-                                        <input
-                                            class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                            placeholder="nombre del contratante" type="text"
-                                            name="contracting_name" wire:model="editContracts.contracting_name" />
-                                    </div>
-
-                                    <div class="w-6-12 ">
-                                        <label
-                                            class="text-gray-700 dark:text-gray-400">expedition_identificationcard</label>
-
-                                        <input
-                                            class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                            placeholder="fecha expedición cedula" type="text"
-                                            name="expedition_identificationcard"
-                                            wire:model="editContracts.expedition_identificationcard" />
-                                    </div>
-
-                                </div>
-
-                                <div class="flex space-x-4">
-
-                                    <div class="w-6-12  ">
-                                        <label class="text-gray-700 dark:text-gray-400">contracting_direction</label>
-
-                                        <input
-                                            class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                            placeholder="dirección contratante" type="text"
-                                            name="contracting_direction"
-                                            wire:model="editContracts.contracting_direction" />
-                                    </div>
-
-                                    <div class="w-6-12  ">
-                                        <label class="text-gray-700 dark:text-gray-400">contracting_phone</label>
-
-                                        <input
-                                            class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                            placeholder="telefono contratante" type="tel"
-                                            name="contracting_phone" wire:model="editContracts.contracting_phone" />
-                                    </div>
-                                </div>
-
-                            </div>
-                            <!--fin del paso 1 edit-->
-                            <br>
-                            <!---paso 2 edit-->
-                            <p class="text-sm text-gray-700 dark:text-gray-400">
-                                paso 2
-                            </p>
-                            <div class="border-ourple-50-s rounded-2xl p-4">
-                                @if ($editContracts->type_contract == 1)
-                                    <div class="flex space-x-4">
-
-                                        <div class="w-6-12">
-                                            <label class="text-gray-700 dark:text-gray-400">school_name</label>
-
-                                            <input
-                                                class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="nombre del colegio" type="text" name="school_name"
-                                                wire:model="editContracts.school_name" />
-                                        </div>
-
-                                        <div class="w-6-12">
-                                            <label class="text-gray-700 dark:text-gray-400">address_school</label>
-
-                                            <input
-                                                class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="Dirección del colegio" type="text"
-                                                name="address_school" wire:model.defer="address_school" />
-                                        </div>
-
-                                    </div>
-
-                                    <div class="flex space-x-4">
-
-                                        <div class="w-full">
-                                            <label class="text-gray-700 dark:text-gray-400">secure_policy</label>
-
-                                            <input
-                                                class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="secure_policy" type="text" name="secure_policy"
-                                                wire:model="editContracts.secure_policy" />
-                                        </div>
-
-                                    </div>
-                                @endif
-
-                                @if ($editContracts->type_contract == 2 ||
-                                    $editContracts->type_contract == 3 ||
-                                    $editContracts->type_contract == 5)
-                                    <div class="flex space-x-4">
-
-                                        <div class="w-full">
-                                            <label
-                                                class="text-gray-700 dark:text-gray-400">cooperation_contract</label>
-
-                                            <input
-                                                class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="cooperation_contract" type="text"
-                                                name="cooperation_contract"
-                                                wire:model="editContracts.cooperation_contract" />
-                                        </div>
-
-                                    </div>
-                                @endif
-
-                                @if ($editContracts->type_contract == 4)
-                                    <div class="flex space-x-4">
-
-                                        <div class="w-full">
-                                            <label class="text-gray-700 dark:text-gray-400">Selecciona el
-                                                Vehiculo principal</label>
-                                            <select wire:model="vehicleSelect" name="vehicle"
+                                        <div class="w-6-12 ">
+                                            <label class="text-gray-700 dark:text-gray-400">tipo de identification</label>
+                                            <select wire:model="editContracts.identification" name="identification"
                                                 class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
-                                                <option value="0">Selecciona el Vehiculo principal</option>
-
-                                                @foreach ($vehicles as $vehicle)
-                                                    <option {{-- @if ($vehicleSelect != null) @if ($vehicleSelect == $vehicle->id)
-                                                            selected 
-                                                            @endif
-                                                        @endif --}} value="{{ $vehicle->id }}"> Placa:
-                                                        {{ $vehicle->plate_vehicle }} ---
-                                                        lateral: {{ $vehicle->side_vehicle }} ---
-                                                        fecha fin SOAT: {{ $vehicle->secure_end_date }} ---
-                                                        fecha fin tecno:
-                                                        {{ $vehicle->technomechanical_end_date }}
-                                                    </option>
-                                                @endforeach
-
-                                            </select>
-                                        </div>
-
-                                    </div>
-                                @endif
-
-
-                            </div>
-                            <!--fin del paso 2 edit-->
-
-                            <br>
-                            <p class="text-sm text-gray-700 dark:text-gray-400">
-                                paso 3
-                            </p>
-                            <div class="border-ourple-50-s rounded-2xl p-4">
-
-                                @if ($editContracts->type_contract == 1 ||
-                                    $editContracts->type_contract == 2 ||
-                                    $editContracts->type_contract == 3 ||
-                                    $editContracts->type_contract == 1)
-                                    <div class="flex space-x-4">
-
-                                        <div class="w-6-12">
-                                            <label
-                                                class="text-gray-700 dark:text-gray-400">identification_legal_representative</label>
-                                            <select wire:model="editContracts.identification_represent_legal"
-                                                name="identification_legal_representative"
-                                                class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
-                                                <option value="0">IDENTIFICACIÓN</option>
+                                                <option value="0">Tipo de Identificación</option>
                                                 @foreach ($identifications as $identification)
                                                     <option value="{{ $identification->id }}">
                                                         {{ $identification->description_identification }}</option>
@@ -1299,299 +1111,433 @@
                                             </select>
                                         </div>
 
-                                        <div class="w-6-12">
-                                            <label
-                                                class="text-gray-700 dark:text-gray-400">identificationcard_represent_legal</label>
+                                        <div class="w-6-12 ">
+                                            <label class="text-gray-700 dark:text-gray-400">{{ __('contract document') }}</label>
 
                                             <input
                                                 class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="identificationcard_represent_legal" type="number"
-                                                name="identificationcard_represent_legal"
-                                                wire:model="editContracts.identificationcard_represent_legal" />
+                                                placeholder="documento del contratante" type="number"
+                                                name="contract_document"
+                                                wire:model="editContracts.contract_document" />
                                         </div>
 
                                     </div>
 
                                     <div class="flex space-x-4">
 
-                                        <div class="w-6-12">
-                                            <label
-                                                class="text-gray-700 dark:text-gray-400">legal_representative</label>
+                                        <div class="w-6-12 ">
+                                            <label class="text-gray-700 dark:text-gray-400">{{ __('contracting name') }}</label>
 
                                             <input
                                                 class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="Representante legal" type="text"
-                                                name="legal_representative"
-                                                wire:model="editContracts.legal_representative" />
+                                                placeholder="nombre del contratante" type="text"
+                                                name="contracting_name" wire:model="editContracts.contracting_name" />
                                         </div>
 
-                                        <div class="w-6-12">
+                                        <div class="w-6-12 ">
                                             <label
-                                                class="text-gray-700 dark:text-gray-400">legal_representative_expedition_identificationcard</label>
+                                                class="text-gray-700 dark:text-gray-400">{{ __('expedition identificationcard') }}</label>
 
                                             <input
                                                 class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="Representante legal" type="text"
-                                                name="legal_representative_expedition_identificationcard"
-                                                wire:model="editContracts.legal_representative_expedition_identificationcard" />
+                                                placeholder="fecha expedición cedula" type="text"
+                                                name="expedition_identificationcard"
+                                                wire:model="editContracts.expedition_identificationcard" />
                                         </div>
 
                                     </div>
-                                @endif
 
-                                @if ($editContracts->type_contract == 4)
+                                    <div class="flex space-x-4">
+
+                                        <div class="w-6-12  ">
+                                            <label
+                                                class="text-gray-700 dark:text-gray-400">{{ __('contracting direction') }}</label>
+
+                                            <input
+                                                class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                placeholder="dirección contratante" type="text"
+                                                name="contracting_direction"
+                                                wire:model="editContracts.contracting_direction" />
+                                        </div>
+
+                                        <div class="w-6-12  ">
+                                            <label class="text-gray-700 dark:text-gray-400">{{ __('contracting phone') }}</label>
+
+                                            <input
+                                                class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                placeholder="telefono contratante" type="tel"
+                                                name="contracting_phone"
+                                                wire:model="editContracts.contracting_phone" />
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!--fin del paso 1 edit-->
+                                <br>
+                                <!---paso 2 edit-->
+                                <p class="text-sm text-gray-700 dark:text-gray-400">
+                                    paso 2
+                                </p>
+                                <div class="border-ourple-50-s rounded-2xl p-4">
+                                    @if ($editContracts->type_contract == 1)
+                                        <div class="flex space-x-4">
+
+                                            <div class="w-6-12">
+                                                <label class="text-gray-700 dark:text-gray-400">{{ __('school name') }}</label>
+
+                                                <input
+                                                    class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                    placeholder="nombre del colegio" type="text"
+                                                    name="school_name" wire:model="editContracts.school_name" />
+                                            </div>
+
+                                            <div class="w-6-12">
+                                                <label class="text-gray-700 dark:text-gray-400">{{ __('address school') }}</label>
+
+                                                <input
+                                                    class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                    placeholder="Dirección del colegio" type="text"
+                                                    name="address_school" wire:model.defer="address_school" />
+                                            </div>
+
+                                        </div>
+
+                                        {{-- <div class="flex space-x-4">
+
+                                            <div class="w-full">
+                                                <label class="text-gray-700 dark:text-gray-400">secure_policy</label>
+
+                                                <input
+                                                    class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                    placeholder="secure_policy" type="text" name="secure_policy"
+                                                    wire:model="editContracts.secure_policy" />
+                                            </div>
+
+                                        </div> --}}
+                                    @endif
+
+                                    {{-- @if ($editContracts->type_contract == 2 || $editContracts->type_contract == 3 || $editContracts->type_contract == 5)
+                                        <div class="flex space-x-4">
+
+                                            <div class="w-full">
+                                                <label
+                                                    class="text-gray-700 dark:text-gray-400">{{ __('cooperation contract') }}</label>
+
+                                                <input
+                                                    class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                    placeholder="cooperation_contract" type="text"
+                                                    name="cooperation_contract"
+                                                    wire:model="editContracts.cooperation_contract" />
+                                            </div>
+
+                                        </div>
+                                    @endif --}}
+
+                                    @if ($editContracts->type_contract == 4)
+                                        <div class="flex space-x-4">
+
+                                            <div class="w-full">
+                                                <label class="text-gray-700 dark:text-gray-400">Selecciona el
+                                                    Vehiculo principal</label>
+                                                <select wire:model="vehicleSelect" name="vehicle"
+                                                    class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
+                                                    <option value="0">Selecciona el Vehiculo principal</option>
+
+                                                    @foreach ($vehicles as $vehicle)
+                                                        <option {{-- @if ($vehicleSelect != null) @if ($vehicleSelect == $vehicle->id)
+                                                                selected 
+                                                                @endif
+                                                            @endif --}} value="{{ $vehicle->id }}">
+                                                            Placa:
+                                                            {{ $vehicle->plate_vehicle }} ---
+                                                            lateral: {{ $vehicle->side_vehicle }} ---
+                                                            fecha fin SOAT: {{ $vehicle->secure_end_date }} ---
+                                                            fecha fin tecno:
+                                                            {{ $vehicle->technomechanical_end_date }}
+                                                        </option>
+                                                    @endforeach
+
+                                                </select>
+                                            </div>
+
+                                        </div>
+                                    @endif
+
+
+                                </div>
+                                <!--fin del paso 2 edit-->
+
+                                <br>
+                                <p class="text-sm text-gray-700 dark:text-gray-400">
+                                    paso 3
+                                </p>
+                                <div class="border-ourple-50-s rounded-2xl p-4">
+
+                                    @if (
+                                        $editContracts->type_contract == 1 ||
+                                            $editContracts->type_contract == 2 ||
+                                            $editContracts->type_contract == 3 ||
+                                            $editContracts->type_contract == 1)
+                                        <div class="flex space-x-4">
+
+                                            <div class="w-6-12">
+                                                <label
+                                                    class="text-gray-700 dark:text-gray-400">{{ __('identification legal representative') }}</label>
+                                                <select wire:model="editContracts.identification_represent_legal"
+                                                    name="identification_legal_representative"
+                                                    class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
+                                                    <option value="0">Tipo de Identificación</option>
+                                                    @foreach ($identifications as $identification)
+                                                        <option value="{{ $identification->id }}">
+                                                            {{ $identification->description_identification }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+
+                                            <div class="w-6-12">
+                                                <label
+                                                    class="text-gray-700 dark:text-gray-400">{{ __('identificationcard represent legal') }}</label>
+
+                                                <input
+                                                    class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                    placeholder="identificationcard_represent_legal" type="number"
+                                                    name="identificationcard_represent_legal"
+                                                    wire:model="editContracts.identificationcard_represent_legal" />
+                                            </div>
+
+                                        </div>
+
+                                        <div class="flex space-x-4">
+
+                                            <div class="w-6-12">
+                                                <label
+                                                    class="text-gray-700 dark:text-gray-400">{{ __('legal representative') }}</label>
+
+                                                <input
+                                                    class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                    placeholder="Representante legal" type="text"
+                                                    name="legal_representative"
+                                                    wire:model="editContracts.legal_representative" />
+                                            </div>
+
+                                            <div class="w-6-12">
+                                                <label
+                                                    class="text-gray-700 dark:text-gray-400">{{ __('legal representative expedition identificationcard') }}</label>
+
+                                                <input
+                                                    class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                    placeholder="Representante legal" type="text"
+                                                    name="legal_representative_expedition_identificationcard"
+                                                    wire:model="editContracts.legal_representative_expedition_identificationcard" />
+                                            </div>
+
+                                        </div>
+                                    @endif
+
+                                    @if ($editContracts->type_contract == 4)
+                                        <div class="flex space-x-4">
+
+                                            <div class="w-6-12">
+                                                <label
+                                                    class="text-gray-700 dark:text-gray-400">{{ __('identification representative group') }}</label>
+                                                <select wire:model="editContracts.identification_representative_group"
+                                                    name="identification_representative_group"
+                                                    class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
+                                                    <option value="0">Tipo de Identificación</option>
+                                                    @foreach ($identifications as $identification)
+                                                        <option value="{{ $identification->id }}">
+                                                            {{ $identification->description_identification }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+
+                                            <div class="w-6-12">
+                                                <label
+                                                    class="text-gray-700 dark:text-gray-400">{{ __('identificationcard representative group') }}</label>
+
+                                                <input
+                                                    class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                    placeholder="identificationcard_representative_group"
+                                                    type="number" name="identificationcard_representative_group"
+                                                    wire:model="editContracts.identificationcard_representative_group" />
+                                            </div>
+
+                                        </div>
+
+                                        <div class="flex space-x-4">
+
+                                            <div class="w-6-12">
+                                                <label
+                                                    class="text-gray-700 dark:text-gray-400">{{ __('group representative name') }}</label>
+
+                                                <input
+                                                    class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                    placeholder="group_representative_name" type="text"
+                                                    name="group_representative_name"
+                                                    wire:model="editContracts.group_representative_name" />
+                                            </div>
+
+                                            <div class="w-6-12">
+                                                <label
+                                                    class="text-gray-700 dark:text-gray-400">{{ __('dateofexpedition representative group') }}</label>
+
+                                                <input
+                                                    class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                    placeholder="dateofexpedition_representative_group" type="text"
+                                                    name="dateofexpedition_representative_group"
+                                                    wire:model="editContracts.dateofexpedition_representative_group" />
+                                            </div>
+
+                                        </div>
+                                    @endif
+
+                                </div>
+                                <!--fin del paso 3 edit-->
+
+                                <br>
+                                <p class="text-sm text-gray-700 dark:text-gray-400">
+                                    paso 4
+                                </p>
+                                <div class="border-ourple-50-s rounded-2xl p-4">
+
+                                    <div class="flex space-x-4">
+
+                                        <div class="w-full">
+                                            <label class="text-gray-700 dark:text-gray-400">{{ __('route trip contract') }}</label>
+
+                                            <textarea
+                                                class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                name="" cols="1" rows="1" placeholder="ruta del contrato"
+                                                wire:model="editContracts.route_trip_contract">
+                                    </textarea>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <!--fin del paso 4 edit-->
+
+                                <!--paso fin edit-->
+                                <p class="text-sm text-gray-700 dark:text-gray-400">
+                                    paso fin
+                                </p>
+                                <div class="border-ourple-50-s rounded-2xl p-4">
+
                                     <div class="flex space-x-4">
 
                                         <div class="w-6-12">
-                                            <label
-                                                class="text-gray-700 dark:text-gray-400">identification_representative_group</label>
-                                            <select wire:model="editContracts.identification_representative_group"
-                                                name="identification_representative_group"
+                                            <label class="text-gray-700 dark:text-gray-400">{{ __('date start contract') }}</label>
+
+                                            <input
+                                                class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                placeholder="date_start_contract" type="date"
+                                                wire:model="editContracts.date_start_contract" />
+                                        </div>
+
+                                        <div class="w-6-12">
+                                            <label class="text-gray-700 dark:text-gray-400">{{ __('contract end date') }}</label>
+
+                                            <input
+                                                class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                placeholder="fecha fin contrato" type="date"
+                                                wire:model="editContracts.contract_end_date" />
+                                        </div>
+                                    </div>
+
+                                    <div class="flex space-x-4">
+
+                                        <div class="w-6-12">
+                                            <label class="text-gray-700 dark:text-gray-400">{{ __('quantity vehicle') }}</label>
+
+                                            <input
+                                                class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                placeholder="quantity_vehicle" type="number"
+                                                wire:model="editContracts.quantity_vehicle" />
+                                        </div>
+
+                                        <div class="w-6-12">
+                                            <label class="text-gray-700 dark:text-gray-400">{{ __('passenger quantity') }}</label>
+
+                                            <input
+                                                class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                                placeholder="passenger_quantity" type="number"
+                                                wire:model="editContracts.passenger_quantity" />
+                                        </div>
+                                    </div>
+
+                                    <div class="flex space-x-4">
+
+                                        <div class="w-6-12">
+                                            <label class="text-gray-700 dark:text-gray-400">{{ __('total disposition') }}</label>
+                                            <select wire:model="editContracts.total_disposition"
                                                 class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
-                                                <option value="0">IDENTIFICACIÓN</option>
-                                                @foreach ($identifications as $identification)
-                                                    <option value="{{ $identification->id }}">
-                                                        {{ $identification->description_identification }}</option>
-                                                @endforeach
+                                                <option value="0">Selecciona si necesita Disposición Total
+                                                </option>
+                                                <option value="SI">SI</option>
+                                                <option value="NO">NO</option>
                                             </select>
                                         </div>
 
                                         <div class="w-6-12">
                                             <label
-                                                class="text-gray-700 dark:text-gray-400">identificationcard_representative_group</label>
+                                                class="text-gray-700 dark:text-gray-400">{{ __('contract signing date') }}</label>
 
                                             <input
                                                 class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="identificationcard_representative_group" type="number"
-                                                name="identificationcard_representative_group"
-                                                wire:model="editContracts.identificationcard_representative_group" />
+                                                placeholder="contract_signing_date" type="date"
+                                                wire:model="editContracts.contract_signing_date" />
                                         </div>
-
                                     </div>
 
                                     <div class="flex space-x-4">
 
                                         <div class="w-6-12">
-                                            <label
-                                                class="text-gray-700 dark:text-gray-400">group_representative_name</label>
-
-                                            <input
-                                                class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="group_representative_name" type="text"
-                                                name="group_representative_name"
-                                                wire:model="editContracts.group_representative_name" />
+                                            <label class="text-gray-700 dark:text-gray-400">{{ __('tipe pay') }}</label>
+                                            <select wire:model="editContracts.tipe_pay"
+                                                class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
+                                                <option value="0">Selecciona el tipo de pago</option>
+                                                @foreach ($payment_types as $payment_type)
+                                                    <option value="{{ $payment_type->id }}">
+                                                        {{ $payment_type->description_typePayment }}</option>
+                                                @endforeach
+                                            </select>
                                         </div>
 
                                         <div class="w-6-12">
-                                            <label
-                                                class="text-gray-700 dark:text-gray-400">dateofexpedition_representative_group</label>
+                                            <label class="text-gray-700 dark:text-gray-400">{{ __('contract value') }}</label>
 
                                             <input
                                                 class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="dateofexpedition_representative_group" type="text"
-                                                name="dateofexpedition_representative_group"
-                                                wire:model="editContracts.dateofexpedition_representative_group" />
+                                                placeholder="Valor contrato" type="number"
+                                                wire:model="editContracts.contract_value" />
                                         </div>
-
                                     </div>
-                                @endif
+
+                                </div>
+                                <!--fin edit-->
 
                             </div>
-                            <!--fin del paso 3 edit-->
 
-                            <br>
-                            <p class="text-sm text-gray-700 dark:text-gray-400">
-                                paso 4
-                            </p>
-                            <div class="border-ourple-50-s rounded-2xl p-4">
+                        </form>
+                    @endif
+                </div>
 
-                                <div class="flex space-x-4">
+                <div
+                    class="flex flex-col items-center justify-end px-6 py-3-1 -mt-3 space-y-4 sm:space-y-0 sm:space-x-6 sm:flex-row bg-gray-50 dark:bg-gray-800 border-t-fuchsia-800">
+                    <button
+                        class="w-full px-5 py-3 text-sm font-medium leading-5 transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg sm:w-auto sm:px-4 sm:py-2 active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
+                        wire:click="update" onclick="closeModalEdit()">
+                        {{ __('Update Contract') }}
+                    </button>
+                    <button
+                        class="w-full px-5 py-3 text-sm font-medium leading-5 text-gray-700 transition-colors duration-150 border border-gray-300 rounded-lg dark:text-gray-400 sm:px-4 sm:py-2 sm:w-auto active:bg-transparent hover:border-gray-500 focus:border-gray-500 active:text-gray-500 focus:outline-none focus:shadow-outline-gray"
+                        wire:click="clear" onclick="closeModalEdit()">
+                        {{ __('Cancel') }}
+                    </button>
+                </div>
 
-                                    <div class="w-full">
-                                        <label class="text-gray-700 dark:text-gray-400">route_trip_contract</label>
-
-                                        <textarea
-                                            class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                            name="" cols="1" rows="1" placeholder="ruta del contrato"
-                                            wire:model="editContracts.route_trip_contract">
-                                </textarea>
-                                    </div>
-
-                                </div>
-
-                                <div class="flex space-x-4">
-
-                                    <div class="w-6-12">
-                                        <label class="text-gray-700 dark:text-gray-400">trip_from</label>
-
-                                        <input
-                                            class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                            placeholder="viaje desde" type="text"
-                                            wire:model="editContracts.trip_from" />
-                                    </div>
-
-                                    <div class="w-6-12">
-
-                                        <label class="text-gray-700 dark:text-gray-400">trip_to</label>
-
-                                        <input
-                                            class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                            placeholder="viaje hasta" type="text"
-                                            wire:model="editContracts.trip_to" />
-
-                                    </div>
-
-                                </div>
-
-                                <div class="flex space-x-4">
-
-                                    <div class="w-1-3">
-                                        <label class="text-gray-700 dark:text-gray-400">place_of_origin</label>
-
-                                        <input
-                                            class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                            placeholder="lugar de inicio" type="text"
-                                            wire:model="editContracts.place_of_origin" />
-                                    </div>
-
-                                    <div class="w-1-3">
-                                        <label class="text-gray-700 dark:text-gray-400">return_place</label>
-
-                                        <input
-                                            class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                            placeholder="lugar de retorno" type="text"
-                                            wire:model="editContracts.return_place" />
-                                    </div>
-
-                                    <div class="w-1-3">
-                                        <label class="text-gray-700 dark:text-gray-400">destination_place</label>
-
-                                        <input
-                                            class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                            placeholder="lugar de destino" type="text"
-                                            wire:model="editContracts.destination_place" />
-                                    </div>
-                                </div>
-
-                            </div>
-                            <!--fin del paso 4 edit-->
-
-                            <!--paso fin edit-->
-                            <p class="text-sm text-gray-700 dark:text-gray-400">
-                                paso fin
-                            </p>
-                            <div class="border-ourple-50-s rounded-2xl p-4">
-
-                                <div class="flex space-x-4">
-
-                                    <div class="w-6-12">
-                                        <label class="text-gray-700 dark:text-gray-400">date_start_contract</label>
-
-                                        <input
-                                            class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                            placeholder="date_start_contract" type="date"
-                                            wire:model="editContracts.date_start_contract" />
-                                    </div>
-
-                                    <div class="w-6-12">
-                                        <label class="text-gray-700 dark:text-gray-400">contract_end_date</label>
-
-                                        <input
-                                            class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                            placeholder="fecha fin contrato" type="date"
-                                            wire:model="editContracts.contract_end_date" />
-                                    </div>
-                                </div>
-
-                                <div class="flex space-x-4">
-
-                                    <div class="w-6-12">
-                                        <label class="text-gray-700 dark:text-gray-400">quantity_vehicle</label>
-
-                                        <input
-                                            class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                            placeholder="quantity_vehicle" type="number"
-                                            wire:model="editContracts.quantity_vehicle" />
-                                    </div>
-
-                                    <div class="w-6-12">
-                                        <label class="text-gray-700 dark:text-gray-400">passenger_quantity</label>
-
-                                        <input
-                                            class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                            placeholder="passenger_quantity" type="number"
-                                            wire:model="editContracts.passenger_quantity" />
-                                    </div>
-                                </div>
-
-                                <div class="flex space-x-4">
-
-                                    <div class="w-6-12">
-                                        <label class="text-gray-700 dark:text-gray-400">total_disposition</label>
-                                        <select wire:model="editContracts.total_disposition"
-                                            class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
-                                            <option value="0">Selecciona si necesita Disposición Total</option>
-                                            <option value="SI">SI</option>
-                                            <option value="NO">NO</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="w-6-12">
-                                        <label class="text-gray-700 dark:text-gray-400">contract_signing_date</label>
-
-                                        <input
-                                            class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                            placeholder="contract_signing_date" type="date"
-                                            wire:model="editContracts.contract_signing_date" />
-                                    </div>
-                                </div>
-
-                                <div class="flex space-x-4">
-
-                                    <div class="w-6-12">
-                                        <label class="text-gray-700 dark:text-gray-400">tipe_pay</label>
-                                        <select wire:model="editContracts.tipe_pay"
-                                            class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
-                                            <option value="0">Selecciona el tipo de pago</option>
-                                            @foreach ($payment_types as $payment_type)
-                                                <option value="{{ $payment_type->id }}">
-                                                    {{ $payment_type->description_typePayment }}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-
-                                    <div class="w-6-12">
-                                        <label class="text-gray-700 dark:text-gray-400">contract_value</label>
-
-                                        <input
-                                            class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                            placeholder="Valor contrato" type="number"
-                                            wire:model="editContracts.contract_value" />
-                                    </div>
-                                </div>
-
-                            </div>
-                            <!--fin edit-->
-
-                        </div>
-
-                    </form>
-                @endif
             </div>
 
-            <div
-                class="flex flex-col items-center justify-end px-6 py-3-1 -mx-6 -mb-4 -mt-3 space-y-4 sm:space-y-0 sm:space-x-6 sm:flex-row bg-gray-50 dark:bg-gray-800 border-t-fuchsia-800">
-                <button
-                    class="w-full px-5 py-3 text-sm font-medium leading-5 transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg sm:w-auto sm:px-4 sm:py-2 active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
-                    wire:click="update" onclick="closeModalEdit()">
-                    Update Contract
-                </button>
-                <button
-                    class="w-full px-5 py-3 text-sm font-medium leading-5 text-gray-700 transition-colors duration-150 border border-gray-300 rounded-lg dark:text-gray-400 sm:px-4 sm:py-2 sm:w-auto active:bg-transparent hover:border-gray-500 focus:border-gray-500 active:text-gray-500 focus:outline-none focus:shadow-outline-gray"
-                    wire:click="clear" onclick="closeModalEdit()">
-                    Cancel
-                </button>
-            </div>
         </div>
     </div>
 
@@ -1599,27 +1545,98 @@
 
     {{-- end componentes de modal --}}
 
+
+
 </div>
 
 
 
 @section('scripts')
     <script>
-        const typed = new Typed('.typed', {
-            strings: ['...'],
-            // stringsElement: '#cadenas-texto', // ID del elemento que contiene cadenas de texto a mostrar.
-            typeSpeed: 500, // Velocidad en mlisegundos para poner una letra,
-            startDelay: 100, // Tiempo de retraso en iniciar la animacion. Aplica tambien cuando termina y vuelve a iniciar,
-            backSpeed: false, // Velocidad en milisegundos para borrrar una letra,
-            smartBackspace: true, // Eliminar solamente las palabras que sean nuevas en una cadena de texto.
-            shuffle: false, // Alterar el orden en el que escribe las palabras.
-            backDelay: 100, // Tiempo de espera despues de que termina de escribir una palabra.
-            loop: true, // Repetir el array de strings
-            loopCount: false, // Cantidad de veces a repetir el array.  false = infinite
-            showCursor: false, // Mostrar cursor palpitanto
-            cursorChar: '|', // Caracter para el cursor
-            contentType: 'html', // 'html' o 'null' para texto sin formato
-        });
+
+        function view(id) {
+            window.open('http://127.0.0.1:8000/pdfs/pdf-contracts/' + id, '_blank')
+        }
+
+        function passenger() {
+            swal.fire({
+                title: '<header class="flex justify-center border-b-fuchsia-800 border-b">' +
+                    '<p class="justify-start mb-2 text-lg font-semibold text-gray-700 dark:text-gray-300"><h1 class="text-black dark:text-white text-4xl1">Lista de Pasajeros</h1></p>' +
+                    '</header>',
+                // icon: 'info',
+                html:
+
+                    // '<div class="w-9-12 h-4-8 mt-6 px-6 py-4 bg-white rounded-t-lg dark:bg-gray-800 sm:rounded-lg sm:m-4">' +
+                    '<div class="mt-11 border-gray-50-s container px-4 py-3 bg-white rounded-lg shadow-md dark:bg-gray-800 overflow-auto h-9">' +
+                        
+                        '<div class="flex space-x-4 clonar">' +
+                            '<div class="w-6-12 ">' +
+                                '<label class=" text-gray-700 dark:text-gray-400">Documento' +
+                                '<input id="inputDRow1" class=" block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" placeholder="Documento pasajero" type="text" name="supplier_name" />' +
+                            '</div>' +
+                            '<div class="w-6-12 ">' +
+                                '<label class=" text-gray-700 dark:text-gray-400">Nombre completo' +
+                                '<input id="inputNRow1" class=" block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" placeholder="Nombre completo" type="text" name="supplier_name" />' +
+                            '</div>' +
+                            '<div class="flex items-center space-x-4 text-sm">' + 
+                                '<button id="add" onclick="add()" class="inline-flex items-center justify-center  bg-sky-700 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-sky-400 focus:outline-none focus:bg-sky-700 focus:ring focus:ring-red-200 active:bg-sky-700 readonly:opacity-25 transition">' +
+                                        '<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"> <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path> </svg>' +
+                                '</button>' +
+                            '</div>' +
+                        '</div>' +
+                        
+                        '<div id="newInput"></div>' +
+
+                        '<div class="flex items-center space-x-4 text-sm pruebapers">' + 
+                                '<button onclick="savePeople()" class="pruebapersb inline-flex items-center justify-center  bg-emerald-700 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-sky-400 focus:outline-none focus:bg-emerald-700 focus:ring focus:ring-red-200 active:bg-emerald-700 readonly:opacity-25 transition">' +
+                                    'Guardar' +
+                                '</button>' +
+                        '</div>' +
+
+                    '</div>',
+                // '</div>' ,
+                showConfirmButton: false
+            })
+        }
+
+        var i = 1;
+        var total = [];
+        total.push(i);
+        function add(){
+            i++;
+            total.push(i);
+            // alert(total);
+            $('#newInput').append('<div class="flex space-x-4" id="newRow'+i+'">' +
+                            '<div class="w-6-12 ">' +
+                                '<label class=" text-gray-700 dark:text-gray-400">Documento' +
+                                '<input id="inputDRow'+i+'" class=" block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" placeholder="Documento pasajero" type="text" name="supplier_name" />' +
+                            '</div>' +
+                            '<div class="w-6-12 ">' +
+                                '<label class=" text-gray-700 dark:text-gray-400">Nombre completo' +
+                                '<input id="inputNRow'+i+'" class=" block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" placeholder="Nombre completo" type="text" name="supplier_name" />' +
+                            '</div>' +
+                            '<div class="flex items-center space-x-4 text-sm">' + 
+                                '<button onclick="deletteRow('+i+')" class="inline-flex items-center justify-center  bg-red-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 active:bg-red-600 readonly:opacity-25 transition">' +
+                                        '<svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"> <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"></path> </svg>' + 
+                                '</button>' +
+                            '</div>' +
+                        '</div>')
+        }
+
+        function deletteRow(id){
+            $('#newRow'+id+'').remove();
+            total = total.filter(function(i) {return i !== id});
+            // alert(total);
+        }
+        var passengers = [];
+        function savePeople(){
+ 
+            for (let index = 0; index < total.length; index++) {
+                passengers.push({documento: document.getElementById('inputDRow'+total[index]+'').value, nombreC: document.getElementById('inputNRow'+total[index]+'').value});
+            }
+            // passengers.push({documento: document.getElementById('inputDRow2').value, nombreC: document.getElementById('inputNRow2').value});
+            // alert(passengers[2].documento + ' - ' + passengers[2].nombreC);
+        }
 
         // abriendo modal para editar
         Livewire.on('openModalEdit', () => {
@@ -1730,9 +1747,10 @@
             } else if (process == 2) {
 
                 main = '';
-                message = 'the information of the contract ' + contractnumber + ' type ' + contractType + ' has been satisfactorily updated';
+                message = 'the information of the contract ' + contractnumber + ' type ' + contractType +
+                    ' has been satisfactorily updated';
                 // se ha actualizado la información del contrato xxxx tipo xxx sactisfactoriamente
-                
+
                 swal.fire(main, message, 'success')
 
             } else if (process == 3) {
@@ -1805,7 +1823,7 @@
 
                 // fields validation
                 parent_fieldset.find(
-                    'input[type="text"], input[type="password"], textarea, select, input[type="number"], input[type="tel"],input[type="email"],input[type="date"]'
+                    // 'input[type="text"], input[type="password"], textarea, select, input[type="number"], input[type="tel"],input[type="email"],input[type="date"]'
                 ).each(
                     function() {
                         // $('div').hasClass('container')
@@ -1870,7 +1888,7 @@
                 var Finalize = true;
                 // fields validation
                 parent_fieldset.find(
-                    'input[type="text"], input[type="password"], textarea, select, input[type="number"], input[type="tel"],input[type="email"],input[type="date"]'
+                    // 'input[type="text"], input[type="password"], textarea, select, input[type="number"], input[type="tel"],input[type="email"],input[type="date"]'
                 ).each(function() {
                     if ($(this).hasClass('Inactive')) {
                         // console.log('no se bloquea');
@@ -2085,233 +2103,113 @@
             });
         }
 
+        var camps = [
+            'type_contract',
+            'contract_with',
+            'identification',
+            'labelContractDocument',
+            'contract_document',
+            'labelContractingName',
+            'contracting_name',
+            'labelExpeditionIdentificationcard',
+            'expedition_identificationcard',
+            'labelContractingDirection',
+            'contracting_direction',
+            'labelContractingPhone',
+            'contracting_phone',
+            'labelSchoolName',
+            'school_name',
+            'labelAddressSchool',
+            'address_school',
+            'labelVehicle',
+            'vehicle',
+            'labelIdentificationLegalRepresentative',
+            'identification_legal_representative',
+            'labelIdentificationcardRepresentLegal',
+            'identificationcard_represent_legal',
+            'labelLegalRepresentative',
+            'legal_representative',
+            'labelLegalRepresentativeExpeditionIdentificationcard',
+            'legal_representative_expedition_identificationcard',
+            'labelIdentificationRepresentativeGroup',
+            'identification_representative_group',
+            'labelIdentificationcardRepresentativeGroup',
+            'identificationcard_representative_group',
+            'labelGroupRepresentativeName',
+            'group_representative_name',
+            'labelDateofexpeditionRepresentativeGroup',
+            'dateofexpedition_representative_group',
+            'labelRouteTrip',
+            'route_trip_contract',
+            'labelQuantityVehicle',
+            'quantity_vehicle',
+            'labelPassengerQuantity',
+            'passenger_quantity',
+            'labelTotalDisposition',
+            'total_disposition',
+            'labelSigningDate',
+            'contract_signing_date',
+            'labelTipePay',
+            'tipe_pay',
+            'labelContractValue',
+            'contract_value',
+            'fieldset1Buttons',
+            'previous2',
+            'previous3',
+            'previous4',
+            'previous5',
+            'labelIdentification'
+        ];
+
+        clave = [];
         function typeContract() {
 
             var contractType = document.getElementById('type_contract').value;
             // console.log(contractType);
 
             switch (contractType) {
-                case '0':
-                    // removes
-                    viewhideinputs('divIdentification', 'Inactive', 'Active');
-                    viewhideinputs('divContractDocument', 'Inactive', 'Active');
-                    viewhideinputs('divContractingName', 'Inactive', 'Active');
-                    viewhideinputs('divExpeditionIdentificationcard', 'Inactive', 'Active');
-                    viewhideinputs('divContractingDirection', 'Inactive', 'Active');
-                    viewhideinputs('divContractingPhone', 'Inactive', 'Active');
-                    viewhideinputs('fieldset1Buttons', 'Inactive', 'Active');
-
-                    // adds
-
-                    break;
                 case '1':
-                    // removes
-                    viewhideinputs('labelCooperationContract', 'Inactive', 'Active');
-                    viewhideinputs('cooperation_contract', 'Inactive', 'Active');
-                    viewhideinputs('labelIdentificationRepresentativeGroup', 'Inactive', 'Active');
-                    viewhideinputs('identification_representative_group', 'Inactive', 'Active');
-                    viewhideinputs('labelIdentificationcardRepresentativeGroup', 'Inactive', 'Active');
-                    viewhideinputs('identificationcard_representative_group', 'Inactive', 'Active');
-                    viewhideinputs('labelGroupRepresentativeName', 'Inactive', 'Active');
-                    viewhideinputs('group_representative_name', 'Inactive', 'Active');
-                    viewhideinputs('labelDateofexpeditionRepresentativeGroup', 'Inactive', 'Active');
-                    viewhideinputs('dateofexpedition_representative_group', 'Inactive', 'Active');
-                    viewhideinputs('labelVehicle', 'Inactive', 'Active');
-                    viewhideinputs('vehicle', 'Inactive', 'Active');
-                    viewhideinputs('nextstep', 'Inactive', 'Active');
+                    clave = [];
+                    clave.push(17,18,27,28,29,30,31,32,33,34);
+                    
+                    changeInput ();
 
-                    // adds
-                    viewhideinputs('divIdentification', 'Active', 'Inactive');
-                    viewhideinputs('divContractDocument', 'Active', 'Inactive');
-                    viewhideinputs('divContractingName', 'Active', 'Inactive');
-                    viewhideinputs('divExpeditionIdentificationcard', 'Active', 'Inactive');
-                    viewhideinputs('divContractingDirection', 'Active', 'Inactive');
-                    viewhideinputs('divContractingPhone', 'Active', 'Inactive');
-                    viewhideinputs('fieldset1Buttons', 'Active', 'Inactive');
-                    //
-                    viewhideinputs('labelSchoolName', 'Active', 'Inactive');
-                    viewhideinputs('school_name', 'Active', 'Inactive');
-                    viewhideinputs('labelAddressSchool', 'Active', 'Inactive');
-                    viewhideinputs('address_school', 'Active', 'Inactive');
-                    viewhideinputs('labelSecurePolicy', 'Active', 'Inactive');
-                    viewhideinputs('secure_policy', 'Active', 'Inactive');
-                    viewhideinputs('labelIdentificationcardRepresentLegal', 'Active', 'Inactive');
-                    viewhideinputs('identificationcard_represent_legal', 'Active', 'Inactive');
-                    viewhideinputs('labelIdentificationLegalRepresentative', 'Active', 'Inactive');
-                    viewhideinputs('identification_legal_representative', 'Active', 'Inactive');
-                    viewhideinputs('labelLegalRepresentative', 'Active', 'Inactive');
-                    viewhideinputs('legal_representative', 'Active', 'Inactive');
-                    viewhideinputs('labelLegalRepresentativeExpeditionIdentificationcard', 'Active', 'Inactive');
-                    viewhideinputs('legal_representative_expedition_identificationcard', 'Active', 'Inactive');
                     break;
 
                 case '2':
-                    // removes
-                    viewhideinputs('labelSchoolName', 'Inactive', 'Active');
-                    viewhideinputs('school_name', 'Inactive', 'Active');
-                    viewhideinputs('labelAddressSchool', 'Inactive', 'Active');
-                    viewhideinputs('address_school', 'Inactive', 'Active');
-                    viewhideinputs('labelSecurePolicy', 'Inactive', 'Active');
-                    viewhideinputs('secure_policy', 'Inactive', 'Active');
-                    viewhideinputs('labelIdentificationRepresentativeGroup', 'Inactive', 'Active');
-                    viewhideinputs('identification_representative_group', 'Inactive', 'Active');
-                    viewhideinputs('labelIdentificationcardRepresentativeGroup', 'Inactive', 'Active');
-                    viewhideinputs('identificationcard_representative_group', 'Inactive', 'Active');
-                    viewhideinputs('labelGroupRepresentativeName', 'Inactive', 'Active');
-                    viewhideinputs('group_representative_name', 'Inactive', 'Active');
-                    viewhideinputs('labelDateofexpeditionRepresentativeGroup', 'Inactive', 'Active');
-                    viewhideinputs('dateofexpedition_representative_group', 'Inactive', 'Active');
-                    viewhideinputs('labelVehicle', 'Inactive', 'Active');
-                    viewhideinputs('vehicle', 'Inactive', 'Active');
-                    viewhideinputs('nextstep', 'Inactive', 'Active');
+                    
+                    clave = [];
+                    clave.push(1,13,14,15,16,17,18,27,28,29,30,31,32,33,34);
+                    changeInput ();
 
-                    // adds
-                    viewhideinputs('divIdentification', 'Active', 'Inactive');
-                    viewhideinputs('divContractDocument', 'Active', 'Inactive');
-                    viewhideinputs('divContractingName', 'Active', 'Inactive');
-                    viewhideinputs('divExpeditionIdentificationcard', 'Active', 'Inactive');
-                    viewhideinputs('divContractingDirection', 'Active', 'Inactive');
-                    viewhideinputs('divContractingPhone', 'Active', 'Inactive');
-                    viewhideinputs('fieldset1Buttons', 'Active', 'Inactive');
-                    //
-                    viewhideinputs('labelCooperationContract', 'Active', 'Inactive');
-                    viewhideinputs('cooperation_contract', 'Active', 'Inactive');
-                    viewhideinputs('labelIdentificationcardRepresentLegal', 'Active', 'Inactive');
-                    viewhideinputs('identificationcard_represent_legal', 'Active', 'Inactive');
-                    viewhideinputs('labelIdentificationLegalRepresentative', 'Active', 'Inactive');
-                    viewhideinputs('identification_legal_representative', 'Active', 'Inactive');
-                    viewhideinputs('labelLegalRepresentative', 'Active', 'Inactive');
-                    viewhideinputs('legal_representative', 'Active', 'Inactive');
-                    viewhideinputs('labelLegalRepresentativeExpeditionIdentificationcard', 'Active', 'Inactive');
-                    viewhideinputs('legal_representative_expedition_identificationcard', 'Active', 'Inactive')
                     break;
 
                 case '3':
-                    // removes
-                    viewhideinputs('labelSchoolName', 'Inactive', 'Active');
-                    viewhideinputs('school_name', 'Inactive', 'Active');
-                    viewhideinputs('labelAddressSchool', 'Inactive', 'Active');
-                    viewhideinputs('address_school', 'Inactive', 'Active');
-                    viewhideinputs('labelSecurePolicy', 'Inactive', 'Active');
-                    viewhideinputs('secure_policy', 'Inactive', 'Active');
-                    viewhideinputs('labelIdentificationRepresentativeGroup', 'Inactive', 'Active');
-                    viewhideinputs('identification_representative_group', 'Inactive', 'Active');
-                    viewhideinputs('labelIdentificationcardRepresentativeGroup', 'Inactive', 'Active');
-                    viewhideinputs('identificationcard_representative_group', 'Inactive', 'Active');
-                    viewhideinputs('labelGroupRepresentativeName', 'Inactive', 'Active');
-                    viewhideinputs('group_representative_name', 'Inactive', 'Active');
-                    viewhideinputs('labelDateofexpeditionRepresentativeGroup', 'Inactive', 'Active');
-                    viewhideinputs('dateofexpedition_representative_group', 'Inactive', 'Active');
-                    viewhideinputs('labelVehicle', 'Inactive', 'Active');
-                    viewhideinputs('vehicle', 'Inactive', 'Active');
-                    viewhideinputs('nextstep', 'Inactive', 'Active');
+                    
+                    clave = [];
+                    clave.push(1,13,14,15,16,17,18,27,28,29,30,31,32,33,34);
+                    changeInput ();
 
-                    // adds
-                    viewhideinputs('divIdentification', 'Active', 'Inactive');
-                    viewhideinputs('divContractDocument', 'Active', 'Inactive');
-                    viewhideinputs('divContractingName', 'Active', 'Inactive');
-                    viewhideinputs('divExpeditionIdentificationcard', 'Active', 'Inactive');
-                    viewhideinputs('divContractingDirection', 'Active', 'Inactive');
-                    viewhideinputs('divContractingPhone', 'Active', 'Inactive');
-                    viewhideinputs('fieldset1Buttons', 'Active', 'Inactive');
-                    //
-                    viewhideinputs('labelCooperationContract', 'Active', 'Inactive');
-                    viewhideinputs('cooperation_contract', 'Active', 'Inactive');
-                    viewhideinputs('labelIdentificationcardRepresentLegal', 'Active', 'Inactive');
-                    viewhideinputs('identificationcard_represent_legal', 'Active', 'Inactive');
-                    viewhideinputs('labelIdentificationLegalRepresentative', 'Active', 'Inactive');
-                    viewhideinputs('identification_legal_representative', 'Active', 'Inactive');
-                    viewhideinputs('labelLegalRepresentative', 'Active', 'Inactive');
-                    viewhideinputs('legal_representative', 'Active', 'Inactive');
-                    viewhideinputs('labelLegalRepresentativeExpeditionIdentificationcard', 'Active', 'Inactive');
-                    viewhideinputs('legal_representative_expedition_identificationcard', 'Active', 'Inactive')
                     break;
 
                 case '4':
-                    // removes
-                    viewhideinputs('labelCooperationContract', 'Inactive', 'Active');
-                    viewhideinputs('cooperation_contract', 'Inactive', 'Active');
-                    viewhideinputs('labelSchoolName', 'Inactive', 'Active');
-                    viewhideinputs('school_name', 'Inactive', 'Active');
-                    viewhideinputs('labelAddressSchool', 'Inactive', 'Active');
-                    viewhideinputs('address_school', 'Inactive', 'Active');
-                    viewhideinputs('labelSecurePolicy', 'Inactive', 'Active');
-                    viewhideinputs('secure_policy', 'Inactive', 'Active');
-                    viewhideinputs('labelIdentificationcardRepresentLegal', 'Inactive', 'Active');
-                    viewhideinputs('identificationcard_represent_legal', 'Inactive', 'Active');
-                    viewhideinputs('labelIdentificationLegalRepresentative', 'Inactive', 'Active');
-                    viewhideinputs('identification_legal_representative', 'Inactive', 'Active');
-                    viewhideinputs('labelLegalRepresentative', 'Inactive', 'Active');
-                    viewhideinputs('legal_representative', 'Inactive', 'Active');
-                    viewhideinputs('labelLegalRepresentativeExpeditionIdentificationcard', 'Inactive', 'Active');
-                    viewhideinputs('legal_representative_expedition_identificationcard', 'Inactive', 'Active')
-
-                    // adds
-                    viewhideinputs('divIdentification', 'Active', 'Inactive');
-                    viewhideinputs('divContractDocument', 'Active', 'Inactive');
-                    viewhideinputs('divContractingName', 'Active', 'Inactive');
-                    viewhideinputs('divExpeditionIdentificationcard', 'Active', 'Inactive');
-                    viewhideinputs('divContractingDirection', 'Active', 'Inactive');
-                    viewhideinputs('divContractingPhone', 'Active', 'Inactive');
-
-                    viewhideinputs('fieldset1Buttons', 'Active', 'Inactive');
-                    viewhideinputs('labelVehicle', 'Active', 'Inactive');
-                    viewhideinputs('vehicle', 'Active', 'Inactive');
-                    viewhideinputs('labelIdentificationRepresentativeGroup', 'Active', 'Inactive');
-                    viewhideinputs('identification_representative_group', 'Active', 'Inactive');
-                    viewhideinputs('labelIdentificationcardRepresentativeGroup', 'Active', 'Inactive');
-                    viewhideinputs('identificationcard_representative_group', 'Active', 'Inactive');
-                    viewhideinputs('labelGroupRepresentativeName', 'Active', 'Inactive');
-                    viewhideinputs('group_representative_name', 'Active', 'Inactive');
-                    viewhideinputs('labelDateofexpeditionRepresentativeGroup', 'Active', 'Inactive');
-                    viewhideinputs('dateofexpedition_representative_group', 'Active', 'Inactive');
-                    viewhideinputs('nextstep', 'Active', 'Inactive');
-                    //
+                    clave = [];
+                    clave.push(1,13,14,15,16,19,20,21,22,23,24,25,26);
+                    changeInput ();
                     break;
 
 
                 case '5':
-                    // removes
-                    viewhideinputs('labelSchoolName', 'Inactive', 'Active');
-                    viewhideinputs('school_name', 'Inactive', 'Active');
-                    viewhideinputs('labelAddressSchool', 'Inactive', 'Active');
-                    viewhideinputs('address_school', 'Inactive', 'Active');
-                    viewhideinputs('labelSecurePolicy', 'Inactive', 'Active');
-                    viewhideinputs('secure_policy', 'Inactive', 'Active');
-                    viewhideinputs('labelIdentificationRepresentativeGroup', 'Inactive', 'Active');
-                    viewhideinputs('identification_representative_group', 'Inactive', 'Active');
-                    viewhideinputs('labelIdentificationcardRepresentativeGroup', 'Inactive', 'Active');
-                    viewhideinputs('identificationcard_representative_group', 'Inactive', 'Active');
-                    viewhideinputs('labelGroupRepresentativeName', 'Inactive', 'Active');
-                    viewhideinputs('group_representative_name', 'Inactive', 'Active');
-                    viewhideinputs('labelDateofexpeditionRepresentativeGroup', 'Inactive', 'Active');
-                    viewhideinputs('dateofexpedition_representative_group', 'Inactive', 'Active');
-                    viewhideinputs('labelVehicle', 'Inactive', 'Active');
-                    viewhideinputs('vehicle', 'Inactive', 'Active');
-                    viewhideinputs('nextstep', 'Inactive', 'Active');
+                    clave = [];
+                    clave.push(1,13,14,15,16,17,18,27,28,29,30,31,32,33,34);
+                    changeInput ();
 
-                    // adds
-                    viewhideinputs('divIdentification', 'Active', 'Inactive');
-                    viewhideinputs('divContractDocument', 'Active', 'Inactive');
-                    viewhideinputs('divContractingName', 'Active', 'Inactive');
-                    viewhideinputs('divExpeditionIdentificationcard', 'Active', 'Inactive');
-                    viewhideinputs('divContractingDirection', 'Active', 'Inactive');
-                    viewhideinputs('divContractingPhone', 'Active', 'Inactive');
-                    viewhideinputs('fieldset1Buttons', 'Active', 'Inactive');
-                    //
-                    viewhideinputs('labelCooperationContract', 'Active', 'Inactive');
-                    viewhideinputs('cooperation_contract', 'Active', 'Inactive');
-                    viewhideinputs('labelIdentificationcardRepresentLegal', 'Active', 'Inactive');
-                    viewhideinputs('identificationcard_represent_legal', 'Active', 'Inactive');
-                    viewhideinputs('labelIdentificationLegalRepresentative', 'Active', 'Inactive');
-                    viewhideinputs('identification_legal_representative', 'Active', 'Inactive');
-                    viewhideinputs('labelLegalRepresentative', 'Active', 'Inactive');
-                    viewhideinputs('legal_representative', 'Active', 'Inactive');
-                    viewhideinputs('labelLegalRepresentativeExpeditionIdentificationcard', 'Active', 'Inactive');
-                    viewhideinputs('legal_representative_expedition_identificationcard', 'Active', 'Inactive')
                     break;
 
                 default:
+                clave = [];
+                    clave.push(1,2,3,4,5,6,7,8,9,10,11,12,49,54);
+                    changeInput ();
                     break;
             }
 
@@ -2323,11 +2221,44 @@
             document.getElementById(id).classList.remove(stirring);
             document.getElementById(id).classList.add(adhere);
         }
-
-        function prueba() {
-            console.log('si existe');
-        }
-
         //fin scritp de formulario paso a paso
+
+        function changeInput (){
+            let change = false;
+            prueba = [];
+
+            // console.log(camps[clave[0]] + '-' + clave + '-' + change);
+            for (let i = 0; i < camps.length; i++) {
+
+                let j = 0;
+                while (j <= clave.length) {
+
+                    if (camps[i] == camps[clave[j]]) {
+                        j = clave.length;
+                        change = true;
+                    } else {
+                        change = false;
+                    }
+
+                    j++;
+                }
+                if (camps[i] == 'change') {
+                    // console.log('cambiar');
+                } else {
+                    // console.log(camps[i]);
+                    if (change == true) {
+                        viewhideinputs(camps[i], 'Inactive', 'Active');
+                    } else {
+                        if (camps[i] == 'previous2' || camps[i] == 'previous3' || camps[i] == 'previous4' || camps[i] == 'previous5') {
+                            document.getElementById(camps[i]).classList.remove('Inactive');
+                        } else {
+                            viewhideinputs(camps[i], 'Active', 'Inactive'); 
+                        }
+                        
+                    }
+                }
+
+            }
+        }
     </script>
 @endsection

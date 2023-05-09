@@ -23,7 +23,8 @@ class ManagePermissions extends Component
     public $contract, $permit_start_date, $permit_end_date, $permit_number, $permit_code, $typeContract;
     public $driving = [];
     public $cars = [];
-    public $editCars = [], $editDrives = [],$firstCars, $firstDrives, $editContratype, $editContrat;
+    public $editCars = [], $editDrives = [], $firstCars, $firstDrives, $editContratype, $editContrat;
+
     public $contractSelects = null, $carsSelect = null, $editPermit = null, $driveSelect = null;
 
     protected $listeners = ['limitOfCars', 'destroy', 'edit'];
@@ -110,176 +111,168 @@ class ManagePermissions extends Component
         $this->clear();
     }
 
-    public function prueba(){
-        dd($this->editCars,$this->firstCars,$this->editDrives,$this->firstDrives);
-    }
+    // public function prueba()
+    // {
+    //     dd($this->editCars, $this->firstCars, $this->editDrives, $this->firstDrives);
+    // }
 
-        // actualizar un permiso
-        public function update()
-        {
+    // actualizar un permiso
+    public function update()
+    {
 
-            if ($this->editDrives == 0 || $this->editDrives == null) {
+        if ($this->editDrives == 0 || $this->editDrives == null) {
 
-                DB::table('driver_permit')->where('permit_id', '=', $this->editPermit->id)->delete();
+            DB::table('driver_permit')->where('permit_id', '=', $this->editPermit->id)->delete();
 
-                // dd('eliminar todo');
-          
-            }elseif ($this->firstDrives == count($this->editDrives)) {
+            // dd('eliminar todo');
 
-                
-                $existsDrives = DB::table('driver_permit')->where('permit_id', $this->editPermit->id)->get();
-                $accountant = 0;
+        } elseif ($this->firstDrives == count($this->editDrives)) {
+
+
+            $existsDrives = DB::table('driver_permit')->where('permit_id', $this->editPermit->id)->get();
+            $accountant = 0;
+
+            foreach ($existsDrives as $key) {
+
+
+                // if ($exist == null) {
+                DB::table('driver_permit')->where('id', $key->id)->update(['driver_id' => $this->editDrives[$accountant]]);
+                // dd('si',$exist);
+                // }
+                $accountant++;
+            }
+        } else if ($this->firstDrives > count($this->editDrives)) {
+
+            $resta = $this->firstDrives - count($this->editDrives);
+            $accountant = 0;
+
+            DB::table('driver_permit')->where('permit_id', '=', $this->editPermit->id)->limit($resta)->delete();
+
+            $existsDrives = DB::table('driver_permit')->where('permit_id', $this->editPermit->id)->get();
+
+            if ($existsDrives != null) {
 
                 foreach ($existsDrives as $key) {
-                    
 
-                    // if ($exist == null) {
-                        DB::table('driver_permit')->where('id', $key->id)->update(['driver_id' => $this->editDrives[$accountant]]);
-                        // dd('si',$exist);
-                    // }
+                    DB::table('driver_permit')->where('id', $key->id)->update(['driver_id' => $this->editDrives[$accountant]]);
+
                     $accountant++;
-                    
-                }  
-                
-            }else if ($this->firstDrives > count($this->editDrives)){
-
-                    $resta = $this->firstDrives - count($this->editDrives);
-                    $accountant = 0;
-
-                    DB::table('driver_permit')->where('permit_id', '=', $this->editPermit->id)->limit($resta)->delete();
-
-                    $existsDrives = DB::table('driver_permit')->where('permit_id', $this->editPermit->id)->get();
-
-                    if ($existsDrives != null) {
-
-                        foreach ($existsDrives as $key) {
-        
-                                DB::table('driver_permit')->where('id', $key->id)->update(['driver_id' => $this->editDrives[$accountant]]);
-
-                                $accountant++;
-                                
-                        }
-
-                    }
-
-                    // dd('mayor');
-            
-            }elseif ($this->firstDrives < count($this->editDrives)) {
-
-                $resta = count($this->editDrives) - $this->firstDrives;
-                $existsDrives = DB::table('driver_permit')->where('permit_id', $this->editPermit->id)->get();
-                $accountant = 0;
-                // dd($this->editCars);
-
-                if ($existsDrives != null) {
-                    foreach ($existsDrives as $key) {
-                    
-                        DB::table('driver_permit')->where('id', $key->id)->update(['driver_id' => $this->editDrives[$accountant]]);
-                        $this->editDrives = Arr::except($this->editDrives, [$accountant]);
-                        
-                        $accountant++;
-                    }
                 }
-
-                foreach ($this->editDrives as $key) {
-
-                    DB::table('driver_permit')->insert([
-                        'permit_id' => $this->editPermit->id,
-                        'driver_id' => $this->editDrives[$accountant],
-                        ]);
-
-                        $accountant++;
-                }
-
-                // dd($this->editCars, $con, $resta);                    
-                // dd('menor');
             }
 
-            if ($this->editCars == 0 || $this->editCars == null) {
+            // dd('mayor');
 
-                DB::table('contract_vehicle_permit')->where('permit_id', '=', $this->editPermit->id)->delete();
+        } elseif ($this->firstDrives < count($this->editDrives)) {
 
-                // dd('eliminar todo');
-          
-            }elseif ($this->firstCars == count($this->editCars)) {
+            $resta = count($this->editDrives) - $this->firstDrives;
+            $existsDrives = DB::table('driver_permit')->where('permit_id', $this->editPermit->id)->get();
+            $accountant = 0;
+            // dd($this->editCars);
 
-                
-                $existsCars = DB::table('contract_vehicle_permit')->where('permit_id', $this->editPermit->id)->get();
-                $accountants = 0;
+            if ($existsDrives != null) {
+                foreach ($existsDrives as $key) {
+
+                    DB::table('driver_permit')->where('id', $key->id)->update(['driver_id' => $this->editDrives[$accountant]]);
+                    $this->editDrives = Arr::except($this->editDrives, [$accountant]);
+
+                    $accountant++;
+                }
+            }
+
+            foreach ($this->editDrives as $key) {
+
+                DB::table('driver_permit')->insert([
+                    'permit_id' => $this->editPermit->id,
+                    'driver_id' => $this->editDrives[$accountant],
+                ]);
+
+                $accountant++;
+            }
+
+            // dd($this->editCars, $con, $resta);                    
+            // dd('menor');
+        }
+
+        if ($this->editCars == 0 || $this->editCars == null) {
+
+            DB::table('contract_vehicle_permit')->where('permit_id', '=', $this->editPermit->id)->delete();
+
+            // dd('eliminar todo');
+
+        } elseif ($this->firstCars == count($this->editCars)) {
+
+
+            $existsCars = DB::table('contract_vehicle_permit')->where('permit_id', $this->editPermit->id)->get();
+            $accountants = 0;
+
+            foreach ($existsCars as $key) {
+
+
+                // if ($exist == null) {
+                DB::table('contract_vehicle_permit')->where('id', $key->id)->update(['vehicle_id' => $this->editCars[$accountants]]);
+                // dd('si',$exist);
+                // }
+                $accountants++;
+            }
+        } else if ($this->firstCars > count($this->editCars)) {
+
+            $resta = $this->firstCars - count($this->editCars);
+            $accountants = 0;
+
+            DB::table('contract_vehicle_permit')->where('permit_id', '=', $this->editPermit->id)->limit($resta)->delete();
+
+            $existsCars = DB::table('contract_vehicle_permit')->where('permit_id', $this->editPermit->id)->get();
+
+            if ($existsCars != null) {
 
                 foreach ($existsCars as $key) {
-                    
 
-                    // if ($exist == null) {
-                        DB::table('contract_vehicle_permit')->where('id', $key->id)->update(['vehicle_id' => $this->editCars[$accountants]]);
-                        // dd('si',$exist);
-                    // }
+                    DB::table('contract_vehicle_permit')->where('id', $key->id)->update(['vehicle_id' => $this->editCars[$accountants]]);
+
                     $accountants++;
-                    
-                }  
-                
-            }else if ($this->firstCars > count($this->editCars)){
-
-                    $resta = $this->firstCars - count($this->editCars);
-                    $accountants = 0;
-
-                    DB::table('contract_vehicle_permit')->where('permit_id', '=', $this->editPermit->id)->limit($resta)->delete();
-
-                    $existsCars = DB::table('contract_vehicle_permit')->where('permit_id', $this->editPermit->id)->get();
-
-                    if ($existsCars != null) {
-
-                        foreach ($existsCars as $key) {
-        
-                                DB::table('contract_vehicle_permit')->where('id', $key->id)->update(['vehicle_id' => $this->editCars[$accountants]]);
-
-                                $accountants++;
-                                
-                        }
-
-                    }
-                    // dd('mayor');
-            
-            }elseif ($this->firstCars < count($this->editCars)) {
-
-                $resta = count($this->editCars) - $this->firstCars;
-                $existsCars = DB::table('contract_vehicle_permit')->where('permit_id', $this->editPermit->id)->get();
-                $accountants = 0;
-                // dd($this->editCars);
-
-                if ($existsCars != null) {
-                    foreach ($existsCars as $key) {
-                    
-                        DB::table('contract_vehicle_permit')->where('id', $key->id)->update(['vehicle_id' => $this->editCars[$accountants]]);
-                        $this->editCars = Arr::except($this->editCars, [$accountants]);
-                        
-                        $accountants++;
-                    }
                 }
-
-                foreach ($this->editCars as $key) {
-
-                    DB::table('contract_vehicle_permit')->insert([
-                        'permit_id' => $this->editPermit->id,
-                        'contract_id' => $this->editPermit->contract,
-                        'vehicle_id' => $this->editCars[$accountants],
-                        ]);
-
-                        $accountants++;
-                }
-
-                // dd($this->editCars, $con, $resta);                    
-                // dd('menor');
             }
-            
-    
-            $this->editPermit->save();
-    
-            $this->emit('crud', ['contractnumber' => $this->editContrat], ['process' => 2], ['contractType' => $this->editContratype], ['id' => 0], ['permit_number' =>  $this->editPermit->permit_number]);
-    
-            $this->clear();
+            // dd('mayor');
 
+        } elseif ($this->firstCars < count($this->editCars)) {
+
+            $resta = count($this->editCars) - $this->firstCars;
+            $existsCars = DB::table('contract_vehicle_permit')->where('permit_id', $this->editPermit->id)->get();
+            $accountants = 0;
+            // dd($this->editCars);
+
+            if ($existsCars != null) {
+                foreach ($existsCars as $key) {
+
+                    DB::table('contract_vehicle_permit')->where('id', $key->id)->update(['vehicle_id' => $this->editCars[$accountants]]);
+                    $this->editCars = Arr::except($this->editCars, [$accountants]);
+
+                    $accountants++;
+                }
+            }
+
+            foreach ($this->editCars as $key) {
+
+                DB::table('contract_vehicle_permit')->insert([
+                    'permit_id' => $this->editPermit->id,
+                    'contract_id' => $this->editPermit->contract,
+                    'vehicle_id' => $this->editCars[$accountants],
+                ]);
+
+                $accountants++;
+            }
+
+            // dd($this->editCars, $con, $resta);                    
+            // dd('menor');
         }
+
+
+        $this->editPermit->save();
+
+        $this->emit('crud', ['contractnumber' => $this->editContrat], ['process' => 2], ['contractType' => $this->editContratype], ['id' => 0], ['permit_number' =>  $this->editPermit->permit_number]);
+
+        $this->clear();
+    }
 
     public function destroy($id)
     {
@@ -307,35 +300,37 @@ class ManagePermissions extends Component
         $this->editPermit = $permit;
 
         $this->carsSelect = vehicle::join('contract_vehicle_permit', 'contract_vehicle_permit.vehicle_id', '=', 'vehicles.id')
-        ->select('contract_vehicle_permit.id', 'vehicles.id','plate_vehicle','side_vehicle','secure_end_date','technomechanical_end_date')
-        ->where('contract_vehicle_permit.permit_id', $this->editPermit->id)->get();
+            ->select('contract_vehicle_permit.id', 'vehicles.id', 'plate_vehicle', 'side_vehicle', 'secure_end_date', 'technomechanical_end_date')
+            ->where('contract_vehicle_permit.permit_id', $this->editPermit->id)->get();
 
         $contadorCar = 0;
         foreach ($this->carsSelect as $key) {
-            $this->editCars = Arr::add($this->editCars, $contadorCar , $key->id);
+            $this->editCars = Arr::add($this->editCars, $contadorCar, $key->id);
             $contadorCar++;
         }
 
         $this->firstCars = count($this->editCars);
 
         $this->driveSelect = driver::join('users', 'drivers.user_id', '=', 'users.id')
-        ->join('driver_permit', 'driver_permit.driver_id', '=', 'drivers.id')
-        ->select('drivers.id', 'identificationcard', DB::raw('CONCAT(users.firstname, " ", users.secondname, " ", users.lastname, " ", users.motherslastname) As nameFull'))
-        ->where('driver_permit.permit_id', $this->editPermit->id)->get();
+            ->join('driver_permit', 'driver_permit.driver_id', '=', 'drivers.id')
+            ->select('drivers.id', 'identificationcard', DB::raw('CONCAT(users.firstname, " ", users.secondname, " ", users.lastname, " ", users.motherslastname) As nameFull'))
+            ->where('driver_permit.permit_id', $this->editPermit->id)->get();
 
         $contadordrive = 0;
         foreach ($this->driveSelect as $key) {
-            $this->editDrives = Arr::add($this->editDrives, $contadordrive , $key->id);
+            $this->editDrives = Arr::add($this->editDrives, $contadordrive, $key->id);
             $contadordrive++;
         }
 
         $this->firstDrives = count($this->editDrives);
 
-        $this->editContratype = contract::join('contract_types', 'contract_types.id', '=', 'contracts.type_contract')
-        ->where('contracts.id', $this->editPermit->contract)->value('description_typeContract');
+        // $this->editContratype = contract::join('contract_types', 'contract_types.id', '=', 'contracts.type_contract')
+        //     ->where('contracts.id', $this->editPermit->contract)->value('description_typeContract');
+
+        $this->editContratype = DB::table('contracts')->where('contracts.id', $this->editPermit->contract)->value('type_contract');
 
         $this->editContrat = DB::table('contracts')->where('id', $this->editPermit->contract)->value('contract_number');
-        
+
         $this->emit('openModalEdit');
     }
 

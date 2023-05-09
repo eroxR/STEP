@@ -33,23 +33,23 @@ return new class extends Migration
 			$table->string('phone_cellular')->nullable();//telefono_celular
 			$table->unsignedBigInteger('eps')->nullable();//eps
 			$table->enum('eps_status', ['0', '1', '2'])->nullable();//estado_eps['Desactualizado','Actualizado','Pendiente']
-			$table->timestamp('date_eps')->nullable();//fecha_eps
+			$table->date('date_eps')->nullable();//fecha_eps
 			$table->unsignedBigInteger('blood_type')->nullable();//tipo_sangre
 			$table->unsignedBigInteger('pension')->nullable();//pension
 			$table->enum('pension_status', ['0', '1', '2'])->nullable();//estado_pension['Desactualizado','Actualizado','Pendiente']
-			$table->timestamp('date_pension')->nullable();//fecha_pension
+			$table->date('date_pension')->nullable();//fecha_pension
 			$table->unsignedBigInteger('layoffs')->nullable();//cesantias
 			$table->enum('status_layoffs', ['0', '1', '2'])->nullable();//estado_cesantias['Desactualizado','Actualizado','Pendiente']
 			$table->date('date_layoffs')->nullable();//fecha_cesantias
 			$table->unsignedBigInteger('arl')->nullable();//arl
 			$table->enum('arl_status', ['0', '1', '2'])->nullable();//estado_arl['Desactualizado','Actualizado','Pendiente']
-			$table->timestamp('arl_date')->nullable();//fecha_arl
+			$table->date('arl_date')->nullable();//fecha_arl
 			$table->unsignedBigInteger('compensationbox')->nullable();//caja_compensacion
 			$table->enum('compensationbox_status', ['0', '1', '2'])->nullable();//estado_caja_compensacion['Desactualizado','Actualizado','Pendiente']
-			$table->timestamp('date_compensationbox')->nullable();//fecha_caja_compensacion
+			$table->date('date_compensationbox')->nullable();//fecha_caja_compensacion
 			$table->enum('user_state', ['0', '1', '2'])->nullable();//estado['Inactivo','Activo','Bloqueado']
-			$table->timestamp('user_entry_date')->nullable();//fecha_ingre_usuario
-			$table->timestamp('date_withdrawal_user')->nullable();//fecha_retiro_usuario
+			$table->date('user_entry_date')->nullable();//fecha_ingre_usuario
+			$table->date('date_withdrawal_user')->nullable();//fecha_retiro_usuario
 			$table->unsignedBigInteger('charge')->nullable();//cargo
 			$table->unsignedBigInteger('usertype')->nullable();//tipo_usuario
 			$table->unsignedBigInteger('civil_status')->nullable();//estado_civil

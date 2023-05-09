@@ -39,11 +39,11 @@ class ContractController extends Controller
         $contract_value = DB::table('contracts')->where('id', $id)->value('contract_value');
 
         $tipe_pay = DB::table('contracts')->join('payment_types', 'contracts.tipe_pay', '=', 'payment_types.id')
-        ->where('contracts.id', $id)->value('description_typePayment');
+            ->where('contracts.id', $id)->value('description_typePayment');
 
         $vehicles = DB::table('vehicles')->join('contract_vehicle_permit', 'contract_vehicle_permit.vehicle_id', '=', 'vehicles.id')
-        ->join('vehicle_types', 'vehicles.vehicle_type', '=', 'vehicle_types.id')
-        ->where('contract_vehicle_permit.contract_id', $id)->limit(1)->get();
+            ->join('vehicle_types', 'vehicles.vehicle_type', '=', 'vehicle_types.id')
+            ->where('contract_vehicle_permit.contract_id', $id)->limit(1)->get();
 
         Carbon::setLocale('es');
         setlocale(LC_TIME, 'es_ES');
@@ -51,7 +51,7 @@ class ContractController extends Controller
         $fend = Carbon::createFromDate($contract_end_date);
         $difmont = date_diff($fend, $fstart)->format('%m');
         $difdaytotal = $fend->diffInDays($fstart);
-        $difday = $difdaytotal - ($difmont * 30);//preguntar como cuentan los meses si es um mes de 31 si lo cuentas por 31 dias o por 30 dias mas 1
+        $difday = $difdaytotal - ($difmont * 30); //preguntar como cuentan los meses si es um mes de 31 si lo cuentan por 31 dias o por 30 dias mas 1
         // $difday = $difdaytotal;
         // $fstart = $fstart->monthName;
         // $fstart = $fstart->format('l d \d\e F \d\e\l Y');
@@ -69,6 +69,37 @@ class ContractController extends Controller
         $fyear = Carbon::parse(now());
         $fyear = $fyear->year;
 
+        $titletypecontract = DB::table('contracts')->where('id', $id)->value('type_contract');
+        $titlecontractwith = DB::table('contracts')->where('id', $id)->value('contract_with');
+
+        if ($titletypecontract == 1) {
+            if ($titlecontractwith == 1 ) {
+                $titlecontract = 'CONTRATO DE PRESTACIÓN DE SERVICIOS DE TRANSPORTE DE ESTUDIANTE GRUPO PADRES';
+            } else if ($titlecontractwith == 2 ){
+                $titlecontract = 'CONTRATO DE PRESTACIÓN DE SERVICIOS PARA TRANSPORTE ESPECIAL DE UN GRUPO DE ESTUDIANTES UNIVERSITARIOS MAYORES DE EDAD';
+            } else if ($titlecontractwith == 3 ){
+                $titlecontract = 'CONTRATO DE PRESTACIÓN DE SERVICIOS DE TRANSPORTE ESPECIAL DE ESTUDIANTE CON ACUDIENTE';
+            } else {
+                $titlecontract = 'CONTRATO DE PRESTACIÓN DE SERVICIOS PARA TRANSPORTE ESPECIAL DE ESTUDIANTES';
+            }
+        } else if($titletypecontract == 2) {
+            $titlecontract = 'CONTRATO DE PRESTACIÓN DE SERVICIOS DE TRANSPORTE ESPECIAL EMPRESARIAL';
+        } else if($titletypecontract == 3) {
+            $titlecontract = 'CONTRATO DE PRESTACIÓN DE SERVICIOS PARA TRANSPORTE ESPECIAL DE TURISTAS';
+        } else if($titletypecontract == 4) {
+            $titlecontract = 'CONTRATO DE PRESTACIÓN DE SERVICIOS DE TRANSPORTE ESPECIAL CON GRUPO ESPECÍFICO DE USUARIOS (TRANSPORTE DE PARTICULARES)';
+        } else if($titletypecontract == 5) {
+            $titlecontract = 'CONTRATO DE PRESTACIÓN DE SERVICIOS PARA TRANSPORTE ESPECIAL DE USUARIOS DE SALUD';
+        } else if($titletypecontract == 6) {
+            $titlecontract = 'CONTRATO DE CONVENIO DE COLABORACIÓN EMPRESARIAL';
+        } else if($titletypecontract == 7) {
+            $titlecontract = 'CONTRATO DE CONVENIO DE COLABORACIÓN EMPRESARIAL';
+        } else if($titletypecontract == 8) {
+            $titlecontract = 'CONTRATO DE CONVENIO DE COLABORACIÓN EMPRESARIAL';
+        } else if($titletypecontract == 9) {
+            $titlecontract = 'CONTRATO DE VINCULACIÓN DE FLOTA - RENOVACIÓN PROPIETARIO DE VEHÍCULO';
+        }
+        
         $pdf = PDF::loadView('pdfs.pdf-contracts', [
             'contracts' => $contracts,
             'firmeday' => $firmeday,
@@ -82,7 +113,8 @@ class ContractController extends Controller
             'vehicles' => $vehicles,
             'valueContractText' => $valueContractText,
             'tipe_pay' => $tipe_pay,
-            'fyear' => $fyear
+            'fyear' => $fyear,
+            'titlecontract' => $titlecontract
         ]);
         // $pdf->loadHTML('<h1>Test</h1>');
         return $pdf->stream();
