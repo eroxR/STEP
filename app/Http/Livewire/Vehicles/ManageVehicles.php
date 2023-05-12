@@ -339,7 +339,7 @@ class ManageVehicles extends Component
                 'vehicle_class_description',
                 'secure_end_date',
                 'technomechanical_end_date',
-                DB::raw('CONCAT(users.firstname, "-", users.lastname) As owner'),
+                DB::raw('CONCAT(users.firstname, users.lastname) As owner'),
                 'brand_vehicle',
                 'vehicle_chassis_number',
                 'property_card_number',
@@ -395,10 +395,10 @@ class ManageVehicles extends Component
 
         $dimensionRims = dimensionRims::select('id', 'inch', 'type_rims')->get();
 
-        $owners = User::select('id', DB::raw('CONCAT(firstname, " ",secondname, " ",lastname, " ",motherslastname) As owner'))->where('usertype', '4')->get();
+        $owners = User::select('id', DB::raw('CONCAT(firstname, secondname, lastname, motherslastname) As owner'))->where('usertype', '4')->get();
 
         $conducs = driver::join('Users', 'drivers.user_id', '=', 'Users.id')
-            ->select('drivers.id', DB::raw('CONCAT(firstname, " ",secondname, " ",lastname, " ",motherslastname) As conduc'))
+            ->select('drivers.id', DB::raw('CONCAT(firstname, secondname, lastname, motherslastname) As conduc'))
             ->orderBy('drivers.id', 'DESC')->get();
 
         return view('livewire.vehicles.manage-vehicles', compact(
