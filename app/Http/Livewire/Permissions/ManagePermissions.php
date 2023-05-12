@@ -363,8 +363,8 @@ class ManagePermissions extends Component
             ->orwhere('fuec_state', 'like', '%' . $this->search . '%')
             ->orderBy($this->sort, $this->direction)->get();
 
-        $drivers = driver::join('Users', 'drivers.user_id', '=', 'users.id')
-            ->select('drivers.id', 'identificationcard', DB::raw('CONCAT(users.firstname, " ", users.secondname, " ", users.lastname, " ", users.motherslastname) As nameFull'))->get();
+        $drivers = driver::join('users', 'drivers.user_id', '=', 'users.id')
+            ->select('drivers.id', 'identificationcard', DB::raw('CONCAT(users.firstname, users.secondname, users.lastname, users.motherslastname) As nameFull'))->get();
 
         $vehicles = vehicle::all();
 
