@@ -397,7 +397,7 @@ class ManageVehicles extends Component
 
         $owners = User::select('id', DB::raw('CONCAT(firstname, secondname, lastname, motherslastname) As owner'))->where('usertype', '4')->get();
 
-        $conducs = driver::join('Users', 'drivers.user_id', '=', 'Users.id')
+        $conducs = driver::join('users', 'drivers.user_id', '=', 'users.id')
             ->select('drivers.id', DB::raw('CONCAT(firstname, secondname, lastname, motherslastname) As conduc'))
             ->orderBy('drivers.id', 'DESC')->get();
 
