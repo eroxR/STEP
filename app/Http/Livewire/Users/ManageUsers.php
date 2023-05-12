@@ -696,7 +696,7 @@ class ManageUsers extends Component
             ->orderBy($this->sort, $this->direction)->get();
 
         $linkers = user::select('id', DB::raw('CONCAT(firstname, " ", secondname, " ",lastname, " ", motherslastname) As owner'))
-            ->where('usertype', '=', 4)->get();
+            ->where('usertype', '=', 1)->get();
 
         $charges = charge::all();
 
