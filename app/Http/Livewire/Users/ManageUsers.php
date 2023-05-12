@@ -695,7 +695,7 @@ class ManageUsers extends Component
             ->orwhere('email', 'like', '%' . $this->search . '%')
             ->orderBy($this->sort, $this->direction)->get();
 
-        $linkers = user::select('id', DB::raw('CONCAT(firstname, '-', secondname, '-',lastname, '-', motherslastname) As owner'))
+        $linkers = user::select('id', DB::raw('CONCAT(firstname, secondname, lastname, motherslastname) As owner'))
             ->where('usertype', '=', 4)->get();
 
         $charges = charge::all();
