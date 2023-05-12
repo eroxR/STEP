@@ -28,7 +28,7 @@ class DatabaseSeeder extends Seeder
         $this->call(ArlSeeder::class);
         $this->call(BloodTypeSeeder::class);
         $this->call(BondingSeeder::class);
-        $this->call(chargeSeeder::class);
+        $this->call(ChargeSeeder::class);
         $this->call(CompensationBoxSeeder::class);
         $this->call(EconomicActivitySeeder::class);
         $this->call(EducationalLevelSeeder::class);
