@@ -197,14 +197,16 @@ class ManageUsers extends Component
         $urlprofile = $this->profile_photo_path->storeAs($this->RouteStart . $this->identificationcard, $nameprofile);
         $Routeprofile = Storage::url($urlprofile);
 
+        $this->username = strtolower('Yrenteria');
 
+        dd($this->username);
 
         $age = Carbon::createFromDate($this->birthdate)->age;
 
         $user = User::create([
             'username'  => $this->username,
             'email'  => $this->email,
-            'password'  => $this->password,
+            'password'  => bcrypt('12345678'),
             'identificationcard'  => $this->identificationcard,
             'usertype'  => $this->usertype,
             'user_state'  => '1',
