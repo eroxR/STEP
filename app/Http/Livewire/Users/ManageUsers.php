@@ -193,13 +193,19 @@ class ManageUsers extends Component
         // $name = $this->Doclicense->hashName();
 
         $profileExtension = $this->profile_photo_path->extension();
-        $nameprofile = 'profile_user_' . $this->identificationcard . '.' . $profileExtension;
-        $urlprofile = $this->profile_photo_path->storeAs($this->RouteStart . $this->identificationcard, $nameprofile);
-        $Routeprofile = Storage::url($urlprofile);
+        if ($this->profile_photo_path != '') {
 
-        $this->username = strtolower('Yrenteria');
+            $profileExtension = $this->profile_photo_path->extension();
+            $nameprofile = 'profile_user_' . $this->identificationcard . '.' . $profileExtension;
+            $urlprofile = $this->profile_photo_path->storeAs($this->RouteStart . $this->identificationcard, $nameprofile);
+            $Routeprofile = Storage::url($urlprofile);
+        }else {
+            $Routeprofile = '';
+        }
 
-        dd($this->username);
+        $this->username = strtolower($this->firstname[0].$this->lastname);
+
+        // dd($this->username);
 
         $age = Carbon::createFromDate($this->birthdate)->age;
 
