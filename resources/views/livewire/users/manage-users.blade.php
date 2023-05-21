@@ -1,6 +1,4 @@
-
 <div>
-
     {{-- <div class="flex flex-col overflow-x-auto">
         <div class="sm:-mx-6 lg:-mx-8">
           <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
@@ -24,8 +22,8 @@
             {{-- <input
                 class="flex-1 mr-4 pl-8 pr-2 text-sm text-gray-700 placeholder-gray-600 bg-gray-100 border-0 rounded-md dark:placeholder-gray-500 dark:focus:shadow-outline-gray dark:focus:placeholder-gray-600 dark:bg-gray-700 dark:text-gray-200 focus:placeholder-gray-500 focus:bg-white focus:border-purple-300 focus:outline-none focus:shadow-outline-purple form-input"
                 type="text" placeholder="Escribe una consulta sobre la tabla" wire:model="search"> --}}
- 
-            {{--<button @click="openModal"
+
+            {{-- <button @click="openModal"
                 class="px-2 py-1 font-semibold leading-tight text-black bg-sky-700 rounded-full dark:bg-sky-700 dark:text-white">
                 {{ __('create new user') }}
             </button> --}}
@@ -35,87 +33,88 @@
 
             <div class="w-full overflow-x-auto" wire:ignore>
 
-                    <table id="example"
-                        class="stripe dark:border-gray-700 bg-gray-50 dark:text-white dark:bg-gray-800"
-                        style="width:100%; padding-top: 1em;  padding-bottom: 1em;">
-                        <thead>
-                            <tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
-                                <th class="pl-4 py-2" data-priority="0">{{ __('Actions') }}</th>
-                                <th class="pl-4 py-2" data-priority="1">ID</th>
-                                <th class="pl-4 py-2" data-priority="2">{{ __('Names') }}</th>
-                                <th class="pl-4 py-2" data-priority="3">{{ __('identification') }}</th>
-                                <th class="pl-4 py-2" data-priority="4">{{ __('identificationcard') }}</th>
-                                <th class="pl-4 py-2" data-priority="5">{{ __('usertype') }}</th>
-                                <th class="pl-4 py-2" data-priority="6">{{ __('charge') }}</th>
-                                <th class="pl-4 py-2" data-priority="7">{{ __('user state') }}</th>
-                                <th class="pl-4 py-2" data-priority="8">{{ __('user entry date') }}</th>
-                                <th class="pl-4 py-2" data-priority="9">{{ __('email') }}</th>
-                                <th class="pl-4 py-2" data-priority="10">{{ __('username') }}</th>
-                                <th class="pl-4 py-2" data-priority="11">{{ __('age') }}</th>
-                                <th class="pl-4 py-2" data-priority="12">{{ __('type_sex') }}</th>
-                                <th class="pl-4 py-2" data-priority="13">{{ __('country') }}</th>
-                                <th class="pl-4 py-2" data-priority="14">{{ __('Department') }}</th>
-                                <th class="pl-4 py-2" data-priority="15">{{ __('city') }}</th>
-                                <th class="pl-4 py-2" data-priority="16">{{ __('address') }}</th>
-                                <th class="pl-4 py-2" data-priority="17">{{ __('phone') }}</th>
-                                <th class="pl-4 py-2" data-priority="18">{{ __('phone_cellular') }}</th>
-                                <th class="pl-4 py-2" data-priority="19">{{ __('eps') }}</th>
-                                <th class="pl-4 py-2" data-priority="20">{{ __('eps_status') }}</th>
-                                <th class="pl-4 py-2" data-priority="21">{{ __('date_eps') }}</th>
-                                <th class="pl-4 py-2" data-priority="22">{{ __('blood_type') }}</th>
-                                <th class="pl-4 py-2" data-priority="23">{{ __('pension') }}</th>
-                                <th class="pl-4 py-2" data-priority="24">{{ __('pension_status') }}</th>
-                                <th class="pl-4 py-2" data-priority="25">{{ __('date_pension') }}</th>
-                                <th class="pl-4 py-2" data-priority="26">{{ __('layoffs') }}</th>
-                                <th class="pl-4 py-2" data-priority="27">{{ __('status_layoffs') }}</th>
-                                <th class="pl-4 py-2" data-priority="28">{{ __('date_layoffs') }}</th>
-                                <th class="pl-4 py-2" data-priority="29">{{ __('arl') }}</th>
-                                <th class="pl-4 py-2" data-priority="30">{{ __('arl_status') }}</th>
-                                <th class="pl-4 py-2" data-priority="31">{{ __('arl_date') }}</th>
-                                <th class="pl-4 py-2" data-priority="32">{{ __('compensationbox') }}</th>
-                                <th class="pl-4 py-2" data-priority="33">{{ __('compensationbox_status') }}</th>
-                                <th class="pl-4 py-2" data-priority="34">{{ __('date_compensationbox') }}</th>
-                                <th class="pl-4 py-2" data-priority="35">{{ __('date_withdrawal_user') }}</th>
-                                <th class="pl-4 py-2" data-priority="36">{{ __('civil_status') }}</th>
-                                <th class="pl-4 py-2" data-priority="37">{{ __('family_document_type') }}</th>
-                                <th class="pl-4 py-2" data-priority="38">{{ __('family_names') }}</th>
-                                <th class="pl-4 py-2" data-priority="39">{{ __('relationship') }}</th>
-                                <th class="pl-4 py-2" data-priority="40">{{ __('family_address') }}</th>
-                                <th class="pl-4 py-2" data-priority="41">{{ __('family_phone') }}</th>
-                                <th class="pl-4 py-2" data-priority="42">{{ __('family_phone_cellular') }}</th>
-                                <th class="pl-4 py-2" data-priority="43">{{ __('city_birth') }}</th>
-                                <th class="pl-4 py-2" data-priority="44">{{ __('place_expedition_identificationcard') }}</th>
-                                <th class="pl-4 py-2" data-priority="45">{{ __('identificationcard_family') }}</th>
-                                <th class="pl-4 py-2" data-priority="46">{{ __('bonding_type') }}</th>
-                                <th class="pl-4 py-2" data-priority="47">{{ __('weight') }}</th>
-                                <th class="pl-4 py-2" data-priority="48">{{ __('pant_size') }}</th>
-                                <th class="pl-4 py-2" data-priority="49">{{ __('shirt_size') }}</th>
-                                <th class="pl-4 py-2" data-priority="50">{{ __('shoe_size') }}</th>
-                                <th class="pl-4 py-2" data-priority="51">{{ __('education_level') }}</th>
-                                <th class="pl-4 py-2" data-priority="52">{{ __('educational_institution') }}</th>
-                                <th class="pl-4 py-2" data-priority="53">{{ __('last_year') }}</th>
-                                <th class="pl-4 py-2" data-priority="54">{{ __('study_end_date') }}</th>
-                                <th class="pl-4 py-2" data-priority="55">{{ __('obtained_title') }}</th>
-                                <th class="pl-4 py-2" data-priority="56">{{ __('last_company_name') }}</th>
-                                <th class="pl-4 py-2" data-priority="57">{{ __('charges_last_company') }}</th>
-                                <th class="pl-4 py-2" data-priority="58">{{ __('start_date_last_company') }}</th>
-                                <th class="pl-4 py-2" data-priority="59">{{ __('date_end_last_company') }}</th>
-                                <th class="pl-4 py-2" data-priority="60">{{ __('functions_performed') }}</th>
-                                <th class="pl-4 py-2" data-priority="61">{{ __('company_name_provider') }}</th>
-                                <th class="pl-4 py-2" data-priority="62">{{ __('commercial_reason_supplier') }}</th>
-                                <th class="pl-4 py-2" data-priority="63">{{ __('supplier_web_page') }}</th>
-                                <th class="pl-4 py-2" data-priority="64">{{ __('economic_activity') }}</th>
-                                <th class="pl-4 py-2" data-priority="65">{{ __('products_and_services') }}</th>
-                                <th class="pl-4 py-2" data-priority="66">{{ __('salary') }}</th>
-                                <th class="pl-4 py-2" data-priority="67">{{ __('aid_transport') }}</th>
-                                <th class="pl-4 py-2" data-priority="68">{{ __('work_area') }}</th>
+                <table id="example" class="stripe dark:border-gray-700 bg-gray-50 dark:text-white dark:bg-gray-800"
+                    style="width:100%; padding-top: 1em;  padding-bottom: 1em;">
+                    <thead>
+                        <tr
+                            class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
+                            <th class="pl-4 py-2" data-priority="0">{{ __('Actions') }}</th>
+                            <th class="pl-4 py-2" data-priority="1">ID</th>
+                            <th class="pl-4 py-2" data-priority="2">{{ __('Names') }}</th>
+                            <th class="pl-4 py-2" data-priority="3">{{ __('identification') }}</th>
+                            <th class="pl-4 py-2" data-priority="4">{{ __('identificationcard') }}</th>
+                            <th class="pl-4 py-2" data-priority="5">{{ __('usertype') }}</th>
+                            <th class="pl-4 py-2" data-priority="6">{{ __('charge') }}</th>
+                            <th class="pl-4 py-2" data-priority="7">{{ __('user state') }}</th>
+                            <th class="pl-4 py-2" data-priority="8">{{ __('user entry date') }}</th>
+                            <th class="pl-4 py-2" data-priority="9">{{ __('email') }}</th>
+                            <th class="pl-4 py-2" data-priority="10">{{ __('username') }}</th>
+                            <th class="pl-4 py-2" data-priority="11">{{ __('age') }}</th>
+                            <th class="pl-4 py-2" data-priority="12">{{ __('type_sex') }}</th>
+                            <th class="pl-4 py-2" data-priority="13">{{ __('country') }}</th>
+                            <th class="pl-4 py-2" data-priority="14">{{ __('Department') }}</th>
+                            <th class="pl-4 py-2" data-priority="15">{{ __('city') }}</th>
+                            <th class="pl-4 py-2" data-priority="16">{{ __('address') }}</th>
+                            <th class="pl-4 py-2" data-priority="17">{{ __('phone') }}</th>
+                            <th class="pl-4 py-2" data-priority="18">{{ __('phone_cellular') }}</th>
+                            <th class="pl-4 py-2" data-priority="19">{{ __('eps') }}</th>
+                            <th class="pl-4 py-2" data-priority="20">{{ __('eps_status') }}</th>
+                            <th class="pl-4 py-2" data-priority="21">{{ __('date_eps') }}</th>
+                            <th class="pl-4 py-2" data-priority="22">{{ __('blood_type') }}</th>
+                            <th class="pl-4 py-2" data-priority="23">{{ __('pension') }}</th>
+                            <th class="pl-4 py-2" data-priority="24">{{ __('pension_status') }}</th>
+                            <th class="pl-4 py-2" data-priority="25">{{ __('date_pension') }}</th>
+                            <th class="pl-4 py-2" data-priority="26">{{ __('layoffs') }}</th>
+                            <th class="pl-4 py-2" data-priority="27">{{ __('status_layoffs') }}</th>
+                            <th class="pl-4 py-2" data-priority="28">{{ __('date_layoffs') }}</th>
+                            <th class="pl-4 py-2" data-priority="29">{{ __('arl') }}</th>
+                            <th class="pl-4 py-2" data-priority="30">{{ __('arl_status') }}</th>
+                            <th class="pl-4 py-2" data-priority="31">{{ __('arl_date') }}</th>
+                            <th class="pl-4 py-2" data-priority="32">{{ __('compensationbox') }}</th>
+                            <th class="pl-4 py-2" data-priority="33">{{ __('compensationbox_status') }}</th>
+                            <th class="pl-4 py-2" data-priority="34">{{ __('date_compensationbox') }}</th>
+                            <th class="pl-4 py-2" data-priority="35">{{ __('date_withdrawal_user') }}</th>
+                            <th class="pl-4 py-2" data-priority="36">{{ __('civil_status') }}</th>
+                            <th class="pl-4 py-2" data-priority="37">{{ __('family_document_type') }}</th>
+                            <th class="pl-4 py-2" data-priority="38">{{ __('family_names') }}</th>
+                            <th class="pl-4 py-2" data-priority="39">{{ __('relationship') }}</th>
+                            <th class="pl-4 py-2" data-priority="40">{{ __('family_address') }}</th>
+                            <th class="pl-4 py-2" data-priority="41">{{ __('family_phone') }}</th>
+                            <th class="pl-4 py-2" data-priority="42">{{ __('family_phone_cellular') }}</th>
+                            <th class="pl-4 py-2" data-priority="43">{{ __('city_birth') }}</th>
+                            <th class="pl-4 py-2" data-priority="44">{{ __('place_expedition_identificationcard') }}
+                            </th>
+                            <th class="pl-4 py-2" data-priority="45">{{ __('identificationcard_family') }}</th>
+                            <th class="pl-4 py-2" data-priority="46">{{ __('bonding_type') }}</th>
+                            <th class="pl-4 py-2" data-priority="47">{{ __('weight') }}</th>
+                            <th class="pl-4 py-2" data-priority="48">{{ __('pant_size') }}</th>
+                            <th class="pl-4 py-2" data-priority="49">{{ __('shirt_size') }}</th>
+                            <th class="pl-4 py-2" data-priority="50">{{ __('shoe_size') }}</th>
+                            <th class="pl-4 py-2" data-priority="51">{{ __('education_level') }}</th>
+                            <th class="pl-4 py-2" data-priority="52">{{ __('educational_institution') }}</th>
+                            <th class="pl-4 py-2" data-priority="53">{{ __('last_year') }}</th>
+                            <th class="pl-4 py-2" data-priority="54">{{ __('study_end_date') }}</th>
+                            <th class="pl-4 py-2" data-priority="55">{{ __('obtained_title') }}</th>
+                            <th class="pl-4 py-2" data-priority="56">{{ __('last_company_name') }}</th>
+                            <th class="pl-4 py-2" data-priority="57">{{ __('charges_last_company') }}</th>
+                            <th class="pl-4 py-2" data-priority="58">{{ __('start_date_last_company') }}</th>
+                            <th class="pl-4 py-2" data-priority="59">{{ __('date_end_last_company') }}</th>
+                            <th class="pl-4 py-2" data-priority="60">{{ __('functions_performed') }}</th>
+                            <th class="pl-4 py-2" data-priority="61">{{ __('company_name_provider') }}</th>
+                            <th class="pl-4 py-2" data-priority="62">{{ __('commercial_reason_supplier') }}</th>
+                            <th class="pl-4 py-2" data-priority="63">{{ __('supplier_web_page') }}</th>
+                            <th class="pl-4 py-2" data-priority="64">{{ __('economic_activity') }}</th>
+                            <th class="pl-4 py-2" data-priority="65">{{ __('products_and_services') }}</th>
+                            <th class="pl-4 py-2" data-priority="66">{{ __('salary') }}</th>
+                            <th class="pl-4 py-2" data-priority="67">{{ __('aid_transport') }}</th>
+                            <th class="pl-4 py-2" data-priority="68">{{ __('work_area') }}</th>
 
-                            </tr>
-                        </thead>
-                        <tbody {{-- class="dark:bg-gray-800 dark:text-white" --}}>
-                        </tbody>
+                        </tr>
+                    </thead>
+                    <tbody {{-- class="dark:bg-gray-800 dark:text-white" --}}>
+                    </tbody>
 
-                    </table>
+                </table>
 
                 {{-- @if ($users->count())
                     <table class="w-full">
@@ -473,10 +472,12 @@
             <header class="flex justify-center border-b-fuchsia-800 border-b">
                 <!-- Modal title -->
                 <p class="justify-start mb-2 text-lg font-semibold text-gray-700 dark:text-gray-300">
-                <h1 class="text-black dark:text-white text-4xl1">{{ __('Creating new user') }}<span id="typed2" class="typed2">.</span>
+                <h1 class="text-black dark:text-white text-4xl1">{{ __('Creating new user') }}<span id="typed2"
+                        class="typed2">.</span>
                     <span id="typed3" class="typed3">.</span>
                     <span id="typed4" class="typed4">.</span>
-                    <span id="typed5" class="typed5">.</span></h1>
+                    <span id="typed5" class="typed5">.</span>
+                </h1>
                 </p>
                 <button
                     class="ml-auto px-5-1 py-3-1 text-sm  rounded-lg  bg-red-600 active:bg-red-600 hover:bg-red-700 focus:outline-none focus:shadow-outline-purple text-white"
@@ -609,9 +610,13 @@
                                     <strong class="fa-stack-2x -ml-1 numcolor" id="step7">
                                         7
                                     </strong>
+                                    <strong class="Inactive fa-stack-1x -ml-1 numcolor" id="finalUser2">
+                                        FIN
+                                    </strong>
                                 </span>
                             </div>
                             <p id="pass7">Paso 7</p>
+                            <p class="Inactive" id="passfinalUser2">fin</p>
                         </div>
                         <div id="f1-step-user8" class="f1-step-user ">
                             <div class="f1-step-icon">
@@ -624,15 +629,11 @@
                                     <strong class="fa-stack-2x -ml-1 numcolor" id="step8">
                                         8
                                     </strong>
-                                    <strong class="Inactive fa-stack-1x -ml-1 numcolor" id="finalUser2">
-                                        FIN
-                                    </strong>
                                 </span>
                             </div>
                             <p id="pass8">Paso 8</p>
-                            <p class="Inactive" id="passfinalUser2">fin</p>
                         </div>
-                        <div id="f1-step-user9" class="f1-step-user ">
+                        {{-- <div id="f1-step-user9" class="f1-step-user ">
                             <div class="f1-step-icon">
 
                                 <!-- Crea un icono envuelto por la clase fa-stack -->
@@ -646,8 +647,8 @@
                                 </span>
                             </div>
                             <p id="pass9">Paso 9</p>
-                        </div>
-                        <div id="f1-step-user10" class="f1-step-user ">
+                        </div> --}}
+                        <div id="f1-step-user9" class="f1-step-user ">
                             <div class="f1-step-icon">
 
                                 <!-- Crea un icono envuelto por la clase fa-stack -->
@@ -655,12 +656,12 @@
                                     <!-- El icono que envolverá el número -->
                                     <span class="fa fa-circle-o fa-stack-2x"></span>
                                     <!-- un elemento strong con el contenido personalizado, en este caso un número -->
-                                    <strong class="fa-stack-1x -ml-1 numcolor" id="step10">
+                                    <strong class="fa-stack-1x -ml-1 numcolor" id="step9">
                                         FIN
                                     </strong>
                                 </span>
                             </div>
-                            <p id="pass10">Fin</p>
+                            <p id="pass9">Fin</p>
                         </div>
                     </div>
 
@@ -932,9 +933,18 @@
                                         class="Inactive text-gray-700 dark:text-gray-400">Nit</label>
 
                                     <input
-                                        class="Inactive block w-98 py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                        class="Inactive block w90 py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                                         placeholder="Nit de proveedor" type="text" id="nit" name="nit"
                                         wire:model.defer="nit" />
+
+                                        <span id="DocNit"
+                                        class=" upload-ico fas fa-file-upload icon-green" aria-hidden="true"
+                                        fill="none" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                                        <input id="InputDocNit" wire:model.defer="DocNit"
+                                            onchange="documentAbove('InputDocNit','DocNit')"
+                                            class="upload-input" type="file">
+                                    </span>
                                 </div>
 
                                 {{-- <div class="w-6-12">
@@ -1038,14 +1048,16 @@
                                     <div class="form-check check1">
                                         <input class="form-check-input" type="radio" name="type_sex"
                                             id="sexM" value="M" wire:model.defer="type_sex">
-                                        <label id="labelSexM" class="form-check-label" for="sexM">
+                                        <label id="labelSexM"
+                                            class="text-gray-700 dark:text-gray-400 form-check-label" for="sexM">
                                             Masculino
                                         </label>
                                     </div>
                                     <div class="form-check check2">
                                         <input class="form-check-input" type="radio" name="type_sex"
                                             id="sexF" value="F" wire:model.defer="type_sex">
-                                        <label id="labelSexF" class="form-check-label" for="sexF">
+                                        <label id="labelSexF"
+                                            class="text-gray-700 dark:text-gray-400 form-check-label" for="sexF">
                                             Femenino
                                         </label>
                                     </div>
@@ -1532,7 +1544,7 @@
 
                             <div class="flex space-x-4">
 
-                                <div class="w-6-12">
+                                <div class="w-1-3">
                                     <label id="labelEps" class="text-gray-700 dark:text-gray-400">EPS</label>
 
                                     <select wire:model.defer="eps" id="eps" name="eps"
@@ -1547,22 +1559,18 @@
                                     </select>
                                 </div>
 
-                                
-                                <div class="w-6-12">
+
+                                <div class="w-1-3">
                                     <label id="labelDateEps"
                                         class="text-gray-700 dark:text-gray-400">{{ __('date eps') }}</label>
 
                                     <input readonly
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                        placeholder="Dirección del familiar" type="text" id="date_eps"
+                                        placeholder="Fecha documento de eps" type="text" id="date_eps"
                                         name="date_eps" wire:model.defer="date_eps" />
                                 </div>
 
-                            </div>
-
-                            <div class="flex space-x-4">
-
-                                <div class="w-6-12">
+                                <div class="w-1-3">
                                     <label id="labelBloodType"
                                         class="text-gray-700 dark:text-gray-400">{{ __('blood type') }}</label>
 
@@ -1582,7 +1590,7 @@
 
                             <div class="flex space-x-4">
 
-                                <div class="w-6-12">
+                                <div class="w-1-3">
                                     <label id="labelPension" class="text-gray-700 dark:text-gray-400">PENSION</label>
 
                                     <select wire:model.defer="pension" id="pension" name="pension"
@@ -1598,40 +1606,18 @@
 
                                 </div>
 
-                                <div class="w-6-12">
+                                <div class="w-1-3">
                                     <label id="labelDatePension"
                                         class="text-gray-700 dark:text-gray-400">{{ __('date pension') }}</label>
 
                                     <input readonly
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                        placeholder="Dirección del familiar" type="text" id="date_pension"
+                                        placeholder="Fecha de documento pensión" type="text" id="date_pension"
                                         name="date_pension" wire:model.defer="date_pension"
                                         onchange="fechasSet('date_pension')" />
                                 </div>
 
-                            </div>
-
-                            {{-- <div class="flex space-x-4">
-
-                            </div> --}}
-
-                            <br>
-                            <div class="f1-buttons">
-                                <button type="button"
-                                    class="btn btn-previous ml-auto px-5 py-3 text-sm font-medium leading-5 rounded-lg sm:w-auto sm:px-4 sm:py-2 bg-red-600 active:bg-red-600 hover:bg-red-700 focus:outline-none focus:shadow-outline-purple text-white">Atrás</button>
-                                <button type="button"
-                                    class="btn btn-next w-full px-5 py-3 text-sm font-medium leading-5 transition-colors duration-150 bg-green-600 border border-transparent rounded-lg sm:w-auto sm:px-4 sm:py-2 active:bg-green-600 hover:bg-green-700 focus:outline-none focus:shadow-outline-purple">Siguiente</button>
-                            </div>
-
-                        </fieldset>
-                        <!--fin del paso 6 -->
-
-                        <!--paso 7 -->
-                        <fieldset wire:ignore>
-
-                            <div class="flex space-x-4">
-
-                                <div class="w-6-12">
+                                <div class="w-1-3">
                                     <label id="labelLayoffs"
                                         class="text-gray-700 dark:text-gray-400">{{ __('layoffs') }}</label>
 
@@ -1647,22 +1633,22 @@
                                     </select>
                                 </div>
 
-                                <div class="w-6-12">
+                            </div>
+
+                            <div class="flex space-x-4">
+
+                                <div class="w-1-3">
                                     <label id="labelDateLayoffs"
                                         class="text-gray-700 dark:text-gray-400">{{ __('date layoffs') }}</label>
 
                                     <input readonly
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                        placeholder="Fecha del inicio de las cesantias" type="text"
-                                        id="date_layoffs" name="date_layoffs" wire:model.defer="date_layoffs"
+                                        placeholder="Fecha documento de cesantias" type="text" id="date_layoffs"
+                                        name="date_layoffs" wire:model.defer="date_layoffs"
                                         onchange="fechasSet('date_layoffs')" />
                                 </div>
 
-                            </div>
-
-                            <div class="flex space-x-4">
-
-                                <div class="w-6-12">
+                                <div class="w-1-3">
                                     <label id="labelArl" class="text-gray-700 dark:text-gray-400">ARL</label>
 
                                     <select wire:model.defer="arl" id="arl" name="arl"
@@ -1677,13 +1663,13 @@
                                     </select>
                                 </div>
 
-                                <div class="w-6-12">
+                                <div class="w-1-3">
                                     <label id="labelArlDate"
                                         class="text-gray-700 dark:text-gray-400">{{ __('arl date') }}</label>
 
                                     <input readonly
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                        placeholder="Fecha del inicio de la arl" type="text" id="arl_date"
+                                        placeholder="Fecha documento de arl" type="text" id="arl_date"
                                         name="arl_date" wire:model.defer="arl_date"
                                         onchange="fechasSet('arl_date')" />
                                 </div>
@@ -1715,12 +1701,17 @@
 
                                     <input
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                        placeholder="Dirección del familiar" type="text" id="date_compensationbox"
-                                        name="date_compensationbox" wire:model.defer="date_compensationbox"
+                                        placeholder="fecha documento caja compensación" type="text"
+                                        id="date_compensationbox" name="date_compensationbox"
+                                        wire:model.defer="date_compensationbox"
                                         onchange="fechasSet('date_compensationbox')" />
                                 </div>
 
                             </div>
+
+                            {{-- <div class="flex space-x-4">
+
+                            </div> --}}
 
                             <br>
                             <div class="f1-buttons">
@@ -1731,9 +1722,9 @@
                             </div>
 
                         </fieldset>
-                        <!--fin del paso 7 -->
+                        <!--fin del paso 6 -->
 
-                        <!--paso 8 -->
+                        <!--paso 7 -->
                         <fieldset wire:ignore>
 
                             <div class="flex space-x-4" wire:ignore>
@@ -1916,9 +1907,9 @@
                             </div>
 
                         </fieldset>
-                        <!--fin del paso 8 -->
+                        <!--fin del paso 7 -->
 
-                        <!--paso 9 -->
+                        <!--paso 8 -->
                         <fieldset wire:ignore>
 
                             <div class="flex space-x-4" wire:ignore>
@@ -2116,7 +2107,7 @@
 
 
                         </fieldset>
-                        <!--fin del paso 9 -->
+                        <!--fin del paso 8 -->
 
 
                         <!--paso fin -->
@@ -2179,6 +2170,17 @@
                                 </div>
 
                                 <div class="w-6-12">
+                                    <label id="labelUsername"
+                                        class="text-gray-700 dark:text-gray-400">{{ __('username') }}</label>
+
+                                    <input
+                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                        placeholder="Escribe el nombre identificador de usuario para el sistema"
+                                        type="text" id="username" name="username"
+                                        wire:model.defer="username" />
+                                </div>
+
+                                {{-- <div class="w-6-12">
                                     <label id="labelDateWithdrawalUser"
                                         class="text-gray-700 dark:text-gray-400">{{ __('date withdrawal user') }}</label>
 
@@ -2188,7 +2190,7 @@
                                         id="date_withdrawal_user" name="date_withdrawal_user"
                                         wire:model.defer="date_withdrawal_user"
                                         onchange="fechasSet('date_withdrawal_user')" />
-                                </div>
+                                </div> --}}
 
 
                             </div>
@@ -2262,10 +2264,10 @@
                 class="flex flex-col items-center justify-end px-6 py-3-1 -mx-6 -mb-4 space-y-4 sm:space-y-0 sm:space-x-6 sm:flex-row bg-gray-50 dark:bg-gray-800 border-t-fuchsia-800">
                 <button id="btnStore"
                     class="Inactive w-full px-5 py-3 text-sm font-medium leading-5 transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg sm:w-auto sm:px-4 sm:py-2 active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
-                    wire:click="store" onclick="restart()" x-on:click="closeModal">
+                    wire:click="store" >
                     {{ __('Create User') }}
                 </button>
-                <button x-on:click="closeModal" onclick="restart()"
+                <button x-on:click="closeModal" onclick="restart()" id="btnCalcel"
                     class="w-full px-5 py-3 text-sm font-medium leading-5 text-gray-700 transition-colors duration-150 border border-gray-300 rounded-lg dark:text-gray-400 sm:px-4 sm:py-2 sm:w-auto active:bg-transparent hover:border-gray-500 focus:border-gray-500 active:text-gray-500 focus:outline-none focus:shadow-outline-gray"
                     wire:click="clear">
                     {{ __('Cancel') }}
@@ -2297,7 +2299,8 @@
                 <h1 class="text-black dark:text-white text-4xl1">{{ __('Editing the information of the user') }}
                     @if (!is_null($editUsers))
                         {{ $editUsers->firstname }} {{ $editUsers->lastname }}
-                    @endif<span id="typed2" class="typed2">.</span>
+                    @endif
+                    <span id="typed2" class="typed2">.</span>
                     <span id="typed3" class="typed3">.</span>
                     <span id="typed4" class="typed4">.</span>
                     <span id="typed5" class="typed5">.</span>
@@ -2721,7 +2724,8 @@
                                                     <input class="form-check-input" type="radio" name="type_sex"
                                                         id="sexeditM" value="M"
                                                         wire:model="editUsers.type_sex">
-                                                    <label class="form-check-label" for="sexM">
+                                                    <label class="text-gray-700 dark:text-gray-400 form-check-label"
+                                                        for="sexM">
                                                         Masculino
                                                     </label>
                                                 </div>
@@ -2729,7 +2733,8 @@
                                                     <input class="form-check-input" type="radio" name="type_sex"
                                                         id="sexeditF" value="F"
                                                         wire:model="editUsers.type_sex">
-                                                    <label class="form-check-label" for="sexF">
+                                                    <label class="text-gray-700 dark:text-gray-400 form-check-label"
+                                                        for="sexF">
                                                         Femenino
                                                     </label>
                                                 </div>
@@ -4018,16 +4023,16 @@
     <!--end Modal edit -->
 
     {{-- end componentes de modal --}}
+    
 
 
 </div>
 
 @section('scripts')
     <script>
-
         $(document).ready(function() {
 
-                        
+
             var table = $('#example').DataTable({
                 lengthMenu: [
                     [5, 10, 50, 100, 200, -1],
@@ -4037,66 +4042,80 @@
                 autoWidth: false,
                 autoFill: true,
                 // stateSave: true,
-                "order": [[ 1, "desc" ]],
-                dom: "<'ui stackable grid'"+
-                        "<'row'"+
-                            "<'eight wide column'l>"+
-                            "<'ml30'B>"+
-                            "<'right aligned eight wide column'f>"+
-                        ">"+
-                        "<'row dt-table'"+
-                            "<'sixteen wide column'tr>"+
-                        ">"+
-                        "<'row'"+
-                            "<'seven wide column'i>"+
-                            "<'right aligned nine wide column'p>"+
-                        ">"+
+                "order": [
+                    [1, "desc"]
+                ],
+                dom: "<'ui stackable grid'" +
+                    "<'row'" +
+                    "<'eight wide column'l>" +
+                    "<'ml30'B>" +
+                    "<'right aligned eight wide column'f>" +
+                    ">" +
+                    "<'row dt-table'" +
+                    "<'sixteen wide column'tr>" +
+                    ">" +
+                    "<'row'" +
+                    "<'seven wide column'i>" +
+                    "<'right aligned nine wide column'p>" +
+                    ">" +
                     ">",
                 buttons: [
-                        // {
-                        // extend:    'copyHtml5',
-                        // text:      '<i class="far fa-copy"></i>',
-                        // titleAttr: 'copiar',
-                        // className: "dark:bg-gray-800 dark:text-white"
-                        // },
-                        {
-                            text: '<button @click="openModal" class=""> crear usuario nuevo</button>',
-                            titleAttr: 'Crear usuario',
-                            className: "buttons-crear font-semibold leading-tight text-black bg-sky-700 rounded-full dark:bg-sky-700 dark:text-white"
-                        },
-                        {
-                            extend:    'excelHtml5',
-                            text:      '<i class="fa fa-file-excel"></i>',
-                            titleAttr: 'Excel',
-                            filename: 'listado de usuarios',
-                            className: "dark:bg-gray-800 dark:text-white",
-                            
-                        },
-                        {
-                            extend:    'print',
-                            text:      '<i class="fas fa-print"></i>',
-                            titleAttr: 'Imprimir',
-                            filename: 'listado de usuarios',
-                            className: "dark:bg-gray-800 dark:text-white"
-                        },
-                        {
-                            extend:    'pdfHtml5',
-                            text:      '<i class="fa fa-file-pdf"></i>',
-                            titleAttr: 'PDF',
-                            filename: 'listado de usuarios',
-                            className: "dark:bg-gray-800 dark:text-white text-gray-800 rounded-md"
-                        },
-                        {
-                            extend: 'colvis',
-                            text: '±columnas',
-                            collectionLayout: 'fixed columns',
-                            collectionTitle: 'Control de visibilidad de columna',
-                            className: "dark:bg-gray-800 dark:text-white"
-                        }
+                    // {
+                    // extend:    'copyHtml5',
+                    // text:      '<i class="far fa-copy"></i>',
+                    // titleAttr: 'copiar',
+                    // className: "dark:bg-gray-800 dark:text-white"
+                    // },
+                    {
+                        text: '<button @click="openModal" class=""> crear usuario nuevo</button>',
+                        titleAttr: 'Crear usuario',
+                        className: "buttons-crear font-semibold leading-tight text-black bg-sky-700 rounded-full dark:bg-sky-700 dark:text-white"
+                    },
+                    {
+                        extend: 'excelHtml5',
+                        text: '<i class="fa fa-file-excel"></i>',
+                        titleAttr: 'Excel',
+                        filename: 'listado de usuarios',
+                        className: "dark:bg-gray-800 dark:text-white",
+
+                    },
+                    {
+                        extend: 'print',
+                        text: '<i class="fas fa-print"></i>',
+                        titleAttr: 'Imprimir',
+                        filename: 'listado de usuarios',
+                        className: "dark:bg-gray-800 dark:text-white"
+                    },
+                    {
+                        extend: 'pdfHtml5',
+                        text: '<i class="fa fa-file-pdf"></i>',
+                        titleAttr: 'PDF',
+                        filename: 'listado de usuarios',
+                        className: "dark:bg-gray-800 dark:text-white text-gray-800 rounded-md"
+                    },
+                    {
+                        extend: 'colvis',
+                        text: '±columnas',
+                        collectionLayout: 'fixed columns',
+                        collectionTitle: 'Control de visibilidad de columna',
+                        className: "dark:bg-gray-800 dark:text-white"
+                    }
                 ],
-                columnDefs: [
-                    {"targets": [1],"visible": false,"searchable": false},
-                    {"targets": [3],"visible": false,"searchable": false},
+                columnDefs: [{
+                        "targets": [1],
+                        "visible": false,
+                        "searchable": false
+                    },
+                    {
+                        "targets": [3],
+                        "visible": false,
+                        "searchable": false
+                    },
+                    {
+                        "targets": [11],
+                        "visible": false,
+                        "searchable": false
+                    },
                     // {"targets": [10],"visible": false,"searchable": false},
                     // {"targets": [12],"visible": false,"searchable": false},
                     // {"targets": [13],"visible": false,"searchable": false},
@@ -4155,9 +4174,8 @@
                     // {"targets": [66],"visible": false,"searchable": false},
                     // {"targets": [67],"visible": false,"searchable": false},
                     // {"targets": [68],"visible": false,"searchable": false},
-                ],    
-                "drawCallback": function(settings) 
-                {
+                ],
+                "drawCallback": function(settings) {
                     $('.dataTables_wrapper .dataTables_filter input').addClass(
                         "mr-4 pl-8 pr-2 text-sm text-gray-700 placeholder-gray-600 bg-gray-100 border-0 rounded-md dark:placeholder-gray-500 dark:focus:shadow-outline-gray dark:focus:placeholder-gray-600 dark:bg-gray-700 dark:text-gray-200 focus:placeholder-gray-500 focus:bg-white focus:border-purple-300 focus:outline-none focus:shadow-outline-purple form-input"
                     );
@@ -4168,7 +4186,8 @@
                     $('#example_info').removeClass("dataTables_info");
                     $('#example_info').addClass("dark:text-white pt-7 float-left clear-both");
                     $('#example tbody>tr>td').addClass("dark:bg-gray-800 dark:text-white");
-                    $('.dataTables_wrapper .dataTables_paginate .paginate_button').addClass("dark:bg-gray-800 dark:text-white");
+                    $('.dataTables_wrapper .dataTables_paginate .paginate_button').addClass(
+                        "dark:bg-gray-800 dark:text-white");
                 },
                 language: {
                     "emptyTable": "Tabla Vacia",
@@ -4192,32 +4211,32 @@
                     "zeroRecords": "No se encontro información",
                 },
                 ajax: "{{ route('datatable.user') }}",
-                columns: [
-                    {
-                    
+                columns: [{
+
                         "render": function(data, type, row) {
 
-                            return  "<div class='flex items-center space-x-4 text-sm'>" +
-                                           "<button id='edit' onclick='edit(" + row['id'] + ")'" +
-                                               "class='inline-flex items-center justify-center  bg-yellow-700 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-yellow-400 focus:outline-none focus:bg-yellow-700 focus:ring focus:ring-red-200 active:bg-yellow-700 readonly:opacity-25 transition' aria-label='Edit'>" +
-                                               "<svg class='w-5 h-5' aria-hidden='true' fill='currentColor'" +
-                                                   "viewBox='0 0 20 20'>" +
-                                                   "<path fill-rule='evenodd'" +
-                                                       "d='M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z'>" +
-                                                   "</path>" +
-                                               "</svg>" +
-                                           "</button>" +
-                                           "<button onclick='deletes(" + row['id'] + ")'" +
-                                               "class='inline-flex items-center justify-center  bg-red-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 active:bg-red-600 readonly:opacity-25 transition' aria-label='Delete'>" +
-                                               "<svg class='w-5 h-5' aria-hidden='true' fill='currentColor'" +
-                                                   "viewBox='0 0 20 20'>" +
-                                                   "<path fill-rule='evenodd'" +
-                                                       "d='M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z'" +
-                                                       "clip-rule='evenodd'></path>" +
-                                               "</svg>" +
-                                           "</button>" +
-                                       "</div>";
-                                   },"className": "dark:bg-gray-800 dark:text-white border-b"
+                            return "<div class='flex items-center space-x-4 text-sm'>" +
+                                "<button id='edit' onclick='edit(" + row['id'] + ")'" +
+                                "class='inline-flex items-center justify-center  bg-yellow-700 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-yellow-400 focus:outline-none focus:bg-yellow-700 focus:ring focus:ring-red-200 active:bg-yellow-700 readonly:opacity-25 transition' aria-label='Edit'>" +
+                                "<svg class='w-5 h-5' aria-hidden='true' fill='currentColor'" +
+                                "viewBox='0 0 20 20'>" +
+                                "<path fill-rule='evenodd'" +
+                                "d='M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z'>" +
+                                "</path>" +
+                                "</svg>" +
+                                "</button>" +
+                                "<button onclick='deletes(" + row['id'] + ")'" +
+                                "class='inline-flex items-center justify-center  bg-red-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 active:bg-red-600 readonly:opacity-25 transition' aria-label='Delete'>" +
+                                "<svg class='w-5 h-5' aria-hidden='true' fill='currentColor'" +
+                                "viewBox='0 0 20 20'>" +
+                                "<path fill-rule='evenodd'" +
+                                "d='M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z'" +
+                                "clip-rule='evenodd'></path>" +
+                                "</svg>" +
+                                "</button>" +
+                                "</div>";
+                        },
+                        "className": "dark:bg-gray-800 dark:text-white border-b"
                     },
                     {
                         data: 'id',
@@ -4231,42 +4250,46 @@
                                     return "";
                                 } else {
                                     // return 1;
-                                    if (row['profile_photo_path'] == null || row['profile_photo_path'] == "") {
+                                    if (row['profile_photo_path'] == null || row[
+                                            'profile_photo_path'] == "") {
                                         // return "si hay imagen empresa" + row['profile_photo_path'];
-                                        return ( 
+                                        return (
                                             "<div class='lex items-center text-sm'>" +
-                                                "<div class='relative  w-8 h-8 mr-3 rounded-full md:block'>" +                                                        
-                                                            "<img src='{{ asset('img/l_logo_step.png') }}' alt=''" +
-                                                                "class='object-cover w-full h-full rounded-full' loading='lazy'>" +
-                                                        "<div class='absolute inset-0 rounded-full shadow-inner'" +
-                                                            "aria-hidden='true'>" +
-                                                        "</div>" +
-                                                "</div>" +
-                                                "<div class='flex items-center text-sm'>" +
-                                                    "<div>" +
-                                                        "<p class='text-xs text-gray-600 dark:text-gray-400'>" + row['supplier_name'] + "</p>" +
-                                                    "</div>" +
-                                                "</div>" +
-                                            "</div>"); 
+                                            "<div class='relative  w-8 h-8 mr-3 rounded-full md:block'>" +
+                                            "<img src='{{ asset('img/l_logo_step.png') }}' alt=''" +
+                                            "class='object-cover w-full h-full rounded-full' loading='lazy'>" +
+                                            "<div class='absolute inset-0 rounded-full shadow-inner'" +
+                                            "aria-hidden='true'>" +
+                                            "</div>" +
+                                            "</div>" +
+                                            "<div class='flex items-center text-sm'>" +
+                                            "<div>" +
+                                            "<p class='text-xs text-gray-600 dark:text-gray-400'>" +
+                                            row['supplier_name'] + "</p>" +
+                                            "</div>" +
+                                            "</div>" +
+                                            "</div>");
 
                                     } else {
                                         // return "no hay imagen empresa";
 
-                                        return (  
+                                        return (
                                             "<div class='flex items-center text-sm'>" +
-                                                "<div class='relative  w-8 h-8 mr-3 rounded-full md:block'>" +
-                                                            "<img src='" + row['profile_photo_path'] + "' alt=''" +
-                                                                "class='object-cover w-full h-full rounded-full' loading='lazy'>" +
-                                                        "<div class='absolute inset-0 rounded-full shadow-inner'" +
-                                                            "aria-hidden='true'>" +
-                                                        "</div>" +
-                                                "</div>" +
-                                                "<div class='flex items-center text-sm'>" +
-                                                    "<div>" +
-                                                        "<p class='font-semibold'>" + row['supplier_name'] + "</p>" +
-                                                    "</div>" +
-                                                "</div>" +
-                                            "</div>");  
+                                            "<div class='relative  w-8 h-8 mr-3 rounded-full md:block'>" +
+                                            "<img src='" + row['profile_photo_path'] +
+                                            "' alt=''" +
+                                            "class='object-cover w-full h-full rounded-full' loading='lazy'>" +
+                                            "<div class='absolute inset-0 rounded-full shadow-inner'" +
+                                            "aria-hidden='true'>" +
+                                            "</div>" +
+                                            "</div>" +
+                                            "<div class='flex items-center text-sm'>" +
+                                            "<div>" +
+                                            "<p class='font-semibold'>" + row['supplier_name'] +
+                                            "</p>" +
+                                            "</div>" +
+                                            "</div>" +
+                                            "</div>");
 
                                     }
                                 }
@@ -4274,64 +4297,70 @@
                                 // return 0;
                                 if (row['firstname'] == "" || row['firstname'] == null) {
                                     return "";
-                                } else {                                  
+                                } else {
                                     // return 2;
-                                        if (row['profile_photo_path'] == null || row['profile_photo_path'] == "") {
-                                            // return "si hay imagen usuario" + row['profile_photo_path'];                                            
-                                            return ( 
-                                                "<div class='flex items-center text-sm'>" +
-                                                    "<div class='relative  w-8 h-8 mr-3 rounded-full md:block'>" +                                                        
-                                                                "<img src='{{ asset('img/l_logo_step.png') }}' alt=''" +
-                                                                    "class='object-cover w-full h-full rounded-full' loading='lazy'>" +
-                                                            "<div class='absolute inset-0 rounded-full shadow-inner'" +
-                                                                "aria-hidden='true'>" +
-                                                            "</div>" +
-                                                    "</div>" +
-                                                    "<div class='flex items-center text-sm'>" +
-                                                        "<div>" +
-                                                                "<p class='font-semibold'>" + row['firstname'] + "</p>" +
-                                                                "<p class='text-xs text-gray-600 dark:text-gray-400'>" +
-                                                                    row['lastname'] +
-                                                                "</p>" +
-                                                        "</div>" +
-                                                    "</div>" +
-                                                "</div>");
+                                    if (row['profile_photo_path'] == null || row[
+                                            'profile_photo_path'] == "") {
+                                        // return "si hay imagen usuario" + row['profile_photo_path'];                                            
+                                        return (
+                                            "<div class='flex items-center text-sm'>" +
+                                            "<div class='relative  w-8 h-8 mr-3 rounded-full md:block'>" +
+                                            "<img src='{{ asset('img/l_logo_step.png') }}' alt=''" +
+                                            "class='object-cover w-full h-full rounded-full' loading='lazy'>" +
+                                            "<div class='absolute inset-0 rounded-full shadow-inner'" +
+                                            "aria-hidden='true'>" +
+                                            "</div>" +
+                                            "</div>" +
+                                            "<div class='flex items-center text-sm'>" +
+                                            "<div>" +
+                                            "<p class='font-semibold'>" + row['firstname'] +
+                                            "</p>" +
+                                            "<p class='text-xs text-gray-600 dark:text-gray-400'>" +
+                                            row['lastname'] +
+                                            "</p>" +
+                                            "</div>" +
+                                            "</div>" +
+                                            "</div>");
 
-                                        } else {
-                                            // return "no hay imagen usuario";
+                                    } else {
+                                        // return "no hay imagen usuario";
 
-                                            return ( 
-                                                "<div class='flex items-center text-sm'>" +
-                                                    "<div class='relative  w-8 h-8 mr-3 rounded-full md:block'>" +
-                                                                "<img src='" + row['profile_photo_path'] + "' alt=''" +
-                                                                    "class='object-cover w-full h-full rounded-full' loading='lazy'>" +
-                                                            "<div class='absolute inset-0 rounded-full shadow-inner'" +
-                                                                "aria-hidden='true'>" +
-                                                            "</div>" +
-                                                    "</div>" +
-                                                    "<div class='flex items-center text-sm'>" +
-                                                        "<div>" +
-                                                                "<p class='font-semibold'>" + row['firstname'] + "</p>" +
-                                                                "<p class='text-xs text-gray-600 dark:text-gray-400'>" +
-                                                                    row['lastname'] +
-                                                                "</p>" +
-                                                        "</div>" +
-                                                    "</div>" +
-                                                "</div>");
-                                        }
+                                        return (
+                                            "<div class='flex items-center text-sm'>" +
+                                            "<div class='relative  w-8 h-8 mr-3 rounded-full md:block'>" +
+                                            "<img src='" + row['profile_photo_path'] +
+                                            "' alt=''" +
+                                            "class='object-cover w-full h-full rounded-full' loading='lazy'>" +
+                                            "<div class='absolute inset-0 rounded-full shadow-inner'" +
+                                            "aria-hidden='true'>" +
+                                            "</div>" +
+                                            "</div>" +
+                                            "<div class='flex items-center text-sm'>" +
+                                            "<div>" +
+                                            "<p class='font-semibold'>" + row['firstname'] +
+                                            "</p>" +
+                                            "<p class='text-xs text-gray-600 dark:text-gray-400'>" +
+                                            row['lastname'] +
+                                            "</p>" +
+                                            "</div>" +
+                                            "</div>" +
+                                            "</div>");
+                                    }
                                 }
                             }
-                        },"className": "dark:bg-gray-800 dark:text-white border-b"
+                        },
+                        "className": "dark:bg-gray-800 dark:text-white border-b"
                     },
                     {
                         "render": function(data, type, row) {
-                                if (row['description_identification'] == null || row['description_identification'] == "") {
-                                    return ""
-                                } else {
-                                    return row['description_identification'];
-                                }
-                            },
-                            "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                            if (row['description_identification'] == null || row[
+                                    'description_identification'] == "") {
+                                return ""
+                            } else {
+                                return row['description_identification'];
+                            }
+                        },
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
                     },
                     {
 
@@ -4350,7 +4379,8 @@
                     },
                     {
                         "render": function(data, type, row) {
-                            if (row['description_charge'] == null || row['description_charge'] == "") {
+                            if (row['description_charge'] == null || row['description_charge'] ==
+                                "") {
                                 return ""
                             } else {
                                 return row['description_charge'];
@@ -4382,220 +4412,369 @@
                     },
                     {
                         "render": function(data, type, row) {
-                            return (row['age'] + "<p class='text-xs text-gray-600 dark:text-gray-400'> Años</p>");
-                                },"className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                            return (row['age'] +
+                                "<p class='text-xs text-gray-600 dark:text-gray-400'> Años</p>");
+                        },
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
                     },
                     {
 
                         "render": function(data, type, row) {
-                                if (row['type_sex'] == "M") {
-                                    return "<span class='px-2 py-1 font-semibold leading-tight text-white bg-blue-600 rounded-full dark:bg-blue-600 dark:text-white '>{{ __('MASCULINE') }}</span>";
-                                } else {
-                                    return "<span class='px-2 py-1 font-semibold leading-tight text-white bg-yellow-700 rounded-full dark:bg-yellow-700 dark:text-white '>{{ __('FEMENINE') }}</span>";
-                                }
-                            },
-                            "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                            if (row['type_sex'] == "M") {
+                                return "<span class='px-2 py-1 font-semibold leading-tight text-white bg-blue-600 rounded-full dark:bg-blue-600 dark:text-white '>{{ __('MASCULINE') }}</span>";
+                            } else if(row['type_sex'] == "F"){
+                                return "<span class='px-2 py-1 font-semibold leading-tight text-white bg-yellow-700 rounded-full dark:bg-yellow-700 dark:text-white '>{{ __('FEMENINE') }}</span>";
+                            } else {
+                                return "";
+                            }
+                        },
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
                     },
                     {
                         "render": function(data, type, row) {
-                                if (row['country_name'] == null || row['country_name'] == "") {
-                                    return ""
-                                } else {
-                                    return row['country_name'];
-                                }
-                            },"className": "dark:bg-gray-800 dark:text-white text-center border-b"
+                            if (row['country_name'] == null || row['country_name'] == "") {
+                                return ""
+                            } else {
+                                return row['country_name'];
+                            }
+                        },
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b"
                     },
                     {
                         "render": function(data, type, row) {
-                                if (row['department_name'] == null || row['department_name'] == "") {
-                                    return ""
-                                } else {
-                                    return row['department_name'];
-                                }
-                            },"className": "dark:bg-gray-800 dark:text-white text-center border-b"
+                            if (row['department_name'] == null || row['department_name'] == "") {
+                                return ""
+                            } else {
+                                return row['department_name'];
+                            }
+                        },
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b"
                     },
                     {
                         "render": function(data, type, row) {
-                                if (row['city_name'] == null || row['city_name'] == "") {
-                                    return ""
-                                } else {
-                                    return row['city_name'];
-                                }
-                            },"className": "dark:bg-gray-800 dark:text-white text-center border-b"
+                            if (row['city_name'] == null || row['city_name'] == "") {
+                                return ""
+                            } else {
+                                return row['city_name'];
+                            }
+                        },
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b"
                     },
-                    {data: 'address',"className": "dark:bg-gray-800 dark:text-white text-center"},
-                    {data: 'phone',"className": "dark:bg-gray-800 dark:text-white text-center"},
-                    {data: 'phone_cellular',"className": "dark:bg-gray-800 dark:text-white text-center"},
                     {
-                        "render": function(data, type, row) {
-                                if (row['description_eps'] == null || row['description_eps'] == "") {
-                                    return ""
-                                } else {
-                                    return row['description_eps'];
-                                }
-                            },"className": "dark:bg-gray-800 dark:text-white text-center border-b"
+                        data: 'address',
+                        "className": "dark:bg-gray-800 dark:text-white text-center"
                     },
-                    {data: 'eps_status',"className": "dark:bg-gray-800 dark:text-white text-center"},
-                    {data: 'date_eps',"className": "dark:bg-gray-800 dark:text-white text-center"},
                     {
-                        "render": function(data, type, row) {
-                                if (row['blood_type_description'] == null || row['blood_type_description'] == "") {
-                                    return ""
-                                } else {
-                                    return row['blood_type_description'];
-                                }
-                            },"className": "dark:bg-gray-800 dark:text-white text-center border-b"
+                        data: 'phone',
+                        "className": "dark:bg-gray-800 dark:text-white text-center"
+                    },
+                    {
+                        data: 'phone_cellular',
+                        "className": "dark:bg-gray-800 dark:text-white text-center"
                     },
                     {
                         "render": function(data, type, row) {
-                                if (row['description_pension'] == null || row['description_pension'] == "") {
-                                    return ""
-                                } else {
-                                    return row['description_pension'];
-                                }
-                            },"className": "dark:bg-gray-800 dark:text-white text-center border-b"
+                            if (row['description_eps'] == null || row['description_eps'] == "") {
+                                return ""
+                            } else {
+                                return row['description_eps'];
+                            }
+                        },
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b"
                     },
-                    {data: 'pension_status',"className": "dark:bg-gray-800 dark:text-white text-center"},
-                    {data: 'date_pension',"className": "dark:bg-gray-800 dark:text-white text-center"},
                     {
-                        "render": function(data, type, row) {
-                                if (row['description_layoffs'] == null || row['description_layoffs'] == "") {
-                                    return ""
-                                } else {
-                                    return row['description_layoffs'];
-                                }
-                            },"className": "dark:bg-gray-800 dark:text-white text-center border-b"
+                        data: 'eps_status',
+                        "className": "dark:bg-gray-800 dark:text-white text-center"
                     },
-                    {data: 'status_layoffs',"className": "dark:bg-gray-800 dark:text-white text-center"},
-                    {data: 'date_layoffs',"className": "dark:bg-gray-800 dark:text-white text-center"},
                     {
-                        "render": function(data, type, row) {
-                                if (row['description_arl'] == null || row['description_arl'] == "") {
-                                    return ""
-                                } else {
-                                    return row['description_arl'];
-                                }
-                            },"className": "dark:bg-gray-800 dark:text-white text-center border-b"
-                    },
-                    {data: 'arl_status',"className": "dark:bg-gray-800 dark:text-white text-center"},
-                    {data: 'arl_date',"className": "dark:bg-gray-800 dark:text-white text-center"},
-                    {
-                        "render": function(data, type, row) {
-                                if (row['description_compensationbox'] == null || row['description_compensationbox'] == "") {
-                                    return ""
-                                } else {
-                                    return row['description_compensationbox'];
-                                }
-                            },"className": "dark:bg-gray-800 dark:text-white text-center border-b"
-                    },
-                    {data: 'compensationbox_status',"className": "dark:bg-gray-800 dark:text-white text-center"},
-                    {data: 'date_compensationbox',"className": "dark:bg-gray-800 dark:text-white text-center"},
-                    {data: 'date_withdrawal_user',"className": "dark:bg-gray-800 dark:text-white text-center"},
-                    {
-                        "render": function(data, type, row) {
-                                if (row['description_maritalstatus'] == null || row['description_maritalstatus'] == "") {
-                                    return ""
-                                } else {
-                                    return row['description_maritalstatus'];
-                                }
-                            },"className": "dark:bg-gray-800 dark:text-white text-center border-b"
+                        data: 'date_eps',
+                        "className": "dark:bg-gray-800 dark:text-white text-center"
                     },
                     {
                         "render": function(data, type, row) {
-                                if (row['description_identification'] == null || row['description_identification'] == "") {
-                                    return ""
-                                } else {
-                                    return row['description_identification'];
-                                }
-                            },
-                            "className": "dark:bg-gray-800 dark:text-white text-center border-b"
-                    },
-                    {data: 'family_names',"className": "dark:bg-gray-800 dark:text-white text-center"},
-                    {
-                        "render": function(data, type, row) {
-                                if (row['description_relationship'] == null || row['description_relationship'] == "") {
-                                    return ""
-                                } else {
-                                    return row['description_relationship'];
-                                }
-                            },"className": "dark:bg-gray-800 dark:text-white text-center border-b"
-                    },
-                    {data: 'family_address',"className": "dark:bg-gray-800 dark:text-white text-center"},
-                    {data: 'family_phone',"className": "dark:bg-gray-800 dark:text-white text-center"},
-                    {data: 'family_phone_cellular',"className": "dark:bg-gray-800 dark:text-white text-center"},
-                    {
-                        "render": function(data, type, row) {
-                                if (row['city_birth'] == null || row['city_birth'] == "") {
-                                    return ""
-                                } else {
-                                    return row['city_birth'];
-                                }
-                            },"className": "dark:bg-gray-800 dark:text-white text-center border-b"
-                    },
-                    {data: 'place_expedition_identificationcard',"className": "dark:bg-gray-800 dark:text-white text-center"},
-                    {data: 'identificationcard_family',"className": "dark:bg-gray-800 dark:text-white text-center"},
-                    {
-                        "render": function(data, type, row) {
-                                if (row['bonding_type_description'] == null || row['bonding_type_description'] == "") {
-                                    return ""
-                                } else {
-                                    return row['bonding_type_description'];
-                                }
-                            },"className": "dark:bg-gray-800 dark:text-white text-center border-b"
-                    },
-                    {data: 'weight',"className": "dark:bg-gray-800 dark:text-white text-center"},
-                    {data: 'pant_size',"className": "dark:bg-gray-800 dark:text-white text-center"},
-                    {data: 'shirt_size',"className": "dark:bg-gray-800 dark:text-white text-center"},
-                    {data: 'shoe_size',"className": "dark:bg-gray-800 dark:text-white text-center"},
-                    {
-                        "render": function(data, type, row) {
-                                if (row['description_levelEducation'] == null || row['description_levelEducation'] == "") {
-                                    return ""
-                                } else {
-                                    return row['description_levelEducation'];
-                                }
-                            },"className": "dark:bg-gray-800 dark:text-white text-center border-b"
-                    },
-                    {data: 'educational_institution',"className": "dark:bg-gray-800 dark:text-white text-center"},
-                    {data: 'last_year',"className": "dark:bg-gray-800 dark:text-white text-center"},
-                    {data: 'study_end_date',"className": "dark:bg-gray-800 dark:text-white text-center"},
-                    {data: 'obtained_title',"className": "dark:bg-gray-800 dark:text-white text-center"},
-                    {data: 'last_company_name',"className": "dark:bg-gray-800 dark:text-white text-center"},
-                    {data: 'charges_last_company',"className": "dark:bg-gray-800 dark:text-white text-center"},
-                    {data: 'start_date_last_company',"className": "dark:bg-gray-800 dark:text-white text-center"},
-                    {data: 'date_end_last_company',"className": "dark:bg-gray-800 dark:text-white text-center"},
-                    {data: 'functions_performed',"className": "dark:bg-gray-800 dark:text-white text-center"},
-                    {data: 'company_name_provider',"className": "dark:bg-gray-800 dark:text-white text-center"},
-                    {data: 'commercial_reason_supplier',"className": "dark:bg-gray-800 dark:text-white text-center"},
-                    {data: 'supplier_web_page',"className": "dark:bg-gray-800 dark:text-white text-center"},
-                    {
-                        "render": function(data, type, row) {
-                                if (row['description_EconomicActivity'] == null || row['description_EconomicActivity'] == "") {
-                                    return ""
-                                } else {
-                                    return row['description_EconomicActivity'];
-                                }
-                            },"className": "dark:bg-gray-800 dark:text-white text-center border-b"
+                            if (row['blood_type_description'] == null || row[
+                                    'blood_type_description'] == "") {
+                                return ""
+                            } else {
+                                return row['blood_type_description'];
+                            }
+                        },
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b"
                     },
                     {
                         "render": function(data, type, row) {
-                                if (row['ProductandService_description'] == null || row['ProductandService_description'] == "") {
-                                    return ""
-                                } else {
-                                    return row['ProductandService_description'];
-                                }
-                            },"className": "dark:bg-gray-800 dark:text-white text-center border-b"
+                            if (row['description_pension'] == null || row['description_pension'] ==
+                                "") {
+                                return ""
+                            } else {
+                                return row['description_pension'];
+                            }
+                        },
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b"
                     },
-                    {data: 'salary',render: DataTable.render.number( null, null, 2, '$' ),"className": "dark:bg-gray-800 dark:text-white text-center"},
-                    {data: 'aid_transport',render: DataTable.render.number( null, null, 2, '$' ),"className": "dark:bg-gray-800 dark:text-white text-center"},
+                    {
+                        data: 'pension_status',
+                        "className": "dark:bg-gray-800 dark:text-white text-center"
+                    },
+                    {
+                        data: 'date_pension',
+                        "className": "dark:bg-gray-800 dark:text-white text-center"
+                    },
                     {
                         "render": function(data, type, row) {
-                                if (row['workarea_description'] == null || row['workarea_description'] == "") {
-                                    return ""
-                                } else {
-                                    return row['workarea_description'];
-                                }
-                            },"className": "dark:bg-gray-800 dark:text-white text-center border-b"
+                            if (row['description_layoffs'] == null || row['description_layoffs'] ==
+                                "") {
+                                return ""
+                            } else {
+                                return row['description_layoffs'];
+                            }
+                        },
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b"
+                    },
+                    {
+                        data: 'status_layoffs',
+                        "className": "dark:bg-gray-800 dark:text-white text-center"
+                    },
+                    {
+                        data: 'date_layoffs',
+                        "className": "dark:bg-gray-800 dark:text-white text-center"
+                    },
+                    {
+                        "render": function(data, type, row) {
+                            if (row['description_arl'] == null || row['description_arl'] == "") {
+                                return ""
+                            } else {
+                                return row['description_arl'];
+                            }
+                        },
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b"
+                    },
+                    {
+                        data: 'arl_status',
+                        "className": "dark:bg-gray-800 dark:text-white text-center"
+                    },
+                    {
+                        data: 'arl_date',
+                        "className": "dark:bg-gray-800 dark:text-white text-center"
+                    },
+                    {
+                        "render": function(data, type, row) {
+                            if (row['description_compensationbox'] == null || row[
+                                    'description_compensationbox'] == "") {
+                                return ""
+                            } else {
+                                return row['description_compensationbox'];
+                            }
+                        },
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b"
+                    },
+                    {
+                        data: 'compensationbox_status',
+                        "className": "dark:bg-gray-800 dark:text-white text-center"
+                    },
+                    {
+                        data: 'date_compensationbox',
+                        "className": "dark:bg-gray-800 dark:text-white text-center"
+                    },
+                    {
+                        data: 'date_withdrawal_user',
+                        "className": "dark:bg-gray-800 dark:text-white text-center"
+                    },
+                    {
+                        "render": function(data, type, row) {
+                            if (row['description_maritalstatus'] == null || row[
+                                    'description_maritalstatus'] == "") {
+                                return ""
+                            } else {
+                                return row['description_maritalstatus'];
+                            }
+                        },
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b"
+                    },
+                    {
+                        "render": function(data, type, row) {
+                            if (row['description_identification'] == null || row[
+                                    'description_identification'] == "") {
+                                return ""
+                            } else {
+                                return row['description_identification'];
+                            }
+                        },
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b"
+                    },
+                    {
+                        data: 'family_names',
+                        "className": "dark:bg-gray-800 dark:text-white text-center"
+                    },
+                    {
+                        "render": function(data, type, row) {
+                            if (row['description_relationship'] == null || row[
+                                    'description_relationship'] == "") {
+                                return ""
+                            } else {
+                                return row['description_relationship'];
+                            }
+                        },
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b"
+                    },
+                    {
+                        data: 'family_address',
+                        "className": "dark:bg-gray-800 dark:text-white text-center"
+                    },
+                    {
+                        data: 'family_phone',
+                        "className": "dark:bg-gray-800 dark:text-white text-center"
+                    },
+                    {
+                        data: 'family_phone_cellular',
+                        "className": "dark:bg-gray-800 dark:text-white text-center"
+                    },
+                    {
+                        "render": function(data, type, row) {
+                            if (row['city_birth'] == null || row['city_birth'] == "") {
+                                return ""
+                            } else {
+                                return row['city_birth'];
+                            }
+                        },
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b"
+                    },
+                    {
+                        data: 'place_expedition_identificationcard',
+                        "className": "dark:bg-gray-800 dark:text-white text-center"
+                    },
+                    {
+                        data: 'identificationcard_family',
+                        "className": "dark:bg-gray-800 dark:text-white text-center"
+                    },
+                    {
+                        "render": function(data, type, row) {
+                            if (row['bonding_type_description'] == null || row[
+                                    'bonding_type_description'] == "") {
+                                return ""
+                            } else {
+                                return row['bonding_type_description'];
+                            }
+                        },
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b"
+                    },
+                    {
+                        data: 'weight',
+                        "className": "dark:bg-gray-800 dark:text-white text-center"
+                    },
+                    {
+                        data: 'pant_size',
+                        "className": "dark:bg-gray-800 dark:text-white text-center"
+                    },
+                    {
+                        data: 'shirt_size',
+                        "className": "dark:bg-gray-800 dark:text-white text-center"
+                    },
+                    {
+                        data: 'shoe_size',
+                        "className": "dark:bg-gray-800 dark:text-white text-center"
+                    },
+                    {
+                        "render": function(data, type, row) {
+                            if (row['description_levelEducation'] == null || row[
+                                    'description_levelEducation'] == "") {
+                                return ""
+                            } else {
+                                return row['description_levelEducation'];
+                            }
+                        },
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b"
+                    },
+                    {
+                        data: 'educational_institution',
+                        "className": "dark:bg-gray-800 dark:text-white text-center"
+                    },
+                    {
+                        data: 'last_year',
+                        "className": "dark:bg-gray-800 dark:text-white text-center"
+                    },
+                    {
+                        data: 'study_end_date',
+                        "className": "dark:bg-gray-800 dark:text-white text-center"
+                    },
+                    {
+                        data: 'obtained_title',
+                        "className": "dark:bg-gray-800 dark:text-white text-center"
+                    },
+                    {
+                        data: 'last_company_name',
+                        "className": "dark:bg-gray-800 dark:text-white text-center"
+                    },
+                    {
+                        data: 'charges_last_company',
+                        "className": "dark:bg-gray-800 dark:text-white text-center"
+                    },
+                    {
+                        data: 'start_date_last_company',
+                        "className": "dark:bg-gray-800 dark:text-white text-center"
+                    },
+                    {
+                        data: 'date_end_last_company',
+                        "className": "dark:bg-gray-800 dark:text-white text-center"
+                    },
+                    {
+                        data: 'functions_performed',
+                        "className": "dark:bg-gray-800 dark:text-white text-center"
+                    },
+                    {
+                        data: 'company_name_provider',
+                        "className": "dark:bg-gray-800 dark:text-white text-center"
+                    },
+                    {
+                        data: 'commercial_reason_supplier',
+                        "className": "dark:bg-gray-800 dark:text-white text-center"
+                    },
+                    {
+                        data: 'supplier_web_page',
+                        "className": "dark:bg-gray-800 dark:text-white text-center"
+                    },
+                    {
+                        "render": function(data, type, row) {
+                            if (row['description_EconomicActivity'] == null || row[
+                                    'description_EconomicActivity'] == "") {
+                                return ""
+                            } else {
+                                return row['description_EconomicActivity'];
+                            }
+                        },
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b"
+                    },
+                    {
+                        "render": function(data, type, row) {
+                            if (row['ProductandService_description'] == null || row[
+                                    'ProductandService_description'] == "") {
+                                return ""
+                            } else {
+                                return row['ProductandService_description'];
+                            }
+                        },
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b"
+                    },
+                    {
+                        data: 'salary',
+                        render: DataTable.render.number(null, null, 2, '$'),
+                        "className": "dark:bg-gray-800 dark:text-white text-center"
+                    },
+                    {
+                        data: 'aid_transport',
+                        render: DataTable.render.number(null, null, 2, '$'),
+                        "className": "dark:bg-gray-800 dark:text-white text-center"
+                    },
+                    {
+                        "render": function(data, type, row) {
+                            if (row['workarea_description'] == null || row[
+                                    'workarea_description'] == "") {
+                                return ""
+                            } else {
+                                return row['workarea_description'];
+                            }
+                        },
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b"
                     },
                 ]
             }).columns.adjust().responsive.recalc();
@@ -4863,22 +5042,35 @@
             var document = document.document;
             var name = name.name;
 
-            if (process == 1) {
-                message = 'The user ' + name + ' with document ' + document + ' has been successfully registered';
-                // Se ha registrado el usuario xxxx con documento xxx sactisfacoriamente
-            } else if (process == 2) {
-                message = 'user ' + name + ' information has been successfully updated with ' + document;
-                // se ha actualizado la información del usuario xxxx con documento xxx sactisfactoriamente
-            } else if (process == 3) {
-                message = 'user ' + name + ' with document ' + document + ' has been successfully deleted';
-                // se ha eliminado el usuario xxxx con documento xxx sactisfactoriamente
+
+            if (process == 4) {
+                var nit = document;
+            } else if (process == 5) {
+                var email = document;
+            }else if (process == 6) {
+                var username = document;
             }
 
-            swal.fire(
-                '',
-                message,
-                'success'
-            )
+            var message = ['Se ha registrado el usuario ' + name + ' con documento ' + document + ' sactisfacoriamente',
+                        'se ha actualizado la información del usuario ' + name + ' con documento ' + document + ' sactisfactoriamente',
+                        'se ha eliminado el usuario ' + name + ' con documento ' + document + ' sactisfactoriamente',
+                        'el documento o nit ' + nit + ' ya esta registrado en nuestro sistema',
+                        'el correo electronico "' + email + '" ya esta registrado en nuestro sistema',
+                        'el nombre de usuario "' + username + '" ya esta registrado en nuestro sistema'];
+            var state = ['success','error'];
+
+
+            var newmessage = message[process - 1];
+
+            if (process == 1 || process == 2 || process == 3) {
+                swal.fire('', newmessage, 'success')
+                $("#btnCalcel").trigger("click");
+            } else {
+                swal.fire('', newmessage, 'error')
+            }
+            
+            $('#example').DataTable().ajax.reload(null, 1);
+            
         })
 
 
@@ -4979,7 +5171,7 @@
                         var tipeChargenum = document.getElementById('charge').value;
                         if (tipeUsernum == 1 && stepinfinite > 2 || tipeUsernum == 4 &&
                             stepinfinite > 2 || tipeUsernum == 3 && stepinfinite > 2) {
-                            $(this).next().next().next().next().next().next().next().next()
+                            $(this).next().next().next().next().next().next().next()
                                 .fadeIn();
                             current_active_step.removeClass('active').addClass('activated').next()
                                 .addClass('active');
@@ -4988,7 +5180,7 @@
                             //         .fadeIn();
                             //     current_active_step.removeClass('active').addClass('activated').next()
                             //         .addClass('active')
-                        } else if (tipeChargenum != 5 && stepinfinite > 7) {
+                        } else if (tipeChargenum != 5 && stepinfinite > 6) {
                             $(this).next().next().next().fadeIn();
                             current_active_step.removeClass('active').addClass('activated').next()
                                 .addClass('active')
@@ -5023,7 +5215,7 @@
                     var tipeChargenum = document.getElementById('charge').value;
                     if (tipeUsernum == 1 && stepinfinite == 2 || tipeUsernum == 4 && stepinfinite ==
                         2 || tipeUsernum == 3 && stepinfinite == 2) {
-                        $(this).prev().prev().prev().prev().prev().prev().prev().prev().fadeIn();
+                        $(this).prev().prev().prev().prev().prev().prev().prev().fadeIn();
                         current_active_step.removeClass('active').prev().removeClass('activated')
                             .addClass('active');
                         // } else if (tipeUsernum == 3 && stepinfinite == 1) {
@@ -5031,7 +5223,7 @@
                         //         .fadeIn();
                         //     current_active_step.removeClass('active').prev().removeClass('activated')
                         //         .addClass('active');
-                    } else if (tipeChargenum != 5 && stepinfinite == 7) {
+                    } else if (tipeChargenum != 5 && stepinfinite == 6) {
                         $(this).prev().prev().prev().fadeIn();
                         current_active_step.removeClass('active').prev().removeClass('activated')
                             .addClass('active');
@@ -5095,8 +5287,8 @@
                 if (step == true) {
                     stepinfinite = stepinfinite + 1;
 
-                    if (stepinfinite >= 10) {
-                        stepinfinite = 10;
+                    if (stepinfinite >= 9) {
+                        stepinfinite = 9;
                         nextStep = 'step' + stepinfinite
                         // console.log(nextStep);
                         document.getElementById(nextStep).classList.add('flicker');
@@ -5108,7 +5300,7 @@
                     }
                 } else if (step == false) {
                     stepinfinite = stepinfinite - 1;
-                    if (stepinfinite == 10) {
+                    if (stepinfinite == 9) {
                         previousstep = 'step' + 2
                         // console.log('el estado se le quita al 2');
                         document.getElementById(previousstep).classList.remove('flicker');
@@ -5122,7 +5314,7 @@
             }
 
             function lastsaved() {
-                if (stepinfinite >= 10) {
+                if (stepinfinite >= 9) {
                     document.getElementById('btnStore').classList.remove('Inactive');
                     document.getElementById('btnStore').classList.add('Active');
                 } else {
@@ -5244,10 +5436,10 @@
                 current_active_step.removeClass('active');
                 current_active_step_a.removeClass('activated');
                 var contador;
-                if (stepinfinite < 10) {
+                if (stepinfinite < 9) {
                     contador = stepinfinite;
                 } else {
-                    contador = 10;
+                    contador = 9;
                 }
                 // console.log('contador: ' + contador);
                 // console.log('parpadeo: ' + stepinfinite);
@@ -5265,7 +5457,7 @@
                 }
                 stepinfinite = 1;
 
-                $(this).prev().prev().prev().prev().prev().prev().prev().prev().prev().fadeIn();
+                $(this).prev().prev().prev().prev().prev().prev().prev().prev().fadeIn();
                 // scroll window to beginning of the form
                 scroll_to_class($('.f1'), 20);
                 current_active_step_s.first().addClass('active');
@@ -5347,7 +5539,7 @@
             'First_Responder', 'change', 'change', 'labelfiveSensesDriving', 'five_senses_driving', 'change',
             'change', 'labelActivePassiveSecurityVehicle', 'Active_Passive_Security_vehicle', 'change',
             'change', 'labelRoadSafety', 'Road_safety', 'change', 'change', 'labelLinked', 'Linked',
-            'labelUserEntryDate', 'user_entry_date', 'labelDateWithdrawalUser', 'date_withdrawal_user',
+            'labelUserEntryDate', 'user_entry_date', 'labelUsername', 'username',
             'labelProfilePhotoPath', 'profile_photo_path'
 
         ]
@@ -5368,7 +5560,7 @@
                         109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127,
                         128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 145, 146, 149, 150,
                         153, 154, 157, 158, 161, 162, 165, 166, 169, 170, 173, 174, 177, 178, 181, 182, 185, 186, 189,
-                        190, 193, 194, 197, 198, 201, 202, 159, 160, 151, 152, 147, 148); //1-4
+                        190, 193, 194, 197, 198, 201, 202, 159, 160, 151, 152, 147, 148, 205, 206); //1-4
 
                     changeInput(1);
                     document.getElementById('fieldset1Buttons').classList.remove('Inactive');
@@ -5378,7 +5570,7 @@
                 case '2':
                     clave = [];
                     clave.push(22, 23, 26, 27, 28, 29, 30, 31, 32, 33, 24, 25, 5, 6, 7, 37, 38, 39, 143, 144, 147, 148, 151,
-                        152); //2
+                        152, 205, 206); //2
 
                     document.getElementById('fieldset1Buttons').classList.remove('Inactive');
 
@@ -5410,7 +5602,7 @@
                         109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127,
                         128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 145, 146, 149, 150,
                         153, 154, 157, 158, 161, 162, 165, 166, 169, 170, 173, 174, 177, 178, 181, 182, 185, 186, 189,
-                        190, 193, 194, 197, 198, 201, 202, 159, 160, 151, 152, 147, 148); //1-4
+                        190, 193, 194, 197, 198, 201, 202, 159, 160, 151, 152, 147, 148, 205, 206); //1-4
 
                     document.getElementById('fieldset1Buttons').classList.remove('Inactive');
                     changeInput(4);
@@ -5422,7 +5614,7 @@
                         140, 141, 142, 145, 146, 149, 150, 153, 154, 157, 158, 161, 162, 165, 166, 169, 170, 173, 174,
                         177, 178, 181, 182, 185, 186, 189, 190, 193, 194, 197, 198, 201, 202, 8, 9, 10, 11, 12, 13, 14,
                         15, 16, 17, 18, 19, 20, 21, 35, 36, 40, 41, 42, 43, 44, 45, 46, 47, 48, 50, 51, 102, 52, 53, 54,
-                        55, 56, 57, 143, 144, 147, 148, 151, 152, 143); //0
+                        55, 56, 57, 143, 144, 147, 148, 151, 152, 143, 205, 206); //0
                     viewhideinputs('fieldset1Buttons', 'Inactive', 'Active');
                     changeInput(0);
                     break;
@@ -5440,7 +5632,8 @@
                     // console.log('entro');
                     // changeInput(5, '', '', '', '', '', '', '', '', '', 'labelLicenseNumber');
                     clave = [];
-                    clave.push(5, 6, 7, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 37, 38, 39, 147, 148, 143, 144, 151, 152); //5
+                    clave.push(5, 6, 7, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 37, 38, 39, 147, 148, 143, 144, 151,
+                        152, 205, 206); //5
                     changeInput(5);
                     break;
 
@@ -5448,7 +5641,7 @@
                     clave = [];
                     clave.push(137, 138, 139, 140, 141, 142, 145, 146, 149, 150, 153, 154, 157, 158, 161, 162, 165, 166,
                         169, 170, 173, 174, 177, 178, 181, 182, 185, 186, 189, 190, 193, 194, 197, 198, 201, 202, 143,
-                        144, 151, 152, 5, 6, 7, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 37, 38, 39); //6
+                        144, 151, 152, 5, 6, 7, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 37, 38, 39, 205, 206); //6
                     // changeInput(6, '', '', '', 'labelLicenseNumber', '', '', '', '', '', '');
                     changeInput(6);
                     break;
@@ -5506,7 +5699,7 @@
                 // viewhideinputs('finalUser3', 'Inactive', 'Active');
                 // viewhideinputs('passfinalUser3', 'Inactive', 'Active');
 
-                for (var i = 1; i <= 10; i++) {
+                for (var i = 1; i <= 9; i++) {
                     var noSteps = 'step' + [i];
                     var noText = 'pass' + [i];
                     // console.log(noText);
@@ -5538,7 +5731,7 @@
                 // viewhideinputs('finalUser1', 'Active', 'Inactive');
                 // viewhideinputs('passfinalUser1', 'Active', 'Inactive');
                 contador = 4;
-                for (var i = 4; i <= 10; i++) {
+                for (var i = 4; i <= 9; i++) {
                     var noSteps = 'step' + [i];
                     var noText = 'pass' + contador;
                     // console.log(noText);
@@ -5561,8 +5754,8 @@
                     // viewhideinputs('passfinalUser3', 'Inactive', 'Active');
                     // viewhideinputs('finalUser2', 'Active', 'Inactive');
                     // viewhideinputs('passfinalUser2', 'Active', 'Inactive');
-                    contador = 8;
-                    for (var i = 8; i <= 10; i++) {
+                    contador = 7;
+                    for (var i = 7; i <= 9; i++) {
 
                         var noSteps = 'step' + [i];
                         var noText = 'pass' + contador;
@@ -5582,7 +5775,7 @@
                     // viewhideinputs('finalUser3', 'Inactive', 'Active');
                     // viewhideinputs('passfinalUser3', 'Inactive', 'Active');
 
-                    for (var i = 8; i <= 10; i++) {
+                    for (var i = 7; i <= 9; i++) {
                         var noSteps = 'step' + [i];
                         var noText = 'pass' + [i];
                         document.getElementById(noSteps).classList.remove('Inactive');
