@@ -933,9 +933,18 @@
                                         class="Inactive text-gray-700 dark:text-gray-400">Nit</label>
 
                                     <input
-                                        class="Inactive block w-98 py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                        class="Inactive block w90 py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                                         placeholder="Nit de proveedor" type="text" id="nit" name="nit"
                                         wire:model.defer="nit" />
+
+                                        <span id="DocNit"
+                                        class=" upload-ico fas fa-file-upload icon-green" aria-hidden="true"
+                                        fill="none" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                                        <input id="InputDocNit" wire:model.defer="DocNit"
+                                            onchange="documentAbove('InputDocNit','DocNit')"
+                                            class="upload-input" type="file">
+                                    </span>
                                 </div>
 
                                 {{-- <div class="w-6-12">
@@ -4014,6 +4023,7 @@
     <!--end Modal edit -->
 
     {{-- end componentes de modal --}}
+    
 
 
 </div>

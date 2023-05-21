@@ -85,6 +85,8 @@ class ManageUsers extends Component
         $Rules_Transit2, $Normative_Tips2, $Driving_Methods2, $Defensive_driving2, $distractions2, $First_aid2, $First_Responder2, $five_senses_driving2, $Active_Passive_Security_vehicle2,
         $Road_safety2, $Linked2,
 
+        $DocNit, $Docu,
+
         $Doclicense, $DocAlchoolemia, $DocSimitQueries, $DocdrivingExam, $DocNormOverlandTransportationAutomotive,
         $DocRulesTransit, $DocNormativeTips, $DocDrivingMethods, $DocDefensiveDriving, $Docdistractions, $DocFirstAid, $DocFirstResponder, $DocfiveSensesDriving, $DocActivePassiveSecurityVehicle,
         $DocRoadSafety,
@@ -225,6 +227,13 @@ class ManageUsers extends Component
         }else {
             $Routeprofile = '';
         }
+
+        if ($this->usertype == 3) {
+            # code...
+        } else {
+            # code...
+        }
+        
 
         $newName = '';
         if ($this->firstname != '') {
