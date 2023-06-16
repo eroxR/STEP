@@ -41,7 +41,7 @@ return new class extends Migration
 			$table->string('school_name', 150)->nullable();//nombre_colegio
 			$table->string('address_school', 150)->nullable();//direccion_colegio
 			$table->string('school_year', 5)->nullable();//año_escolar
-			$table->enum('contract_with', ['1','2','3'])->default('1')->nullable(); //contrato_con['PADRES','UNIVERSITARIOS','RECTOR O REPRESENTANTE LEGAL'])->default('INICIAL');
+			$table->enum('contract_with', ['1','2','3','4'])->default('1')->nullable(); //contrato_con['Con Grupo PADRES','Con UNIVERSITARIOS','Con ESTUDIANTE CON ACUDIENTE','Con RECTOR O REPRESENTANTE LEGAL Del Colegio'])->default('INICIAL');
 			$table->unsignedBigInteger('identification_represent_legal')->nullable();//identificación_represen_legal
 			$table->bigInteger('identificationcard_represent_legal')->nullable();//cedula_represen_legal
 			// $table->string('trip_from');//viaje_desde
@@ -49,6 +49,10 @@ return new class extends Migration
 			// $table->string('place_of_origin', 100);//lugar_origen
 			// $table->string('destination_place', 100);//lugar_destino
 			// $table->string('return_place', 100);//lugar_regreso
+			$table->string('student_name', 120)->nullable();;//nombre_estudiante
+			$table->bigInteger('identificationcard_estudent')->nullable();;//documento_etudiante
+			$table->string('grade_student', 5)->nullable();;//grado_estudiante
+			$table->string('family_relationship', 120)->nullable();;//PARENTESCO	
 			$table->bigInteger('identificationcard_representative_group')->nullable();//cedula_representante_grupo
 			$table->string('group_representative_name', 60)->nullable();//nombre_representante_grupo
 			$table->string('dateofexpedition_representative_group', 100)->nullable();//lugar_fecha_expedicion_cedula_representante_grupo

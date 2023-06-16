@@ -48,8 +48,7 @@ class PermitController extends Controller
         ->where('permits.id', $id)->value('contract_number');
 
         $contractdatas = permit::join('contracts', 'permits.contract', '=', 'contracts.id')
-        ->select('contracting_name', 'contract_document', 'contracting_phone', 'contracting_direction', 'total_disposition', 
-        'place_of_origin', 'destination_place')
+        ->select('contracting_name', 'contract_document', 'contracting_phone', 'contracting_direction', 'total_disposition')
         ->where('permits.id', '=', $id)->get();
 
         // $tipeContracts = DB::select('select type_contract from contracts inner join

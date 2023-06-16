@@ -29,7 +29,7 @@ class ManageContracts extends Component
     public $contract_number, $type_contract, $state_contract, $date_start_contract, $contract_end_date, $contracting_name, $school_name, $contract_value, $route_trip_contract, $contract_document, $expedition_identificationcard,
         $contracting_phone, $contracting_direction, $legal_representative, $passenger_quantity, $total_disposition, $quantity_vehicle, $contract_signing_date, $identificationcard_represent_legal,
         $legal_representative_expedition_identificationcard, $tipe_pay, $identification, $address_school, $secure_policy, $entity_name, $cooperation_contract, $identification_legal_representative, $identification_representative_group, $identificationcard_representative_group,
-        $group_representative_name, $dateofexpedition_representative_group, $vehicle;
+        $group_representative_name, $dateofexpedition_representative_group, $vehicle, $contract_with, $student_name, $identificationcard_estudent, $grade_student, $family_relationship;
 
     public $editContracts = null, $descriptionTypeContract = null, $vehicleSelect = null;
 
@@ -65,6 +65,10 @@ class ManageContracts extends Component
         'editContracts.address_school'  => 'required',
         'editContracts.identification_represent_legal'  => 'required',
         'editContracts.identificationcard_represent_legal'  => 'required',
+        'student_name'  => 'required',
+        'identificationcard_estudent'  => 'required',
+        'grade_student'  => 'required',
+        'family_relationship'  => 'required',
         // 'editContracts.trip_from'  => 'required',
         // 'editContracts.trip_to'  => 'required',
         // 'editContracts.place_of_origin'  => 'required',
@@ -95,7 +99,7 @@ class ManageContracts extends Component
             'contract_end_date' => $this->contract_end_date,
             'contract_value' => $this->contract_value,
             'contracting_name' => $this->contracting_name,
-            'state_contract' => '0',
+            'state_contract' => '1',
             'identification' => $this->identification,
             'contract_document' => $this->contract_document,
             'expedition_identificationcard' => $this->expedition_identificationcard,
@@ -115,6 +119,10 @@ class ManageContracts extends Component
             'identification_represent_legal' => $this->identification_legal_representative,
             'legal_representative_expedition_identificationcard' => $this->legal_representative_expedition_identificationcard,
             'identificationcard_represent_legal' => $this->identificationcard_represent_legal,
+            'student_name' => $this->student_name,
+            'identificationcard_estudent' => $this->identificationcard_estudent,
+            'grade_student' => $this->grade_student,
+            'family_relationship' => $this->family_relationship,
             // 'trip_from' => $this->trip_from,
             // 'trip_to' => $this->trip_to,
             // 'place_of_origin' => $this->place_of_origin,
@@ -267,6 +275,10 @@ class ManageContracts extends Component
             'identification_legal_representative',
             'legal_representative_expedition_identificationcard',
             'identificationcard_represent_legal',
+            'student_name',
+            'identificationcard_estudent',
+            'grade_student',
+            'family_relationship',
             // 'trip_from',
             // 'trip_to',
             // 'place_of_origin',

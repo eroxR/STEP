@@ -38,6 +38,11 @@ class ContractController extends Controller
 
         $contract_value = DB::table('contracts')->where('id', $id)->value('contract_value');
 
+        $contract_route = DB::table('contracts')->where('id', $id)->value('route_trip_contract');
+
+        $route_from = ucfirst( substr($contract_route,0,strpos($contract_route , '-')));
+        $route_to = ucfirst( substr($contract_route,strpos($contract_route , '-')+2));
+
         $tipe_pay = DB::table('contracts')->join('payment_types', 'contracts.tipe_pay', '=', 'payment_types.id')
             ->where('contracts.id', $id)->value('description_typePayment');
 
@@ -67,7 +72,15 @@ class ContractController extends Controller
         // $formatterES = new NumberFormatter("es", NumberFormatter::SPELLOUT);
         $valueContractText =  $formatterES->format($contract_value);
         $fyear = Carbon::parse(now());
+        $start = Carbon::parse($date_start_contract);
+        $end = Carbon::parse($contract_end_date);
         $fyear = $fyear->year;
+        $fStartDay = $start->day;
+        $fStartMont = $start->monthName;
+        $fStartYear = $start->year;
+        $fEndDay = $end->day;
+        $fEndMont = $end->monthName;
+        $fEndYear = $end->year;
 
         $titletypecontract = DB::table('contracts')->where('id', $id)->value('type_contract');
         $titlecontractwith = DB::table('contracts')->where('id', $id)->value('contract_with');
@@ -114,7 +127,16 @@ class ContractController extends Controller
             'valueContractText' => $valueContractText,
             'tipe_pay' => $tipe_pay,
             'fyear' => $fyear,
-            'titlecontract' => $titlecontract
+            'titlecontract' => $titlecontract,
+            'fStartDay' => $fStartDay,
+            'fStartMont' => $fStartMont,
+            'fStartYear' => $fStartYear,
+            'fEndDay' => $fEndDay,
+            'fEndMont' => $fEndMont,
+            'fEndYear' => $fEndYear,
+            'route_from' => $route_from,
+            'route_to' => $route_to
+            
         ]);
         // $pdf->loadHTML('<h1>Test</h1>');
         return $pdf->stream();

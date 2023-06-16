@@ -20,7 +20,7 @@ return new class extends Migration
 			$table->date('permit_end_date');//fecha_fin_permiso
 			$table->integer('permit_number');//numero_consecuente_permiso
             $table->string('permit_code', 30);//codigo_unico_permiso
-            $table->enum('fuec_state', ['0','1','2','3','4'])->default('1');  //estado_permiso['INICIAL','EN CURSO','PENDIENTE','FINALIZADO','CANCELADO'])->default('INICIAL');
+            $table->enum('fuec_state', ['1','2','3','4','5'])->default('1');  //estado_permiso['INICIAL','EN CURSO','PENDIENTE','FINALIZADO','CANCELADO'])->default('INICIAL');
 			
 			$table->timestamps();
 			
