@@ -1769,6 +1769,7 @@ border-bottom-left-radius: 1rem; /* 16px */}
 	animation: parpadear 2s infinite backwards;
 }
 
+
 .numcolor {
 	color: #000;
 }
@@ -1826,6 +1827,15 @@ border-bottom-left-radius: 1rem; /* 16px */}
 	font-size: 2.8rem;
 	/* background: #000; */
 	border-radius: 10px;	
+}
+
+.upload-ico33{
+	position: absolute;
+    margin-left: 21.5%;
+    margin-top: -2.7%;
+    font-size: 2.8rem;
+    /* background: #000; */
+    border-radius: 10px;	
 }
 
 .edit-upload-ico{
@@ -2164,6 +2174,8 @@ border-bottom-left-radius: 1rem; /* 16px */}
 		transform: scale(1);
 	}
 }
+
+
 @keyframes pasajero3{
 	0%{
 		transform: scale(1);
@@ -2258,6 +2270,52 @@ border-bottom-left-radius: 1rem; /* 16px */}
 	}
 }
 
+#luces{
+	/* font-size: 35px; */
+	animation-name: luz;
+	/* animation-delay: 3s; */
+	animation-duration: 3s;
+	animation-iteration-count: infinite;
+}
+
+#luz{
+	/* font-size: 35px; */
+	animation-name: luz;
+	/* animation-delay: 3s; */
+	animation-duration: 3s;
+	animation-iteration-count: infinite;
+}
+
+@keyframes luz{
+	0%{
+		/* transform: scale(1); */
+		opacity: 0;
+	}
+	25%{
+		/* transform: scale(1); */
+		opacity: 0;
+	}
+	50%{
+		transform: scale(1);
+		/* opacity: 0; */
+	}
+	75%{
+		transform: scale(1);
+		/* opacity: 0; */
+	}
+	85%{
+		transform: scale(1);
+		/* opacity: 0; */
+	}
+	95%{
+		transform: scale(1);
+		/* opacity: 0; */
+	}
+	100%{
+		transform: scale(1);
+	}
+}
+
 
 .pruebapers{
 	margin-top: 2%;
@@ -2300,6 +2358,7 @@ border-bottom-left-radius: 1rem; /* 16px */}
 	animation-duration: 4s;
 	animation-iteration-count: infinite;
 }
+
 
 @keyframes typeds {
 	0%{

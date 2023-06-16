@@ -920,6 +920,24 @@ x-transition:leave-end="opacity-0 transform -translate-x-20">
                                                 <div>
                                                     <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                                                         :class="{ '-ml-5': !isSideMenuOpen }">
+                                                        <a x-on:mouseover="flotan='providers_list'"
+                                                            x-on:mouseleave="flotan=''" class="w-full"
+                                                            href="{{ route('pruebas.listapendiente') }}">
+                                                            <i class="fas fa-fw fa-database icon-blue"
+                                                                :class="{ 'text-3xl': !isSideMenuOpen }"></i>
+                                                            <span
+                                                                :class="!isSideMenuOpen && flotan == 'providers_list' ?
+                                                                    minidisplay2 : '' || !
+                                                                    isSideMenuOpen &&
+                                                                    flotan != 'providers_list' ? 'hidden' : ''">
+                                                                {{ __('providers list') }}
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                </div>
+                                                <div>
+                                                    <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                                                        :class="{ '-ml-5': !isSideMenuOpen }">
                                                         <a x-on:mouseover="flotan='pending_list'"
                                                             x-on:mouseleave="flotan=''" class="w-full"
                                                             href="{{ route('pruebas.listapendiente') }}">
@@ -935,7 +953,6 @@ x-transition:leave-end="opacity-0 transform -translate-x-20">
                                                         </a>
                                                     </li>
                                                 </div>
-                                                <div>G</div>
                                             </div>
 
                                         </ul>

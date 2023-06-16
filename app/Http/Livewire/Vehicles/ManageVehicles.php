@@ -36,7 +36,7 @@ class ManageVehicles extends Component
         $cylinder_vehicle, $quantity_valves, $number_passenger, $number_cylinders, $turbo, $orientation, $front_suspension, $rear_suspension, $rear_brake_type,
         $front_brake_type, $tire_number, $type_direction, $transmission_type, $number_speeds, $type_bearing, $number_windows;
 
-    protected $listeners = ['destroy', 'edit', 'documentUpdate'];
+    protected $listeners = ['destroy', 'edit', 'documentUpdate', 'reactivado'];
 
     protected $rules = [
 
@@ -92,6 +92,24 @@ class ManageVehicles extends Component
         $this->property_card_number = strtoupper($this->property_card_number);
         $plate_vehicle = strtoupper($this->plate_vehicle);
 
+        $plateExits = DB::table('vehicles')->where('plate_vehicle', $plate_vehicle)->value('plate_vehicle');
+        $sideExits = DB::table('vehicles')->where('side_vehicle', $this->side_vehicle)->value('side_vehicle');
+
+        if ($plateExits > 0) {
+            return $this->emit('crud', ['plate' => $plate_vehicle], ['process' => 4]);
+        } elseif ($sideExits > 0) {
+            return $this->emit('crud', ['plate' => $sideExits], ['process' => 5]);
+        }
+
+        if ($this->property_card_number == '' || $this->DocPropertyCardNumber == '' || $this->secure_end_date == '' || $this->DocNumberAccreditationSoat == '' || $this->number_technomechanical_accreditation == '' ||
+        $this->technomechanical_end_date == '' || $this->DocNumberTechnomechanicalAccreditation == '' || $this->expiration_card_operation == '' || $this->DocCardOperation == '' || $this->expiration_preventive == '' ||
+        $this->DocPreventive == '' || $this->certificate_extracontractual == '' || $this->DocCertificateExtracontractual == '' || $this->civil_contractual == '' || $this->DocCivilContractual == '') {
+            $stateVehicle = 1;
+        } else {
+            $stateVehicle = 2;
+        }
+        
+
 
         $vehicle =  Vehicle::create([
             'plate_vehicle' => $plate_vehicle,
@@ -113,7 +131,7 @@ class ManageVehicles extends Component
             'civil_contractual' => $this->civil_contractual,
             'internal_external_owner_type' => $this->internal_external_owner_type,
             'infrastructure_vehicle' => $this->infrastructure_vehicle,
-            'state_vehicle' => '0',
+            'state_vehicle' => $stateVehicle,
             // 'card_operation' => $this->,
             'expiration_card_operation' => $this->expiration_card_operation,
             'expiration_preventive' => $this->expiration_preventive,
@@ -238,6 +256,7 @@ class ManageVehicles extends Component
     {
         $plate = DB::table('vehicles')->where('id', $id)->value('plate_vehicle');
         // dd($plate);
+        DB::table('contract_vehicle_permit')->where('vehicle_id', $id)->delete();
         vehicle::destroy($id);
 
         // $limitDelete = DB::table('documents')->where('documentable_id', $id)->where('documentable_Type', 'like', '%\vehicle%')->count();
@@ -249,6 +268,7 @@ class ManageVehicles extends Component
         //     Storage::delete($newRuta);
         //     DB::table('documents')->where('documentable_id', $id)->where('documentable_Type', 'like', '%\vehicle%')->limit(1)->delete();
         // }
+        
         DB::table('documents')->where('documentable_id', $id)->where('documentable_Type', 'like', '%\vehicle%')->delete();
 
         Storage::deleteDirectory('public/STEP/vehicles/Placa_' . $plate);
@@ -395,10 +415,12 @@ class ManageVehicles extends Component
 
         $dimensionRims = dimensionRims::select('id', 'inch', 'type_rims')->get();
 
-        $owners = User::select('id', DB::raw('CONCAT(firstname, secondname, lastname, motherslastname) As owner'))->where('usertype', '4')->get();
+        $owners = User::select('id', DB::raw('CONCAT(firstname, " " ,secondname, " " ,lastname, " " ,motherslastname) As owner'))->where('usertype', '4')->get();
+
+        // $conducs = User::select('id', DB::raw('CONCAT(firstname, " " ,secondname, " " ,lastname, " " ,motherslastname) As conduc'))->where('charge', '5')->get();
 
         $conducs = driver::join('users', 'drivers.user_id', '=', 'users.id')
-            ->select('drivers.id', DB::raw('CONCAT(firstname, secondname, lastname, motherslastname) As conduc'))
+            ->select('drivers.id', DB::raw('CONCAT(firstname, " " ,secondname, " " ,lastname, " " ,motherslastname) As conduc'))
             ->orderBy('drivers.id', 'DESC')->get();
 
         return view('livewire.vehicles.manage-vehicles', compact(
@@ -489,5 +511,9 @@ class ManageVehicles extends Component
             ['docCivilContractual' => $this->docCivilContractual],
             ['docExtracontractual' => $this->docExtracontractual]
         );
+    }
+
+    public function reactivado($id) {
+        dd('si funciona');
     }
 }

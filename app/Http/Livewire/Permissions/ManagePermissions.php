@@ -70,7 +70,7 @@ class ManagePermissions extends Component
             'permit_start_date' => $this->permit_start_date,
             'permit_end_date' => $this->permit_end_date,
             'permit_number' => $this->permit_number,
-            'fuec_state' => '0',
+            'fuec_state' => '1',
             'permit_code' => $this->permit_code,
         ]);
 
@@ -364,9 +364,13 @@ class ManagePermissions extends Component
             ->orderBy($this->sort, $this->direction)->get();
 
         $drivers = driver::join('users', 'drivers.user_id', '=', 'users.id')
-            ->select('drivers.id', 'identificationcard', DB::raw('CONCAT(users.firstname, users.secondname, users.lastname, users.motherslastname) As nameFull'))->get();
+            ->select('drivers.id', 'identificationcard', DB::raw('CONCAT(users.firstname," ",users.secondname," ",users.lastname," ",users.motherslastname) As nameFull'))
+            ->where('driver_status', '2')
+            ->get();
 
-        $vehicles = vehicle::all();
+        $vehicles = vehicle::select('id', 'plate_vehicle', 'side_vehicle', 'secure_end_date')
+        ->whereIn('state_vehicle', [2, 4])
+        ->get();
 
         $typeContracts = contractType::pluck('description_typeContract', 'id');
 
@@ -394,6 +398,8 @@ class ManagePermissions extends Component
 
         $this->contractSelects = contract::select('id', 'contract_number')
             ->where('type_contract', $typeContract)
+            // ->whereIn('state_contract', [1, 3, 5])
+            ->whereIn('state_contract', [3, 5])
             ->orderBy('contract_number', 'DESC')
             ->get();
         // dd($this->contractSelects,$this->driving,$this->cars,$this->permit_start_date);

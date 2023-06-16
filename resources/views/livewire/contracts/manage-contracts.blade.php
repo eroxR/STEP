@@ -2,33 +2,84 @@
     <div class="py-12 mb-2 mt-4">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="justify-center flex">
-                {{-- class="bg-white overflow-hidden shadow-xl sm:rounded-lg border-gray-50-s dark:bg-gray-800 dark:text-white" --}}
-                <h1 class="text-black dark:text-white text-4xl rounded-lg border-b-green-800 p-1">{{ __('Manage Contracts') }}</h1>
-                {{-- background: black;
-                border-radius: 3px;
-                padding: 0.3rem; --}}
+                <h1 class="text-black dark:text-white text-4xl rounded-lg border-b-green-800 p-1">
+                    {{ __('Manage Contracts') }}</h1>
             </div>
         </div>
         <div class="w-full overflow-hidden rounded-lg shadow-xs mt-4">
-            <div class="px-4 py-2 mb-2 mt-1 ml-2 flex items-center border-b-fuchsia-800 border-b">
-                {{-- <h1 class="text-black dark:text-white">cambio de contraseña desde livewire</h1> --}}
-                <input
+            {{-- <div class="px-4 py-2 mb-2 mt-1 ml-2 flex items-center border-b-fuchsia-800 border-b"> --}}
+            {{-- <h1 class="text-black dark:text-white">cambio de contraseña desde livewire</h1> --}}
+            {{-- <input
                     class="flex-1 mr-4 pl-8 pr-2 text-sm text-gray-700 placeholder-gray-600 bg-gray-100 border-0 rounded-md dark:placeholder-gray-500 dark:focus:shadow-outline-gray dark:focus:placeholder-gray-600 dark:bg-gray-700 dark:text-gray-200 focus:placeholder-gray-500 focus:bg-white focus:border-purple-300 focus:outline-none focus:shadow-outline-purple form-input"
                     type="text" placeholder="Escribe una consulta sobre la tabla" wire:model="search">
 
                 <button @click="openModal"
                     class="px-2 py-1 font-semibold leading-tight text-black bg-sky-700 rounded-full dark:bg-sky-700 dark:text-white">
                      {{ __('create new contract') }}
-                </button>
-            </div>
+                </button> --}}
+            {{-- </div> --}}
 
-            <div class="w-full overflow-x-auto">
-                @if ($contracts->count())
+            <div class=" overflow-x-auto" style="width:100%;" wire:ignore>
+
+                <table id="example" class="stripe dark:border-gray-700 bg-gray-50 dark:text-white dark:bg-gray-800"
+                    style="width:100%; padding-top: 1em;  padding-bottom: 1em;">
+                    <thead>
+                        <tr
+                            class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
+                            <th class="pl-4 py-2" data-priority="0">{{ __('Actions') }}</th>
+                            <th class="pl-4 py-2" data-priority="1">ID</th>
+                            <th class="pl-4 py-2" data-priority="2">{{ __('contract number') }}</th>
+                            <th class="pl-4 py-2" data-priority="3">{{ __('description typeContract') }}</th>
+                            <th class="pl-4 py-2" data-priority="4">{{ __('state contract') }}</th>
+                            <th class="pl-4 py-2" data-priority="5">{{ __('date start contract') }}</th>
+                            <th class="pl-4 py-2" data-priority="6">{{ __('contract end date') }}</th>
+                            <th class="pl-4 py-2" data-priority="7">{{ __('contracting name') }}</th>
+                            <th class="pl-4 py-2" data-priority="8">{{ __('identification') }}</th>
+                            <th class="pl-4 py-2" data-priority="9">{{ __('contract document') }}</th>
+                            <th class="pl-4 py-2" data-priority="10">{{ __('expedition identificationcard') }}</th>
+                            <th class="pl-4 py-2" data-priority="11">{{ __('contract value') }}</th>
+                            <th class="pl-4 py-2" data-priority="12">{{ __('school name') }}</th>
+                            <th class="pl-4 py-2" data-priority="13">{{ __('route trip contract') }}</th>
+                            {{-- <th class="pl-4 py-2" data-priority="14">{{ __('contract_value') }}</th> --}}
+                            <th class="pl-4 py-2" data-priority="14">{{ __('contracting phone') }}</th>
+                            <th class="pl-4 py-2" data-priority="15">{{ __('contracting direction') }}</th>
+                            <th class="pl-4 py-2" data-priority="16">{{ __('legal representative') }}</th>
+                            <th class="pl-4 py-2" data-priority="17">
+                                {{ __('legal representative expedition identificationcard') }}</th>
+                            <th class="pl-4 py-2" data-priority="18">{{ __('passenger quantity') }}</th>
+                            <th class="pl-4 py-2" data-priority="19">{{ __('total disposition') }}</th>
+                            <th class="pl-4 py-2" data-priority="20">{{ __('quantity vehicle') }}</th>
+                            <th class="pl-4 py-2" data-priority="21">{{ __('cooperation contract') }}</th>
+                            <th class="pl-4 py-2" data-priority="22">{{ __('entity name') }}</th>
+                            <th class="pl-4 py-2" data-priority="23">{{ __('secure policy') }}</th>
+                            <th class="pl-4 py-2" data-priority="24">{{ __('tipe pay') }}</th>
+                            <th class="pl-4 py-2" data-priority="25">{{ __('contract signing date') }}</th>
+                            <th class="pl-4 py-2" data-priority="26">{{ __('address school') }}</th>
+                            <th class="pl-4 py-2" data-priority="27">{{ __('school year') }}</th>
+                            <th class="pl-4 py-2" data-priority="28">{{ __('contract with') }}</th>
+                            <th class="pl-4 py-2" data-priority="29">{{ __('identification legal representative') }}
+                            </th>
+                            <th class="pl-4 py-2" data-priority="30">{{ __('identificationcard represent legal') }}
+                            </th>
+                            <th class="pl-4 py-2" data-priority="31">
+                                {{ __('identificationcard representative group') }}</th>
+                            <th class="pl-4 py-2" data-priority="32">{{ __('group representative name') }}</th>
+                            <th class="pl-4 py-2" data-priority="33">{{ __('dateofexpedition representative group') }}
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody {{-- class="dark:bg-gray-800 dark:text-white" --}}>
+                    </tbody>
+
+                </table>
+
+
+                {{-- @if ($contracts->count())
                     <table class="w-full ">
                         <thead>
                             <tr
-                                class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
-                                {{-- <th class="cursor-pointer px-2 py-3" wire:click="order('id')">
+                                class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800"> --}}
+                {{-- <th class="cursor-pointer px-2 py-3" wire:click="order('id')">
 
                                     ID
 
@@ -44,7 +95,7 @@
                                     @endif
 
                                 </th> --}}
-                                <th class="cursor-pointer px-2 py-3" wire:click="order('contract_number')">
+                {{-- <th class="cursor-pointer px-2 py-3" wire:click="order('contract_number')">
 
                                     {{ __('contract number') }}
 
@@ -194,19 +245,19 @@
                         <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
 
                             @foreach ($contracts as $contract)
-                                <tr class="text-gray-700 dark:text-gray-400">
-                                    {{-- <td class="px-4 py-3 text-sm">
+                                <tr class="text-gray-700 dark:text-gray-400"> --}}
+                {{-- <td class="px-4 py-3 text-sm">
                                         {{ $contract->id }}
                                     </td> --}}
-                                    <td class="px-4 py-3 text-sm">
+                {{-- <td class="px-4 py-3 text-sm">
                                         {{ $contract->contract_number }}
                                     </td>
                                     <td class="px-4 py-3 text-sm">
                                         {{ $contract->contract_name }}
                                     </td>
-                                    <td class="px-4 py-3 text-xs">
-                                        {{-- ['INICIAL','CANCELADO','EN CURSO','FINALIZADO','PENDIENTE'] --}}
-                                        @switch($contract->state_contract)
+                                    <td class="px-4 py-3 text-xs"> --}}
+                {{-- ['INICIAL','CANCELADO','EN CURSO','FINALIZADO','PENDIENTE'] --}}
+                {{-- @switch($contract->state_contract)
                                             @case('0')
                                                 <span
                                                     class="px-2 py-1 font-semibold leading-tight text-gray-700 bg-gray-100 rounded-full dark:text-gray-100 dark:bg-gray-700">
@@ -267,9 +318,9 @@
                                     <td class="px-4 py-3">
                                         <div class="flex items-center space-x-4 text-sm">
                                             <button id="edit" onclick="edit({{ $contract }})"
-                                                class="inline-flex items-center justify-center  bg-yellow-700 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-yellow-400 focus:outline-none focus:bg-yellow-700 focus:ring focus:ring-red-200 active:bg-yellow-700 disabled:opacity-25 transition"
-                                                {{-- flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray" --}} aria-label="Edit">
-                                                <svg class="w-5 h-5" aria-hidden="true" fill="currentColor"
+                                                class="inline-flex items-center justify-center  bg-yellow-700 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-yellow-400 focus:outline-none focus:bg-yellow-700 focus:ring focus:ring-red-200 active:bg-yellow-700 disabled:opacity-25 transition" --}}
+                {{-- flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray"  aria-label="Edit">
+                                                {{-- <svg class="w-5 h-5" aria-hidden="true" fill="currentColor"
                                                     viewBox="0 0 20 20">
                                                     <path
                                                         d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z">
@@ -277,9 +328,9 @@
                                                 </svg>
                                             </button>
                                             <button onclick="deletes({{ $contract->id }})"
-                                                class="inline-flex items-center justify-center  bg-red-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 active:bg-red-600 disabled:opacity-25 transition"
-                                                {{-- flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray" --}} aria-label="Delete">
-                                                <svg class="w-5 h-5" aria-hidden="true" fill="currentColor"
+                                                class="inline-flex items-center justify-center  bg-red-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 active:bg-red-600 disabled:opacity-25 transition" --}}
+                {{-- flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray"  aria-label="Delete">
+                                                {{-- <svg class="w-5 h-5" aria-hidden="true" fill="currentColor"
                                                     viewBox="0 0 20 20">
                                                     <path fill-rule="evenodd"
                                                         d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
@@ -287,8 +338,8 @@
                                                 </svg>
                                             </button>
                                             <button onclick="view({{ $contract->id }})"
-                                                class="inline-flex items-center justify-center  bg-blue-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 active:bg-red-600 disabled:opacity-25 transition"
-                                                {{-- flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray" --}} aria-label="view">
+                                                class="inline-flex items-center justify-center  bg-blue-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 active:bg-red-600 disabled:opacity-25 transition" --}}
+                {{-- flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray" aria-label="view">
                                                 <svg class="w-5 h-5" fill="none" stroke="currentColor"
                                                     stroke-width="1.5" viewBox="0 0 24 24"
                                                     xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -309,79 +360,8 @@
                     <div class="px-6 py-4 text-black dark:text-white">
                         {{ __('There are no Contracts that match what you are looking for...') }}
                     </div>
-                @endif
+                @endif  --}}
 
-            </div>
-            <div
-                class="grid px-4 py-3 text-xs font-semibold tracking-wide text-gray-500 uppercase border-t dark:border-gray-700 bg-gray-50 sm:grid-cols-9 dark:text-gray-400 dark:bg-gray-800">
-                {{-- <span class="flex items-center col-span-3">
-                    Showing 21-30 of 100
-                </span>
-                <span class="col-span-2"></span> --}}
-                <!-- Pagination -->
-                {{-- <span class="flex col-span-4 mt-2 sm:mt-auto sm:justify-end">
-                    <nav aria-label="Table navigation">
-                        <ul class="inline-flex items-center">
-                            <li>
-                                <button
-                                    class="px-3 py-1 rounded-md rounded-l-lg focus:outline-none focus:shadow-outline-purple"
-                                    aria-label="Previous">
-                                    <svg class="w-4 h-4 fill-current" aria-hidden="true" viewBox="0 0 20 20">
-                                        <path
-                                            d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
-                                            clip-rule="evenodd" fill-rule="evenodd"></path>
-                                    </svg>
-                                </button>
-                            </li>
-                            <li>
-                                <button class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple">
-                                    1
-                                </button>
-                            </li>
-                            <li>
-                                <button class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple">
-                                    2
-                                </button>
-                            </li>
-                            <li>
-                                <button
-                                    class="px-3 py-1 text-white transition-colors duration-150 bg-purple-600 border border-r-0 border-purple-600 rounded-md focus:outline-none focus:shadow-outline-purple">
-                                    3
-                                </button>
-                            </li>
-                            <li>
-                                <button class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple">
-                                    4
-                                </button>
-                            </li>
-                            <li>
-                                <span class="px-3 py-1">...</span>
-                            </li>
-                            <li>
-                                <button class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple">
-                                    8
-                                </button>
-                            </li>
-                            <li>
-                                <button class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple">
-                                    9
-                                </button>
-                            </li>
-                            <li>
-                                <button
-                                    class="px-3 py-1 rounded-md rounded-r-lg focus:outline-none focus:shadow-outline-purple"
-                                    aria-label="Next">
-                                    <svg class="w-4 h-4 fill-current" aria-hidden="true" viewBox="0 0 20 20">
-                                        <path
-                                            d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                                            clip-rule="evenodd" fill-rule="evenodd"></path>
-                                    </svg>
-                                </button>
-                            </li>
-                        </ul>
-                    </nav>
-                </span> --}}
-                {{ $contracts->links('livewire.tailwind') }}
             </div>
         </div>
 
@@ -407,7 +387,8 @@
             <header class="flex justify-center border-b-fuchsia-800 border-b">
                 <!-- Modal title -->
                 <p class="justify-start mb-2 text-lg font-semibold text-gray-700 dark:text-gray-300">
-                <h1 class="text-black dark:text-white text-4xl1">{{ __('Creating new contract') }}<span id="typed2" class="typed2">.</span>
+                <h1 class="text-black dark:text-white text-4xl1">{{ __('Creating new contract') }}<span id="typed2"
+                        class="typed2">.</span>
                     <span id="typed3" class="typed3">.</span>
                     <span id="typed4" class="typed4">.</span>
                     <span id="typed5" class="typed5">.</span>
@@ -478,7 +459,7 @@
                             </div>
                             <p>Paso 3</p>
                         </div>
-                        <div class="f1-step ">
+                        {{-- <div class="f1-step ">
                             <div class="f1-step-icon">
 
                                 <!-- Crea un icono envuelto por la clase fa-stack -->
@@ -492,7 +473,7 @@
                                 </span>
                             </div>
                             <p>Paso 4</p>
-                        </div>
+                        </div> --}}
                         <div class="f1-step ">
                             <div class="f1-step-icon">
 
@@ -539,8 +520,7 @@
                                 </div>
                                 <div class="w-6-12 " id="divContract_with">
 
-                                    <select wire:model.defer="contract_with"
-                                        id="contract_with" name="contract_with"
+                                    <select wire:model.defer="contract_with" id="contract_with" name="contract_with" onchange="withContract()"
                                         class="Inactive block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
                                         <option value="0">Contrato Con </option>
                                         <option value="1">Con Grupo PADRES</option>
@@ -554,8 +534,10 @@
 
                             <div class="flex space-x-4 ">
 
-                                <div class="w-6-12"  id="divIdentification">
-                                    <label id="labelIdentification" class="Inactive text-gray-700 dark:text-gray-400">Tipo de Identificación</label>
+                                <div class="w-6-12" id="divIdentification">
+                                    <label id="labelIdentification"
+                                        class="Inactive text-gray-700 dark:text-gray-400">Tipo de
+                                        Identificación</label>
                                     <select wire:model.defer="identification" id="identification"
                                         name="identification"
                                         class="Inactive block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
@@ -752,6 +734,30 @@
 
                             </div>
 
+                            <div class="flex space-x-4" id="divEstudiante">
+
+                                <div class="w-6-12">
+                                    <label id="labelEstudiante"
+                                        class="text-gray-700 dark:text-gray-400">{{ __('Student name') }}</label>
+                                    <input
+                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                        placeholder="Nombre de estudiante" type="text" id="Student_name"
+                                        name="Student_name" wire:model.defer="student_name" />
+                                </div>
+
+                                <div class="w-6-12">
+                                    <label id="labelIdentificationcardEstudent"
+                                        class="text-gray-700 dark:text-gray-400">{{ __('identificación estudiante') }}</label>
+
+                                    <input
+                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                        placeholder="numero identificación estudiante" type="number"
+                                        id="identificationcard_Estudent" name="identificationcard_Estudent"
+                                        wire:model.defer="identificationcard_estudent" />
+                                </div>
+
+                            </div>
+
                             <div class="flex space-x-4">
 
                                 <div class="w-6-12">
@@ -774,6 +780,30 @@
                                         id="legal_representative_expedition_identificationcard"
                                         name="legal_representative_expedition_identificationcard"
                                         wire:model.defer="legal_representative_expedition_identificationcard" />
+                                </div>
+
+                            </div>
+
+                            <div class="flex space-x-4">
+
+                                <div class="w-6-12">
+                                    <label id="labelGrade"
+                                        class="text-gray-700 dark:text-gray-400">{{ __('grade student') }}</label>
+
+                                    <input
+                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                        placeholder="Grado del Estudiante" type="text" id="grade_student"
+                                        name="grade_student" wire:model.defer="grade_student" />
+                                </div>
+
+                                <div class="w-6-12">
+                                    <label id="labelFamilyRelationship"
+                                        class="text-gray-700 dark:text-gray-400">{{ __('Family Relationship') }}</label>
+
+                                    <input
+                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                        placeholder="Parentezco Familiar" type="text" id="family_relationship"
+                                        name="family_relationship" wire:model.defer="family_relationship" />
                                 </div>
 
                             </div>
@@ -839,7 +869,8 @@
                             <div class="flex space-x-4" id="divRouteTrip">
 
                                 <div class="w-full">
-                                    <label id="labelRouteTrip" class="text-gray-700 dark:text-gray-400">{{ __('route trip contract') }}</label>
+                                    <label id="labelRouteTrip"
+                                        class="text-gray-700 dark:text-gray-400">{{ __('route trip contract') }}</label>
 
                                     <textarea
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -867,7 +898,8 @@
                             <div class="flex space-x-4">
 
                                 <div class="w-6-12">
-                                    <label class="text-gray-700 dark:text-gray-400">{{ __('date start contract') }}</label>
+                                    <label
+                                        class="text-gray-700 dark:text-gray-400">{{ __('date start contract') }}</label>
 
                                     <input
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -876,7 +908,8 @@
                                 </div>
 
                                 <div class="w-6-12">
-                                    <label class="text-gray-700 dark:text-gray-400">{{ __('contract end date') }}</label>
+                                    <label
+                                        class="text-gray-700 dark:text-gray-400">{{ __('contract end date') }}</label>
 
                                     <input
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -888,17 +921,18 @@
                             <div class="flex space-x-4" id="">
 
                                 <div class="w-6-12">
-                                    <label id="labelQuantityVehicle" class="text-gray-700 dark:text-gray-400">{{ __('quantity vehicle') }}</label>
+                                    <label id="labelQuantityVehicle"
+                                        class="text-gray-700 dark:text-gray-400">{{ __('quantity vehicle') }}</label>
 
                                     <input
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                        placeholder="quantity_vehicle" type="number"
-                                        id="quantity_vehicle"
+                                        placeholder="quantity_vehicle" type="number" id="quantity_vehicle"
                                         wire:model.defer="quantity_vehicle" />
                                 </div>
 
                                 <div class="w-6-12" id="divPassengerQuantity">
-                                    <label id="labelPassengerQuantity" class="text-gray-700 dark:text-gray-400">{{ __('passenger quantity') }}</label>
+                                    <label id="labelPassengerQuantity"
+                                        class="text-gray-700 dark:text-gray-400">{{ __('passenger quantity') }}</label>
 
                                     <input
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -910,7 +944,8 @@
                             <div class="flex space-x-4">
 
                                 <div class="w-6-12">
-                                    <label id="labelTotalDisposition" class="text-gray-700 dark:text-gray-400">{{ __('total disposition') }}</label>
+                                    <label id="labelTotalDisposition"
+                                        class="text-gray-700 dark:text-gray-400">{{ __('total disposition') }}</label>
                                     <select wire:model.defer="total_disposition" id="total_disposition"
                                         class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
                                         <option value="0">Selecciona si necesita Disposición Total</option>
@@ -920,11 +955,12 @@
                                 </div>
 
                                 <div class="w-6-12">
-                                    <label  id="labelSigningDate" class="text-gray-700 dark:text-gray-400">{{ __('contract signing date') }}</label>
+                                    <label id="labelSigningDate"
+                                        class="text-gray-700 dark:text-gray-400">{{ __('contract signing date') }}</label>
 
                                     <input
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                        placeholder="contract_signing_date" type="date" id="contract_signing_date" 
+                                        placeholder="contract_signing_date" type="date" id="contract_signing_date"
                                         wire:model.defer="contract_signing_date" />
                                 </div>
                             </div>
@@ -932,7 +968,8 @@
                             <div class="flex space-x-4">
 
                                 <div class="w-6-12">
-                                    <label id="labelTipePay" class="text-gray-700 dark:text-gray-400">{{ __('tipe pay') }}</label>
+                                    <label id="labelTipePay"
+                                        class="text-gray-700 dark:text-gray-400">{{ __('tipe pay') }}</label>
                                     <select wire:model.defer="tipe_pay" id="tipe_pay"
                                         class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
                                         <option value="0">Selecciona el tipo de pago</option>
@@ -944,7 +981,8 @@
                                 </div>
 
                                 <div class="w-6-12">
-                                    <label id="labelContractValue" class="text-gray-700 dark:text-gray-400">{{ __('contract value') }}</label>
+                                    <label id="labelContractValue"
+                                        class="text-gray-700 dark:text-gray-400">{{ __('contract value') }}</label>
 
                                     <input
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -968,7 +1006,7 @@
                         <!--fin del paso 3 -->
 
                         <!---paso 4 -->
-                        <fieldset>
+                        {{-- <fieldset>
 
 
                             <br>
@@ -979,11 +1017,11 @@
                                     class="btn btn-next w-full px-5 py-3 text-sm font-medium leading-5 transition-colors duration-150 bg-green-600 border border-transparent rounded-lg sm:w-auto sm:px-4 sm:py-2 active:bg-green-600 hover:bg-green-700 focus:outline-none focus:shadow-outline-purple">Siguiente</button>
                             </div>
 
-                        </fieldset>
+                        </fieldset> --}}
                         <!--fin del paso 4 -->
 
                         <!--paso fin -->
-                        <fieldset>
+                        {{-- <fieldset>
 
                             <br>
                             <div class="f1-buttons">
@@ -993,7 +1031,7 @@
                                     class="btn btn-next w-full px-5 py-3 text-sm font-medium leading-5 transition-colors duration-150 bg-green-600 border border-transparent rounded-lg sm:w-auto sm:px-4 sm:py-2 active:bg-green-600 hover:bg-green-700 focus:outline-none focus:shadow-outline-purple">Siguiente</button>
                             </div>
 
-                        </fieldset>
+                        </fieldset> --}}
                         <!--fin -->
 
                     </div>
@@ -1037,14 +1075,15 @@
                 <!-- Modal title -->
                 <p class="justify-start mb-2 text-lg font-semibold text-gray-700 dark:text-gray-300">
                 <h1 class="text-black dark:text-white text-4xl1">{{ __('Editing the information') }}
-                    
+
                     @if (!is_null($editContracts))
                         {{ $descriptionTypeContract }}
                     @endif
                     {{ __('number') }}
                     @if (!is_null($editContracts))
                         {{ $editContracts->contract_number }}
-                    @endif<span id="typed2" class="typed2">.</span>
+                    @endif
+                    <span id="typed2" class="typed2">.</span>
                     <span id="typed3" class="typed3">.</span>
                     <span id="typed4" class="typed4">.</span>
                     <span id="typed5" class="typed5">.</span>
@@ -1100,7 +1139,8 @@
                                     <div class="flex space-x-4 ">
 
                                         <div class="w-6-12 ">
-                                            <label class="text-gray-700 dark:text-gray-400">tipo de identification</label>
+                                            <label class="text-gray-700 dark:text-gray-400">tipo de
+                                                identification</label>
                                             <select wire:model="editContracts.identification" name="identification"
                                                 class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
                                                 <option value="0">Tipo de Identificación</option>
@@ -1112,7 +1152,8 @@
                                         </div>
 
                                         <div class="w-6-12 ">
-                                            <label class="text-gray-700 dark:text-gray-400">{{ __('contract document') }}</label>
+                                            <label
+                                                class="text-gray-700 dark:text-gray-400">{{ __('contract document') }}</label>
 
                                             <input
                                                 class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -1126,7 +1167,8 @@
                                     <div class="flex space-x-4">
 
                                         <div class="w-6-12 ">
-                                            <label class="text-gray-700 dark:text-gray-400">{{ __('contracting name') }}</label>
+                                            <label
+                                                class="text-gray-700 dark:text-gray-400">{{ __('contracting name') }}</label>
 
                                             <input
                                                 class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -1161,7 +1203,8 @@
                                         </div>
 
                                         <div class="w-6-12  ">
-                                            <label class="text-gray-700 dark:text-gray-400">{{ __('contracting phone') }}</label>
+                                            <label
+                                                class="text-gray-700 dark:text-gray-400">{{ __('contracting phone') }}</label>
 
                                             <input
                                                 class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -1183,7 +1226,8 @@
                                         <div class="flex space-x-4">
 
                                             <div class="w-6-12">
-                                                <label class="text-gray-700 dark:text-gray-400">{{ __('school name') }}</label>
+                                                <label
+                                                    class="text-gray-700 dark:text-gray-400">{{ __('school name') }}</label>
 
                                                 <input
                                                     class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -1192,7 +1236,8 @@
                                             </div>
 
                                             <div class="w-6-12">
-                                                <label class="text-gray-700 dark:text-gray-400">{{ __('address school') }}</label>
+                                                <label
+                                                    class="text-gray-700 dark:text-gray-400">{{ __('address school') }}</label>
 
                                                 <input
                                                     class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -1403,7 +1448,8 @@
                                     <div class="flex space-x-4">
 
                                         <div class="w-full">
-                                            <label class="text-gray-700 dark:text-gray-400">{{ __('route trip contract') }}</label>
+                                            <label
+                                                class="text-gray-700 dark:text-gray-400">{{ __('route trip contract') }}</label>
 
                                             <textarea
                                                 class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -1426,7 +1472,8 @@
                                     <div class="flex space-x-4">
 
                                         <div class="w-6-12">
-                                            <label class="text-gray-700 dark:text-gray-400">{{ __('date start contract') }}</label>
+                                            <label
+                                                class="text-gray-700 dark:text-gray-400">{{ __('date start contract') }}</label>
 
                                             <input
                                                 class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -1435,7 +1482,8 @@
                                         </div>
 
                                         <div class="w-6-12">
-                                            <label class="text-gray-700 dark:text-gray-400">{{ __('contract end date') }}</label>
+                                            <label
+                                                class="text-gray-700 dark:text-gray-400">{{ __('contract end date') }}</label>
 
                                             <input
                                                 class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -1447,7 +1495,8 @@
                                     <div class="flex space-x-4">
 
                                         <div class="w-6-12">
-                                            <label class="text-gray-700 dark:text-gray-400">{{ __('quantity vehicle') }}</label>
+                                            <label
+                                                class="text-gray-700 dark:text-gray-400">{{ __('quantity vehicle') }}</label>
 
                                             <input
                                                 class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -1456,7 +1505,8 @@
                                         </div>
 
                                         <div class="w-6-12">
-                                            <label class="text-gray-700 dark:text-gray-400">{{ __('passenger quantity') }}</label>
+                                            <label
+                                                class="text-gray-700 dark:text-gray-400">{{ __('passenger quantity') }}</label>
 
                                             <input
                                                 class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -1468,7 +1518,8 @@
                                     <div class="flex space-x-4">
 
                                         <div class="w-6-12">
-                                            <label class="text-gray-700 dark:text-gray-400">{{ __('total disposition') }}</label>
+                                            <label
+                                                class="text-gray-700 dark:text-gray-400">{{ __('total disposition') }}</label>
                                             <select wire:model="editContracts.total_disposition"
                                                 class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
                                                 <option value="0">Selecciona si necesita Disposición Total
@@ -1492,7 +1543,8 @@
                                     <div class="flex space-x-4">
 
                                         <div class="w-6-12">
-                                            <label class="text-gray-700 dark:text-gray-400">{{ __('tipe pay') }}</label>
+                                            <label
+                                                class="text-gray-700 dark:text-gray-400">{{ __('tipe pay') }}</label>
                                             <select wire:model="editContracts.tipe_pay"
                                                 class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
                                                 <option value="0">Selecciona el tipo de pago</option>
@@ -1504,7 +1556,8 @@
                                         </div>
 
                                         <div class="w-6-12">
-                                            <label class="text-gray-700 dark:text-gray-400">{{ __('contract value') }}</label>
+                                            <label
+                                                class="text-gray-700 dark:text-gray-400">{{ __('contract value') }}</label>
 
                                             <input
                                                 class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -1553,6 +1606,385 @@
 
 @section('scripts')
     <script>
+        $(document).ready(function() {
+
+
+            var table = $('#example').DataTable({
+                // "scrollX": true,
+                lengthMenu: [
+                    [5, 10, 50, 100, 200, -1],
+                    [5, 10, 50, 100, 200, "∞"]
+                ],
+                responsive: true,
+                autoWidth: false,
+                autoFill: true,
+                // stateSave: true,
+                "order": [
+                    [1, "desc"]
+                ],
+                dom: "<'ui stackable grid'" +
+                    "<'row'" +
+                    "<'eight wide column'l>" +
+                    "<'ml30'B>" +
+                    "<'right aligned eight wide column'f>" +
+                    ">" +
+                    "<'row dt-table'" +
+                    "<'sixteen wide column'tr>" +
+                    ">" +
+                    "<'row'" +
+                    "<'seven wide column'i>" +
+                    "<'right aligned nine wide column'p>" +
+                    ">" +
+                    ">",
+                buttons: [
+                    // {
+                    // extend:    'copyHtml5',
+                    // text:      '<i class="far fa-copy"></i>',
+                    // titleAttr: 'copiar',
+                    // className: "dark:bg-gray-800 dark:text-white"
+                    // },
+                    {
+                        text: '<button @click="openModal" class=""> crear usuario nuevo</button>',
+                        titleAttr: 'Crear usuario',
+                        className: "buttons-crear font-semibold leading-tight text-black bg-sky-700 rounded-full dark:bg-sky-700 dark:text-white"
+                    },
+                    {
+                        extend: 'excelHtml5',
+                        text: '<i class="fa fa-file-excel"></i>',
+                        titleAttr: 'Excel',
+                        filename: 'listado de usuarios',
+                        className: "dark:bg-gray-800 dark:text-white",
+
+                    },
+                    {
+                        extend: 'print',
+                        text: '<i class="fas fa-print"></i>',
+                        titleAttr: 'Imprimir',
+                        filename: 'listado de usuarios',
+                        className: "dark:bg-gray-800 dark:text-white"
+                    },
+                    {
+                        extend: 'pdfHtml5',
+                        text: '<i class="fa fa-file-pdf"></i>',
+                        titleAttr: 'PDF',
+                        filename: 'listado de usuarios',
+                        className: "dark:bg-gray-800 dark:text-white text-gray-800 rounded-md"
+                    },
+                    {
+                        extend: 'colvis',
+                        text: '±columnas',
+                        collectionLayout: 'fixed columns',
+                        collectionTitle: 'Control de visibilidad de columna',
+                        className: "dark:bg-gray-800 dark:text-white"
+                    }
+                ],
+                columnDefs: [{
+                        "targets": [1],
+                        "visible": false,
+                        "searchable": false
+                    },
+                    {
+                        "targets": [8],
+                        "visible": false,
+                        "searchable": false
+                    },
+                    {
+                        "targets": [10],
+                        "visible": false,
+                        "searchable": false
+                    },
+                    // {"targets": [10],"visible": false,"searchable": false},
+                    // {"targets": [11],"visible": false,"searchable": false},
+                    // {"targets": [12],"visible": false,"searchable": false},
+                    // {"targets": [13],"visible": false,"searchable": false},
+                    // {"targets": [14],"visible": false,"searchable": false},
+                    // {"targets": [15],"visible": false,"searchable": false},
+                    // {"targets": [16],"visible": false,"searchable": false},
+                    // {"targets": [17],"visible": false,"searchable": false},
+                    // {"targets": [18],"visible": false,"searchable": false},
+                    // {"targets": [19],"visible": false,"searchable": false},
+                    // {"targets": [20],"visible": false,"searchable": false},
+                    // {"targets": [21],"visible": false,"searchable": false},
+                    // {"targets": [22],"visible": false,"searchable": false},
+                    // {"targets": [23],"visible": false,"searchable": false},
+                    // {"targets": [24],"visible": false,"searchable": false},
+                    // {"targets": [25],"visible": false,"searchable": false},
+                    // {"targets": [26],"visible": false,"searchable": false},
+                    // {"targets": [27],"visible": false,"searchable": false},
+                    // {"targets": [28],"visible": false,"searchable": false},
+                    // {"targets": [29],"visible": false,"searchable": false},
+                    // {"targets": [30],"visible": false,"searchable": false},
+                    // {"targets": [31],"visible": false,"searchable": false},
+                    // {"targets": [32],"visible": false,"searchable": false},
+                    // {"targets": [33],"visible": false,"searchable": false},
+                    // {"targets": [35],"visible": false,"searchable": false},
+                    // {"targets": [36],"visible": false,"searchable": false},
+                ],
+                "drawCallback": function(settings) {
+                    $('.dataTables_wrapper .dataTables_filter input').addClass(
+                        "mr-4 pl-8 pr-2 text-sm text-gray-700 placeholder-gray-600 bg-gray-100 border-0 rounded-md dark:placeholder-gray-500 dark:focus:shadow-outline-gray dark:focus:placeholder-gray-600 dark:bg-gray-700 dark:text-gray-200 focus:placeholder-gray-500 focus:bg-white focus:border-purple-300 focus:outline-none focus:shadow-outline-purple form-input"
+                    );
+                    $('#example_length').removeClass("dataTables_length");
+                    $('#example_length').addClass("dark:text-white float-left");
+                    $('#example_filter').removeClass("dataTables_filter");
+                    $('#example_filter').addClass("dark:text-white float-right text-right");
+                    $('#example_info').removeClass("dataTables_info");
+                    $('#example_info').addClass("dark:text-white pt-7 float-left clear-both");
+                    $('#example tbody>tr>td').addClass("dark:bg-gray-800 dark:text-white");
+                    $('.dataTables_wrapper .dataTables_paginate .paginate_button').addClass(
+                        "dark:bg-gray-800 dark:text-white");
+                },
+                language: {
+                    "emptyTable": "Tabla Vacia",
+                    "info": "",
+                    "infoEmpty": "Sin informacion",
+                    "lengthMenu": "Mostrar _MENU_ registros por pagina",
+                    "loadingRecords": "Cargando...",
+                    "decimal": ".",
+                    "infoFiltered": "filtrado de _MAX_ entradas totales",
+                    "infoPostFix": "Mostrando del _START_ al _END_ de _TOTAL_ registros",
+                    "infoThousands": ",",
+                    "paginate": {
+                        "first": "Primero",
+                        "last": "Último",
+                        "next": "Siguiente",
+                        "previous": "Anterior"
+                    },
+                    "processing": "Procesando...",
+                    "search": "Buscar:",
+                    "thousands": ",",
+                    "zeroRecords": "No se encontro información",
+                },
+                ajax: "{{ route('datatable.contract') }}",
+                columns: [{
+
+                        "render": function(data, type, row) {
+
+                            return "<div class='flex items-center space-x-4 text-sm'>" +
+                                "<button id='edit' onclick='edit(" + row['id'] + ")'" +
+                                "class='inline-flex items-center justify-center  bg-yellow-700 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-yellow-400 focus:outline-none focus:bg-yellow-700 focus:ring focus:ring-red-200 active:bg-yellow-700 readonly:opacity-25 transition' aria-label='Edit'>" +
+                                "<svg class='w-5 h-5' aria-hidden='true' fill='currentColor'" +
+                                "viewBox='0 0 20 20'>" +
+                                "<path fill-rule='evenodd'" +
+                                "d='M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z'>" +
+                                "</path>" +
+                                "</svg>" +
+                                "</button>" +
+                                "<button onclick='deletes(" + row['id'] + ")'" +
+                                "class='inline-flex items-center justify-center  bg-red-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 active:bg-red-600 readonly:opacity-25 transition' aria-label='Delete'>" +
+                                "<svg class='w-5 h-5' aria-hidden='true' fill='currentColor'" +
+                                "viewBox='0 0 20 20'>" +
+                                "<path fill-rule='evenodd'" +
+                                "d='M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z'" +
+                                "clip-rule='evenodd'></path>" +
+                                "</svg>" +
+                                "</button>" +
+
+                                "<button onclick='view(" + row['id'] + ")'" +
+                                "class='inline-flex items-center justify-center  bg-blue-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 active:bg-red-600 disabled:opacity-25 transition'>" +
+                                "<svg class='w-5 h-5' fill='none' stroke='currentColor'" +
+                                "stroke-width='1.5' viewBox='0 0 24 24'" +
+                                "xmlns='http://www.w3.org/2000/svg' aria-hidden='true'>" +
+                                "<path stroke-linecap='round' stroke-linejoin='round'" +
+                                "d='M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z'>" +
+                                "</path>" +
+                                "<path stroke-linecap='round' stroke-linejoin='round'" +
+                                "d='M15 12a3 3 0 11-6 0 3 3 0 016 0z'></path>" +
+                                "</svg>" +
+                                "</button>" +
+
+                                "</div>";
+                        },
+                        "className": "dark:bg-gray-800 dark:text-white border-b"
+                    },
+                    {
+                        data: 'id',
+                        "className": "dark:bg-gray-800 dark:text-white border-b"
+                    },
+                    {
+                        data: 'contract_number',
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        data: 'description_typeContract',
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        "render": function(data, type, row) {
+                            if (row['state_contract'] == 1) {
+                                return "<span class='px-2 py-1 font-semibold leading-tight text-gray-700 bg-gray-100 rounded-full dark:text-gray-100 dark:bg-gray-700'>{{ __('INICIAL') }}</span>";
+                            } else if (row['state_contract'] == 2) {
+                                return "<span class='px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100'>{{ __('CANCELADO') }}</span>";
+                            } else if (row['state_contract'] == 3) {
+                                return "<span class='px-2 py-1 font-semibold leading-tight text-sky-700 bg-sky-300 rounded-full dark:bg-sky-700 dark:text-sky-100'>{{ __('EN CURSO') }}</span>";
+                            } else if (row['state_contract'] == 4) {
+                                return "<span class='px-2 py-1 font-semibold leading-tight text-yellow-700 bg-yellow-100 rounded-full dark:bg-yellow-700 dark:text-yellow-100'>{{ __('FINALIZADO') }}</span>";
+                            } else if (row['state_contract'] == 5) {
+                                return "<span class='px-2 py-1 font-semibold leading-tight text-orange-700 bg-orange-100 rounded-full dark:text-white dark:bg-orange-600'>{{ __('PENDIENTE') }}</span>";
+                            }
+                        },
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        data: 'date_start_contract',
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        data: 'contract_end_date',
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        data: 'contracting_name',
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        data: 'description_identification',
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        data: 'contract_document',
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        data: 'expedition_identificationcard',
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        data: 'contract_value',
+                        render: DataTable.render.number(null, null, 2, '$'),
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        data: 'school_name',
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        data: 'route_trip_contract',
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        data: 'contracting_phone',
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        data: 'contracting_direction',
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        data: 'legal_representative',
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        data: 'legal_representative_expedition_identificationcard',
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        data: 'passenger_quantity',
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        data: 'total_disposition',
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        data: 'quantity_vehicle',
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        data: 'cooperation_contract',
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        data: 'entity_name',
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        data: 'secure_policy',
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        data: 'description_typePayment',
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        data: 'contract_signing_date',
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        data: 'address_school',
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        data: 'school_year',
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        // data: 'contract_with',
+                        // "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                        "render": function(data, type, row) {
+                            if (row['contract_with'] == 1) {
+                                return "Grupo Padres";
+                            } else if (row['contract_with'] == 2) {
+                                return "UNIVERSITARIOS";
+
+                            } else if (row['contract_with'] == 3) {
+                                return "ESTUDIANTE CON ACUDIENTE";
+
+                            } else if (row['contract_with'] == 4) {
+                                return "RECTOR O REPRESENTANTE LEGAL Del Colegio";
+
+                            } else {
+                                return "";
+                            }
+                        },
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        data: 'identF',
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        data: 'identificationcard_represent_legal',
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        data: 'identificationcard_representative_group',
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        data: 'group_representative_name',
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        data: 'dateofexpedition_representative_group',
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                ]
+            }).columns.adjust().responsive.recalc();
+
+            $('a.toggle-vis').on('click', function(e) {
+                e.preventDefault();
+
+                // Get the column API object
+                var column = table.column($(this).attr('data-column'));
+
+                // Toggle the visibility
+                column.visible(!column.visible());
+            });
+
+            $('#example tbody').on('click', 'tr', function() {
+
+                var tr = $(this).closest('tr');
+                var row = table.row(tr);
+                if (row.child.isShown()) {
+                    $('table.dataTable.dtr-inline.collapsed>tbody>tr>td.child').removeClass("child");
+                    $('table.dataTable.dtr-inline.collapsed>tbody>tr>td').addClass(
+                        "dark:bg-gray-800 dark:text-white");
+                }
+            });
+
+
+        });
 
         function view(id) {
             window.open('http://127.0.0.1:8000/pdfs/pdf-contracts/' + id, '_blank')
@@ -1568,30 +2000,30 @@
 
                     // '<div class="w-9-12 h-4-8 mt-6 px-6 py-4 bg-white rounded-t-lg dark:bg-gray-800 sm:rounded-lg sm:m-4">' +
                     '<div class="mt-11 border-gray-50-s container px-4 py-3 bg-white rounded-lg shadow-md dark:bg-gray-800 overflow-auto h-9">' +
-                        
-                        '<div class="flex space-x-4 clonar">' +
-                            '<div class="w-6-12 ">' +
-                                '<label class=" text-gray-700 dark:text-gray-400">Documento' +
-                                '<input id="inputDRow1" class=" block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" placeholder="Documento pasajero" type="text" name="supplier_name" />' +
-                            '</div>' +
-                            '<div class="w-6-12 ">' +
-                                '<label class=" text-gray-700 dark:text-gray-400">Nombre completo' +
-                                '<input id="inputNRow1" class=" block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" placeholder="Nombre completo" type="text" name="supplier_name" />' +
-                            '</div>' +
-                            '<div class="flex items-center space-x-4 text-sm">' + 
-                                '<button id="add" onclick="add()" class="inline-flex items-center justify-center  bg-sky-700 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-sky-400 focus:outline-none focus:bg-sky-700 focus:ring focus:ring-red-200 active:bg-sky-700 readonly:opacity-25 transition">' +
-                                        '<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"> <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path> </svg>' +
-                                '</button>' +
-                            '</div>' +
-                        '</div>' +
-                        
-                        '<div id="newInput"></div>' +
 
-                        '<div class="flex items-center space-x-4 text-sm pruebapers">' + 
-                                '<button onclick="savePeople()" class="pruebapersb inline-flex items-center justify-center  bg-emerald-700 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-sky-400 focus:outline-none focus:bg-emerald-700 focus:ring focus:ring-red-200 active:bg-emerald-700 readonly:opacity-25 transition">' +
-                                    'Guardar' +
-                                '</button>' +
-                        '</div>' +
+                    '<div class="flex space-x-4 clonar">' +
+                    '<div class="w-6-12 ">' +
+                    '<label class=" text-gray-700 dark:text-gray-400">Documento' +
+                    '<input id="inputDRow1" class=" block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" placeholder="Documento pasajero" type="text" name="supplier_name" />' +
+                    '</div>' +
+                    '<div class="w-6-12 ">' +
+                    '<label class=" text-gray-700 dark:text-gray-400">Nombre completo' +
+                    '<input id="inputNRow1" class=" block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" placeholder="Nombre completo" type="text" name="supplier_name" />' +
+                    '</div>' +
+                    '<div class="flex items-center space-x-4 text-sm">' +
+                    '<button id="add" onclick="add()" class="inline-flex items-center justify-center  bg-sky-700 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-sky-400 focus:outline-none focus:bg-sky-700 focus:ring focus:ring-red-200 active:bg-sky-700 readonly:opacity-25 transition">' +
+                    '<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"> <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path> </svg>' +
+                    '</button>' +
+                    '</div>' +
+                    '</div>' +
+
+                    '<div id="newInput"></div>' +
+
+                    '<div class="flex items-center space-x-4 text-sm pruebapers">' +
+                    '<button onclick="savePeople()" class="pruebapersb inline-flex items-center justify-center  bg-emerald-700 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-sky-400 focus:outline-none focus:bg-emerald-700 focus:ring focus:ring-red-200 active:bg-emerald-700 readonly:opacity-25 transition">' +
+                    'Guardar' +
+                    '</button>' +
+                    '</div>' +
 
                     '</div>',
                 // '</div>' ,
@@ -1602,37 +2034,47 @@
         var i = 1;
         var total = [];
         total.push(i);
-        function add(){
+
+        function add() {
             i++;
             total.push(i);
             // alert(total);
-            $('#newInput').append('<div class="flex space-x-4" id="newRow'+i+'">' +
-                            '<div class="w-6-12 ">' +
-                                '<label class=" text-gray-700 dark:text-gray-400">Documento' +
-                                '<input id="inputDRow'+i+'" class=" block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" placeholder="Documento pasajero" type="text" name="supplier_name" />' +
-                            '</div>' +
-                            '<div class="w-6-12 ">' +
-                                '<label class=" text-gray-700 dark:text-gray-400">Nombre completo' +
-                                '<input id="inputNRow'+i+'" class=" block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" placeholder="Nombre completo" type="text" name="supplier_name" />' +
-                            '</div>' +
-                            '<div class="flex items-center space-x-4 text-sm">' + 
-                                '<button onclick="deletteRow('+i+')" class="inline-flex items-center justify-center  bg-red-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 active:bg-red-600 readonly:opacity-25 transition">' +
-                                        '<svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"> <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"></path> </svg>' + 
-                                '</button>' +
-                            '</div>' +
-                        '</div>')
+            $('#newInput').append('<div class="flex space-x-4" id="newRow' + i + '">' +
+                '<div class="w-6-12 ">' +
+                '<label class=" text-gray-700 dark:text-gray-400">Documento' +
+                '<input id="inputDRow' + i +
+                '" class=" block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" placeholder="Documento pasajero" type="text" name="supplier_name" />' +
+                '</div>' +
+                '<div class="w-6-12 ">' +
+                '<label class=" text-gray-700 dark:text-gray-400">Nombre completo' +
+                '<input id="inputNRow' + i +
+                '" class=" block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" placeholder="Nombre completo" type="text" name="supplier_name" />' +
+                '</div>' +
+                '<div class="flex items-center space-x-4 text-sm">' +
+                '<button onclick="deletteRow(' + i +
+                ')" class="inline-flex items-center justify-center  bg-red-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 active:bg-red-600 readonly:opacity-25 transition">' +
+                '<svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"> <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"></path> </svg>' +
+                '</button>' +
+                '</div>' +
+                '</div>')
         }
 
-        function deletteRow(id){
-            $('#newRow'+id+'').remove();
-            total = total.filter(function(i) {return i !== id});
+        function deletteRow(id) {
+            $('#newRow' + id + '').remove();
+            total = total.filter(function(i) {
+                return i !== id
+            });
             // alert(total);
         }
         var passengers = [];
-        function savePeople(){
- 
+
+        function savePeople() {
+
             for (let index = 0; index < total.length; index++) {
-                passengers.push({documento: document.getElementById('inputDRow'+total[index]+'').value, nombreC: document.getElementById('inputNRow'+total[index]+'').value});
+                passengers.push({
+                    documento: document.getElementById('inputDRow' + total[index] + '').value,
+                    nombreC: document.getElementById('inputNRow' + total[index] + '').value
+                });
             }
             // passengers.push({documento: document.getElementById('inputDRow2').value, nombreC: document.getElementById('inputNRow2').value});
             // alert(passengers[2].documento + ' - ' + passengers[2].nombreC);
@@ -1762,6 +2204,8 @@
 
                 swal.fire(main, message, 'success')
             }
+
+            $('#example').DataTable().ajax.reload(null, 1);
 
         })
 
@@ -2156,63 +2600,91 @@
             'fieldset1Buttons',
             'previous2',
             'previous3',
-            'previous4',
-            'previous5',
-            'labelIdentification'
+            'labelIdentification',
+            'divEstudiante',
+            'labelEstudiante',
+            'Student_name',
+            'labelIdentificationcardEstudent',
+            'identificationcard_Estudent',
+            'labelGrade',
+            'grade_student',
+            'labelFamilyRelationship',
+            'family_relationship'
         ];
 
         clave = [];
+
         function typeContract() {
 
             var contractType = document.getElementById('type_contract').value;
+
             // console.log(contractType);
 
             switch (contractType) {
                 case '1':
-                    clave = [];
-                    clave.push(17,18,27,28,29,30,31,32,33,34);
-                    
-                    changeInput ();
+
+                    viewhideinputs('contract_with', 'Active', 'Inactive');
+                    // changeInput();
 
                     break;
 
                 case '2':
-                    
+
                     clave = [];
-                    clave.push(1,13,14,15,16,17,18,27,28,29,30,31,32,33,34);
-                    changeInput ();
+                    clave.push(1, 13, 14, 15, 16, 17, 18, 27, 28, 29, 30, 31, 32, 33, 34);
+                    changeInput();
 
                     break;
 
                 case '3':
-                    
+
                     clave = [];
-                    clave.push(1,13,14,15,16,17,18,27,28,29,30,31,32,33,34);
-                    changeInput ();
+                    clave.push(1, 13, 14, 15, 16, 17, 18, 27, 28, 29, 30, 31, 32, 33, 34);
+                    changeInput();
 
                     break;
 
                 case '4':
                     clave = [];
-                    clave.push(1,13,14,15,16,19,20,21,22,23,24,25,26);
-                    changeInput ();
+                    clave.push(1, 13, 14, 15, 16, 19, 20, 21, 22, 23, 24, 25, 26);
+                    changeInput();
                     break;
 
 
                 case '5':
                     clave = [];
-                    clave.push(1,13,14,15,16,17,18,27,28,29,30,31,32,33,34);
-                    changeInput ();
+                    clave.push(1, 13, 14, 15, 16, 17, 18, 27, 28, 29, 30, 31, 32, 33, 34);
+                    changeInput();
 
                     break;
 
                 default:
-                clave = [];
-                    clave.push(1,2,3,4,5,6,7,8,9,10,11,12,49,54);
-                    changeInput ();
+                    clave = [];
+                    clave.push(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 49, 52);
+                    changeInput();
                     break;
             }
 
+        }
+
+        function withContract() {
+            var contractWith = document.getElementById('contract_with').value;
+
+            clave = [];
+
+            if (contractWith == 1) {
+                clave.push(17, 18, 27, 28, 29, 30, 31, 32, 33, 34, 37, 38, 39, 40, 41, 42, 53);
+            } else if (contractWith == 2) {
+                clave.push(17, 18, 27, 28, 29, 30, 31, 32, 33, 34, 37, 38, 39, 40, 41, 42, 53);
+            } else if (contractWith == 3) {
+                clave.push(17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 37, 38, 39, 40, 41, 42);
+            } else if (contractWith == 4) {
+                clave.push(17, 18, 27, 28, 29, 30, 31, 32, 33, 34, 37, 38, 39, 40, 41, 42, 53);
+            } else {
+
+            }
+
+            changeInput();
         }
 
 
@@ -2223,7 +2695,7 @@
         }
         //fin scritp de formulario paso a paso
 
-        function changeInput (){
+        function changeInput() {
             let change = false;
             prueba = [];
 
@@ -2245,16 +2717,16 @@
                 if (camps[i] == 'change') {
                     // console.log('cambiar');
                 } else {
-                    // console.log(camps[i]);
+                    console.log(camps[i]);
                     if (change == true) {
                         viewhideinputs(camps[i], 'Inactive', 'Active');
                     } else {
-                        if (camps[i] == 'previous2' || camps[i] == 'previous3' || camps[i] == 'previous4' || camps[i] == 'previous5') {
+                        if (camps[i] == 'previous2' || camps[i] == 'previous3') {
                             document.getElementById(camps[i]).classList.remove('Inactive');
                         } else {
-                            viewhideinputs(camps[i], 'Active', 'Inactive'); 
+                            viewhideinputs(camps[i], 'Active', 'Inactive');
                         }
-                        
+
                     }
                 }
 
