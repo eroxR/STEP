@@ -32,15 +32,15 @@ return new class extends Migration
 			$table->string('number_technomechanical_accreditation');//numero_acreditacion_tecno
 			$table->date('certificate_extracontractual'); // certificado_extracontractual
 			$table->date('civil_contractual'); // certificado_civil_contractual
-			$table->enum('internal_external_owner_type', ['1', '2']);//tipo_propietario_externo_interno['EXTERNO','INTERNO']
+			$table->enum('internal_external_owner_type', ['0', '1']);//tipo_propietario_externo_interno['EXTERNO','INTERNO']
 			$table->unsignedBigInteger('infrastructure_vehicle')->nullable();//infraestructura_vehiculo_combustible
-			$table->enum('state_vehicle', ['1', '2','3','4'])->DEFAULT('1');//estado_vehiculo['Inhabilitado','Habilitado','Inactivo','Pendiente']
+			$table->enum('state_vehicle', ['0', '1','2','3'])->DEFAULT('0');//estado_vehiculo['Inhabilitado','Habilitado','Inactivo','Pendiente']
 			$table->bigInteger('card_operation');//numero_tarjeta_operacion
 			$table->date('expiration_card_operation');//vencimiento_tarjeta_operacion
             /* $table->date('preventive')->nullable();//numero_preventiva */
 			$table->date('expiration_preventive');//vencimiento_preventiva
 			$table->date('admission_date');//fecha_ingreso_vahiculo
-            $table->date('vehicle_pickup_date')->nullable();//fecha_retiro_vahiculo
+            $table->date('vehicle_pickup_date');//fecha_retiro_vahiculo
 			$table->string('engine_number')->nullable();//Número_de_motor
 			$table->string('use_vehicle', 60)->nullable();//uso_vehiculo
 			$table->string('color_vehicle', 50)->nullable();//color_vehiculo

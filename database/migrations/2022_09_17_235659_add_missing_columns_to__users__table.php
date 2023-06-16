@@ -32,15 +32,20 @@ return new class extends Migration
 			$table->string('phone')->nullable();//telefono
 			$table->string('phone_cellular')->nullable();//telefono_celular
 			$table->unsignedBigInteger('eps')->nullable();//eps
+			$table->enum('eps_status', ['0', '1', '2'])->nullable();//estado_eps['Desactualizado','Actualizado','Pendiente']
 			$table->date('date_eps')->nullable();//fecha_eps
 			$table->unsignedBigInteger('blood_type')->nullable();//tipo_sangre
 			$table->unsignedBigInteger('pension')->nullable();//pension
+			$table->enum('pension_status', ['0', '1', '2'])->nullable();//estado_pension['Desactualizado','Actualizado','Pendiente']
 			$table->date('date_pension')->nullable();//fecha_pension
 			$table->unsignedBigInteger('layoffs')->nullable();//cesantias
+			$table->enum('status_layoffs', ['0', '1', '2'])->nullable();//estado_cesantias['Desactualizado','Actualizado','Pendiente']
 			$table->date('date_layoffs')->nullable();//fecha_cesantias
 			$table->unsignedBigInteger('arl')->nullable();//arl
+			$table->enum('arl_status', ['0', '1', '2'])->nullable();//estado_arl['Desactualizado','Actualizado','Pendiente']
 			$table->date('arl_date')->nullable();//fecha_arl
 			$table->unsignedBigInteger('compensationbox')->nullable();//caja_compensacion
+			$table->enum('compensationbox_status', ['0', '1', '2'])->nullable();//estado_caja_compensacion['Desactualizado','Actualizado','Pendiente']
 			$table->date('date_compensationbox')->nullable();//fecha_caja_compensacion
 			$table->enum('user_state', ['0', '1', '2'])->nullable();//estado['Inactivo','Activo','Bloqueado']
 			$table->date('user_entry_date')->nullable();//fecha_ingre_usuario
@@ -64,7 +69,7 @@ return new class extends Migration
 			$table->decimal('shoe_size', $precision = 5, $scale = 2)->nullable();//talla_zapato
 			$table->unsignedBigInteger('education_level')->nullable();//nivel_educativo
 			$table->string('educational_institution', 150)->nullable();//institucion_educativa
-			$table->string('last_year')->nullable();//ultimo_año
+			$table->year('last_year')->nullable();//ultimo_año
 			$table->date('study_end_date')->nullable();//fecha_finalizacion_estudio
 			$table->string('obtained_title')->nullable();//titulo_obtenido
 			$table->string('last_company_name', 150)->nullable();//nombre_ultima_empresa
@@ -137,15 +142,20 @@ return new class extends Migration
                                 'phone',
                                 'phone_cellular',
                                 'eps',
+                                'eps_status',
                                 'date_eps',
                                 'blood_type',
                                 'pension',
+                                'pension_status',
                                 'date_pension',
                                 'layoffs',
+                                'status_layoffs',
                                 'date_layoffs',
                                 'arl',
+                                'arl-status',
                                 'arl_date',
                                 'compensationbox',
+                                'compensationbox_status',
                                 'date_compensationbox',
                                 'user_state',
                                 'user_entry_date',

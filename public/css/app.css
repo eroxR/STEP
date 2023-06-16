@@ -8400,14 +8400,6 @@ line-height: 1.5rem; /* 24px */width:100%;
 	/* background: #000; */
 	border-radius: 10px;	
 }
-.upload-ico33{
-	position: absolute;
-    margin-left: 21.5%;
-    margin-top: -2.7%;
-    font-size: 2.8rem;
-    /* background: #000; */
-    border-radius: 10px;	
-}
 .edit-upload-ico{
 	position: relative;
     /* padding: 10px; */
@@ -8989,84 +8981,6 @@ line-height: 1.5rem; /* 24px */width:100%;
 	100%{
 		transform: translateX(-100%);
 		
-	}
-}
-#luces{
-	/* font-size: 35px; */
-	-webkit-animation-name: luz;
-	        animation-name: luz;
-	/* animation-delay: 3s; */
-	-webkit-animation-duration: 3s;
-	        animation-duration: 3s;
-	-webkit-animation-iteration-count: infinite;
-	        animation-iteration-count: infinite;
-}
-#luz{
-	/* font-size: 35px; */
-	-webkit-animation-name: luz;
-	        animation-name: luz;
-	/* animation-delay: 3s; */
-	-webkit-animation-duration: 3s;
-	        animation-duration: 3s;
-	-webkit-animation-iteration-count: infinite;
-	        animation-iteration-count: infinite;
-}
-@-webkit-keyframes luz{
-	0%{
-		/* transform: scale(1); */
-		opacity: 0;
-	}
-	25%{
-		/* transform: scale(1); */
-		opacity: 0;
-	}
-	50%{
-		transform: scale(1);
-		/* opacity: 0; */
-	}
-	75%{
-		transform: scale(1);
-		/* opacity: 0; */
-	}
-	85%{
-		transform: scale(1);
-		/* opacity: 0; */
-	}
-	95%{
-		transform: scale(1);
-		/* opacity: 0; */
-	}
-	100%{
-		transform: scale(1);
-	}
-}
-@keyframes luz{
-	0%{
-		/* transform: scale(1); */
-		opacity: 0;
-	}
-	25%{
-		/* transform: scale(1); */
-		opacity: 0;
-	}
-	50%{
-		transform: scale(1);
-		/* opacity: 0; */
-	}
-	75%{
-		transform: scale(1);
-		/* opacity: 0; */
-	}
-	85%{
-		transform: scale(1);
-		/* opacity: 0; */
-	}
-	95%{
-		transform: scale(1);
-		/* opacity: 0; */
-	}
-	100%{
-		transform: scale(1);
 	}
 }
 .pruebapers{
