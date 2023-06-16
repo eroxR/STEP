@@ -16,6 +16,26 @@ use App\Models\driver;
 use App\Models\economicActivity;
 use App\Models\educationalLevel;
 use App\Models\eps;
+use App\Models\historicalArl;
+use App\Models\historicalCompensationBox;
+use App\Models\historicalDefensiveDriving;
+use App\Models\historicalDistractions;
+use App\Models\historicalDrivingMethods;
+use App\Models\historicalDrivingTest;
+use App\Models\historicalDrugsAlchoolemia;
+use App\Models\historicalEps;
+use App\Models\historicalFirst_Aid;
+use App\Models\historicalFirstResponder;
+use App\Models\historicalFiveSensesDriving;
+use App\Models\historicalLandTransportStandards;
+use App\Models\historicalLayoffs;
+use App\Models\historicalLicense;
+use App\Models\historicalNormTransit;
+use App\Models\historicalPension;
+use App\Models\historicalRoadSafety;
+use App\Models\historicalSafetyActivePassiveVehicles;
+use App\Models\historicalSimits;
+use App\Models\historicalTipsNormative;
 use App\Models\identification;
 use App\Models\layoffs;
 use App\Models\licenseCategory;
@@ -45,8 +65,7 @@ class ManageUsers extends Component
             'Certificado_de_Licencia_usuario_', 'Certificado_drogas_alchoolemia_usuario_', 'Certificado_Consultas_SIMIT_usuario_', 'Certificado_Examen_Conduccion_usuario_',
             'Certificado_Norma_Transporte_terrestre_automotor_usuario_', 'Certificado_Normas_Transito_usuario_', 'Certificado_Tips_normativos_usuario_', 'Certificado_Metodos_Conduccion_usuario_',
             'Certificado_Manejo_Defensivo_usuario_', 'Certificado_Distracciones_usuario_', 'Certificado_Primeros_Auxilios_usuario_', 'Certificado_Primero_Respondiente_usuario_',
-            'Certificado_Cinco_Sentidos_Conduccion_usuario_', 'Certificado_Seguridad_activa_pasiva_vehiculo_usuario_', 'Certificado_Seguridad_Vial_usuario_','Certificado_eps_usuario_','Certificado_pension_usuario_',
-            'Certificado_cesantias_usuario_', 'Certificado_arl_usuario_', 'Certificado_caja_compensacion_usuario_'
+            'Certificado_Cinco_Sentidos_Conduccion_usuario_', 'Certificado_Seguridad_activa_pasiva_vehiculo_usuario_', 'Certificado_Seguridad_Vial_usuario_'
         ];
     public $username, $email, $password, $identificationcard, $usertype, $user_entry_date, $date_withdrawal_user, $firstname,
         $lastname, $profile_photo_path, $identification, $secondname, $motherslastname, $birthdate, $age, $type_sex, $country, $Department,
@@ -70,7 +89,7 @@ class ManageUsers extends Component
 
         $Doclicense, $DocAlchoolemia, $DocSimitQueries, $DocdrivingExam, $DocNormOverlandTransportationAutomotive,
         $DocRulesTransit, $DocNormativeTips, $DocDrivingMethods, $DocDefensiveDriving, $Docdistractions, $DocFirstAid, $DocFirstResponder, $DocfiveSensesDriving, $DocActivePassiveSecurityVehicle,
-        $DocRoadSafety, $DocEps, $DocPension, $DocLayoffs, $DocArl, $DocCompensationbox,
+        $DocRoadSafety,
 
         $doclicense, $docAlchoolemia, $docSimitQueries, $docdrivingExam, $docNormOverlandTransportationAutomotive,
         $docRulesTransit, $docNormativeTips, $docDrivingMethods, $docDefensiveDriving, $docdistractions, $docFirstAid, $docFirstResponder, $docfiveSensesDriving, $docActivePassiveSecurityVehicle,
@@ -171,7 +190,6 @@ class ManageUsers extends Component
 
     public function store()
     {
-        // dd($this->DocNit);
 
         if ($this->usertype == 3) {
             
@@ -202,29 +220,23 @@ class ManageUsers extends Component
         // $profileExtension = $this->profile_photo_path->extension();
         if ($this->profile_photo_path != '') {
 
-            if ($this->usertype == 3) {
-                $cc = $this->nit;
-            } else {
-                $cc = $this->identificationcard;
-            }
-            
             $profileExtension = $this->profile_photo_path->extension();
-            $nameprofile = 'profile_user_' . $cc . '.' . $profileExtension;
-            $urlprofile = $this->profile_photo_path->storeAs($this->RouteStart . $cc, $nameprofile);
+            $nameprofile = 'profile_user_' . $this->identificationcard . '.' . $profileExtension;
+            $urlprofile = $this->profile_photo_path->storeAs($this->RouteStart . $this->identificationcard, $nameprofile);
             $Routeprofile = Storage::url($urlprofile);
         }else {
             $Routeprofile = '';
+        }
 
-            //alimentamos el generador de aleatorios
-            mt_srand (time());
-            //generamos un número aleatorio
-            $profilePhoto_aleatorio = mt_rand(0,10);
+        if ($this->usertype == 3) {
+            # code...
+        } else {
+            # code...
         }
         
 
         $newName = '';
         if ($this->firstname != '') {
-
             $this->username = strtolower($this->firstname[0].$this->lastname);
         } else {
             // $a = 0;
@@ -240,7 +252,6 @@ class ManageUsers extends Component
 
             // $this->username = $newName;
         }
-        
 
         // dd($this->username);
          
@@ -274,15 +285,20 @@ class ManageUsers extends Component
             'phone'  => $this->phone,
             'phone_cellular'  => $this->phone_cellular,
             'eps'  => $this->eps,
+            'eps_status'  => $this->eps_status,
             'date_eps'  => $this->date_eps,
             'blood_type'  => $this->blood_type,
             'pension'  => $this->pension,
+            'pension_status'  => $this->pension_status,
             'date_pension'  => $this->date_pension,
             'layoffs'  => $this->layoffs,
+            'status_layoffs'  => $this->status_layoffs,
             'date_layoffs'  => $this->date_layoffs,
             'arl'  => $this->arl,
+            'arl_status'  => $this->arl_status,
             'arl_date'  => $this->arl_date,
             'compensationbox'  => $this->compensationbox,
+            'compensationbox_status'  => $this->compensationbox_status,
             'date_compensationbox'  => $this->date_compensationbox,
             'charge'  => $this->charge,
             'civil_status'  => $this->civil_status,
@@ -324,51 +340,100 @@ class ManageUsers extends Component
             'work_area'  => $this->work_area,
         ]);
 
-        if ($this->Docu != '' || $this->Docu != 0) {
-            $docExtension = $this->Docu->extension();
-            $nameDoc = 'document_user_' . $this->identificationcard . '.' . $docExtension;
-            $urlDoc = $this->Docu->storeAs($this->RouteStart . $this->identificationcard, $nameDoc);
-            $RouteDocument = Storage::url($urlDoc);
+        // if ($this->usertype == 2) {
 
-                $user->documents()->create([
-                        'document_name' => $nameDoc,
-                        'extension' => $docExtension,
-                        'directory' => $RouteDocument,
-                    ]);
-        } else {
-            $docExtension = $this->DocNit->extension();
-            $nameDoc = 'rut_proveedor_' . $this->nit . '.' . $docExtension;
-            $urlDoc = $this->DocNit->storeAs($this->RouteStart . $this->nit, $nameDoc);
-            $RouteDocument = Storage::url($urlDoc);
+            // $user_idsfind = User::latest('id')->first()->get();
 
-                $user->documents()->create([
-                        'document_name' => $nameDoc,
-                        'extension' => $docExtension,
-                        'directory' => $RouteDocument,
-                    ]);
+            // foreach ($user_idsfind as $user_ids) {
+            //     $user_id = $user_ids->id;
+            // }
 
-        }
+            $user_id = User::latest('id')->value('id');
 
-        if ($this->usertype == 2) {
-            
+            // if ($this->arl_date != "") {
+            //     historicalArl::create([
+            //         'user_id'  => $user_id,
+            //         'id_arl'  => $this->arl,
+            //         'renewal_date'  => $this->arl_date,
+            //     ]);
+            // }
+
+            // if ($this->date_eps != "") {
+            //     historicalEps::create([
+            //         'user_id'  => $user_id,
+            //         'eps_id'  => $this->eps,
+            //         'renewal_date'  => $this->date_eps,
+            //     ]);
+            // }
+
+            // if ($this->date_layoffs != "") {
+            //     historicalLayoffs::create([
+            //         'user_id'  => $user_id,
+            //         'layoffs_id'  => $this->layoffs,
+            //         'renewal_date'  => $this->date_layoffs,
+            //     ]);
+            // }
+
+            // if ($this->date_pension != "") {
+            //     historicalPension::create([
+            //         'user_id'  => $user_id,
+            //         'pension_id'  => $this->pension,
+            //         'renewal_date'  => $this->date_pension,
+            //     ]);
+            // }
+
+
+            // if ($this->date_compensationbox != "") {
+            //     historicalCompensationBox::create([
+            //         'user_id'  => $user_id,
+            //         'id_compensationbox'  => $this->compensationbox,
+            //         'renewal_date'  => $this->date_compensationbox,
+            //     ]);
+            // }
+        // }
+
+        if ($this->charge == 5) {
+
+            driver::create([
+
+                'user_id'  => $user_id,
+                'license_number'  => $this->license_number,
+                'license_category'  => $this->license_category,
+                'license_expiration'  => $this->license_expiration,
+                'certificate_drugs_alchoolemia'  => $this->certificate_drugs_alchoolemia,
+                'SIMIT_queries'  => $this->SIMIT_queries,
+                'driving_exam'  => $this->driving_exam,
+                'Norm_Overland_Transportation_Automotive'  => $this->Norm_Overland_Transportation_Automotive,
+                'Rules_Transit'  => $this->Rules_Transit,
+                'Normative_Tips'  => $this->Normative_Tips,
+                'Driving_Methods'  => $this->Driving_Methods,
+                'Defensive_driving'  => $this->Defensive_driving,
+                'distractions'  => $this->distractions,
+                'First_aid'  => $this->First_aid,
+                'First_Responder'  => $this->First_Responder,
+                'five_senses_driving'  => $this->five_senses_driving,
+                'Active_Passive_Security_vehicle'  => $this->Active_Passive_Security_vehicle,
+                'Road_safety'  => $this->Road_safety,
+                'driver_status'  => '0',
+                'Linked'  => $this->Linked,
+            ]);
+
             $this->Doc = [
                 $this->Doclicense, $this->DocAlchoolemia, $this->DocSimitQueries, $this->DocdrivingExam, $this->DocNormOverlandTransportationAutomotive,
                 $this->DocRulesTransit, $this->DocNormativeTips, $this->DocDrivingMethods, $this->DocDefensiveDriving, $this->Docdistractions, $this->DocFirstAid,
-                $this->DocFirstResponder, $this->DocfiveSensesDriving, $this->DocActivePassiveSecurityVehicle, $this->DocRoadSafety, $this->DocEps, $this->DocPension, 
-                $this->DocLayoffs, $this->DocArl, $this->DocCompensationbox
+                $this->DocFirstResponder, $this->DocfiveSensesDriving, $this->DocActivePassiveSecurityVehicle, $this->DocRoadSafety
     
             ];
     
             $this->DocFecha = [
                 $this->license_expiration, $this->certificate_drugs_alchoolemia, $this->SIMIT_queries, $this->driving_exam, $this->Norm_Overland_Transportation_Automotive,
                 $this->Rules_Transit, $this->Normative_Tips, $this->Driving_Methods, $this->Defensive_driving, $this->distractions, $this->First_aid,
-                $this->First_Responder, $this->five_senses_driving, $this->Active_Passive_Security_vehicle, $this->Road_safety , $this->date_eps, $this->date_pension, 
-                $this->date_layoffs, $this->arl_date, $this->date_compensationbox
+                $this->First_Responder, $this->five_senses_driving, $this->Active_Passive_Security_vehicle, $this->Road_safety
             ];
             
     
     
-            for ($i = 0; $i <= 18; $i++) {
+            for ($i = 0; $i <= 13; $i++) {
     
                 if ($this->Doc != "" || $this->Doc != 0) {
     
@@ -382,37 +447,132 @@ class ManageUsers extends Component
                 }
             }
 
-            $user_id = User::latest('id')->value('id');
+            // $driversfind = driver::latest('id')->first()->get();
 
-            if ($this->charge == 5) {
-    
-                driver::create([
-    
-                    'user_id'  => $user_id,
-                    'license_number'  => $this->license_number,
-                    'license_category'  => $this->license_category,
-                    'license_expiration'  => $this->license_expiration,
-                    'certificate_drugs_alchoolemia'  => $this->certificate_drugs_alchoolemia,
-                    'SIMIT_queries'  => $this->SIMIT_queries,
-                    'driving_exam'  => $this->driving_exam,
-                    'Norm_Overland_Transportation_Automotive'  => $this->Norm_Overland_Transportation_Automotive,
-                    'Rules_Transit'  => $this->Rules_Transit,
-                    'Normative_Tips'  => $this->Normative_Tips,
-                    'Driving_Methods'  => $this->Driving_Methods,
-                    'Defensive_driving'  => $this->Defensive_driving,
-                    'distractions'  => $this->distractions,
-                    'First_aid'  => $this->First_aid,
-                    'First_Responder'  => $this->First_Responder,
-                    'five_senses_driving'  => $this->five_senses_driving,
-                    'Active_Passive_Security_vehicle'  => $this->Active_Passive_Security_vehicle,
-                    'Road_safety'  => $this->Road_safety,
-                    'driver_status'  => '0',
-                    'Linked'  => $this->Linked,
-                ]);
-    
-            }
+            // foreach ($driversfind as $drivers) {
+            //     $drivers = $drivers->id;
+            // }
+
+            // $drivers = driver::latest('id')->value('id');
+
+            // if ($this->SIMIT_queries != "" || $this->SIMIT_queries != 0) {
+            //     historicalSimits::create([
+            //         'driver_id' => $drivers,
+            //         'Simits_certification' => $this->SIMIT_queries,
+            //     ]);
+            // }
+
+            // if ($this->license_expiration != "" || $this->license_expiration != 0) {
+            //     historicalLicense::create([
+            //         'driver_id'  => $drivers,
+            //         'license_number'  => $this->license_number,
+            //         'license_category'  => $this->license_category,
+            //         'license_expiration'  => $this->license_expiration,
+            //     ]);
+            // }
+
+
+            // if ($this->First_aid != "" || $this->First_aid != 0) {
+            //     historicalFirst_Aid::create([
+            //         'driver_id'  => $drivers,
+            //         'First_Aid_certification'  => $this->First_aid,
+            //     ]);
+            // }
+
+
+            // if ($this->Road_safety != "" || $this->Road_safety != 0) {
+            //     historicalRoadSafety::create([
+            //         'driver_id'  => $drivers,
+            //         'Road_safety_certification'  => $this->Road_safety,
+            //     ]);
+            // }
+
+
+            // if ($this->distractions != "" || $this->distractions != 0) {
+            //     historicalDistractions::create([
+            //         'driver_id'  => $drivers,
+            //         'distractions_certification'  => $this->distractions,
+            //     ]);
+            // }
+
+
+            // if ($this->driving_exam != "" || $this->driving_exam != 0) {
+            //     historicalDrivingTest::create([
+            //         'driver_id'  => $drivers,
+            //         'Driving_Test_certification'  => $this->driving_exam,
+            //     ]);
+            // }
+
+
+            // if ($this->Rules_Transit != "" || $this->Rules_Transit != 0) {
+            //     historicalNormTransit::create([
+            //         'driver_id'  => $drivers,
+            //         'Norm_Transit_certification'  => $this->Rules_Transit,
+            //     ]);
+            // }
+
+            // if ($this->Normative_Tips != "" || $this->Normative_Tips != 0) {
+            //     historicalTipsNormative::create([
+            //         'driver_id'  => $drivers,
+            //         'Tips_Normative_certification'  => $this->Normative_Tips,
+            //     ]);
+            // }
+
+
+            // if ($this->Driving_Methods != "" || $this->Driving_Methods != 0) {
+            //     historicalDrivingMethods::create([
+            //         'driver_id'  => $drivers,
+            //         'driving_Methods_certification'  => $this->Driving_Methods,
+            //     ]);
+            // }
+
+
+            // if ($this->First_Responder != "" || $this->First_Responder != 0) {
+            //     historicalFirstResponder::create([
+            //         'driver_id'  => $drivers,
+            //         'First_Responder_certification'  => $this->First_Responder,
+            //     ]);
+            // }
+
+
+            // if ($this->Defensive_driving != "" || $this->Defensive_driving != 0) {
+            //     historicalDefensiveDriving::create([
+            //         'driver_id'  => $drivers,
+            //         'Defensive_driving_certification'  => $this->Defensive_driving,
+            //     ]);
+            // }
+
+
+            // if ($this->certificate_drugs_alchoolemia != "" || $this->certificate_drugs_alchoolemia != 0) {
+            //     historicalDrugsAlchoolemia::create([
+            //         'driver_id'  => $drivers,
+            //         'drugs_alchoolemia_certification'  => $this->certificate_drugs_alchoolemia,
+            //     ]);
+            // }
+
+
+            // if ($this->five_senses_driving != "" || $this->five_senses_driving != 0) {
+            //     historicalFiveSensesDriving::create([
+            //         'driver_id'  => $drivers,
+            //         'Five_Senses_Driving_certification'  => $this->five_senses_driving,
+            //     ]);
+            // }
+
+            // if ($this->Norm_Overland_Transportation_Automotive != "" || $this->Norm_Overland_Transportation_Automotive != 0) {
+            //     historicalLandTransportStandards::create([
+            //         'driver_id'  => $drivers,
+            //         'Land_Transport_Standards_certification'  => $this->Norm_Overland_Transportation_Automotive,
+            //     ]);
+            // }
+
+
+            // if ($this->Active_Passive_Security_vehicle != "" || $this->Active_Passive_Security_vehicle != 0) {
+            //     historicalSafetyActivePassiveVehicles::create([
+            //         'driver_id'  => $drivers,
+            //         'Safety_Active_Passive_Vehicles_certification'  => $this->Active_Passive_Security_vehicle,
+            //     ]);
+            // }
         }
-
 
         $name = $this->firstname . " " . $this->secondname . " " . $this->lastname . " " . $this->motherslastname;
 

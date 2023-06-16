@@ -2,13 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\contract;
-use App\Models\permit;
 use App\Models\User;
-use App\Models\vehicle;
 use Illuminate\Http\Request;
 use Database;
-use Illuminate\Support\Facades\DB;
 
 class DatatableController extends Controller
 {
@@ -79,25 +75,25 @@ class DatatableController extends Controller
             'phone_cellular',
             // 'eps',
             'description_eps',
-            // 'eps_status',
+            'eps_status',
             'date_eps',
             // 'blood_type',
             'blood_type_description',
             // 'pension',
             'description_pension',
-            // 'pension_status',
+            'pension_status',
             'date_pension',
             // 'layoffs',
             'description_layoffs',
-            // 'status_layoffs',
+            'status_layoffs',
             'date_layoffs',
             // 'arl',
             'description_arl',
-            // 'arl_status',
+            'arl_status',
             'arl_date',
             // 'compensationbox',
             'description_compensationbox',
-            // 'compensationbox_status',
+            'compensationbox_status',
             'date_compensationbox',
             'date_withdrawal_user',
             // 'civil_status',
@@ -146,142 +142,5 @@ class DatatableController extends Controller
             )->get();
 
         return datatables()->of($users)->toJson();
-    }
-    //
-
-    public function contract(){
-        $contracts = contract::join('contract_types', 'contracts.type_contract', '=', 'contract_types.id')
-        ->leftjoin('identifications', 'contracts.identification', '=', 'identifications.id')
-        ->leftjoin('identifications as i', 'contracts.identification_represent_legal', '=', 'i.id')
-        ->leftjoin('payment_types', 'contracts.tipe_pay', '=', 'payment_types.id')
-        ->select(
-            'contracts.id',
-            'contract_number',
-            'description_typeContract',
-            // 'type_contract',
-            'route_trip_contract',
-            'date_start_contract',
-            'contract_end_date',
-            'contract_value',
-            'contracting_name',
-            'state_contract',
-            // 'identification',
-            'identifications.description_identification',
-            'contract_document',
-            'expedition_identificationcard',
-            'contracting_phone',
-            'contracting_direction',
-            'legal_representative',
-            'legal_representative_expedition_identificationcard',
-            'passenger_quantity',
-            'total_disposition',
-            'quantity_vehicle',
-            'cooperation_contract',
-            'entity_name',
-            'secure_policy',
-            // 'tipe_pay',
-            'description_typePayment',
-            'contract_signing_date',
-            'school_name',
-            'address_school',
-            'school_year',
-            'contract_with',
-            // 'identification_represent_legal',
-            'i.description_identification as identF',
-            'identificationcard_represent_legal',
-            'identificationcard_representative_group',
-            'group_representative_name',
-            'dateofexpedition_representative_group',
-            'signed_contract'
-            )->get();
-
-        return datatables()->of($contracts)->toJson();
-    }
-    //
-
-    public function permit(){
-        $permits = permit::join('contracts', 'permits.contract', '=', 'contracts.id')
-        ->join('contract_types', 'contracts.type_contract', '=', 'contract_types.id')
-        ->select(
-            // 'contract',
-            'permits.id',
-            'permit_number',
-            'contract_number',
-            'description_typeContract',
-            'permit_start_date',
-            'permit_end_date',
-            'permit_code',
-            'fuec_state',
-            )->get();
-
-        return datatables()->of($permits)->toJson();
-    }
-    //
-
-    public function vehicle(){
-        $vehicles = vehicle::join('vehicle_types', 'vehicles.vehicle_type', '=', 'vehicle_types.id')
-        ->leftjoin('vehicle_classes', 'vehicles.infrastructure_vehicle', '=', 'vehicle_classes.id')
-        ->leftjoin('dimension_rims', 'vehicles.dimension_rims', '=', 'dimension_rims.id')
-        ->leftjoin('brake_types', 'vehicles.rear_brake_type', '=', 'brake_types.id')
-        ->leftjoin('brake_types as front', 'vehicles.front_brake_type', '=', 'front.id')
-        ->leftjoin('users', 'vehicles.owner_vehicle', '=', 'users.id')
-        ->leftjoin('drivers', 'vehicles.driver_id', '=', 'drivers.id')
-        ->leftjoin('users as v', 'drivers.user_id', '=', 'v.id')
-        ->select(
-        'vehicles.id',
-        'plate_vehicle',
-        'model_vehicle',
-        // 'vehicle_type',
-        'vehicle_type_name',
-        'side_vehicle',
-        'state_vehicle',
-        // 'infrastructure_vehicle',
-        'vehicle_class_description',
-        'number_accreditation_soat',
-        'secure_end_date',
-        'number_technomechanical_accreditation',
-        'technomechanical_end_date',
-        'internal_external_owner_type',
-        // 'owner_vehicle',
-        DB::raw('CONCAT(users.firstname," ",users.lastname) As owner'),   
-        // 'driver_id',
-        DB::raw('CONCAT(v.firstname," ",v.lastname) As drive'),
-        'brand_vehicle',
-        'vehicle_chassis_number',
-        'property_card_number',
-        'cylinder_vehicle',
-        'number_passenger',
-        'certificate_extracontractual',
-        'civil_contractual',
-        'card_operation',
-        'expiration_card_operation',
-        'expiration_preventive',
-        'admission_date',
-        'vehicle_pickup_date',
-        'engine_number',
-        'use_vehicle',
-        'color_vehicle',
-        'quantity_valves',
-        'number_cylinders',
-        'turbo',
-        'orientation',
-        'type_direction',
-        'transmission_type',
-        'number_speeds',
-        'tire_number',
-        'type_bearing',
-        'front_suspension',
-        'rear_suspension',
-        'type_rims',
-        // 'dimension_rims',
-        'material_rims',
-        // 'rear_brake_type',
-        'brake_types.brake_Type_Description',
-        'front.brake_Type_Description as front',
-        // 'front_brake_type',
-        'number_windows',
-            )->get();
-
-        return datatables()->of($vehicles)->toJson();
     }
 }

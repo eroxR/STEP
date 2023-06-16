@@ -41,7 +41,6 @@
     <body>
         {{-- pagina 1 --}}
         <x-contractframes typeContract="{{ $titlecontract }}">
-            
             @switch($contract->type_contract)
                 @case(1)
                     <div
@@ -191,7 +190,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         @switch($contract->contract_with)
                             @case(1)
                                 <p style="font-size: 90%;text-align: justify;">
@@ -214,7 +213,7 @@
                                     nacional, libres de todo vicio y según las cláusulas que a continuación se describen:
                                     <strong>PRIMERA</strong>.
                                     <strong>OBJETO</strong>. El <strong>CONTRATISTA</strong> se compromete para con el contratante a
-                                    transportar {{ $contract->passenger_quantity }} estudiantes,
+                                    transportar #{{ $contract->passenger_quantity }} estudiantes,
                                     desde el lugar de su residencia descrito en el documento adjunto - punto de origen - hasta las
                                     instalaciones de la institución educativa - punto de destino común - y viceversa hacia su punto de
                                     origen. <strong>SEGUNDA: CONDICIONES PLAN DE RODAMIENTO. 1. DISPONIBILIDAD GENERAL</strong>
@@ -227,7 +226,7 @@
 
                                 </p>
                             @break
-                            
+
                             @case(2)
                                 <p style="font-size: 82%;text-align: justify;">
                                     Entre los suscritos a saber <STRong>SERVICIO DE TRANSPORTE ESPECIAL DE PASAJEROS S.A.S.</STRong>
@@ -248,8 +247,8 @@
                                     cláusulas que a continuación se describen: <strong>PRIMERA: OBJETO.</strong> El
                                     <strong>CONTRATISTA</strong> se compromete
                                     para con el contratante a transportar {{ $contract->passenger_quantity }} pasajeros según el listado adjunto, el cual hace parte
-                                    integral 
-                                    del presente contrato, desde {{$route_from}} hasta {{$route_to}} y viceversa hacia su
+                                    integral
+                                    del presente contrato, desde {{ $contract->date_start_contract }} hasta {{ $contract->contract_end_date }} y viceversa hacia su
                                     punto de origen. <strong>SEGUNDA: CONDICIONES PLAN DE RODAMIENTO 1. DISPONIBILIDAD
                                         GENERAL ORDINARIA Y EXTRAORDINARIA.</strong> Los estudiantes Universitarios serán transportados
                                     por EL CONTRATISTA de manera ordinaria de lunes a viernes durante los meses y días hábiles de
@@ -1731,8 +1730,8 @@
                                         CONTRATISTA</strong> y los
                                     estudiantes Universitarios a quien <strong>EL CONTRATANTE</strong> representa, y será cancelado
                                     durante los
-                                    primeros cinco (5) días de cada mes durante el periodo comprendido desde {{$fStartDay}}
-                                    del mes {{$fStartMont}} de {{$fStartYear}} hasta el día {{$fEndDay}} del mes {{$fEndMont}} de {{$fEndYear}}, incluyendo semana santa, vacaciones de mitad de año, semana de receso,
+                                    primeros cinco (5) días de cada mes durante el periodo comprendido desde _________ de 20__
+                                    hasta ________ de 20__, incluyendo semana santa, vacaciones de mitad de año, semana de receso,
                                     periodos de paro, incapacidades, según lo consignado en el documento adjunto. El pago podrá
                                     realizarse, directamente en la oficina o al acompañante o conductor del vehículo; en cualquier caso,
                                     deberá siempre conservar el comprobante de pago. El pago podrá realizarse también a través de
@@ -2873,16 +2872,16 @@
                                         CONTRATISTA</strong>
                                     y los padres de familia a quien el <strong>CONTRATANTE</strong> representa, y será cancelado durante
                                     los primeros
-                                    cinco (5) días de cada mes durante el periodo comprendido desde {{$fstart}} hasta
-                                    {{$fend}}, <strong>incluyendo semana santa, vacaciones de mitad de año, semana
+                                    cinco (5) días de cada mes durante el periodo comprendido desde _______________de 2023 hasta
+                                    _________________ de 2023, <strong>incluyendo semana santa, vacaciones de mitad de año, semana
                                         de receso, períodos de paro, incapacidades</strong>, según lo consignado en el documento
                                     adjunto. Los
                                     <strong>CONTRATANTES</strong> serán solidarios entre ellos. El pago podrá realizarse, directamente
                                     en la oficina
                                     o al acompañante o conductor del vehículo; en cualquier caso, deberá siempre conservar el
                                     comprobante del pago realizado. <strong>OCTAVA. VIGENCIA.</strong> El presente contrato se inicia el
-                                    día {{$fStartDay}}
-                                    del mes {{$fStartMont}} de {{$fStartYear}} y concluye el día {{$fEndDay}} del mes {{$fEndMont}} de {{$fEndYear}}.
+                                    día ___
+                                    del mes _______________ de 2023 y concluye el día ___ del mes _______________ de 2023__.
                                     Por ningún motivo podrá prorrogarse el presente contrato o cederse por la parte <strong>CONTRATANTE.
                                         NOVENA. TERMINACIÓN</strong>. Cualquiera de las partes podrá dar por terminado este contrato
                                     dando
@@ -2913,8 +2912,8 @@
                                     anterior sin perjuicio de las acciones legales que El <strong>CONTRATISTA</strong> o sus
                                     funcionarios tenga.
                                     <strong>DECIMA PRIMERA: DURACION DEL CONTRATO.</strong> El presente contrato tendrá una duración de
-                                    {{$difmont +1}}  meses comenzando a ejecutarse el día {{$fStartDay}} de {{$fStartMont}} de {{$fStartYear}} y concluyendo el día {{$fEndDay}}
-                                    de {{$fEndMont}} de {{$fEndYear}}. Por ningún motivo podrá prorrogarse automáticamente el presente contrato
+                                    ________ meses comenzando a ejecutarse el día___ de ______ de 20__ y concluyendo el día ___
+                                    de ________ de 20___. Por ningún motivo podrá prorrogarse automáticamente el presente contrato
                                     o cederse por la parte <strong>CONTRATANTE. DECIMA SEGUNDA_ TERMINACIÓN.</strong> Cualquiera de las
                                     partes podrá dar por terminado este contrato dando un preaviso con no menos de quince (15) días
                                     de antelación al servicio. En cualquier caso, no se devolverá suma alguna por concepto de depósito.
@@ -2935,7 +2934,7 @@
                                     Para efectos de dejar constancia, <strong>CONTRATANTE</strong> y <strong>CONTRATISTA</strong>,
                                     libres de todo vicio y en pleno
                                     uso de nuestras facultades suscribimos y aceptamos el presente contrato en _______________ a
-                                    los {{$firmeday}} días del mes de {{$firmemonth}} del año {{$firmeyear}}.
+                                    los __ días del mes de _________________ del año 20____.
                                 </p>
                                 <br>
                                 <br>

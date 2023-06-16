@@ -1,4 +1,16 @@
 <div>
+    {{-- <div class="flex flex-col overflow-x-auto">
+        <div class="sm:-mx-6 lg:-mx-8">
+          <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
+            <div class="overflow-x-auto">
+                @livewire('user-table') 
+            </div>
+          </div>
+        </div>
+    </div> --}}
+
+    {{-- @livewire('user-table')  --}}
+
     <div class="py-12 ">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="justify-center flex">
@@ -44,52 +56,58 @@
                             <th class="pl-4 py-2" data-priority="15">{{ __('city') }}</th>
                             <th class="pl-4 py-2" data-priority="16">{{ __('address') }}</th>
                             <th class="pl-4 py-2" data-priority="17">{{ __('phone') }}</th>
-                            <th class="pl-4 py-2" data-priority="18">{{ __('phone cellular') }}</th>
+                            <th class="pl-4 py-2" data-priority="18">{{ __('phone_cellular') }}</th>
                             <th class="pl-4 py-2" data-priority="19">{{ __('eps') }}</th>
-                            <th class="pl-4 py-2" data-priority="21">{{ __('date eps') }}</th>
-                            <th class="pl-4 py-2" data-priority="22">{{ __('blood type') }}</th>
+                            <th class="pl-4 py-2" data-priority="20">{{ __('eps_status') }}</th>
+                            <th class="pl-4 py-2" data-priority="21">{{ __('date_eps') }}</th>
+                            <th class="pl-4 py-2" data-priority="22">{{ __('blood_type') }}</th>
                             <th class="pl-4 py-2" data-priority="23">{{ __('pension') }}</th>
-                            <th class="pl-4 py-2" data-priority="25">{{ __('date pension') }}</th>
+                            <th class="pl-4 py-2" data-priority="24">{{ __('pension_status') }}</th>
+                            <th class="pl-4 py-2" data-priority="25">{{ __('date_pension') }}</th>
                             <th class="pl-4 py-2" data-priority="26">{{ __('layoffs') }}</th>
-                            <th class="pl-4 py-2" data-priority="28">{{ __('date layoffs') }}</th>
+                            <th class="pl-4 py-2" data-priority="27">{{ __('status_layoffs') }}</th>
+                            <th class="pl-4 py-2" data-priority="28">{{ __('date_layoffs') }}</th>
                             <th class="pl-4 py-2" data-priority="29">{{ __('arl') }}</th>
-                            <th class="pl-4 py-2" data-priority="31">{{ __('arl date') }}</th>
+                            <th class="pl-4 py-2" data-priority="30">{{ __('arl_status') }}</th>
+                            <th class="pl-4 py-2" data-priority="31">{{ __('arl_date') }}</th>
                             <th class="pl-4 py-2" data-priority="32">{{ __('compensationbox') }}</th>
-                            <th class="pl-4 py-2" data-priority="34">{{ __('date compensationbox') }}</th>
-                            <th class="pl-4 py-2" data-priority="35">{{ __('date withdrawal user') }}</th>
-                            <th class="pl-4 py-2" data-priority="36">{{ __('civil status') }}</th>
-                            <th class="pl-4 py-2" data-priority="37">{{ __('family document type') }}</th>
-                            <th class="pl-4 py-2" data-priority="38">{{ __('family names') }}</th>
+                            <th class="pl-4 py-2" data-priority="33">{{ __('compensationbox_status') }}</th>
+                            <th class="pl-4 py-2" data-priority="34">{{ __('date_compensationbox') }}</th>
+                            <th class="pl-4 py-2" data-priority="35">{{ __('date_withdrawal_user') }}</th>
+                            <th class="pl-4 py-2" data-priority="36">{{ __('civil_status') }}</th>
+                            <th class="pl-4 py-2" data-priority="37">{{ __('family_document_type') }}</th>
+                            <th class="pl-4 py-2" data-priority="38">{{ __('family_names') }}</th>
                             <th class="pl-4 py-2" data-priority="39">{{ __('relationship') }}</th>
-                            <th class="pl-4 py-2" data-priority="40">{{ __('family address') }}</th>
-                            <th class="pl-4 py-2" data-priority="41">{{ __('family phone') }}</th>
-                            <th class="pl-4 py-2" data-priority="42">{{ __('family phone cellular') }}</th>
-                            <th class="pl-4 py-2" data-priority="43">{{ __('city birth') }}</th>
-                            <th class="pl-4 py-2" data-priority="44">{{ __('place expedition identificationcard') }}</th>
-                            <th class="pl-4 py-2" data-priority="45">{{ __('identificationcard family') }}</th>
-                            <th class="pl-4 py-2" data-priority="46">{{ __('bonding type') }}</th>
+                            <th class="pl-4 py-2" data-priority="40">{{ __('family_address') }}</th>
+                            <th class="pl-4 py-2" data-priority="41">{{ __('family_phone') }}</th>
+                            <th class="pl-4 py-2" data-priority="42">{{ __('family_phone_cellular') }}</th>
+                            <th class="pl-4 py-2" data-priority="43">{{ __('city_birth') }}</th>
+                            <th class="pl-4 py-2" data-priority="44">{{ __('place_expedition_identificationcard') }}
+                            </th>
+                            <th class="pl-4 py-2" data-priority="45">{{ __('identificationcard_family') }}</th>
+                            <th class="pl-4 py-2" data-priority="46">{{ __('bonding_type') }}</th>
                             <th class="pl-4 py-2" data-priority="47">{{ __('weight') }}</th>
-                            <th class="pl-4 py-2" data-priority="48">{{ __('pant size') }}</th>
-                            <th class="pl-4 py-2" data-priority="49">{{ __('shirt size') }}</th>
-                            <th class="pl-4 py-2" data-priority="50">{{ __('shoe size') }}</th>
-                            <th class="pl-4 py-2" data-priority="51">{{ __('education level') }}</th>
-                            <th class="pl-4 py-2" data-priority="52">{{ __('educational institution') }}</th>
-                            <th class="pl-4 py-2" data-priority="53">{{ __('last year') }}</th>
-                            <th class="pl-4 py-2" data-priority="54">{{ __('study end date') }}</th>
-                            <th class="pl-4 py-2" data-priority="55">{{ __('obtained title') }}</th>
-                            <th class="pl-4 py-2" data-priority="56">{{ __('last company name') }}</th>
-                            <th class="pl-4 py-2" data-priority="57">{{ __('charges last company') }}</th>
-                            <th class="pl-4 py-2" data-priority="58">{{ __('start date last company') }}</th>
-                            <th class="pl-4 py-2" data-priority="59">{{ __('date end last company') }}</th>
-                            <th class="pl-4 py-2" data-priority="60">{{ __('functions performed') }}</th>
-                            <th class="pl-4 py-2" data-priority="61">{{ __('company name provider') }}</th>
-                            <th class="pl-4 py-2" data-priority="62">{{ __('commercial reason supplier') }}</th>
-                            <th class="pl-4 py-2" data-priority="63">{{ __('supplier web page') }}</th>
-                            <th class="pl-4 py-2" data-priority="64">{{ __('economic activity') }}</th>
-                            <th class="pl-4 py-2" data-priority="65">{{ __('products and services') }}</th>
+                            <th class="pl-4 py-2" data-priority="48">{{ __('pant_size') }}</th>
+                            <th class="pl-4 py-2" data-priority="49">{{ __('shirt_size') }}</th>
+                            <th class="pl-4 py-2" data-priority="50">{{ __('shoe_size') }}</th>
+                            <th class="pl-4 py-2" data-priority="51">{{ __('education_level') }}</th>
+                            <th class="pl-4 py-2" data-priority="52">{{ __('educational_institution') }}</th>
+                            <th class="pl-4 py-2" data-priority="53">{{ __('last_year') }}</th>
+                            <th class="pl-4 py-2" data-priority="54">{{ __('study_end_date') }}</th>
+                            <th class="pl-4 py-2" data-priority="55">{{ __('obtained_title') }}</th>
+                            <th class="pl-4 py-2" data-priority="56">{{ __('last_company_name') }}</th>
+                            <th class="pl-4 py-2" data-priority="57">{{ __('charges_last_company') }}</th>
+                            <th class="pl-4 py-2" data-priority="58">{{ __('start_date_last_company') }}</th>
+                            <th class="pl-4 py-2" data-priority="59">{{ __('date_end_last_company') }}</th>
+                            <th class="pl-4 py-2" data-priority="60">{{ __('functions_performed') }}</th>
+                            <th class="pl-4 py-2" data-priority="61">{{ __('company_name_provider') }}</th>
+                            <th class="pl-4 py-2" data-priority="62">{{ __('commercial_reason_supplier') }}</th>
+                            <th class="pl-4 py-2" data-priority="63">{{ __('supplier_web_page') }}</th>
+                            <th class="pl-4 py-2" data-priority="64">{{ __('economic_activity') }}</th>
+                            <th class="pl-4 py-2" data-priority="65">{{ __('products_and_services') }}</th>
                             <th class="pl-4 py-2" data-priority="66">{{ __('salary') }}</th>
-                            <th class="pl-4 py-2" data-priority="67">{{ __('aid transport') }}</th>
-                            <th class="pl-4 py-2" data-priority="68">{{ __('work area') }}</th>
+                            <th class="pl-4 py-2" data-priority="67">{{ __('aid_transport') }}</th>
+                            <th class="pl-4 py-2" data-priority="68">{{ __('work_area') }}</th>
 
                         </tr>
                     </thead>
@@ -723,21 +741,10 @@
                                         class="Inactive text-gray-700 dark:text-gray-400">{{ __('identificationcard') }}</label>
 
                                     <input
-                                        class="Inactive block w90 py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                        class="Inactive block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                                         placeholder="documento" type="text" id="identificationcard"
                                         maxlength="12" name="identificationcard"
-                                        wire:model.defer="identificationcard"
-                                        onchange="documentOn('identificationcard','docu')" />
-
-                                    <span id="docu" class="Inactive upload-ico fas fa-file-upload icon-green"
-                                        aria-hidden="true" fill="none" stroke-linecap="round"
-                                        stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
-                                        stroke="currentColor">
-                                        <input id="InputDocu" wire:model.defer="Docu"
-                                            onchange="documentAbove('InputDocu','docu')" class="upload-input"
-                                            type="file">
-                                    </span>
-
+                                        wire:model.defer="identificationcard" />
                                 </div>
 
                             </div>
@@ -926,17 +933,17 @@
                                         class="Inactive text-gray-700 dark:text-gray-400">Nit</label>
 
                                     <input
-                                        class="Inactive w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                        class="Inactive block w90 py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                                         placeholder="Nit de proveedor" type="text" id="nit" name="nit"
-                                        wire:model.defer="nit" onchange="documentOn('nit','DocNit')" />
+                                        wire:model.defer="nit" />
 
-                                    <span id="DocNit" class="Inactive upload-ico fas fa-file-upload icon-green"
-                                        aria-hidden="true" fill="none" stroke-linecap="round"
-                                        stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
-                                        stroke="currentColor">
+                                        <span id="DocNit"
+                                        class=" upload-ico fas fa-file-upload icon-green" aria-hidden="true"
+                                        fill="none" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                         <input id="InputDocNit" wire:model.defer="DocNit"
-                                            onchange="documentAbove('InputDocNit','DocNit')" class="upload-input"
-                                            type="file">
+                                            onchange="documentAbove('InputDocNit','DocNit')"
+                                            class="upload-input" type="file">
                                     </span>
                                 </div>
 
@@ -1560,17 +1567,7 @@
                                     <input readonly
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                                         placeholder="Fecha documento de eps" type="text" id="date_eps"
-                                        name="date_eps" wire:model.defer="date_eps" 
-                                        onchange="fechasSet('date_eps'),documentOn('date_eps','docEps')" />
-
-                                        <span id="docEps" class="Inactive upload-ico33 fas fa-file-upload icon-green"
-                                            aria-hidden="true" fill="none" stroke-linecap="round"
-                                            stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
-                                            stroke="currentColor">
-                                            <input id="InputDocEps" wire:model.defer="DocEps"
-                                                onchange="documentAbove('InputDocEps','docEps')" class="upload-input"
-                                                type="file">
-                                        </span>
+                                        name="date_eps" wire:model.defer="date_eps" />
                                 </div>
 
                                 <div class="w-1-3">
@@ -1617,17 +1614,8 @@
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                                         placeholder="Fecha de documento pensión" type="text" id="date_pension"
                                         name="date_pension" wire:model.defer="date_pension"
-                                        onchange="fechasSet('date_pension'),documentOn('date_pension','docPension')" />
-
-                                        <span id="docPension" class="Inactive upload-ico33 fas fa-file-upload icon-green"
-                                            aria-hidden="true" fill="none" stroke-linecap="round"
-                                            stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
-                                            stroke="currentColor">
-                                            <input id="InputDocPension" wire:model.defer="DocPension"
-                                                onchange="documentAbove('InputDocPension','docPension')" class="upload-input"
-                                                type="file">
-                                        </span>
-                                    </div>    
+                                        onchange="fechasSet('date_pension')" />
+                                </div>
 
                                 <div class="w-1-3">
                                     <label id="labelLayoffs"
@@ -1657,16 +1645,7 @@
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                                         placeholder="Fecha documento de cesantias" type="text" id="date_layoffs"
                                         name="date_layoffs" wire:model.defer="date_layoffs"
-                                        onchange="fechasSet('date_layoffs'),documentOn('date_layoffs','docLayoffs')" />
-
-                                        <span id="docLayoffs" class="Inactive upload-ico33 fas fa-file-upload icon-green"
-                                            aria-hidden="true" fill="none" stroke-linecap="round"
-                                            stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
-                                            stroke="currentColor">
-                                            <input id="InputDocLayoffs" wire:model.defer="DocLayoffs"
-                                                onchange="documentAbove('InputDocLayoffs','docLayoffs')" class="upload-input"
-                                                type="file">
-                                        </span>
+                                        onchange="fechasSet('date_layoffs')" />
                                 </div>
 
                                 <div class="w-1-3">
@@ -1692,16 +1671,7 @@
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                                         placeholder="Fecha documento de arl" type="text" id="arl_date"
                                         name="arl_date" wire:model.defer="arl_date"
-                                        onchange="fechasSet('arl_date'),documentOn('arl_date','docArl')" />
-
-                                        <span id="docArl" class="Inactive upload-ico33 fas fa-file-upload icon-green"
-                                            aria-hidden="true" fill="none" stroke-linecap="round"
-                                            stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
-                                            stroke="currentColor">
-                                            <input id="InputDocArl" wire:model.defer="DocArl"
-                                                onchange="documentAbove('InputDocArl','docArl')" class="upload-input"
-                                                type="file">
-                                        </span>
+                                        onchange="fechasSet('arl_date')" />
                                 </div>
 
                             </div>
@@ -1734,16 +1704,7 @@
                                         placeholder="fecha documento caja compensación" type="text"
                                         id="date_compensationbox" name="date_compensationbox"
                                         wire:model.defer="date_compensationbox"
-                                        onchange="fechasSet('date_compensationbox'),documentOn('date_compensationbox','docCompensationbox')" />
-
-                                        <span id="docCompensationbox" class="Inactive upload-ico fas fa-file-upload icon-green"
-                                            aria-hidden="true" fill="none" stroke-linecap="round"
-                                            stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
-                                            stroke="currentColor">
-                                            <input id="InputDocCompensationbox" wire:model.defer="DocCompensationbox"
-                                                onchange="documentAbove('InputDocCompensationbox','docCompensationbox')" class="upload-input"
-                                                type="file">
-                                        </span>
+                                        onchange="fechasSet('date_compensationbox')" />
                                 </div>
 
                             </div>
@@ -2303,7 +2264,7 @@
                 class="flex flex-col items-center justify-end px-6 py-3-1 -mx-6 -mb-4 space-y-4 sm:space-y-0 sm:space-x-6 sm:flex-row bg-gray-50 dark:bg-gray-800 border-t-fuchsia-800">
                 <button id="btnStore"
                     class="Inactive w-full px-5 py-3 text-sm font-medium leading-5 transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg sm:w-auto sm:px-4 sm:py-2 active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
-                    wire:click="store">
+                    wire:click="store" >
                     {{ __('Create User') }}
                 </button>
                 <button x-on:click="closeModal" onclick="restart()" id="btnCalcel"
@@ -3261,7 +3222,7 @@
 
                                                 </select>
                                             </div>
-{{-- 
+
                                             <div class="w-6-12 ">
 
                                                 <label class="text-gray-700 dark:text-gray-400">Selecciona el
@@ -3276,7 +3237,7 @@
                                                     <option value="3">INACTIVO</option>
                                                 </select>
 
-                                            </div> --}}
+                                            </div>
 
                                         </div>
 
@@ -3327,7 +3288,7 @@
                                                 </select>
                                             </div>
 
-                                            {{-- <div class="w-6-12 ">
+                                            <div class="w-6-12 ">
 
                                                 <label class="text-gray-700 dark:text-gray-400">Selecciona
                                                     el estado de la
@@ -3341,7 +3302,7 @@
                                                     <option value="3">INACTIVO</option>
                                                 </select>
 
-                                            </div> --}}
+                                            </div>
 
                                         </div>
 
@@ -3389,7 +3350,7 @@
 
                                         <div class="flex space-x-4">
 
-                                            {{-- <div class="w-6-12 ">
+                                            <div class="w-6-12 ">
 
                                                 <label class="text-gray-700 dark:text-gray-400">Selecciona
                                                     el estado de la
@@ -3404,7 +3365,7 @@
                                                     <option value="3">INACTIVO</option>
                                                 </select>
 
-                                            </div> --}}
+                                            </div>
 
                                             <div class="w-6-12">
                                                 <label
@@ -3435,7 +3396,7 @@
                                                 </select>
                                             </div>
 
-                                            {{-- <div class="w-6-12 ">
+                                            <div class="w-6-12 ">
 
                                                 <label class="text-gray-700 dark:text-gray-400">Selecciona el
                                                     estado de la
@@ -3449,7 +3410,7 @@
                                                     <option value="3">INACTIVO</option>
                                                 </select>
 
-                                            </div> --}}
+                                            </div>
 
                                         </div>
 
@@ -3488,7 +3449,7 @@
 
                                         <div class="flex space-x-4">
 
-                                            {{-- <div class="w-6-12 ">
+                                            <div class="w-6-12 ">
 
                                                 <label class="text-gray-700 dark:text-gray-400">Selecciona el estado
                                                     de la
@@ -3505,7 +3466,7 @@
                                                     <option value="3">INACTIVO</option>
                                                 </select>
 
-                                            </div> --}}
+                                            </div>
 
                                             <div class="w-6-12">
                                                 <label
@@ -4062,7 +4023,7 @@
     <!--end Modal edit -->
 
     {{-- end componentes de modal --}}
-
+    
 
 
 </div>
@@ -4461,7 +4422,7 @@
                         "render": function(data, type, row) {
                             if (row['type_sex'] == "M") {
                                 return "<span class='px-2 py-1 font-semibold leading-tight text-white bg-blue-600 rounded-full dark:bg-blue-600 dark:text-white '>{{ __('MASCULINE') }}</span>";
-                            } else if (row['type_sex'] == "F") {
+                            } else if(row['type_sex'] == "F"){
                                 return "<span class='px-2 py-1 font-semibold leading-tight text-white bg-yellow-700 rounded-full dark:bg-yellow-700 dark:text-white '>{{ __('FEMENINE') }}</span>";
                             } else {
                                 return "";
@@ -4522,6 +4483,10 @@
                         "className": "dark:bg-gray-800 dark:text-white text-center border-b"
                     },
                     {
+                        data: 'eps_status',
+                        "className": "dark:bg-gray-800 dark:text-white text-center"
+                    },
+                    {
                         data: 'date_eps',
                         "className": "dark:bg-gray-800 dark:text-white text-center"
                     },
@@ -4548,6 +4513,10 @@
                         "className": "dark:bg-gray-800 dark:text-white text-center border-b"
                     },
                     {
+                        data: 'pension_status',
+                        "className": "dark:bg-gray-800 dark:text-white text-center"
+                    },
+                    {
                         data: 'date_pension',
                         "className": "dark:bg-gray-800 dark:text-white text-center"
                     },
@@ -4561,6 +4530,10 @@
                             }
                         },
                         "className": "dark:bg-gray-800 dark:text-white text-center border-b"
+                    },
+                    {
+                        data: 'status_layoffs',
+                        "className": "dark:bg-gray-800 dark:text-white text-center"
                     },
                     {
                         data: 'date_layoffs',
@@ -4577,6 +4550,10 @@
                         "className": "dark:bg-gray-800 dark:text-white text-center border-b"
                     },
                     {
+                        data: 'arl_status',
+                        "className": "dark:bg-gray-800 dark:text-white text-center"
+                    },
+                    {
                         data: 'arl_date',
                         "className": "dark:bg-gray-800 dark:text-white text-center"
                     },
@@ -4590,6 +4567,10 @@
                             }
                         },
                         "className": "dark:bg-gray-800 dark:text-white text-center border-b"
+                    },
+                    {
+                        data: 'compensationbox_status',
+                        "className": "dark:bg-gray-800 dark:text-white text-center"
                     },
                     {
                         data: 'date_compensationbox',
@@ -5066,20 +5047,17 @@
                 var nit = document;
             } else if (process == 5) {
                 var email = document;
-            } else if (process == 6) {
+            }else if (process == 6) {
                 var username = document;
             }
 
-            var message = ['Se ha registrado el usuario ' + name + ' con documento ' + document +
-                ' sactisfacoriamente',
-                'se ha actualizado la información del usuario ' + name + ' con documento ' + document +
-                ' sactisfactoriamente',
-                'se ha eliminado el usuario ' + name + ' con documento ' + document + ' sactisfactoriamente',
-                'el documento o nit ' + nit + ' ya esta registrado en nuestro sistema',
-                'el correo electronico "' + email + '" ya esta registrado en nuestro sistema',
-                'el nombre de usuario "' + username + '" ya esta registrado en nuestro sistema'
-            ];
-            // var state = ['success', 'error'];
+            var message = ['Se ha registrado el usuario ' + name + ' con documento ' + document + ' sactisfacoriamente',
+                        'se ha actualizado la información del usuario ' + name + ' con documento ' + document + ' sactisfactoriamente',
+                        'se ha eliminado el usuario ' + name + ' con documento ' + document + ' sactisfactoriamente',
+                        'el documento o nit ' + nit + ' ya esta registrado en nuestro sistema',
+                        'el correo electronico "' + email + '" ya esta registrado en nuestro sistema',
+                        'el nombre de usuario "' + username + '" ya esta registrado en nuestro sistema'];
+            var state = ['success','error'];
 
 
             var newmessage = message[process - 1];
@@ -5090,9 +5068,9 @@
             } else {
                 swal.fire('', newmessage, 'error')
             }
-
+            
             $('#example').DataTable().ajax.reload(null, 1);
-
+            
         })
 
 
