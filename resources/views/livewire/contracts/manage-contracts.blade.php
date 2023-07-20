@@ -1,4 +1,20 @@
 <div>
+
+    <style>
+        /* CHECKBOX TOGGLE SWITCH */
+        /* @apply rules for documentation, these do not work as inline style */
+        .toggle-checkbox:checked {
+            @apply: right-0 border-green-400;
+            right: 0;
+            border-color: #68D391;
+        }
+
+        .toggle-checkbox:checked+.toggle-label {
+            @apply: bg-green-400;
+            background-color: #68D391;
+        }
+    </style>
+
     <div class="py-12 mb-2 mt-4">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="justify-center flex">
@@ -7,17 +23,6 @@
             </div>
         </div>
         <div class="w-full overflow-hidden rounded-lg shadow-xs mt-4">
-            {{-- <div class="px-4 py-2 mb-2 mt-1 ml-2 flex items-center border-b-fuchsia-800 border-b"> --}}
-            {{-- <h1 class="text-black dark:text-white">cambio de contraseña desde livewire</h1> --}}
-            {{-- <input
-                    class="flex-1 mr-4 pl-8 pr-2 text-sm text-gray-700 placeholder-gray-600 bg-gray-100 border-0 rounded-md dark:placeholder-gray-500 dark:focus:shadow-outline-gray dark:focus:placeholder-gray-600 dark:bg-gray-700 dark:text-gray-200 focus:placeholder-gray-500 focus:bg-white focus:border-purple-300 focus:outline-none focus:shadow-outline-purple form-input"
-                    type="text" placeholder="Escribe una consulta sobre la tabla" wire:model="search">
-
-                <button @click="openModal"
-                    class="px-2 py-1 font-semibold leading-tight text-black bg-sky-700 rounded-full dark:bg-sky-700 dark:text-white">
-                     {{ __('create new contract') }}
-                </button> --}}
-            {{-- </div> --}}
 
             <div class=" overflow-x-auto" style="width:100%;" wire:ignore>
 
@@ -73,300 +78,12 @@
 
                 </table>
 
-
-                {{-- @if ($contracts->count())
-                    <table class="w-full ">
-                        <thead>
-                            <tr
-                                class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800"> --}}
-                {{-- <th class="cursor-pointer px-2 py-3" wire:click="order('id')">
-
-                                    ID
-
-                                    @if ($sort == 'id')
-
-                                        @if ($direction == 'asc')
-                                            <i class="fas fa-sort-alpha-up-alt "></i>
-                                        @else
-                                            <i class="fas fa-sort-alpha-down-alt "></i>
-                                        @endif
-                                    @else
-                                        <i class="fas fa-sort "></i>
-                                    @endif
-
-                                </th> --}}
-                {{-- <th class="cursor-pointer px-2 py-3" wire:click="order('contract_number')">
-
-                                    {{ __('contract number') }}
-
-                                    @if ($sort == 'contract_number')
-
-                                        @if ($direction == 'asc')
-                                            <i class="fas fa-sort-alpha-up-alt "></i>
-                                        @else
-                                            <i class="fas fa-sort-alpha-down-alt "></i>
-                                        @endif
-                                    @else
-                                        <i class="fas fa-sort "></i>
-                                    @endif
-
-                                </th>
-                                <th class="cursor-pointer px-2 py-3" wire:click="order('description_typeContract')">
-
-                                    {{ __('description typeContract') }}
-
-                                    @if ($sort == 'description_typeContract')
-
-                                        @if ($direction == 'asc')
-                                            <i class="fas fa-sort-alpha-up-alt "></i>
-                                        @else
-                                            <i class="fas fa-sort-alpha-down-alt "></i>
-                                        @endif
-                                    @else
-                                        <i class="fas fa-sort "></i>
-                                    @endif
-
-                                </th>
-                                <th class="cursor-pointer px-2 py-3" wire:click="order('state_contract')">
-
-                                    {{ __('state contract') }}
-
-                                    @if ($sort == 'state_contract')
-
-                                        @if ($direction == 'asc')
-                                            <i class="fas fa-sort-alpha-up-alt "></i>
-                                        @else
-                                            <i class="fas fa-sort-alpha-down-alt "></i>
-                                        @endif
-                                    @else
-                                        <i class="fas fa-sort "></i>
-                                    @endif
-
-                                </th>
-                                <th class="cursor-pointer px-2 py-3" wire:click="order('date_start_contract')">
-
-                                    {{ __('date start contract') }}
-
-                                    @if ($sort == 'date_start_contract')
-
-                                        @if ($direction == 'asc')
-                                            <i class="fas fa-sort-alpha-up-alt "></i>
-                                        @else
-                                            <i class="fas fa-sort-alpha-down-alt "></i>
-                                        @endif
-                                    @else
-                                        <i class="fas fa-sort "></i>
-                                    @endif
-
-                                </th>
-                                <th class="cursor-pointer px-2 py-3" wire:click="order('contract_end_date')">
-
-                                    {{ __('contract end date') }}
-
-                                    @if ($sort == 'contract_end_date')
-
-                                        @if ($direction == 'asc')
-                                            <i class="fas fa-sort-alpha-up-alt "></i>
-                                        @else
-                                            <i class="fas fa-sort-alpha-down-alt "></i>
-                                        @endif
-                                    @else
-                                        <i class="fas fa-sort "></i>
-                                    @endif
-
-                                </th>
-                                <th class="cursor-pointer px-2 py-3" wire:click="order('contracting_name')">
-
-                                    {{ __('contracting name') }}
-
-                                    @if ($sort == 'contracting_name')
-
-                                        @if ($direction == 'asc')
-                                            <i class="fas fa-sort-alpha-up-alt "></i>
-                                        @else
-                                            <i class="fas fa-sort-alpha-down-alt "></i>
-                                        @endif
-                                    @else
-                                        <i class="fas fa-sort "></i>
-                                    @endif
-
-                                </th>
-                                <th class="cursor-pointer px-2 py-3" wire:click="order('school_name')">
-
-                                    {{ __('school name') }}
-
-                                    @if ($sort == 'school_name')
-
-                                        @if ($direction == 'asc')
-                                            <i class="fas fa-sort-alpha-up-alt "></i>
-                                        @else
-                                            <i class="fas fa-sort-alpha-down-alt "></i>
-                                        @endif
-                                    @else
-                                        <i class="fas fa-sort "></i>
-                                    @endif
-
-                                </th>
-                                <th class="cursor-pointer px-2 py-3" wire:click="order('route_trip_contract')">
-
-                                    {{ __('route trip contract') }}
-
-                                    @if ($sort == 'destination_place')
-
-                                        @if ($direction == 'asc')
-                                            <i class="fas fa-sort-alpha-up-alt "></i>
-                                        @else
-                                            <i class="fas fa-sort-alpha-down-alt "></i>
-                                        @endif
-                                    @else
-                                        <i class="fas fa-sort "></i>
-                                    @endif
-
-                                </th>
-                                <th class="cursor-pointer px-2 py-3" wire:click="order('contract_value')">
-
-                                    {{ __('contract value') }}
-
-                                    @if ($sort == 'contract_value')
-
-                                        @if ($direction == 'asc')
-                                            <i class="fas fa-sort-alpha-up-alt "></i>
-                                        @else
-                                            <i class="fas fa-sort-alpha-down-alt "></i>
-                                        @endif
-                                    @else
-                                        <i class="fas fa-sort "></i>
-                                    @endif
-
-                                </th>
-                                <th class="px-2 py-3">{{ __('Actions') }}</th>
-                            </tr>
-                        </thead>
-                        <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
-
-                            @foreach ($contracts as $contract)
-                                <tr class="text-gray-700 dark:text-gray-400"> --}}
-                {{-- <td class="px-4 py-3 text-sm">
-                                        {{ $contract->id }}
-                                    </td> --}}
-                {{-- <td class="px-4 py-3 text-sm">
-                                        {{ $contract->contract_number }}
-                                    </td>
-                                    <td class="px-4 py-3 text-sm">
-                                        {{ $contract->contract_name }}
-                                    </td>
-                                    <td class="px-4 py-3 text-xs"> --}}
-                {{-- ['INICIAL','CANCELADO','EN CURSO','FINALIZADO','PENDIENTE'] --}}
-                {{-- @switch($contract->state_contract)
-                                            @case('0')
-                                                <span
-                                                    class="px-2 py-1 font-semibold leading-tight text-gray-700 bg-gray-100 rounded-full dark:text-gray-100 dark:bg-gray-700">
-                                                    INICIAL
-                                                </span>
-                                            @break
-
-                                            @case('1')
-                                                <span
-                                                    class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">
-                                                    CANCELADO
-                                                </span>
-                                            @break
-
-                                            @case('2')
-                                                <span
-                                                    class="px-2 py-1 font-semibold leading-tight text-yellow-700 bg-yellow-100 rounded-full dark:bg-yellow-700 dark:text-yellow-100">
-                                                    EN CURSO
-                                                </span>
-                                            @break
-
-                                            @case('3')
-                                                <span
-                                                    class="px-2 py-1 font-semibold leading-tight text-sky-700 bg-sky-300 rounded-full dark:bg-sky-700 dark:text-sky-100">
-                                                    FINALIZADO
-                                                </span>
-                                            @break
-
-                                            @case('4')
-                                                <span
-                                                    class="px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-full dark:text-red-100 dark:bg-red-700">
-                                                    PENDIENTE
-                                                </span>
-                                            @break
-
-                                            @default
-                                        @endswitch
-
-                                    </td>
-                                    <td class="px-4 py-3 text-sm">
-                                        {{ $contract->date_start_contract }}
-                                    </td>
-                                    <td class="px-4 py-3 text-sm">
-                                        {{ $contract->contract_end_date }}
-                                    </td>
-                                    <td class="px-4 py-3 text-sm">
-                                        {{ $contract->contracting_name }}
-                                    </td>
-                                    <td class="px-4 py-3 text-sm">
-                                        {{ $contract->school_name }}
-                                    </td>
-                                    <td class="px-4 py-3 text-sm">
-                                        {{ $contract->route_trip_contract }}
-                                    </td>
-                                    <td class="px-4 py-3 text-sm">
-                                        ${{ number_format($contract->contract_value, 2, ',', '.') }}
-                                    </td>
-                                    <td class="px-4 py-3">
-                                        <div class="flex items-center space-x-4 text-sm">
-                                            <button id="edit" onclick="edit({{ $contract }})"
-                                                class="inline-flex items-center justify-center  bg-yellow-700 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-yellow-400 focus:outline-none focus:bg-yellow-700 focus:ring focus:ring-red-200 active:bg-yellow-700 disabled:opacity-25 transition" --}}
-                {{-- flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray"  aria-label="Edit">
-                                                {{-- <svg class="w-5 h-5" aria-hidden="true" fill="currentColor"
-                                                    viewBox="0 0 20 20">
-                                                    <path
-                                                        d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z">
-                                                    </path>
-                                                </svg>
-                                            </button>
-                                            <button onclick="deletes({{ $contract->id }})"
-                                                class="inline-flex items-center justify-center  bg-red-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 active:bg-red-600 disabled:opacity-25 transition" --}}
-                {{-- flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray"  aria-label="Delete">
-                                                {{-- <svg class="w-5 h-5" aria-hidden="true" fill="currentColor"
-                                                    viewBox="0 0 20 20">
-                                                    <path fill-rule="evenodd"
-                                                        d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
-                                                        clip-rule="evenodd"></path>
-                                                </svg>
-                                            </button>
-                                            <button onclick="view({{ $contract->id }})"
-                                                class="inline-flex items-center justify-center  bg-blue-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 active:bg-red-600 disabled:opacity-25 transition" --}}
-                {{-- flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray" aria-label="view">
-                                                <svg class="w-5 h-5" fill="none" stroke="currentColor"
-                                                    stroke-width="1.5" viewBox="0 0 24 24"
-                                                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z">
-                                                    </path>
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                                                </svg>
-                                            </button>
-                                        </div>
-                                    </td>
-                                </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-                @else
-                    <div class="px-6 py-4 text-black dark:text-white">
-                        {{ __('There are no Contracts that match what you are looking for...') }}
-                    </div>
-                @endif  --}}
-
             </div>
         </div>
 
     </div>
 
+    {{-- <embed src="{{ asset('storage/STEP/contract/Empresas/Contrato_para_transporte_empresarial_N-9007.pdf') }}" type="application/pdf" width="100%" height="100%"> --}}
     {{-- componentes de modal --}}
 
     <!--Modal create -->
@@ -452,42 +169,12 @@
                                     <!-- El icono que envolverá el número -->
                                     <span class="fa fa-circle-o fa-stack-2x"></span>
                                     <!-- un elemento strong con el contenido personalizado, en este caso un número -->
-                                    <strong class="fa-stack-2x -ml-1 numcolor" id="step3">
-                                        3
-                                    </strong>
-                                </span>
-                            </div>
-                            <p>Paso 3</p>
-                        </div>
-                        {{-- <div class="f1-step ">
-                            <div class="f1-step-icon">
-
-                                <!-- Crea un icono envuelto por la clase fa-stack -->
-                                <span class="fa-stack  ">
-                                    <!-- El icono que envolverá el número -->
-                                    <span class="fa fa-circle-o fa-stack-2x"></span>
-                                    <!-- un elemento strong con el contenido personalizado, en este caso un número -->
-                                    <strong class="fa-stack-2x -ml-1 numcolor" id="step4">
-                                        4
-                                    </strong>
-                                </span>
-                            </div>
-                            <p>Paso 4</p>
-                        </div> --}}
-                        <div class="f1-step ">
-                            <div class="f1-step-icon">
-
-                                <!-- Crea un icono envuelto por la clase fa-stack -->
-                                <span class="fa-stack  ">
-                                    <!-- El icono que envolverá el número -->
-                                    <span class="fa fa-circle-o fa-stack-2x"></span>
-                                    <!-- un elemento strong con el contenido personalizado, en este caso un número -->
-                                    <strong class="fa-stack-1x -ml-1 numcolor" id="step5">
+                                    <strong class="fa-stack-1x -ml-1 numcolor" id="step3">
                                         FIN
                                     </strong>
                                 </span>
                             </div>
-                            <p>Fin</p>
+                            <p>Paso final</p>
                         </div>
                     </div>
 
@@ -511,22 +198,30 @@
                                             <option value="{{ $type_contract->id }}">
                                                 {{ $type_contract->description_typeContract }}</option>
                                         @endforeach
-                                        <option value="6">Convenio Empresarial</option>
-                                        <option value="7">Anexo</option>
-                                        <option value="8">Otro si</option>
-                                        <option value="9">Contrato de Vinculación</option>
                                     </select>
 
                                 </div>
-                                <div class="w-6-12 " id="divContract_with">
+                                <div class="w-6-12 Inactive" id="divContract_with">
 
-                                    <select wire:model.defer="contract_with" id="contract_with" name="contract_with" onchange="withContract()"
+                                    <select wire:model.defer="contract_with" id="contract_with" name="contract_with"
+                                        onchange="withContract()"
                                         class="Inactive block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
                                         <option value="0">Contrato Con </option>
                                         <option value="1">Con Grupo PADRES</option>
                                         <option value="2">Con UNIVERSITARIOS</option>
                                         <option value="3">Con ESTUDIANTE CON ACUDIENTE</option>
                                         <option value="4">Con RECTOR O REPRESENTANTE LEGAL Del Colegio</option>
+                                    </select>
+
+                                </div>
+                                <div class="w-6-12 Inactive" id="divhealthWith">
+
+                                    <select {{-- wire:model.defer="contract_with"  --}} id="healthWith" name="healthWith"
+                                        onchange="Withhealth()"
+                                        class="Inactive block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
+                                        <option value="0">Contrato Con </option>
+                                        <option value="1">Con persona natural</option>
+                                        <option value="2">Con HOSPITAL</option>
                                     </select>
 
                                 </div>
@@ -555,8 +250,18 @@
 
                                     <input
                                         class="Inactive block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                        placeholder="documento del contratante" type="number" id="contract_document"
-                                        name="contract_document" wire:model.defer="contract_document" />
+                                        placeholder="documento del contratante" type="text" id="contract_document"
+                                        name="contract_document" wire:model.defer="contract_document"
+                                        onchange="documentOn('contract_document','DocNit')" />
+
+                                    <span id="DocNit" class="Inactive upload-ico fas fa-file-upload icon-green"
+                                        aria-hidden="true" fill="none" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
+                                        stroke="currentColor">
+                                        <input id="InputDocNit" wire:model.defer="DocNit"
+                                            onchange="documentAbove('InputDocNit','DocNit')" class="upload-input"
+                                            type="file">
+                                    </span>
                                 </div>
 
                             </div>
@@ -611,9 +316,11 @@
 
 
                             <br>
-                            <div class="f1-buttons Inactive" id="fieldset1Buttons">
-                                <button type="button"
-                                    class="btn btn-next w-full px-5 py-3 text-sm font-medium leading-5 transition-colors duration-150 bg-green-600 border border-transparent rounded-lg sm:w-auto sm:px-4 sm:py-2 active:bg-green-600 hover:bg-green-700 focus:outline-none focus:shadow-outline-purple">Siguiente</button>
+                            <div class="f1-buttons " id="fieldset1Buttons">
+                                <button type="button" id="firstButtons"
+                                    class="Inactive btn btn-next w-full px-5 py-3 text-sm font-medium leading-5 transition-colors duration-150 bg-green-600 border border-transparent rounded-lg sm:w-auto sm:px-4 sm:py-2 active:bg-green-600 hover:bg-green-700 focus:outline-none focus:shadow-outline-purple">
+                                    Siguiente
+                                </button>
                             </div>
 
                         </fieldset>
@@ -626,7 +333,7 @@
 
                                 <div class="w-6-12" id="divSchoolName">
                                     <label id="labelSchoolName"
-                                        class="text-gray-700 dark:text-gray-400">{{ __('school name') }}</label>
+                                        class="text-gray-700 dark:text-gray-400">{{ __('school name or university') }}</label>
 
                                     <input
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -646,42 +353,6 @@
 
                             </div>
 
-                            {{-- <div class="flex space-x-4">
-
-                                <div class="w-full" id="divSecurePolicy">
-                                    <label id="labelSecurePolicy"
-                                        class="text-gray-700 dark:text-gray-400">{{ __('secure policy') }}</label>
-
-                                    <input
-                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                        placeholder="secure_policy" type="text" id="secure_policy"
-                                        name="secure_policy" wire:model.defer="secure_policy" />
-                                </div>
-
-                            </div> --}}
-
-                            {{-- <div class="flex space-x-4">
-
-                                <div class="w-full" id="divCooperationContract">
-                                    <label id="labelCooperationContract"
-                                        class="text-gray-700 dark:text-gray-400">{{ __('cooperation contract') }}</label>
-
-                                    <input
-                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                        placeholder="cooperation_contract" type="text" id="cooperation_contract"
-                                        name="cooperation_contract" wire:model.defer="cooperation_contract" />
-                                </div>
-
-                            </div> --}}
-
-                            {{-- <div class="flex space-x-4 justify-center Inactive" id="nextstep">
-
-                                <div class="w-1-3 mnext">
-
-                                    <p class="text-gray-700 dark:text-gray-400 nextstep">{{ __('next step') }}</p>
-
-                                </div>
-                            </div> --}}
                             <div class="flex space-x-4">
 
                                 <div class="w-full" id="divVehicle">
@@ -736,7 +407,7 @@
 
                             <div class="flex space-x-4" id="divEstudiante">
 
-                                <div class="w-6-12">
+                                <div class="w30">
                                     <label id="labelEstudiante"
                                         class="text-gray-700 dark:text-gray-400">{{ __('Student name') }}</label>
                                     <input
@@ -745,15 +416,48 @@
                                         name="Student_name" wire:model.defer="student_name" />
                                 </div>
 
-                                <div class="w-6-12">
+                                <div class="w30">
                                     <label id="labelIdentificationcardEstudent"
                                         class="text-gray-700 dark:text-gray-400">{{ __('identificación estudiante') }}</label>
 
                                     <input
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                        placeholder="numero identificación estudiante" type="number"
+                                        placeholder="# identificación estudiante" type="number"
                                         id="identificationcard_Estudent" name="identificationcard_Estudent"
                                         wire:model.defer="identificationcard_estudent" />
+                                </div>
+
+
+                                <div class="w20">
+                                    <label id="labelGrade"
+                                        class="text-gray-700 dark:text-gray-400">{{ __('grade tudent') }}</label>
+
+                                    <input
+                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                        placeholder="Grado del Estudiante" type="text" id="grade_student"
+                                        name="grade_student" wire:model.defer="grade_student" />
+                                </div>
+
+
+                                <div class="w10">
+                                    <label id="labelStartDay"
+                                        class="text-gray-700 dark:text-gray-400">{{ __('start day') }}</label>
+
+                                    <input
+                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                        placeholder="inicio" type="text" id="start_day" name="start_day"
+                                        wire:model.defer="start_day" onchange="fechasSet('start_day')" />
+                                </div>
+
+
+                                <div class="w10">
+                                    <label id="labelEndDay"
+                                        class="text-gray-700 dark:text-gray-400">{{ __('end of day') }}</label>
+
+                                    <input
+                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                        placeholder="final" type="text" id="End_day" name="End_day"
+                                        wire:model.defer="End_day" onchange="fechasSet('End_day')" />
                                 </div>
 
                             </div>
@@ -780,30 +484,6 @@
                                         id="legal_representative_expedition_identificationcard"
                                         name="legal_representative_expedition_identificationcard"
                                         wire:model.defer="legal_representative_expedition_identificationcard" />
-                                </div>
-
-                            </div>
-
-                            <div class="flex space-x-4">
-
-                                <div class="w-6-12">
-                                    <label id="labelGrade"
-                                        class="text-gray-700 dark:text-gray-400">{{ __('grade student') }}</label>
-
-                                    <input
-                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                        placeholder="Grado del Estudiante" type="text" id="grade_student"
-                                        name="grade_student" wire:model.defer="grade_student" />
-                                </div>
-
-                                <div class="w-6-12">
-                                    <label id="labelFamilyRelationship"
-                                        class="text-gray-700 dark:text-gray-400">{{ __('Family Relationship') }}</label>
-
-                                    <input
-                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                        placeholder="Parentezco Familiar" type="text" id="family_relationship"
-                                        name="family_relationship" wire:model.defer="family_relationship" />
                                 </div>
 
                             </div>
@@ -866,9 +546,9 @@
 
                             </div>
 
-                            <div class="flex space-x-4" id="divRouteTrip">
+                            <div class="flex space-x-4" id="">
 
-                                <div class="w-full">
+                                <div id="divRouteTrip" class="w-full">
                                     <label id="labelRouteTrip"
                                         class="text-gray-700 dark:text-gray-400">{{ __('route trip contract') }}</label>
 
@@ -879,10 +559,225 @@
                                         </textarea>
                                 </div>
 
+                                <div id="divExit" class="w16">
+                                    <label id="labelExit"
+                                        class="text-gray-700 dark:text-gray-400">{{ __('departure time') }}</label>
+
+                                    <input
+                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                        placeholder="Hora salida" type="text" id="exit" name="exit"
+                                        wire:model.defer="exit" onchange="fechasSet('exit')" />
+                                </div>
+
+                                <div id="divArrival" class="w16">
+                                    <label id="labelArrival"
+                                        class="text-gray-700 dark:text-gray-400">{{ __('arrival time') }}</label>
+
+                                    <input
+                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                        placeholder="Hora de llegada" type="text" id="arrival" name="arrival"
+                                        wire:model.defer="arrival" onchange="fechasSet('arrival')" />
+                                </div>
+
+                                <div id="divReturn" class="w16">
+                                    <label id="labelReturn"
+                                        class="text-gray-700 dark:text-gray-400">{{ __('return time') }}</label>
+
+                                    <input
+                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                        placeholder="Hora de regreso" type="text" id="return" name="return"
+                                        wire:model.defer="return" onchange="fechasSet('return')" />
+                                </div>
+
+                            </div>
+
+                            <div class="flex space-x-4">
+
+                                <div class="w-full" id="divMunicipality">
+                                    <label id="labelMunicipality" class="text-gray-700 dark:text-gray-400">Selecciona
+                                        el municipio</label>
+                                    <select wire:model.defer="municipality" id="municipality" name="municipality"
+                                        class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
+                                        <option value="0">Selecciona el municipio</option>
+                                        @foreach ($cities as $city)
+                                            <option value="{{ $city->id }}">
+                                                {{ $city->city_name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+
+                            </div>
+
+
+                            <div class="flex space-x-4">
+
+                                <div class="w-6-12">
+                                    <label id="labelplate"
+                                        class="text-gray-700 dark:text-gray-400">{{ __('plate') }}</label>
+
+                                    <input
+                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                        placeholder="placa" type="text" id="plate" name="plate"
+                                        wire:model.defer="plate" />
+                                </div>
+
+                                <div class="w-6-12">
+                                    <label id="labelbrand"
+                                        class="text-gray-700 dark:text-gray-400">{{ __('brand') }}</label>
+
+                                    <input
+                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                        placeholder="brand" type="text" id="brand" name="brand"
+                                        wire:model.defer="brand" />
+                                </div>
+
+                                <div class="w-6-12">
+                                    <label id="labelline"
+                                        class="text-gray-700 dark:text-gray-400">{{ __('line') }}</label>
+
+                                    <input
+                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                        placeholder="line" type="text" id="line" name="line"
+                                        wire:model.defer="line" />
+                                </div>
+
+                                <div class="w-6-12">
+                                    <label id="labelmodel"
+                                        class="text-gray-700 dark:text-gray-400">{{ __('model') }}</label>
+
+                                    <input
+                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                        placeholder="model" type="text" id="model" name="model"
+                                        wire:model.defer="model" />
+                                </div>
+
+                            </div>
+
+
+                            <div class="flex space-x-4">
+
+                                <div class="w-6-12">
+                                    <label id="labelcylindercapacity"
+                                        class="text-gray-700 dark:text-gray-400">{{ __('cylinder capacity') }}</label>
+
+                                    <input
+                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                        placeholder="placa" type="text" id="cylinder_capacity"
+                                        name="cylinder_capacity" wire:model.defer="cylinder_capacity" />
+                                </div>
+
+                                <div class="w-6-12">
+                                    <label id="labellegalbond"
+                                        class="text-gray-700 dark:text-gray-400">{{ __('legal bond') }}</label>
+
+                                    <select wire:model.defer="legal_bond" id="legal_bond" name="legal_bond"
+                                        class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
+                                        <option value="0">Vinculo Juridico</option>
+                                        <option value="1">PROPIETARIO</option>
+                                        <option value="2">TENEDOR</option>
+                                    </select>
+                                </div>
+
+                                <div class="w-6-12">
+                                    <label id="labelfuel"
+                                        class="text-gray-700 dark:text-gray-400">{{ __('fuel') }}</label>
+
+                                    <select wire:model.defer="fuel" id="fuel" name="fuel"
+                                        class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
+                                        <option value="0">infrastructura del Vehiculo</option>
+                                        @foreach ($vehicle_classes as $id => $vehicle_class)
+                                            <option value="{{ $id }}">
+                                                {{ $vehicle_class }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+
+                                <div class="w-6-12">
+                                    <label id="labelvehicleclass"
+                                        class="text-gray-700 dark:text-gray-400">{{ __('vehicle class') }}</label>
+
+                                    <select wire:model.defer="vehicle_class" id="vehicle_class" name="vehicle_class"
+                                        class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
+                                        <option value="0">Tipo de Vehiculo</option>
+                                        @foreach ($vehicle_types as $id => $vehicle_type)
+                                            <option value="{{ $id }}">
+                                                {{ $vehicle_type }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+
+                            </div>
+
+                            <div class="flex space-x-4">
+
+                                <div class="w-6-12">
+                                    <label id="labelenginenumber"
+                                        class="text-gray-700 dark:text-gray-400">{{ __('engine number') }}</label>
+
+                                    <input
+                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                        placeholder="engine_number" type="text" id="engine_number"
+                                        name="engine_number" wire:model.defer="engine_number" />
+                                </div>
+
+                                <div class="w-6-12">
+                                    <label id="labelchassisnumber"
+                                        class="text-gray-700 dark:text-gray-400">{{ __('chassis number') }}</label>
+
+                                    <input
+                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                        placeholder="chassis_number" type="text" id="chassis_number"
+                                        name="chassis_number" wire:model.defer="chassis_number" />
+                                </div>
+
+                                <div class="w-6-12">
+                                    <label id="labelability"
+                                        class="text-gray-700 dark:text-gray-400">{{ __('ability') }}</label>
+
+                                    <input
+                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                        placeholder="ability" type="number" id="ability" name="ability"
+                                        wire:model.defer="ability" />
+                                </div>
+
                             </div>
 
                             <br>
                             <div class="f1-buttons">
+                                <button type="button" id="DocRUT"
+                                    class="text-white w-full px-5 py-3 text-sm font-medium leading-5 transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg sm:w-auto sm:px-4 sm:py-2 active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple btn-file">
+                                    RUT <input id="InputDocRUT" wire:model.defer="DocRUT" type="file"
+                                        onchange="documentAboveC('InputDocRUT','DocRUT')" class="upload-input">
+                                </button>
+
+                                <button type="button" id="DocResolution"
+                                    class="text-white w-full px-5 py-3 text-sm font-medium leading-5 transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg sm:w-auto sm:px-4 sm:py-2 active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple btn-file">
+                                    Resolución <input id="InputDocResolution" wire:model.defer="DocResolution"
+                                        type="file"
+                                        onchange="documentAboveC('InputDocResolution','DocResolution')">
+                                </button>
+
+                                <button type="button" id="DocCamaraComercio"
+                                    class="text-white w-full px-5 py-3 text-sm font-medium leading-5 transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg sm:w-auto sm:px-4 sm:py-2 active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple btn-file">
+                                    Camara de Comercio
+                                    <input id="InputDocCamaraComercio" wire:model.defer="DocCamaraComercio"
+                                        type="file"
+                                        onchange="documentAboveC('InputDocCamaraComercio','DocCamaraComercio')">
+                                </button>
+
+                                <button type="button" id="Docrnt"
+                                    class="text-white w-full px-5 py-3 text-sm font-medium leading-5 transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg sm:w-auto sm:px-4 sm:py-2 active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple btn-file">
+                                    registro nacional de turismo(RNT) <input id="InputDocrnt"
+                                        wire:model.defer="Docrnt" type="file"
+                                        onchange="documentAboveC('InputDocrnt','Docrnt')" class="upload-input">
+                                </button>
+
+                                <button type="button" id="Docempowerment"
+                                    class="text-white w-full px-5 py-3 text-sm font-medium leading-5 transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg sm:w-auto sm:px-4 sm:py-2 active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple btn-file">
+                                    Abilitación <input id="InputDocempowerment" wire:model.defer="Docempowerment"
+                                        type="file"
+                                        onchange="documentAboveC('InputDocempowerment','Docempowerment')">
+                                </button>
                                 <button id="previous2" type="button"
                                     class="btn btn-previous ml-auto px-5 py-3 text-sm font-medium leading-5 rounded-lg sm:w-auto sm:px-4 sm:py-2 bg-red-600 active:bg-red-600 hover:bg-red-700 focus:outline-none focus:shadow-outline-purple text-white">Atrás</button>
                                 <button type="button"
@@ -897,36 +792,69 @@
 
                             <div class="flex space-x-4">
 
-                                <div class="w-6-12">
-                                    <label
+                                <div class="w-6-12" id="divFamilyRelationship">
+                                    <label id="labelFamilyRelationship"
+                                        class="text-gray-700 dark:text-gray-400">{{ __('Family Relationship') }}</label>
+
+                                    <select wire:model.defer="family_relationship" id="family_relationship"
+                                        name="family_relationship"
+                                        class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
+                                        <option value="0">Selecciona el Parentezco</option>
+
+                                        @foreach ($relationships as $relationship)
+                                            <option value="{{ $relationship->id }}">
+                                                {{ $relationship->description_relationship }}</option>
+                                        @endforeach
+
+                                    </select>
+                                </div>
+
+                                <div class="w-6-12" id="divWhoReceives">
+                                    <label id="labelWhoReceives"
+                                        class="text-gray-700 dark:text-gray-400">{{ __('who receives') }}</label>
+
+                                    <input
+                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                        placeholder="nombre de quien recibe al niño" type="text" id="who_receives"
+                                        wire:model.defer="who_receives" />
+                                </div>
+
+                            </div>
+
+                            <div class="flex space-x-4">
+
+                                <div class="w-6-12" id="divDateStartContract">
+                                    <label id="labelDateStartContract"
                                         class="text-gray-700 dark:text-gray-400">{{ __('date start contract') }}</label>
 
                                     <input
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                        placeholder="date_start_contract" type="date"
-                                        wire:model.defer="date_start_contract" />
+                                        placeholder="fecha inicio del contrato" type="text"
+                                        id="date_start_contract" readonly wire:model.defer="date_start_contract"
+                                        onchange="fechasSet('date_start_contract')" />
                                 </div>
 
-                                <div class="w-6-12">
-                                    <label
+                                <div class="w-6-12" id="divContractEndDate">
+                                    <label id="labelContractEndDate"
                                         class="text-gray-700 dark:text-gray-400">{{ __('contract end date') }}</label>
 
                                     <input
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                        placeholder="fecha fin contrato" type="date"
-                                        wire:model.defer="contract_end_date" />
+                                        placeholder="fecha fin contrato" type="text" id="contract_end_date"
+                                        readonly wire:model.defer="contract_end_date"
+                                        onchange="fechasSet('contract_end_date')" />
                                 </div>
                             </div>
 
                             <div class="flex space-x-4" id="">
 
-                                <div class="w-6-12">
+                                <div class="w-6-12" id="divQuantityVehicle">
                                     <label id="labelQuantityVehicle"
                                         class="text-gray-700 dark:text-gray-400">{{ __('quantity vehicle') }}</label>
 
                                     <input
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                        placeholder="quantity_vehicle" type="number" id="quantity_vehicle"
+                                        placeholder="cantidad de vehiculos" type="number" id="quantity_vehicle"
                                         wire:model.defer="quantity_vehicle" />
                                 </div>
 
@@ -936,32 +864,32 @@
 
                                     <input
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                        placeholder="passenger_quantity" type="number" id="passenger_quantity"
+                                        placeholder="cantidad de pasajeros" type="number" id="passenger_quantity"
                                         wire:model.defer="passenger_quantity" />
                                 </div>
+
                             </div>
 
                             <div class="flex space-x-4">
 
-                                <div class="w-6-12">
-                                    <label id="labelTotalDisposition"
-                                        class="text-gray-700 dark:text-gray-400">{{ __('total disposition') }}</label>
-                                    <select wire:model.defer="total_disposition" id="total_disposition"
-                                        class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
-                                        <option value="0">Selecciona si necesita Disposición Total</option>
-                                        <option value="SI">SI</option>
-                                        <option value="NO">NO</option>
-                                    </select>
+                                <div class="w-6-12" id="divSignaturePlace">
+                                    <label id="labelSignaturePlace"
+                                        class="text-gray-700 dark:text-gray-400">{{ __('signature place') }}</label>
+                                    <input
+                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                        placeholder="ciudad y departamento donde se firma el contrato" type="text"
+                                        id="signature_place" wire:model.defer="signature_place" />
                                 </div>
 
-                                <div class="w-6-12">
+                                <div class="w-6-12" id="divSigningDate">
                                     <label id="labelSigningDate"
                                         class="text-gray-700 dark:text-gray-400">{{ __('contract signing date') }}</label>
 
                                     <input
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                        placeholder="contract_signing_date" type="date" id="contract_signing_date"
-                                        wire:model.defer="contract_signing_date" />
+                                        placeholder="fecha de cuando se firma el contrato" type="text"
+                                        id="contract_signing_date" wire:model.defer="contract_signing_date"
+                                        onchange="fechasSet('contract_signing_date')" />
                                 </div>
                             </div>
 
@@ -986,53 +914,47 @@
 
                                     <input
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                        placeholder="Valor contrato" type="number" id="contract_value"
-                                        wire:model.defer="contract_value" />
+                                        placeholder="Valor contrato sin puntos ni comas" type="number"
+                                        id="contract_value" wire:model.defer="contract_value" />
                                 </div>
                             </div>
 
                             <br>
                             <div class="f1-buttons">
-                                <button type="button" id="" onclick="passenger()"
+
+                                <button type="button" id="DocAttachContract"
+                                    class="text-white w-full px-5 py-3 text-sm font-medium leading-5 transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg sm:w-auto sm:px-4 sm:py-2 active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple btn-file">
+                                    Adjuntar contrato <input id="InputDocAttachContract"
+                                        wire:model.defer="DocAttachContract" type="file"
+                                        onchange="documentAboveC('InputDocAttachContract','DocAttachContract')"
+                                        class="upload-input">
+                                </button>
+
+                                <button type="button" type="button" id="bpassenger" onclick="passenger()"
                                     class="text-white w-full px-5 py-3 text-sm font-medium leading-5 transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg sm:w-auto sm:px-4 sm:py-2 active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">Adjuntar
-                                    Pasajeros</button>
-                                <button type="button" id="previous5"
+                                    Pasajeros
+                                </button>
+
+                                <div
+                                    class="relative inline-block w4 mr-2 align-middle select-none transition duration-200 ease-in">
+                                    <input type="checkbox" name="toggle" id="toggle"
+                                        wire:model.defer="total_disposition"
+                                        class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer" />
+                                    <label for="toggle"
+                                        class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
+                                </div>
+                                <label for="toggle" class="text-xs text-gray-700 dark:text-gray-400">Disposición
+                                    Total</label>
+
+                                <button type="button" id="previous3"
                                     class="btn btn-previous ml-auto px-5 py-3 text-sm font-medium leading-5 rounded-lg sm:w-auto sm:px-4 sm:py-2 bg-red-600 active:bg-red-600 hover:bg-red-700 focus:outline-none focus:shadow-outline-purple text-white">Atrás</button>
+
                                 <button type="button" id="btnFinalize"
                                     class="btn btn-Finalize w-full px-5 py-3 text-sm font-medium leading-5 transition-colors duration-150 bg-green-600 border border-transparent rounded-lg sm:w-auto sm:px-4 sm:py-2 active:bg-green-600 hover:bg-green-700 focus:outline-none focus:shadow-outline-purple">Finalizar</button>
+
                             </div>
 
                         </fieldset>
-                        <!--fin del paso 3 -->
-
-                        <!---paso 4 -->
-                        {{-- <fieldset>
-
-
-                            <br>
-                            <div class="f1-buttons">
-                                <button id="previous3" type="button"
-                                    class="btn btn-previous ml-auto px-5 py-3 text-sm font-medium leading-5 rounded-lg sm:w-auto sm:px-4 sm:py-2 bg-red-600 active:bg-red-600 hover:bg-red-700 focus:outline-none focus:shadow-outline-purple text-white">Atrás</button>
-                                <button type="button"
-                                    class="btn btn-next w-full px-5 py-3 text-sm font-medium leading-5 transition-colors duration-150 bg-green-600 border border-transparent rounded-lg sm:w-auto sm:px-4 sm:py-2 active:bg-green-600 hover:bg-green-700 focus:outline-none focus:shadow-outline-purple">Siguiente</button>
-                            </div>
-
-                        </fieldset> --}}
-                        <!--fin del paso 4 -->
-
-                        <!--paso fin -->
-                        {{-- <fieldset>
-
-                            <br>
-                            <div class="f1-buttons">
-                                <button id="previous4" type="button"
-                                    class="btn btn-previous ml-auto px-5 py-3 text-sm font-medium leading-5 rounded-lg sm:w-auto sm:px-4 sm:py-2 bg-red-600 active:bg-red-600 hover:bg-red-700 focus:outline-none focus:shadow-outline-purple text-white">Atrás</button>
-                                <button type="button"
-                                    class="btn btn-next w-full px-5 py-3 text-sm font-medium leading-5 transition-colors duration-150 bg-green-600 border border-transparent rounded-lg sm:w-auto sm:px-4 sm:py-2 active:bg-green-600 hover:bg-green-700 focus:outline-none focus:shadow-outline-purple">Siguiente</button>
-                            </div>
-
-                        </fieldset> --}}
-                        <!--fin -->
 
                     </div>
 
@@ -1043,10 +965,10 @@
                 class="flex flex-col items-center justify-end px-6 py-3-1 -mx-6 -mb-4 -mt-3 space-y-4 sm:space-y-0 sm:space-x-6 sm:flex-row bg-gray-50 dark:bg-gray-800 border-t-fuchsia-800">
                 <button id="btnStore" type="submit"
                     class="Inactive w-full px-5 py-3 text-sm font-medium leading-5 transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg sm:w-auto sm:px-4 sm:py-2 active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
-                    wire:click="store" onclick="restart();" x-on:click="closeModal">
+                    wire:click="store">
                     {{ __('Generate Contract') }}
                 </button>
-                <button x-on:click="closeModal"
+                <button x-on:click="closeModal" id="btnCalcel"
                     class="w-full px-5 py-3 text-sm font-medium leading-5 text-gray-700 transition-colors duration-150 border border-gray-300 rounded-lg dark:text-gray-400 sm:px-4 sm:py-2 sm:w-auto active:bg-transparent hover:border-gray-500 focus:border-gray-500 active:text-gray-500 focus:outline-none focus:shadow-outline-gray"
                     wire:click="clear" onclick="restart();">
                     {{ __('Cancel') }}
@@ -1644,7 +1566,7 @@
                     // className: "dark:bg-gray-800 dark:text-white"
                     // },
                     {
-                        text: '<button @click="openModal" class=""> crear usuario nuevo</button>',
+                        text: '<button @click="openModal" class=""> crear contrato nuevo</button>',
                         titleAttr: 'Crear usuario',
                         className: "buttons-crear font-semibold leading-tight text-black bg-sky-700 rounded-full dark:bg-sky-700 dark:text-white"
                     },
@@ -1992,7 +1914,7 @@
 
         function passenger() {
             swal.fire({
-                title: '<header class="flex justify-center border-b-fuchsia-800 border-b">' +
+                title: '<header class="dark:bg-gray-800 flex justify-center border-b-fuchsia-800 border-b">' +
                     '<p class="justify-start mb-2 text-lg font-semibold text-gray-700 dark:text-gray-300"><h1 class="text-black dark:text-white text-4xl1">Lista de Pasajeros</h1></p>' +
                     '</header>',
                 // icon: 'info',
@@ -2019,15 +1941,35 @@
 
                     '<div id="newInput"></div>' +
 
-                    '<div class="flex items-center space-x-4 text-sm pruebapers">' +
-                    '<button onclick="savePeople()" class="pruebapersb inline-flex items-center justify-center  bg-emerald-700 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-sky-400 focus:outline-none focus:bg-emerald-700 focus:ring focus:ring-red-200 active:bg-emerald-700 readonly:opacity-25 transition">' +
-                    'Guardar' +
-                    '</button>' +
-                    '</div>' +
+                    // '<div class="flex items-center space-x-4 text-sm pruebapers">' +
+                    // '<button onclick="savePeople()" class="pruebapersb inline-flex items-center justify-center  bg-emerald-700 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-sky-400 focus:outline-none focus:bg-emerald-700 focus:ring focus:ring-red-200 active:bg-emerald-700 readonly:opacity-25 transition">' +
+                    // 'Guardar' +
+                    // '</button>' +
+                    // '</div>' +
 
                     '</div>',
                 // '</div>' ,
-                showConfirmButton: false
+                showConfirmButton: true,
+                showCancelButton: true,
+                confirmButtonText: 'Save',
+                // denyButtonText: `Don't save`,
+                allowOutsideClick: false,
+                willClose: function() {
+                    console.log('este es el valor de i ' + i);
+                    savePeople();
+                }
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    if (i > 1) {
+                        swal.fire('', 'Los pasajeros fueron agtregados al listado', 'success');
+                    } else {
+                        swal.fire('', 'El pasajero fue agtregado al listado', 'success');
+                    }
+
+                    // savePeople();
+                } else if (result.isDenied) {
+                    // swal.fire('Changes are not saved', '', 'info')
+                }
             })
         }
 
@@ -2078,6 +2020,11 @@
             }
             // passengers.push({documento: document.getElementById('inputDRow2').value, nombreC: document.getElementById('inputNRow2').value});
             // alert(passengers[2].documento + ' - ' + passengers[2].nombreC);
+
+            Livewire.emit('passenger', [passengers]);
+            i = 1;
+            total = [];
+            total.push(i);
         }
 
         // abriendo modal para editar
@@ -2157,20 +2104,24 @@
 
             if (process == 1) {
 
-                main = 'the contract type ' + contractType + ' number ' + contractnumber +
-                    ' was created satisfactorily';
-                message = 'you can create a public permission from the following url: ' +
+                main = 'El ' + contractType + ' numero ' + contractnumber + ' fue creado satisfactoriamente';
+                // main = 'the contract type ' + contractType + ' number ' + contractnumber + ' was created satisfactorily';
+                message = 'puedes crear un permiso publico desde la siguiente url: ' +
                     'http://127.0.0.1:8000/pdfs/permit-public/' + id;
+                // message = 'you can create a public permission from the following url: ' + 'http://127.0.0.1:8000/pdfs/permit-public/' + id;
 
                 // el contrato tipo xxx number xxx fue creado satisfactoriamente
                 // puedes crear un permiso publico desde ala siguiente url: http://127.0.0.1:8000/pdfs/permit-public/' + id
 
                 swal.fire({
-                    title: 'you want to generate pdf or create a permit?',
+                    // title: 'you want to generate pdf or create a permit?',
+                    title: '¿quieres generar pdf o crear un permiso?',
                     showDenyButton: true,
                     showCancelButton: true,
-                    confirmButtonText: 'Generate PDF',
-                    denyButtonText: `Create PERMITS`,
+                    // confirmButtonText: 'Generate PDF',
+                    confirmButtonText: 'Generar PDF',
+                    // denyButtonText: `Create PERMITS`,
+                    denyButtonText: `Crear PERMISOS`,
                 }).then((result) => {
                     /* Read more about isConfirmed, isDenied below */
                     if (result.isConfirmed) {
@@ -2185,24 +2136,46 @@
                         swal.fire(main, message, 'success')
                     }
                 })
+                $("#btnCalcel").trigger("click");
 
             } else if (process == 2) {
 
                 main = '';
-                message = 'the information of the contract ' + contractnumber + ' type ' + contractType +
-                    ' has been satisfactorily updated';
-                // se ha actualizado la información del contrato xxxx tipo xxx sactisfactoriamente
+                message = 'Se ha actualizado la información del contrato ' + contractnumber + ' tipo ' +
+                    contractType + ' se ha actualizado sactisfactoriamente';
+                // message = 'the information of the contract ' + contractnumber + ' type ' + contractType + ' has been satisfactorily updated';
 
                 swal.fire(main, message, 'success')
 
             } else if (process == 3) {
 
                 main = '';
-                message = 'Contract number ' + contractnumber + ' type ' + contractType +
-                    ' has been successfully eliminated';
-                // Se ha eliminado el contrato numero xxx tipo xxx sactisfactoriamente
+                message = 'Se ha eliminado el contrato numero ' + contractnumber + ' tipo ' + contractType +
+                    ' se ha eliminado sactisfactoriamente';
+                // message = 'Contract number ' + contractnumber + ' type ' + contractType + ' has been successfully eliminated';
 
                 swal.fire(main, message, 'success')
+            } else if (process == 4) {
+
+                main = '';
+                message = 'No se ha adjuntado el fisico del documento del contratante para realizar este contrato';
+                // message = 'The physical document of the contracting party has not been attached to carry out this contract';
+
+                swal.fire(main, message, 'error')
+            } else if (process == 5) {
+
+                main = '';
+                message = 'Faltan 1 o mas documentos fisicos para realizar este contrato';
+                // message = '1 or more physical documents are missing to carry out this contract';
+
+                swal.fire(main, message, 'error')
+            } else if (process == 6) {
+
+                main = '';
+                message = 'No has diligenciado una lista de pasajeros';
+                // message = 'You have not completed a passenger list';
+
+                swal.fire(main, message, 'error')
             }
 
             $('#example').DataTable().ajax.reload(null, 1);
@@ -2266,23 +2239,27 @@
                 var progress_line = $(this).parents('.f1').find('.f1-progress-line');
 
                 // fields validation
-                parent_fieldset.find(
-                    // 'input[type="text"], input[type="password"], textarea, select, input[type="number"], input[type="tel"],input[type="email"],input[type="date"]'
-                ).each(
-                    function() {
-                        // $('div').hasClass('container')
-                        if ($(this).hasClass('Inactive')) {
-                            // console.log('no se bloquea');
-                        } else if ($(this).val() == "" || $(this).val() == 0) {
-                            $(this).addClass('input-error');
-                            next_step = false;
-                        } else {
-                            $(this).removeClass('input-error');
-                        }
-                    });
+                // parent_fieldset.find(
+                //     // 'input[type="text"]' 
+                //     //input[type="password"], textarea, select, input[type="number"], input[type="tel"],input[type="email"],input[type="date"]'
+                // ).each(
+                //     function() {
+                //         // $('div').hasClass('container')
+                //         if ($(this).hasClass('Inactive')) {
+                //             // console.log('no se bloquea');
+                //         } else if ($(this).val() == "" || $(this).val() == 0 || $(this).is(
+                //             ':checked')) {
+                //             $(this).addClass('input-error');
+                //             next_step = false;
+                //         } else {
+                //             $(this).removeClass('input-error');
+                //         }
+                //     });
 
-
+                // validate(stepinfinite) ? next_step = true : next_step = false;
                 // fields validation
+
+
 
                 if (next_step) {
                     parent_fieldset.fadeOut(400, function() {
@@ -2331,19 +2308,21 @@
                 var parent_fieldset = $(this).parents('fieldset');
                 var Finalize = true;
                 // fields validation
-                parent_fieldset.find(
-                    // 'input[type="text"], input[type="password"], textarea, select, input[type="number"], input[type="tel"],input[type="email"],input[type="date"]'
-                ).each(function() {
-                    if ($(this).hasClass('Inactive')) {
-                        // console.log('no se bloquea');
-                    } else if ($(this).val() == "" || $(this).val() == 0) {
-                        $(this).addClass('input-error');
-                        Finalize = false;
-                    } else {
-                        $(this).removeClass('input-error');
-                    }
-                });
+                // parent_fieldset.find(
+                //     // 'input[type="text"], input[type="password"], textarea, select, input[type="number"], input[type="tel"],input[type="email"],input[type="date"]'
+                // ).each(function() {
+                //     if ($(this).hasClass('Inactive')) {
+                //         // console.log('no se bloquea');
+                //     } else if ($(this).val() == "" || $(this).val() == 0) {
+                //         $(this).addClass('input-error');
+                //         Finalize = false;
+                //     } else {
+                //         $(this).removeClass('input-error');
+                //     }
+                // });
                 // fields validation
+
+                // validate(stepinfinite) ? Finalize = true : Finalize = false;
 
                 if (Finalize) {
                     document.getElementById('btnStore').classList.remove('Inactive');
@@ -2377,8 +2356,8 @@
                 if (step == true) {
                     stepinfinite = stepinfinite + 1;
 
-                    if (stepinfinite >= 5) {
-                        stepinfinite = 5;
+                    if (stepinfinite >= 3) {
+                        stepinfinite = 3;
                         nextStep = 'step' + stepinfinite
                         // console.log(nextStep);
                         document.getElementById(nextStep).classList.add('flicker');
@@ -2390,7 +2369,7 @@
                     }
                 } else if (step == false) {
                     stepinfinite = stepinfinite - 1;
-                    if (stepinfinite == 5) {
+                    if (stepinfinite == 3) {
                         previousstep = 'step' + 2
                         // console.log('el estado se le quita al 2');
                         document.getElementById(previousstep).classList.remove('flicker');
@@ -2404,7 +2383,7 @@
             }
 
             function lastsaved() {
-                if (stepinfinite >= 5) {
+                if (stepinfinite >= 3) {
                     document.getElementById('btnStore').classList.remove('Inactive');
                     document.getElementById('btnStore').classList.add('Active');
                 } else {
@@ -2414,6 +2393,174 @@
                     // document.getElementById('btnFinalize').classList.add('Active');
                 }
             }
+
+            var fields = [
+                $('#identification'),
+                $('#contract_document'),
+                $('#contracting_name'),
+                $('#expedition_identificationcard'),
+                $('#contracting_direction'),
+                $('#contracting_phone'),
+                $('#school_name'),
+                $('#address_school'),
+                $('#vehicle'),
+                $('#identification_legal_representative'),
+                $('#identificationcard_represent_legal'),
+                $('#Student_name'),
+                $('#identificationcard_Estudent'),
+                $('#grade_student'),
+                $('#start_day'),
+                $('#End_day'),
+                $('#legal_representative'),
+                $('#legal_representative_expedition_identificationcard'),
+                $('#identification_representative_group'),
+                $('#identificationcard_representative_group'),
+                $('#group_representative_name'),
+                $('#dateofexpedition_representative_group'),
+                $('#route_trip_contract'),
+                $('#exit'),
+                $('#arrival'),
+                $('#return'),
+                $('#family_relationship'),
+                $('#who_receives'),
+                $('#date_start_contract'),
+                $('#contract_end_date'),
+                $('#quantity_vehicle'),
+                $('#passenger_quantity'),
+                $('#signature_place'),
+                $('#contract_signing_date'),
+                $('#tipe_pay'),
+                $('#contract_value'),
+                $('#municipality'),
+                $('#plate'),
+                $('#brand'),
+                $('#line_model'),
+                $('#cylinder_capacity'),
+                $('#legal_bond'),
+                $('#fuel'),
+                $('#vehicle_class'),
+                $('#chassis_number'),
+                $('#ability'),
+                $('#engine_number'),
+                // $('toggle'),
+
+
+            ]
+
+
+            validating = [];
+
+            function validate(view) {
+
+                var contractWith = $('#contract_with').val();
+                var contractType = $('#type_contract').val();
+                var healthWith = $('#healthWith').val();
+                validating = [];
+
+                if (view == 1) {
+
+                    if (contractType == 1 || contractType == 2 || contractType == 4 || contractType == 5 ||
+                        contractType == 7) {
+                        validating.push(0, 1, 2, 3, 4, 5);
+                    } else {
+                        validating.push(0, 1, 2, 4, 5);
+                    }
+
+                } else if (view == 2) {
+
+                    switch (contractType) {
+                        case '1':
+
+                            if (contractWith == 1 || contractWith == 2 || contractWith == 4) {
+                                validating.push(6, 7, 22);
+                            } else {
+                                validating.push(6, 7, 22, 8, 11, 12, 13, 14, 15);
+                            }
+                            break;
+
+                        case '2':
+                            validating.push(9, 10, 16, 17, 22);
+                            break;
+
+                        case '3':
+                            validating.push(9, 10, 16, 17, 22);
+                            break;
+
+                        case '4':
+                            validating.push(8, 18, 19, 20, 21, 22, 23, 24, 25);
+                            break;
+
+                        case '5':
+
+                            if (healthWith == 1) {
+                                validating.push(22);
+                            } else {
+                                validating.push(9, 10, 16, 17, 22);
+                            }
+                            break;
+
+                        case '6':
+                            validating.push(9, 10, 16, 17, 36);
+                            break;
+
+                        case '7':
+                            validating.push(137, 38, 39, 40, 41, 42, 43, 44);
+                            break;
+
+                        default:
+                            break;
+                    }
+
+                } else if (view == 3) {
+
+                    if (contractType == 1) {
+
+                        if (contractWith == 1 || contractWith == 4) {
+                            validating.push(28, 29, 30, 31, 32, 33, 34, 35);
+
+                        } else if (contractWith == 2) {
+                            validating.push(28, 29, 32, 33, 34, 35);
+
+                        } else if (contractWith == 3) {
+                            validating.push(28, 29, 32, 33, 34, 35, 26, 27);
+                        }
+                    } else if (contractType == 2 || contractType == 4 || contractType == 5 || contractType == 6) {
+
+                        validating.push(28, 29, 30, 31, 32, 33, 34, 35);
+
+                    } else if (contractType == 3) {
+                        validating.push(28, 29, 30, 31, 32, 33, );
+
+                    } else {
+                        validating.push(28, 29, 32, 33, 34, 35);
+                    }
+
+                } else {
+                    validating.push(1, 13, 14, 15, 16, 17, 18);
+                }
+
+                return valid(validating.length);
+            }
+
+
+            function valid(e) {
+
+                var contador = 0;
+                for (let i = 0; i < e; i++) {
+
+                    if (fields[validating[i]].val() == "" || fields[validating[i]].val() == 0 || fields[validating[
+                            i]].is(':checked')) {
+
+                        fields[validating[i]].addClass('input-error');
+                        contador++;
+                    }
+                    contador > 0 ? next_step = false : next_step = true;
+                }
+
+                return next_step;
+
+            }
+
 
 
             // $('#btnStore').on('click', function() {
@@ -2487,22 +2634,42 @@
             // console.log(current_active_step_a);
             $('.f1 fieldset').fadeOut(400, function() {
                 // change icons
+                $('#frmUser').trigger("reset");
 
-                // parpadeo(false);
-                // lastsaved();
-                // progress bar
-                // documentract();
+                var Inputd = ['InputDocNit', 'InputDocAttachContract', 'InputDocempowerment', 'InputDocrnt',
+                    'InputDocCamaraComercio', 'InputDocResolution', 'InputDocRUT'
+                ];
+                for (let index = 0; index < Inputd.length; index++) {
+                    $('#' + Inputd[index]).val('');
+                }
+
+                var color = ['', 'DocRUT', 'DocAttachContract', 'Docempowerment', 'Docrnt', 'DocCamaraComercio',
+                    'DocResolution'
+                ];
+                for (let index = 0; index < color.length; index++) {
+                    if (color[index] != '') {
+                        documentAboveC(Inputd[index], color[index])
+                    }
+                }
+
                 document.getElementById('type_contract').value = 0;
+                document.getElementById('contract_with').value = 0;
+                document.getElementById('healthWith').value = 0;
                 typeContract();
+
+                documentOn('contract_document', 'DocNit');
+                documentAbove('InputDocNit', 'DocNit');
+
+
                 progress_line.attr('style', 'width: ' + 22.66 + '%;').data('now-value', 20.66);
 
                 current_active_step.removeClass('active');
                 current_active_step_a.removeClass('activated');
                 var contador;
-                if (stepinfinite < 5) {
+                if (stepinfinite < 3) {
                     contador = stepinfinite;
                 } else {
-                    contador = 5;
+                    contador = 3;
                 }
                 // console.log('contador: ' + contador);
                 // console.log('parpadeo: ' + stepinfinite);
@@ -2520,7 +2687,7 @@
                 }
                 stepinfinite = 1;
 
-                $(this).prev().prev().prev().prev().fadeIn();
+                $(this).prev().prev().fadeIn();
                 // scroll window to beginning of the form
                 scroll_to_class($('.f1'), 20);
                 current_active_step_s.first().addClass('active');
@@ -2547,69 +2714,192 @@
             });
         }
 
+        jQuery('#date_start_contract').datetimepicker({
+            format: 'Y-m-d',
+            theme: 'dark',
+            timepicker: false
+        });
+
+        jQuery('#contract_end_date').datetimepicker({
+            format: 'Y-m-d',
+            theme: 'dark',
+            timepicker: false
+        });
+
+        jQuery('#contract_signing_date').datetimepicker({
+            format: 'Y-m-d',
+            theme: 'dark',
+            timepicker: false
+        });
+
+        jQuery('#start_day').datetimepicker({
+            datepicker: false,
+            format: 'H:i',
+            step: 5,
+            theme: 'dark'
+        });
+
+        jQuery('#End_day').datetimepicker({
+            datepicker: false,
+            format: 'H:i',
+            step: 5,
+            theme: 'dark'
+        });
+
+        jQuery('#return').datetimepicker({
+            datepicker: false,
+            format: 'H:i',
+            step: 5,
+            theme: 'dark'
+        });
+
+        jQuery('#arrival').datetimepicker({
+            datepicker: false,
+            format: 'H:i',
+            step: 5,
+            theme: 'dark'
+        });
+
+        jQuery('#exit').datetimepicker({
+            datepicker: false,
+            format: 'H:i',
+            step: 5,
+            theme: 'dark'
+        });
+
+        function fechasSet(id) {
+
+            $('#' + id).on('change', function(e) {
+                @this.set(id, e.target.value);
+            });
+        }
+
+
         var camps = [
-            'type_contract',
-            'contract_with',
-            'identification',
-            'labelContractDocument',
-            'contract_document',
-            'labelContractingName',
-            'contracting_name',
-            'labelExpeditionIdentificationcard',
-            'expedition_identificationcard',
-            'labelContractingDirection',
-            'contracting_direction',
-            'labelContractingPhone',
-            'contracting_phone',
-            'labelSchoolName',
-            'school_name',
-            'labelAddressSchool',
-            'address_school',
-            'labelVehicle',
-            'vehicle',
-            'labelIdentificationLegalRepresentative',
-            'identification_legal_representative',
-            'labelIdentificationcardRepresentLegal',
-            'identificationcard_represent_legal',
-            'labelLegalRepresentative',
-            'legal_representative',
-            'labelLegalRepresentativeExpeditionIdentificationcard',
-            'legal_representative_expedition_identificationcard',
-            'labelIdentificationRepresentativeGroup',
-            'identification_representative_group',
-            'labelIdentificationcardRepresentativeGroup',
-            'identificationcard_representative_group',
-            'labelGroupRepresentativeName',
-            'group_representative_name',
-            'labelDateofexpeditionRepresentativeGroup',
-            'dateofexpedition_representative_group',
-            'labelRouteTrip',
-            'route_trip_contract',
-            'labelQuantityVehicle',
-            'quantity_vehicle',
-            'labelPassengerQuantity',
-            'passenger_quantity',
-            'labelTotalDisposition',
-            'total_disposition',
-            'labelSigningDate',
-            'contract_signing_date',
-            'labelTipePay',
-            'tipe_pay',
-            'labelContractValue',
-            'contract_value',
-            'fieldset1Buttons',
-            'previous2',
-            'previous3',
-            'labelIdentification',
-            'divEstudiante',
-            'labelEstudiante',
-            'Student_name',
-            'labelIdentificationcardEstudent',
-            'identificationcard_Estudent',
-            'labelGrade',
-            'grade_student',
-            'labelFamilyRelationship',
-            'family_relationship'
+        /*1:*/ 'type_contract',
+        /*2:*/ 'contract_with',
+        /*3:*/ 'identification',
+        /*4:*/ 'labelContractDocument',
+        /*5:*/ 'contract_document',
+        /*6:*/ 'labelContractingName',
+        /*7:*/ 'contracting_name',
+        /*8:*/ 'labelExpeditionIdentificationcard',
+        /*9:*/ 'expedition_identificationcard',
+        /*10:*/ 'labelContractingDirection',
+        /*11:*/ 'contracting_direction',
+        /*12:*/ 'labelContractingPhone',
+        /*13:*/ 'contracting_phone',
+        /*14:*/ 'labelSchoolName',
+        /*15:*/ 'school_name',
+        /*16:*/ 'labelAddressSchool',
+        /*17:*/ 'address_school',
+        /*18:*/ 'labelVehicle',
+        /*19:*/ 'vehicle',
+        /*20:*/ 'labelIdentificationLegalRepresentative',
+        /*21:*/ 'identification_legal_representative',
+        /*22:*/ 'labelIdentificationcardRepresentLegal',
+        /*23:*/ 'identificationcard_represent_legal',
+        /*24:*/ 'labelLegalRepresentative',
+        /*25:*/ 'legal_representative',
+        /*26:*/ 'labelLegalRepresentativeExpeditionIdentificationcard',
+        /*27:*/ 'legal_representative_expedition_identificationcard',
+        /*28:*/ 'labelIdentificationRepresentativeGroup',
+        /*29:*/ 'identification_representative_group',
+        /*30:*/ 'labelIdentificationcardRepresentativeGroup',
+        /*31:*/ 'identificationcard_representative_group',
+        /*32:*/ 'labelGroupRepresentativeName',
+        /*33:*/ 'group_representative_name',
+        /*34:*/ 'labelDateofexpeditionRepresentativeGroup',
+        /*35:*/ 'dateofexpedition_representative_group',
+        /*36:*/ 'labelRouteTrip',
+        /*37:*/ 'route_trip_contract',
+        /*38:*/ 'labelQuantityVehicle',
+        /*39:*/ 'quantity_vehicle',
+        /*40:*/ 'labelPassengerQuantity',
+        /*41:*/ 'passenger_quantity',
+        /*42:*/ 'labelSignaturePlace',
+        /*43:*/ 'signature_place',
+        /*44:*/ 'labelSigningDate',
+        /*45:*/ 'contract_signing_date',
+        /*46:*/ 'labelTipePay',
+        /*47:*/ 'tipe_pay',
+        /*48:*/ 'labelContractValue',
+        /*49:*/ 'contract_value',
+        /*50:*/ 'fieldset1Buttons',
+        /*51:*/ 'previous2',
+        /*52:*/ 'previous3',
+        /*53:*/ 'labelIdentification',
+        /*54:*/ 'divEstudiante',
+        /*55:*/ 'labelEstudiante',
+        /*56:*/ 'Student_name',
+        /*57:*/ 'labelIdentificationcardEstudent',
+        /*58:*/ 'identificationcard_Estudent',
+        /*59:*/ 'labelGrade',
+        /*60:*/ 'grade_student',
+        /*61:*/ 'labelFamilyRelationship',
+        /*62:*/ 'family_relationship',
+        /*63:*/ 'labelStartDay',
+        /*64:*/ 'start_day',
+        /*65:*/ 'labelEndDay',
+        /*66:*/ 'End_day',
+        /*67:*/ 'divWhoReceives',
+        /*68:*/ 'labelWhoReceives',
+        /*69:*/ 'who_receives',
+        /*70:*/ 'divDateStartContract',
+        /*71:*/ 'labelDateStartContract',
+        /*72:*/ 'date_start_contract',
+        /*73:*/ 'divContractEndDate',
+        /*74:*/ 'labelContractEndDate',
+        /*75:*/ 'contract_end_date',
+        /*76:*/ 'Docrnt',
+        /*77:*/ 'Docempowerment',
+        /*78:*/ 'DocRUT',
+        /*79:*/ 'DocResolution',
+        /*80:*/ 'DocCamaraComercio',
+        /*81:*/ 'labelMunicipality',
+        /*82:*/ 'municipality',
+        /*83:*/ 'labelplate',
+        /*84:*/ 'plate',
+        /*85:*/ 'bpassenger',
+        /*86:*/ 'divPassengerQuantity',
+        /*87:*/ 'divQuantityVehicle',
+        /*88:*/ 'divFamilyRelationship',
+        /*89:*/ 'divSignaturePlace',
+        /*90:*/ 'labelbrand',
+        /*91:*/ 'divExit',
+        /*92:*/ 'labelExit',
+        /*93:*/ 'exit',
+        /*94:*/ 'divArrival',
+        /*95:*/ 'labelArrival',
+        /*96:*/ 'arrival',
+        /*97:*/ 'divReturn',
+        /*98:*/ 'labelReturn',
+        /*99:*/ 'return',
+        /*100:*/ 'brand',
+        /*101:*/ 'labelline',
+        /*102:*/ 'line',
+        /*103:*/ 'labelmodel',
+        /*104:*/ 'model',
+        /*105:*/ 'labelcylindercapacity',
+        /*106:*/ 'cylinder_capacity',
+        /*107:*/ 'labellegalbond',
+        /*108:*/ 'legal_bond',
+        /*109:*/ 'labelfuel',
+        /*110:*/ 'fuel',
+        /*111:*/ 'labelvehicleclass',
+        /*112:*/ 'vehicle_class',
+        /*113:*/ 'labelenginenumber',
+        /*114:*/ 'engine_number',
+        /*115:*/ 'labelchassisnumber',
+        /*116:*/ 'chassis_number',
+        /*117:*/ 'labelability',
+        /*118:*/ 'ability',
+        /*119:*/ 'firstButtons',
+        /*120:*/ 'labelIdentification',
+        /*121:*/ 'healthWith',
+        /*122:*/ 'divhealthWith',
+        /*123:*/ 'divContract_with',
+        /*124:*/ 'DocAttachContract',
         ];
 
         clave = [];
@@ -2618,52 +2908,92 @@
 
             var contractType = document.getElementById('type_contract').value;
 
+            clave = [];
             // console.log(contractType);
 
             switch (contractType) {
+                // colegios
                 case '1':
 
                     viewhideinputs('contract_with', 'Active', 'Inactive');
-                    // changeInput();
+                    viewhideinputs('divRouteTrip', 'w-full', 'w-6-12');
+                    clave.push(2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 118, 119, 120, 121);
 
                     break;
-
+                    // empresarial
                 case '2':
-
-                    clave = [];
-                    clave.push(1, 13, 14, 15, 16, 17, 18, 27, 28, 29, 30, 31, 32, 33, 34);
-                    changeInput();
+                    viewhideinputs('divRouteTrip', 'w-full', 'w-6-12');
+                    clave.push(1, 13, 14, 15, 16, 17, 18, 27, 28, 29, 30, 31, 32, 33, 34, 53, 54, 55, 56, 57, 58, 59, 60,
+                        61, 62, 63, 64, 65, 66, 67, 68,
+                        75, 78, 80, 81, 82, 83, 87, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104,
+                        105, 106, 107, 108, 109, 110, 111,
+                        112, 113, 114, 115, 116, 117, 120, 121, 122);
+                    document.getElementById('contract_with').value = 0;
 
                     break;
-
+                    // empresa turismo
                 case '3':
-
-                    clave = [];
-                    clave.push(1, 13, 14, 15, 16, 17, 18, 27, 28, 29, 30, 31, 32, 33, 34);
-                    changeInput();
+                    viewhideinputs('divRouteTrip', 'w-full', 'w-6-12');
+                    clave.push(1, 7, 8, 13, 14, 15, 16, 17, 18, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 45, 46, 47, 48, 53,
+                        54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65,
+                        66, 67, 68, 76, 78, 80, 81, 82, 83, 87, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101,
+                        102, 103, 104, 105, 106, 107, 108, 109,
+                        110, 111, 112, 113, 114, 115, 116, 117, 120, 121, 122, 123);
+                    document.getElementById('contract_with').value = 0;
 
                     break;
-
+                    // ocacional
                 case '4':
-                    clave = [];
-                    clave.push(1, 13, 14, 15, 16, 19, 20, 21, 22, 23, 24, 25, 26);
-                    changeInput();
+                    viewhideinputs('divRouteTrip', 'w-6-12', 'w-full');
+                    clave.push(1, 13, 14, 15, 16, 19, 20, 21, 22, 23, 24, 25, 26, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62,
+                        63, 64, 65, 66, 67, 68, 75, 76, 77, 78,
+                        79, 80, 81, 82, 83, 87, 89, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112,
+                        113, 114, 115, 116, 117, 120, 121, 122, 123);
+                    document.getElementById('contract_with').value = 0;
+
                     break;
 
-
+                    // usuarios de salud
                 case '5':
-                    clave = [];
-                    clave.push(1, 13, 14, 15, 16, 17, 18, 27, 28, 29, 30, 31, 32, 33, 34);
-                    changeInput();
+
+                    viewhideinputs('contract_with', 'Active', 'Inactive');
+                    viewhideinputs('divRouteTrip', 'w-full', 'w-6-12');
+                    clave.push(2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 118, 119, 122, 123);
+
+                    break;
+
+                    // convenio empresarial
+                case '6':
+
+                    clave.push(1, 7, 8, 13, 14, 15, 16, 17, 18, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 53, 54, 55, 56, 57,
+                        58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 75, 76, 78, 79, 82, 83, 87,
+                        89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109,
+                        110, 111, 112, 113, 114, 115, 116, 117, 120, 121, 122, 123);
+                    document.getElementById('contract_with').value = 0;
+
+                    break;
+
+                    // vinculación
+                case '7':
+
+                    clave.push(1, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34,
+                        35, 36, 37, 38, 39, 40, 53, 54, 55, 56, 57,
+                        58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 75, 76, 77, 78, 79, 80, 81, 84, 87, 90, 91, 92, 93,
+                        94, 95, 96, 97, 98, 120, 121, 122, 123);
+                    document.getElementById('contract_with').value = 0;
 
                     break;
 
                 default:
-                    clave = [];
-                    clave.push(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 49, 52);
-                    changeInput();
+
+                    clave.push(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 49, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63,
+                        64, 65, 66, 67, 68, 75,
+                        76, 77, 78, 79, 80, 81, 82, 83, 87, 90, 91, 92, 93, 94, 95, 96, 97, 98, 120, 121, 122);
+                    document.getElementById('contract_with').value = 0;
+
                     break;
             }
+            changeInput();
 
         }
 
@@ -2673,15 +3003,67 @@
             clave = [];
 
             if (contractWith == 1) {
-                clave.push(17, 18, 27, 28, 29, 30, 31, 32, 33, 34, 37, 38, 39, 40, 41, 42, 53);
-            } else if (contractWith == 2) {
-                clave.push(17, 18, 27, 28, 29, 30, 31, 32, 33, 34, 37, 38, 39, 40, 41, 42, 53);
-            } else if (contractWith == 3) {
-                clave.push(17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 37, 38, 39, 40, 41, 42);
-            } else if (contractWith == 4) {
-                clave.push(17, 18, 27, 28, 29, 30, 31, 32, 33, 34, 37, 38, 39, 40, 41, 42, 53);
-            } else {
+                // grupo padres
+                clave.push(17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 53, 54, 55, 56, 57, 58,
+                    59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 75, 76, 77, 78, 79, 80, 81,
+                    82, 83, 87, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108,
+                    109, 110, 111, 112, 113, 114, 115, 116, 117, 120, 121);
 
+            } else if (contractWith == 2) {
+                // universitarios
+                clave.push(17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 37, 38, 39, 40, 53, 54,
+                    55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 75, 76, 77, 78, 79, 80, 81, 82, 83,
+                    85, 86, 87, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108,
+                    109, 110, 111, 112, 113, 114, 115, 116, 117, 120, 121);
+
+            } else if (contractWith == 3) {
+                // estudiante con acudiente 
+                clave.push(19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 37, 38, 39, 40, 75, 76, 77, 78,
+                    79, 80, 81, 82, 83, 84, 85, 86, 89, 90, 91, 92, 93, 94, 95, 96,
+                    97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116,
+                    117, 120, 121);
+
+            } else if (contractWith == 4) {
+                // rector o representante legal del colegio
+                clave.push(17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 53, 54, 55, 56, 57, 58,
+                    59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 75, 76, 80, 81, 82,
+                    83, 87, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108,
+                    109, 110, 111, 112, 113, 114, 115, 116, 117, 120, 121);
+
+            } else {
+                viewhideinputs('divRouteTrip', 'w-full', 'w-6-12');
+                clave.push(2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 118, 119, 120, 121);
+            }
+
+            changeInput();
+        }
+
+        function Withhealth() {
+
+            var Withhealth = document.getElementById('healthWith').value;
+            // console.log(Withhealth);
+            clave = [];
+
+            if (Withhealth == 1) {
+                console.log('si dio 1');
+
+                viewhideinputs('divRouteTrip', 'w-full', 'w-6-12');
+                clave.push(1, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 53,
+                    54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 75,
+                    76, 78, 79, 80, 81, 82, 83, 87, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104,
+                    105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 122, 123);
+                document.getElementById('contract_with').value = 0;
+            } else if (Withhealth == 2) {
+                console.log('si dio 2');
+
+                viewhideinputs('divRouteTrip', 'w-full', 'w-6-12');
+                clave.push(1, 7, 8, 13, 14, 15, 16, 17, 18, 27, 28, 29, 30, 31, 32, 33, 34, 53, 54, 55, 56, 57, 58, 59, 60,
+                    61, 62, 63, 64, 65, 66, 67, 68, 75, 76, 78, 79, 80, 81, 82,
+                    83, 87, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108,
+                    109, 110, 111, 112, 113, 114, 115, 116, 117, 122, 123);
+                document.getElementById('contract_with').value = 0;
+            } else {
+                clave.push(2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 118, 119);
             }
 
             changeInput();
@@ -2690,14 +3072,19 @@
 
         function viewhideinputs(id, adhere, stirring) {
 
-            document.getElementById(id).classList.remove(stirring);
-            document.getElementById(id).classList.add(adhere);
+            if (adhere == '') {
+                document.getElementById(id).classList.remove(stirring);
+            } else {
+                document.getElementById(id).classList.remove(stirring);
+                document.getElementById(id).classList.add(adhere);
+            }
+
         }
         //fin scritp de formulario paso a paso
 
         function changeInput() {
             let change = false;
-            prueba = [];
+            // prueba = [];
 
             // console.log(camps[clave[0]] + '-' + clave + '-' + change);
             for (let i = 0; i < camps.length; i++) {
@@ -2717,19 +3104,66 @@
                 if (camps[i] == 'change') {
                     // console.log('cambiar');
                 } else {
-                    console.log(camps[i]);
+                    // console.log(camps[i]);
                     if (change == true) {
                         viewhideinputs(camps[i], 'Inactive', 'Active');
                     } else {
                         if (camps[i] == 'previous2' || camps[i] == 'previous3') {
                             document.getElementById(camps[i]).classList.remove('Inactive');
                         } else {
-                            viewhideinputs(camps[i], 'Active', 'Inactive');
+                            viewhideinputs(camps[i], '', 'Inactive');
                         }
 
                     }
                 }
 
+            }
+        }
+
+        function documentAboveC(input, color) {
+
+            var inputDocument = document.getElementById(input).value;
+
+            if (inputDocument != '' || inputDocument != 0) {
+                document.getElementById(color).classList.remove('bg-purple-600', 'text-white', 'active:bg-purple-600',
+                    'hover:bg-purple-700');
+                document.getElementById(color).classList.add('bg-green-600', 'active:bg-green-600', 'hover:bg-green-700');
+                // console.log('si');
+            } else {
+                document.getElementById(color).classList.add('bg-purple-600', 'text-white', 'active:bg-purple-600',
+                    'hover:bg-purple-700');
+                document.getElementById(color).classList.remove('bg-green-600', 'active:bg-green-600',
+                    'hover:bg-green-700');
+            }
+        }
+
+        function documentAbove(input, color) {
+
+            var inputDocument = document.getElementById(input).value;
+
+            if (inputDocument != '' || inputDocument != 0) {
+                document.getElementById(color).classList.remove('icon-green');
+                document.getElementById(color).classList.add('icon-blue');
+                // console.log('si');
+            } else {
+
+                document.getElementById(color).classList.remove('icon-blue');
+                document.getElementById(color).classList.add('icon-green');
+            }
+        }
+
+        function documentOn(paramInput, docInput) {
+
+            var fechDoc = document.getElementById(paramInput).value;
+
+            if (fechDoc != "" || fechDoc != 0) {
+                document.getElementById(paramInput).classList.remove('w-full');
+                document.getElementById(paramInput).classList.add('w90');
+                document.getElementById(docInput).classList.remove('Inactive');
+            } else {
+                document.getElementById(paramInput).classList.remove('w90');
+                document.getElementById(paramInput).classList.add('w-full');
+                document.getElementById(docInput).classList.add('Inactive');
             }
         }
     </script>

@@ -74,7 +74,6 @@ class contract extends Model
             'total_disposition',
             'quantity_vehicle',
             'cooperation_contract',
-            'entity_name',
             'secure_policy',
             'tipe_pay',
             'contract_signing_date',
@@ -94,5 +93,13 @@ class contract extends Model
             'identificationcard_estudent',
             'grade_student',
             'family_relationship',
+            'signature_place',
+            'start_day',
+            'End_day',
+            'exit_contract',
+			'arrival_contract',
+			'return_contract',
+            'municipality',
+            'legal_bond',
         ];    
 }

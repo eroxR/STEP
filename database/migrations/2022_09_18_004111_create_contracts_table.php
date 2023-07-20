@@ -34,30 +34,33 @@ return new class extends Migration
 			$table->enum('total_disposition', ['SI', 'NO'])->nullable();//disposicionTotal
 			$table->integer('quantity_vehicle')->nullable();//cantidad_vehiculos
 			$table->string('cooperation_contract', 60)->nullable();//cooperacion_contrato
-			$table->string('entity_name', 60)->nullable();//nombre_empresa
-			// $table->string('secure_policy', 60)->nullable();//poliza_seguro
 			$table->unsignedBigInteger('tipe_pay')->nullable();//tipo_pago
 			$table->date('contract_signing_date')->nullable();//fecha_firma_contrato
+			$table->string('signature_place', 250)->nullable();//lugar_firma_contrato
 			$table->string('school_name', 150)->nullable();//nombre_colegio
 			$table->string('address_school', 150)->nullable();//direccion_colegio
 			$table->string('school_year', 5)->nullable();//año_escolar
 			$table->enum('contract_with', ['1','2','3','4'])->default('1')->nullable(); //contrato_con['Con Grupo PADRES','Con UNIVERSITARIOS','Con ESTUDIANTE CON ACUDIENTE','Con RECTOR O REPRESENTANTE LEGAL Del Colegio'])->default('INICIAL');
 			$table->unsignedBigInteger('identification_represent_legal')->nullable();//identificación_represen_legal
 			$table->bigInteger('identificationcard_represent_legal')->nullable();//cedula_represen_legal
-			// $table->string('trip_from');//viaje_desde
-			// $table->string('trip_to', 100);//viaje_hasta
-			// $table->string('place_of_origin', 100);//lugar_origen
-			// $table->string('destination_place', 100);//lugar_destino
-			// $table->string('return_place', 100);//lugar_regreso
-			$table->string('student_name', 120)->nullable();;//nombre_estudiante
-			$table->bigInteger('identificationcard_estudent')->nullable();;//documento_etudiante
-			$table->string('grade_student', 5)->nullable();;//grado_estudiante
-			$table->string('family_relationship', 120)->nullable();;//PARENTESCO	
+			$table->time('exit_contract')->nullable();//salida
+			$table->time('arrival_contract')->nullable();//llegada
+			$table->time('return_contract')->nullable();//regreso
+			$table->enum('legal_bond', ['1','2'])->default('1')->nullable();//vinculo_juridico['PROPIETARIO','TENEDOR'])
+			$table->unsignedBigInteger('municipality')->nullable();//municipio
+			$table->string('student_name', 120)->nullable();//nombre_estudiante
+			$table->bigInteger('identificationcard_estudent')->nullable();//documento_etudiante
+			$table->string('grade_student', 5)->nullable();//grado_estudiante
+			$table->string('family_relationship', 120)->nullable();//PARENTESCO	
+			$table->string('who_receives', 120)->nullable();//quien_recibe	
+			$table->time('start_day')->nullable();//inicio jornada	
+			$table->time('End_day')->nullable();//finalización jornada	
 			$table->bigInteger('identificationcard_representative_group')->nullable();//cedula_representante_grupo
 			$table->string('group_representative_name', 60)->nullable();//nombre_representante_grupo
 			$table->string('dateofexpedition_representative_group', 100)->nullable();//lugar_fecha_expedicion_cedula_representante_grupo
-			$table->enum('signed_contract', ['0', '1'])->nullable();//estado_firma_contrato['Sin firmar','Firmado']
+			$table->enum('signed_contract', ['1', '2'])->nullable();//estado_firma_contrato['Sin firmar','Firmado']
 			
+
 			$table->timestamps();
 			
 			$table->foreign('type_contract')->references('id')->on('contract_types')->onDelete('set null')->onUpdate('cascade');

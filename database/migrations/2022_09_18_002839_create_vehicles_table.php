@@ -16,30 +16,30 @@ return new class extends Migration
         Schema::create('vehicles', function (Blueprint $table) {
             $table->id();//id_vehiculo
             $table->string('plate_vehicle', 12)->unique();//placa_vehiculo
-			$table->string('brand_vehicle', 60);//marca_vehiculo
-			$table->year('model_vehicle');//modelo_vehiculo
-			$table->string('vehicle_chassis_number', 120);//numero_chasis_vehiculo
-			$table->string('property_card_number');//tarjeta_propiedad
-			$table->string('cylinder_vehicle', 7);//cilindraje_vehiculo
+			$table->string('brand_vehicle', 60)->nullable();//marca_vehiculo
+			$table->year('model_vehicle')->nullable();//modelo_vehiculo
+			$table->string('vehicle_chassis_number', 120)->nullable();//numero_chasis_vehiculo
+			$table->string('property_card_number')->nullable();//tarjeta_propiedad
+			$table->string('cylinder_vehicle', 7)->nullable();//cilindraje_vehiculo
 			$table->unsignedBigInteger('vehicle_type')->nullable();//tipo_vehiculo
-			$table->string('side_vehicle', 4);//lateral_vehiculo
+			$table->string('side_vehicle', 4)->nullable();//lateral_vehiculo
 			$table->unsignedBigInteger('owner_vehicle')->nullable();//propietario_vehiculo
 			$table->unsignedBigInteger('driver_id')->nullable();//conductor
 			$table->integer('number_passenger')->nullable();//nunero_pasajeros
-			$table->date('secure_end_date');//fecha_fin_SOAT
-			$table->string('number_accreditation_soat');//numero_acreditacion_soat
-			$table->date('technomechanical_end_date');//fecha_fin_tecnomecanica
-			$table->string('number_technomechanical_accreditation');//numero_acreditacion_tecno
-			$table->date('certificate_extracontractual'); // certificado_extracontractual
-			$table->date('civil_contractual'); // certificado_civil_contractual
-			$table->enum('internal_external_owner_type', ['1', '2']);//tipo_propietario_externo_interno['EXTERNO','INTERNO']
+			$table->date('secure_end_date')->nullable();//fecha_fin_SOAT
+			$table->string('number_accreditation_soat')->nullable();//numero_acreditacion_soat
+			$table->date('technomechanical_end_date')->nullable();//fecha_fin_tecnomecanica
+			$table->string('number_technomechanical_accreditation')->nullable();//numero_acreditacion_tecno
+			$table->date('certificate_extracontractual')->nullable(); // certificado_extracontractual
+			$table->date('civil_contractual')->nullable(); // certificado_civil_contractual
+			$table->enum('internal_external_owner_type', ['1', '2'])->nullable();//tipo_propietario_externo_interno['EXTERNO','INTERNO']
 			$table->unsignedBigInteger('infrastructure_vehicle')->nullable();//infraestructura_vehiculo_combustible
-			$table->enum('state_vehicle', ['1', '2','3','4'])->DEFAULT('1');//estado_vehiculo['Inhabilitado','Habilitado','Inactivo','Pendiente']
-			$table->bigInteger('card_operation');//numero_tarjeta_operacion
-			$table->date('expiration_card_operation');//vencimiento_tarjeta_operacion
+			$table->enum('state_vehicle', ['1', '2','3','4'])->DEFAULT('3');//estado_vehiculo['Inhabilitado','Habilitado','Inactivo','Pendiente']
+			$table->bigInteger('card_operation')->nullable();//numero_tarjeta_operacion
+			$table->date('expiration_card_operation')->nullable();//vencimiento_tarjeta_operacion
             /* $table->date('preventive')->nullable();//numero_preventiva */
-			$table->date('expiration_preventive');//vencimiento_preventiva
-			$table->date('admission_date');//fecha_ingreso_vahiculo
+			$table->date('expiration_preventive')->nullable();//vencimiento_preventiva
+			$table->date('admission_date')->nullable();//fecha_ingreso_vahiculo
             $table->date('vehicle_pickup_date')->nullable();//fecha_retiro_vahiculo
 			$table->string('engine_number')->nullable();//Número_de_motor
 			$table->string('use_vehicle', 60)->nullable();//uso_vehiculo

@@ -28,6 +28,7 @@
     "dependencies": {
         "@sweetalert2/theme-dark": "^5.0.15",
         "moment": "^2.29.4",
-        "sweetalert2": "^11.7.1"
+        "sweetalert2": "^11.7.1",
+        "turbolinks": "^5.2.0"
     }
 }

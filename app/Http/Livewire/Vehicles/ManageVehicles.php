@@ -359,7 +359,7 @@ class ManageVehicles extends Component
                 'vehicle_class_description',
                 'secure_end_date',
                 'technomechanical_end_date',
-                DB::raw('CONCAT(users.firstname, users.lastname) As owner'),
+                DB::raw('CONCAT(users.firstname," ",users.lastname) As owner'),
                 'brand_vehicle',
                 'vehicle_chassis_number',
                 'property_card_number',

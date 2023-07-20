@@ -65,7 +65,8 @@
                             <th class="pl-4 py-2" data-priority="41">{{ __('family phone') }}</th>
                             <th class="pl-4 py-2" data-priority="42">{{ __('family phone cellular') }}</th>
                             <th class="pl-4 py-2" data-priority="43">{{ __('city birth') }}</th>
-                            <th class="pl-4 py-2" data-priority="44">{{ __('place expedition identificationcard') }}</th>
+                            <th class="pl-4 py-2" data-priority="44">{{ __('place expedition identificationcard') }}
+                            </th>
                             <th class="pl-4 py-2" data-priority="45">{{ __('identificationcard family') }}</th>
                             <th class="pl-4 py-2" data-priority="46">{{ __('bonding type') }}</th>
                             <th class="pl-4 py-2" data-priority="47">{{ __('weight') }}</th>
@@ -1336,9 +1337,18 @@
                                         class="text-gray-700 dark:text-gray-400">{{ __('obtained title') }}</label>
 
                                     <input
-                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                        class="block w90 py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                                         placeholder="titulo obtenido" type="text" id="obtained_title"
                                         name="obtained_title" wire:model.defer="obtained_title" />
+
+                                    <span id="docEps" class="upload-ico fas fa-file-upload icon-green"
+                                        aria-hidden="true" fill="none" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
+                                        stroke="currentColor">
+                                        <input id="InputDocEps" wire:model.defer="DocEps"
+                                            onchange="documentAbove('InputDocEps','docEps')" class="upload-input"
+                                            type="file">
+                                    </span>
                                 </div>
 
                                 <div class="w-6-12">
@@ -1346,10 +1356,19 @@
                                         class="text-gray-700 dark:text-gray-400">{{ __('last company name') }}</label>
 
                                     <input
-                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                        class="block w90 py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                                         placeholder="Ultima empresa donde trabajaste" type="text"
                                         id="last_company_name" name="last_company_name"
                                         wire:model.defer="last_company_name" />
+
+                                    <span id="docEps" class="upload-ico fas fa-file-upload icon-green"
+                                        aria-hidden="true" fill="none" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
+                                        stroke="currentColor">
+                                        <input id="InputDocEps" wire:model.defer="DocEps"
+                                            onchange="documentAbove('InputDocEps','docEps')" class="upload-input"
+                                            type="file">
+                                    </span>
                                 </div>
 
                             </div>
@@ -1560,17 +1579,17 @@
                                     <input readonly
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                                         placeholder="Fecha documento de eps" type="text" id="date_eps"
-                                        name="date_eps" wire:model.defer="date_eps" 
+                                        name="date_eps" wire:model.defer="date_eps"
                                         onchange="fechasSet('date_eps'),documentOn('date_eps','docEps')" />
 
-                                        <span id="docEps" class="Inactive upload-ico33 fas fa-file-upload icon-green"
-                                            aria-hidden="true" fill="none" stroke-linecap="round"
-                                            stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
-                                            stroke="currentColor">
-                                            <input id="InputDocEps" wire:model.defer="DocEps"
-                                                onchange="documentAbove('InputDocEps','docEps')" class="upload-input"
-                                                type="file">
-                                        </span>
+                                    <span id="docEps" class="Inactive upload-ico33 fas fa-file-upload icon-green"
+                                        aria-hidden="true" fill="none" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
+                                        stroke="currentColor">
+                                        <input id="InputDocEps" wire:model.defer="DocEps"
+                                            onchange="documentAbove('InputDocEps','docEps')" class="upload-input"
+                                            type="file">
+                                    </span>
                                 </div>
 
                                 <div class="w-1-3">
@@ -1619,15 +1638,15 @@
                                         name="date_pension" wire:model.defer="date_pension"
                                         onchange="fechasSet('date_pension'),documentOn('date_pension','docPension')" />
 
-                                        <span id="docPension" class="Inactive upload-ico33 fas fa-file-upload icon-green"
-                                            aria-hidden="true" fill="none" stroke-linecap="round"
-                                            stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
-                                            stroke="currentColor">
-                                            <input id="InputDocPension" wire:model.defer="DocPension"
-                                                onchange="documentAbove('InputDocPension','docPension')" class="upload-input"
-                                                type="file">
-                                        </span>
-                                    </div>    
+                                    <span id="docPension" class="Inactive upload-ico33 fas fa-file-upload icon-green"
+                                        aria-hidden="true" fill="none" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
+                                        stroke="currentColor">
+                                        <input id="InputDocPension" wire:model.defer="DocPension"
+                                            onchange="documentAbove('InputDocPension','docPension')"
+                                            class="upload-input" type="file">
+                                    </span>
+                                </div>
 
                                 <div class="w-1-3">
                                     <label id="labelLayoffs"
@@ -1659,14 +1678,14 @@
                                         name="date_layoffs" wire:model.defer="date_layoffs"
                                         onchange="fechasSet('date_layoffs'),documentOn('date_layoffs','docLayoffs')" />
 
-                                        <span id="docLayoffs" class="Inactive upload-ico33 fas fa-file-upload icon-green"
-                                            aria-hidden="true" fill="none" stroke-linecap="round"
-                                            stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
-                                            stroke="currentColor">
-                                            <input id="InputDocLayoffs" wire:model.defer="DocLayoffs"
-                                                onchange="documentAbove('InputDocLayoffs','docLayoffs')" class="upload-input"
-                                                type="file">
-                                        </span>
+                                    <span id="docLayoffs" class="Inactive upload-ico33 fas fa-file-upload icon-green"
+                                        aria-hidden="true" fill="none" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
+                                        stroke="currentColor">
+                                        <input id="InputDocLayoffs" wire:model.defer="DocLayoffs"
+                                            onchange="documentAbove('InputDocLayoffs','docLayoffs')"
+                                            class="upload-input" type="file">
+                                    </span>
                                 </div>
 
                                 <div class="w-1-3">
@@ -1694,21 +1713,21 @@
                                         name="arl_date" wire:model.defer="arl_date"
                                         onchange="fechasSet('arl_date'),documentOn('arl_date','docArl')" />
 
-                                        <span id="docArl" class="Inactive upload-ico33 fas fa-file-upload icon-green"
-                                            aria-hidden="true" fill="none" stroke-linecap="round"
-                                            stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
-                                            stroke="currentColor">
-                                            <input id="InputDocArl" wire:model.defer="DocArl"
-                                                onchange="documentAbove('InputDocArl','docArl')" class="upload-input"
-                                                type="file">
-                                        </span>
+                                    <span id="docArl" class="Inactive upload-ico33 fas fa-file-upload icon-green"
+                                        aria-hidden="true" fill="none" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
+                                        stroke="currentColor">
+                                        <input id="InputDocArl" wire:model.defer="DocArl"
+                                            onchange="documentAbove('InputDocArl','docArl')" class="upload-input"
+                                            type="file">
+                                    </span>
                                 </div>
 
                             </div>
 
                             <div class="flex space-x-4">
 
-                                <div class="w-6-12">
+                                <div class="w-1-3">
                                     <label id="labelCompensationbox" class="text-gray-700 dark:text-gray-400">
                                         {{ __('compensationbox') }}</label>
 
@@ -1725,7 +1744,7 @@
                                     </select>
                                 </div>
 
-                                <div class="w-6-12">
+                                <div class="w-1-3">
                                     <label id="labelDateCompensationbox"
                                         class="text-gray-700 dark:text-gray-400">{{ __('date compensationbox') }}</label>
 
@@ -1736,14 +1755,29 @@
                                         wire:model.defer="date_compensationbox"
                                         onchange="fechasSet('date_compensationbox'),documentOn('date_compensationbox','docCompensationbox')" />
 
-                                        <span id="docCompensationbox" class="Inactive upload-ico fas fa-file-upload icon-green"
-                                            aria-hidden="true" fill="none" stroke-linecap="round"
-                                            stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
-                                            stroke="currentColor">
-                                            <input id="InputDocCompensationbox" wire:model.defer="DocCompensationbox"
-                                                onchange="documentAbove('InputDocCompensationbox','docCompensationbox')" class="upload-input"
-                                                type="file">
-                                        </span>
+                                    <span id="docCompensationbox"
+                                        class="Inactive upload-ico fas fa-file-upload icon-green" aria-hidden="true"
+                                        fill="none" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                                        <input id="InputDocCompensationbox" wire:model.defer="DocCompensationbox"
+                                            onchange="documentAbove('InputDocCompensationbox','docCompensationbox')"
+                                            class="upload-input" type="file">
+                                    </span>
+                                </div>
+
+                                <div class="w-1-3">
+                                    <label id="labelEps" class="text-gray-700 dark:text-gray-400">EPS</label>
+
+                                    <select wire:model.defer="eps" id="eps" name="eps"
+                                        class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
+                                        <option value="0">Selecciona la eps del usuario</option>
+
+                                        @foreach ($epses as $eps)
+                                            <option value="{{ $eps->id }}">
+                                                {{ $eps->description_eps }}</option>
+                                        @endforeach
+
+                                    </select>
                                 </div>
 
                             </div>
@@ -1868,7 +1902,7 @@
                                     </span>
                                 </div>
 
-                                <div class="w-6-12">
+                                {{-- <div class="w-6-12">
                                     <label id="labelDrivingExam"
                                         class="text-gray-700 dark:text-gray-400">{{ __('driving exam') }}</label>
 
@@ -1886,13 +1920,13 @@
                                             onchange="documentAbove('InputDocdrivingExam','DocdrivingExam')"
                                             class="upload-input" type="file">
                                     </span>
-                                </div>
+                                </div> --}}
 
                             </div>
 
                             <div class="flex space-x-4" wire:ignore>
 
-                                <div class="w-6-12">
+                                {{-- <div class="w-6-12">
                                     <label id="labelNormOverlandTransportationAutomotive"
                                         class="text-gray-700 dark:text-gray-400">{{ __('Norm Overland Transportation Automotive') }}</label>
 
@@ -1913,7 +1947,7 @@
                                             onchange="documentAbove('InputDocNormOverlandTransportationAutomotive','DocNormOverlandTransportationAutomotive')"
                                             class="upload-input" type="file">
                                     </span>
-                                </div>
+                                </div> --}}
 
                                 <div class="w-6-12">
                                     <label id="labelRulesTransit"
@@ -1953,7 +1987,7 @@
 
                             <div class="flex space-x-4" wire:ignore>
 
-                                <div class="w-6-12">
+                                {{-- <div class="w-6-12">
                                     <label id="labelNormativeTips"
                                         class="text-gray-700 dark:text-gray-400">{{ __('Normative Tips') }}</label>
 
@@ -1972,9 +2006,9 @@
                                             onchange="documentAbove('InputDocNormativeTips','DocNormativeTips')"
                                             class="upload-input" type="file">
                                     </span>
-                                </div>
+                                </div> --}}
 
-                                <div class="w-6-12">
+                                {{-- <div class="w-6-12">
                                     <label id="labelDrivingMethods"
                                         class="text-gray-700 dark:text-gray-400">{{ __('Driving Methods') }}</label>
 
@@ -1993,7 +2027,7 @@
                                             onchange="documentAbove('InputDocDrivingMethods','DocDrivingMethods')"
                                             class="upload-input" type="file">
                                     </span>
-                                </div>
+                                </div> --}}
 
                             </div>
 
@@ -2020,7 +2054,7 @@
                                     </span>
                                 </div>
 
-                                <div class="w-6-12">
+                                {{-- <div class="w-6-12">
                                     <label id="labelDistractions"
                                         class="text-gray-700 dark:text-gray-400">{{ __('distractions') }}</label>
 
@@ -2038,7 +2072,7 @@
                                             onchange="documentAbove('InputDocdistractions','Docdistractions')"
                                             class="upload-input" type="file">
                                     </span>
-                                </div>
+                                </div> --}}
 
                             </div>
 
@@ -2064,7 +2098,7 @@
                                     </span>
                                 </div>
 
-                                <div class="w-6-12">
+                                {{-- <div class="w-6-12">
                                     <label id="labelFirstResponder"
                                         class="text-gray-700 dark:text-gray-400">{{ __('First Responder') }}</label>
 
@@ -2083,7 +2117,7 @@
                                             onchange="documentAbove('InputDocFirstResponder','DocFirstResponder')"
                                             class="upload-input" type="file">
                                     </span>
-                                </div>
+                                </div> --}}
 
                             </div>
 
@@ -2111,7 +2145,7 @@
                                     </span>
                                 </div>
 
-                                <div class="w-6-12">
+                                {{-- <div class="w-6-12">
                                     <label id="labelActivePassiveSecurityVehicle"
                                         class="text-gray-700 dark:text-gray-400">{{ __('Active Passive Security vehicle') }}</label>
 
@@ -2132,7 +2166,7 @@
                                             onchange="documentAbove('InputDocActivePassiveSecurityVehicle','DocActivePassiveSecurityVehicle')"
                                             class="upload-input" type="file">
                                     </span>
-                                </div>
+                                </div> --}}
 
                             </div>
 
@@ -3261,7 +3295,7 @@
 
                                                 </select>
                                             </div>
-{{-- 
+                                            {{-- 
                                             <div class="w-6-12 ">
 
                                                 <label class="text-gray-700 dark:text-gray-400">Selecciona el
@@ -3661,7 +3695,7 @@
 
                                         <div class="flex space-x-4">
 
-                                            <div class="w-6-12">
+                                            {{-- <div class="w-6-12">
                                                 <label
                                                     class="text-gray-700 dark:text-gray-400">{{ __('Norm Overland Transportation Automotive') }}</label>
 
@@ -3672,7 +3706,7 @@
                                                     wire:model="Norm_Overland_Transportation_Automotive2" />
 
                                                 <span class=" edit-upload-ico fas fa-file-upload"
-                                                    {{-- @if ($docNormOverlandTransportationAutomotive != '') icon-blue @else icon-green @endif" --}} aria-hidden="true" fill="none"
+                                                     aria-hidden="true" fill="none"
                                                     stroke-linecap="round" stroke-linejoin="round"
                                                     stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
                                                     id="DocNormOverlandTransportationAutomotive2">
@@ -3680,7 +3714,7 @@
                                                         onchange="updateDocument('4','Norma_Transporte')"
                                                         class="edit-upload-input" type="file">
                                                 </span>
-                                            </div>
+                                            </div> --}}
 
                                             <div class="w-6-12">
                                                 <label
@@ -3719,7 +3753,7 @@
 
                                         <div class="flex space-x-4">
 
-                                            <div class="w-6-12">
+                                            {{-- <div class="w-6-12">
                                                 <label
                                                     class="text-gray-700 dark:text-gray-400">{{ __('Normative Tips') }}</label>
 
@@ -3730,7 +3764,7 @@
                                                     wire:model="Normative_Tips2" />
 
                                                 <span class=" edit-upload-ico fas fa-file-upload"
-                                                    {{-- @if ($docNormativeTips != '') icon-blue @else icon-green @endif" --}} aria-hidden="true" fill="none"
+                                                    aria-hidden="true" fill="none"
                                                     stroke-linecap="round" stroke-linejoin="round"
                                                     stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
                                                     id="DocNormativeTips2">
@@ -3738,9 +3772,9 @@
                                                         onchange="updateDocument('6','Tips_normativos')"
                                                         class="edit-upload-input" type="file">
                                                 </span>
-                                            </div>
+                                            </div> --}}
 
-                                            <div class="w-6-12">
+                                            {{-- <div class="w-6-12">
                                                 <label
                                                     class="text-gray-700 dark:text-gray-400">{{ __('Driving Methods') }}</label>
 
@@ -3751,7 +3785,7 @@
                                                     wire:model="Driving_Methods2" />
 
                                                 <span class=" edit-upload-ico fas fa-file-upload"
-                                                    {{-- @if ($docDrivingMethods != '') icon-blue @else icon-green @endif" --}} aria-hidden="true" fill="none"
+                                                    aria-hidden="true" fill="none"
                                                     stroke-linecap="round" stroke-linejoin="round"
                                                     stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
                                                     id="DocDrivingMethods2">
@@ -3759,7 +3793,7 @@
                                                         onchange="updateDocument('7','Metodos_Conduccion')"
                                                         class="edit-upload-input" type="file">
                                                 </span>
-                                            </div>
+                                            </div> --}}
 
                                         </div>
 
@@ -3786,7 +3820,7 @@
                                                 </span>
                                             </div>
 
-                                            <div class="w-6-12">
+                                            {{-- <div class="w-6-12">
                                                 <label
                                                     class="text-gray-700 dark:text-gray-400">{{ __('distractions') }}</label>
 
@@ -3797,7 +3831,7 @@
                                                     wire:model="distractions2" />
 
                                                 <span class=" edit-upload-ico fas fa-file-upload"
-                                                    {{-- @if ($docdistractions != '') icon-blue @else icon-green @endif" --}} aria-hidden="true" fill="none"
+                                                     aria-hidden="true" fill="none"
                                                     stroke-linecap="round" stroke-linejoin="round"
                                                     stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
                                                     id="Docdistractions2">
@@ -3805,7 +3839,7 @@
                                                         onchange="updateDocument('9','Distracciones')"
                                                         class="edit-upload-input" type="file">
                                                 </span>
-                                            </div>
+                                            </div> --}}
 
                                         </div>
 
@@ -3831,7 +3865,7 @@
                                                 </span>
                                             </div>
 
-                                            <div class="w-6-12">
+                                            {{-- <div class="w-6-12">
                                                 <label
                                                     class="text-gray-700 dark:text-gray-400">{{ __('First Responder') }}</label>
 
@@ -3842,7 +3876,7 @@
                                                     wire:model="First_Responder2" />
 
                                                 <span class=" edit-upload-ico fas fa-file-upload"
-                                                    {{-- @if ($docFirstResponder != '') icon-blue @else icon-green @endif" --}} aria-hidden="true" fill="none"
+                                                     aria-hidden="true" fill="none"
                                                     stroke-linecap="round" stroke-linejoin="round"
                                                     stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
                                                     id="DocFirstResponder2">
@@ -3850,7 +3884,7 @@
                                                         onchange="updateDocument('11','Primero_Respondiente')"
                                                         class="edit-upload-input" type="file">
                                                 </span>
-                                            </div>
+                                            </div> --}}
 
                                         </div>
 
@@ -3877,7 +3911,7 @@
                                                 </span>
                                             </div>
 
-                                            <div class="w-6-12">
+                                            {{-- <div class="w-6-12">
                                                 <label
                                                     class="text-gray-700 dark:text-gray-400">{{ __('Active Passive Security vehicle') }}</label>
 
@@ -3888,7 +3922,7 @@
                                                     wire:model="Active_Passive_Security_vehicle2" />
 
                                                 <span class=" edit-upload-ico fas fa-file-upload"
-                                                    {{-- @if ($docActivePassiveSecurityVehicle != '') icon-blue @else icon-green @endif" --}} aria-hidden="true" fill="none"
+                                                    aria-hidden="true" fill="none"
                                                     stroke-linecap="round" stroke-linejoin="round"
                                                     stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
                                                     id="DocActivePassiveSecurityVehicle2">
@@ -3897,7 +3931,7 @@
                                                         onchange="updateDocument('13','Seguridad_activa_pasiva')"
                                                         class="edit-upload-input" type="file">
                                                 </span>
-                                            </div>
+                                            </div> --}}
 
                                         </div>
                                     </div>
@@ -5419,10 +5453,19 @@
             // console.log(current_active_step_a);
             $('#frmUser').trigger("reset");
 
-            let certif = ['license_expiration', 'certificate_drugs_alchoolemia', 'SIMIT_queries', 'driving_exam',
-                'Norm_Overland_Transportation_Automotive', 'Rules_Transit', 'Normative_Tips', 'Driving_Methods',
-                'Defensive_driving', 'distractions', 'First_aid', 'First_Responder', 'five_senses_driving',
-                'Active_Passive_Security_vehicle', 'Road_safety'
+            let certif = ['license_expiration', 'certificate_drugs_alchoolemia', 'SIMIT_queries',
+                // 'driving_exam',
+                // 'Norm_Overland_Transportation_Automotive', 
+                'Rules_Transit',
+                // 'Normative_Tips', 
+                // 'Driving_Methods',
+                'Defensive_driving',
+                // 'distractions',
+                'First_aid',
+                // 'First_Responder',
+                'five_senses_driving',
+                // 'Active_Passive_Security_vehicle', 
+                'Road_safety'
             ]
             let doc = ['Doclicense', 'DocAlchoolemia', 'DocSimitQueries', 'DocdrivingExam',
                 'DocNormOverlandTransportationAutomotive',
@@ -5507,62 +5550,436 @@
         // }
 
         var camps = [
-            'labelUsertype', 'usertype', 'divCharge', 'labelCharge', 'charge', 'divSupplierName', 'labelSupplierName',
+            /*0:*/
+            'labelUsertype',
+            /*1:*/
+            'usertype',
+            /*2:*/
+            'divCharge',
+            /*3:*/
+            'labelCharge',
+            /*4:*/
+            'charge',
+            /*5:*/
+            'divSupplierName',
+            /*6:*/
+            'labelSupplierName',
+            /*7:*/
             'supplier_name',
-            'divIdentification', 'labelIdentification', 'identification', 'divContractDocument',
-            'labeIdentificationcard', 'identificationcard',
-            'labelFirstname', 'firstname', 'labelSecondname', 'secondname', 'labelLastname', 'lastname',
-            'labelMotherslastname', 'motherslastname',
-            'labelCompanyNameProvider', 'company_name_provider', 'labelCommercialReasonSupplier',
+            /*8:*/
+            'divIdentification',
+            /*9:*/
+            'labelIdentification',
+            /*10:*/
+            'identification',
+            /*11:*/
+            'divContractDocument',
+            /*12:*/
+            'labeIdentificationcard',
+            /*13:*/
+            'identificationcard',
+            /*14:*/
+            'labelFirstname',
+            /*15:*/
+            'firstname',
+            /*16:*/
+            'labelSecondname',
+            /*17:*/
+            'secondname',
+            /*18:*/
+            'labelLastname',
+            /*19:*/
+            'lastname',
+            /*20:*/
+            'labelMotherslastname',
+            /*21:*/
+            'motherslastname',
+            /*22:*/
+            'labelCompanyNameProvider',
+            /*23:*/
+            'company_name_provider',
+            /*24:*/
+            'labelCommercialReasonSupplier',
+            /*25:*/
             'commercial_reason_supplier',
-            'labelSupplierCategory', 'supplier_category', 'labelProductsAndServices', 'products_and_services',
+            /*26:*/
+            'labelSupplierCategory',
+            /*27:*/
+            'supplier_category',
+            /*28:*/
+            'labelProductsAndServices',
+            /*29:*/
+            'products_and_services',
+            /*30:*/
             'labelEconomicActivity',
-            'economic_activity', 'labelSupplierDescription', 'supplier_description',
+            /*31:*/
+            'economic_activity',
+            /*32:*/
+            'labelSupplierDescription',
+            /*33:*/
+            'supplier_description',
+            /*34:*/
             'divPlaceExpeditionIdentificationcard',
-            'labelPlaceExpeditionIdentificationcard', 'place_expedition_identificationcard', 'divNit', 'labelNit',
-            'nit', 'labelCountry', 'country',
-            'labelDepartment', 'Department', 'labelCity', 'city', 'divAddress', 'labelAddress', 'address', 'divCheck',
-            'labelCheck', 'sexM', 'sexF',
-            'labelSexF', 'labelPhone', 'phone', 'labelPhoneCellular', 'phone_cellular', 'labelBirthdate', 'birthdate',
-            'labelCityBirth', 'city_birth',
-            'labelWeight', 'weight', 'labelPantSize', 'pant_size', 'labelShirtSize', 'shirt_size', 'labelShoeSize',
-            'shoe_size', 'labelCivilStatus',
-            'civil_status', 'labelWorkArea', 'work_area', 'labelBindingType', 'binding_type', 'labelSalary', 'salary',
+            /*35:*/
+            'labelPlaceExpeditionIdentificationcard',
+            /*36:*/
+            'place_expedition_identificationcard',
+            /*37:*/
+            'divNit',
+            /*38:*/
+            'labelNit',
+            /*39:*/
+            'nit',
+            /*40:*/
+            'labelCountry',
+            /*41:*/
+            'country',
+            /*42:*/
+            'labelDepartment',
+            /*43:*/
+            'Department',
+            /*44:*/
+            'labelCity',
+            /*45:*/
+            'city',
+            /*46:*/
+            'divAddress',
+            /*47:*/
+            'labelAddress',
+            /*48:*/
+            'address',
+            /*49:*/
+            'divCheck',
+            /*50:*/
+            'labelCheck',
+            /*51:*/
+            'sexM',
+            /*52:*/
+            'sexF',
+            /*53:*/
+            'labelSexF',
+            /*54:*/
+            'labelPhone',
+            /*55:*/
+            'phone',
+            /*56:*/
+            'labelPhoneCellular',
+            /*57:*/
+            'phone_cellular',
+            /*58:*/
+            'labelBirthdate',
+            /*59:*/
+            'birthdate',
+            /*60:*/
+            'labelCityBirth',
+            /*61:*/
+            'city_birth',
+            /*62:*/
+            'labelWeight',
+            /*63:*/
+            'weight',
+            /*64:*/
+            'labelPantSize',
+            /*65:*/
+            'pant_size',
+            /*66:*/
+            'labelShirtSize',
+            /*67:*/
+            'shirt_size',
+            /*68:*/
+            'labelShoeSize',
+            /*69:*/
+            'shoe_size',
+            /*70:*/
+            'labelCivilStatus',
+            /*71:*/
+            'civil_status',
+            /*72:*/
+            'labelWorkArea',
+            /*73:*/
+            'work_area',
+            /*74:*/
+            'labelBindingType',
+            /*75:*/
+            'binding_type',
+            /*76:*/
+            'labelSalary',
+            /*77:*/
+            'salary',
+            /*78:*/
             'labelAidTransport',
-            'aid_transport', 'labelEducationLevel', 'education_level', 'labelEducationalInstitution',
-            'educational_institution', 'labelLastYear',
-            'last_year', 'labelStudyEndDate', 'study_end_date', 'labelObtainedTitle', 'obtained_title',
-            'labelLastCompanyName', 'last_company_name',
-            'labelChargesLastCompany', 'charges_last_company', 'labelStartDateLastCompany', 'start_date_last_company',
+            /*79:*/
+            'aid_transport',
+            /*80:*/
+            'labelEducationLevel',
+            /*81:*/
+            'education_level',
+            /*82:*/
+            'labelEducationalInstitution',
+            /*83:*/
+            'educational_institution',
+            /*84:*/
+            'labelLastYear',
+            /*85:*/
+            'last_year',
+            /*86:*/
+            'labelStudyEndDate',
+            /*87:*/
+            'study_end_date',
+            /*88:*/
+            'labelObtainedTitle',
+            /*89:*/
+            'obtained_title',
+            /*90:*/
+            'labelLastCompanyName',
+            /*91:*/
+            'last_company_name',
+            /*92:*/
+            'labelChargesLastCompany',
+            /*93:*/
+            'charges_last_company',
+            /*94:*/
+            'labelStartDateLastCompany',
+            /*95:*/
+            'start_date_last_company',
+            /*96:*/
             'labelDateEndLastCompany',
-            'date_end_last_company', 'labelFunctionsPerformed', 'functions_performed', 'labelFamilyDocumentType',
-            'family_document_type', 'labelSexM',
-            'labeIdentificationcardFamily', 'identificationcard_family', 'labelRelationship', 'relationship',
-            'labelFamilyNames', 'family_names',
-            'labelFamilyAddress', 'family_address', 'labelFamilyPhone', 'family_phone', 'labelFamilyPhoneCellular',
-            'family_phone_cellular', 'labelEps',
-            'eps', 'labelDateEps', 'date_eps', 'labelBloodType', 'blood_type', 'labelPension', 'pension',
-            'labelDatePension', 'date_pension', 'labelLayoffs',
-            'layoffs', 'labelDateLayoffs', 'date_layoffs', 'labelArl', 'arl', 'labelArlDate', 'arl_date',
-            'labelCompensationbox', 'compensationbox',
-            'labelDateCompensationbox', 'date_compensationbox', 'labelLicenseNumber', 'license_number',
-            'labelLicenseCategory', 'license_category',
-            'labelLicenseExpiration', 'license_expiration', 'finalUser1', 'passfinalUser1',
+            /*97:*/
+            'date_end_last_company',
+            /*98:*/
+            'labelFunctionsPerformed',
+            /*99:*/
+            'functions_performed',
+            /*100:*/
+            'labelFamilyDocumentType',
+            /*101:*/
+            'family_document_type',
+            /*102:*/
+            'labelSexM',
+            /*103:*/
+            'labeIdentificationcardFamily',
+            /*104:*/
+            'identificationcard_family',
+            /*105:*/
+            'labelRelationship',
+            /*106:*/
+            'relationship',
+            /*107:*/
+            'labelFamilyNames',
+            /*108:*/
+            'family_names',
+            /*109:*/
+            'labelFamilyAddress',
+            /*110:*/
+            'family_address',
+            /*111:*/
+            'labelFamilyPhone',
+            /*112:*/
+            'family_phone',
+            /*113:*/
+            'labelFamilyPhoneCellular',
+            /*114:*/
+            'family_phone_cellular',
+            /*115:*/
+            'labelEps',
+            /*116:*/
+            'eps',
+            /*117:*/
+            'labelDateEps',
+            /*118:*/
+            'date_eps',
+            /*119:*/
+            'labelBloodType',
+            /*120:*/
+            'blood_type',
+            /*121:*/
+            'labelPension',
+            /*122:*/
+            'pension',
+            /*123:*/
+            'labelDatePension',
+            /*124:*/
+            'date_pension',
+            /*125:*/
+            'labelLayoffs',
+            /*126:*/
+            'layoffs',
+            /*127:*/
+            'labelDateLayoffs',
+            /*128:*/
+            'date_layoffs',
+            /*129:*/
+            'labelArl',
+            /*130:*/
+            'arl',
+            /*131:*/
+            'labelArlDate',
+            /*132:*/
+            'arl_date',
+            /*133:*/
+            'labelCompensationbox',
+            /*134:*/
+            'compensationbox',
+            /*135:*/
+            'labelDateCompensationbox',
+            /*136:*/
+            'date_compensationbox',
+            /*137:*/
+            'labelLicenseNumber',
+            /*138:*/
+            'license_number',
+            /*139:*/
+            'labelLicenseCategory',
+            /*140:*/
+            'license_category',
+            /*141:*/
+            'labelLicenseExpiration',
+            /*142:*/
+            'license_expiration',
+            /*143:*/
+            'finalUser1',
+            /*144:*/
+            'passfinalUser1',
+            /*145:*/
             'labelCertificateDrugsAlchoolemia',
-            'certificate_drugs_alchoolemia', 'finalUser2', 'passfinalUser2', 'labelSIMITQueries', 'SIMIT_queries',
-            'finalUser3', 'passfinalUser3',
-            'labelDrivingExam', 'driving_exam', 'step2', 'pass2', 'labelNormOverlandTransportationAutomotive',
-            'Norm_Overland_Transportation_Automotive',
-            'step3', 'pass3', 'labelRulesTransit', 'Rules_Transit', 'change', 'change', 'labelNormativeTips',
-            'Normative_Tips',
-            'change', 'change', 'labelDrivingMethods', 'Driving_Methods', 'change', 'change',
-            'labelDefensiveDriving', 'Defensive_driving', 'change', 'change', 'labelDistractions', 'distractions',
-            'change', 'change', 'labelFirstaid', 'First_aid', 'change', 'change', 'labelFirstResponder',
-            'First_Responder', 'change', 'change', 'labelfiveSensesDriving', 'five_senses_driving', 'change',
-            'change', 'labelActivePassiveSecurityVehicle', 'Active_Passive_Security_vehicle', 'change',
-            'change', 'labelRoadSafety', 'Road_safety', 'change', 'change', 'labelLinked', 'Linked',
-            'labelUserEntryDate', 'user_entry_date', 'labelUsername', 'username',
-            'labelProfilePhotoPath', 'profile_photo_path'
+            /*146:*/
+            'certificate_drugs_alchoolemia',
+            /*147:*/
+            'finalUser2',
+            /*148:*/
+            'passfinalUser2',
+            /*149:*/
+            'labelSIMITQueries',
+            /*150:*/
+            'SIMIT_queries',
+            /*151:*/
+            'finalUser3',
+            /*152:*/
+            'passfinalUser3',
+            /*153:*/
+            'change',
+            /*154:*/
+            'change',
+            /*155:*/
+            'step2',
+            /*156:*/
+            'pass2',
+            /*157:*/
+            'change',
+            /*158:*/
+            'change',
+            /*159:*/
+            'step3',
+            /*160:*/
+            'pass3',
+            /*161:*/
+            'labelRulesTransit',
+            /*162:*/
+            'Rules_Transit',
+            /*163:*/
+            'change',
+            /*164:*/
+            'change',
+            /*165:*/
+            'change',
+            /*166:*/
+            'change',
+            /*167:*/
+            'change',
+            /*168:*/
+            'change',
+            /*169:*/
+            'change',
+            /*170:*/
+            'change',
+            /*171:*/
+            'change',
+            /*172:*/
+            'change',
+            /*173:*/
+            'labelDefensiveDriving',
+            /*174:*/
+            'Defensive_driving',
+            /*175:*/
+            'change',
+            /*176:*/
+            'change',
+            /*177:*/
+            'change',
+            /*178:*/
+            'change',
+            /*179:*/
+            'change',
+            /*180:*/
+            'change',
+            /*181:*/
+            'labelFirstaid',
+            /*182:*/
+            'First_aid',
+            /*183:*/
+            'change',
+            /*184:*/
+            'change',
+            /*185:*/
+            'change',
+            /*186:*/
+            'change',
+            /*187:*/
+            'change',
+            /*188:*/
+            'change',
+            /*189:*/
+            'labelfiveSensesDriving',
+            /*190:*/
+            'five_senses_driving',
+            /*191:*/
+            'change',
+            /*192:*/
+            'change',
+            /*193:*/
+            'change',
+            /*194:*/
+            'change',
+            /*195:*/
+            'change',
+            /*196:*/
+            'change',
+            /*197:*/
+            'labelRoadSafety',
+            /*198:*/
+            'Road_safety',
+            /*199:*/
+            'change',
+            /*200:*/
+            'change',
+            /*201:*/
+            'labelLinked',
+            /*202:*/
+            'Linked',
+            /*203:*/
+            'labelUserEntryDate',
+            /*204:*/
+            'user_entry_date',
+            /*205:*/
+            'labelUsername',
+            /*206:*/
+            'username',
+            /*207:*/
+            'labelProfilePhotoPath',
+            /*208:*/
+            'profile_photo_path',
+            /*209:*/
+            /*210:*/
+            /*211:*/
+            /*212:*/
+            /*213:*/
+            /*214:*/
+            /*215:*/
+            /*216:*/
+            /*217:*/
+            /*218:*/
+            /*219:*/
+            /*220:*/
 
         ]
 
@@ -5915,20 +6332,20 @@
         //     @this.set('SIMIT_queries', e.target.value);
         // });
 
-        jQuery('#driving_exam').datetimepicker({
-            format: 'Y-m-d',
-            theme: 'dark',
-            timepicker: false
-        });
+        // jQuery('#driving_exam').datetimepicker({
+        //     format: 'Y-m-d',
+        //     theme: 'dark',
+        //     timepicker: false
+        // });
         // $('#driving_exam').on('change', function(e) {
         //     @this.set('driving_exam', e.target.value);
         // });
 
-        jQuery('#Norm_Overland_Transportation_Automotive').datetimepicker({
-            format: 'Y-m-d',
-            theme: 'dark',
-            timepicker: false
-        });
+        // jQuery('#Norm_Overland_Transportation_Automotive').datetimepicker({
+        //     format: 'Y-m-d',
+        //     theme: 'dark',
+        //     timepicker: false
+        // });
         // $('#Norm_Overland_Transportation_Automotive').on('change', function(e) {
         //     @this.set('Norm_Overland_Transportation_Automotive', e.target.value);
         // });
@@ -5942,20 +6359,20 @@
         //     @this.set('Rules_Transit', e.target.value);
         // });
 
-        jQuery('#Normative_Tips').datetimepicker({
-            format: 'Y-m-d',
-            theme: 'dark',
-            timepicker: false
-        });
+        // jQuery('#Normative_Tips').datetimepicker({
+        //     format: 'Y-m-d',
+        //     theme: 'dark',
+        //     timepicker: false
+        // });
         // $('#Normative_Tips').on('change', function(e) {
         //     @this.set('Normative_Tips', e.target.value);
         // });
 
-        jQuery('#Driving_Methods').datetimepicker({
-            format: 'Y-m-d',
-            theme: 'dark',
-            timepicker: false
-        });
+        // jQuery('#Driving_Methods').datetimepicker({
+        //     format: 'Y-m-d',
+        //     theme: 'dark',
+        //     timepicker: false
+        // });
         // $('#Driving_Methods').on('change', function(e) {
         //     @this.set('Driving_Methods', e.target.value);
         // });
@@ -5969,11 +6386,11 @@
         //     @this.set('Defensive_driving', e.target.value);
         // });
 
-        jQuery('#distractions').datetimepicker({
-            format: 'Y-m-d',
-            theme: 'dark',
-            timepicker: false
-        });
+        // jQuery('#distractions').datetimepicker({
+        //     format: 'Y-m-d',
+        //     theme: 'dark',
+        //     timepicker: false
+        // });
         // $('#distractions').on('change', function(e) {
         //     @this.set('distractions', e.target.value);
         // });
@@ -5987,11 +6404,11 @@
         //     @this.set('First_aid', e.target.value);
         // });
 
-        jQuery('#First_Responder').datetimepicker({
-            format: 'Y-m-d',
-            theme: 'dark',
-            timepicker: false
-        });
+        // jQuery('#First_Responder').datetimepicker({
+        //     format: 'Y-m-d',
+        //     theme: 'dark',
+        //     timepicker: false
+        // });
         // $('#First_Responder').on('change', function(e) {
         //     @this.set('First_Responder', e.target.value);
         // });

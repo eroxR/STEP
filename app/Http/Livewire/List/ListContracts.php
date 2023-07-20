@@ -7,9 +7,22 @@ use App\Models\permit;
 use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 
+use iio\libmergepdf\Merger;
+use Livewire\WithFileUploads;
+use Illuminate\Support\Facades\Storage;
+
 class ListContracts extends Component
 {
-    public $filtre = 0, $direction = 'desc', $search = '', $ide = 0;
+
+    use WithFileUploads;
+
+    public $filtre = 0, $direction = 'desc', $search = '', $ide = 0, $contract_id,$contractType,$numberContract,$contractSigned;
+    public $fileContract = ['','colegios/', 'Empresas/', 'Empresa_Turismo/', 'Ocacionales/', 'Usuarios_Salud/', 'Comvenio_Empresarial/', 'Contrato_Vinculacion/'],
+    $tContra = ['','colegios', 'Empresas', 'Empresa Turismo', 'Ocacionales', 'Usuarios Salud', 'Comvenio Empresarial', 'Contrato Vinculacion'],
+    $doc = [
+        'documentación_contrato_N-', 'Contrato_para_transporte_de_estudiantes_N-', 'Contrato_para_transporte_empresarial_N-', 'Contrato_para_transporte_de_turistas_N-',
+        'Contrato_para_un_grupo_específico_de_usuarios_N-', 'Contrato_para_Transporte_de_usuarios_del_servicio_de_salud_N-',
+        'convenio_de_colaboracion_empresarial_N-', 'Contrato_de_Vinculación_N-'];
 
     protected $listeners = ['veiw','permit'];
 
@@ -85,6 +98,51 @@ class ListContracts extends Component
     public function permit($id){
 
         $this->emit('openModalPermit');
+    }
+
+    public function contractSigned()
+    {
+
+        // dd($this->contract_id,$this->contractType,$this->numberContract);
+        // dd($this->contractSigned);
+
+        // documentación_contrato_N-6029.pdf
+        $directory = DB::table('documents')->where('documentable_id', $this->contract_id)->where('documentable_Type', 'like', '%\contract%')->value('directory');
+        $document_id = DB::table('documents')->where('documentable_id', $this->contract_id)->where('documentable_Type', 'like', '%\contract%')->value('id');
+
+        // dd($newRuta);
+
+        $agree = new Merger;
+
+        $agree->addFile($this->contractSigned->getRealPath());
+        $agree->addFile($directory);
+
+
+        $output = $agree->merge();
+
+        $fileName = $this->doc[$this->contractType] . $this->numberContract . '.pdf';
+
+        $url = 'storage/STEP/contract/' . $this->fileContract[$this->contractType] . $fileName;
+
+        $bytesEscritos = file_put_contents($url, $output);
+
+        if ($bytesEscritos > 0) {
+            $newRuta = str_replace('storage', 'public', $directory);
+            Storage::delete($newRuta);
+    
+            DB::table('documents')->where('id', $document_id)->update(['document_name' => $fileName, 'directory' => $url, 'extension' => '.pdf']);
+    
+            DB::table('contracts')->where('id', $this->contract_id)->update(['signed_contract' => 2]);
+
+            $this->emit('outputs', ['contractnumber' => $this->numberContract], ['contractType' => $this->tContra[$this->contractType]], ['process' => 1],);
+        } else {
+            $this->emit('outputs', ['contractnumber' => $this->numberContract], ['contractType' => $this->tContra[$this->contractType]], ['process' => 2],);
+        }
+        
+
+
+
+        // dd($bytesEscritos);
     }
 }
 
