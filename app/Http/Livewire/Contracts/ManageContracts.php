@@ -32,11 +32,11 @@ class ManageContracts extends Component
     public $direction = 'desc';
     public $contract_number, $type_contract, $state_contract, $date_start_contract, $contract_end_date, $contracting_name, $school_name, $contract_value, $route_trip_contract, $contract_document, $expedition_identificationcard,
         $contracting_phone, $contracting_direction, $legal_representative, $passenger_quantity, $total_disposition, $quantity_vehicle, $contract_signing_date, $identificationcard_represent_legal,
-        $legal_representative_expedition_identificationcard, $tipe_pay, $identification, $address_school, $secure_policy, $entity_name, $cooperation_contract, $identification_legal_representative, $identification_representative_group, $identificationcard_representative_group,
+        $legal_representative_expedition_identificationcard, $tipe_pay, $identification, $address_school, $secure_policy, $cooperation_contract, $identification_legal_representative, $identification_representative_group, $identificationcard_representative_group,
         $group_representative_name, $dateofexpedition_representative_group, $vehicle, $contract_with, $student_name, $identificationcard_estudent, $grade_student, $family_relationship, $who_receives, $signature_place, $End_day, $start_day, $exit, $arrival, $return,
         $municipality, $plate, $brand, $line, $model, $cylinder_capacity, $legal_bond, $fuel, $vehicle_class, $chassis_number, $ability, $engine_number, $signedContract, $passengers = [],
 
-        $subidadeprueba,
+        $subidadeprueba,$pps,
 
         $DocNit, $Docrnt, $Docempowerment, $DocResolution, $DocCamaraComercio, $DocRUT, $DocAttachContract;
 
@@ -73,7 +73,7 @@ class ManageContracts extends Component
         'editContracts.total_disposition'  => 'required',
         'editContracts.quantity_vehicle'  => 'required',
         'editContracts.cooperation_contract'  => 'required',
-        'editContracts.entity_name'  => 'required',
+        // 'editContracts.entity_name'  => 'required',
         'editContracts.secure_policy'  => 'required',
         'editContracts.tipe_pay'  => 'required',
         'editContracts.contract_signing_date'  => 'required',
@@ -99,17 +99,22 @@ class ManageContracts extends Component
     public function passenger($passenger)
     {
 
-        $this->passengers = $passenger;
+        // $this->passengers = $passenger;
 
 
-        // $mivariable = $this->passengers[0][0]['documento'];
+        // $mivariable = $this->passengers[1]['documento'];
         // $mivariable = $this->passengers[0][0]['nombreC'];
         // dd($mivariable );
+        // $extension = $mivariable->extension();
         // dd($this->passengers );
+        // dd($this->pps );
     }
 
     public function store()
     {
+
+        // dd($this->passengers );
+
         if ($this->DocNit == null) {
             return $this->emit('crud', ['contractnumber' => ''], ['process' => 4], ['contractType' => ''], ['id' => '']);
         }
@@ -321,7 +326,6 @@ class ManageContracts extends Component
             'total_disposition',
             'quantity_vehicle',
             'cooperation_contract',
-            'entity_name',
             'secure_policy',
             'tipe_pay',
             'contract_signing_date',
@@ -363,8 +367,9 @@ class ManageContracts extends Component
                 'vehicle_chassis_number' => $this->chassis_number,
                 'engine_number' => $this->engine_number,
                 'number_passenger' => $this->ability,
-                'use_vehicle' => $this->line,
-                'admission_date' => $this->date_start_contract
+                'service' => $this->line,
+                'admission_date' => $this->date_start_contract,
+                'binding_contract' => '1'
 
             ]);
 

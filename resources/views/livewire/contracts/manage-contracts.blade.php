@@ -1683,15 +1683,16 @@
                         "render": function(data, type, row) {
 
                             return "<div class='flex items-center space-x-4 text-sm'>" +
-                                "<button id='edit' onclick='edit(" + row['id'] + ")'" +
-                                "class='inline-flex items-center justify-center  bg-yellow-700 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-yellow-400 focus:outline-none focus:bg-yellow-700 focus:ring focus:ring-red-200 active:bg-yellow-700 readonly:opacity-25 transition' aria-label='Edit'>" +
-                                "<svg class='w-5 h-5' aria-hidden='true' fill='currentColor'" +
-                                "viewBox='0 0 20 20'>" +
-                                "<path fill-rule='evenodd'" +
-                                "d='M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z'>" +
-                                "</path>" +
-                                "</svg>" +
-                                "</button>" +
+                                // "<button id='edit' onclick='edit(" + row['id'] + ")'" +
+                                // "class='inline-flex items-center justify-center  bg-yellow-700 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-yellow-400 focus:outline-none focus:bg-yellow-700 focus:ring focus:ring-red-200 active:bg-yellow-700 readonly:opacity-25 transition' aria-label='Edit'>" +
+                                // "<svg class='w-5 h-5' aria-hidden='true' fill='currentColor'" +
+                                // "viewBox='0 0 20 20'>" +
+                                // "<path fill-rule='evenodd'" +
+                                // "d='M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z'>" +
+                                // "</path>" +
+                                // "</svg>" +
+                                // "</button>" +
+                                
                                 "<button onclick='deletes(" + row['id'] + ")'" +
                                 "class='inline-flex items-center justify-center  bg-red-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 active:bg-red-600 readonly:opacity-25 transition' aria-label='Delete'>" +
                                 "<svg class='w-5 h-5' aria-hidden='true' fill='currentColor'" +
@@ -1702,18 +1703,18 @@
                                 "</svg>" +
                                 "</button>" +
 
-                                "<button onclick='view(" + row['id'] + ")'" +
-                                "class='inline-flex items-center justify-center  bg-blue-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 active:bg-red-600 disabled:opacity-25 transition'>" +
-                                "<svg class='w-5 h-5' fill='none' stroke='currentColor'" +
-                                "stroke-width='1.5' viewBox='0 0 24 24'" +
-                                "xmlns='http://www.w3.org/2000/svg' aria-hidden='true'>" +
-                                "<path stroke-linecap='round' stroke-linejoin='round'" +
-                                "d='M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z'>" +
-                                "</path>" +
-                                "<path stroke-linecap='round' stroke-linejoin='round'" +
-                                "d='M15 12a3 3 0 11-6 0 3 3 0 016 0z'></path>" +
-                                "</svg>" +
-                                "</button>" +
+                                // "<button onclick='view(" + row['id'] + ")'" +
+                                // "class='inline-flex items-center justify-center  bg-blue-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 active:bg-red-600 disabled:opacity-25 transition'>" +
+                                // "<svg class='w-5 h-5' fill='none' stroke='currentColor'" +
+                                // "stroke-width='1.5' viewBox='0 0 24 24'" +
+                                // "xmlns='http://www.w3.org/2000/svg' aria-hidden='true'>" +
+                                // "<path stroke-linecap='round' stroke-linejoin='round'" +
+                                // "d='M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z'>" +
+                                // "</path>" +
+                                // "<path stroke-linecap='round' stroke-linejoin='round'" +
+                                // "d='M15 12a3 3 0 11-6 0 3 3 0 016 0z'></path>" +
+                                // "</svg>" +
+                                // "</button>" +
 
                                 "</div>";
                         },
@@ -1816,10 +1817,10 @@
                         data: 'cooperation_contract',
                         "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
                     },
-                    {
-                        data: 'entity_name',
-                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
-                    },
+                    // {
+                    //     data: 'entity_name',
+                    //     "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    // },
                     {
                         data: 'secure_policy',
                         "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
@@ -1912,6 +1913,14 @@
             window.open('http://127.0.0.1:8000/pdfs/pdf-contracts/' + id, '_blank')
         }
 
+        var passengers = [];
+        var totalPassengers = [];
+        var i = 1;
+        var total = [];
+        total.push(i);
+        var globalv = false;
+
+
         function passenger() {
             swal.fire({
                 title: '<header class="dark:bg-gray-800 flex justify-center border-b-fuchsia-800 border-b">' +
@@ -1925,6 +1934,7 @@
 
                     '<div class="flex space-x-4 clonar">' +
                     '<div class="w-6-12 ">' +
+                    '<span class="mr10 p-1 inline-flex items-center justify-center  bg-red-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 active:bg-red-600 disabled:opacity-25 transition">1</span>' + 
                     '<label class=" text-gray-700 dark:text-gray-400">Documento' +
                     '<input id="inputDRow1" class=" block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" placeholder="Documento pasajero" type="text" name="supplier_name" />' +
                     '</div>' +
@@ -1938,44 +1948,57 @@
                     '</button>' +
                     '</div>' +
                     '</div>' +
-
                     '<div id="newInput"></div>' +
-
-                    // '<div class="flex items-center space-x-4 text-sm pruebapers">' +
-                    // '<button onclick="savePeople()" class="pruebapersb inline-flex items-center justify-center  bg-emerald-700 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-sky-400 focus:outline-none focus:bg-emerald-700 focus:ring focus:ring-red-200 active:bg-emerald-700 readonly:opacity-25 transition">' +
-                    // 'Guardar' +
-                    // '</button>' +
-                    // '</div>' +
-
                     '</div>',
                 // '</div>' ,
                 showConfirmButton: true,
-                showCancelButton: true,
+                showCancelButton: false,
                 confirmButtonText: 'Save',
                 // denyButtonText: `Don't save`,
                 allowOutsideClick: false,
                 willClose: function() {
-                    console.log('este es el valor de i ' + i);
+
+                    // console.log('este es el valor de i ' + i);
                     savePeople();
+
                 }
             }).then((result) => {
-                if (result.isConfirmed) {
-                    if (i > 1) {
-                        swal.fire('', 'Los pasajeros fueron agtregados al listado', 'success');
-                    } else {
-                        swal.fire('', 'El pasajero fue agtregado al listado', 'success');
-                    }
+                if (!result.isConfirmed) {
 
-                    // savePeople();
-                } else if (result.isDenied) {
                     // swal.fire('Changes are not saved', '', 'info')
+                    
+
+                } else {
+
+                    if (globalv == true) {
+                        // passengers.length = 0;
+                        swal.fire('', 'Los campos vacios no fueron agregados al listado', 'error');
+                    // console.log('entro al no');
+                    }
+                    
+
+                    if (globalv == false) {
+                        
+                        if (i != 1) {
+                            swal.fire('', 'Los pasajeros fueron agregados al listado', 'success');
+                        } else {
+                            swal.fire('', 'El pasajero fue agtregado al listado', 'success');
+                        }
+                        @this.set('passengers', passengers);
+
+                        // totalPassengers.push(passengers);
+
+                        // console.log('entro al si');
+                        // passengers.length = 0;
+                    }
+                    
                 }
+                // console.log('array 1: ' + passengers);
+                // console.log('array total: ' + totalPassengers);
+                // Livewire.emit('passenger', [passengers]);
             })
         }
 
-        var i = 1;
-        var total = [];
-        total.push(i);
 
         function add() {
             i++;
@@ -1983,6 +2006,7 @@
             // alert(total);
             $('#newInput').append('<div class="flex space-x-4" id="newRow' + i + '">' +
                 '<div class="w-6-12 ">' +
+                    '<span class="mr10 p-1 inline-flex items-center justify-center  bg-red-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 active:bg-red-600 disabled:opacity-25 transition">'+ i +'</span>' + 
                 '<label class=" text-gray-700 dark:text-gray-400">Documento' +
                 '<input id="inputDRow' + i +
                 '" class=" block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" placeholder="Documento pasajero" type="text" name="supplier_name" />' +
@@ -2006,22 +2030,29 @@
             total = total.filter(function(i) {
                 return i !== id
             });
-            // alert(total);
         }
-        var passengers = [];
 
         function savePeople() {
 
             for (let index = 0; index < total.length; index++) {
-                passengers.push({
-                    documento: document.getElementById('inputDRow' + total[index] + '').value,
-                    nombreC: document.getElementById('inputNRow' + total[index] + '').value
-                });
+                var inputDRow = document.getElementById('inputDRow' + total[index] + '').value;
+                var inputNRow = document.getElementById('inputNRow' + total[index] + '').value;
+                // console.log(total[index]);
+                // console.log(inputDRow);
+                if (inputDRow != '' && inputNRow != '') {
+                    passengers.push({
+                        documento: document.getElementById('inputDRow' + total[index] + '').value,
+                        nombreC: document.getElementById('inputNRow' + total[index] + '').value
+                    });
+                    globalv = false;
+                }else {
+                    globalv = true;
+                }
             }
             // passengers.push({documento: document.getElementById('inputDRow2').value, nombreC: document.getElementById('inputNRow2').value});
             // alert(passengers[2].documento + ' - ' + passengers[2].nombreC);
-
-            Livewire.emit('passenger', [passengers]);
+            // @this.set('pps', document.getElementById('inputDRow1').value);
+            // Livewire.emit('passenger', [passengers]);
             i = 1;
             total = [];
             total.push(i);
@@ -2634,7 +2665,8 @@
             // console.log(current_active_step_a);
             $('.f1 fieldset').fadeOut(400, function() {
                 // change icons
-                $('#frmUser').trigger("reset");
+                $('#frm-contracts').trigger("reset");
+                
 
                 var Inputd = ['InputDocNit', 'InputDocAttachContract', 'InputDocempowerment', 'InputDocrnt',
                     'InputDocCamaraComercio', 'InputDocResolution', 'InputDocRUT'
@@ -2776,130 +2808,254 @@
 
 
         var camps = [
-        /*1:*/ 'type_contract',
-        /*2:*/ 'contract_with',
-        /*3:*/ 'identification',
-        /*4:*/ 'labelContractDocument',
-        /*5:*/ 'contract_document',
-        /*6:*/ 'labelContractingName',
-        /*7:*/ 'contracting_name',
-        /*8:*/ 'labelExpeditionIdentificationcard',
-        /*9:*/ 'expedition_identificationcard',
-        /*10:*/ 'labelContractingDirection',
-        /*11:*/ 'contracting_direction',
-        /*12:*/ 'labelContractingPhone',
-        /*13:*/ 'contracting_phone',
-        /*14:*/ 'labelSchoolName',
-        /*15:*/ 'school_name',
-        /*16:*/ 'labelAddressSchool',
-        /*17:*/ 'address_school',
-        /*18:*/ 'labelVehicle',
-        /*19:*/ 'vehicle',
-        /*20:*/ 'labelIdentificationLegalRepresentative',
-        /*21:*/ 'identification_legal_representative',
-        /*22:*/ 'labelIdentificationcardRepresentLegal',
-        /*23:*/ 'identificationcard_represent_legal',
-        /*24:*/ 'labelLegalRepresentative',
-        /*25:*/ 'legal_representative',
-        /*26:*/ 'labelLegalRepresentativeExpeditionIdentificationcard',
-        /*27:*/ 'legal_representative_expedition_identificationcard',
-        /*28:*/ 'labelIdentificationRepresentativeGroup',
-        /*29:*/ 'identification_representative_group',
-        /*30:*/ 'labelIdentificationcardRepresentativeGroup',
-        /*31:*/ 'identificationcard_representative_group',
-        /*32:*/ 'labelGroupRepresentativeName',
-        /*33:*/ 'group_representative_name',
-        /*34:*/ 'labelDateofexpeditionRepresentativeGroup',
-        /*35:*/ 'dateofexpedition_representative_group',
-        /*36:*/ 'labelRouteTrip',
-        /*37:*/ 'route_trip_contract',
-        /*38:*/ 'labelQuantityVehicle',
-        /*39:*/ 'quantity_vehicle',
-        /*40:*/ 'labelPassengerQuantity',
-        /*41:*/ 'passenger_quantity',
-        /*42:*/ 'labelSignaturePlace',
-        /*43:*/ 'signature_place',
-        /*44:*/ 'labelSigningDate',
-        /*45:*/ 'contract_signing_date',
-        /*46:*/ 'labelTipePay',
-        /*47:*/ 'tipe_pay',
-        /*48:*/ 'labelContractValue',
-        /*49:*/ 'contract_value',
-        /*50:*/ 'fieldset1Buttons',
-        /*51:*/ 'previous2',
-        /*52:*/ 'previous3',
-        /*53:*/ 'labelIdentification',
-        /*54:*/ 'divEstudiante',
-        /*55:*/ 'labelEstudiante',
-        /*56:*/ 'Student_name',
-        /*57:*/ 'labelIdentificationcardEstudent',
-        /*58:*/ 'identificationcard_Estudent',
-        /*59:*/ 'labelGrade',
-        /*60:*/ 'grade_student',
-        /*61:*/ 'labelFamilyRelationship',
-        /*62:*/ 'family_relationship',
-        /*63:*/ 'labelStartDay',
-        /*64:*/ 'start_day',
-        /*65:*/ 'labelEndDay',
-        /*66:*/ 'End_day',
-        /*67:*/ 'divWhoReceives',
-        /*68:*/ 'labelWhoReceives',
-        /*69:*/ 'who_receives',
-        /*70:*/ 'divDateStartContract',
-        /*71:*/ 'labelDateStartContract',
-        /*72:*/ 'date_start_contract',
-        /*73:*/ 'divContractEndDate',
-        /*74:*/ 'labelContractEndDate',
-        /*75:*/ 'contract_end_date',
-        /*76:*/ 'Docrnt',
-        /*77:*/ 'Docempowerment',
-        /*78:*/ 'DocRUT',
-        /*79:*/ 'DocResolution',
-        /*80:*/ 'DocCamaraComercio',
-        /*81:*/ 'labelMunicipality',
-        /*82:*/ 'municipality',
-        /*83:*/ 'labelplate',
-        /*84:*/ 'plate',
-        /*85:*/ 'bpassenger',
-        /*86:*/ 'divPassengerQuantity',
-        /*87:*/ 'divQuantityVehicle',
-        /*88:*/ 'divFamilyRelationship',
-        /*89:*/ 'divSignaturePlace',
-        /*90:*/ 'labelbrand',
-        /*91:*/ 'divExit',
-        /*92:*/ 'labelExit',
-        /*93:*/ 'exit',
-        /*94:*/ 'divArrival',
-        /*95:*/ 'labelArrival',
-        /*96:*/ 'arrival',
-        /*97:*/ 'divReturn',
-        /*98:*/ 'labelReturn',
-        /*99:*/ 'return',
-        /*100:*/ 'brand',
-        /*101:*/ 'labelline',
-        /*102:*/ 'line',
-        /*103:*/ 'labelmodel',
-        /*104:*/ 'model',
-        /*105:*/ 'labelcylindercapacity',
-        /*106:*/ 'cylinder_capacity',
-        /*107:*/ 'labellegalbond',
-        /*108:*/ 'legal_bond',
-        /*109:*/ 'labelfuel',
-        /*110:*/ 'fuel',
-        /*111:*/ 'labelvehicleclass',
-        /*112:*/ 'vehicle_class',
-        /*113:*/ 'labelenginenumber',
-        /*114:*/ 'engine_number',
-        /*115:*/ 'labelchassisnumber',
-        /*116:*/ 'chassis_number',
-        /*117:*/ 'labelability',
-        /*118:*/ 'ability',
-        /*119:*/ 'firstButtons',
-        /*120:*/ 'labelIdentification',
-        /*121:*/ 'healthWith',
-        /*122:*/ 'divhealthWith',
-        /*123:*/ 'divContract_with',
-        /*124:*/ 'DocAttachContract',
+            /*1:*/
+            'type_contract',
+            /*2:*/
+            'contract_with',
+            /*3:*/
+            'identification',
+            /*4:*/
+            'labelContractDocument',
+            /*5:*/
+            'contract_document',
+            /*6:*/
+            'labelContractingName',
+            /*7:*/
+            'contracting_name',
+            /*8:*/
+            'labelExpeditionIdentificationcard',
+            /*9:*/
+            'expedition_identificationcard',
+            /*10:*/
+            'labelContractingDirection',
+            /*11:*/
+            'contracting_direction',
+            /*12:*/
+            'labelContractingPhone',
+            /*13:*/
+            'contracting_phone',
+            /*14:*/
+            'labelSchoolName',
+            /*15:*/
+            'school_name',
+            /*16:*/
+            'labelAddressSchool',
+            /*17:*/
+            'address_school',
+            /*18:*/
+            'labelVehicle',
+            /*19:*/
+            'vehicle',
+            /*20:*/
+            'labelIdentificationLegalRepresentative',
+            /*21:*/
+            'identification_legal_representative',
+            /*22:*/
+            'labelIdentificationcardRepresentLegal',
+            /*23:*/
+            'identificationcard_represent_legal',
+            /*24:*/
+            'labelLegalRepresentative',
+            /*25:*/
+            'legal_representative',
+            /*26:*/
+            'labelLegalRepresentativeExpeditionIdentificationcard',
+            /*27:*/
+            'legal_representative_expedition_identificationcard',
+            /*28:*/
+            'labelIdentificationRepresentativeGroup',
+            /*29:*/
+            'identification_representative_group',
+            /*30:*/
+            'labelIdentificationcardRepresentativeGroup',
+            /*31:*/
+            'identificationcard_representative_group',
+            /*32:*/
+            'labelGroupRepresentativeName',
+            /*33:*/
+            'group_representative_name',
+            /*34:*/
+            'labelDateofexpeditionRepresentativeGroup',
+            /*35:*/
+            'dateofexpedition_representative_group',
+            /*36:*/
+            'labelRouteTrip',
+            /*37:*/
+            'route_trip_contract',
+            /*38:*/
+            'labelQuantityVehicle',
+            /*39:*/
+            'quantity_vehicle',
+            /*40:*/
+            'labelPassengerQuantity',
+            /*41:*/
+            'passenger_quantity',
+            /*42:*/
+            'labelSignaturePlace',
+            /*43:*/
+            'signature_place',
+            /*44:*/
+            'labelSigningDate',
+            /*45:*/
+            'contract_signing_date',
+            /*46:*/
+            'labelTipePay',
+            /*47:*/
+            'tipe_pay',
+            /*48:*/
+            'labelContractValue',
+            /*49:*/
+            'contract_value',
+            /*50:*/
+            'fieldset1Buttons',
+            /*51:*/
+            'previous2',
+            /*52:*/
+            'previous3',
+            /*53:*/
+            'labelIdentification',
+            /*54:*/
+            'divEstudiante',
+            /*55:*/
+            'labelEstudiante',
+            /*56:*/
+            'Student_name',
+            /*57:*/
+            'labelIdentificationcardEstudent',
+            /*58:*/
+            'identificationcard_Estudent',
+            /*59:*/
+            'labelGrade',
+            /*60:*/
+            'grade_student',
+            /*61:*/
+            'labelFamilyRelationship',
+            /*62:*/
+            'family_relationship',
+            /*63:*/
+            'labelStartDay',
+            /*64:*/
+            'start_day',
+            /*65:*/
+            'labelEndDay',
+            /*66:*/
+            'End_day',
+            /*67:*/
+            'divWhoReceives',
+            /*68:*/
+            'labelWhoReceives',
+            /*69:*/
+            'who_receives',
+            /*70:*/
+            'divDateStartContract',
+            /*71:*/
+            'labelDateStartContract',
+            /*72:*/
+            'date_start_contract',
+            /*73:*/
+            'divContractEndDate',
+            /*74:*/
+            'labelContractEndDate',
+            /*75:*/
+            'contract_end_date',
+            /*76:*/
+            'Docrnt',
+            /*77:*/
+            'Docempowerment',
+            /*78:*/
+            'DocRUT',
+            /*79:*/
+            'DocResolution',
+            /*80:*/
+            'DocCamaraComercio',
+            /*81:*/
+            'labelMunicipality',
+            /*82:*/
+            'municipality',
+            /*83:*/
+            'labelplate',
+            /*84:*/
+            'plate',
+            /*85:*/
+            'bpassenger',
+            /*86:*/
+            'divPassengerQuantity',
+            /*87:*/
+            'divQuantityVehicle',
+            /*88:*/
+            'divFamilyRelationship',
+            /*89:*/
+            'divSignaturePlace',
+            /*90:*/
+            'labelbrand',
+            /*91:*/
+            'divExit',
+            /*92:*/
+            'labelExit',
+            /*93:*/
+            'exit',
+            /*94:*/
+            'divArrival',
+            /*95:*/
+            'labelArrival',
+            /*96:*/
+            'arrival',
+            /*97:*/
+            'divReturn',
+            /*98:*/
+            'labelReturn',
+            /*99:*/
+            'return',
+            /*100:*/
+            'brand',
+            /*101:*/
+            'labelline',
+            /*102:*/
+            'line',
+            /*103:*/
+            'labelmodel',
+            /*104:*/
+            'model',
+            /*105:*/
+            'labelcylindercapacity',
+            /*106:*/
+            'cylinder_capacity',
+            /*107:*/
+            'labellegalbond',
+            /*108:*/
+            'legal_bond',
+            /*109:*/
+            'labelfuel',
+            /*110:*/
+            'fuel',
+            /*111:*/
+            'labelvehicleclass',
+            /*112:*/
+            'vehicle_class',
+            /*113:*/
+            'labelenginenumber',
+            /*114:*/
+            'engine_number',
+            /*115:*/
+            'labelchassisnumber',
+            /*116:*/
+            'chassis_number',
+            /*117:*/
+            'labelability',
+            /*118:*/
+            'ability',
+            /*119:*/
+            'firstButtons',
+            /*120:*/
+            'labelIdentification',
+            /*121:*/
+            'healthWith',
+            /*122:*/
+            'divhealthWith',
+            /*123:*/
+            'divContract_with',
+            /*124:*/
+            'DocAttachContract',
         ];
 
         clave = [];

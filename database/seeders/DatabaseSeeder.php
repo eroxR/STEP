@@ -58,10 +58,10 @@ class DatabaseSeeder extends Seeder
         
         $this->call(UserSeeder::class);
         
-         driver::factory(85)->create();
-         vehicle::factory(65)->create();
-         contract::factory(100)->create();
-         permit::factory(170)->create();
-         passenger::factory(200)->create();
+        //  driver::factory(85)->create();
+        //  vehicle::factory(65)->create();
+        //  contract::factory(100)->create();
+        //  permit::factory(170)->create();
+        //  passenger::factory(200)->create();
     }
 }

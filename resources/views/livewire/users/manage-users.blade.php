@@ -455,8 +455,19 @@
             <header class="flex justify-center border-b-fuchsia-800 border-b">
                 <!-- Modal title -->
                 <p class="justify-start mb-2 text-lg font-semibold text-gray-700 dark:text-gray-300">
-                <h1 class="text-black dark:text-white text-4xl1">{{ __('Creating new user') }}<span id="typed2"
-                        class="typed2">.</span>
+                <h1 class="text-black dark:text-white text-4xl1">{{ __('Creating new user') }}
+                    <span id="typ0" class="Inactive">Cliente</span>
+                    <span id="typ1" class="Inactive">Proveedor</span>
+                    <span id="typ2" class="Inactive">Vinculado</span>
+                    <span id="typ3" class="Inactive">Monitor(a)</span>
+                    <span id="typ4" class="Inactive">Coodinador(a) Operativo</span>
+                    <span id="typ5" class="Inactive">Coordinador(a) de Recursos</span>
+                    <span id="typ6" class="Inactive">Coordinador(a) Compras y Suministros</span>
+                    <span id="typ7" class="Inactive">Conductor(a)</span>
+                    <span id="typ8" class="Inactive">Coordinador(a) Sistemas de Gestión</span>
+                    <span id="typ9" class="Inactive">Gerente General</span>
+                    <span id="typ10" class="Inactive">Auditor(a) Interno</span>
+                    <span id="typed2" class="typed2">.</span>
                     <span id="typed3" class="typed3">.</span>
                     <span id="typed4" class="typed4">.</span>
                     <span id="typed5" class="typed5">.</span>
@@ -474,6 +485,7 @@
             </header>
             <!-- Modal body -->
             <div class="mt-4 mb-4">
+
                 <!-- Modal description -->
 
                 <form role="form" action="" method="post" id="frmUser"
@@ -578,6 +590,9 @@
                                     <strong class="fa-stack-2x -ml-1 numcolor" id="step6">
                                         6
                                     </strong>
+                                    <strong class="Inactive fa-stack-1x -ml-1 numcolor" id="finalUser2">
+                                        FIN
+                                    </strong>
                                 </span>
                             </div>
                             <p id="pass6">Paso 6</p>
@@ -586,36 +601,33 @@
                             <div class="f1-step-icon">
 
                                 <!-- Crea un icono envuelto por la clase fa-stack -->
-                                <span class="fa-stack  ">
+                                <span class="fa-stack">
                                     <!-- El icono que envolverá el número -->
                                     <span class="fa fa-circle-o fa-stack-2x"></span>
                                     <!-- un elemento strong con el contenido personalizado, en este caso un número -->
                                     <strong class="fa-stack-2x -ml-1 numcolor" id="step7">
                                         7
                                     </strong>
-                                    <strong class="Inactive fa-stack-1x -ml-1 numcolor" id="finalUser2">
-                                        FIN
-                                    </strong>
                                 </span>
                             </div>
                             <p id="pass7">Paso 7</p>
                             <p class="Inactive" id="passfinalUser2">fin</p>
                         </div>
-                        <div id="f1-step-user8" class="f1-step-user ">
-                            <div class="f1-step-icon">
+                        {{-- <div id="f1-step-user8" class="f1-step-user "> --}}
+                        {{-- <div class="f1-step-icon"> --}}
 
-                                <!-- Crea un icono envuelto por la clase fa-stack -->
-                                <span class="fa-stack  ">
-                                    <!-- El icono que envolverá el número -->
-                                    <span class="fa fa-circle-o fa-stack-2x"></span>
-                                    <!-- un elemento strong con el contenido personalizado, en este caso un número -->
-                                    <strong class="fa-stack-2x -ml-1 numcolor" id="step8">
-                                        8
-                                    </strong>
-                                </span>
-                            </div>
-                            <p id="pass8">Paso 8</p>
-                        </div>
+                        <!-- Crea un icono envuelto por la clase fa-stack -->
+                        {{-- <span class="fa-stack  "> --}}
+                        <!-- El icono que envolverá el número -->
+                        {{-- <span class="fa fa-circle-o fa-stack-2x"></span> --}}
+                        <!-- un elemento strong con el contenido personalizado, en este caso un número -->
+                        {{-- <strong class="fa-stack-2x -ml-1 numcolor" id="step8"> --}}
+                        {{-- 8 --}}
+                        {{-- </strong> --}}
+                        {{-- </span> --}}
+                        {{-- </div> --}}
+                        {{-- <p id="pass8">Paso 8</p> --}}
+                        {{-- </div> --}}
                         {{-- <div id="f1-step-user9" class="f1-step-user ">
                             <div class="f1-step-icon">
 
@@ -631,7 +643,7 @@
                             </div>
                             <p id="pass9">Paso 9</p>
                         </div> --}}
-                        <div id="f1-step-user9" class="f1-step-user ">
+                        <div id="f1-step-user8" class="f1-step-user ">
                             <div class="f1-step-icon">
 
                                 <!-- Crea un icono envuelto por la clase fa-stack -->
@@ -639,12 +651,12 @@
                                     <!-- El icono que envolverá el número -->
                                     <span class="fa fa-circle-o fa-stack-2x"></span>
                                     <!-- un elemento strong con el contenido personalizado, en este caso un número -->
-                                    <strong class="fa-stack-1x -ml-1 numcolor" id="step9">
+                                    <strong class="fa-stack-1x -ml-1 numcolor" id="step8">
                                         FIN
                                     </strong>
                                 </span>
                             </div>
-                            <p id="pass9">Fin</p>
+                            <p id="pass8">Fin</p>
                         </div>
                     </div>
 
@@ -669,7 +681,7 @@
                                         <option value="1">Cliente</option>
                                         <option value="2">Empleado</option>
                                         <option value="3">Proveedor</option>
-                                        <option value="4" selected>Vinculado</option>
+                                        <option value="4">Vinculado</option>
                                     </select>
 
                                 </div>
@@ -724,7 +736,7 @@
                                         class="Inactive text-gray-700 dark:text-gray-400">{{ __('identificationcard') }}</label>
 
                                     <input
-                                        class="Inactive block w90 py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                        class="Inactive block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                                         placeholder="documento" type="text" id="identificationcard"
                                         maxlength="12" name="identificationcard"
                                         wire:model.defer="identificationcard"
@@ -1097,7 +1109,6 @@
                         </fieldset>
                         <!--fin del paso 2 -->
 
-
                         <!--paso 3 -->
                         <fieldset wire:ignore>
 
@@ -1160,20 +1171,55 @@
                                     <label id="labelShirtSize"
                                         class="text-gray-700 dark:text-gray-400">{{ __('shirt size') }}</label>
 
-                                    <input
+                                    {{-- <input
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                                         placeholder="Talla de camisa" type="text" id="shirt_size"
-                                        name="shirt_size" maxlength="5" wire:model.defer="shirt_size" />
+                                        name="shirt_size" maxlength="3" wire:model.defer="shirt_size" /> --}}
+
+                                    <select wire:model="shirt_size" id="shirt_size" name="shirt_size"
+                                        wire:model.defer="shirt_size"
+                                        class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
+                                        <option value="0">Selecciona la Talla de Camisa</option>
+                                        <option value="1">Talla XS</option>
+                                        <option value="2">Talla S</option>
+                                        <option value="3">Talla M</option>
+                                        <option value="4">Talla L</option>
+                                        <option value="5">Talla XL</option>
+                                        <option value="6">Talla XXL</option>
+                                    </select>
+
+
                                 </div>
 
                                 <div class="w-1-2">
                                     <label id="labelShoeSize"
                                         class="text-gray-700 dark:text-gray-400">{{ __('shoe size') }}</label>
 
-                                    <input
+                                    {{-- <input
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                                         placeholder="calzado del zapato" type="text" id="shoe_size"
-                                        name="shoe_size" maxlength="5" wire:model.defer="shoe_size" />
+                                        name="shoe_size" maxlength="5" wire:model.defer="shoe_size" /> --}}
+
+                                    <select wire:model="shoe_size" id="shoe_size" name="shoe_size"
+                                        wire:model.defer="shoe_size"
+                                        class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
+                                        <option value="0">Selecciona la Talla de Zapato</option>
+                                        <option value="1">Talla 21 - 22</option>
+                                        <option value="2">Talla 23 - 24</option>
+                                        <option value="3">Talla 25 - 26</option>
+                                        <option value="4">Talla 27 - 28</option>
+                                        <option value="5">Talla 29 - 30</option>
+                                        <option value="6">Talla 31 - 32</option>
+                                        <option value="7">Talla 33 - 34</option>
+                                        <option value="8">Talla 35 - 36</option>
+                                        <option value="9">Talla 37 - 38</option>
+                                        <option value="10">Talla 39 - 40</option>
+                                        <option value="11">Talla 41 - 42</option>
+                                        <option value="12">Talla 43 - 44</option>
+                                        <option value="13">Talla 45 - 46</option>
+                                        <option value="14">Talla 47 - 48</option>
+                                        <option value="15">Talla 49 - 50</option>
+                                    </select>
                                 </div>
 
                             </div>
@@ -1282,7 +1328,7 @@
                                     <select wire:model.defer="education_level" id="education_level"
                                         name="education_level"
                                         class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
-                                        <option value="0">Selecciona el tipo de contrato</option>
+                                        <option value="0">Selecciona el Nivel educativo</option>
 
                                         @foreach ($educationLevels as $educationLevel)
                                             <option value="{{ $educationLevel->id }}">
@@ -1309,7 +1355,7 @@
 
                                 <div class="w-6-12">
                                     <label id="labelLastYear"
-                                        class="text-gray-700 dark:text-gray-400">{{ __('last year') }}</label>
+                                        class="text-gray-700 dark:text-gray-400">{{ __('last year study') }}</label>
 
                                     <input
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -1337,17 +1383,18 @@
                                         class="text-gray-700 dark:text-gray-400">{{ __('obtained title') }}</label>
 
                                     <input
-                                        class="block w90 py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                                         placeholder="titulo obtenido" type="text" id="obtained_title"
-                                        name="obtained_title" wire:model.defer="obtained_title" />
+                                        name="obtained_title" wire:model.defer="obtained_title"
+                                        onchange="documentOn('obtained_title','docObtainedTitle')" />
 
-                                    <span id="docEps" class="upload-ico fas fa-file-upload icon-green"
-                                        aria-hidden="true" fill="none" stroke-linecap="round"
-                                        stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
-                                        stroke="currentColor">
-                                        <input id="InputDocEps" wire:model.defer="DocEps"
-                                            onchange="documentAbove('InputDocEps','docEps')" class="upload-input"
-                                            type="file">
+                                    <span id="docObtainedTitle"
+                                        class="Inactive upload-ico fas fa-file-upload icon-green" aria-hidden="true"
+                                        fill="none" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                                        <input id="InputDocObtainedTitle" wire:model.defer="DocObtainedTitle"
+                                            onchange="documentAbove('InputDocObtainedTitle','docObtainedTitle')"
+                                            class="upload-input" type="file">
                                     </span>
                                 </div>
 
@@ -1356,18 +1403,19 @@
                                         class="text-gray-700 dark:text-gray-400">{{ __('last company name') }}</label>
 
                                     <input
-                                        class="block w90 py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                                         placeholder="Ultima empresa donde trabajaste" type="text"
                                         id="last_company_name" name="last_company_name"
-                                        wire:model.defer="last_company_name" />
+                                        wire:model.defer="last_company_name"
+                                        onchange="documentOn('last_company_name','docLastCompanyName')" />
 
-                                    <span id="docEps" class="upload-ico fas fa-file-upload icon-green"
-                                        aria-hidden="true" fill="none" stroke-linecap="round"
-                                        stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
-                                        stroke="currentColor">
-                                        <input id="InputDocEps" wire:model.defer="DocEps"
-                                            onchange="documentAbove('InputDocEps','docEps')" class="upload-input"
-                                            type="file">
+                                    <span id="docLastCompanyName"
+                                        class="Inactive upload-ico fas fa-file-upload icon-green" aria-hidden="true"
+                                        fill="none" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                                        <input id="InputDocLastCompanyName" wire:model.defer="DocLastCompanyName"
+                                            onchange="documentAbove('InputDocLastCompanyName','docLastCompanyName')"
+                                            class="upload-input" type="file">
                                     </span>
                                 </div>
 
@@ -1392,7 +1440,7 @@
 
                                     <input readonly
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                        placeholder="fecha de ingreso conrato de la ultima empresa" type="text"
+                                        placeholder="fecha de ingreso contrato de la ultima empresa" type="text"
                                         id="start_date_last_company" name="start_date_last_company"
                                         wire:model.defer="start_date_last_company"
                                         onchange="fechasSet('start_date_last_company')" />
@@ -1477,7 +1525,7 @@
 
                                     <select wire:model.defer="relationship" id="relationship" name="relationship"
                                         class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
-                                        <option value="0">Selecciona la frelación con el familiar</option>
+                                        <option value="0">Selecciona la relación con el familiar</option>
 
                                         @foreach ($relationships as $relationship)
                                             <option value="{{ $relationship->id }}">
@@ -1674,11 +1722,12 @@
 
                                     <input readonly
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                        placeholder="Fecha documento de cesantias" type="text" id="date_layoffs"
-                                        name="date_layoffs" wire:model.defer="date_layoffs"
+                                        placeholder="Fecha documento de cesantias" type="text"
+                                        id="date_layoffs" name="date_layoffs" wire:model.defer="date_layoffs"
                                         onchange="fechasSet('date_layoffs'),documentOn('date_layoffs','docLayoffs')" />
 
-                                    <span id="docLayoffs" class="Inactive upload-ico33 fas fa-file-upload icon-green"
+                                    <span id="docLayoffs"
+                                        class="Inactive upload-ico33 fas fa-file-upload icon-green"
                                         aria-hidden="true" fill="none" stroke-linecap="round"
                                         stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
                                         stroke="currentColor">
@@ -1756,9 +1805,10 @@
                                         onchange="fechasSet('date_compensationbox'),documentOn('date_compensationbox','docCompensationbox')" />
 
                                     <span id="docCompensationbox"
-                                        class="Inactive upload-ico fas fa-file-upload icon-green" aria-hidden="true"
-                                        fill="none" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                                        class="Inactive upload-ico33 fas fa-file-upload icon-green"
+                                        aria-hidden="true" fill="none" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
+                                        stroke="currentColor">
                                         <input id="InputDocCompensationbox" wire:model.defer="DocCompensationbox"
                                             onchange="documentAbove('InputDocCompensationbox','docCompensationbox')"
                                             class="upload-input" type="file">
@@ -1766,17 +1816,15 @@
                                 </div>
 
                                 <div class="w-1-3">
-                                    <label id="labelEps" class="text-gray-700 dark:text-gray-400">EPS</label>
+                                    <label id="labelBeneficiary"
+                                        class="text-gray-700 dark:text-gray-400">{{ __('beneficiary') }}</label>
 
-                                    <select wire:model.defer="eps" id="eps" name="eps"
+                                    <select wire:model.defer="beneficiary" id="beneficiary" name="beneficiary"
                                         class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
-                                        <option value="0">Selecciona la eps del usuario</option>
-
-                                        @foreach ($epses as $eps)
-                                            <option value="{{ $eps->id }}">
-                                                {{ $eps->description_eps }}</option>
-                                        @endforeach
-
+                                        <option value="0">Selecciona el beneficiario del usuario</option>
+                                        <option value="1">Adulto mayor</option>
+                                        <option value="2">Conyugue</option>
+                                        <option value="3">Hijo o Hijastro</option>
                                     </select>
                                 </div>
 
@@ -1800,6 +1848,68 @@
                         <!--paso 7 -->
                         <fieldset wire:ignore>
 
+                            <div class="flex space-x-4">
+
+                                <div class="w-6-12">
+                                    <label id="labelDocumentBeneficiary"
+                                        class=" text-gray-700 dark:text-gray-400">{{ __('document beneficiary') }}</label>
+                                    <input
+                                        class=" block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                        placeholder="documento del beneficiario" type="text"
+                                        id="documentBeneficiary" name="documentBeneficiary"
+                                        wire:model.defer="documentBeneficiary"
+                                        onchange="documentOn('documentBeneficiary','docBeneficiary')" />
+
+                                    <span id="docBeneficiary"
+                                        class="Inactive upload-ico fas fa-file-upload icon-green" aria-hidden="true"
+                                        fill="none" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                                        <input id="InputDocBeneficiary" wire:model.defer="DocBeneficiary"
+                                            onchange="documentAbove('InputDocBeneficiary','docBeneficiary')"
+                                            class="upload-input" type="file">
+                                    </span>
+                                </div>
+
+
+                                <div class="w-6-12" id="divNameBeneficiary">
+                                    <label id="labelNameBeneficiary"
+                                        class=" text-gray-700 dark:text-gray-400">{{ __('name beneficiary') }}</label>
+
+                                    <input
+                                        class=" block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                        placeholder="nombre del beneficiario" type="text" id="nameBeneficiary"
+                                        name="nameBeneficiary" wire:model.defer="nameBeneficiary"
+                                        onchange="beneficiaryChild()" />
+
+                                    <span id="docNameBeneficiary"
+                                        class="Inactive upload-ico fas fa-file-upload icon-green" aria-hidden="true"
+                                        fill="none" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                                        <input id="InputDocNameBeneficiary" wire:model.defer="DocNameBeneficiary"
+                                            onchange="documentAbove('InputDocNameBeneficiary','docNameBeneficiary')"
+                                            class="upload-input" type="file">
+                                    </span>
+                                </div>
+
+                                {{-- <div class="w-1-3">
+                                    <label id="labelRelationshipBeneficiary"
+                                        class="text-gray-700 dark:text-gray-400">{{ __('relationship beneficiary') }}</label>
+
+                                    <select wire:model.defer="relationshipBeneficiary" id="relationshipBeneficiary"
+                                        name="relationshipBeneficiary"
+                                        class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
+                                        <option value="0">Selecciona la relación con el familiar</option>
+
+                                        @foreach ($relationships as $relationship)
+                                            <option value="{{ $relationship->id }}">
+                                                {{ $relationship->description_relationship }}</option>
+                                        @endforeach
+
+                                    </select>
+                                </div> --}}
+
+                            </div>
+
                             <div class="flex space-x-4" wire:ignore>
 
                                 <div class="w-6-12">
@@ -1808,8 +1918,9 @@
 
                                     <input
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                        placeholder="telefono del familiar" type="number" id="license_number"
-                                        name="license_number" wire:model.defer="license_number" />
+                                        placeholder="Numero de Licencia de conducción" type="number"
+                                        id="license_number" name="license_number"
+                                        wire:model.defer="license_number" />
 
                                 </div>
 
@@ -1842,7 +1953,7 @@
 
                                     <input readonly
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                        placeholder="Fecha del certificado de espiracion_licencia" type="text"
+                                        placeholder="Fecha del certificado de espiracion licencia" type="text"
                                         id="license_expiration" name="license_expiration"
                                         wire:model.defer="license_expiration"
                                         onchange="fechasSet('license_expiration'),documentOn('license_expiration','Doclicense')" />
@@ -1863,7 +1974,7 @@
 
                                     <input readonly
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                        placeholder="Fecha del certificado de drogas_alchoolemia" type="text"
+                                        placeholder="Fecha del certificado de drogas alchoolemia" type="text"
                                         id="certificate_drugs_alchoolemia" name="certificate_drugs_alchoolemia"
                                         wire:model.defer="certificate_drugs_alchoolemia"
                                         onchange="fechasSet('certificate_drugs_alchoolemia'),documentOn('certificate_drugs_alchoolemia','DocAlchoolemia')" />
@@ -1888,7 +1999,7 @@
 
                                     <input readonly
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                        placeholder="Fecha del certificado de Consultas_SIMIT" type="text"
+                                        placeholder="Fecha del certificado de Consultas SIMIT" type="text"
                                         id="SIMIT_queries" name="SIMIT_queries" wire:model.defer="SIMIT_queries"
                                         onchange="fechasSet('SIMIT_queries'),documentOn('SIMIT_queries','DocSimitQueries')" />
 
@@ -1902,60 +2013,13 @@
                                     </span>
                                 </div>
 
-                                {{-- <div class="w-6-12">
-                                    <label id="labelDrivingExam"
-                                        class="text-gray-700 dark:text-gray-400">{{ __('driving exam') }}</label>
-
-                                    <input readonly
-                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                        placeholder="Fecha del certificado del Examen_Conduccion" type="text"
-                                        id="driving_exam" name="driving_exam" wire:model.defer="driving_exam"
-                                        onchange="fechasSet('driving_exam'),documentOn('driving_exam','DocdrivingExam')" />
-
-                                    <span id="DocdrivingExam"
-                                        class="Inactive upload-ico fas fa-file-upload icon-green" aria-hidden="true"
-                                        fill="none" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
-                                        <input id="InputDocdrivingExam" wire:model.defer="DocdrivingExam"
-                                            onchange="documentAbove('InputDocdrivingExam','DocdrivingExam')"
-                                            class="upload-input" type="file">
-                                    </span>
-                                </div> --}}
-
-                            </div>
-
-                            <div class="flex space-x-4" wire:ignore>
-
-                                {{-- <div class="w-6-12">
-                                    <label id="labelNormOverlandTransportationAutomotive"
-                                        class="text-gray-700 dark:text-gray-400">{{ __('Norm Overland Transportation Automotive') }}</label>
-
-                                    <input readonly
-                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                        placeholder="Fecha del certificado de las Norma_Transporte_terrestre_automotor"
-                                        type="text" id="Norm_Overland_Transportation_Automotive"
-                                        name="Norm_Overland_Transportation_Automotive"
-                                        wire:model.defer="Norm_Overland_Transportation_Automotive"
-                                        onchange="fechasSet('Norm_Overland_Transportation_Automotive'),documentOn('Norm_Overland_Transportation_Automotive','DocNormOverlandTransportationAutomotive')" />
-
-                                    <span id="DocNormOverlandTransportationAutomotive"
-                                        class="Inactive upload-ico fas fa-file-upload icon-green" aria-hidden="true"
-                                        fill="none" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
-                                        <input id="InputDocNormOverlandTransportationAutomotive"
-                                            wire:model.defer="DocNormOverlandTransportationAutomotive"
-                                            onchange="documentAbove('InputDocNormOverlandTransportationAutomotive','DocNormOverlandTransportationAutomotive')"
-                                            class="upload-input" type="file">
-                                    </span>
-                                </div> --}}
-
                                 <div class="w-6-12">
                                     <label id="labelRulesTransit"
                                         class="text-gray-700 dark:text-gray-400">{{ __('Rules Transit') }}</label>
 
                                     <input readonly
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                        placeholder="Fecha del certificado de Normas_Transito" type="text"
+                                        placeholder="Fecha del certificado de Normas Transito" type="text"
                                         id="Rules_Transit" name="Rules_Transit" wire:model.defer="Rules_Transit"
                                         onchange="fechasSet('Rules_Transit'),documentOn('Rules_Transit','DocRulesTransit')" />
 
@@ -1987,52 +2051,6 @@
 
                             <div class="flex space-x-4" wire:ignore>
 
-                                {{-- <div class="w-6-12">
-                                    <label id="labelNormativeTips"
-                                        class="text-gray-700 dark:text-gray-400">{{ __('Normative Tips') }}</label>
-
-                                    <input readonly
-                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                        placeholder="Fecha del certificado de Tips_normativos" type="text"
-                                        id="Normative_Tips" name="Normative_Tips"
-                                        wire:model.defer="Normative_Tips"
-                                        onchange="fechasSet('Normative_Tips'),documentOn('Normative_Tips','DocNormativeTips')" />
-
-                                    <span id="DocNormativeTips"
-                                        class="Inactive upload-ico fas fa-file-upload icon-green" aria-hidden="true"
-                                        fill="none" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
-                                        <input id="InputDocNormativeTips" wire:model.defer="DocNormativeTips"
-                                            onchange="documentAbove('InputDocNormativeTips','DocNormativeTips')"
-                                            class="upload-input" type="file">
-                                    </span>
-                                </div> --}}
-
-                                {{-- <div class="w-6-12">
-                                    <label id="labelDrivingMethods"
-                                        class="text-gray-700 dark:text-gray-400">{{ __('Driving Methods') }}</label>
-
-                                    <input readonly
-                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                        placeholder="Fecha del certificado de Metodos_Conduccion" type="text"
-                                        id="Driving_Methods" name="Driving_Methods"
-                                        wire:model.defer="Driving_Methods"
-                                        onchange="fechasSet('Driving_Methods'),documentOn('Driving_Methods','DocDrivingMethods')" />
-
-                                    <span id="DocDrivingMethods"
-                                        class="Inactive upload-ico fas fa-file-upload icon-green" aria-hidden="true"
-                                        fill="none" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
-                                        <input id="InputDocDrivingMethods" wire:model.defer="DocDrivingMethods"
-                                            onchange="documentAbove('InputDocDrivingMethods','DocDrivingMethods')"
-                                            class="upload-input" type="file">
-                                    </span>
-                                </div> --}}
-
-                            </div>
-
-                            <div class="flex space-x-4" wire:ignore>
-
                                 <div class="w-6-12">
                                     <label id="labelDefensiveDriving"
                                         class="text-gray-700 dark:text-gray-400">{{ __('Defensive driving') }}</label>
@@ -2054,30 +2072,6 @@
                                     </span>
                                 </div>
 
-                                {{-- <div class="w-6-12">
-                                    <label id="labelDistractions"
-                                        class="text-gray-700 dark:text-gray-400">{{ __('distractions') }}</label>
-
-                                    <input readonly
-                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                        placeholder="Fecha del certificado de Distracciones" type="text"
-                                        id="distractions" name="distractions" wire:model.defer="distractions"
-                                        onchange="fechasSet('distractions'),documentOn('distractions','Docdistractions')" />
-
-                                    <span id="Docdistractions"
-                                        class="Inactive upload-ico fas fa-file-upload icon-green" aria-hidden="true"
-                                        fill="none" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
-                                        <input id="InputDocdistractions" wire:model.defer="Docdistractions"
-                                            onchange="documentAbove('InputDocdistractions','Docdistractions')"
-                                            class="upload-input" type="file">
-                                    </span>
-                                </div> --}}
-
-                            </div>
-
-                            <div class="flex space-x-4" wire:ignore>
-
                                 <div class="w-6-12">
                                     <label id="labelFirstaid"
                                         class="text-gray-700 dark:text-gray-400">{{ __('First aid') }}</label>
@@ -2098,41 +2092,20 @@
                                     </span>
                                 </div>
 
-                                {{-- <div class="w-6-12">
-                                    <label id="labelFirstResponder"
-                                        class="text-gray-700 dark:text-gray-400">{{ __('First Responder') }}</label>
-
-                                    <input readonly
-                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                        placeholder="Fecha del certificado de Primero_Respondiente" type="text"
-                                        id="First_Responder" name="First_Responder"
-                                        wire:model.defer="First_Responder"
-                                        onchange="fechasSet('First_Responder'),documentOn('First_Responder','DocFirstResponder')" />
-
-                                    <span id="DocFirstResponder"
-                                        class="Inactive upload-ico fas fa-file-upload icon-green" aria-hidden="true"
-                                        fill="none" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
-                                        <input id="InputDocFirstResponder" wire:model.defer="DocFirstResponder"
-                                            onchange="documentAbove('InputDocFirstResponder','DocFirstResponder')"
-                                            class="upload-input" type="file">
-                                    </span>
-                                </div> --}}
-
                             </div>
 
                             <div class="flex space-x-4" wire:ignore>
 
                                 <div class="w-6-12">
                                     <label id="labelfiveSensesDriving"
-                                        class="text-gray-700 dark:text-gray-400">{{ __('five senses driving') }}</label>
+                                        class="text-gray-700 dark:text-gray-400">{{ __('psychosensometric certificate') }}</label>
 
                                     <input readonly
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                        placeholder="Fecha del certificado de los cinco_sentidos_conduccion"
-                                        type="text" id="five_senses_driving" name="five_senses_driving"
-                                        wire:model.defer="five_senses_driving"
-                                        onchange="fechasSet('five_senses_driving'),documentOn('five_senses_driving','DocfiveSensesDriving')" />
+                                        placeholder="Fecha del certificado psicosensometrico" type="text"
+                                        id="psicosensometrico" name="psicosensometrico"
+                                        wire:model.defer="psicosensometrico"
+                                        onchange="fechasSet('psicosensometrico'),documentOn('psicosensometrico','DocfiveSensesDriving')" />
 
                                     <span id="DocfiveSensesDriving"
                                         class="Inactive upload-ico fas fa-file-upload icon-green" aria-hidden="true"
@@ -2145,56 +2118,13 @@
                                     </span>
                                 </div>
 
-                                {{-- <div class="w-6-12">
-                                    <label id="labelActivePassiveSecurityVehicle"
-                                        class="text-gray-700 dark:text-gray-400">{{ __('Active Passive Security vehicle') }}</label>
-
-                                    <input readonly
-                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                        placeholder="Fecha del certificado de la Seguridad_activa_pasiva_vehiculo"
-                                        type="text" id="Active_Passive_Security_vehicle"
-                                        name="Active_Passive_Security_vehicle"
-                                        wire:model.defer="Active_Passive_Security_vehicle"
-                                        onchange="fechasSet('Active_Passive_Security_vehicle'),documentOn('Active_Passive_Security_vehicle','DocActivePassiveSecurityVehicle')" />
-
-                                    <span id="DocActivePassiveSecurityVehicle"
-                                        class="Inactive upload-ico fas fa-file-upload icon-green" aria-hidden="true"
-                                        fill="none" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
-                                        <input id="InputDocActivePassiveSecurityVehicle"
-                                            wire:model.defer="DocActivePassiveSecurityVehicle"
-                                            onchange="documentAbove('InputDocActivePassiveSecurityVehicle','DocActivePassiveSecurityVehicle')"
-                                            class="upload-input" type="file">
-                                    </span>
-                                </div> --}}
-
-                            </div>
-
-                            <br>
-                            <div class="f1-buttons">
-                                <button type="button"
-                                    class="btn btn-previous ml-auto px-5 py-3 text-sm font-medium leading-5 rounded-lg sm:w-auto sm:px-4 sm:py-2 bg-red-600 active:bg-red-600 hover:bg-red-700 focus:outline-none focus:shadow-outline-purple text-white">Atrás</button>
-                                <button type="button"
-                                    class="btn btn-next w-full px-5 py-3 text-sm font-medium leading-5 transition-colors duration-150 bg-green-600 border border-transparent rounded-lg sm:w-auto sm:px-4 sm:py-2 active:bg-green-600 hover:bg-green-700 focus:outline-none focus:shadow-outline-purple">Siguiente</button>
-                            </div>
-
-
-                        </fieldset>
-                        <!--fin del paso 8 -->
-
-
-                        <!--paso fin -->
-                        <fieldset wire:ignore>
-
-                            <div class="flex space-x-4" wire:ignore>
-
                                 <div class="w-6-12">
                                     <label id="labelRoadSafety"
                                         class="text-gray-700 dark:text-gray-400">{{ __('Road safety') }}</label>
 
                                     <input readonly
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                        placeholder="Fecha del certificado de la Seguridad_Vial" type="text"
+                                        placeholder="Fecha del certificado de la Seguridad Vial" type="text"
                                         id="Road_safety" name="Road_safety" wire:model.defer="Road_safety"
                                         onchange="fechasSet('Road_safety'),documentOn('Road_safety','DocRoadSafety')" />
 
@@ -2208,7 +2138,11 @@
                                     </span>
                                 </div>
 
-                                <div class="w-6-12">
+                            </div>
+
+                            <div class="flex space-x-4" wire:ignore>
+
+                                <div class="w-6-12" id="divLinked">
                                     <label id="labelLinked"
                                         class="text-gray-700 dark:text-gray-400">{{ __('Linked') }}</label>
 
@@ -2226,11 +2160,7 @@
 
                                 </div>
 
-                            </div>
-
-                            <div class="flex space-x-4" wire:ignore>
-
-                                <div class="w-6-12">
+                                <div class="w-6-12" id="divUserEntryDate">
                                     <label id="labelUserEntryDate"
                                         class="text-gray-700 dark:text-gray-400">{{ __('user entry date') }}</label>
 
@@ -2242,7 +2172,7 @@
                                         onchange="fechasSet('user_entry_date')" />
                                 </div>
 
-                                <div class="w-6-12">
+                                <div class="w-6-12" id="divUsername">
                                     <label id="labelUsername"
                                         class="text-gray-700 dark:text-gray-400">{{ __('username') }}</label>
 
@@ -2252,19 +2182,6 @@
                                         type="text" id="username" name="username"
                                         wire:model.defer="username" />
                                 </div>
-
-                                {{-- <div class="w-6-12">
-                                    <label id="labelDateWithdrawalUser"
-                                        class="text-gray-700 dark:text-gray-400">{{ __('date withdrawal user') }}</label>
-
-                                    <input readonly
-                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                        placeholder="Fecha fin de contrato con STEP" type="text"
-                                        id="date_withdrawal_user" name="date_withdrawal_user"
-                                        wire:model.defer="date_withdrawal_user"
-                                        onchange="fechasSet('date_withdrawal_user')" />
-                                </div> --}}
-
 
                             </div>
 
@@ -2293,7 +2210,138 @@
 
                             </div>
 
-                            {{-- <div class="flex space-x-4" wire:ignore>
+                            <br>
+                            {{-- <div class="f1-buttons">
+                                <button type="button"
+                                    class="btn btn-previous ml-auto px-5 py-3 text-sm font-medium leading-5 rounded-lg sm:w-auto sm:px-4 sm:py-2 bg-red-600 active:bg-red-600 hover:bg-red-700 focus:outline-none focus:shadow-outline-purple text-white">Atrás</button>
+                                <button type="button"
+                                    class="btn btn-next w-full px-5 py-3 text-sm font-medium leading-5 transition-colors duration-150 bg-green-600 border border-transparent rounded-lg sm:w-auto sm:px-4 sm:py-2 active:bg-green-600 hover:bg-green-700 focus:outline-none focus:shadow-outline-purple">Siguiente</button>
+                            </div> --}}
+                            <div class="f1-buttons">
+                                <button type="button"
+                                    class="btn btn-previous ml-auto px-5 py-3 text-sm font-medium leading-5 rounded-lg sm:w-auto sm:px-4 sm:py-2 bg-red-600 active:bg-red-600 hover:bg-red-700 focus:outline-none focus:shadow-outline-purple text-white">Atrás</button>
+                                <button type="button" id="btnFinalize"
+                                    class="btn btn-Finalize w-full px-5 py-3 text-sm font-medium leading-5 transition-colors duration-150 bg-green-600 border border-transparent rounded-lg sm:w-auto sm:px-4 sm:py-2 active:bg-green-600 hover:bg-green-700 focus:outline-none focus:shadow-outline-purple">Finalizar</button>
+                            </div>
+
+
+                        </fieldset>
+                        <!--fin del paso 8 -->
+
+
+                        <!--paso fin -->
+                        {{-- <fieldset wire:ignore> --}}
+
+                        {{-- <div class="flex space-x-4" wire:ignore> --}}
+
+                        {{-- <div class="w-6-12">
+                                    <label id="labelNormOverlandTransportationAutomotive"
+                                        class="text-gray-700 dark:text-gray-400">{{ __('Norm Overland Transportation Automotive') }}</label>
+
+                                    <input readonly
+                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                        placeholder="Fecha del certificado de las Norma_Transporte_terrestre_automotor"
+                                        type="text" id="Norm_Overland_Transportation_Automotive"
+                                        name="Norm_Overland_Transportation_Automotive"
+                                        wire:model.defer="Norm_Overland_Transportation_Automotive"
+                                        onchange="fechasSet('Norm_Overland_Transportation_Automotive'),documentOn('Norm_Overland_Transportation_Automotive','DocNormOverlandTransportationAutomotive')" />
+
+                                    <span id="DocNormOverlandTransportationAutomotive"
+                                        class="Inactive upload-ico fas fa-file-upload icon-green" aria-hidden="true"
+                                        fill="none" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                                        <input id="InputDocNormOverlandTransportationAutomotive"
+                                            wire:model.defer="DocNormOverlandTransportationAutomotive"
+                                            onchange="documentAbove('InputDocNormOverlandTransportationAutomotive','DocNormOverlandTransportationAutomotive')"
+                                            class="upload-input" type="file">
+                                    </span>
+                                </div> --}}
+
+                        {{-- </div> --}}
+
+                        {{-- <div class="w-6-12">
+                                    <label id="labelActivePassiveSecurityVehicle"
+                                        class="text-gray-700 dark:text-gray-400">{{ __('Active Passive Security vehicle') }}</label>
+
+                                    <input readonly
+                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                        placeholder="Fecha del certificado de la Seguridad_activa_pasiva_vehiculo"
+                                        type="text" id="Active_Passive_Security_vehicle"
+                                        name="Active_Passive_Security_vehicle"
+                                        wire:model.defer="Active_Passive_Security_vehicle"
+                                        onchange="fechasSet('Active_Passive_Security_vehicle'),documentOn('Active_Passive_Security_vehicle','DocActivePassiveSecurityVehicle')" />
+
+                                    <span id="DocActivePassiveSecurityVehicle"
+                                        class="Inactive upload-ico fas fa-file-upload icon-green" aria-hidden="true"
+                                        fill="none" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                                        <input id="InputDocActivePassiveSecurityVehicle"
+                                            wire:model.defer="DocActivePassiveSecurityVehicle"
+                                            onchange="documentAbove('InputDocActivePassiveSecurityVehicle','DocActivePassiveSecurityVehicle')"
+                                            class="upload-input" type="file">
+                                    </span>
+                                </div> --}}
+
+                        {{-- <div class="w-6-12">
+                                    <label id="labelDistractions"
+                                        class="text-gray-700 dark:text-gray-400">{{ __('distractions') }}</label>
+
+                                    <input readonly
+                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                        placeholder="Fecha del certificado de Distracciones" type="text"
+                                        id="distractions" name="distractions" wire:model.defer="distractions"
+                                        onchange="fechasSet('distractions'),documentOn('distractions','Docdistractions')" />
+
+                                    <span id="Docdistractions"
+                                        class="Inactive upload-ico fas fa-file-upload icon-green" aria-hidden="true"
+                                        fill="none" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                                        <input id="InputDocdistractions" wire:model.defer="Docdistractions"
+                                            onchange="documentAbove('InputDocdistractions','Docdistractions')"
+                                            class="upload-input" type="file">
+                                    </span>
+                                </div> --}}
+
+                        {{-- <div class="flex space-x-4" wire:ignore>
+                            </div> --}}
+
+                        {{-- <div class="flex space-x-4" wire:ignore> --}}
+                        {{-- <div class="w-6-12">
+                                    <label id="labelFirstResponder"
+                                        class="text-gray-700 dark:text-gray-400">{{ __('First Responder') }}</label>
+
+                                    <input readonly
+                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                        placeholder="Fecha del certificado de Primero_Respondiente" type="text"
+                                        id="First_Responder" name="First_Responder"
+                                        wire:model.defer="First_Responder"
+                                        onchange="fechasSet('First_Responder'),documentOn('First_Responder','DocFirstResponder')" />
+
+                                    <span id="DocFirstResponder"
+                                        class="Inactive upload-ico fas fa-file-upload icon-green" aria-hidden="true"
+                                        fill="none" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                                        <input id="InputDocFirstResponder" wire:model.defer="DocFirstResponder"
+                                            onchange="documentAbove('InputDocFirstResponder','DocFirstResponder')"
+                                            class="upload-input" type="file">
+                                    </span>
+                                </div> --}}
+
+                        {{-- </div> --}}
+
+                        {{-- <div class="w-6-12">
+                                    <label id="labelDateWithdrawalUser"
+                                        class="text-gray-700 dark:text-gray-400">{{ __('date withdrawal user') }}</label>
+
+                                    <input readonly
+                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                        placeholder="Fecha fin de contrato con STEP" type="text"
+                                        id="date_withdrawal_user" name="date_withdrawal_user"
+                                        wire:model.defer="date_withdrawal_user"
+                                        onchange="fechasSet('date_withdrawal_user')" />
+                                </div> --}}
+
+                        {{-- <div class="flex space-x-4" wire:ignore>
 
                                 <div class="w-6-12">
                                     <label id="labelUsername"
@@ -2318,14 +2366,80 @@
 
                             </div> --}}
 
-                            <br>
+                        {{-- <div class="flex space-x-4" wire:ignore> --}}
+
+                        {{-- <div class="w-6-12">
+                                    <label id="labelNormativeTips"
+                                        class="text-gray-700 dark:text-gray-400">{{ __('Normative Tips') }}</label>
+
+                                    <input readonly
+                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                        placeholder="Fecha del certificado de Tips_normativos" type="text"
+                                        id="Normative_Tips" name="Normative_Tips"
+                                        wire:model.defer="Normative_Tips"
+                                        onchange="fechasSet('Normative_Tips'),documentOn('Normative_Tips','DocNormativeTips')" />
+
+                                    <span id="DocNormativeTips"
+                                        class="Inactive upload-ico fas fa-file-upload icon-green" aria-hidden="true"
+                                        fill="none" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                                        <input id="InputDocNormativeTips" wire:model.defer="DocNormativeTips"
+                                            onchange="documentAbove('InputDocNormativeTips','DocNormativeTips')"
+                                            class="upload-input" type="file">
+                                    </span>
+                                </div> --}}
+
+                        {{-- <div class="w-6-12">
+                                    <label id="labelDrivingMethods"
+                                        class="text-gray-700 dark:text-gray-400">{{ __('Driving Methods') }}</label>
+
+                                    <input readonly
+                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                        placeholder="Fecha del certificado de Metodos_Conduccion" type="text"
+                                        id="Driving_Methods" name="Driving_Methods"
+                                        wire:model.defer="Driving_Methods"
+                                        onchange="fechasSet('Driving_Methods'),documentOn('Driving_Methods','DocDrivingMethods')" />
+
+                                    <span id="DocDrivingMethods"
+                                        class="Inactive upload-ico fas fa-file-upload icon-green" aria-hidden="true"
+                                        fill="none" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                                        <input id="InputDocDrivingMethods" wire:model.defer="DocDrivingMethods"
+                                            onchange="documentAbove('InputDocDrivingMethods','DocDrivingMethods')"
+                                            class="upload-input" type="file">
+                                    </span>
+                                </div> --}}
+
+                        {{-- <div class="w-6-12">
+                                    <label id="labelDrivingExam"
+                                        class="text-gray-700 dark:text-gray-400">{{ __('driving exam') }}</label>
+
+                                    <input readonly
+                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                        placeholder="Fecha del certificado del Examen_Conduccion" type="text"
+                                        id="driving_exam" name="driving_exam" wire:model.defer="driving_exam"
+                                        onchange="fechasSet('driving_exam'),documentOn('driving_exam','DocdrivingExam')" />
+
+                                    <span id="DocdrivingExam"
+                                        class="Inactive upload-ico fas fa-file-upload icon-green" aria-hidden="true"
+                                        fill="none" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                                        <input id="InputDocdrivingExam" wire:model.defer="DocdrivingExam"
+                                            onchange="documentAbove('InputDocdrivingExam','DocdrivingExam')"
+                                            class="upload-input" type="file">
+                                    </span>
+                                </div> --}}
+
+                        {{-- </div> --}}
+
+                        {{-- <br>
                             <div class="f1-buttons">
                                 <button type="button"
                                     class="btn btn-previous ml-auto px-5 py-3 text-sm font-medium leading-5 rounded-lg sm:w-auto sm:px-4 sm:py-2 bg-red-600 active:bg-red-600 hover:bg-red-700 focus:outline-none focus:shadow-outline-purple text-white">Atrás</button>
                                 <button type="button" id="btnFinalize"
                                     class="btn btn-Finalize w-full px-5 py-3 text-sm font-medium leading-5 transition-colors duration-150 bg-green-600 border border-transparent rounded-lg sm:w-auto sm:px-4 sm:py-2 active:bg-green-600 hover:bg-green-700 focus:outline-none focus:shadow-outline-purple">Finalizar</button>
                             </div>
-                        </fieldset>
+                        </fieldset> --}}
                         <!--fin -->
 
                     </div>
@@ -3547,7 +3661,7 @@
 
                                                 <input
                                                     class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                    placeholder="Dirección del familiar" type="date"
+                                                    placeholder="fecha de caja de compensación" type="date"
                                                     name="date_compensationbox"
                                                     wire:model="editUsers.date_compensationbox" />
                                             </div>
@@ -3897,8 +4011,8 @@
                                                 <input
                                                     class="block w90 py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                                                     placeholder="Fecha del certificado de los cinco_sentidos_conduccion"
-                                                    type="date" name="five_senses_driving"
-                                                    wire:model="five_senses_driving2" />
+                                                    type="date" name="psicosensometrico"
+                                                    wire:model="psicosensometrico2" />
 
                                                 <span class=" edit-upload-ico fas fa-file-upload"
                                                     {{-- @if ($docfiveSensesDriving != '') icon-blue @else icon-green @endif" --}} aria-hidden="true" fill="none"
@@ -4105,7 +4219,6 @@
     <script>
         $(document).ready(function() {
 
-
             var table = $('#example').DataTable({
                 lengthMenu: [
                     [5, 10, 50, 100, 200, -1],
@@ -4289,15 +4402,17 @@
                         "render": function(data, type, row) {
 
                             return "<div class='flex items-center space-x-4 text-sm'>" +
-                                "<button id='edit' onclick='edit(" + row['id'] + ")'" +
-                                "class='inline-flex items-center justify-center  bg-yellow-700 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-yellow-400 focus:outline-none focus:bg-yellow-700 focus:ring focus:ring-red-200 active:bg-yellow-700 readonly:opacity-25 transition' aria-label='Edit'>" +
-                                "<svg class='w-5 h-5' aria-hidden='true' fill='currentColor'" +
-                                "viewBox='0 0 20 20'>" +
-                                "<path fill-rule='evenodd'" +
-                                "d='M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z'>" +
-                                "</path>" +
-                                "</svg>" +
-                                "</button>" +
+
+                                // "<button id='edit' onclick='edit(" + row['id'] + ")'" +
+                                // "class='inline-flex items-center justify-center  bg-yellow-700 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-yellow-400 focus:outline-none focus:bg-yellow-700 focus:ring focus:ring-red-200 active:bg-yellow-700 readonly:opacity-25 transition' aria-label='Edit'>" +
+                                // "<svg class='w-5 h-5' aria-hidden='true' fill='currentColor'" +
+                                // "viewBox='0 0 20 20'>" +
+                                // "<path fill-rule='evenodd'" +
+                                // "d='M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z'>" +
+                                // "</path>" +
+                                // "</svg>" +
+                                // "</button>" +
+
                                 "<button onclick='deletes(" + row['id'] + ")'" +
                                 "class='inline-flex items-center justify-center  bg-red-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 active:bg-red-600 readonly:opacity-25 transition' aria-label='Delete'>" +
                                 "<svg class='w-5 h-5' aria-hidden='true' fill='currentColor'" +
@@ -4349,12 +4464,15 @@
                                         return (
                                             "<div class='flex items-center text-sm'>" +
                                             "<div class='relative  w-8 h-8 mr-3 rounded-full md:block'>" +
+                                            "<a class='cursor-pointer' onclick='searchImg(" +
+                                            row['id'] + ")'>" +
                                             "<img src='" + row['profile_photo_path'] +
                                             "' alt=''" +
                                             "class='object-cover w-full h-full rounded-full' loading='lazy'>" +
-                                            "<div class='absolute inset-0 rounded-full shadow-inner'" +
-                                            "aria-hidden='true'>" +
-                                            "</div>" +
+                                            "</a>" +
+                                            // "<div class='absolute inset-0 rounded-full shadow-inner'" +
+                                            // "aria-hidden='true'>" +
+                                            // "</div>" +
                                             "</div>" +
                                             "<div class='flex items-center text-sm'>" +
                                             "<div>" +
@@ -4401,12 +4519,15 @@
                                         return (
                                             "<div class='flex items-center text-sm'>" +
                                             "<div class='relative  w-8 h-8 mr-3 rounded-full md:block'>" +
+                                            "<a class='cursor-pointer' onclick='searchImg(" +
+                                            row['id'] + ")'>" +
                                             "<img src='" + row['profile_photo_path'] +
                                             "' alt=''" +
                                             "class='object-cover w-full h-full rounded-full' loading='lazy'>" +
-                                            "<div class='absolute inset-0 rounded-full shadow-inner'" +
-                                            "aria-hidden='true'>" +
-                                            "</div>" +
+                                            "</a>" +
+                                            // "<div class='absolute inset-0 rounded-full shadow-inner'" +
+                                            // "aria-hidden='true'>" +
+                                            // "</div>" +
                                             "</div>" +
                                             "<div class='flex items-center text-sm'>" +
                                             "<div>" +
@@ -4463,7 +4584,7 @@
                     },
                     {
                         "render": function(data, type, row) {
-                            if (row['user_state'] == 1) {
+                            if (row['user_state'] == 2) {
                                 return "<span class='px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100 '>{{ __('ACTIVE') }}</span>";
                             } else {
                                 return "<span class='px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-full dark:text-red-100 dark:bg-red-700 '>{{ __('INACTIVE') }}</span>";
@@ -4856,6 +4977,27 @@
 
         });
 
+        Livewire.on('documentImage', (photo) => {
+
+            var photo = photo.file;
+            // console.log(photo);
+            swal.fire({
+                // title: 'Sweet!',
+                imageUrl: `${photo}`,
+                // imageUrl: '/storage/STEP/users/Ident_q11111111111/profile_user_q11111111111.webp',
+                // text: '<strong></strong>',
+                // html: '<strong>' + `${name}` + '</strong>',
+                imageWidth: 800,
+                imageHeight: 400,
+                imageAlt: '',
+            })
+        })
+
+        function searchImg(id) {
+            // alert('reactivar el ' + id);
+            Livewire.emit('searchImg', [id]);
+        }
+
         jQuery.datetimepicker.setLocale('es');
 
         // abriendo modal para editar
@@ -5102,6 +5244,8 @@
                 var email = document;
             } else if (process == 6) {
                 var username = document;
+            } else if (process == 7) {
+                var file = document;
             }
 
             var message = ['Se ha registrado el usuario ' + name + ' con documento ' + document +
@@ -5111,7 +5255,9 @@
                 'se ha eliminado el usuario ' + name + ' con documento ' + document + ' sactisfactoriamente',
                 'el documento o nit ' + nit + ' ya esta registrado en nuestro sistema',
                 'el correo electronico "' + email + '" ya esta registrado en nuestro sistema',
-                'el nombre de usuario "' + username + '" ya esta registrado en nuestro sistema'
+                'el nombre de usuario "' + username + '" ya esta registrado en nuestro sistema',
+                'Recuerda adjuntar el pdf de ' + file,
+                'Favor recuerda no dejar ningun campo importante vacio'
             ];
             // var state = ['success', 'error'];
 
@@ -5227,19 +5373,13 @@
                         var tipeChargenum = document.getElementById('charge').value;
                         if (tipeUsernum == 1 && stepinfinite > 2 || tipeUsernum == 4 &&
                             stepinfinite > 2 || tipeUsernum == 3 && stepinfinite > 2) {
-                            $(this).next().next().next().next().next().next().next()
-                                .fadeIn();
+                            $(this).next().next().next().next().next().next().fadeIn();
                             current_active_step.removeClass('active').addClass('activated').next()
                                 .addClass('active');
-                            // } else if (tipeUsernum == 3 && stepinfinite > 1) {
-                            //     $(this).next().next().next().next().next().next().next().next().next()
-                            //         .fadeIn();
+                            // } else if (tipeChargenum != 5 && stepinfinite > 5) {
+                            //     $(this).next().next().fadeIn();
                             //     current_active_step.removeClass('active').addClass('activated').next()
                             //         .addClass('active')
-                        } else if (tipeChargenum != 5 && stepinfinite > 6) {
-                            $(this).next().next().next().fadeIn();
-                            current_active_step.removeClass('active').addClass('activated').next()
-                                .addClass('active')
                         } else {
                             $(this).next().fadeIn();
                         }
@@ -5271,7 +5411,7 @@
                     var tipeChargenum = document.getElementById('charge').value;
                     if (tipeUsernum == 1 && stepinfinite == 2 || tipeUsernum == 4 && stepinfinite ==
                         2 || tipeUsernum == 3 && stepinfinite == 2) {
-                        $(this).prev().prev().prev().prev().prev().prev().prev().fadeIn();
+                        $(this).prev().prev().prev().prev().prev().prev().fadeIn();
                         current_active_step.removeClass('active').prev().removeClass('activated')
                             .addClass('active');
                         // } else if (tipeUsernum == 3 && stepinfinite == 1) {
@@ -5279,10 +5419,10 @@
                         //         .fadeIn();
                         //     current_active_step.removeClass('active').prev().removeClass('activated')
                         //         .addClass('active');
-                    } else if (tipeChargenum != 5 && stepinfinite == 6) {
-                        $(this).prev().prev().prev().fadeIn();
-                        current_active_step.removeClass('active').prev().removeClass('activated')
-                            .addClass('active');
+                        // } else if (tipeChargenum != 5 && stepinfinite == 6) {
+                        //     $(this).prev().prev().prev().fadeIn();
+                        //     current_active_step.removeClass('active').prev().removeClass('activated')
+                        //         .addClass('active');
                     } else {
                         $(this).prev().fadeIn();
                     }
@@ -5300,14 +5440,14 @@
                 parent_fieldset.find(
                     'input[type="text"], input[type="password"], textarea, select, input[type="number"], input[type="tel"],input[type="email"],input[type="date"]'
                 ).each(function() {
-                    if ($(this).hasClass('Inactive')) {
-                        // console.log('no se bloquea');
-                    } else if ($(this).val() == "" || $(this).val() == 0) {
-                        $(this).addClass('input-error');
-                        Finalize = false;
-                    } else {
-                        $(this).removeClass('input-error');
-                    }
+                    // if ($(this).hasClass('Inactive')) {
+                    //     // console.log('no se bloquea');
+                    // } else if ($(this).val() == "" || $(this).val() == 0) {
+                    //     $(this).addClass('input-error');
+                    //     Finalize = false;
+                    // } else {
+                    //     $(this).removeClass('input-error');
+                    // }
                 });
                 // fields validation
 
@@ -5343,10 +5483,10 @@
                 if (step == true) {
                     stepinfinite = stepinfinite + 1;
 
-                    if (stepinfinite >= 9) {
-                        stepinfinite = 9;
+                    if (stepinfinite >= 8) {
+                        stepinfinite = 8;
                         nextStep = 'step' + stepinfinite
-                        // console.log(nextStep);
+                        // console.log0(nextStep);
                         document.getElementById(nextStep).classList.add('flicker');
                     } else {
                         nextStep = 'step' + stepinfinite
@@ -5356,7 +5496,7 @@
                     }
                 } else if (step == false) {
                     stepinfinite = stepinfinite - 1;
-                    if (stepinfinite == 9) {
+                    if (stepinfinite == 8) {
                         previousstep = 'step' + 2
                         // console.log('el estado se le quita al 2');
                         document.getElementById(previousstep).classList.remove('flicker');
@@ -5370,7 +5510,7 @@
             }
 
             function lastsaved() {
-                if (stepinfinite >= 9) {
+                if (stepinfinite >= 8) {
                     document.getElementById('btnStore').classList.remove('Inactive');
                     document.getElementById('btnStore').classList.add('Active');
                 } else {
@@ -5453,30 +5593,23 @@
             // console.log(current_active_step_a);
             $('#frmUser').trigger("reset");
 
-            let certif = ['license_expiration', 'certificate_drugs_alchoolemia', 'SIMIT_queries',
-                // 'driving_exam',
-                // 'Norm_Overland_Transportation_Automotive', 
-                'Rules_Transit',
-                // 'Normative_Tips', 
-                // 'Driving_Methods',
-                'Defensive_driving',
-                // 'distractions',
-                'First_aid',
-                // 'First_Responder',
-                'five_senses_driving',
-                // 'Active_Passive_Security_vehicle', 
-                'Road_safety'
+            let certif = ['identificationcard', 'nit', 'obtained_title', 'last_company_name', 'date_eps', 'date_pension',
+                'date_layoffs',
+                'arl_date', 'date_compensationbox', 'documentBeneficiary', 'license_expiration',
+                'certificate_drugs_alchoolemia',
+                'SIMIT_queries', 'Rules_Transit', 'Defensive_driving', 'First_aid', 'psicosensometrico', 'Road_safety'
             ]
-            let doc = ['Doclicense', 'DocAlchoolemia', 'DocSimitQueries', 'DocdrivingExam',
-                'DocNormOverlandTransportationAutomotive',
-                'DocRulesTransit', 'DocNormativeTips', 'DocDrivingMethods', 'DocDefensiveDriving', 'Docdistractions',
-                'DocFirstAid', 'DocFirstResponder', 'DocfiveSensesDriving', 'DocActivePassiveSecurityVehicle',
-                'DocRoadSafety'
+            let doc = ['docu', 'DocNit', 'docObtainedTitle', 'docLastCompanyName', 'docEps', 'docPension', 'docLayoffs',
+                'docArl', 'docCompensationbox',
+                'docBeneficiary', 'Doclicense', 'DocAlchoolemia', 'DocSimitQueries', 'DocRulesTransit',
+                'DocDefensiveDriving', 'DocFirstAid',
+                'DocfiveSensesDriving', 'DocRoadSafety'
             ]
-            let inp = ['InputDoclicense', 'InputDocAlchoolemia', 'InputDocSimitQueries', 'InputDocdrivingExam',
-                'InputDocNormOverlandTransportationAutomotive', 'InputDocRulesTransit', 'InputDocNormativeTips',
-                'InputDocDrivingMethods', 'InputDocDefensiveDriving', 'InputDocdistractions', 'InputDocFirstAid',
-                'InputDocFirstResponder', 'InputDocfiveSensesDriving', 'InputDocActivePassiveSecurityVehicle',
+            let inp = ['InputDocu', 'InputDocNit', 'InputDocObtainedTitle', 'InputDocLastCompanyName', 'InputDocEps',
+                'InputDocPension', 'InputDocLayoffs',
+                'InputDocArl', 'InputDocCompensationbox', 'InputDocBeneficiary', 'InputDoclicense',
+                'InputDocAlchoolemia', 'InputDocSimitQueries',
+                'InputDocRulesTransit', 'InputDocDefensiveDriving', 'InputDocFirstAid', 'InputDocfiveSensesDriving',
                 'InputDocRoadSafety'
             ]
 
@@ -5522,7 +5655,7 @@
                 }
                 stepinfinite = 1;
 
-                $(this).prev().prev().prev().prev().prev().prev().prev().prev().fadeIn();
+                $(this).prev().prev().prev().prev().prev().prev().prev().fadeIn();
                 // scroll window to beginning of the form
                 scroll_to_class($('.f1'), 20);
                 current_active_step_s.first().addClass('active');
@@ -5845,141 +5978,73 @@
             /*146:*/
             'certificate_drugs_alchoolemia',
             /*147:*/
-            'finalUser2',
-            /*148:*/
-            'passfinalUser2',
-            /*149:*/
             'labelSIMITQueries',
-            /*150:*/
+            /*148:*/
             'SIMIT_queries',
-            /*151:*/
+            /*149:*/
             'finalUser3',
-            /*152:*/
+            /*150:*/
             'passfinalUser3',
-            /*153:*/
-            'change',
-            /*154:*/
-            'change',
-            /*155:*/
+            /*151:*/
             'step2',
-            /*156:*/
+            /*152:*/
             'pass2',
-            /*157:*/
-            'change',
-            /*158:*/
-            'change',
-            /*159:*/
+            /*153:*/
             'step3',
-            /*160:*/
+            /*154:*/
             'pass3',
-            /*161:*/
+            /*155:*/
             'labelRulesTransit',
-            /*162:*/
+            /*156:*/
             'Rules_Transit',
-            /*163:*/
-            'change',
-            /*164:*/
-            'change',
-            /*165:*/
-            'change',
-            /*166:*/
-            'change',
-            /*167:*/
-            'change',
-            /*168:*/
-            'change',
-            /*169:*/
-            'change',
-            /*170:*/
-            'change',
-            /*171:*/
-            'change',
-            /*172:*/
-            'change',
-            /*173:*/
+            /*157:*/
             'labelDefensiveDriving',
-            /*174:*/
+            /*158:*/
             'Defensive_driving',
-            /*175:*/
-            'change',
-            /*176:*/
-            'change',
-            /*177:*/
-            'change',
-            /*178:*/
-            'change',
-            /*179:*/
-            'change',
-            /*180:*/
-            'change',
-            /*181:*/
+            /*159:*/
             'labelFirstaid',
-            /*182:*/
+            /*160:*/
             'First_aid',
-            /*183:*/
-            'change',
-            /*184:*/
-            'change',
-            /*185:*/
-            'change',
-            /*186:*/
-            'change',
-            /*187:*/
-            'change',
-            /*188:*/
-            'change',
-            /*189:*/
+            /*161:*/
             'labelfiveSensesDriving',
-            /*190:*/
-            'five_senses_driving',
-            /*191:*/
-            'change',
-            /*192:*/
-            'change',
-            /*193:*/
-            'change',
-            /*194:*/
-            'change',
-            /*195:*/
-            'change',
-            /*196:*/
-            'change',
-            /*197:*/
+            /*162:*/
+            'psicosensometrico',
+            /*163:*/
             'labelRoadSafety',
-            /*198:*/
+            /*164:*/
             'Road_safety',
-            /*199:*/
-            'change',
-            /*200:*/
-            'change',
-            /*201:*/
+            /*165:*/
             'labelLinked',
-            /*202:*/
+            /*166:*/
             'Linked',
-            /*203:*/
+            /*167:*/
             'labelUserEntryDate',
-            /*204:*/
+            /*168:*/
             'user_entry_date',
-            /*205:*/
+            /*169:*/
             'labelUsername',
-            /*206:*/
+            /*170:*/
             'username',
-            /*207:*/
+            /*171:*/
             'labelProfilePhotoPath',
-            /*208:*/
+            /*172:*/
             'profile_photo_path',
-            /*209:*/
-            /*210:*/
-            /*211:*/
-            /*212:*/
-            /*213:*/
-            /*214:*/
-            /*215:*/
-            /*216:*/
-            /*217:*/
-            /*218:*/
-            /*219:*/
-            /*220:*/
+            /*173:*/
+            'divLinked',
+            /*174:*/
+            'divUserEntryDate',
+            /*175:*/
+            'divUsername',
+            /*176:*/
+            'labelBeneficiary',
+            /*177:*/
+            'beneficiary',
+            /*178:*/
+
+            /*179:*/
+
+            /*180:*/
+
 
         ]
 
@@ -5988,43 +6053,45 @@
         function typeUser() {
 
             var userType = document.getElementById('usertype').value;
+            clave = [];
+            // $('#typ').html('cambio');
             // console.log(userType);
 
             switch (userType) {
                 case '1':
-                    clave = [];
-                    clave.push(2, 3, 4, 22, 23, 26, 27, 28, 29, 30, 31, 32, 33, 24, 25, 5, 6, 7, 37, 38, 39, 58, 59, 60, 61,
-                        62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85,
-                        86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 103, 104, 107, 108, 105, 106,
-                        109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127,
-                        128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 145, 146, 149, 150,
-                        153, 154, 157, 158, 161, 162, 165, 166, 169, 170, 173, 174, 177, 178, 181, 182, 185, 186, 189,
-                        190, 193, 194, 197, 198, 201, 202, 159, 160, 151, 152, 147, 148, 205, 206); //1-4
 
+                    clave.push(2, 3, 4, 5, 6, 7, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 37, 38, 39, 58, 59, 60, 61,
+                        62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85,
+                        86, 87,
+                        88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 103, 104, 105, 106, 107, 108, 109,
+                        110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128,
+                        129,
+                        130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 145, 146, 147, 148, 149, 150,
+                        153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 169, 170, 173, 175); //1-4
                     changeInput(1);
                     document.getElementById('fieldset1Buttons').classList.remove('Inactive');
 
                     break;
 
                 case '2':
-                    clave = [];
-                    clave.push(22, 23, 26, 27, 28, 29, 30, 31, 32, 33, 24, 25, 5, 6, 7, 37, 38, 39, 143, 144, 147, 148, 151,
-                        152, 205, 206); //2
-
-                    document.getElementById('fieldset1Buttons').classList.remove('Inactive');
-
-                    changeInput(2);
+                    clave.push(5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28,
+                        29, 30, 31, 32, 33, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 50, 51, 52, 53, 54,
+                        55, 56, 57,
+                        102, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 155, 156, 157, 158,
+                        159, 160, 161, 162, 163, 164, 165, 166, 169, 170); //0
+                    viewhideinputs('fieldset1Buttons', 'Inactive', 'Active');
+                    changeInput(0);
                     break;
 
                 case '3':
-                    clave = [];
-                    clave.push(2, 3, 4, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 7677, 78,
-                        79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100101, 103,
-                        104, 107, 108, 105, 106, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119120, 121, 122,
-                        123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137138, 139, 140, 141,
-                        142, 145, 146, 149, 150, 153, 154, 157, 158, 161, 162, 165, 166, 169170, 173, 174, 177, 178,
-                        181, 182, 185, 186, 189, 190, 193, 194, 197, 198, 201, 202, 8, 910, 11, 12, 13, 14, 15, 16, 17,
-                        18, 19, 20, 21, 35, 36, 50, 51, 102, 52, 53, 34, 49, 159, 160, 151, 152, 147, 148); //3
+                    clave.push(
+                        2, 3, 4, 8, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 34, 35, 36, 49, 50, 51, 52, 53, 58, 59,
+                        60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83,
+                        84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105,
+                        106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124,
+                        125, 126, 127, 128, 129, 130, 131, 132,
+                        133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 145, 146, 147, 148, 149, 150, 153, 154, 155,
+                        156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 173); //3
 
                     document.getElementById('fieldset1Buttons').classList.remove('Inactive');
 
@@ -6034,26 +6101,26 @@
 
 
                 case '4':
-                    clave = [];
-                    clave.push(2, 3, 4, 22, 23, 26, 27, 28, 29, 30, 31, 32, 33, 24, 25, 5, 6, 7, 37, 38, 39, 58, 59, 60, 61,
-                        62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85,
-                        86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 103, 104, 107, 108, 105, 106,
-                        109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127,
-                        128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 145, 146, 149, 150,
-                        153, 154, 157, 158, 161, 162, 165, 166, 169, 170, 173, 174, 177, 178, 181, 182, 185, 186, 189,
-                        190, 193, 194, 197, 198, 201, 202, 159, 160, 151, 152, 147, 148, 205, 206); //1-4
+                    clave.push(
+                        2, 3, 4, 5, 6, 7, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 37, 38, 39, 58, 59, 60, 61,
+                        62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84,
+                        85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 103, 104, 105, 106, 107,
+                        108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126,
+                        127, 128, 129, 130, 131, 132, 133,
+                        134, 135, 136, 137, 138, 139, 140, 141, 142, 145, 146, 147, 148, 149, 150, 153, 154, 155, 156,
+                        157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 169, 170, 173, 175); //1-4
 
                     document.getElementById('fieldset1Buttons').classList.remove('Inactive');
                     changeInput(4);
                     break;
 
                 default:
-                    clave = [];
-                    clave.push(2, 3, 4, 22, 23, 26, 27, 28, 29, 30, 31, 32, 33, 24, 25, 5, 6, 7, 37, 38, 39, 137, 138, 139,
-                        140, 141, 142, 145, 146, 149, 150, 153, 154, 157, 158, 161, 162, 165, 166, 169, 170, 173, 174,
-                        177, 178, 181, 182, 185, 186, 189, 190, 193, 194, 197, 198, 201, 202, 8, 9, 10, 11, 12, 13, 14,
-                        15, 16, 17, 18, 19, 20, 21, 35, 36, 40, 41, 42, 43, 44, 45, 46, 47, 48, 50, 51, 102, 52, 53, 54,
-                        55, 56, 57, 143, 144, 147, 148, 151, 152, 143, 205, 206); //0
+                    clave.push(
+                        2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27,
+                        28, 29, 30, 31, 32, 33, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 50, 51,
+                        52, 53, 54, 55, 56, 57, 102, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149,
+                        150, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 169, 170
+                    ); //0
                     viewhideinputs('fieldset1Buttons', 'Inactive', 'Active');
                     changeInput(0);
                     break;
@@ -6064,25 +6131,29 @@
         function typeCharge() {
 
             var charges = document.getElementById('charge').value;
+            clave = [];
             // console.log(charges);
 
             switch (charges) {
-                case '5':
-                    // console.log('entro');
-                    // changeInput(5, '', '', '', '', '', '', '', '', '', 'labelLicenseNumber');
-                    clave = [];
-                    clave.push(5, 6, 7, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 37, 38, 39, 147, 148, 143, 144, 151,
-                        152, 205, 206); //5
-                    changeInput(5);
+
+                case '0':
+                    clave.push(
+                        5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29,
+                        30, 31, 32, 33, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 50, 51, 52, 53,
+                        54, 55, 56, 57, 102, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 155,
+                        156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 169, 170); //0
+                    viewhideinputs('fieldset1Buttons', 'Inactive', 'Active');
+                    changeInput(0);
                     break;
 
                 default:
-                    clave = [];
-                    clave.push(137, 138, 139, 140, 141, 142, 145, 146, 149, 150, 153, 154, 157, 158, 161, 162, 165, 166,
-                        169, 170, 173, 174, 177, 178, 181, 182, 185, 186, 189, 190, 193, 194, 197, 198, 201, 202, 143,
-                        144, 151, 152, 5, 6, 7, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 37, 38, 39, 205, 206); //6
-                    // changeInput(6, '', '', '', 'labelLicenseNumber', '', '', '', '', '', '');
-                    changeInput(6);
+                    clave.push(
+                        5, 6, 7, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 37, 38, 39, 143, 144, 149, 150, 169,
+                        170, 175); //2
+
+                    document.getElementById('fieldset1Buttons').classList.remove('Inactive');
+
+                    changeInput(2);
                     break;
             }
 
@@ -6138,7 +6209,7 @@
                 // viewhideinputs('finalUser3', 'Inactive', 'Active');
                 // viewhideinputs('passfinalUser3', 'Inactive', 'Active');
 
-                for (var i = 1; i <= 9; i++) {
+                for (var i = 1; i <= 8; i++) {
                     var noSteps = 'step' + [i];
                     var noText = 'pass' + [i];
                     // console.log(noText);
@@ -6170,7 +6241,7 @@
                 // viewhideinputs('finalUser1', 'Active', 'Inactive');
                 // viewhideinputs('passfinalUser1', 'Active', 'Inactive');
                 contador = 4;
-                for (var i = 4; i <= 9; i++) {
+                for (var i = 4; i <= 8; i++) {
                     var noSteps = 'step' + [i];
                     var noText = 'pass' + contador;
                     // console.log(noText);
@@ -6184,47 +6255,68 @@
 
                 var Chargenum = document.getElementById('charge').value;
                 // console.log(Chargenum);
-                if (Chargenum != 5) {
-                    // viewhideinputs('finalUser1', 'Inactive', 'Active');
-                    // viewhideinputs('passfinalUser1', 'Inactive', 'Active');
-                    // viewhideinputs('step2', 'Active', 'Inactive');
-                    // viewhideinputs('step3', 'Active', 'Inactive');
-                    // viewhideinputs('finalUser3', 'Inactive', 'Active');
-                    // viewhideinputs('passfinalUser3', 'Inactive', 'Active');
-                    // viewhideinputs('finalUser2', 'Active', 'Inactive');
-                    // viewhideinputs('passfinalUser2', 'Active', 'Inactive');
-                    contador = 7;
-                    for (var i = 7; i <= 9; i++) {
+                // if (Chargenum != 5) {
+                // viewhideinputs('finalUser1', 'Inactive', 'Active');
+                // viewhideinputs('passfinalUser1', 'Inactive', 'Active');
+                // viewhideinputs('step2', 'Active', 'Inactive');
+                // viewhideinputs('step3', 'Active', 'Inactive');
+                // viewhideinputs('finalUser3', 'Inactive', 'Active');
+                // viewhideinputs('passfinalUser3', 'Inactive', 'Active');
+                // viewhideinputs('finalUser2', 'Active', 'Inactive');
+                // viewhideinputs('passfinalUser2', 'Active', 'Inactive');
+                //     contador = 8;
+                //     for (var i = 8; i <= 8; i++) {
 
-                        var noSteps = 'step' + [i];
-                        var noText = 'pass' + contador;
-                        // console.log(noText)
-                        document.getElementById(noSteps).classList.add('Inactive');
-                        document.getElementById(noText).classList.add('Inactive');
-                        contador = contador + 1;
-                    }
-                } else {
+                //         var noSteps = 'step' + [i];
+                //         var noText = 'pass' + contador;
+                //         // console.log(noText)
+                //         document.getElementById(noSteps).classList.add('Inactive');
+                //         document.getElementById(noText).classList.add('Inactive');
+                //         contador = contador + 1;
+                //     }
+                // } else {
 
-                    // viewhideinputs('finalUser2', 'Inactive', 'Active');
-                    // viewhideinputs('passfinalUser2', 'Inactive', 'Active');
-                    // viewhideinputs('finalUser1', 'Inactive', 'Active');
-                    // viewhideinputs('passfinalUser1', 'Inactive', 'Active');
-                    // viewhideinputs('step2', 'Active', 'Inactive');
-                    // viewhideinputs('step3', 'Active', 'Inactive');
-                    // viewhideinputs('finalUser3', 'Inactive', 'Active');
-                    // viewhideinputs('passfinalUser3', 'Inactive', 'Active');
+                // viewhideinputs('finalUser2', 'Inactive', 'Active');
+                // viewhideinputs('passfinalUser2', 'Inactive', 'Active');
+                // viewhideinputs('finalUser1', 'Inactive', 'Active');
+                // viewhideinputs('passfinalUser1', 'Inactive', 'Active');
+                // viewhideinputs('step2', 'Active', 'Inactive');
+                // viewhideinputs('step3', 'Active', 'Inactive');
+                // viewhideinputs('finalUser3', 'Inactive', 'Active');
+                // viewhideinputs('passfinalUser3', 'Inactive', 'Active');
 
-                    for (var i = 7; i <= 9; i++) {
-                        var noSteps = 'step' + [i];
-                        var noText = 'pass' + [i];
-                        document.getElementById(noSteps).classList.remove('Inactive');
-                        document.getElementById(noText).classList.remove('Inactive');
-                    }
+                for (var i = 8; i <= 8; i++) {
+                    var noSteps = 'step' + [i];
+                    var noText = 'pass' + [i];
+                    document.getElementById(noSteps).classList.remove('Inactive');
+                    document.getElementById(noText).classList.remove('Inactive');
                 }
+                // }
 
 
             }
 
+        }
+
+        function typeTitle() {
+            var userType = document.getElementById('usertype').value;
+            var charges = document.getElementById('charge').value;
+            for (let index = 0; index <= 10; index++) {
+
+                if (index == userType) {
+                    viewhideinputs('typ' + index, 'Active', 'Inactive');
+                } else {
+                    viewhideinputs('typ' + index, 'Inactive', 'Active');
+                }
+
+            }
+        }
+
+        function beneficiaryChild() {
+            var beneficiaryType = document.getElementById('beneficiary').value;
+            if (beneficiaryType == 3) {
+                documentOn('nameBeneficiary', 'docNameBeneficiary');
+            }
         }
 
         jQuery('#birthdate').datetimepicker({
@@ -6413,13 +6505,13 @@
         //     @this.set('First_Responder', e.target.value);
         // });
 
-        jQuery('#five_senses_driving').datetimepicker({
+        jQuery('#psicosensometrico').datetimepicker({
             format: 'Y-m-d',
             theme: 'dark',
             timepicker: false
         });
-        // $('#five_senses_driving').on('change', function(e) {
-        //     @this.set('five_senses_driving', e.target.value);
+        // $('#psicosensometrico').on('change', function(e) {
+        //     @this.set('psicosensometrico', e.target.value);
         // });
 
         jQuery('#Active_Passive_Security_vehicle').datetimepicker({
@@ -6484,8 +6576,31 @@
             var inputDocument = document.getElementById(input).value;
 
             if (inputDocument != '' || inputDocument != 0) {
-                document.getElementById(color).classList.remove('icon-green');
-                document.getElementById(color).classList.add('icon-blue');
+
+                let timerInterval
+                swal.fire({
+                    title: 'Cargando...',
+                    html: 'Cargando documento <b></b> milliseconds.', //Cargando la información del sistema en
+                    timer: 4000,
+                    timerProgressBar: true,
+                    didOpen: () => {
+                        swal.showLoading()
+                        const b = swal.getHtmlContainer().querySelector('b')
+                        timerInterval = setInterval(() => {
+                            b.textContent = swal.getTimerLeft()
+                        }, 100)
+                    },
+                    willClose: () => {
+                        clearInterval(timerInterval)
+                    }
+                }).then((result) => {
+                    /* Read more about handling dismissals below */
+                    if (result.dismiss === swal.DismissReason.timer) {
+                        // console.log('document above')//documento arribba
+                        document.getElementById(color).classList.remove('icon-green');
+                        document.getElementById(color).classList.add('icon-blue');
+                    }
+                })
                 // console.log('si');
             } else {
 

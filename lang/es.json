@@ -161,6 +161,7 @@
     "education level": "Nivel Educativo",
     "educational institution": "institución educativa",
     "last year": "ultimo año cursado",
+    "last year study": "ultimo año de estudio",
     "study end date": "fecha de finalización del estudio",
     "obtained title": "titulo obtenido",
     "last company name": "nombre de la última empresa",
@@ -238,7 +239,7 @@
     "use vehicle": "uso del vehiculo",
     "number accreditation soat": "número de acreditación soat",
     "number technomechanical accreditation": "número de acreditación tecnomecánica",
-    "expiration card operation": "operación de tarjeta de caducidad",
+    "expiration card operation": "caducidad de tarjeta de operación",
     "expiration preventive": "expiración preventiva",
     "certificate extracontractual": "certificado extracontractual",
     "civil contractual": "civil contractual",
@@ -277,11 +278,14 @@
     "permit code": "codigo fuec",
     "internal external owner type": "tipo dueño interno o externo",
     "state vehicle ": "estado vehiculo",
-    "state ": "estado",
+    "state": "estado",
     "signature place": "Lugar de la firma",
     "departure time": "hora de salida",
     "arrival time": "hora de llegada",
-
+    "beneficiary": "beneficiario",
+    "relationship beneficiary": "relación del beneficiario",
+    "name beneficiary": "nombre del beneficiario",
+    "document beneficiary": "documento del beneficiario",
     "Student name": "nombre del estudiante",
     "identificación estudiante": "identificación del estudiante",
     "grade tudent": "grado del estudiante",
@@ -294,6 +298,8 @@
     "ability": "capacidad",
     "Family Relationship": "relación familiar",
     "who receives": "quien lo recibe",
-    "return time": "hora de regreso"
+    "return time": "hora de regreso",
+    "vehicles List": "Listado de Vahiculos",
+    "psychosensometric certificate": "certificado psicosensométrico"
     
 }

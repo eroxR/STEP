@@ -149,36 +149,6 @@ class User extends Authenticatable
     }
 
     //relación uno a muchos
-    public function historicalArl()
-    {
-        return $this->hasMany('App\Models\historicalArl');
-    }
-
-    //relación uno a muchos
-    public function historicalLayoffs()
-    {
-        return $this->hasMany('App\Models\historicalLayoffs');
-    }
-
-    //relación uno a muchos
-    public function historicalCompensationBox()
-    {
-        return $this->hasMany('App\Models\historicalCompensationBox');
-    }
-
-    //relación uno a muchos
-    public function historicalEps()
-    {
-        return $this->hasMany('App\Models\historicalEps');
-    }
-
-    //relación uno a muchos
-    public function historicalPension()
-    {
-        return $this->hasMany('App\Models\historicalPension');
-    }
-
-    //relación uno a muchos
     public function bonding()
     {
         return $this->belongsTo('App\Models\bonding');
@@ -298,5 +268,11 @@ class User extends Authenticatable
     public function usertype()
     {
         return $this->belongsTo('App\Models\usertype');
+    }
+
+    //relación uno a muchos polimorfica
+    public function beneficiary()
+    {
+        return $this->morphMany('App\Models\document', 'beneficiary');
     }
 }

@@ -121,7 +121,7 @@ class ContractController extends Controller
             $titlecontract = 'CONTRATO DE PRESTACIÓN DE SERVICIOS PARA TRANSPORTE ESPECIAL DE USUARIOS DE SALUD';
         } else if($titletypecontract == 6) {
             $titlecontract = 'CONTRATO DE CONVENIO DE COLABORACIÓN EMPRESARIAL';
-        } else if($titletypecontract == 9) {
+        } else if($titletypecontract == 7) {
             $titlecontract = 'CONTRATO DE VINCULACIÓN DE FLOTA - RENOVACIÓN PROPIETARIO DE VEHÍCULO';
         }
         

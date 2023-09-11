@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\List;
 
 use App\Models\arl;
+use App\Models\beneficiary;
 use App\Models\bloodType;
 use App\Models\bonding;
 use App\Models\city;
@@ -30,30 +31,25 @@ class ListDrivers extends Component
     use WithFileUploads;
 
     public $filtre = 0, $direction = 'desc', $search = '', $ide = 0;
-    public $user, $identificationcard, $paramText, $dateDocument, $fileDocument, $extension, $name, $Route, $Lists = null, $title;
+    public $user, $identificationcard, $paramText, $dateDocument, $fileDocument, $extension, $name, $Route, $Lists = null, $title, $idbeneficiary;
     public $certificate = [
-            'Certificado_de_Licencia_usuario_', 'Certificado_drogas_alchoolemia_usuario_', 'Certificado_Consultas_SIMIT_usuario_', 'Certificado_Examen_Conduccion_usuario_',
-            'Certificado_Norma_Transporte_terrestre_automotor_usuario_', 'Certificado_Normas_Transito_usuario_', 'Certificado_Tips_normativos_usuario_', 'Certificado_Metodos_Conduccion_usuario_',
-            'Certificado_Manejo_Defensivo_usuario_', 'Certificado_Distracciones_usuario_', 'Certificado_Primeros_Auxilios_usuario_', 'Certificado_Primero_Respondiente_usuario_',
-            'Certificado_Cinco_Sentidos_Conduccion_usuario_', 'Certificado_Seguridad_activa_pasiva_vehiculo_usuario_', 'Certificado_Seguridad_Vial_usuario_',
-            'Certificado_Eps_usuario_', 'Certificado_Pension_usuario_', 'Certificado_Cesantias_usuario_', 'Certificado_Arl_usuario_', 'Certificado_Caja_Compensación_usuario_'
+            'Certificado_de_Licencia_de_Conducción_usuario_', 'Certificado_Drogas_Alchoolemia_usuario_', 'Certificado_Consultas_SIMIT_usuario_', 'Certificado_Psicosensométrico_',
+            'Certificado_Normas_Transito_usuario_', 'Certificado_Manejo_Defensivo_usuario_', 'Certificado_Primeros_Auxilios_usuario_', 'Certificado_Seguridad_Vial_usuario_',
+            'Certificado_Eps_usuario_', 'Certificado_Pension_usuario_', 'Certificado_Cesantias_usuario_', 'Certificado_Arl_usuario_', 'Certificado_Caja_Compensación_usuario_',
+            'Certificado_de_Estudio_Beneficiario_usuario_'
         ],
         $colum = [
-            'license_expiration', 'certificate_drugs_alchoolemia', 'SIMIT_queries', 'driving_exam',
-            'Norm_Overland_Transportation_Automotive', 'Rules_Transit', 'Normative_Tips', 'Driving_Methods',
-            'Defensive_driving', 'distractions', 'First_aid', 'First_Responder',
-            'five_senses_driving', 'Active_Passive_Security_vehicle', 'Road_safety', 'date_eps', 'date_pension',
-            'date_layoffs', 'arl_date', 'date_compensationbox'
+            'license_expiration', 'certificate_drugs_alchoolemia', 'SIMIT_queries', 'psicosensometrico', 'Rules_Transit', 'Defensive_driving', 'First_aid', 'Road_safety',
+            'date_eps', 'date_pension', 'date_layoffs', 'arl_date', 'date_compensationbox'
 
         ],
         $columname = [
-            'licencia', 'Drogas y alchoolemia', 'Consultas SIMIT', 'Examen de Conduccion',
-            'Norma Transporte terrestre automotor', 'Normas de Transito', 'Tips Normativos', 'Metodos de Conduccion',
-            'Manejo Defensivo', 'Distracciones', 'Primeros Auxilios', 'Primero Respondiente',
-            'Cinco Sentidos de la Conduccion', 'Seguridad Activa y Pasiva del Vehiculo', 'Seguridad Vial', 'Eps', 'Pension',
-            'Cesantias', 'Arl', 'Caja Compensacion'
+            'licencia', 'Drogas y alchoolemia', 'Consultas SIMIT', 'psicosensometrico', 'Normas de Transito', 'Manejo Defensivo', 'Primeros Auxilios',
+            'Seguridad Vial', 'Eps', 'Pension', 'Cesantias', 'Arl', 'Caja Compensacion', 'Beneficiario'
 
-        ];
+        ],
+        $beneficiaryType = ['Adulto mayor', 'Conyugue', 'Hijo o Hijastro'],
+        $state = ['Inhabilitado', 'Habilitado'];
 
     protected $listeners = ['Historicos', 'expiration'];
 
@@ -92,6 +88,11 @@ class ListDrivers extends Component
         $licenseCategories = licenseCategory::pluck('code_licenseCategory', 'id');
         $linked = User::select('id', 'firstname', 'secondname', 'lastname', 'motherslastname')
             ->where('usertype', 4)->get();
+        $beneficiaries = beneficiary::select('id', 'full_name', 'document', 'beneficiaryType', 'user_id')->get();
+
+        $totals = driver::count();
+        $inhabilitado = driver::where('driver_status', 1)->count('id');
+        $habilitado = driver::where('driver_status', 2)->count('id');
 
         $hoy = Carbon::now();
 
@@ -114,7 +115,11 @@ class ListDrivers extends Component
             'hoy',
             'maritalStatuses',
             'bondings',
-            'licenseCategories'
+            'licenseCategories',
+            'beneficiaries',
+            'totals',
+            'inhabilitado',
+            'habilitado'
         ));
     }
 
@@ -128,15 +133,31 @@ class ListDrivers extends Component
         }
     }
 
-    public function Historicos($id, $document)
+    public function Historicos($id, $document, $beneficiary)
     {
+
         $id = $id[0];
         $document = $document[0];
+        $beneficiary = $beneficiary[0];
 
-        $this->Lists = DB::table('documents')
-            ->where('documentable_id', $id)
-            ->where('document_name', 'like', '%' . $this->certificate[$document] . '%')
-            ->orderBy('id', 'desc')->get();
+        if ($beneficiary > 0 || $beneficiary != null) {
+
+            $doc = User::where('id', $id)->value('identificationcard');
+
+            $beneficiaryDoc = $doc . '_' . $beneficiary . '.pdf';
+
+            $this->Lists = DB::table('documents')
+                ->where('documentable_id', $id)
+                ->where('document_name', 'like', '%' . $beneficiaryDoc)
+                ->orderBy('id', 'desc')->get();
+
+            // dd($this->Lists);
+        } else {
+            $this->Lists = DB::table('documents')
+                ->where('documentable_id', $id)
+                ->where('document_name', 'like', '%' . $this->certificate[$document] . '%')
+                ->orderBy('id', 'desc')->get();
+        }
 
         $this->title = $this->columname[$document];
         // dd($this->Lists);
@@ -146,81 +167,124 @@ class ListDrivers extends Component
     public function updateDocumentation()
     {
 
-        if ( is_null($this->dateDocument)) {
-            return $this->emit('newDocument', ['exit' => 4]);
+
+        if ($this->paramText != 13) {
+            if (is_null($this->dateDocument)) {
+                return $this->emit('newDocument', ['exit' => 4]);
+            }
         }
+
         if (is_null($this->fileDocument)) {
             return $this->emit('newDocument', ['exit' => 4]);
         }
 
         $hoy = Carbon::now();
 
-        $exit = 1;
-
-        if ($this->paramText > 14) {
-            $newState = DB::table('users')->where('id', $this->user)->value($this->colum[$this->paramText]);
+        // $fend = Carbon::createFromDate($this->dateDocument);
+        // dd($fend);
+        // dd(Carbon::createFromDate($this->dateDocument)->diffInDays($hoy));
+        // dd($this->paramText);
+        if ($this->paramText != 13) {
             if ($this->dateDocument <= $hoy) {
                 return $this->emit('newDocument', ['exit' => 2]);
-            } elseif ($this->dateDocument <= $newState) {
+            }
+        }
+
+        $exit = 1;
+
+
+        // validar que la fecha no sea anterior, y realizar la subida del archivo
+        if ($this->paramText > 7 && $this->paramText <= 12) {
+            $newState = DB::table('users')->where('id', $this->user)->value($this->colum[$this->paramText]);
+
+            if ($this->dateDocument <= $newState) {
                 return $this->emit('newDocument', ['exit' => 3]);
             }
             DB::table('users')->where('id', $this->user)->update([$this->colum[$this->paramText] => $this->dateDocument]);
+        } else if ($this->paramText == 13) {
+
+            $doc = User::where('id', $this->user)->value('identificationcard');
+
+            $beneficiaryDoc = $this->certificate[$this->paramText] . $doc . '_' . $this->idbeneficiary . '.pdf';
+
+            $ruta = DB::table('documents')->where('documentable_id', $this->user)->where('document_name', $beneficiaryDoc)->value('directory');
+            $newRuta = str_replace('/storage', 'public', $ruta);
+            Storage::delete($newRuta);
+
         } else {
+
             $newState = DB::table('drivers')->where('user_id', $this->user)->value($this->colum[$this->paramText]);
-            if ($this->dateDocument <= $hoy) {
-                return $this->emit('newDocument', ['exit' => 2]);
-            } elseif ($this->dateDocument <= $newState) {
+            if ($this->dateDocument <= $newState) {
                 return $this->emit('newDocument', ['exit' => 3]);
             }
             DB::table('drivers')->where('user_id', $this->user)->update([$this->colum[$this->paramText] => $this->dateDocument]);
         }
 
         $this->extension = $this->fileDocument->extension();
-        $this->name = $this->certificate[$this->paramText] . $this->identificationcard . '_' . $this->dateDocument . '.' . $this->extension;
+        if ($this->paramText != 13) {
+            $this->name = $this->certificate[$this->paramText] . $this->identificationcard . '_' . $this->dateDocument . '.' . $this->extension;
+        } else {
+            $this->name = $this->certificate[$this->paramText] . $this->identificationcard . '_' . $this->idbeneficiary . '.' . $this->extension;
+        }
         $url = $this->fileDocument->storeAs('public/STEP/users/Ident_' . $this->identificationcard, $this->name);
         $this->Route = Storage::url($url);
 
-        DB::table('documents')->insert([
-            'documentable_id' => $this->user,
-            'document_name' => $this->name,
-            'extension' => $this->extension,
-            'directory' => $this->Route,
-            'documentable_Type' => 'App\Models\User',
-        ]);
+        if ($this->paramText == 13) {
+            # code...
+        } else {
+            DB::table('documents')->insert([
+                'documentable_id' => $this->user,
+                'document_name' => $this->name,
+                'extension' => $this->extension,
+                'directory' => $this->Route,
+                'documentable_Type' => 'App\Models\User',
+            ]);
+        }
 
+        $a = 99;
 
-        for ($i = 0; $i <= 20; $i++) {
+        $state = 100;
 
-            if ($i >= 1 && $i <= 14) {
+        for ($i = 0; $i <= count($this->certificate); $i++) {
+
+            if ($i == 0 && $i <= 3) {
 
                 $newState = DB::table('drivers')
                     ->where('user_id', $this->user)
                     ->value($this->colum[$i]);
 
                 if ($newState < $hoy) {
-                    $i = 21;
+                    $a = 100;
                 }
+                // dd($a);
 
-                if ($i == 14) {
-                    $i = 15;
-                }
-            }
-
-            if ($i >= 15 && $i <= 19) {
+            } else if ($i > 7 && $i <= 12) {
 
                 $newState = DB::table('users')
                     ->where('id', $this->user)
                     ->value($this->colum[$i]);
 
                 if ($newState < $hoy) {
-                    $i = 21;
+                    $a = 100;
                 }
-            }
-
-            if ($i == 20) {
-                DB::table('drivers')->where('user_id', $this->user)->update(['driver_status' => '1']);
+            } else if ($i == 13) {
+                # code...
             }
         }
+
+        // dd($a != 100);
+        if ($a != 100) {
+            $state = $a;
+            // $a = 100;
+        }
+
+        // dd($state);
+        if ($state == 99) {
+            DB::table('drivers')->where('user_id', $this->user)->update(['driver_status' => '2']);
+        } else {
+            DB::table('drivers')->where('user_id', $this->user)->update(['driver_status' => '1']);
+        }
+
 
         // dd($this->fileDocument, $this->dateDocument);
         $this->emit('newDocument', ['exit' => $exit]);

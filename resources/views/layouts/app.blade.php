@@ -173,7 +173,7 @@
     {{-- <title>Windmill Dashboard</title> --}}
     <title>{{ config('app.name', 'Laravel') }}</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link href="{{ asset('librerias/select2/select2.min.css') }}" rel="stylesheet" />
     {{-- <link rel="stylesheet" href="C:/xampp/htdocs/step/node_modules/jquery-datetimepicker/jquery.datetimepicker.css"/> --}}
     <link rel="icon" href="{{ asset('img/favicon.ico') }}" />
 
@@ -182,12 +182,12 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}" />
     {{-- <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css"> --}}
 
-    <link rel="stylesheet" href="{{ asset('datetimepicker-master/jquery.datetimepicker.css') }}" />
+    <link rel="stylesheet" href="{{ asset('librerias/datetimepicker-master/jquery.datetimepicker.css') }}" />
     {{-- <link rel="stylesheet" href="{{ asset('virtualSelect/virtual-select.min.css') }}" /> --}}
     <link rel="stylesheet" href="{{ asset('css/mobiscroll.javascript.min.css') }}" />
-    <link href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css" rel="stylesheet">
-    <link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" rel="stylesheet">
-    <link href="https://cdn.datatables.net/buttons/2.3.6/css/buttons.dataTables.min.css" rel="stylesheet">
+    <link href="{{ asset('librerias/dataTables/jquery.dataTables.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('librerias/dataTables/responsive.dataTables.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('librerias/dataTables/buttons.dataTables.min.css') }}" rel="stylesheet">
 
     {{-- <link rel="stylesheet" type="text/css" href="/jquery.datetimepicker.css"/> --}}
     {{-- <link  rel=”stylesheet”  href=”https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css”   /> --}}
@@ -727,7 +727,8 @@ x-transition:leave-end="opacity-0 transform -translate-x-20">
 
                             <ul class="flex items-center flex-shrink-0 ">
                                 <li class="flex" onclick="active(1)">
-                                    <span id="active1" class="absolute inset-y-0 left-0 bg-purple-600 li-active hidden"></span>
+                                    <span id="active1"
+                                        class="absolute inset-y-0 left-0 bg-purple-600 li-active hidden"></span>
                                     <a class="inline-flex items-center w-full text-sm font-semibold text-gray-800 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
                                         href="{{ route('manual') }}" x-on:mouseover="flotan= 'manuals'"
                                         x-on:mouseleave="flotan=''" @click="changesView('manuals')">
@@ -748,7 +749,8 @@ x-transition:leave-end="opacity-0 transform -translate-x-20">
                                     </a>
                                 </li>
                                 <li class="flex ml-8">
-                                    <span id="active2" class="absolute inset-y-0 left-0 bg-purple-600 li-active hidden"></span>
+                                    <span id="active2"
+                                        class="absolute inset-y-0 left-0 bg-purple-600 li-active hidden"></span>
                                     <a x-on:mouseover="flotan='PESV'" x-on:mouseleave="flotan=''"
                                         class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                                         href="{{ route('pesv') }}" @click="changesView('PESV')">
@@ -782,7 +784,8 @@ x-transition:leave-end="opacity-0 transform -translate-x-20">
                                     </a>
                                 </li>
                                 <li class="flex ml-8">
-                                    <span id="active3" class="absolute inset-y-0 left-0 bg-purple-600 li-active hidden"></span>
+                                    <span id="active3"
+                                        class="absolute inset-y-0 left-0 bg-purple-600 li-active hidden"></span>
                                     <button x-on:mouseover="flotan='Information_lists'" x-on:mouseleave="flotan=''"
                                         class="inline-flex items-center justify-between w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                                         @click="togglePagesMenu" aria-haspopup="true">
@@ -886,6 +889,25 @@ x-transition:leave-end="opacity-0 transform -translate-x-20">
                                                 <div>
                                                     <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                                                         :class="{ '-ml-5': !isSideMenuOpen }">
+                                                        <a x-on:mouseover="flotan='List_vehicles'"
+                                                            x-on:mouseleave="flotan=''" class="w-full"
+                                                            href="{{ route('list-vehicles') }}">
+                                                            <i class="fas fa-fw fa-database icon-orange"
+                                                                :class="{ 'text-3xl': !isSideMenuOpen }"></i>
+                                                            <span
+                                                                :class="!isSideMenuOpen && flotan == 'List_vehicles' ?
+                                                                    minidisplay2 : '' || !
+                                                                    isSideMenuOpen && flotan != 'List_vehicles' ?
+                                                                    'hidden' : ''">
+                                                                {{ __('List of vehicles') }}
+                                                            </span>
+
+                                                        </a>
+                                                    </li>
+                                                </div>
+                                                <div>
+                                                    <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                                                        :class="{ '-ml-5': !isSideMenuOpen }">
                                                         <a x-on:mouseover="flotan='Linked_List'"
                                                             x-on:mouseleave="flotan=''" class="w-full"
                                                             href="{{ route('list-linked') }}">
@@ -901,26 +923,7 @@ x-transition:leave-end="opacity-0 transform -translate-x-20">
                                                         </a>
                                                     </li>
                                                 </div>
-                                                <div>
-                                                    <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                                                        :class="{ '-ml-5': !isSideMenuOpen }">
-                                                        <a x-on:mouseover="flotan='List_vehicles'"
-                                                            x-on:mouseleave="flotan=''" class="w-full"
-                                                            href="{{ route('list-vehicles') }}">
-                                                            <i class="fas fa-fw fa-database icon-gray"
-                                                                :class="{ 'text-3xl': !isSideMenuOpen }"></i>
-                                                            <span
-                                                                :class="!isSideMenuOpen && flotan == 'List_vehicles' ?
-                                                                    minidisplay2 : '' || !
-                                                                    isSideMenuOpen && flotan != 'List_vehicles' ?
-                                                                    'hidden' : ''">
-                                                                {{ __('List of vehicles') }}
-                                                            </span>
-
-                                                        </a>
-                                                    </li>
-                                                </div>
-                                                <div>
+                                                {{-- <div>
                                                     <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                                                         :class="{ '-ml-5': !isSideMenuOpen }">
                                                         <a x-on:mouseover="flotan='providers_list'"
@@ -937,8 +940,8 @@ x-transition:leave-end="opacity-0 transform -translate-x-20">
                                                             </span>
                                                         </a>
                                                     </li>
-                                                </div>
-                                                <div>
+                                                </div> --}}
+                                                {{-- <div>
                                                     <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                                                         :class="{ '-ml-5': !isSideMenuOpen }">
                                                         <a x-on:mouseover="flotan='pending_list'"
@@ -955,14 +958,15 @@ x-transition:leave-end="opacity-0 transform -translate-x-20">
                                                             </span>
                                                         </a>
                                                     </li>
-                                                </div>
+                                                </div> --}}
                                             </div>
 
                                         </ul>
                                     </template>
                                 </li>
                                 <li class="flex ml-8">
-                                    <span id="active4" class="absolute inset-y-0 left-0 bg-purple-600 li-active hidden"></span>
+                                    <span id="active4"
+                                        class="absolute inset-y-0 left-0 bg-purple-600 li-active hidden"></span>
                                     <a x-on:mouseover="flotan='Manage_Contract'" x-on:mouseleave="flotan=''"
                                         class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                                         href="{{ route('manage-contracts') }}">
@@ -982,7 +986,8 @@ x-transition:leave-end="opacity-0 transform -translate-x-20">
                                     </a>
                                 </li>
                                 <li class="flex ml-8">
-                                    <span id="active5" class="absolute inset-y-0 left-0 bg-purple-600 li-active hidden"></span>
+                                    <span id="active5"
+                                        class="absolute inset-y-0 left-0 bg-purple-600 li-active hidden"></span>
                                     <a x-on:mouseover="flotan='Manage_Fuec'" x-on:mouseleave="flotan=''"
                                         class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                                         href="{{ route('manage-permissions') }}">
@@ -1003,7 +1008,8 @@ x-transition:leave-end="opacity-0 transform -translate-x-20">
                                     </a>
                                 </li>
                                 <li class="flex ml-8">
-                                    <span id="active6" class="absolute inset-y-0 left-0 bg-purple-600 li-active hidden"></span>
+                                    <span id="active6"
+                                        class="absolute inset-y-0 left-0 bg-purple-600 li-active hidden"></span>
                                     <a x-on:mouseover="flotan='Manage_User'" x-on:mouseleave="flotan=''"
                                         class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                                         href="{{ route('manage-users') }}">
@@ -1024,7 +1030,8 @@ x-transition:leave-end="opacity-0 transform -translate-x-20">
                                     </a>
                                 </li>
                                 <li class="flex ml-8">
-                                    <span id="active7" class="absolute inset-y-0 left-0 bg-purple-600 li-active hidden"></span>
+                                    <span id="active7"
+                                        class="absolute inset-y-0 left-0 bg-purple-600 li-active hidden"></span>
                                     <a x-on:mouseover="flotan='ManageTechnicalSheet'" x-on:mouseleave="flotan=''"
                                         class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                                         href="{{ route('manage-vehicles') }}">
@@ -1044,7 +1051,8 @@ x-transition:leave-end="opacity-0 transform -translate-x-20">
                                     </a>
                                 </li>
                                 <li class="flex ml-8">
-                                    <span id="active8" class="absolute inset-y-0 left-0 bg-purple-600 li-active hidden"></span>
+                                    <span id="active8"
+                                        class="absolute inset-y-0 left-0 bg-purple-600 li-active hidden"></span>
                                     <a x-on:mouseover="flotan='plan_rodamiento'" x-on:mouseleave="flotan=''"
                                         class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                                         href="{{ route('pruebas.otraactividad') }}">
@@ -1085,7 +1093,8 @@ x-transition:leave-end="opacity-0 transform -translate-x-20">
                                     </a>
                                 </li> --}}
                                 <li class="flex ml-8">
-                                    <span id="active9" class="absolute inset-y-0 left-0 bg-purple-600 li-active hidden"></span>
+                                    <span id="active9"
+                                        class="absolute inset-y-0 left-0 bg-purple-600 li-active hidden"></span>
                                     <a x-on:mouseover="flotan='totals'" x-on:mouseleave="flotan=''"
                                         class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                                         href="{{ route('totals') }}" @click="changesView('totals')">
@@ -1104,8 +1113,9 @@ x-transition:leave-end="opacity-0 transform -translate-x-20">
                                         </span>
                                     </a>
                                 </li>
-                                <li class="flex ml-8">
-                                    <span id="active10" class="absolute inset-y-0 left-0 bg-purple-600 li-active hidden"></span>
+                                {{-- <li class="flex ml-8">
+                                    <span id="active10"
+                                        class="absolute inset-y-0 left-0 bg-purple-600 li-active hidden"></span>
                                     <a x-on:mouseover="flotan='accounting'" x-on:mouseleave="flotan=''"
                                         class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                                         href="{{ route('cambiocontraseña') }}" @click="changesView('accounting')">
@@ -1123,9 +1133,10 @@ x-transition:leave-end="opacity-0 transform -translate-x-20">
                                             {{ __('Accounting') }}
                                         </span>
                                     </a>
-                                </li>
-                                <li class="flex ml-8">
-                                    <span id="active11" class="absolute inset-y-0 left-0 bg-purple-600 li-active hidden"></span>
+                                </li> --}}
+                                {{-- <li class="flex ml-8">
+                                    <span id="active11"
+                                        class="absolute inset-y-0 left-0 bg-purple-600 li-active hidden"></span>
                                     <a x-on:mouseover="flotan='change_password'" x-on:mouseleave="flotan=''"
                                         class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                                         href="{{ route('cambiocontraseña') }}"
@@ -1144,9 +1155,10 @@ x-transition:leave-end="opacity-0 transform -translate-x-20">
                                             change password
                                         </span>
                                     </a>
-                                </li>
-                                <li class="flex ml-8">
-                                    <span id="active12" class="absolute inset-y-0 left-0 bg-purple-600 li-active hidden"></span>
+                                </li> --}}
+                                {{-- <li class="flex ml-8">
+                                    <span id="active12"
+                                        class="absolute inset-y-0 left-0 bg-purple-600 li-active hidden"></span>
                                     <a x-on:mouseover="flotan='Testing'" x-on:mouseleave="flotan=''"
                                         class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                                         href="{{ route('list.ListContracts') }}">
@@ -1165,7 +1177,7 @@ x-transition:leave-end="opacity-0 transform -translate-x-20">
                                             Testing
                                         </span>
                                     </a>
-                                </li>
+                                </li> --}}
                             </ul>
 
                         </div>
@@ -1315,9 +1327,9 @@ x-transition:leave-end="opacity-0 transform -translate-x-20">
                     </ul>
                 </div>
             </header>
-
+            
             <main class="h-4-7 overflow-y-auto">
-
+                
                 <div class="container px-6 mx-auto">
                     {{ $slot }}
                 </div>
@@ -1330,24 +1342,24 @@ x-transition:leave-end="opacity-0 transform -translate-x-20">
     @livewireScripts
     <script src="{{ asset('js/datos.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ asset('librerias/jquery-3.6.0.min.js') }}"></script>
     {{-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> --}}
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-    <script src="{{ asset('datetimepicker-master/build/jquery.datetimepicker.full.js') }}"></script>
-    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+    <script src="{{ asset('librerias/select2/select2.min.js') }}"></script>
+    <script src="{{ asset('librerias/datetimepicker-master/build/jquery.datetimepicker.full.js') }}"></script>
+    <script src="{{ asset('librerias/dataTables/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('librerias/dataTables/dataTables.responsive.min.js') }}"></script>
 
-    <script src="https://cdn.datatables.net/buttons/2.3.6/js/dataTables.buttons.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
-    <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.html5.min.js"></script>
+    <script src="{{ asset('librerias/dataTables/dataTables.buttons.min.js') }}"></script>
+    <script src="{{ asset('librerias/dataTables/jszip.min.js') }}"></script>
+    <script src="{{ asset('librerias/dataTables/pdfmake.min.js') }}"></script>
+    <script src="{{ asset('librerias/dataTables/vfs_fonts.js') }}"></script>
+    <script src="{{ asset('librerias/dataTables/buttons.html5.min.js') }}"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
-    <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.print.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.colVis.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script> --}}
+    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script> --}}
+    <script src="{{ asset('librerias/dataTables/buttons.print.min.js') }}"></script>
+    <script src="{{ asset('librerias/dataTables/buttons.colVis.min.js') }}"></script>
+    {{-- <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script> --}}
 
 
     {{-- <script src="{{ asset('virtualSelect/virtual-select.min.js') }}"></script> --}}
@@ -1362,25 +1374,40 @@ x-transition:leave-end="opacity-0 transform -translate-x-20">
     {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.7/typed.min.js1"></script>  --}}
     {{-- <script src="pikaday.js"></script> --}}
     <script>
-
-        function active(id){
+        function active(id) {
             for (let index = 0; index < 12; index++) {
 
-                index == id ? $("#active"+[index]).removeClass('hidden') : $("#active"+[index]).addClass('hidden');
-                
+                index == id ? $("#active" + [index]).removeClass('hidden') : $("#active" + [index]).addClass('hidden');
+
             }
-       }
+        }
     </script>
     @yield('scripts')
 
-    {{-- <script>
-            swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'Something went wrong!',
-            footer: '<a href="">Why do I have this issue?</a>'
-            });
-        </script> --}}
+    <script>
+        // swal.fire({
+        // icon: 'error',
+        // title: 'Oops...',
+        // text: 'Something went wrong!',
+        // footer: '<a href="">Why do I have this issue?</a>'
+        // });
+        // swal.fire({
+        //     title: '<strong>HTML <u>example</u></strong>',
+        //     icon: 'info',
+        //     html: 'You can use <b>bold text</b>, ' +
+        //         '<a href="//sweetalert2.github.io">links</a> ' +
+        //         'and other HTML tags',
+        //     showCloseButton: true,
+        //     showCancelButton: true,
+        //     focusConfirm: false,
+        //     confirmButtonText: '<i class="fa fa-thumbs-up"></i> Great!',
+        //     confirmButtonAriaLabel: 'Thumbs up, great!',
+        //     cancelButtonText: '<i class="fa fa-thumbs-down"></i>',
+        //     cancelButtonAriaLabel: 'Thumbs down'
+        // })
+    </script>
+
+
 
 
 </body>

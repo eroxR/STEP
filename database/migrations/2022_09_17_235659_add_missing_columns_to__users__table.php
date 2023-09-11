@@ -42,7 +42,7 @@ return new class extends Migration
 			$table->date('arl_date')->nullable();//fecha_arl
 			$table->unsignedBigInteger('compensationbox')->nullable();//caja_compensacion
 			$table->date('date_compensationbox')->nullable();//fecha_caja_compensacion
-			$table->enum('user_state', ['0', '1', '2'])->nullable();//estado['Inactivo','Activo','Bloqueado']
+			$table->enum('user_state', ['1', '2', '3'])->nullable();//estado['Inactivo','Activo','Bloqueado']
 			$table->date('user_entry_date')->nullable();//fecha_ingre_usuario
 			$table->date('date_withdrawal_user')->nullable();//fecha_retiro_usuario
 			$table->unsignedBigInteger('charge')->nullable();//cargo
@@ -60,8 +60,8 @@ return new class extends Migration
 			$table->unsignedBigInteger('bonding_type')->nullable();//tipo_vinculacion
 			$table->decimal('weight')->nullable();//peso
 			$table->decimal('pant_size', $precision = 5, $scale = 2)->nullable();//talla_pantalon
-			$table->decimal('shirt_size', $precision = 5, $scale = 2)->nullable();//talla_camisa
-			$table->decimal('shoe_size', $precision = 5, $scale = 2)->nullable();//talla_zapato
+			$table->string('shirt_size', 4)->nullable();//talla_camisa
+			$table->enum('shoe_size', ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'])->nullable();;//talla_zapato
 			$table->unsignedBigInteger('education_level')->nullable();//nivel_educativo
 			$table->string('educational_institution', 150)->nullable();//institucion_educativa
 			$table->string('last_year')->nullable();//ultimo_año

@@ -21,7 +21,7 @@ return new class extends Migration
 			
 			$table->timestamps();
 			
-			$table->foreign('driver_id')->references('id')->on('drivers')->onUpdate('cascade');
+			$table->foreign('driver_id')->references('id')->on('users')->onUpdate('cascade');
 			$table->foreign('accident_id')->references('id')->on('accidents')->onUpdate('cascade');
             $table->foreign('vehicle_id')->references('id')->on('vehicles')->onUpdate('cascade');
         });

@@ -1389,7 +1389,7 @@
                 @break
 
                 {{-- vinculación --}}
-                @case(9)
+                @case(7)
                     <div style="display: flex;position: absolute;width: 76%;height: 819px;margin-left: 6.5rem;">
                         <p style="font-size: 88%;text-align: justify;">
                             Entre los suscritos a saber, <strong>EL PROPIETARIO (TENEDOR),
@@ -2469,7 +2469,7 @@
                 @break
 
                 {{-- vinculación --}}
-                @case(9)
+                @case(7)
                     <div style="display: flex;position: absolute;width: 76%;height: 819px;margin-left: 6.5rem;">
                         <p style="font-size: 88%;text-align: justify;">
                             por la misma, en cada caso los siguientes conceptos: <strong>Parágrafo 1: Pago para renovación de
@@ -3473,7 +3473,7 @@
                 @break
 
                 {{-- vinculación --}}
-                @case(9)
+                @case(7)
                     <div style="display: flex;position: absolute;width: 76%;height: 819px;margin-left: 6.5rem;">
                         <p style="font-size: 84%;text-align: justify;">
                             OBLIGACIONES DE LAS PARTES A. OBLIGACIONES DE LA EMPRESA</strong> 1) Expedir mensualmente
@@ -3942,7 +3942,7 @@
                     @break
 
                     {{-- vinculación --}}
-                    @case(9)
+                    @case(7)
                         <div style="display: flex;position: absolute;width: 76%;height: 819px;margin-left: 6.5rem;">
                             <p style="font-size: 84%;text-align: justify;">
                                 documentos que suscriban las partes sean o no con ocasión del presente contrato. Al cancelarse
@@ -4283,7 +4283,7 @@
                     @break
 
                     {{-- vinculación --}}
-                    @case(9)
+                    @case(7)
                         <div style="display: flex;position: absolute;width: 76%;height: 819px;margin-left: 6.5rem;">
                             <p style="font-size: 98%;text-align: justify;">
                                 responder por ello, sin perjuicio de otras situaciones se considerará como un perjuicio para la
@@ -4762,7 +4762,7 @@
                     @break
 
                     {{-- vinculación --}}
-                    @case(9)
+                    @case(7)
                         <div style="display: flex;position: absolute;width: 76%;height: 819px;margin-left: 6.5rem;">
                             <p style="font-size: 88%;text-align: justify;">
 
@@ -5207,7 +5207,7 @@
                     @break
 
                     {{-- vinculación --}}
-                    @case(9)
+                    @case(7)
                         <div style="display: flex;position: absolute;width: 76%;height: 819px;margin-left: 6.5rem;">
                             <p style="font-size: 88%;text-align: justify;">
                                 unilateralmente el contrato de vinculación. Tal decisión deberá ser informada a través de correo

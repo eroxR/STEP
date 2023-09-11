@@ -34,6 +34,7 @@ return new class extends Migration
 			$table->enum('total_disposition', ['SI', 'NO'])->nullable();//disposicionTotal
 			$table->integer('quantity_vehicle')->nullable();//cantidad_vehiculos
 			$table->string('cooperation_contract', 60)->nullable();//cooperacion_contrato
+			$table->string('secure_policy', 60)->nullable();//Poliza_seguros
 			$table->unsignedBigInteger('tipe_pay')->nullable();//tipo_pago
 			$table->date('contract_signing_date')->nullable();//fecha_firma_contrato
 			$table->string('signature_place', 250)->nullable();//lugar_firma_contrato

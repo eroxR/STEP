@@ -22,18 +22,18 @@
                         <line x1="9" y1="9" x2="15" y2="15" />
                     </svg>
                 </button> --}}
-                {{-- <button wire:click="$set('filtre',1)"
-                    class="absolute top-0 ml25 mt1 px-2 py-1 font-semibold leading-tight text-white bg-emerald-700 rounded-full dark:bg-sky-700 dark:text-white">
-                    Colegios
-                </button> --}}
-                {{-- <button wire:click="$set('filtre',2)"
-                    class="absolute top-0 ml32 mt1 px-2 py-1 font-semibold leading-tight text-white bg-emerald-700 rounded-full dark:bg-sky-700 dark:text-white">
-                    Empresas
-                </button> --}}
-                {{-- <button wire:click="$set('filtre',3)"
-                    class="absolute top-0 ml40 mt1 px-2 py-1 font-semibold leading-tight text-white bg-emerald-700 rounded-full dark:bg-sky-700 dark:text-white">
-                    Empresas Turismo
-                </button> --}}
+                <span 
+                    class="absolute top-0 ml25 mt1 px-2 py-1 font-semibold leading-tight text-sky-700 bg-sky-300 rounded-full dark:bg-sky-700 dark:text-sky-100">
+                    Total Conductores = {{$totals}} 
+                </span>
+                <span 
+                    class="absolute top-0 ml40 mt1 px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">
+                    Conductores Habilitados {{$habilitado }}
+                </span>
+                <span 
+                    class="absolute top-0 ml57 mt1 px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-full dark:text-red-100 dark:bg-red-700">
+                    Conductores Inhabilitados {{$inhabilitado}}
+                </span>
                 {{-- <button wire:click="$set('filtre',4)"
                     class="absolute top-0 ml53 mt1 px-2 py-1 font-semibold leading-tight text-white bg-emerald-700 rounded-full dark:bg-sky-700 dark:text-white">
                     Ocacionales
@@ -61,14 +61,14 @@
                 </div>
                 <div class="w20 h-4-7 mt-12 mr-4 ml-4 px-6 py-4  bg-white rounded-t-lg dark:bg-gray-800 dark:text-white sm:rounded-lg overflow-x-hidden overflow-y-auto"
                     role="dialog">
-                    <header class="flex justify-center border-b-fuchsia-800 border-b bg-green-500 rounded-lg">
+                    <header class="flex justify-center border-b-fuchsia-800 border-b bg-red-500 rounded-lg">
                         <!-- title -->
                         <button id="title" wire:click="order()">{{ __('Driver List') }}</button>
                     </header>
                     <div class="h-4-7 overflow-y-auto">
                         <ul>
                             @foreach ($drivers as $driver)
-                                <li class="id hover:bg-green-500 hover:text-white border-b rounded-lg">
+                                <li class="id hover:bg-red-500 hover:text-white border-b rounded-lg">
                                     <a wire:click="$set('ide',{{ $driver->user_id }})" href="#">
                                         {{ $driver->firstname }} {{ $driver->secondname }}
                                         {{ $driver->lastname }} {{ $driver->motherslastname }}
@@ -87,7 +87,6 @@
                                                         <strong class="dark:text-yellow-400"> docum.</strong>
                                                         {{ $driver->identificationcard }}
                                                         <strong class="dark:text-yellow-400"> vinculado</strong>
-                                                        {{-- {{$driver->Linked}} --}}
                                                         @foreach ($linked as $linkedy)
                                                             @if ($linkedy->id == $driver->Linked)
                                                                 {{ $linkedy->firstname }}
@@ -99,45 +98,14 @@
                                                 <div class="">
                                                     <h1 class="content-center text-black dark:text-white text-4xl1">
                                                         Estado:
-                                                        @switch($driver->driver_status)
-                                                            @case('0')
-                                                                <span
-                                                                    class="px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-full dark:text-red-100 dark:bg-red-700">
-                                                                    Inhabilitado
-                                                                </span>
-                                                            @break
 
-                                                            @case('1')
-                                                                <span
-                                                                    class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">
-                                                                    Habilitado
-                                                                </span>
-                                                            @break
-
-                                                            @default
-                                                        @endswitch
+                                                        <span
+                                                            @if ($driver->driver_status == 1) class="px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-full dark:text-red-100 dark:bg-red-700">   
+                                                            @else
+                                                            class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100"> @endif
+                                                            {{ $state[$driver->driver_status - 1] }} </span>
                                                     </h1>
-                                                    {{-- {{ $hoy }} --}}
                                                 </div>
-                                                {{-- <div class="text-black dark:text-white">
-                                                    <h1>
-                                                        <strong>Hoja de vida</strong>
-                                                        <button
-                                                            class="inline-flex items-center justify-center  bg-blue-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 active:bg-red-600 disabled:opacity-25 transition"
-                                                            aria-label="view">
-                                                            <svg class="w-5 h-5" fill="none" stroke="currentColor"
-                                                                stroke-width="1.5" viewBox="0 0 24 24"
-                                                                xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                                    d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z">
-                                                                </path>
-                                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z">
-                                                                </path>
-                                                            </svg>
-                                                        </button>
-                                                    </h1>
-                                                </div> --}}
                                             </div>
 
                                         </header>
@@ -329,6 +297,24 @@
                                                 <strong class="dark:text-yellow-400">Aux. Transporte:</strong>
                                                 ${{ number_format($driver->aid_transport, 2, ',', '.') }}
                                             </div>
+
+                                            @foreach ($beneficiaries as $beneficiary)
+                                                @if ($beneficiary->user_id == $driver->user_id)
+                                                    <div class="border-b text-black text80 dark:text-white ">
+                                                        <strong class="dark:text-yellow-400">Tipo
+                                                            Beneficiario:</strong>
+                                                        <br>
+                                                        {{ $beneficiaryType[$beneficiary->beneficiaryType - 1] }}
+                                                        <br>
+                                                        <strong class="dark:text-yellow-400">Documento
+                                                            Beneficiarios:</strong> <br>
+                                                        {{ $beneficiary->document }} <br>
+                                                        <strong class="dark:text-yellow-400">Nombre Completo:</strong>
+                                                        <br>
+                                                        {{ $beneficiary->full_name }}
+                                                    </div>
+                                                @endif
+                                            @endforeach
                                             <div class="border-b text-black text80 dark:text-white ">
                                                 <strong class="dark:text-yellow-400">Licencia:</strong>
                                                 {{ $driver->license_number }} <br>
@@ -344,7 +330,7 @@
                                                     class=" @if ($driver->license_expiration < $hoy) bg-red-600 text-white rounded-3xl p-1 @endif">
                                                     {{ $driver->license_expiration }}
                                                 </span><br>
-                                                <strong class="dark:text-yellow-400">Certificado Drogas y
+                                                <strong class="dark:text-yellow-400">Drogas y
                                                     Alcoholemia:</strong> <br>
                                                 <span
                                                     class=" @if ($driver->certificate_drugs_alchoolemia < $hoy) bg-red-600 text-white rounded-3xl p-1 @endif">
@@ -356,81 +342,55 @@
                                                 </span>
                                             </div>
                                             <div class="border-b text-black text80 dark:text-white ">
-                                                <strong class="dark:text-yellow-400">Examen de Conducción:</strong>
-                                                <br>
+                                                <strong class="dark:text-yellow-400">psicosensométrico:</strong> <br>
                                                 <span
-                                                    class=" @if ($driver->driving_exam < $hoy) bg-red-600 text-white rounded-3xl p-1 @endif">
-                                                    {{ $driver->driving_exam }}
-                                                </span><br>
-                                                <strong class="dark:text-yellow-400">Norma Transporte Terrestre
-                                                    Automotor:</strong>
+                                                    class=" @if ($driver->psicosensometrico < $hoy) bg-red-600 text-white rounded-3xl p-1 @endif">
+                                                    {{ $driver->psicosensometrico }}
+                                                </span>
                                                 <br>
-                                                <span
-                                                    class=" @if ($driver->Norm_Overland_Transportation_Automotive < $hoy) bg-red-600 text-white rounded-3xl p-1 @endif">
-                                                    {{ $driver->Norm_Overland_Transportation_Automotive }}
-                                                </span><br>
                                                 <strong class="dark:text-yellow-400">Normas Transito:</strong> <br>
                                                 <span
                                                     class=" @if ($driver->Rules_Transit < $hoy) bg-red-600 text-white rounded-3xl p-1 @endif">
-                                                    {{ $driver->Rules_Transit }}
+                                                    @if (!$driver->Rules_Transit)
+                                                        Sin información
+                                                    @else
+                                                        {{ $driver->Rules_Transit }}
+                                                    @endif
                                                 </span>
-                                            </div>
-                                            <div class="border-b text-black text80 dark:text-white ">
-
-                                                <strong class="dark:text-yellow-400">Tips normativos:</strong> <br>
-                                                <span
-                                                    class=" @if ($driver->Normative_Tips < $hoy) bg-red-600 text-white rounded-3xl p-1 @endif">
-                                                    {{ $driver->Normative_Tips }}
-                                                </span><br>
-                                                <strong class="dark:text-yellow-400">Metodos Conduccion:</strong> <br>
-                                                <span
-                                                    class=" @if ($driver->Driving_Methods < $hoy) bg-red-600 text-white rounded-3xl p-1 @endif">
-                                                    {{ $driver->Driving_Methods }}
-                                                </span><br>
-                                                <strong class="dark:text-yellow-400">Manejo_Defensivo:</strong> <br>
+                                                <br>
+                                                <strong class="dark:text-yellow-400">Manejo Defensivo:</strong> <br>
                                                 <span
                                                     class=" @if ($driver->Defensive_driving < $hoy) bg-red-600 text-white rounded-3xl p-1 @endif">
-                                                    {{ $driver->Defensive_driving }}
+                                                    @if (!$driver->Defensive_driving)
+                                                        Sin información
+                                                    @else
+                                                        {{ $driver->Defensive_driving }}
+                                                    @endif
                                                 </span>
-                                            </div>
-                                            <div class="border-b text-black text80 dark:text-white ">
-                                                <strong class="dark:text-yellow-400">Distracciones:</strong> <br>
-                                                <span
-                                                    class=" @if ($driver->distractions < $hoy) bg-red-600 text-white rounded-3xl p-1 @endif">
-                                                    {{ $driver->distractions }}
-                                                </span><br>
+                                                <br>
                                                 <strong class="dark:text-yellow-400">Primeros Auxilios:</strong> <br>
                                                 <span
                                                     class=" @if ($driver->First_aid < $hoy) bg-red-600 text-white rounded-3xl p-1 @endif">
-                                                    {{ $driver->First_aid }}
-                                                </span><br>
-                                                <strong class="dark:text-yellow-400">Primero Respondiente:</strong>
-                                                <br>
-                                                <span
-                                                    class=" @if ($driver->First_Responder < $hoy) bg-red-600 text-white rounded-3xl p-1 @endif">
-                                                    {{ $driver->First_Responder }}
-                                                </span> <br>
-
-                                                <strong class="dark:text-yellow-400">cinco sentidos
-                                                    conduccion:</strong> <br>
-                                                <span
-                                                    class=" @if ($driver->five_senses_driving < $hoy) bg-red-600 text-white rounded-3xl p-1 @endif">
-                                                    {{ $driver->five_senses_driving }}
+                                                    @if (!$driver->First_aid)
+                                                        Sin información
+                                                    @else
+                                                        {{ $driver->First_aid }}
+                                                    @endif
                                                 </span>
+
                                             </div>
                                             <div class="border-b text-black text80 dark:text-white ">
-                                                <strong class="dark:text-yellow-400">Seguridad activa pasiva
-                                                    vehiculo:</strong> <br>
-                                                <span
-                                                    class=" @if ($driver->Active_Passive_Security_vehicle < $hoy) bg-red-600 text-white rounded-3xl p-1 @endif ">
-                                                    {{ $driver->Active_Passive_Security_vehicle }}
-                                                </span> <br>
+
 
                                                 <strong class="dark:text-yellow-400">Seguridad Vial:</strong>
                                                 <br>
                                                 <span
                                                     class=" @if ($driver->Road_safety < $hoy) bg-red-600 text-white rounded-3xl p-1 @endif ">
-                                                    {{ $driver->Road_safety }}
+                                                    @if (!$driver->Road_safety)
+                                                        Sin información
+                                                    @else
+                                                        {{ $driver->Road_safety }}
+                                                    @endif
                                                 </span>
                                             </div>
                                         </div>
@@ -440,7 +400,6 @@
 
                         </ul>
                     </div>
-
 
                 </div>
 
@@ -470,45 +429,14 @@
                                 <div class="">
                                     <h1 class="content-center text-black dark:text-white text-4xl1">
                                         Estado:
-                                        @switch($driverSelected->driver_status)
-                                            @case('0')
-                                                <span
-                                                    class="px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-full dark:text-red-100 dark:bg-red-700">
-                                                    Inhabilitado
-                                                </span>
-                                            @break
 
-                                            @case('1')
-                                                <span
-                                                    class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">
-                                                    Habilitado
-                                                </span>
-                                            @break
-
-                                            @default
-                                        @endswitch
+                                        <span
+                                            @if ($driverSelected->driver_status == 1) class="px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-full dark:text-red-100 dark:bg-red-700">   
+                                        @else
+                                        class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100"> @endif
+                                            {{ $state[$driverSelected->driver_status - 1] }} </span>
                                     </h1>
-                                    {{-- {{ $hoy }} --}}
                                 </div>
-                                {{-- <div class="text-black dark:text-white">
-                                    <h1>
-                                        <strong>Hoja de vida</strong>
-                                        <button
-                                            class="inline-flex items-center justify-center  bg-blue-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 active:bg-red-600 disabled:opacity-25 transition"
-                                            aria-label="view">
-                                            <svg class="w-5 h-5" fill="none" stroke="currentColor"
-                                                stroke-width="1.5" viewBox="0 0 24 24"
-                                                xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z">
-                                                </path>
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z">
-                                                </path>
-                                            </svg>
-                                        </button>
-                                    </h1>
-                                </div> --}}
                             </div>
 
                         </header>
@@ -577,7 +505,8 @@
                                 {{ $driverSelected->phone_cellular }}
                             </div>
                             <div class="border-b text-black text80 dark:text-white ">
-                                <button id="historicos" onclick="historicos('{{ $driverSelected->user_id }}','15')">
+                                <button id="historicos"
+                                    onclick="historicos('{{ $driverSelected->user_id }}','8','')">
                                     <strong class="dark:text-yellow-400">EPS:</strong>
                                 </button>
                                 @foreach ($eps as $id => $description_eps)
@@ -586,8 +515,15 @@
                                     @endif
                                 @endforeach
                                 <br>
+
+                                {{-- @php
+                                
+                                    $fend = Carbon::createFromDate($driverSelected->date_eps);
+                                   $cantidad =  Carbon::createFromDate($this->$fend)->diffInDays($hoy);
+                                @endphp --}}
+
                                 <button class=""
-                                    onclick="modalDocumentation('{{ $driverSelected->identificationcard }}' ,'15', '{{ $driverSelected->user_id }}')">
+                                    onclick="modalDocumentation('{{ $driverSelected->identificationcard }}' ,'8', '{{ $driverSelected->user_id }}',''),viewDate()">
                                     <span
                                         class="hover:bg-blue-700 hover:text-black rounded-3xl p-1 @if ($driverSelected->date_eps < $hoy) bg-red-600 text-white @endif">
                                         <strong class="dark:text-yellow-400">Vigencia:</strong>
@@ -612,7 +548,8 @@
                                 {{ $driverSelected->shoe_size }}
                             </div>
                             <div class="border-b text-black text80 dark:text-white ">
-                                <button id="historicos" onclick="historicos('{{ $driverSelected->user_id }}','17')">
+                                <button id="historicos"
+                                    onclick="historicos('{{ $driverSelected->user_id }}','10','')">
                                     <strong class="dark:text-yellow-400">Cesantias:</strong>
                                 </button>
                                 @foreach ($layoffs as $id => $description_layoffs)
@@ -622,14 +559,15 @@
                                 @endforeach
                                 <br>
                                 <button class=""
-                                    onclick="modalDocumentation('{{ $driverSelected->identificationcard }}' ,'17', '{{ $driverSelected->user_id }}')">
+                                    onclick="modalDocumentation('{{ $driverSelected->identificationcard }}' ,'10', '{{ $driverSelected->user_id }}',''),viewDate()">
                                     <span
                                         class="hover:bg-blue-700 hover:text-black rounded-3xl p-1 @if ($driverSelected->date_layoffs < $hoy) bg-red-600 text-white @endif">
                                         <strong class="dark:text-yellow-400">Vigencia:</strong>
                                         {{ $driverSelected->date_layoffs }}
                                     </span>
                                 </button><br>
-                                <button id="historicos" onclick="historicos('{{ $driverSelected->user_id }}','18')">
+                                <button id="historicos"
+                                    onclick="historicos('{{ $driverSelected->user_id }}','11','')">
                                     <strong class="dark:text-yellow-400">ARL:</strong>
                                 </button>
                                 @foreach ($alrs as $id => $description_arl)
@@ -639,14 +577,15 @@
                                 @endforeach
                                 <br>
                                 <button class=""
-                                    onclick="modalDocumentation('{{ $driverSelected->identificationcard }}' ,'18', '{{ $driverSelected->user_id }}')">
+                                    onclick="modalDocumentation('{{ $driverSelected->identificationcard }}' ,'11', '{{ $driverSelected->user_id }}',''),viewDate()">
                                     <span
                                         class="hover:bg-blue-700 hover:text-black rounded-3xl p-1 @if ($driverSelected->arl_date < $hoy) bg-red-600 text-white @endif">
                                         <strong class="dark:text-yellow-400">Vigencia:</strong>
                                         {{ $driverSelected->arl_date }}
                                     </span>
                                 </button><br>
-                                <button id="historicos" onclick="historicos('{{ $driverSelected->user_id }}','16')">
+                                <button id="historicos"
+                                    onclick="historicos('{{ $driverSelected->user_id }}','9','')">
                                     <strong class="dark:text-yellow-400">Pensión:</strong>
                                 </button>
                                 @foreach ($pensions as $id => $description_pension)
@@ -656,7 +595,7 @@
                                 @endforeach
                                 <br>
                                 <button class=""
-                                    onclick="modalDocumentation('{{ $driverSelected->identificationcard }}' ,'16', '{{ $driverSelected->user_id }}')">
+                                    onclick="modalDocumentation('{{ $driverSelected->identificationcard }}' ,'9', '{{ $driverSelected->user_id }}',''),viewDate()">
                                     <span
                                         class="hover:bg-blue-700 hover:text-black rounded-3xl p-1 @if ($driverSelected->date_pension < $hoy) bg-red-600 text-white @endif">
                                         <strong class="dark:text-yellow-400">Vigencia:</strong>
@@ -665,7 +604,8 @@
                                 </button>
                             </div>
                             <div class="border-b text-black text80 dark:text-white ">
-                                <button id="historicos" onclick="historicos('{{ $driverSelected->user_id }}','19')">
+                                <button id="historicos"
+                                    onclick="historicos('{{ $driverSelected->user_id }}','12','')">
                                     <strong class="dark:text-yellow-400">Caja de compensación:</strong>
                                 </button>
                                 @foreach ($compensationboxes as $id => $description_compensationbox)
@@ -675,7 +615,7 @@
                                 @endforeach
                                 <br>
                                 <button class=""
-                                    onclick="modalDocumentation('{{ $driverSelected->identificationcard }}' ,'19', '{{ $driverSelected->user_id }}')">
+                                    onclick="modalDocumentation('{{ $driverSelected->identificationcard }}' ,'12', '{{ $driverSelected->user_id }}',''),viewDate()">
                                     <span
                                         class="hover:bg-blue-700 hover:text-black rounded-3xl p-1 @if ($driverSelected->date_compensationbox < $hoy) bg-red-600 text-white @endif">
                                         <strong class="dark:text-yellow-400">Vigencia:</strong>
@@ -722,8 +662,36 @@
                                 <strong class="dark:text-yellow-400">Aux. Transporte:</strong>
                                 ${{ number_format($driverSelected->aid_transport, 2, ',', '.') }}
                             </div>
+                            @foreach ($beneficiaries as $beneficiary)
+                                @if ($beneficiary->user_id == $driverSelected->user_id)
+                                    <div class="border-b text-black text80 dark:text-white ">
+                                        <button id="historicos"
+                                            onclick="historicos('{{ $driverSelected->user_id }}','13','{{ $beneficiary->id }}')">
+                                            <strong class="dark:text-yellow-400">Tipo Beneficiario:</strong>
+                                        </button>
+                                        <br>
+
+                                        @if ($beneficiaryType[$beneficiary->beneficiaryType - 1] == 'Hijo o Hijastro')
+                                            <span class="hover:bg-blue-700 hover:text-black rounded-3xl p-1">
+                                                <button class=""
+                                                    onclick="modalDocumentation('{{ $driverSelected->identificationcard }}' ,'13', '{{ $driverSelected->user_id }}','{{ $beneficiary->id }}'),hideDate()">
+                                                    {{ $beneficiaryType[$beneficiary->beneficiaryType - 1] }}
+                                                </button>
+                                            </span>
+                                        @else
+                                            {{ $beneficiaryType[$beneficiary->beneficiaryType - 1] }}
+                                        @endif
+                                        <br>
+                                        <strong class="dark:text-yellow-400">Documento Beneficiarios:</strong> <br>
+                                        {{ $beneficiary->document }} <br>
+                                        <strong class="dark:text-yellow-400">Nombre Completo:</strong> <br>
+                                        {{ $beneficiary->full_name }}
+                                    </div>
+                                @endif
+                            @endforeach
                             <div class="border-b text-black text80 dark:text-white ">
-                                <button id="historicos" onclick="historicos('{{ $driverSelected->user_id }}','0')">
+                                <button id="historicos"
+                                    onclick="historicos('{{ $driverSelected->user_id }}','0','')">
                                     <strong class="dark:text-yellow-400">Licencia:</strong>
                                 </button>
                                 {{ $driverSelected->license_number }} <br>
@@ -738,163 +706,120 @@
                                 <span
                                     class="hover:bg-blue-700 hover:text-black rounded-3xl p-1 @if ($driverSelected->license_expiration < $hoy) bg-red-600 text-white @endif">
                                     <button class=""
-                                        onclick="modalDocumentation('{{ $driverSelected->identificationcard }}' ,'0', '{{ $driverSelected->user_id }}')">
+                                        onclick="modalDocumentation('{{ $driverSelected->identificationcard }}' ,'0', '{{ $driverSelected->user_id }}',''),viewDate()">
                                         {{ $driverSelected->license_expiration }}
                                     </button>
                                 </span>
                                 <br>
-                                <button id="historicos" onclick="historicos('{{ $driverSelected->user_id }}','1')">
-                                    <strong class="dark:text-yellow-400">Certificado Drogas y Alcoholemia:</strong>
+                                <button id="historicos"
+                                    onclick="historicos('{{ $driverSelected->user_id }}','1','')">
+                                    <strong class="dark:text-yellow-400">Drogas y Alcoholemia:</strong>
                                 </button>
                                 <br>
                                 <span
                                     class="hover:bg-blue-700 hover:text-black rounded-3xl p-1 @if ($driverSelected->certificate_drugs_alchoolemia < $hoy) bg-red-600 text-white @endif">
                                     <button class=""
-                                        onclick="modalDocumentation('{{ $driverSelected->identificationcard }}' ,'1', '{{ $driverSelected->user_id }}')">
+                                        onclick="modalDocumentation('{{ $driverSelected->identificationcard }}' ,'1', '{{ $driverSelected->user_id }}',''),viewDate()">
                                         {{ $driverSelected->certificate_drugs_alchoolemia }}
                                     </button></span><br>
-                                <button id="historicos" onclick="historicos('{{ $driverSelected->user_id }}','2')">
+                                <button id="historicos"
+                                    onclick="historicos('{{ $driverSelected->user_id }}','2','')">
                                     <strong class="dark:text-yellow-400">Consultas SIMIT:</strong>
                                 </button> <br>
                                 <span
                                     class="hover:bg-blue-700 hover:text-black rounded-3xl p-1 @if ($driverSelected->SIMIT_queries < $hoy) bg-red-600 text-white @endif">
                                     <button class=""
-                                        onclick="modalDocumentation('{{ $driverSelected->identificationcard }}' ,'2', '{{ $driverSelected->user_id }}')">
+                                        onclick="modalDocumentation('{{ $driverSelected->identificationcard }}' ,'2', '{{ $driverSelected->user_id }}',''),viewDate()">
                                         {{ $driverSelected->SIMIT_queries }}
 
                                     </button></span>
                             </div>
                             <div class="border-b text-black text80 dark:text-white ">
-                                <button id="historicos" onclick="historicos('{{ $driverSelected->user_id }}','3')">
-                                    <strong class="dark:text-yellow-400">Exament de Conducción:</strong>
-                                </button> <br>
-                                <span
-                                    class="hover:bg-blue-700 hover:text-black rounded-3xl p-1 @if ($driverSelected->driving_exam < $hoy) bg-red-600 text-white @endif">
-                                    <button class=""
-                                        onclick="modalDocumentation('{{ $driverSelected->identificationcard }}' ,'3', '{{ $driverSelected->user_id }}')">
-                                        {{ $driverSelected->driving_exam }}
 
-                                    </button></span><br>
-                                <button id="historicos" onclick="historicos('{{ $driverSelected->user_id }}','4')">
-                                    <strong class="dark:text-yellow-400">Norma Transporte Terrestre Automotor:</strong>
+                                <button id="historicos"
+                                    onclick="historicos('{{ $driverSelected->user_id }}','3','')">
+                                    <strong class="dark:text-yellow-400">psicosensométrico:</strong>
                                 </button>
                                 <br>
                                 <span
-                                    class="hover:bg-blue-700 hover:text-black rounded-3xl p-1 @if ($driverSelected->Norm_Overland_Transportation_Automotive < $hoy) bg-red-600 text-white @endif">
+                                    class="hover:bg-blue-700 hover:text-black rounded-3xl p-1 @if ($driverSelected->psicosensometrico < $hoy) bg-red-600 text-white @endif">
                                     <button class=""
-                                        onclick="modalDocumentation('{{ $driverSelected->identificationcard }}' ,'4', '{{ $driverSelected->user_id }}')">
-                                        {{ $driverSelected->Norm_Overland_Transportation_Automotive }}
-
-                                    </button></span><br>
-                                <button id="historicos" onclick="historicos('{{ $driverSelected->user_id }}','5')">
-                                    <strong class="dark:text-yellow-400">Normas Transito:</strong>
-                                </button> <br>
-                                <span
-                                    class="hover:bg-blue-700 hover:text-black rounded-3xl p-1 @if ($driverSelected->Rules_Transit < $hoy) bg-red-600 text-white @endif">
-                                    <button class=""
-                                        onclick="modalDocumentation('{{ $driverSelected->identificationcard }}' ,'5', '{{ $driverSelected->user_id }}')">
-                                        {{ $driverSelected->Rules_Transit }}
-
-                                    </button></span>
-                            </div>
-                            <div class="border-b text-black text80 dark:text-white ">
-
-                                <button id="historicos" onclick="historicos('{{ $driverSelected->user_id }}','6')">
-                                    <strong class="dark:text-yellow-400">Tips normativos:</strong>
-                                </button> <br>
-                                <span
-                                    class="hover:bg-blue-700 hover:text-black rounded-3xl p-1 @if ($driverSelected->Normative_Tips < $hoy) bg-red-600 text-white @endif">
-                                    <button class=""
-                                        onclick="modalDocumentation('{{ $driverSelected->identificationcard }}' ,'6', '{{ $driverSelected->user_id }}')">
-                                        {{ $driverSelected->Normative_Tips }}
-
-                                    </button></span><br>
-                                <button id="historicos" onclick="historicos('{{ $driverSelected->user_id }}','7')">
-                                    <strong class="dark:text-yellow-400">Metodos Conduccion:</strong>
-                                </button> <br>
-                                <span
-                                    class="hover:bg-blue-700 hover:text-black rounded-3xl p-1 @if ($driverSelected->Driving_Methods < $hoy) bg-red-600 text-white @endif">
-                                    <button class=""
-                                        onclick="modalDocumentation('{{ $driverSelected->identificationcard }}' ,'7', '{{ $driverSelected->user_id }}')">
-                                        {{ $driverSelected->Driving_Methods }}
-
-                                    </button></span><br>
-                                <button id="historicos" onclick="historicos('{{ $driverSelected->user_id }}','8')">
-                                    <strong class="dark:text-yellow-400">Manejo_Defensivo:</strong>
-                                </button> <br>
-                                <span
-                                    class="hover:bg-blue-700 hover:text-black rounded-3xl p-1 @if ($driverSelected->Defensive_driving < $hoy) bg-red-600 text-white @endif">
-                                    <button class=""
-                                        onclick="modalDocumentation('{{ $driverSelected->identificationcard }}' ,'8', '{{ $driverSelected->user_id }}')">
-                                        {{ $driverSelected->Defensive_driving }}
-
-                                    </button></span>
-                            </div>
-                            <div class="border-b text-black text80 dark:text-white ">
-                                <button id="historicos" onclick="historicos('{{ $driverSelected->user_id }}','9')">
-                                    <strong class="dark:text-yellow-400">Distracciones:</strong>
-                                </button> <br>
-                                <span
-                                    class="hover:bg-blue-700 hover:text-black rounded-3xl p-1 @if ($driverSelected->distractions < $hoy) bg-red-600 text-white @endif">
-                                    <button class=""
-                                        onclick="modalDocumentation('{{ $driverSelected->identificationcard }}' ,'9', '{{ $driverSelected->user_id }}')">
-                                        {{ $driverSelected->distractions }}
-
-                                    </button></span><br>
-                                <button id="historicos" onclick="historicos('{{ $driverSelected->user_id }}','10')">
-                                    <strong class="dark:text-yellow-400">Primeros Auxilios:</strong>
-                                </button> <br>
-                                <span
-                                    class="hover:bg-blue-700 hover:text-black rounded-3xl p-1 @if ($driverSelected->First_aid < $hoy) bg-red-600 text-white @endif">
-                                    <button class=""
-                                        onclick="modalDocumentation('{{ $driverSelected->identificationcard }}' ,'10', '{{ $driverSelected->user_id }}')">
-                                        {{ $driverSelected->First_aid }}
-
-                                    </button></span><br>
-                                <button id="historicos" onclick="historicos('{{ $driverSelected->user_id }}','11')">
-                                    <strong class="dark:text-yellow-400">Primero Respondiente:</strong>
-                                </button> <br>
-                                <span
-                                    class="hover:bg-blue-700 hover:text-black rounded-3xl p-1 @if ($driverSelected->First_Responder < $hoy) bg-red-600 text-white @endif">
-                                    <button class=""
-                                        onclick="modalDocumentation('{{ $driverSelected->identificationcard }}' ,'11', '{{ $driverSelected->user_id }}')">
-                                        {{ $driverSelected->First_Responder }}
-
-                                    </button></span> <br>
-
-                                <button id="historicos" onclick="historicos('{{ $driverSelected->user_id }}','12')">
-                                    <strong class="dark:text-yellow-400">cinco sentidos conduccion:</strong>
-                                </button> <br>
-                                <span
-                                    class="hover:bg-blue-700 hover:text-black rounded-3xl p-1 @if ($driverSelected->five_senses_driving < $hoy) bg-red-600 text-white @endif">
-                                    <button class=""
-                                        onclick="modalDocumentation('{{ $driverSelected->identificationcard }}' ,'12', '{{ $driverSelected->user_id }}')">
-                                        {{ $driverSelected->five_senses_driving }}
-
-                                    </button></span>
-                            </div>
-                            <div class="border-b text-black text80 dark:text-white ">
-                                <button id="historicos" onclick="historicos('{{ $driverSelected->user_id }}','13')">
-                                    <strong class="dark:text-yellow-400">Seguridad activa pasiva vehiculo:</strong>
-                                </button> <br>
-                                <span
-                                    class="hover:bg-blue-700 hover:text-black rounded-3xl p-1 @if ($driverSelected->Active_Passive_Security_vehicle < $hoy) bg-red-600 text-white @endif ">
-                                    <button class=""
-                                        onclick="modalDocumentation('{{ $driverSelected->identificationcard }}' ,'13', '{{ $driverSelected->user_id }}')">
-                                        {{ $driverSelected->Active_Passive_Security_vehicle }}
+                                        onclick="modalDocumentation('{{ $driverSelected->identificationcard }}' ,'3', '{{ $driverSelected->user_id }}',''),viewDate()">
+                                        {{ $driverSelected->psicosensometrico }}
 
                                     </button>
                                 </span>
                                 <br>
-                                <button id="historicos" onclick="historicos('{{ $driverSelected->user_id }}','14')">
+                                <button id="historicos"
+                                    onclick="historicos('{{ $driverSelected->user_id }}','4','')">
+                                    <strong class="dark:text-yellow-400">Normas Transito:</strong>
+                                </button>
+                                <br>
+                                <span
+                                    class="hover:bg-blue-700 hover:text-black rounded-3xl p-1 @if ($driverSelected->Rules_Transit < $hoy) bg-red-600 text-white @endif">
+                                    <button class=""
+                                        onclick="modalDocumentation('{{ $driverSelected->identificationcard }}' ,'4', '{{ $driverSelected->user_id }}',''),viewDate()">
+                                        @if (!$driverSelected->Rules_Transit)
+                                            Sin información
+                                        @else
+                                            {{ $driverSelected->Rules_Transit }}
+                                        @endif
+
+                                    </button>
+                                </span>
+                                <br>
+                                <button id="historicos"
+                                    onclick="historicos('{{ $driverSelected->user_id }}','5','')">
+                                    <strong class="dark:text-yellow-400">Manejo_Defensivo:</strong>
+                                </button>
+                                <br>
+                                <span
+                                    class="hover:bg-blue-700 hover:text-black rounded-3xl p-1 @if ($driverSelected->Defensive_driving < $hoy) bg-red-600 text-white @endif">
+                                    <button class=""
+                                        onclick="modalDocumentation('{{ $driverSelected->identificationcard }}' ,'5', '{{ $driverSelected->user_id }}',''),viewDate()">
+                                        @if (!$driverSelected->Defensive_driving)
+                                            Sin información
+                                        @else
+                                            {{ $driverSelected->Defensive_driving }}
+                                        @endif
+
+                                    </button>
+                                </span>
+                                <br>
+                                <button id="historicos"
+                                    onclick="historicos('{{ $driverSelected->user_id }}','6','')">
+                                    <strong class="dark:text-yellow-400">Primeros Auxilios:</strong>
+                                </button>
+                                <br>
+                                <span
+                                    class="hover:bg-blue-700 hover:text-black rounded-3xl p-1 @if ($driverSelected->First_aid < $hoy) bg-red-600 text-white @endif">
+                                    <button class=""
+                                        onclick="modalDocumentation('{{ $driverSelected->identificationcard }}' ,'6', '{{ $driverSelected->user_id }}',''),viewDate()">
+                                        @if (!$driverSelected->First_aid)
+                                            Sin información
+                                        @else
+                                            {{ $driverSelected->First_aid }}
+                                        @endif
+
+                                    </button>
+                                </span>
+                            </div>
+                            <div class="border-b text-black text80 dark:text-white ">
+
+                                <button id="historicos"
+                                    onclick="historicos('{{ $driverSelected->user_id }}','7','')">
                                     <strong class="dark:text-yellow-400"> Seguridad Vial:</strong>
                                 </button>
                                 <br>
                                 <span
                                     class="hover:bg-blue-700 hover:text-black rounded-3xl p-1 @if ($driverSelected->Road_safety < $hoy) bg-red-600 text-white @endif ">
                                     <button class=""
-                                        onclick="modalDocumentation('{{ $driverSelected->identificationcard }}' ,'14', '{{ $driverSelected->user_id }}')">
-                                        {{ $driverSelected->Road_safety }}
+                                        onclick="modalDocumentation('{{ $driverSelected->identificationcard }}' ,'7', '{{ $driverSelected->user_id }}',''),viewDate()">
+                                        @if (!$driverSelected->Road_safety)
+                                            Sin información
+                                        @else
+                                            {{ $driverSelected->Road_safety }}
+                                        @endif
                                     </button>
                                 </span>
                             </div>
@@ -944,14 +869,15 @@
                                 <input
                                     class="w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                                     type="file" id="fileDocument" name="fileDocument"
-                                    wire:model.defer="fileDocument" />
+                                    wire:model.defer="fileDocument" onchange="upDocument()" />
                             </div>
 
                         </div>
                         <div class="flex space-x-4">
 
                             <div class="w-full">
-                                <label id="" class="text-gray-700 dark:text-gray-400">Nueva Fecha</label>
+                                <label id="labelDateDocument" class="text-gray-700 dark:text-gray-400">Nueva
+                                    Fecha</label>
 
                                 <input
                                     class="w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -1088,8 +1014,8 @@
         })
 
         // enviando los datos para que los reciba la modal editar
-        function historicos(id, document) {
-            Livewire.emit('Historicos', [id], [document]);
+        function historicos(id, document, bemeficiary) {
+            Livewire.emit('Historicos', [id], [document], [bemeficiary]);
         }
 
         function closeModalHistorico() {
@@ -1131,13 +1057,25 @@
 
         // });
 
-        function modalDocumentation(doc, id, user) {
+        function modalDocumentation(doc, id, user, idbeneficiary) {
+            // ('{{ $driverSelected->identificationcard }}' ,'8', '{{ $driverSelected->user_id }}')
             viewhideinputs('modalDoc', 'block', 'hidden');
             @this.set('identificationcard', doc);
             @this.set('paramText', id);
             @this.set('user', user);
+            @this.set('idbeneficiary', idbeneficiary);
             // Livewire.emit('updateDocumentation');
 
+        }
+
+        function hideDate() {
+            viewhideinputs('dateDocument', 'Inactive', 'Active');
+            viewhideinputs('labelDateDocument', 'Inactive', 'Active');
+        }
+
+        function viewDate() {
+            viewhideinputs('dateDocument', 'Active', 'Inactive');
+            viewhideinputs('labelDateDocument', 'Active', 'Inactive');
         }
 
         Livewire.on('newDocument', (exit) => {
@@ -1152,11 +1090,12 @@
                     showConfirmButton: false,
                     timer: 1500
                 })
+                closeModalDoc();
             } else if (exit == 2) {
                 swal.fire({
                     position: 'center',
                     icon: 'error',
-                    title: 'La fecha no puede ser menor a la fecha de hoy',
+                    title: 'La fecha no puede ser menor o igual a la fecha de hoy',
                     showConfirmButton: false
                     // timer: 1500
                 })
@@ -1164,7 +1103,7 @@
                 swal.fire({
                     position: 'center',
                     icon: 'error',
-                    title: 'La fecha no puede ser menor a la ultima fecha puesta para este documento',
+                    title: 'La fecha no puede ser menor o igual a la ultima fecha puesta para este documento',
                     showConfirmButton: false
                     // timer: 1500
                 })
@@ -1178,7 +1117,7 @@
                 })
             }
 
-            closeModalDoc();
+            // closeModalDoc();
         })
 
         function closeModalDoc() {
@@ -1223,5 +1162,31 @@
                 timer: 1500
             })
         })
+
+        function upDocument() {
+            let timerInterval
+            swal.fire({
+                title: 'Cargando...',
+                html: 'Cargando documento <b></b> milliseconds.', //Cargando la información del sistema en
+                timer: 4000,
+                timerProgressBar: true,
+                didOpen: () => {
+                    swal.showLoading()
+                    const b = swal.getHtmlContainer().querySelector('b')
+                    timerInterval = setInterval(() => {
+                        b.textContent = swal.getTimerLeft()
+                    }, 100)
+                },
+                willClose: () => {
+                    clearInterval(timerInterval)
+                }
+            }).then((result) => {
+                /* Read more about handling dismissals below */
+                if (result.dismiss === swal.DismissReason.timer) {
+                    // console.log('document above')//documento arribba
+
+                }
+            })
+        }
     </script>
 @endsection

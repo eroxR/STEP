@@ -61,14 +61,14 @@
                 </div>
                 <div class="w20 h-4-7 mt-12 mr-4 ml-4 px-6 py-4  bg-white rounded-t-lg dark:bg-gray-800 dark:text-white sm:rounded-lg overflow-x-hidden overflow-y-auto"
                     role="dialog">
-                    <header class="flex justify-center border-b-fuchsia-800 border-b bg-green-500 rounded-lg">
+                    <header class="flex justify-center border-b-fuchsia-800 border-b bg-yellow-500 rounded-lg">
                         <!-- title -->
                         <button id="title" wire:click="order()">{{ __('Fuec List') }}</button>
                     </header>
                     <div class="h-4-7 overflow-y-auto">
                         <ul>
                             @foreach ($permits as $permit)
-                                <li class="id hover:bg-green-500 hover:text-white border-b rounded-lg">
+                                <li class="id hover:bg-yellow-500 hover:text-white border-b rounded-lg">
                                     <a wire:click="$set('ide',{{ $permit->id }})" href="#">
                                         N° {{ $permit->permit_number }}
                                         {{-- del contrato {{ $permit->contract_number }} --}}

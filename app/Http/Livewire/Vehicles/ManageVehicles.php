@@ -25,18 +25,20 @@ class ManageVehicles extends Component
     public $name, $extension, $Route, $Doc = [], $DocFecha = [], $RouteStart = 'public/STEP/vehicles/Placa_', $editVehicles = null,
         $docCivilContractual, $docExtracontractual, $docPreventive, $docCardOperation, $docTechnomechanical, $docSecureEndDate,
         $certificate = [
-            'Tarjeta_de_propiedad_Placa_', 'Certificado_SOAT_Placa_', 'Certificado_Tecnomecanica_Placa_', 'Certificado_Tarjeta_de_Operación_Placa_',
+            'Tarjeta_de_propiedad_Placa_', 'Certificado_SOAT_Placa_', 'Certificado_TécnicoMecánica_Placa_', 'Certificado_Tarjeta_de_Operación_Placa_',
             'Certificado_Preventiva_Placa_', 'Certificado_Extracontractual_Placa_', 'Certificado_civil_contractual_Placa_'
         ];
     public $vehicle_type, $plate_vehicle, $model_vehicle, $brand_vehicle, $vehicle_chassis_number, $color_vehicle, $side_vehicle, $infrastructure_vehicle,
-        $engine_number, $property_card_number, $DocPropertyCardNumber, $material_rims, $dimension_rims, $owner_vehicle, $driver_id, $use_vehicle,
-        $internal_external_owner_type, $number_accreditation_soat, $secure_end_date, $DocNumberAccreditationSoat, $number_technomechanical_accreditation,
-        $technomechanical_end_date, $DocNumberTechnomechanicalAccreditation, $expiration_card_operation, $DocCardOperation, $expiration_preventive,
-        $DocPreventive, $certificate_extracontractual, $DocCertificateExtracontractual, $civil_contractual, $DocCivilContractual, $admission_date, $vehicle_pickup_date,
-        $cylinder_vehicle, $quantity_valves, $number_passenger, $number_cylinders, $turbo, $orientation, $front_suspension, $rear_suspension, $rear_brake_type,
-        $front_brake_type, $tire_number, $type_direction, $transmission_type, $number_speeds, $type_bearing, $number_windows;
+        $engine_number, $property_card_number, $dimension_rims, $owner_vehicle, $driver_id, $service, $card_operation,
+        $internal_external_owner_type, $admission_date, $vehicle_pickup_date, $cylinder_vehicle, $number_passenger, $front_suspension, $rear_suspension,
+        $rear_brake_type, $front_brake_type, $type_direction, $vahicle_photo_path,
 
-    protected $listeners = ['destroy', 'edit', 'documentUpdate', 'reactivado'];
+        $technomechanical_end_date, $secure_end_date, $expiration_card_operation, $expiration_preventive, $certificate_extracontractual, $civil_contractual,
+
+        $DocPropertyCardNumber, $DocNumberTechnomechanicalAccreditation, $DocNumberAccreditationSoat, $DocCardOperation, $DocPreventive, $DocCertificateExtracontractual,
+        $DocCivilContractual;
+
+    protected $listeners = ['destroy', 'edit', 'documentUpdate', 'reactivado', 'searchImg'];
 
     protected $rules = [
 
@@ -52,9 +54,9 @@ class ManageVehicles extends Component
         'editVehicles.driver_id' => 'required',
         'editVehicles.number_passenger' => 'required',
         'editVehicles.secure_end_date' => 'required',
-        'editVehicles.number_accreditation_soat' => 'required',
+        // 'editVehicles.number_accreditation_soat' => 'required',
         'editVehicles.technomechanical_end_date' => 'required',
-        'editVehicles.number_technomechanical_accreditation' => 'required',
+        // 'editVehicles.number_technomechanical_accreditation' => 'required',
         'editVehicles.certificate_extracontractual' => 'required',
         'editVehicles.civil_contractual' => 'required',
         'editVehicles.internal_external_owner_type' => 'required',
@@ -66,24 +68,24 @@ class ManageVehicles extends Component
         'editVehicles.admission_date' => 'required',
         'editVehicles.vehicle_pickup_date' => 'required',
         'editVehicles.engine_number' => 'required',
-        'editVehicles.use_vehicle' => 'required',
+        'editVehicles.service' => 'required',
         'editVehicles.color_vehicle' => 'required',
-        'editVehicles.quantity_valves' => 'required',
-        'editVehicles.number_cylinders' => 'required',
-        'editVehicles.turbo' => 'required',
-        'editVehicles.orientation' => 'required',
+        // 'editVehicles.quantity_valves' => 'required',
+        // 'editVehicles.number_cylinders' => 'required',
+        // 'editVehicles.turbo' => 'required',
+        // 'editVehicles.orientation' => 'required',
         'editVehicles.type_direction' => 'required',
-        'editVehicles.transmission_type' => 'required',
-        'editVehicles.number_speeds' => 'required',
-        'editVehicles.tire_number' => 'required',
-        'editVehicles.type_bearing' => 'required',
+        // 'editVehicles.transmission_type' => 'required',
+        // 'editVehicles.number_speeds' => 'required',
+        // 'editVehicles.tire_number' => 'required',
+        // 'editVehicles.type_bearing' => 'required',
         'editVehicles.front_suspension' => 'required',
         'editVehicles.rear_suspension' => 'required',
         'editVehicles.dimension_rims' => 'required',
-        'editVehicles.material_rims' => 'required',
+        // 'editVehicles.material_rims' => 'required',
         'editVehicles.rear_brake_type' => 'required',
         'editVehicles.front_brake_type' => 'required',
-        'editVehicles.number_windows' => 'required',
+        // 'editVehicles.number_windows' => 'required',
     ];
 
     // registrar un nuevo vehiculo con sus documentos
@@ -95,70 +97,108 @@ class ManageVehicles extends Component
         $plateExits = DB::table('vehicles')->where('plate_vehicle', $plate_vehicle)->value('plate_vehicle');
         $sideExits = DB::table('vehicles')->where('side_vehicle', $this->side_vehicle)->value('side_vehicle');
 
-        if ($plateExits > 0) {
-            return $this->emit('crud', ['plate' => $plate_vehicle], ['process' => 4]);
-        } elseif ($sideExits > 0) {
-            return $this->emit('crud', ['plate' => $sideExits], ['process' => 5]);
-        }
-
-        if ($this->property_card_number == '' || $this->DocPropertyCardNumber == '' || $this->secure_end_date == '' || $this->DocNumberAccreditationSoat == '' || $this->number_technomechanical_accreditation == '' ||
-        $this->technomechanical_end_date == '' || $this->DocNumberTechnomechanicalAccreditation == '' || $this->expiration_card_operation == '' || $this->DocCardOperation == '' || $this->expiration_preventive == '' ||
-        $this->DocPreventive == '' || $this->certificate_extracontractual == '' || $this->DocCertificateExtracontractual == '' || $this->civil_contractual == '' || $this->DocCivilContractual == '') {
+        if (
+            $this->property_card_number == '' || $this->DocPropertyCardNumber == '' || $this->secure_end_date == '' || $this->DocNumberAccreditationSoat == '' || $this->DocNumberTechnomechanicalAccreditation == '' ||
+            $this->technomechanical_end_date == '' || $this->card_operation || $this->expiration_card_operation == '' || $this->DocCardOperation == '' || $this->expiration_preventive == '' ||
+            $this->DocPreventive == '' || $this->certificate_extracontractual == '' || $this->DocCertificateExtracontractual == '' || $this->civil_contractual == '' || $this->DocCivilContractual == ''
+        ) {
             $stateVehicle = 1;
         } else {
             $stateVehicle = 2;
         }
+
+        if ($plateExits > 0) {
+            $bindingContract = DB::table('vehicles')->where('plate_vehicle', $plate_vehicle)->value('binding_contract');
+
+            if ($bindingContract == 0 || $bindingContract == null) {
+                return $this->emit('crud', ['plate' => $plate_vehicle], ['process' => 4]);
+            } else if ($sideExits > 0) {
+                return $this->emit('crud', ['plate' => $sideExits], ['process' => 5]);
+            } else {
+
+                $profileExtension = $this->vahicle_photo_path->extension();
+                $nameprofile = 'profile_vehicle_placa_' . $plate_vehicle . '.' . $profileExtension;
+                $urlprofile = $this->vahicle_photo_path->storeAs($this->RouteStart . $plate_vehicle, $nameprofile);
+                $url = Storage::url($urlprofile);
+
+                DB::table('vehicles')->where('plate_vehicle', $plate_vehicle)->update([
+                    'property_card_number' => $this->property_card_number,
+                    'side_vehicle' => $this->side_vehicle,
+                    'owner_vehicle' => $this->owner_vehicle,
+                    'driver_id' => $this->driver_id,
+                    'secure_end_date' => $this->secure_end_date,
+                    'technomechanical_end_date' => $this->technomechanical_end_date,
+                    'certificate_extracontractual' => $this->certificate_extracontractual,
+                    'civil_contractual' => $this->civil_contractual,
+                    'internal_external_owner_type' => $this->internal_external_owner_type,
+                    'state_vehicle' => $stateVehicle,
+                    'card_operation' => $this->card_operation,
+                    'expiration_card_operation' => $this->expiration_card_operation,
+                    'expiration_preventive' => $this->expiration_preventive,
+                    'vehicle_pickup_date' => $this->vehicle_pickup_date,
+                    'color_vehicle' => $this->color_vehicle,
+                    'type_direction' => $this->type_direction,
+                    'front_suspension' => $this->front_suspension,
+                    'rear_suspension' => $this->rear_suspension,
+                    'dimension_rims' => $this->dimension_rims,
+                    'rear_brake_type' => $this->rear_brake_type,
+                    'front_brake_type' => $this->front_brake_type,
+                    'service' => 'Público',
+                    'vahicle_photo_path' => $url
+                ]);
+            }
+        } elseif ($sideExits > 0) {
+            return $this->emit('crud', ['plate' => $sideExits], ['process' => 5]);
+        }
+
+        if ($plateExits == null || $plateExits == 0) {
+            // dd($plateExits);
+
+            $profileExtension = $this->vahicle_photo_path->extension();
+            $nameprofile = 'profile_vehicle_placa_' . $plate_vehicle . '.' . $profileExtension;
+            $urlprofile = $this->vahicle_photo_path->storeAs($this->RouteStart . $plate_vehicle, $nameprofile);
+            $url = Storage::url($urlprofile);
+
+            // dd($url);
+
+            $vehicle =  Vehicle::create([
+                'plate_vehicle' => $plate_vehicle,
+                'brand_vehicle' => $this->brand_vehicle,
+                'model_vehicle' => $this->model_vehicle,
+                'vehicle_chassis_number' => $this->vehicle_chassis_number,
+                'property_card_number' => $this->property_card_number,
+                'cylinder_vehicle' => $this->cylinder_vehicle,
+                'vehicle_type' => $this->vehicle_type,
+                'side_vehicle' => $this->side_vehicle,
+                'owner_vehicle' => $this->owner_vehicle,
+                'driver_id' => $this->driver_id,
+                'number_passenger' => $this->number_passenger,
+                'secure_end_date' => $this->secure_end_date,
+                'technomechanical_end_date' => $this->technomechanical_end_date,
+                'certificate_extracontractual' => $this->certificate_extracontractual,
+                'civil_contractual' => $this->civil_contractual,
+                'internal_external_owner_type' => $this->internal_external_owner_type,
+                'infrastructure_vehicle' => $this->infrastructure_vehicle,
+                'state_vehicle' => $stateVehicle,
+                'card_operation' => $this->card_operation,
+                'expiration_card_operation' => $this->expiration_card_operation,
+                'expiration_preventive' => $this->expiration_preventive,
+                'admission_date' => $this->admission_date,
+                'vehicle_pickup_date' => $this->vehicle_pickup_date,
+                'engine_number' => $this->engine_number,
+                'service' => 'Público',
+                'color_vehicle' => $this->color_vehicle,
+                'type_direction' => $this->type_direction,
+                'front_suspension' => $this->front_suspension,
+                'rear_suspension' => $this->rear_suspension,
+                'dimension_rims' => $this->dimension_rims,
+                'rear_brake_type' => $this->rear_brake_type,
+                'front_brake_type' => $this->front_brake_type,
+                'vahicle_photo_path' => $url
+
+            ]);
+        }
         
-
-
-        $vehicle =  Vehicle::create([
-            'plate_vehicle' => $plate_vehicle,
-            'brand_vehicle' => $this->brand_vehicle,
-            'model_vehicle' => $this->model_vehicle,
-            'vehicle_chassis_number' => $this->vehicle_chassis_number,
-            'property_card_number' => $this->property_card_number,
-            'cylinder_vehicle' => $this->cylinder_vehicle,
-            'vehicle_type' => $this->vehicle_type,
-            'side_vehicle' => $this->side_vehicle,
-            'owner_vehicle' => $this->owner_vehicle,
-            'driver_id' => $this->driver_id,
-            'number_passenger' => $this->number_passenger,
-            'secure_end_date' => $this->secure_end_date,
-            'number_accreditation_soat' => $this->number_accreditation_soat,
-            'technomechanical_end_date' => $this->technomechanical_end_date,
-            'number_technomechanical_accreditation' => $this->number_technomechanical_accreditation,
-            'certificate_extracontractual' => $this->certificate_extracontractual,
-            'civil_contractual' => $this->civil_contractual,
-            'internal_external_owner_type' => $this->internal_external_owner_type,
-            'infrastructure_vehicle' => $this->infrastructure_vehicle,
-            'state_vehicle' => $stateVehicle,
-            // 'card_operation' => $this->,
-            'expiration_card_operation' => $this->expiration_card_operation,
-            'expiration_preventive' => $this->expiration_preventive,
-            'admission_date' => $this->admission_date,
-            'vehicle_pickup_date' => $this->vehicle_pickup_date,
-            'engine_number' => $this->engine_number,
-            'use_vehicle' => $this->use_vehicle,
-            'color_vehicle' => $this->color_vehicle,
-            'quantity_valves' => $this->quantity_valves,
-            'number_cylinders' => $this->number_cylinders,
-            'turbo' => $this->turbo,
-            'orientation' => $this->orientation,
-            'type_direction' => $this->type_direction,
-            'transmission_type' => $this->transmission_type,
-            'number_speeds' => $this->number_speeds,
-            'tire_number' => $this->tire_number,
-            'type_bearing' => $this->type_bearing,
-            'front_suspension' => $this->front_suspension,
-            'rear_suspension' => $this->rear_suspension,
-            'dimension_rims' => $this->dimension_rims,
-            'material_rims' => $this->material_rims,
-            'rear_brake_type' => $this->rear_brake_type,
-            'front_brake_type' => $this->front_brake_type,
-            // 'body_serial_number' => $this->body_serial_number,
-            'number_windows' => $this->number_windows,
-
-        ]);
 
         $this->Doc = [
             $this->DocPropertyCardNumber, $this->DocNumberAccreditationSoat, $this->DocNumberTechnomechanicalAccreditation,
@@ -170,17 +210,31 @@ class ManageVehicles extends Component
             $this->expiration_preventive, $this->certificate_extracontractual, $this->civil_contractual
         ];
 
-        for ($i = 0; $i <= 6; $i++) {
+        $id = DB::table('vehicles')->where('plate_vehicle', $plate_vehicle)->value('id');
+
+        for ($i = 0; $i < count($this->Doc); $i++) {
 
             if ($this->Doc[$i] != "" || $this->Doc[$i] != 0) {
 
                 $this->insertDocument($this->certificate[$i], $this->Doc[$i], $this->DocFecha[$i]);
 
-                $vehicle->documents()->create([
-                    'document_name' => $this->name,
-                    'extension' => $this->extension,
-                    'directory' => $this->Route,
-                ]);
+                if ($plateExits > 0) {
+
+                    DB::table('documents')->insert([
+                        'documentable_id' => $id,
+                        'document_name' => $this->name,
+                        'extension' => $this->extension,
+                        'directory' => $this->Route,
+                        'documentable_Type' => 'App\Models\vehicle',
+                    ]);
+                } else {
+
+                    $vehicle->documents()->create([
+                        'document_name' => $this->name,
+                        'extension' => $this->extension,
+                        'directory' => $this->Route,
+                    ]);
+                }
             }
         }
 
@@ -268,7 +322,7 @@ class ManageVehicles extends Component
         //     Storage::delete($newRuta);
         //     DB::table('documents')->where('documentable_id', $id)->where('documentable_Type', 'like', '%\vehicle%')->limit(1)->delete();
         // }
-        
+
         DB::table('documents')->where('documentable_id', $id)->where('documentable_Type', 'like', '%\vehicle%')->delete();
 
         Storage::deleteDirectory('public/STEP/vehicles/Placa_' . $plate);
@@ -303,39 +357,39 @@ class ManageVehicles extends Component
             'driver_id',
             'number_passenger',
             'secure_end_date',
-            'number_accreditation_soat',
+            // 'number_accreditation_soat',
             'technomechanical_end_date',
-            'number_technomechanical_accreditation',
+            // 'number_technomechanical_accreditation',
             'certificate_extracontractual',
             'civil_contractual',
             'internal_external_owner_type',
             'infrastructure_vehicle',
             // 'state_vehicle',
-            // 'card_operation',
+            'card_operation',
             'expiration_card_operation',
             'expiration_preventive',
             'admission_date',
             'vehicle_pickup_date',
             'engine_number',
-            'use_vehicle',
+            'service',
             'color_vehicle',
-            'quantity_valves',
-            'number_cylinders',
-            'turbo',
-            'orientation',
+            // 'quantity_valves',
+            // 'number_cylinders',
+            // 'turbo',
+            // 'orientation',
             'type_direction',
-            'transmission_type',
-            'number_speeds',
-            'tire_number',
-            'type_bearing',
+            // 'transmission_type',
+            // 'number_speeds',
+            // 'tire_number',
+            // 'type_bearing',
             'front_suspension',
             'rear_suspension',
             'dimension_rims',
-            'material_rims',
+            // 'material_rims',
             'rear_brake_type',
             'front_brake_type',
             // 'body_serial_number',
-            'number_windows',
+            // 'number_windows',
         ]);
 
         $this->Doc = [];
@@ -366,8 +420,8 @@ class ManageVehicles extends Component
                 'cylinder_vehicle',
                 'driver_id',
                 'number_passenger',
-                'number_accreditation_soat',
-                'number_technomechanical_accreditation',
+                // 'number_accreditation_soat',
+                // 'number_technomechanical_accreditation',
                 'certificate_extracontractual',
                 'civil_contractual',
                 'internal_external_owner_type',
@@ -379,24 +433,24 @@ class ManageVehicles extends Component
                 'admission_date',
                 'vehicle_pickup_date',
                 'engine_number',
-                'use_vehicle',
+                'service',
                 'color_vehicle',
-                'quantity_valves',
-                'number_cylinders',
-                'turbo',
-                'orientation',
+                // 'quantity_valves',
+                // 'number_cylinders',
+                // 'turbo',
+                // 'orientation',
                 'type_direction',
-                'transmission_type',
-                'number_speeds',
-                'tire_number',
-                'type_bearing',
+                // 'transmission_type',
+                // 'number_speeds',
+                // 'tire_number',
+                // 'type_bearing',
                 'front_suspension',
                 'rear_suspension',
                 'dimension_rims',
-                'material_rims',
+                // 'material_rims',
                 'rear_brake_type',
                 'front_brake_type',
-                'number_windows',
+                // 'number_windows',
             )
             ->where('plate_vehicle', 'like', '%' . $this->search . '%')
             ->orwhere('model_vehicle', 'like', '%' . $this->search . '%')
@@ -419,9 +473,8 @@ class ManageVehicles extends Component
 
         // $conducs = User::select('id', DB::raw('CONCAT(firstname, " " ,secondname, " " ,lastname, " " ,motherslastname) As conduc'))->where('charge', '5')->get();
 
-        $conducs = driver::join('users', 'drivers.user_id', '=', 'users.id')
-            ->select('drivers.id', DB::raw('CONCAT(firstname, " " ,secondname, " " ,lastname, " " ,motherslastname) As conduc'))
-            ->orderBy('drivers.id', 'DESC')->get();
+        $conducs = user::select('id', DB::raw('CONCAT(firstname, " " ,secondname, " " ,lastname, " " ,motherslastname) As conduc'))
+            ->where('charge', 5)->get();
 
         return view('livewire.vehicles.manage-vehicles', compact(
             'vehicles',
@@ -513,7 +566,14 @@ class ManageVehicles extends Component
         );
     }
 
-    public function reactivado($id) {
+    public function searchImg($id)
+    {
+        $photo = vehicle::where('id', $id)->value('vahicle_photo_path');
+        $this->emit('documentImage', ['file' => $photo]);
+    }
+
+    public function reactivado($id)
+    {
         dd('si funciona');
     }
 }
