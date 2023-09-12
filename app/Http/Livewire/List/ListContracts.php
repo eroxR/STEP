@@ -113,29 +113,30 @@ class ListContracts extends Component
             } 
         }
 
-        $thereIsContract = DB::table('permits')->where('contract', $this->idContract)->count();
+        if ($this->table) {
+            $thereIsContingency = DB::table('permit_contingencies')->where('contract', $this->idContract)->count();
 
-
-        $thereIsContingency = DB::table('permit_contingencies')->where('contract', $this->idContract)->count();
-
-
-        if ($thereIsContingency > 0) {
-
-            $nextPermit = DB::table('permit_contingencies')->where('contract', $this->idContract)
+            if ($thereIsContingency > 0) {
+                $nextPermit = DB::table('permit_contingencies')->where('contract', $this->idContract)
                 ->orderBy('permit_number', 'DESC')->limit(1)->value('permit_number');
-
-            $this->permit_number = $nextPermit + 1;
-        } else if ($thereIsContract > 0) {
-
-            $nextPermit = DB::table('permits')->where('contract', $this->idContract)
-                ->orderBy('permit_number', 'DESC')->limit(1)->value('permit_number');
-
-            $this->permit_number = $nextPermit + 1;
+            } else {
+                $this->permit_number = 1;
+            }
+            
+        $this->permit_number = $nextPermit + 1;
         } else {
+            $thereIsContract = DB::table('permits')->where('contract', $this->idContract)->count();
 
-            $this->permit_number = 1;
+            if ($thereIsContract > 0) {
+                $nextPermit = DB::table('permits')->where('contract', $this->idContract)
+                ->orderBy('permit_number', 'DESC')->limit(1)->value('permit_number');
+            } else {
+                $this->permit_number = 1;
+            }
+        
+        $this->permit_number = $nextPermit + 1;
         }
-
+        
         $dateYear = Carbon::parse($this->permit_start_date);
         $yearFuec = $dateYear->year;
 
@@ -143,8 +144,9 @@ class ListContracts extends Component
 
         // $this->permit_code = '366003616' . $yearFuec . (string)$this->contract . '1507';
         $this->permit_code = '366003616' . $yearFuec . $contractNumber . '1507';
+        // dd($this->table);
 
-        if ($this->table == true) {
+        if ($this->table) {
             $newPermit = permitContingency::create([
                 'contract' => $this->idContract,
                 'permit_start_date' => $this->permit_start_date,
@@ -167,14 +169,14 @@ class ListContracts extends Component
 
         // $type_contract = DB::table('contracts')->where('id', $this->contract)->value('type_contract');
 
-        if ($this->table == true) {
+        if ($this->table) {
             $id = permitContingency::latest('id')->value('id');
         } else {
             $id = permit::latest('id')->value('id');
         }
 
 
-        if ($this->table == true) {
+        if ($this->table) {
 
             foreach ($this->driving as $driver => $driverid) {
 
@@ -190,7 +192,7 @@ class ListContracts extends Component
             }
         }
 
-        if ($this->table == true) {
+        if ($this->table) {
             if ($this->typeContract == 4) {
 
                 DB::table('cvp_contingency')
@@ -206,12 +208,7 @@ class ListContracts extends Component
             }
         }
 
-        // foreach ($this->cars as $car => $id) {
-
-        //     $newPermit->vehicle()->attach([$car => $id]);
-        // }
-
-        if ($this->table == true) {
+        if ($this->table) {
             foreach ($this->cars as $car) {
 
                 DB::table('cvp_contingency')->insert([
@@ -236,6 +233,7 @@ class ListContracts extends Component
 
         $this->emit('crud', ['contractnumber' => $contractNumber], ['process' => 1], ['contractType' => $contractType], ['id' => $id], ['permit_number' => $this->permit_number], ['contingency' => $this->table]);
         $this->clear();
+        $this->emit('disable');
     }
 
     public function render()
@@ -328,6 +326,8 @@ class ListContracts extends Component
             'permit_code',
             'typeContract',
             'contingency',
+            'idContract',
+            'table',
 
         ]);
         $this->driving = [];
@@ -394,7 +394,7 @@ class ListContracts extends Component
     {
         $this->typeContract = $typeContract[0];
         $this->idContract = $id[0];
-        $this->table = $contingency;
+        $this->table = $contingency[0];
         $limitcar = DB::table('contracts')->where('id', $id)->where('type_contract', $typeContract)->value('quantity_vehicle');
         // dd($limitcar);
         $this->emit('assignLimit', ['limitcar' => $limitcar]);
