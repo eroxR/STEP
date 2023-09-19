@@ -57,6 +57,7 @@ class DatabaseSeeder extends Seeder
         $this->call(AlertTypeSeeder::class);
         
         $this->call(UserSeeder::class);
+        $this->call(RoleSeeder::class);
         
         //  driver::factory(85)->create();
         //  vehicle::factory(65)->create();

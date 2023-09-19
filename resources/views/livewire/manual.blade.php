@@ -429,7 +429,33 @@
         // }, 0);
 
         $(document).ready(function() {
+
+            let timerInterval
+            swal.fire({
+                title: 'loading...',
+                html: 'Loading system information into <b></b> milliseconds.', //Cargando la información del sistema en
+                timer: 4000,
+                timerProgressBar: true,
+                didOpen: () => {
+                    swal.showLoading()
+                    const b = swal.getHtmlContainer().querySelector('b')
+                    timerInterval = setInterval(() => {
+                        b.textContent = swal.getTimerLeft()
+                    }, 100)
+                },
+                willClose: () => {
+                    // clearInterval(timerInterval)
+                    
+                }
+            }).then((result) => {
+                /* Read more about handling dismissals below */
+                if (result.dismiss === swal.DismissReason.timer) {
+                    
+                }
+            })
             Livewire.emit('searchExpired');
+
+            
         });
 
         const scroll = document.querySelector(".scroll");

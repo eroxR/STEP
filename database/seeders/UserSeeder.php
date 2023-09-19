@@ -25,7 +25,7 @@ class UserSeeder extends Seeder
             'user_state' => '1',
             'usertype' => '5',
             'password' => bcrypt('12345678'),
-        ]);
+        ])->assignRole(12);
 
         // User::factory(199)->create();
 

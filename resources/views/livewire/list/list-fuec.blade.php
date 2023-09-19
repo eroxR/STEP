@@ -71,57 +71,16 @@
                                 <li class="id hover:bg-yellow-500 hover:text-white border-b rounded-lg">
                                     <a wire:click="$set('ide',{{ $permit->id }})" href="#">
                                         N° {{ $permit->permit_number }}
-                                        {{-- del contrato {{ $permit->contract_number }} --}}
-                                        {{-- (@switch($permit->type_contract)
-                                            @case(1)
-                                                Colegios
-                                            @break
 
-                                            @case(2)
-                                                Empresas
-                                            @break
+                                        @foreach ($Contracts as $contract)
+                                            @if ($contract->id == $permit->contract)
+                                                del contrato {{ $contract->contract_number }}
 
-                                            @case(3)
-                                                Empresa Turismo
-                                            @break
-
-                                            @case(4)
-                                                Ocacionales
-                                            @break
-
-                                            @case(5)
-                                                Empresas Salud
-                                            @break
-
-                                            @default
-                                        @endswitch) --}}
-
-                                        @foreach ($typeContracts as $typeContract)
-                                            @if ($typeContract->id == $permit->contract)
-                                                del contrato {{ $typeContract->contract_number }}
-                                                @switch($typeContract->type_contract)
-                                                    @case(1)
-                                                        Colegios
-                                                    @break
-
-                                                    @case(2)
-                                                        Empresas
-                                                    @break
-
-                                                    @case(3)
-                                                        Empresa Turismo
-                                                    @break
-
-                                                    @case(4)
-                                                        Ocacionales
-                                                    @break
-
-                                                    @case(5)
-                                                        Empresas Salud
-                                                    @break
-
-                                                    @default
-                                                @endswitch
+                                                @foreach ($typeContracts as $typeContract)
+                                                    @if ($contract->type_contract == $typeContract->id)
+                                                        {{ $typeContract->contract_name }}
+                                                    @endif
+                                                @endforeach
                                             @endif
                                         @endforeach
 
@@ -135,32 +94,15 @@
                                                 <div class="bg">
                                                     <h1 class="content-start text-black dark:text-white text-4xl0-9">
                                                         Permiso N° {{ $permit->permit_number }}
-                                                        @foreach ($typeContracts as $typeContract)
-                                                            @if ($typeContract->id == $permit->contract)
-                                                                del contrato {{ $typeContract->contract_number }}
-                                                                @switch($typeContract->type_contract)
-                                                                    @case(1)
-                                                                        Colegios
-                                                                    @break
+                                                        @foreach ($Contracts as $contract)
+                                                            @if ($contract->id == $permit->contract)
+                                                                del contrato {{ $contract->contract_number }}
 
-                                                                    @case(2)
-                                                                        Empresas
-                                                                    @break
-
-                                                                    @case(3)
-                                                                        Empresa Turismo
-                                                                    @break
-
-                                                                    @case(4)
-                                                                        Ocacionales
-                                                                    @break
-
-                                                                    @case(5)
-                                                                        Empresas Salud
-                                                                    @break
-
-                                                                    @default
-                                                                @endswitch
+                                                                @foreach ($typeContracts as $typeContract)
+                                                                    @if ($contract->type_contract == $typeContract->id)
+                                                                        {{ $typeContract->contract_name }}
+                                                                    @endif
+                                                                @endforeach
                                                             @endif
                                                         @endforeach
                                                     </h1>
@@ -240,7 +182,9 @@
                                             @foreach ($allCars as $allCar)
                                                 @if ($allCar->permit_id == $permit->id)
                                                     <div class="border-b text-black text80 dark:text-white ">
-                                                        <p class="text-yellow-600 text-base"><strong>Vehiculo->{{$countCars = $countCars + 1}}</strong></p>
+                                                        <p class="text-yellow-600 text-base">
+                                                            <strong>Vehiculo->{{ $countCars = $countCars + 1 }}</strong>
+                                                        </p>
                                                         {{-- <strong>id:</strong> {{ $car->id }} <br> --}}
                                                         <strong>placa:</strong> {{ $allCar->plate_vehicle }} <br>
                                                         <strong>lateral:</strong> {{ $allCar->side_vehicle }} <br>
@@ -255,7 +199,10 @@
                                                     </div>
                                                 @endif
                                             @endforeach
-                                            {{$countCars = 0}}
+                                            @php
+                                                $countCars = 0
+                                            @endphp
+                                            {{-- {{ $countCars = 0 }} --}}
                                             {{-- <div class="border-b text-yellow-600 text-xl">
                                                 <br>
                                                 <br>
@@ -264,7 +211,9 @@
                                             @foreach ($allDrivers as $allDriver)
                                                 @if ($allDriver->permit_id == $permit->id)
                                                     <div class="border-b text-black text80 dark:text-white ">
-                                                        <p class="text-yellow-600 text-base"><strong>Conductor->{{$countDrive = $countDrive + 1}}</strong></p>
+                                                        <p class="text-yellow-600 text-base">
+                                                            <strong>Conductor->{{ $countDrive = $countDrive + 1 }}</strong>
+                                                        </p>
                                                         {{-- <strong>id:</strong> {{ $driver->id }} <br> --}}
                                                         <strong>documento:</strong>
                                                         {{ $allDriver->identificationcard }}
@@ -279,7 +228,10 @@
                                                     </div>
                                                 @endif
                                             @endforeach
-                                            {{$countDrive = 0}}
+                                            @php
+                                            $countDrive = 0
+                                        @endphp
+                                            {{-- {{ $countDrive = 0 }} --}}
                                         </div>
 
                                     </div>
@@ -301,35 +253,22 @@
                                 <div class="bg">
                                     <h1 class="content-start text-black dark:text-white text-4xl0-9">
                                         Permiso N° {{ $permitSelected->permit_number }}
-                                        del contrato {{ $permitSelected->contract_number }}
-                                        @switch($permitSelected->type_contract)
-                                            @case(1)
-                                                Colegios
-                                            @break
+                                        @foreach ($Contracts as $contract)
+                                            @if ($contract->id == $permitSelected->contract)
+                                                del contrato {{ $contract->contract_number }}
 
-                                            @case(2)
-                                                Empresas
-                                            @break
-
-                                            @case(3)
-                                                Empresa Turismo
-                                            @break
-
-                                            @case(4)
-                                                Ocacionales
-                                            @break
-
-                                            @case(5)
-                                                Empresas Salud
-                                            @break
-
-                                            @default
-                                        @endswitch
+                                                @foreach ($typeContracts as $typeContract)
+                                                    @if ($contract->type_contract == $typeContract->id)
+                                                        {{ $typeContract->contract_name }}
+                                                    @endif
+                                                @endforeach
+                                            @endif
+                                        @endforeach
                                     </h1>
                                 </div>
                                 <div class="">
                                     <h1 class="content-center text-black dark:text-white text-4xl1">
-                                        <button
+                                        <button onclick="view({{ $permitSelected->id }})"
                                             class="inline-flex items-center justify-center  bg-blue-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 active:bg-red-600 disabled:opacity-25 transition"
                                             aria-label="view">
                                             <svg class="w-5 h-5" fill="none" stroke="currentColor"
@@ -397,34 +336,52 @@
                             </div>
                             {{-- <div class="border-b text-yellow-600 text80 text-2xl">
                             </div> --}}
-                            
-                            @foreach ($cars as $car)
+
+                            @foreach ($allCars as $allCar)
+                            @if ($allCar->permit_id == $permitSelected->id)
                                 <div class="border-b text-black text80 dark:text-white ">
-                                    <p class="text-yellow-600 text-base"><strong>Vehiculo->{{$countCars = $countCars + 1}}</strong></p>
+                                    <p class="text-yellow-600 text-base">
+                                        <strong>Vehiculo->{{ $countCars = $countCars + 1 }}</strong>
+                                    </p>
                                     {{-- <strong>id:</strong> {{ $car->id }} <br> --}}
-                                    <strong>placa:</strong> {{ $car->plate_vehicle }} <br>
-                                    <strong>lateral:</strong> {{ $car->side_vehicle }} <br>
-                                    <strong>fin tecno.:</strong> {{ $car->technomechanical_end_date }} <br>
-                                    <strong>fin Soat:</strong> {{ $car->secure_end_date }} <br>
-                                    <strong>fin tarjeta OP:</strong> {{ $car->expiration_card_operation }} <br>
-                                    <strong>fin Prevent.:</strong> {{ $car->expiration_preventive }}
+                                    <strong>placa:</strong> {{ $allCar->plate_vehicle }} <br>
+                                    <strong>lateral:</strong> {{ $allCar->side_vehicle }} <br>
+                                    <strong>fin tecno.:</strong>
+                                    {{ $allCar->technomechanical_end_date }} <br>
+                                    <strong>fin Soat:</strong> {{ $allCar->secure_end_date }} <br>
+                                    <strong>fin tarjeta OP:</strong>
+                                    {{ $allCar->expiration_card_operation }}
+                                    <br>
+                                    <strong>fin Prevent.:</strong>
+                                    {{ $allCar->expiration_preventive }}
                                 </div>
-                            @endforeach
+                            @endif
+                        @endforeach
                             {{-- <div class="border-b text-yellow-600 text-xl">
                                 
                             </div> --}}
-                            
-                            @foreach ($drivers as $driver)
+
+                            @foreach ($allDrivers as $allDriver)
+                            @if ($allDriver->permit_id == $permitSelected->id)
                                 <div class="border-b text-black text80 dark:text-white ">
-                                    <p class="text-yellow-600 text-base"><strong>Conductor->{{$countDrive = $countDrive + 1}}</strong></p>
+                                    <p class="text-yellow-600 text-base">
+                                        <strong>Conductor->{{ $countDrive = $countDrive + 1 }}</strong>
+                                    </p>
                                     {{-- <strong>id:</strong> {{ $driver->id }} <br> --}}
-                                    <strong>documento:</strong> {{ $driver->identificationcard }} <br>
-                                    <strong>nombre:</strong> {{ $driver->firstname }} {{ $driver->secondname }}
-                                    {{ $driver->lastname }} {{ $driver->motherslastname }} <br>
-                                    <strong>tipo sangre:</strong> {{ $driver->blood_type }} <br>
-                                    <strong>fin licencia.:</strong> {{ $driver->license_expiration }} <br>
+                                    <strong>documento:</strong>
+                                    {{ $allDriver->identificationcard }}
+                                    <br>
+                                    <strong>nombre:</strong> {{ $allDriver->firstname }}
+                                    {{ $allDriver->secondname }}
+                                    {{ $allDriver->lastname }} {{ $allDriver->motherslastname }}
+                                    <br>
+                                    <strong>tipo sangre:</strong> {{ $allDriver->blood_type }} <br>
+                                    <strong>fin licencia.:</strong>
+                                    {{ $allDriver->license_expiration }} <br>
                                 </div>
-                            @endforeach
+                            @endif
+                        @endforeach
+
                         </div>
                     @endforeach
 
@@ -590,6 +547,10 @@
 
             Livewire.emit('permit', [id]);
 
+        }
+
+        function view(id) {
+            window.open('http://127.0.0.1:8000/pdfs/pdf-fuec/' + id, '_blank');
         }
 
         function viewhideinputs(id, adhere, stirring) {

@@ -251,7 +251,7 @@
                             @endif
                         </span>
                         <br>
-                        <strong class="dark:text-yellow-400">Tecnicomecanico:</strong> <br>
+                        <strong class="dark:text-yellow-400">Tecnicomecanica:</strong> <br>
                         <span class=" @if ($vehicle->technomechanical_end_date < $hoy) bg-red-600 text-white rounded-3xl p-1 @endif">
                             <strong class="dark:text-yellow-400">Vigencia:</strong>
 
@@ -450,33 +450,62 @@
 
 
     <div class="border-b text-black text80 dark:text-white ">
-        <button id="historicos" onclick="historicos('{{ $vehiclesSelected->id }}','3')">
+        @can('listaVehiculos.actualizarDocumentos')
+            <button id="historicos" onclick="historicos('{{ $vehiclesSelected->id }}','3')">
+                <strong class="dark:text-yellow-400">Tarjeta de operación:</strong>
+            </button>
+            {{ $vehiclesSelected->card_operation }}
+            <br>
+            <strong class="dark:text-yellow-400">Vigencia:</strong> <br>
+            <span
+                class="hover:bg-blue-700 hover:text-black rounded-3xl p-1 @if ($vehiclesSelected->expiration_card_operation < $hoy) bg-red-600 text-white @endif">
+                <button class=""
+                    onclick="modalDocumentation('{{ $vehiclesSelected->plate_vehicle }}' ,'3', '{{ $vehiclesSelected->id }}'),viewDate()">
+
+                    @if (!$vehiclesSelected->expiration_card_operation)
+                        Sin información
+                    @else
+                        {{ $vehiclesSelected->expiration_card_operation }}
+                    @endif
+                </button>
+            </span>
+        @else
             <strong class="dark:text-yellow-400">Tarjeta de operación:</strong>
-        </button>
-        {{ $vehiclesSelected->card_operation }}
-        <br>
-        <strong class="dark:text-yellow-400">Vigencia:</strong> <br>
-        <span
-            class="hover:bg-blue-700 hover:text-black rounded-3xl p-1 @if ($vehiclesSelected->expiration_card_operation < $hoy) bg-red-600 text-white @endif">
-            <button class=""
-                onclick="modalDocumentation('{{ $vehiclesSelected->plate_vehicle }}' ,'3', '{{ $vehiclesSelected->id }}'),viewDate()">
+            {{ $vehiclesSelected->card_operation }}
+            <br>
+            <strong class="dark:text-yellow-400">Vigencia:</strong> <br>
+            <span class=" @if ($vehiclesSelected->expiration_card_operation < $hoy) bg-red-600 text-white rounded-3xl p-1 @endif">
 
                 @if (!$vehiclesSelected->expiration_card_operation)
                     Sin información
                 @else
                     {{ $vehiclesSelected->expiration_card_operation }}
                 @endif
+            </span>
+        @endcan
+
+        <br>
+        @can('listaVehiculos.actualizarDocumentos')
+            <button id="historicos" onclick="historicos('{{ $vehiclesSelected->id }}','4')">
+                <strong class="dark:text-yellow-400">Preventiva:</strong>
             </button>
-        </span>
-        <br>
-        <button id="historicos" onclick="historicos('{{ $vehiclesSelected->id }}','4')">
-            <strong class="dark:text-yellow-400">Preventiva:</strong>
-        </button>
-        <br>
-        <button class=""
-            onclick="modalDocumentation('{{ $vehiclesSelected->plate_vehicle }}' ,'4', '{{ $vehiclesSelected->id }}'),hideDate()">
-            <span
-                class="hover:bg-blue-700 hover:text-black rounded-3xl p-1 @if ($vehiclesSelected->expiration_preventive < $hoy) bg-red-600 text-white @endif">
+            <br>
+            <button class=""
+                onclick="modalDocumentation('{{ $vehiclesSelected->plate_vehicle }}' ,'4', '{{ $vehiclesSelected->id }}'),hideDate()">
+                <span
+                    class="hover:bg-blue-700 hover:text-black rounded-3xl p-1 @if ($vehiclesSelected->expiration_preventive < $hoy) bg-red-600 text-white @endif">
+                    <strong class="dark:text-yellow-400">Vigencia:</strong>
+
+                    @if (!$vehiclesSelected->expiration_preventive)
+                        Sin información
+                    @else
+                        {{ $vehiclesSelected->expiration_preventive }}
+                    @endif
+                </span>
+            </button>
+        @else
+            <strong class="dark:text-yellow-400">Preventiva:</strong> <br>
+            <span class=" @if ($vehiclesSelected->expiration_preventive < $hoy) bg-red-600 text-white rounded-3xl p-1 @endif">
                 <strong class="dark:text-yellow-400">Vigencia:</strong>
 
                 @if (!$vehiclesSelected->expiration_preventive)
@@ -485,36 +514,64 @@
                     {{ $vehiclesSelected->expiration_preventive }}
                 @endif
             </span>
-        </button>
+        @endcan
+
     </div>
 
     <div class="border-b text-black text80 dark:text-white ">
-        <button id="historicos" onclick="historicos('{{ $vehiclesSelected->id }}','1')">
-            <strong class="dark:text-yellow-400">SOAT - Seguro Obligatorio:</strong>
-        </button>
-        <br>
-        <button class=""
-            onclick="modalDocumentation('{{ $vehiclesSelected->plate_vehicle }}' ,'1', '{{ $vehiclesSelected->id }}'),hideDate()">
-            <span
-                class="hover:bg-blue-700 hover:text-black rounded-3xl p-1 @if ($vehiclesSelected->secure_end_date < $hoy) bg-red-600 text-white @endif">
-                <strong class="dark:text-yellow-400">Vigencia:</strong>
+        @can('listaVehiculos.actualizarDocumentos')
+            <button id="historicos" onclick="historicos('{{ $vehiclesSelected->id }}','1')">
+                <strong class="dark:text-yellow-400">SOAT - Seguro Obligatorio:</strong>
+            </button>
+            <br>
+            <button class=""
+                onclick="modalDocumentation('{{ $vehiclesSelected->plate_vehicle }}' ,'1', '{{ $vehiclesSelected->id }}'),hideDate()">
+                <span
+                    class="hover:bg-blue-700 hover:text-black rounded-3xl p-1 @if ($vehiclesSelected->secure_end_date < $hoy) bg-red-600 text-white @endif">
+                    <strong class="dark:text-yellow-400">Vigencia:</strong>
 
+                    @if (!$vehiclesSelected->secure_end_date)
+                        Sin información
+                    @else
+                        {{ $vehiclesSelected->secure_end_date }}
+                    @endif
+                </span>
+            </button>
+        @else
+            <strong class="dark:text-yellow-400">SOAT - Seguro
+                Obligatorio:</strong> <br>
+            <span class=" @if ($vehiclesSelected->secure_end_date < $hoy) bg-red-600 text-white rounded-3xl p-1 @endif">
+                <strong class="dark:text-yellow-400">Vigencia:</strong>
                 @if (!$vehiclesSelected->secure_end_date)
                     Sin información
                 @else
                     {{ $vehiclesSelected->secure_end_date }}
                 @endif
             </span>
-        </button>
+        @endcan
+
         <br>
-        <button id="historicos" onclick="historicos('{{ $vehiclesSelected->id }}','2')">
-            <strong class="dark:text-yellow-400">Tecnicomecanica:</strong>
-        </button>
-        <br>
-        <button class=""
-            onclick="modalDocumentation('{{ $vehiclesSelected->plate_vehicle }}' ,'2', '{{ $vehiclesSelected->id }}'),hideDate()">
-            <span
-                class="hover:bg-blue-700 hover:text-black rounded-3xl p-1 @if ($vehiclesSelected->technomechanical_end_date < $hoy) bg-red-600 text-white @endif">
+        @can('listaVehiculos.actualizarDocumentos')
+            <button id="historicos" onclick="historicos('{{ $vehiclesSelected->id }}','2')">
+                <strong class="dark:text-yellow-400">Tecnicomecanica:</strong>
+            </button>
+            <br>
+            <button class=""
+                onclick="modalDocumentation('{{ $vehiclesSelected->plate_vehicle }}' ,'2', '{{ $vehiclesSelected->id }}'),hideDate()">
+                <span
+                    class="hover:bg-blue-700 hover:text-black rounded-3xl p-1 @if ($vehiclesSelected->technomechanical_end_date < $hoy) bg-red-600 text-white @endif">
+                    <strong class="dark:text-yellow-400">Vigencia:</strong>
+
+                    @if (!$vehiclesSelected->technomechanical_end_date)
+                        Sin información
+                    @else
+                        {{ $vehiclesSelected->technomechanical_end_date }}
+                    @endif
+                </span>
+            </button>
+        @else
+            <strong class="dark:text-yellow-400">Tecnicomecanica:</strong> <br>
+            <span class=" @if ($vehicle->technomechanical_end_date < $hoy) bg-red-600 text-white rounded-3xl p-1 @endif">
                 <strong class="dark:text-yellow-400">Vigencia:</strong>
 
                 @if (!$vehiclesSelected->technomechanical_end_date)
@@ -523,18 +580,32 @@
                     {{ $vehiclesSelected->technomechanical_end_date }}
                 @endif
             </span>
-        </button>
+        @endcan
+
     </div>
 
     <div class="border-b text-black text80 dark:text-white ">
-        <button id="historicos" onclick="historicos('{{ $vehiclesSelected->id }}','5')">
-            <strong class="dark:text-yellow-400">Extracontractual:</strong>
-        </button>
-        <br>
-        <button class=""
-            onclick="modalDocumentation('{{ $vehiclesSelected->plate_vehicle }}' ,'5', '{{ $vehiclesSelected->id }}'),hideDate()">
-            <span
-                class="hover:bg-blue-700 hover:text-black rounded-3xl p-1 @if ($vehiclesSelected->certificate_extracontractual < $hoy) bg-red-600 text-white @endif">
+        @can('listaVehiculos.actualizarDocumentos')
+            <button id="historicos" onclick="historicos('{{ $vehiclesSelected->id }}','5')">
+                <strong class="dark:text-yellow-400">Extracontractual:</strong>
+            </button>
+            <br>
+            <button class=""
+                onclick="modalDocumentation('{{ $vehiclesSelected->plate_vehicle }}' ,'5', '{{ $vehiclesSelected->id }}'),hideDate()">
+                <span
+                    class="hover:bg-blue-700 hover:text-black rounded-3xl p-1 @if ($vehiclesSelected->certificate_extracontractual < $hoy) bg-red-600 text-white @endif">
+                    <strong class="dark:text-yellow-400">Vigencia:</strong>
+
+                    @if (!$vehiclesSelected->certificate_extracontractual)
+                        Sin información
+                    @else
+                        {{ $vehiclesSelected->certificate_extracontractual }}
+                    @endif
+                </span>
+            </button>
+        @else
+            <strong class="dark:text-yellow-400">Extracontractual:</strong> <br>
+            <span class=" @if ($vehiclesSelected->certificate_extracontractual < $hoy) bg-red-600 text-white rounded-3xl p-1 @endif">
                 <strong class="dark:text-yellow-400">Vigencia:</strong>
 
                 @if (!$vehiclesSelected->certificate_extracontractual)
@@ -543,24 +614,39 @@
                     {{ $vehiclesSelected->certificate_extracontractual }}
                 @endif
             </span>
-        </button>
+        @endcan
+
         <br>
-        <button id="historicos" onclick="historicos('{{ $vehiclesSelected->id }}','6')">
-            <strong class="dark:text-yellow-400">Civil Contractual:</strong>
-        </button>
-        <br>
-        <button class=""
-            onclick="modalDocumentation('{{ $vehiclesSelected->plate_vehicle }}' ,'6', '{{ $vehiclesSelected->id }}'),hideDate()">
-            <span
-                class="hover:bg-blue-700 hover:text-black rounded-3xl p-1 @if ($vehiclesSelected->civil_contractual < $hoy) bg-red-600 text-white @endif">
+        @can('listaVehiculos.actualizarDocumentos')
+            <button id="historicos" onclick="historicos('{{ $vehiclesSelected->id }}','6')">
+                <strong class="dark:text-yellow-400">Civil Contractual:</strong>
+            </button>
+            <br>
+            <button class=""
+                onclick="modalDocumentation('{{ $vehiclesSelected->plate_vehicle }}' ,'6', '{{ $vehiclesSelected->id }}'),hideDate()">
+                <span
+                    class="hover:bg-blue-700 hover:text-black rounded-3xl p-1 @if ($vehiclesSelected->civil_contractual < $hoy) bg-red-600 text-white @endif">
+                    <strong class="dark:text-yellow-400">Vigencia:</strong>
+                    @if (!$vehiclesSelected->civil_contractual)
+                        Sin información
+                    @else
+                        {{ $vehiclesSelected->civil_contractual }}
+                    @endif
+                </span>
+            </button>
+        @else
+            <strong class="dark:text-yellow-400">Civil Contractual:</strong> <br>
+            <span class=" @if ($vehiclesSelected->civil_contractual < $hoy) bg-red-600 text-white rounded-3xl p-1 @endif">
                 <strong class="dark:text-yellow-400">Vigencia:</strong>
+
                 @if (!$vehiclesSelected->civil_contractual)
                     Sin información
                 @else
                     {{ $vehiclesSelected->civil_contractual }}
                 @endif
             </span>
-        </button>
+        @endcan
+
     </div>
 
 </div>

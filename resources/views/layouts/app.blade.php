@@ -748,20 +748,21 @@ x-transition:leave-end="opacity-0 transform -translate-x-20">
                                         </span>
                                     </a>
                                 </li>
-                                <li class="flex ml-8">
-                                    <span id="active2"
-                                        class="absolute inset-y-0 left-0 bg-purple-600 li-active hidden"></span>
-                                    <a x-on:mouseover="flotan='PESV'" x-on:mouseleave="flotan=''"
-                                        class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                                        href="{{ route('pesv') }}" @click="changesView('PESV')">
-                                        <span class="text-2-2xl" aria-hidden="true" fill="none"
-                                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            viewBox="0 0 24 24" stroke="currentColor"
-                                            :class="{ 'text-2-2xl': isSideMenuOpen, '-ml-3-5': !isSideMenuOpen }">
-                                            {{-- <i class="fas fa-traffic-light " --}}
-                                            <i class="fas fa-route icon-blue"
-                                                :class="{ 'text-3xl': !isSideMenuOpen }"></i>
-                                            {{-- <svg class="icon-black" width="40" height="40" viewBox="0 0 800 800" fill="#FF0000" xmlns="http://www.w3.org/2000/svg">
+                                @can('pesv')
+                                    <li class="flex ml-8">
+                                        <span id="active2"
+                                            class="absolute inset-y-0 left-0 bg-purple-600 li-active hidden"></span>
+                                        <a x-on:mouseover="flotan='PESV'" x-on:mouseleave="flotan=''"
+                                            class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                                            href="{{ route('pesv') }}" @click="changesView('PESV')">
+                                            <span class="text-2-2xl" aria-hidden="true" fill="none"
+                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                viewBox="0 0 24 24" stroke="currentColor"
+                                                :class="{ 'text-2-2xl': isSideMenuOpen, '-ml-3-5': !isSideMenuOpen }">
+                                                {{-- <i class="fas fa-traffic-light " --}}
+                                                <i class="fas fa-route icon-blue"
+                                                    :class="{ 'text-3xl': !isSideMenuOpen }"></i>
+                                                {{-- <svg class="icon-black" width="40" height="40" viewBox="0 0 800 800" fill="#FF0000" xmlns="http://www.w3.org/2000/svg">
                                                     <g clip-path="url(#clip0_2_3)">
                                                     <path d="M399.996 165.014C357.987 165.014 323.807 199.193 323.807 241.204C323.807 283.216 357.987 317.394 399.996 317.394C442.006 317.394 476.185 283.216 476.185 241.204C476.185 199.193 442.007 165.014 399.996 165.014ZM399.996 264.429C387.191 264.429 376.773 254.01 376.773 241.204C376.773 228.399 387.193 217.98 399.996 217.98C412.801 217.98 423.22 228.399 423.22 241.204C423.22 254.01 412.802 264.429 399.996 264.429Z" fill="#FF0000"/>
                                                     <path d="M399.996 358.094C357.987 358.094 323.807 392.273 323.807 434.284C323.807 476.295 357.987 510.473 399.996 510.473C442.006 510.473 476.185 476.295 476.185 434.284C476.185 392.273 442.007 358.094 399.996 358.094ZM399.996 457.504C387.191 457.504 376.773 447.085 376.773 434.281C376.773 421.476 387.193 411.057 399.996 411.057C412.801 411.057 423.22 421.476 423.22 434.281C423.22 447.085 412.802 457.504 399.996 457.504Z" fill="#ECAC08"/>
@@ -774,156 +775,173 @@ x-transition:leave-end="opacity-0 transform -translate-x-20">
                                                     </clipPath>
                                                     </defs>
                                                     </svg> --}}
-                                        </span>
-                                        <span class="ml-4"
-                                            :class="!isSideMenuOpen && flotan == 'PESV' ? minidisplay : '' || !
-                                                isSideMenuOpen &&
-                                                flotan != 'PESV' ? 'hidden' : ''">
-                                            {{ __('PESV') }}
-                                        </span>
-                                    </a>
-                                </li>
-                                <li class="flex ml-8">
-                                    <span id="active3"
-                                        class="absolute inset-y-0 left-0 bg-purple-600 li-active hidden"></span>
-                                    <button x-on:mouseover="flotan='Information_lists'" x-on:mouseleave="flotan=''"
-                                        class="inline-flex items-center justify-between w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                                        @click="togglePagesMenu" aria-haspopup="true">
-
-                                        <span class="inline-flex items-center">
-                                            <span class="w-5 h-5" aria-hidden="true" fill="none"
-                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                viewBox="0 0 24 24" stroke="currentColor"
-                                                :class="{ 'w-5 h-5': isSideMenuOpen, '-ml-3-5': !isSideMenuOpen }">
-                                                <i class="fas fa-fw fa-list"
-                                                    :class="{ 'hidden': !isSideMenuOpen }"></i>
-                                                <i class="fas fa-fw fa-database text-3xl"
-                                                    :class="{ 'hidden': isSideMenuOpen }"></i>
                                             </span>
                                             <span class="ml-4"
-                                                :class="!isSideMenuOpen && flotan == 'Information_lists' ? minidisplay : '' || !
+                                                :class="!isSideMenuOpen && flotan == 'PESV' ? minidisplay : '' || !
                                                     isSideMenuOpen &&
-                                                    flotan != 'Information_lists' ? 'hidden' : ''">
-                                                {{ __('Information lists.') }}
+                                                    flotan != 'PESV' ? 'hidden' : ''">
+                                                {{ __('PESV') }}
                                             </span>
-                                        </span>
-                                        <svg class="text-2-2xl" aria-hidden="true" fill="currentColor"
-                                            viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd"
-                                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                                clip-rule="evenodd"></path>
-                                        </svg>
-                                    </button>
-                                    <template x-if="isPagesMenuOpen">
-                                        <ul x-transition:enter="transition-all ease-in-out duration-300"
-                                            x-transition:enter-start="opacity-25 max-h-0"
-                                            x-transition:enter-end="opacity-100 max-h-xl"
-                                            x-transition:leave="transition-all ease-in-out duration-300"
-                                            x-transition:leave-start="opacity-100 max-h-xl"
-                                            x-transition:leave-end="opacity-0 max-h-0" {{-- class="p-2 mt-2 space-y-2 overflow-hidden text-sm font-medium g-black bg-opacity-50 rounded-md shadow-inner bg-gray-701 dark:text-gray-400 dark:bg-gray-900" --}}
-                                            class="absolute p-2 mt-8 ml-4 space-y-2 overflow-hidden text-sm font-medium g-black bg-opacity-50 rounded-md shadow-inner bg-gray-701 dark:text-gray-400 dark:bg-gray-900"
-                                            :class="{
-                                                'p-2': isSideMenuOpen,
-                                                'mt-2': isSideMenuOpen,
-                                                'p-6': !isSideMenuOpen,
-                                                '-ml-7': !
-                                                    isSideMenuOpen
-                                            }"
-                                            aria-label="submenu">
-                                            <div class="grid grid-cols-4 gap-4">
-                                                <div>
-                                                    <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                                                        :class="{ '-ml-5': !isSideMenuOpen }">
-                                                        <a x-on:mouseover="flotan='List_Contracts'"
-                                                            x-on:mouseleave="flotan=''" class="w-full"
-                                                            href="{{ route('list-contracts') }}">
-                                                            <i class="fas fa-fw fa-database icon-green"
-                                                                :class="{ 'text-3xl': !isSideMenuOpen }"></i>
-                                                            <span
-                                                                :class="!isSideMenuOpen && flotan == 'List_Contracts' ?
-                                                                    minidisplay2 : '' || !
-                                                                    isSideMenuOpen && flotan != 'List_Contracts' ?
-                                                                    'hidden' : ''">
-                                                                {{ __('List of Contracts') }}
-                                                            </span>
-                                                        </a>
-                                                    </li>
-                                                </div>
-                                                <div>
-                                                    <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                                                        :class="{ '-ml-5': !isSideMenuOpen }">
-                                                        <a x-on:mouseover="flotan='Fuec_List'"
-                                                            x-on:mouseleave="flotan=''" class="w-full"
-                                                            href="{{ route('list-fuec') }}">
-                                                            <i class="fas fa-fw fa-database icon-yellow"
-                                                                :class="{ 'text-3xl': !isSideMenuOpen }"></i>
-                                                            <span
-                                                                :class="!isSideMenuOpen && flotan == 'Fuec_List' ?
-                                                                    minidisplay2 :
-                                                                    '' || !
-                                                                    isSideMenuOpen &&
-                                                                    flotan != 'Fuec_List' ? 'hidden' : ''">
-                                                                {{ __('Fuec List') }}
-                                                            </span>
-                                                        </a>
-                                                    </li>
-                                                </div>
-                                                <div>
-                                                    <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                                                        :class="{ '-ml-5': !isSideMenuOpen }">
-                                                        <a x-on:mouseover="flotan='Driver_List'"
-                                                            x-on:mouseleave="flotan=''" class="w-full"
-                                                            href="{{ route('list-drivers') }}">
-                                                            <i class="fas fa-fw fa-database icon-red"
-                                                                :class="{ 'text-3xl': !isSideMenuOpen }"></i>
-                                                            <span
-                                                                :class="!isSideMenuOpen && flotan == 'Driver_List' ?
-                                                                    minidisplay2 : '' || !
-                                                                    isSideMenuOpen &&
-                                                                    flotan != 'Driver_List' ? 'hidden' : ''">
-                                                                {{ __('Driver List') }}
-                                                            </span>
-                                                        </a>
-                                                    </li>
-                                                </div>
-                                                <div>
-                                                    <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                                                        :class="{ '-ml-5': !isSideMenuOpen }">
-                                                        <a x-on:mouseover="flotan='List_vehicles'"
-                                                            x-on:mouseleave="flotan=''" class="w-full"
-                                                            href="{{ route('list-vehicles') }}">
-                                                            <i class="fas fa-fw fa-database icon-orange"
-                                                                :class="{ 'text-3xl': !isSideMenuOpen }"></i>
-                                                            <span
-                                                                :class="!isSideMenuOpen && flotan == 'List_vehicles' ?
-                                                                    minidisplay2 : '' || !
-                                                                    isSideMenuOpen && flotan != 'List_vehicles' ?
-                                                                    'hidden' : ''">
-                                                                {{ __('List of vehicles') }}
-                                                            </span>
+                                        </a>
+                                    </li>
+                                @endcan
 
-                                                        </a>
-                                                    </li>
-                                                </div>
-                                                <div>
-                                                    <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                                                        :class="{ '-ml-5': !isSideMenuOpen }">
-                                                        <a x-on:mouseover="flotan='Linked_List'"
-                                                            x-on:mouseleave="flotan=''" class="w-full"
-                                                            href="{{ route('list-linked') }}">
-                                                            <i class="fas fa-fw fa-database icon-purple"
-                                                                :class="{ 'text-3xl': !isSideMenuOpen }"></i>
-                                                            <span
-                                                                :class="!isSideMenuOpen && flotan == 'Linked_List' ?
-                                                                    minidisplay2 : '' || !
-                                                                    isSideMenuOpen &&
-                                                                    flotan != 'Linked_List' ? 'hidden' : ''">
-                                                                {{ __('Linked List') }}
-                                                            </span>
-                                                        </a>
-                                                    </li>
-                                                </div>
-                                                {{-- <div>
+                                @can('listas')
+                                    <li class="flex ml-8">
+                                        <span id="active3"
+                                            class="absolute inset-y-0 left-0 bg-purple-600 li-active hidden"></span>
+                                        <button x-on:mouseover="flotan='Information_lists'" x-on:mouseleave="flotan=''"
+                                            class="inline-flex items-center justify-between w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                                            @click="togglePagesMenu" aria-haspopup="true">
+
+                                            <span class="inline-flex items-center">
+                                                <span class="w-5 h-5" aria-hidden="true" fill="none"
+                                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    viewBox="0 0 24 24" stroke="currentColor"
+                                                    :class="{ 'w-5 h-5': isSideMenuOpen, '-ml-3-5': !isSideMenuOpen }">
+                                                    <i class="fas fa-fw fa-list"
+                                                        :class="{ 'hidden': !isSideMenuOpen }"></i>
+                                                    <i class="fas fa-fw fa-database text-3xl"
+                                                        :class="{ 'hidden': isSideMenuOpen }"></i>
+                                                </span>
+                                                <span class="ml-4"
+                                                    :class="!isSideMenuOpen && flotan == 'Information_lists' ? minidisplay :
+                                                        '' || !
+                                                        isSideMenuOpen &&
+                                                        flotan != 'Information_lists' ? 'hidden' : ''">
+                                                    {{ __('Information lists.') }}
+                                                </span>
+                                            </span>
+                                            <svg class="text-2-2xl" aria-hidden="true" fill="currentColor"
+                                                viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd"
+                                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                                    clip-rule="evenodd"></path>
+                                            </svg>
+                                        </button>
+                                        <template x-if="isPagesMenuOpen">
+                                            <ul x-transition:enter="transition-all ease-in-out duration-300"
+                                                x-transition:enter-start="opacity-25 max-h-0"
+                                                x-transition:enter-end="opacity-100 max-h-xl"
+                                                x-transition:leave="transition-all ease-in-out duration-300"
+                                                x-transition:leave-start="opacity-100 max-h-xl"
+                                                x-transition:leave-end="opacity-0 max-h-0" {{-- class="p-2 mt-2 space-y-2 overflow-hidden text-sm font-medium g-black bg-opacity-50 rounded-md shadow-inner bg-gray-701 dark:text-gray-400 dark:bg-gray-900" --}}
+                                                class="absolute p-2 mt-8 ml-4 space-y-2 overflow-hidden text-sm font-medium g-black bg-opacity-50 rounded-md shadow-inner bg-gray-701 dark:text-gray-400 dark:bg-gray-900"
+                                                :class="{
+                                                    'p-2': isSideMenuOpen,
+                                                    'mt-2': isSideMenuOpen,
+                                                    'p-6': !isSideMenuOpen,
+                                                    '-ml-7': !
+                                                        isSideMenuOpen
+                                                }"
+                                                aria-label="submenu">
+                                                <div class="grid grid-cols-4 gap-4">
+                                                    @can('listaContratos')
+                                                        <div>
+                                                            <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                                                                :class="{ '-ml-5': !isSideMenuOpen }">
+                                                                <a x-on:mouseover="flotan='List_Contracts'"
+                                                                    x-on:mouseleave="flotan=''" class="w-full"
+                                                                    href="{{ route('list-contracts') }}">
+                                                                    <i class="fas fa-fw fa-database icon-green"
+                                                                        :class="{ 'text-3xl': !isSideMenuOpen }"></i>
+                                                                    <span
+                                                                        :class="!isSideMenuOpen && flotan == 'List_Contracts' ?
+                                                                            minidisplay2 : '' || !
+                                                                            isSideMenuOpen && flotan !=
+                                                                            'List_Contracts' ?
+                                                                            'hidden' : ''">
+                                                                        {{ __('List of Contracts') }}
+                                                                    </span>
+                                                                </a>
+                                                            </li>
+                                                        </div>
+                                                    @endcan
+                                                    @can('listaFuec')
+                                                        <div>
+                                                            <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                                                                :class="{ '-ml-5': !isSideMenuOpen }">
+                                                                <a x-on:mouseover="flotan='Fuec_List'"
+                                                                    x-on:mouseleave="flotan=''" class="w-full"
+                                                                    href="{{ route('list-fuec') }}">
+                                                                    <i class="fas fa-fw fa-database icon-yellow"
+                                                                        :class="{ 'text-3xl': !isSideMenuOpen }"></i>
+                                                                    <span
+                                                                        :class="!isSideMenuOpen && flotan == 'Fuec_List' ?
+                                                                            minidisplay2 :
+                                                                            '' || !
+                                                                            isSideMenuOpen &&
+                                                                            flotan != 'Fuec_List' ? 'hidden' : ''">
+                                                                        {{ __('Fuec List') }}
+                                                                    </span>
+                                                                </a>
+                                                            </li>
+                                                        </div>
+                                                    @endcan
+                                                    @can('listaConductores')
+                                                        <div>
+                                                            <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                                                                :class="{ '-ml-5': !isSideMenuOpen }">
+                                                                <a x-on:mouseover="flotan='Driver_List'"
+                                                                    x-on:mouseleave="flotan=''" class="w-full"
+                                                                    href="{{ route('list-drivers') }}">
+                                                                    <i class="fas fa-fw fa-database icon-red"
+                                                                        :class="{ 'text-3xl': !isSideMenuOpen }"></i>
+                                                                    <span
+                                                                        :class="!isSideMenuOpen && flotan == 'Driver_List' ?
+                                                                            minidisplay2 : '' || !
+                                                                            isSideMenuOpen &&
+                                                                            flotan != 'Driver_List' ? 'hidden' : ''">
+                                                                        {{ __('Driver List') }}
+                                                                    </span>
+                                                                </a>
+                                                            </li>
+                                                        </div>
+                                                    @endcan
+                                                    @can('listaVehiculos')
+                                                        <div>
+                                                            <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                                                                :class="{ '-ml-5': !isSideMenuOpen }">
+                                                                <a x-on:mouseover="flotan='List_vehicles'"
+                                                                    x-on:mouseleave="flotan=''" class="w-full"
+                                                                    href="{{ route('list-vehicles') }}">
+                                                                    <i class="fas fa-fw fa-database icon-orange"
+                                                                        :class="{ 'text-3xl': !isSideMenuOpen }"></i>
+                                                                    <span
+                                                                        :class="!isSideMenuOpen && flotan == 'List_vehicles' ?
+                                                                            minidisplay2 : '' || !
+                                                                            isSideMenuOpen && flotan !=
+                                                                            'List_vehicles' ?
+                                                                            'hidden' : ''">
+                                                                        {{ __('List of vehicles') }}
+                                                                    </span>
+
+                                                                </a>
+                                                            </li>
+                                                        </div>
+                                                    @endcan
+                                                    @can('listaVinculados')
+                                                        <div>
+                                                            <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                                                                :class="{ '-ml-5': !isSideMenuOpen }">
+                                                                <a x-on:mouseover="flotan='Linked_List'"
+                                                                    x-on:mouseleave="flotan=''" class="w-full"
+                                                                    href="{{ route('list-linked') }}">
+                                                                    <i class="fas fa-fw fa-database icon-purple"
+                                                                        :class="{ 'text-3xl': !isSideMenuOpen }"></i>
+                                                                    <span
+                                                                        :class="!isSideMenuOpen && flotan == 'Linked_List' ?
+                                                                            minidisplay2 : '' || !
+                                                                            isSideMenuOpen &&
+                                                                            flotan != 'Linked_List' ? 'hidden' : ''">
+                                                                        {{ __('Linked List') }}
+                                                                    </span>
+                                                                </a>
+                                                            </li>
+                                                        </div>
+                                                    @endcan
+
+                                                    {{-- <div>
                                                     <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                                                         :class="{ '-ml-5': !isSideMenuOpen }">
                                                         <a x-on:mouseover="flotan='providers_list'"
@@ -941,7 +959,7 @@ x-transition:leave-end="opacity-0 transform -translate-x-20">
                                                         </a>
                                                     </li>
                                                 </div> --}}
-                                                {{-- <div>
+                                                    {{-- <div>
                                                     <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                                                         :class="{ '-ml-5': !isSideMenuOpen }">
                                                         <a x-on:mouseover="flotan='pending_list'"
@@ -959,54 +977,65 @@ x-transition:leave-end="opacity-0 transform -translate-x-20">
                                                         </a>
                                                     </li>
                                                 </div> --}}
-                                            </div>
+                                                </div>
 
-                                        </ul>
-                                    </template>
-                                </li>
-                                <li class="flex ml-8">
-                                    <span id="active4"
-                                        class="absolute inset-y-0 left-0 bg-purple-600 li-active hidden"></span>
-                                    <a x-on:mouseover="flotan='Manage_Contract'" x-on:mouseleave="flotan=''"
-                                        class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                                        href="{{ route('manage-contracts') }}">
-                                        <span class="text-2-2xl" aria-hidden="true" fill="none"
-                                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            viewBox="0 0 24 24" stroke="currentColor"
-                                            :class="{ 'text-2-2xl': isSideMenuOpen, '-ml-3-5': !isSideMenuOpen }">
-                                            <i class="fas fa-fw fa-file-contract icon-green"
-                                                :class="{ 'text-3xl': !isSideMenuOpen }"></i>
-                                        </span>
-                                        <span class="ml-4"
-                                            :class="!isSideMenuOpen && flotan == 'Manage_Contract' ? minidisplay : '' || !
-                                                isSideMenuOpen &&
-                                                flotan != 'Manage_Contract' ? 'hidden' : ''">
-                                            {{ __('Manage Contract') }}
-                                        </span>
-                                    </a>
-                                </li>
-                                <li class="flex ml-8">
-                                    <span id="active5"
-                                        class="absolute inset-y-0 left-0 bg-purple-600 li-active hidden"></span>
-                                    <a x-on:mouseover="flotan='Manage_Fuec'" x-on:mouseleave="flotan=''"
-                                        class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                                        href="{{ route('manage-permissions') }}">
-                                        <span class="text-2-2xl" aria-hidden="true" fill="none"
-                                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            viewBox="0 0 24 24" stroke="currentColor"
-                                            :class="{ 'text-2-2xl': isSideMenuOpen, '-ml-3-5': !isSideMenuOpen }">
-                                            <i class="fas fa-fw fa-road icon-yellow"
-                                                :class="{ 'text-3xl': !isSideMenuOpen }"></i>
-                                        </span>
-                                        <span class="ml-4"
-                                            :class="!isSideMenuOpen && flotan == 'Manage_Fuec' ? minidisplay : '' || !
-                                                isSideMenuOpen &&
-                                                flotan !=
-                                                'Manage_Fuec' ? 'hidden' : ''">
-                                            {{ __('Manage Fuec') }}
-                                        </span>
-                                    </a>
-                                </li>
+                                            </ul>
+                                        </template>
+                                    </li>
+                                @endcan
+
+
+                                @can('mantenimientoContratos')
+                                    <li class="flex ml-8">
+                                        <span id="active4"
+                                            class="absolute inset-y-0 left-0 bg-purple-600 li-active hidden"></span>
+                                        <a x-on:mouseover="flotan='Manage_Contract'" x-on:mouseleave="flotan=''"
+                                            class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                                            href="{{ route('manage-contracts') }}">
+                                            <span class="text-2-2xl" aria-hidden="true" fill="none"
+                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                viewBox="0 0 24 24" stroke="currentColor"
+                                                :class="{ 'text-2-2xl': isSideMenuOpen, '-ml-3-5': !isSideMenuOpen }">
+                                                <i class="fas fa-fw fa-file-contract icon-green"
+                                                    :class="{ 'text-3xl': !isSideMenuOpen }"></i>
+                                            </span>
+                                            <span class="ml-4"
+                                                :class="!isSideMenuOpen && flotan == 'Manage_Contract' ? minidisplay : '' || !
+                                                    isSideMenuOpen &&
+                                                    flotan != 'Manage_Contract' ? 'hidden' : ''">
+                                                {{ __('Manage Contract') }}
+                                            </span>
+                                        </a>
+                                    </li>
+                                @endcan
+
+
+                                @can('mantenimientoFuec')
+                                    <li class="flex ml-8">
+                                        <span id="active5"
+                                            class="absolute inset-y-0 left-0 bg-purple-600 li-active hidden"></span>
+                                        <a x-on:mouseover="flotan='Manage_Fuec'" x-on:mouseleave="flotan=''"
+                                            class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                                            href="{{ route('manage-permissions') }}">
+                                            <span class="text-2-2xl" aria-hidden="true" fill="none"
+                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                viewBox="0 0 24 24" stroke="currentColor"
+                                                :class="{ 'text-2-2xl': isSideMenuOpen, '-ml-3-5': !isSideMenuOpen }">
+                                                <i class="fas fa-fw fa-road icon-yellow"
+                                                    :class="{ 'text-3xl': !isSideMenuOpen }"></i>
+                                            </span>
+                                            <span class="ml-4"
+                                                :class="!isSideMenuOpen && flotan == 'Manage_Fuec' ? minidisplay : '' || !
+                                                    isSideMenuOpen &&
+                                                    flotan !=
+                                                    'Manage_Fuec' ? 'hidden' : ''">
+                                                {{ __('Manage Fuec') }}
+                                            </span>
+                                        </a>
+                                    </li>
+                                @endcan
+
+                                @can('mantenimientoUsuarios')
                                 <li class="flex ml-8">
                                     <span id="active6"
                                         class="absolute inset-y-0 left-0 bg-purple-600 li-active hidden"></span>
@@ -1029,6 +1058,8 @@ x-transition:leave-end="opacity-0 transform -translate-x-20">
                                         </span>
                                     </a>
                                 </li>
+                                @endcan
+                                @can('mantenimientoVehiculos')
                                 <li class="flex ml-8">
                                     <span id="active7"
                                         class="absolute inset-y-0 left-0 bg-purple-600 li-active hidden"></span>
@@ -1050,6 +1081,8 @@ x-transition:leave-end="opacity-0 transform -translate-x-20">
                                         </span>
                                     </a>
                                 </li>
+                                @endcan
+  
                                 <li class="flex ml-8">
                                     <span id="active8"
                                         class="absolute inset-y-0 left-0 bg-purple-600 li-active hidden"></span>
@@ -1327,9 +1360,9 @@ x-transition:leave-end="opacity-0 transform -translate-x-20">
                     </ul>
                 </div>
             </header>
-            
+
             <main class="h-4-7 overflow-y-auto">
-                
+
                 <div class="container px-6 mx-auto">
                     {{ $slot }}
                 </div>

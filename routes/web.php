@@ -81,7 +81,7 @@ Route::get('pdfs/permit-public/{id}', [PermitController::class, 'publicfuec'])->
 Route::get('pdfs/index/{id}', [PermitController::class, 'index'])->name('pdfs.index');
 
 
-Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->group(function () {Route::get('permissions/manage-permissions', ManagePermissions::class)->name('manage-permissions');
+Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->group(function () {Route::get('permissions/manage-permissions', ManagePermissions::class)->middleware('can:manage-permissions')->name('manage-permissions');
 });
 
 Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->group(function () {Route::get('users/manage-users', ManageUsers::class)->name('manage-users');

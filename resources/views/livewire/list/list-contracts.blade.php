@@ -198,16 +198,18 @@
                                                                 </button>
                                                             @endif
                                                         @endforeach
-                                                        <button {{-- onclick="view({{ $permit->id }})" --}}
-                                                            class="inline-flex items-center justify-center  bg-blue-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 active:bg-red-600 disabled:opacity-25 transition">
-                                                            <svg class="w-5 h-5" fill="none" stroke="currentColor"
-                                                                stroke-width="1.5" viewBox="0 0 24 24"
-                                                                xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                                    d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z">
-                                                                </path>
-                                                            </svg>
-                                                        </button>
+                                                        @can('listaContratos.crearFuec')
+                                                            <button {{-- onclick="view({{ $permit->id }})" --}}
+                                                                class="inline-flex items-center justify-center  bg-blue-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 active:bg-red-600 disabled:opacity-25 transition">
+                                                                <svg class="w-5 h-5" fill="none" stroke="currentColor"
+                                                                    stroke-width="1.5" viewBox="0 0 24 24"
+                                                                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                                        d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z">
+                                                                    </path>
+                                                                </svg>
+                                                            </button>
+                                                        @endcan
                                                     </h1>
                                                 </div>
                                             </div>
@@ -481,7 +483,7 @@
                                 </div>
                                 <div class="">
                                     <h1 class="content-center text-black dark:text-white text-4xl1">
-                                        <button
+                                        <button onclick="view({{ $contracSelected->id }})"
                                             class="inline-flex items-center justify-center  bg-blue-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 active:bg-red-600 disabled:opacity-25 transition"
                                             {{-- flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray" --}} aria-label="view">
                                             <svg class="w-5 h-5" fill="none" stroke="currentColor"
@@ -536,24 +538,27 @@
 
                                             @default
                                         @endswitch
-                                        @if ($contracSelected->signed_contract == 1)
-                                            <button
-                                                class="inline-flex items-center justify-center  bg-blue-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 active:bg-red-600 disabled:opacity-25 transition"
-                                                onclick="modalDocumentation({{ $contracSelected->id }},{{ $contracSelected->type_contract }},{{ $contracSelected->contract_number }})"
-                                                onmouseover="Tooltip(true,'tooltip2')"
-                                                onmouseleave="Tooltip(false,'tooltip2')">
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5"
-                                                    id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24"
-                                                    width="512" height="512">
-                                                    <path
-                                                        d="M19,3h-6.528c-.154,0-.31-.036-.447-.105l-3.153-1.576c-.415-.208-.879-.318-1.344-.318h-2.528C2.243,1,0,3.243,0,6v12c0,2.757,2.243,5,5,5h3c.552,0,1-.447,1-1s-.448-1-1-1h-3c-1.654,0-3-1.346-3-3V9H22v9c0,1.654-1.346,3-3,3h-3c-.552,0-1,.447-1,1s.448,1,1,1h3c2.757,0,5-2.243,5-5V8c0-2.757-2.243-5-5-5ZM2,6c0-1.654,1.346-3,3-3h2.528c.154,0,.308,.036,.447,.106l3.156,1.577c.415,.207,.878,.316,1.341,.316h6.528c1.302,0,2.402,.839,2.816,2H2v-1ZM14.293,15.896l-1.293-1.293v7.397c0,.553-.448,1-1,1s-1-.447-1-1v-7.397l-1.293,1.293c-.195,.195-.451,.293-.707,.293s-.512-.098-.707-.293c-.391-.391-.391-1.023,0-1.414l1.613-1.613c1.118-1.119,3.069-1.119,4.188,0l1.613,1.613c.391,.391,.391,1.023,0,1.414s-1.023,.391-1.414,0Z" />
-                                                </svg>
-                                                <div id="tooltip2" role="tooltip"
-                                                    class="hidden fixed mt4 border transition-colors duration-150 text-white text-sm bg-gray-900 px-2 rounded-md">
-                                                    Firmar Contrato
-                                                </div>
-                                            </button>
-                                        @endif
+                                        @can('listaContratos.firmarContrato')
+                                            @if ($contracSelected->signed_contract == 1)
+                                                <button
+                                                    class="inline-flex items-center justify-center  bg-blue-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 active:bg-red-600 disabled:opacity-25 transition"
+                                                    onclick="modalDocumentation({{ $contracSelected->id }},{{ $contracSelected->type_contract }},{{ $contracSelected->contract_number }})"
+                                                    onmouseover="Tooltip(true,'tooltip2')"
+                                                    onmouseleave="Tooltip(false,'tooltip2')">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5"
+                                                        id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24"
+                                                        width="512" height="512">
+                                                        <path
+                                                            d="M19,3h-6.528c-.154,0-.31-.036-.447-.105l-3.153-1.576c-.415-.208-.879-.318-1.344-.318h-2.528C2.243,1,0,3.243,0,6v12c0,2.757,2.243,5,5,5h3c.552,0,1-.447,1-1s-.448-1-1-1h-3c-1.654,0-3-1.346-3-3V9H22v9c0,1.654-1.346,3-3,3h-3c-.552,0-1,.447-1,1s.448,1,1,1h3c2.757,0,5-2.243,5-5V8c0-2.757-2.243-5-5-5ZM2,6c0-1.654,1.346-3,3-3h2.528c.154,0,.308,.036,.447,.106l3.156,1.577c.415,.207,.878,.316,1.341,.316h6.528c1.302,0,2.402,.839,2.816,2H2v-1ZM14.293,15.896l-1.293-1.293v7.397c0,.553-.448,1-1,1s-1-.447-1-1v-7.397l-1.293,1.293c-.195,.195-.451,.293-.707,.293s-.512-.098-.707-.293c-.391-.391-.391-1.023,0-1.414l1.613-1.613c1.118-1.119,3.069-1.119,4.188,0l1.613,1.613c.391,.391,.391,1.023,0,1.414s-1.023,.391-1.414,0Z" />
+                                                    </svg>
+                                                    <div id="tooltip2" role="tooltip"
+                                                        class="hidden fixed mt4 border transition-colors duration-150 text-white text-sm bg-gray-900 px-2 rounded-md">
+                                                        Firmar Contrato
+                                                    </div>
+                                                </button>
+                                            @endif
+                                        @endcan
+
                                     </h1>
                                 </div>
                                 <div class="text-black dark:text-white">
@@ -577,47 +582,51 @@
                                             </div>
 
                                         </a> --}}
-
-                                        <button
-                                            class="inline-flex items-center justify-center  bg-blue-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest
-                                            hover:bg-red-500 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 active:bg-red-600 disabled:opacity-25 transition"
-                                            aria-label="view" onmouseover="Tooltip(true,'tooltip')"
-                                            onmouseleave="Tooltip(false,'tooltip')"
-                                            onclick="openModalFuec({{ $contracSelected->id }},{{ $contracSelected->type_contract }},true)">
-                                            <svg id="Layer_1" class="w-5 h-5" viewBox="0 0 24 24" width="512"
-                                                xmlns="http://www.w3.org/2000/svg" data-name="Layer 1">
-                                                <path d="m9.5 24h-8a1.5 1.5 0 0 1 0-3h8a1.5 1.5 0 0 1 0 3z" />
-                                                <path d="m7.5 19h-6a1.5 1.5 0 0 1 0-3h6a1.5 1.5 0 0 1 0 3z" />
-                                                <path d="m5.5 14h-4a1.5 1.5 0 0 1 0-3h4a1.5 1.5 0 0 1 0 3z" />
-                                                <path
-                                                    d="m14.5 23.722a1.5 1.5 0 0 1 -.354-2.958 9.022 9.022 0 1 0 -10.303-12.622 1.5 1.5 0 0 1 -2.711-1.284 12.023 12.023 0 1 1 13.723 
-                                                16.821 1.513 1.513 0 0 1 -.355.043z" />
-                                                <path
-                                                    d="m12.5 6a1.5 1.5 0 0 0 -1.5 1.5v4.293a2 2 0 0 0 .586 1.414l1.793 1.793a1.5 1.5 0 0 0 
-                                                2.121-2.121l-1.5-1.5v-3.879a1.5 1.5 0 0 0 -1.5-1.5z" />
-                                            </svg>
-                                            <div id="tooltip" role="tooltip"
-                                                class="hidden fixed mt-12 -ml-7 border transition-colors duration-150 text-white  text-sm bg-gray-900 px-2 py-1 rounded-md">
-                                                FUEC DE CONTINGENCIA
-                                            </div>
-                                        </button>
+                                        @can('listaContratos.crearFuecContingencia')
+                                            <button
+                                                class="inline-flex items-center justify-center  bg-blue-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest
+                                        hover:bg-red-500 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 active:bg-red-600 disabled:opacity-25 transition"
+                                                aria-label="view" onmouseover="Tooltip(true,'tooltip')"
+                                                onmouseleave="Tooltip(false,'tooltip')"
+                                                onclick="openModalFuec({{ $contracSelected->id }},{{ $contracSelected->type_contract }},true)">
+                                                <svg id="Layer_1" class="w-5 h-5" viewBox="0 0 24 24" width="512"
+                                                    xmlns="http://www.w3.org/2000/svg" data-name="Layer 1">
+                                                    <path d="m9.5 24h-8a1.5 1.5 0 0 1 0-3h8a1.5 1.5 0 0 1 0 3z" />
+                                                    <path d="m7.5 19h-6a1.5 1.5 0 0 1 0-3h6a1.5 1.5 0 0 1 0 3z" />
+                                                    <path d="m5.5 14h-4a1.5 1.5 0 0 1 0-3h4a1.5 1.5 0 0 1 0 3z" />
+                                                    <path
+                                                        d="m14.5 23.722a1.5 1.5 0 0 1 -.354-2.958 9.022 9.022 0 1 0 -10.303-12.622 1.5 1.5 0 0 1 -2.711-1.284 12.023 12.023 0 1 1 13.723 
+                                            16.821 1.513 1.513 0 0 1 -.355.043z" />
+                                                    <path
+                                                        d="m12.5 6a1.5 1.5 0 0 0 -1.5 1.5v4.293a2 2 0 0 0 .586 1.414l1.793 1.793a1.5 1.5 0 0 0 
+                                            2.121-2.121l-1.5-1.5v-3.879a1.5 1.5 0 0 0 -1.5-1.5z" />
+                                                </svg>
+                                                <div id="tooltip" role="tooltip"
+                                                    class="hidden fixed mt-12 -ml-7 border transition-colors duration-150 text-white  text-sm bg-gray-900 px-2 py-1 rounded-md">
+                                                    FUEC DE CONTINGENCIA
+                                                </div>
+                                            </button>
+                                        @endcan
                                         <strong>Permiso N°</strong>
                                         @foreach ($permits as $permit)
-                                            <button onclick="permit({{ $permit->id }})"
+                                            <button onclick="viewPermit({{ $permit->id }})"
                                                 class="p-1 inline-flex items-center justify-center  bg-red-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 active:bg-red-600 disabled:opacity-25 transition">
                                                 <span>{{ $permit->permit_number }}</span>
                                             </button>
                                         @endforeach
-                                        <button {{-- onclick="view({{ $permit->id }})" --}}
-                                            class="inline-flex items-center justify-center  bg-blue-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 active:bg-red-600 disabled:opacity-25 transition"
-                                            onclick="openModalFuec({{ $contracSelected->id }},{{ $contracSelected->type_contract }},false)">
-                                            <svg class="w-5 h-5" fill="none" stroke="currentColor"
-                                                stroke-width="1.5" viewBox="0 0 24 24"
-                                                xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                            </svg>
-                                        </button>
+                                        @can('listaContratos.crearFuec')
+                                            <button
+                                                class="inline-flex items-center justify-center  bg-blue-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 active:bg-red-600 disabled:opacity-25 transition"
+                                                onclick="openModalFuec({{ $contracSelected->id }},{{ $contracSelected->type_contract }},false)">
+                                                <svg class="w-5 h-5" fill="none" stroke="currentColor"
+                                                    stroke-width="1.5" viewBox="0 0 24 24"
+                                                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                                </svg>
+                                            </button>
+                                        @endcan
+
                                     </h1>
                                 </div>
                             </div>
@@ -1567,38 +1576,6 @@
 
         })
 
-
-
-        // enviando los datos para que los reciba la modal editar
-        function permit(id) {
-
-            let timerInterval
-            swal.fire({
-                title: 'loading...',
-                html: 'Loading system information into <b></b> milliseconds.', //Cargando la información del sistema en
-                timer: 2000,
-                timerProgressBar: true,
-                didOpen: () => {
-                    swal.showLoading()
-                    const b = swal.getHtmlContainer().querySelector('b')
-                    timerInterval = setInterval(() => {
-                        b.textContent = swal.getTimerLeft()
-                    }, 100)
-                },
-                willClose: () => {
-                    clearInterval(timerInterval)
-                }
-            }).then((result) => {
-                /* Read more about handling dismissals below */
-                if (result.dismiss === swal.DismissReason.timer) {
-                    // console.log('document above')//documento arribba
-                }
-            })
-
-            Livewire.emit('permit', [id]);
-
-        }
-
         function viewhideinputs(id, adhere, stirring) {
 
             document.getElementById(id).classList.remove(stirring);
@@ -1732,6 +1709,14 @@
 
             document.getElementById('btnGenerate').classList.remove('Active');
             document.getElementById('btnGenerate').classList.add('Inactive');
+        }
+
+        function view(id){
+            window.open('http://127.0.0.1:8000/pdfs/pdf-contracts/' + id, '_blank');    
+        }
+
+        function viewPermit(id){
+            window.open('http://127.0.0.1:8000/pdfs/pdf-fuec/' + id, '_blank');
         }
 
         function viewhideinputs(id, adhere, stirring) {

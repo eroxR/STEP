@@ -48,7 +48,8 @@ class ManageUsers extends Component
             'Certificado_drogas_alchoolemia_usuario_', 'Certificado_Consultas_SIMIT_usuario_', 'Certificado_Normas_Transito_usuario_', 'Certificado_Manejo_Defensivo_usuario_',
             'Certificado_Primeros_Auxilios_usuario_', 'Certificado_Psicosensometrico_usuario_', 'Certificado_Seguridad_Vial_usuario_'
 
-        ];
+        ],
+        $Role = ['Cliente','Monitor','CoodinadorOperativo','RecursosHumanosEI','ComprasSuministros','Conductor','SistemasGestión','GerenteGeneral','AuditorInterno','Proveedor','Vinculado','Administrador'];
     public $username, $email, $password, $identificationcard, $usertype, $user_entry_date, $date_withdrawal_user, $firstname,
         $lastname, $profile_photo_path, $identification, $secondname, $motherslastname, $birthdate, $age, $type_sex, $country, $Department,
         $city, $address, $phone, $phone_cellular, $eps, $eps_status, $date_eps, $blood_type, $pension, $pension_status, $date_pension, $layoffs,
@@ -242,6 +243,49 @@ class ManageUsers extends Component
 
         $this->preparationsInsert();
 
+        switch ($this->usertype) {
+            case '1':
+                $rol = $this->Role[0];
+                break;
+            case '2':
+                switch ($this->charge) {
+                    case '1':
+                        $rol = $this->Role[1];
+                        break;
+                    case '2':
+                        $rol = $this->Role[2];
+                        break;
+                    case '3':
+                        $rol = $this->Role[3];
+                        break;
+                    case '4':
+                        $rol = $this->Role[4];
+                        break;
+                    case '5':
+                        $rol = $this->Role[5];
+                        break;
+                    case '6':
+                        $rol = $this->Role[6];
+                        break;
+                    case '7':
+                        $rol = $this->Role[7];
+                        break;
+                    case '8':
+                        $rol = $this->Role[8];
+                        break;
+                }
+                break;
+            case '3':
+                $rol = $this->Role[9];
+                break;
+            case '4':
+                $rol = $this->Role[10];
+                break;
+            default:
+                $rol = $this->Role[11];
+                break;
+        }
+
         $user = User::create([
             'username'  => $this->username,
             'email'  => $this->email,
@@ -314,7 +358,7 @@ class ManageUsers extends Component
             'salary'  => $this->salary,
             'aid_transport'  => $this->aid_transport,
             'work_area'  => $this->work_area,
-        ]);
+        ])->assignRole($rol);
 
         $this->documentsEmployees($user);
 
@@ -853,6 +897,8 @@ class ManageUsers extends Component
         // dd($this->username);
 
         $this->age = Carbon::createFromDate($this->birthdate)->age;
+
+
     }
 
     public function documentsEmployees($user)
