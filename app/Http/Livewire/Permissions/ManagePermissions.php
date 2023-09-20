@@ -7,6 +7,7 @@ use App\Models\contract_type;
 use App\Models\contractType;
 use App\Models\driver;
 use App\Models\permit;
+use App\Models\User;
 use App\Models\vehicle;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Support\Facades\DB;
@@ -20,10 +21,27 @@ class ManagePermissions extends Component
     public $search = "";
     public $sort = 'id';
     public $direction = 'desc';
-    public $contract, $permit_start_date, $permit_end_date, $permit_number, $permit_code, $typeContract;
+    public $contract, $permit_start_date, $permit_end_date, $permit_number, $permit_code, $typeContract, $driversRay = [], $vehiclesRay = [];
     public $driving = [];
     public $cars = [];
-    public $editCars = [], $editDrives = [], $firstCars, $firstDrives, $editContratype, $editContrat;
+    public $editCars = [], $editDrives = [], $firstCars, $firstDrives, $editContratype, $editContrat,
+        $columDirver = [
+            'license_expiration', 'certificate_drugs_alchoolemia', 'SIMIT_queries', 'psicosensometrico', 'Rules_Transit', 'Defensive_driving', 'First_aid', 'Road_safety',
+            'date_eps', 'date_pension', 'date_layoffs', 'arl_date', 'date_compensationbox'
+
+        ],
+        $columnameDirver = [
+            'licencia', 'Drogas y alchoolemia', 'Consultas SIMIT', 'psicosensometrico', 'Normas de Transito', 'Manejo Defensivo', 'Primeros Auxilios',
+            'Seguridad Vial', 'Eps', 'Pension', 'Cesantias', 'Arl', 'Caja Compensacion', 'Beneficiario'
+
+        ], $columVehicle = [
+            'secure_end_date', 'technomechanical_end_date', 'expiration_card_operation', 'expiration_preventive', 'certificate_extracontractual', 'civil_contractual'
+
+        ],
+        $columnameVehicle = [
+            'Seguro Obligatorio SOAT', 'Técnico Mecánica', 'Tarjeta de Operación', 'Preventiva', 'Extracontractual', 'Civil Contractual'
+
+        ];
 
     public $contractSelects = null, $carsSelect = null, $editPermit = null, $driveSelect = null;
 
@@ -41,6 +59,45 @@ class ManagePermissions extends Component
 
     public function store()
     {
+
+        $startContract = contract::where('id', $this->contract)->value('date_start_contract');
+        $endContract = contract::where('id', $this->contract)->value('contract_end_date');
+
+        $betweenStar = Carbon::parse($this->permit_start_date)->between($startContract, $endContract, true);
+        $betweenEnd = Carbon::parse($this->permit_end_date)->between($startContract, $endContract, true);
+
+        $contractN = contract::where('id', $this->contract)->value('contract_number');
+        $contractNText = contractType::where('id', contract::where('id', $this->contract)->value('type_contract'))->value('contract_name');
+
+        // dd($contractNText);
+
+        if (!$betweenStar) {
+            if (!$betweenEnd) {
+                return $this->emit('crud', ['contractnumber' => $contractN], ['process' => 5], ['contractType' => $contractNText], ['id' => ''], ['permit_number' => '']);
+            }
+        } else if (!$betweenEnd) {
+            return $this->emit('crud', ['contractnumber' => $contractN], ['process' => 5], ['contractType' => $contractNText], ['id' => ''], ['permit_number' => '']);
+        } else {
+            dd('is correct');
+        }
+
+        $this->validateDV();
+
+        // dd($this->driversRay,$this->vehiclesRay);
+
+        if ($this->driversRay != null) {
+            // dd($drivers);
+            if ($this->vehiclesRay != null) {
+                return $this->emit('crud', ['contractnumber' => 1], ['process' => 4], ['contractType' => ''], ['id' => $this->driversRay], ['permit_number' => $this->vehiclesRay]);
+            } else {
+                return $this->emit('crud', ['contractnumber' => 1], ['process' => 4], ['contractType' => ''], ['id' => $this->driversRay], ['permit_number' => '']);
+            }
+        } else if ($this->vehiclesRay != null) {
+            // dd('no');
+            if ($this->driversRay != null) {
+                return $this->emit('crud', ['contractnumber' => 1], ['process' => 4], ['contractType' => ''], ['id' => ''], ['permit_number' => $this->vehiclesRay]);
+            }
+        }
 
         // return $this->emit('prueba');
         // dd($this->permit_end_date,$this->driving,$this->cars);
@@ -363,10 +420,17 @@ class ManagePermissions extends Component
             ->orwhere('fuec_state', 'like', '%' . $this->search . '%')
             ->orderBy($this->sort, $this->direction)->get();
 
-        $drivers = driver::join('users', 'drivers.user_id', '=', 'users.id')
-            ->select('drivers.id', 'identificationcard', DB::raw('CONCAT(users.firstname, users.secondname, users.lastname, users.motherslastname) As nameFull'))->get();
+        $drivers = User::select('id', 'identificationcard', DB::raw('CONCAT(users.firstname," ",users.secondname," ",users.lastname," ",users.motherslastname) As nameFull'))
+            ->where('charge', '5')
+            ->where('user_state', '!=', '1')
+            ->orderBy('id', 'DESC')
+            ->get();
 
-        $vehicles = vehicle::all();
+        $vehicles = vehicle::select('id', 'plate_vehicle', 'side_vehicle', 'secure_end_date')
+            ->where('state_vehicle', '!=', '3')
+            ->orderBy('id', 'DESC')
+            ->get();
+
 
         $typeContracts = contractType::pluck('description_typeContract', 'id');
 
@@ -394,6 +458,9 @@ class ManagePermissions extends Component
 
         $this->contractSelects = contract::select('id', 'contract_number')
             ->where('type_contract', $typeContract)
+            // ->whereIn('state_contract', [1, 3, 5])
+            // ->whereIn('state_contract', [3, 5])
+            ->where('state_contract', 3)
             ->orderBy('contract_number', 'DESC')
             ->get();
         // dd($this->contractSelects,$this->driving,$this->cars,$this->permit_start_date);
@@ -404,6 +471,137 @@ class ManagePermissions extends Component
         $limitcar = DB::table('contracts')->where('id', $this->contract)->value('quantity_vehicle');
         // dd($limitcar);
         $this->emit('assignLimit', ['limitcar' => $limitcar]);
+    }
+
+    public function validateDV()
+    {
+        date_default_timezone_set("America/Bogota"); //Zona horaria de Colombia
+        $today = Carbon::today();
+        $documents = [];
+        $dates = [];
+
+        $positionD = 0;
+        $positionV = 0;
+
+        // conductores
+
+        foreach ($this->driving  as $dirver) {
+            $state = driver::where('user_id', $dirver)->value('driver_status');
+
+            $counterD = 1;
+            $NameD = true;
+
+            if ($state == '1') {
+                // dd('si');
+                $driverName = User::select(DB::raw('CONCAT(users.firstname," ",users.secondname," ",users.lastname," ",users.motherslastname) As nameFull'))->where('id', $dirver)->value('nameFull');
+                for ($i = 0; $i < count($this->columDirver); $i++) {
+                    if ($i >= 8 && $i <= 12) {
+                        $date = Carbon::createFromDate(User::where('id', $dirver)->value($this->columDirver[$i]));
+                    } else {
+                        $date = Carbon::createFromDate(driver::where('user_id', $dirver)->value($this->columDirver[$i]));
+                    }
+                    $expiereDate = $date->day . ' de ' . $date->monthName . ' de ' . $date->year;
+
+                    if ($date < $today) {
+                        if ($NameD == true) {
+                            $this->driversRay[$positionD]['fullname'] = $driverName;
+                            $this->driversRay[$positionD]['documents'] = $documents;
+                            $this->driversRay[$positionD]['dates'] = $dates;
+                            $NameD = false;
+                        }
+
+                        $this->driversRay[$positionD]['documents'] += ['document' . $counterD => $this->columnameDirver[$i]];
+                        $this->driversRay[$positionD]['dates'] += ['date' . $counterD => $expiereDate];
+
+                        $counterD++;
+                    }
+                }
+            } else {
+                // dd('no');
+                $driverName = User::select(DB::raw('CONCAT(users.firstname," ",users.secondname," ",users.lastname," ",users.motherslastname) As nameFull'))->where('id', $dirver)->value('nameFull');
+                for ($i = 0; $i < count($this->columDirver); $i++) {
+                    if ($i >= 8 && $i <= 12) {
+                        $date = Carbon::parse(User::where('id', $dirver)->value($this->columDirver[$i]));
+                    } else {
+                        $date = Carbon::parse(driver::where('user_id', $dirver)->value($this->columDirver[$i]));
+                    }
+                    $expiereDate = $date->day . ' de ' . $date->monthName . ' de ' . $date->year;
+
+                    if ($this->permit_end_date > $date) {
+                        if ($NameD == true) {
+                            $this->driversRay[$positionD]['fullname'] = $driverName;
+                            $this->driversRay[$positionD]['documents'] = $documents;
+                            $this->driversRay[$positionD]['dates'] = $dates;
+                            $NameD = false;
+                        }
+
+                        $this->driversRay[$positionD]['documents'] += ['document' . $counterD => $this->columnameDirver[$i]];
+                        $this->driversRay[$positionD]['dates'] += ['date' . $counterD => $expiereDate];
+
+                        $counterD++;
+                    }
+                }
+            }
+            $positionD++;
+        }
+
+        // Vehiculos
+
+        foreach ($this->cars as $vehicle) {
+            $state = vehicle::where('id', $vehicle)->value('state_vehicle');
+
+            $counterV = 1;
+            $NameV = true;
+
+            if ($state == '1') {
+                // dd('si');
+                $plateVehicle = vehicle::where('id', $vehicle)->value('plate_vehicle');
+                for ($i = 0; $i < count($this->columVehicle); $i++) {
+
+                    $date = Carbon::createFromDate(vehicle::where('id', $vehicle)->value($this->columVehicle[$i]));
+
+                    $expiereDate = $date->day . ' de ' . $date->monthName . ' de ' . $date->year;
+
+                    if ($date < $today) {
+                        if ($NameV == true) {
+                            $this->vehiclesRay[$positionV]['plate'] = $plateVehicle;
+                            $this->vehiclesRay[$positionV]['documents'] = $documents;
+                            $this->vehiclesRay[$positionV]['dates'] = $dates;
+                            $NameV = false;
+                        }
+
+                        $this->vehiclesRay[$positionV]['documents'] += ['document' . $counterV => $this->columnameVehicle[$i]];
+                        $this->vehiclesRay[$positionV]['dates'] += ['date' . $counterV => $expiereDate];
+
+                        $counterV++;
+                    }
+                }
+            } else {
+                // dd('no');
+                $plateVehicle = vehicle::where('id', $vehicle)->value('plate_vehicle');
+                for ($i = 0; $i < count($this->columVehicle); $i++) {
+
+                    $date = Carbon::createFromDate(vehicle::where('id', $vehicle)->value($this->columVehicle[$i]));
+
+                    $expiereDate = $date->day . ' de ' . $date->monthName . ' de ' . $date->year;
+
+                    if ($this->permit_end_date > $date) {
+                        if ($NameV == true) {
+                            $this->vehiclesRay[$positionV]['plate'] = $plateVehicle;
+                            $this->vehiclesRay[$positionV]['documents'] = $documents;
+                            $this->vehiclesRay[$positionV]['dates'] = $dates;
+                            $NameV = false;
+                        }
+
+                        $this->vehiclesRay[$positionV]['documents'] += ['document' . $counterV => $this->columnameVehicle[$i]];
+                        $this->vehiclesRay[$positionV]['dates'] += ['date' . $counterV => $expiereDate];
+
+                        $counterV++;
+                    }
+                }
+            }
+            $positionV++;
+        }
     }
 
     // public function pdf(){      

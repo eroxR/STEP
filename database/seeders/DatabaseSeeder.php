@@ -57,11 +57,12 @@ class DatabaseSeeder extends Seeder
         $this->call(AlertTypeSeeder::class);
         
         $this->call(UserSeeder::class);
+        $this->call(RoleSeeder::class);
         
-         driver::factory(85)->create();
-         vehicle::factory(65)->create();
-         contract::factory(100)->create();
-         permit::factory(170)->create();
-         passenger::factory(200)->create();
+        //  driver::factory(85)->create();
+        //  vehicle::factory(65)->create();
+        //  contract::factory(100)->create();
+        //  permit::factory(170)->create();
+        //  passenger::factory(200)->create();
     }
 }

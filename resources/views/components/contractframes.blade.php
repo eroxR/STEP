@@ -12,6 +12,7 @@
                 style="width: 78%;margin-top: 0.5rem;margin-left: 5%;height: 11rem;display: flex;align-items: center;border-radius: 0.25rem;">
                 <img style="width: 55%;margin-top: 0.5rem;height: 70%;"
                     src="{{ public_path('img/logoC1.png') }}" alt="">
+                    {{-- src="{{ asset('img/logoC1.png') }}" alt=""> --}}
             </div>
         @else
             <div
@@ -24,7 +25,7 @@
                     {{-- <img src="{{ asset('img/Mintransporte_Colombia.svg') }}" alt=""> --}}
                     <img style="width: 90%;margin-top: 0.5rem;margin-left: 0.4rem;height: 70%;"
                         src="{{ public_path('img/logo.png') }}" alt="">
-                    {{-- <img src="{{ asset('img/logo.png') }}" alt=""> --}}
+                    {{-- <img style="width: 90%;margin-top: 0.5rem;margin-left: 0.4rem;height: 70%;" src="{{ asset('img/logo.png') }}" alt=""> --}}
                 </div>
                 <!-- contenedorlogo -->
                 <div
@@ -61,7 +62,7 @@
                 <div style="position: absolute;margin-top: 45rem;margin-left: 0.6rem;">
                     {{-- qr --}}
                     <img style="width: 5, 7rem;" src="{{ public_path('img/QR.png') }}" alt="">
-                    {{-- <img src="{{ asset('img/QR.png') }}" alt=""> --}}
+                    {{-- <img style="width: 5, 7rem;" src="{{ asset('img/QR.png') }}" alt=""> --}}
                 </div>
                 {{-- textolateral1 --}}
                 <p
@@ -96,12 +97,16 @@
                 {{-- imgfoter --}}
                 <img style="width: 38%;height: 7rem;position: absolute;margin-left: 60%;" src="{{ public_path('img/logoD.png') }}" alt="">
                 <img style="width: 99.8%;height: 10rem;" src="{{ public_path('img/prueba3.png') }}" alt="">
+                {{-- <img style="width: 38%;height: 7rem;position: absolute;margin-left: 60%;" src="{{ asset('img/logoD.png') }}" alt="">
+                <img style="width: 99.8%;height: 10rem;" src="{{ asset('img/prueba3.png') }}" alt=""> --}}
             </div>
         @else
             <div style="width: 100%;height: 10rem;display: flex;align-items: center;margin-top: 52rem;">
                 {{-- imgfoter --}}
                 <img style="width: 38%;height: 7rem;position: absolute;margin-left: 60%;" src="{{ public_path('img/logoD.png') }}" alt="">
                 <img style="width: 99.8%;height: 10rem;" src="{{ public_path('img/prueba3.png') }}" alt="">
+                {{-- <img style="width: 38%;height: 7rem;position: absolute;margin-left: 60%;" src="{{ asset('img/logoD.png') }}" alt="">
+                <img style="width: 99.8%;height: 10rem;" src="{{ asset('img/prueba3.png') }}" alt=""> --}}
             </div>
         @endif
     </div>

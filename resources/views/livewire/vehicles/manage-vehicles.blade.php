@@ -19,13 +19,54 @@
                 </button>
             </div>
 
-            <div class="w-full overflow-x-auto">
-                @if ($vehicles->count())
-                    <table class="w-full">
-                        <thead>
-                            <tr
-                                class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
-                                <th class="cursor-pointer px-2 py-2" wire:click="order('id')">
+            <div class=" overflow-x-auto" style="width:100%;" wire:ignore>
+
+                <table id="example" class="stripe dark:border-gray-700 bg-gray-50 dark:text-white dark:bg-gray-800"
+                    style="width:100%; padding-top: 1em;  padding-bottom: 1em;">
+                    <thead>
+                        <tr
+                            class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
+                            <th class="pl-4 py-2" data-priority="0">{{ __('Actions') }}</th>
+                            <th class="pl-4 py-2" data-priority="1">ID</th>
+                            <th class="pl-4 py-2" data-priority="2">{{ __('plate vehicle') }}</th>
+                            <th class="pl-4 py-2" data-priority="3">{{ __('model') }}</th>
+                            <th class="pl-4 py-2" data-priority="4">{{ __('vehicle type') }}</th>
+                            <th class="pl-4 py-2" data-priority="5">{{ __('side') }}</th>
+                            <th class="pl-4 py-2" data-priority="6">{{ __('state') }}</th>
+                            <th class="pl-4 py-2" data-priority="7">{{ __('infrastructure vehicle') }}</th>
+                            <th class="pl-4 py-2" data-priority="8">{{ __('secure end date') }}</th>
+                            <th class="pl-4 py-2" data-priority="9">{{ __('technomechanical end date') }}</th>
+                            <th class="pl-4 py-2" data-priority="10">{{ __('internal external owner type') }}</th>
+                            <th class="pl-4 py-2" data-priority="11">{{ __('owner vehicle') }}</th>
+                            <th class="pl-4 py-2" data-priority="12">{{ __('driver id') }}</th>
+                            <th class="pl-4 py-2" data-priority="13">{{ __('brand vehicle') }}</th>
+                            <th class="pl-4 py-2" data-priority="14">{{ __('vehicle chassis number') }}</th>
+                            <th class="pl-4 py-2" data-priority="15">{{ __('property card number') }}</th>
+                            <th class="pl-4 py-2" data-priority="16">{{ __('cylinder vehicle') }}</th>
+                            <th class="pl-4 py-2" data-priority="17">{{ __('number passenger') }}</th>
+                            <th class="pl-4 py-2" data-priority="18">{{ __('certificate extracontractual') }}</th>
+                            <th class="pl-4 py-2" data-priority="19">{{ __('civil contractual') }}</th>
+                            <th class="pl-4 py-2" data-priority="20">{{ __('card operation') }}</th>
+                            <th class="pl-4 py-2" data-priority="21">{{ __('expiration card operation') }}</th>
+                            <th class="pl-4 py-2" data-priority="22">{{ __('expiration preventive') }}</th>
+                            <th class="pl-4 py-2" data-priority="23">{{ __('admission date') }}</th>
+                            <th class="pl-4 py-2" data-priority="24">{{ __('vehicle pickup date') }}</th>
+                            <th class="pl-4 py-2" data-priority="25">{{ __('engine number') }}</th>
+                            <th class="pl-4 py-2" data-priority="26">{{ __('use vehicle') }}</th>
+                            <th class="pl-4 py-2" data-priority="27">{{ __('color vehicle') }}</th>
+                            <th class="pl-4 py-2" data-priority="28">{{ __('type direction') }}</th>
+                            <th class="pl-4 py-2" data-priority="29">{{ __('front suspension') }}</th>
+                            <th class="pl-4 py-2" data-priority="30">{{ __('rear suspension') }}</th>
+                            <th class="pl-4 py-2" data-priority="31">{{ __('dimension rims') }}</th>
+                            <th class="pl-4 py-2" data-priority="32">{{ __('rear brake type') }}</th>
+                            <th class="pl-4 py-2" data-priority="33">{{ __('front brake type') }}</th>
+
+                        </tr>
+                    </thead>
+                    <tbody {{-- class="dark:bg-gray-800 dark:text-white" --}}>
+                    </tbody>
+
+                </table>
 
                                     ID
 
@@ -602,16 +643,6 @@
 
                             <div class="flex space-x-4 ">
 
-                                <div class="w-6-12" id="divmaterial_rims">
-                                    <label id="labelMaterialRims"
-                                        class="text-gray-700 dark:text-gray-400">{{ __('material rims') }}</label>
-
-                                    <input
-                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                        placeholder="materiales de los rines" type="text" id="material_rims"
-                                        name="material_rims" wire:model.defer="material_rims" />
-                                </div>
-
                                 <div class="w-6-12">
                                     <label id="labelDimensionRims"
                                         class="text-gray-700 dark:text-gray-400">{{ __('dimension rims') }}</label>
@@ -625,6 +656,34 @@
                                                 {{ $dimensionRim->inch }}</option>
                                         @endforeach
                                     </select>
+
+                                </div>
+
+                                <div class="w-6-12" id="divInternalExternalOwnerType">
+
+                                    <label id="labelCheck" class="text-gray-700 dark:text-gray-400">Selecciona si el
+                                        vehiculo es Interno o Externo</label>
+
+                                    <div class="form-check check3">
+                                        <input class="form-check-input" type="radio"
+                                            name="internal_external_owner_type" id="external_owner_type"
+                                            value="0" wire:model.defer="internal_external_owner_type">
+                                        <label id="labelexternal_owner_type"
+                                            class="form-check-label text-gray-700 dark:text-gray-400"
+                                            for="external_owner_type">
+                                            EXTERNO
+                                        </label>
+                                    </div>
+                                    <div class="form-check check4">
+                                        <input class="form-check-input" type="radio"
+                                            name="internal_external_owner_type" id="internal_owner_type"
+                                            value="1" wire:model.defer="internal_external_owner_type">
+                                        <label id="labelinternal_owner_type"
+                                            class="form-check-label text-gray-700 dark:text-gray-400"
+                                            for="internal_owner_type">
+                                            INTERNO
+                                        </label>
+                                    </div>
 
                                 </div>
 
@@ -666,44 +725,26 @@
 
                             <div class="flex space-x-4">
 
-                                <div class="w-6-12" id="divUseVehicle">
-                                    <label id="labelUseVehicle"
-                                        class="text-gray-700 dark:text-gray-400">{{ __('use vehicle') }}</label>
+                                <div class="w-6-12" id="divCylinderVehicle">
+                                    <label id="labelCylinderVehicle"
+                                        class="text-gray-700 dark:text-gray-400">{{ __('cylinder vehicle') }}</label>
 
                                     <input
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                        placeholder="uso del vehiculo" type="text" id="use_vehicle"
-                                        name="use_vehicle" wire:model.defer="use_vehicle" />
+                                        placeholder="número de Cilindraje del vehiculo" type="number"
+                                        id="cylinder_vehicle" name="cylinder_vehicle"
+                                        wire:model.defer="cylinder_vehicle" />
                                 </div>
 
-                                <div class="w-6-12" id="divInternalExternalOwnerType">
+                                <div class="w-6-12">
+                                    <label id="labelNumberPassenger"
+                                        class="text-gray-700 dark:text-gray-400">{{ __('number passenger') }}</label>
 
-                                    <label id="labelCheck" class="text-gray-700 dark:text-gray-400">Selecciona si el
-                                        vehiculo es Interno o Externo</label>
-
-                                    <div class="form-check check3">
-                                        <input class="form-check-input" type="radio"
-                                            name="internal_external_owner_type" id="external_owner_type"
-                                            value="0" wire:model.defer="internal_external_owner_type">
-                                        <label id="labelexternal_owner_type"
-                                            class="form-check-label text-gray-700 dark:text-gray-400"
-                                            for="external_owner_type">
-                                            EXTERNO
-                                        </label>
-                                    </div>
-                                    <div class="form-check check4">
-                                        <input class="form-check-input" type="radio"
-                                            name="internal_external_owner_type" id="internal_owner_type"
-                                            value="1" wire:model.defer="internal_external_owner_type">
-                                        <label id="labelinternal_owner_type"
-                                            class="form-check-label text-gray-700 dark:text-gray-400"
-                                            for="internal_owner_type">
-                                            INTERNO
-                                        </label>
-                                    </div>
-
+                                    <input
+                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                        placeholder="Cantidad de pasajeros" type="number" id="number_passenger"
+                                        name="number_passenger" maxlength="5" wire:model.defer="number_passenger" />
                                 </div>
-
 
                             </div>
 
@@ -724,18 +765,6 @@
                             <div class="flex space-x-4">
 
                                 <div class="w-6-12">
-                                    <label id="labelNumberAccreditationSoat"
-                                        class="text-gray-700 dark:text-gray-400">{{ __('number accreditation soat') }}</label>
-
-                                    <input
-                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                        placeholder="Numero de Acreditación SOAT" type="text"
-                                        id="number_accreditation_soat" name="number_accreditation_soat"
-                                        wire:model.defer="number_accreditation_soat" />
-
-                                </div>
-
-                                <div class="w-6-12">
                                     <label id="labelSecureEndDate"
                                         class="text-gray-700 dark:text-gray-400">{{ __('secure end date') }}</label>
 
@@ -754,23 +783,6 @@
                                             onchange="documentAbove('InputDocNumberAccreditationSoat','DocNumberAccreditationSoat')"
                                             class="upload-input" type="file">
                                     </span>
-                                </div>
-
-                            </div>
-
-                            <div class="flex space-x-4">
-
-                                <div class="w-6-12">
-                                    <label id="labelNumberTechnomechanicalAccreditation"
-                                        class="text-gray-700 dark:text-gray-400">{{ __('number technomechanical accreditation') }}</label>
-
-                                    <input
-                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                        placeholder="Numero de Acreditación Tecnomecanica" type="text"
-                                        id="number_technomechanical_accreditation"
-                                        name="number_technomechanical_accreditation"
-                                        wire:model.defer="number_technomechanical_accreditation" />
-
                                 </div>
 
                                 <div class="w-6-12">
@@ -800,6 +812,18 @@
                             <div class="flex space-x-4">
 
                                 <div class="w-6-12">
+                                    <label id="labelNumberCardOperation"
+                                        class="text-gray-700 dark:text-gray-400">{{ __('number card operation') }}</label>
+
+                                    <input
+                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                        placeholder="Numero de Acreditación Tarjeta de Operación" type="text"
+                                        id="card_operation" name="card_operation"
+                                        wire:model.defer="card_operation" />
+
+                                </div>
+
+                                <div class="w-6-12">
                                     <label id="labelExpirationCardOperation"
                                         class="text-gray-700 dark:text-gray-400">{{ __('expiration card operation') }}</label>
 
@@ -820,26 +844,7 @@
                                     </span>
                                 </div>
 
-                                <div class="w-6-12">
-                                    <label id="labelExpirationPreventive"
-                                        class="text-gray-700 dark:text-gray-400">{{ __('expiration preventive') }}</label>
 
-                                    <input readonly
-                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                        placeholder="Fecha fin de acreditación preventiva" type="text"
-                                        id="expiration_preventive" name="expiration_preventive"
-                                        wire:model.defer="expiration_preventive"
-                                        onchange="fechasSet('expiration_preventive'),documentOn('expiration_preventive','DocPreventive')" />
-
-                                    <span id="DocPreventive" class="Inactive upload-ico fas fa-file-upload icon-green"
-                                        aria-hidden="true" fill="none" stroke-linecap="round"
-                                        stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
-                                        stroke="currentColor">
-                                        <input id="InputDocPreventive" wire:model.defer="DocPreventive"
-                                            onchange="documentAbove('InputDocPreventive','DocPreventive')"
-                                            class="upload-input" type="file">
-                                    </span>
-                                </div>
 
                             </div>
 
@@ -890,6 +895,51 @@
 
                             </div>
 
+                            <div class="flex space-x-4">
+
+                                <div class="w-6-12">
+                                    <label id="labelExpirationPreventive"
+                                        class="text-gray-700 dark:text-gray-400">{{ __('expiration preventive') }}</label>
+
+                                    <input readonly
+                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                        placeholder="Fecha fin de acreditación preventiva" type="text"
+                                        id="expiration_preventive" name="expiration_preventive"
+                                        wire:model.defer="expiration_preventive"
+                                        onchange="fechasSet('expiration_preventive'),documentOn('expiration_preventive','DocPreventive')" />
+
+                                    <span id="DocPreventive" class="Inactive upload-ico fas fa-file-upload icon-green"
+                                        aria-hidden="true" fill="none" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
+                                        stroke="currentColor">
+                                        <input id="InputDocPreventive" wire:model.defer="DocPreventive"
+                                            onchange="documentAbove('InputDocPreventive','DocPreventive')"
+                                            class="upload-input" type="file">
+                                    </span>
+                                </div>
+
+                                <div class="w-6-12">
+                                    <label id="labeltype_direction"
+                                        class="text-gray-700 dark:text-gray-400">{{ __('type direction') }}</label>
+                                    {{-- 
+                                    <input
+                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                        placeholder="tipo de dirección" type="number" id="type_direction"
+                                        name="type_direction" maxlength="5" wire:model.defer="type_direction" /> --}}
+
+
+                                    <select wire:model.defer="type_direction" id="type_direction"
+                                        name="type_direction"
+                                        class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
+                                        <option value="0">Selecciona el tipo de dirección</option>
+                                        <option value="1">dirección mecánica</option>
+                                        <option value="2">dirección hidráulica</option>
+                                        <option value="3">dirección eléctrica</option>
+                                    </select>
+                                </div>
+
+                            </div>
+
                             <br>
                             <div class="f1-buttons">
                                 <button id="previous3" type="button"
@@ -921,123 +971,55 @@
 
                             <div class="flex space-x-4">
 
-                                <div class="w-1-2" id="divAdmissionDate">
-                                    <label id="labelAdmissionDate"
-                                        class="text-gray-700 dark:text-gray-400">{{ __('admission date') }}</label>
-
-                                    <input readonly
-                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                        placeholder="Fecha ingreso del vehiculo al sistema" type="text"
-                                        id="admission_date" name="admission_date" wire:model.defer="admission_date"
-                                        onchange="fechasSet('admission_date')" />
-                                </div>
-
-                                <div class="w-1-2">
-                                    <label id="labelVehiclePickupDate"
-                                        class="text-gray-700 dark:text-gray-400">{{ __('vehicle pickup date') }}</label>
-
-                                    <input readonly
-                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                        placeholder="Fecha de retiro del sitema del vahiculo" type="text"
-                                        id="vehicle_pickup_date" name="vehicle_pickup_date"
-                                        wire:model.defer="vehicle_pickup_date"
-                                        onchange="fechasSet('vehicle_pickup_date')" />
-                                </div>
-
-                                <div class="w-1-2" id="divCylinderVehicle">
-                                    <label id="labelCylinderVehicle"
-                                        class="text-gray-700 dark:text-gray-400">{{ __('cylinder vehicle') }}</label>
-
-                                    <input
-                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                        placeholder="número de Cilindraje del vehiculo" type="text"
-                                        id="cylinder_vehicle" name="cylinder_vehicle"
-                                        wire:model.defer="cylinder_vehicle" />
-                                </div>
-
-                                <div class="w-1-2">
-                                    <label id="labelQuantityValves"
-                                        class="text-gray-700 dark:text-gray-400">{{ __('quantity valves') }}</label>
-
-                                    <input
-                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                        placeholder="cantidad de valvulas" type="text" id="quantity_valves"
-                                        name="quantity_valves" step="0.01" min="0" max="10"
-                                        maxlength="5" wire:model.defer="quantity_valves" />
-                                </div>
-
-                            </div>
-
-                            <div class="flex space-x-4">
-
-                                <div class="w-1-2">
-                                    <label id="labelNumberPassenger"
-                                        class="text-gray-700 dark:text-gray-400">{{ __('number passenger') }}</label>
-
-                                    <input
-                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                        placeholder="Cantidad de pasajeros" type="text" id="number_passenger"
-                                        name="number_passenger" maxlength="5" wire:model.defer="number_passenger" />
-                                </div>
-
-                                <div class="w-1-2">
-                                    <label id="labelNumberCylinders"
-                                        class="text-gray-700 dark:text-gray-400">{{ __('number cylinders') }}</label>
-
-                                    <input
-                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                        placeholder="Cantidad de cilindros" type="text" id="number_cylinders"
-                                        name="number_cylinders" maxlength="5" wire:model.defer="number_cylinders" />
-                                </div>
-
-                                <div class="w-1-2">
-                                    <label id="labelTurbo" class="text-gray-700 dark:text-gray-400">turbo</label>
-
-                                    <input
-                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                        placeholder="cantidad de turbo" type="text" id="turbo" name="turbo"
-                                        maxlength="5" wire:model.defer="turbo" />
-                                </div>
-
-                                <div class="w-1-2">
-                                    <label id="labelorientation"
-                                        class="text-gray-700 dark:text-gray-400">{{ __('orientation') }}</label>
-
-                                    <input
-                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                        placeholder="tipo de orentación" type="text" id="orientation"
-                                        name="orientation" step="0.01" min="0" max="10"
-                                        maxlength="5" wire:model.defer="orientation" />
-                                </div>
-
-
-                            </div>
-
-                            <div class="flex space-x-4">
-
-                                <div class="w-1-2">
+                                <div class="w-6-12">
                                     <label id="labelFrontSuspension"
                                         class="text-gray-700 dark:text-gray-400">{{ __('front suspension') }}</label>
 
-                                    <input
+                                    {{-- <input
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                        placeholder="cantidad de suspensión frontal" type="text"
+                                        placeholder="cantidad de suspensión frontal" type="number"
                                         id="front_suspension" name="front_suspension" maxlength="5"
-                                        wire:model.defer="front_suspension" />
+                                        wire:model.defer="front_suspension" /> --}}
+
+
+                                    <select wire:model.defer="front_suspension" id="front_suspension"
+                                        name="front_suspension"
+                                        class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
+                                        <option value="0">Selecciona la suspension delantera</option>
+                                        <option value="1">Suspensión McPherson</option>
+                                        <option value="2">Suspensión de doble horquilla</option>
+                                        <option value="3">Suspensión de eje rígido</option>
+
+                                    </select>
                                 </div>
 
-                                <div class="w-1-2">
+                                <div class="w-6-12">
                                     <label id="labelRearSuspension"
                                         class="text-gray-700 dark:text-gray-400">{{ __('rear suspension') }}</label>
 
-                                    <input
+                                    {{-- <input
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                        placeholder="cantidad de suspensión trasera" type="text"
+                                        placeholder="cantidad de suspensión trasera" type="number"
                                         id="rear_suspension" name="rear_suspension" maxlength="5"
-                                        wire:model.defer="rear_suspension" />
+                                        wire:model.defer="rear_suspension" /> --}}
+
+
+                                    <select wire:model.defer="rear_suspension" id="rear_suspension"
+                                        name="rear_suspension"
+                                        class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
+                                        <option value="0">Selecciona la suspension trasera</option>
+                                        <option value="1">Suspensión McPherson</option>
+                                        <option value="2">Suspensión de doble horquilla</option>
+                                        <option value="3">Suspensión de eje rígido</option>
+
+                                    </select>
                                 </div>
 
-                                <div class="w-1-2">
+                            </div>
+
+                            <div class="flex space-x-4">
+
+                                <div class="w-6-12">
                                     <label id="labelRearBrakeType"
                                         class="text-gray-700 dark:text-gray-400">{{ __('rear brake type') }}</label>
 
@@ -1053,7 +1035,7 @@
 
                                 </div>
 
-                                <div class="w-1-2">
+                                <div class="w-6-12">
                                     <label id="labelFrontBrakeType"
                                         class="text-gray-700 dark:text-gray-400">{{ __('front brake type') }}</label>
 
@@ -1073,66 +1055,26 @@
 
                             <div class="flex space-x-4">
 
-                                <div class="w-15">
-                                    <label id="labelTireNumber"
-                                        class="text-gray-700 dark:text-gray-400">{{ __('tire number') }}</label>
+                                <div class="w-6-12" id="divAdmissionDate">
+                                    <label id="labelAdmissionDate"
+                                        class="text-gray-700 dark:text-gray-400">{{ __('admission date') }}</label>
 
-                                    <input
+                                    <input readonly
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                        placeholder="cantidad de neumaticos" type="text" id="tire_number"
-                                        name="tire_number" step="0.01" min="0" max="10"
-                                        maxlength="5" wire:model.defer="tire_number" />
-                                </div>
-                                <div class="w-15">
-                                    <label id="labeltype_direction"
-                                        class="text-gray-700 dark:text-gray-400">{{ __('type direction') }}</label>
-
-                                    <input
-                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                        placeholder="tipo de dirección" type="text" id="type_direction"
-                                        name="type_direction" maxlength="5" wire:model.defer="type_direction" />
+                                        placeholder="Fecha ingreso del vehiculo al sistema" type="text"
+                                        id="admission_date" name="admission_date" wire:model.defer="admission_date"
+                                        onchange="fechasSet('admission_date')" />
                                 </div>
 
-                                <div class="w-15">
-                                    <label id="labelTransmissionType"
-                                        class="text-gray-700 dark:text-gray-400">{{ __('transmission type') }}</label>
+                                <div class="w-6-12">
+                                    <label id="labelVahiclePhotoPath" 
+                                        class="text-gray-700 dark:text-gray-400">{{ __('vahicle photo path') }}</label>
 
                                     <input
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                        placeholder="Tipo de transmisión" type="text" id="transmission_type"
-                                        name="transmission_type" maxlength="5"
-                                        wire:model.defer="transmission_type" />
-                                </div>
-
-                                <div class="w-15">
-                                    <label id="labelNumberSpeeds"
-                                        class="text-gray-700 dark:text-gray-400">{{ __('number speeds') }}</label>
-
-                                    <input
-                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                        placeholder="cantidad maxima de velocidades" type="text"
-                                        id="number_speeds" name="number_speeds" maxlength="5"
-                                        wire:model.defer="number_speeds" />
-                                </div>
-
-                                <div class="w-15">
-                                    <label id="labelTypeBearing"
-                                        class="text-gray-700 dark:text-gray-400">{{ __('type bearing') }}</label>
-
-                                    <input
-                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                        placeholder="tipo de rodamiento" type="text" id="type_bearing"
-                                        name="type_bearing" maxlength="5" wire:model.defer="type_bearing" />
-                                </div>
-
-                                <div class="w-15">
-                                    <label id="labelNumberWindows"
-                                        class="text-gray-700 dark:text-gray-400">{{ __('number windows') }}</label>
-
-                                    <input
-                                        class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                        placeholder="número de ventanas" type="text" id="number_windows"
-                                        name="number_windows" maxlength="5" wire:model.defer="number_windows" />
+                                        placeholder="Selecciona una foto de perfil para este usuario" type="file"
+                                        id="vahicle_photo_path" name="vahicle_photo_path"
+                                        wire:model.defer="vahicle_photo_path" />
                                 </div>
 
                             </div>
@@ -1160,8 +1102,8 @@
                     {{ __('Cancel') }}
                 </button>
                 <button id="btnStore"
-                    class="w-full px-5 py-3 text-sm font-medium leading-5 transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg sm:w-auto sm:px-4 sm:py-2 active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
-                    wire:click="store" x-on:click="closeModal" onclick="restart()">
+                    class="Inactive w-full px-5 py-3 text-sm font-medium leading-5 transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg sm:w-auto sm:px-4 sm:py-2 active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
+                    wire:click="store">
                     {{ __('Generate Technical Sheet') }}
                 </button>
             </div>
@@ -1377,16 +1319,8 @@
                                     <div class="flex space-x-4 ">
 
                                         <div class="w-6-12">
-                                            <label class="text-gray-700 dark:text-gray-400">{{ __('material rims') }}</label>
-
-                                            <input
-                                                class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="materiales de los rines" type="text"
-                                                wire:model="editVehicles.material_rims" />
-                                        </div>
-
-                                        <div class="w-6-12">
-                                            <label class="text-gray-700 dark:text-gray-400">{{ __('dimension rims') }}</label>
+                                            <label
+                                                class="text-gray-700 dark:text-gray-400">{{ __('dimension rims') }}</label>
 
                                             <select wire:model="editVehicles.dimension_rims"
                                                 class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
@@ -1398,6 +1332,22 @@
                                                 @endforeach
                                             </select>
 
+                                        </div>
+
+                                        <div class="w-6-12">
+
+                                            <label class="text-gray-700 dark:text-gray-400">Selecciona si el
+                                                vehiculo es Interno o Externo</label>
+                                            <div class="border-ourple-50-s rounded-2xl p-4">
+                                                <p class="text-sm text-gray-700 dark:text-gray-400">
+                                                    @if ($editVehicles->internal_external_owner_type == 0)
+                                                        EXTERNO
+                                                    @else
+                                                        INTERNO
+                                                    @endif
+
+                                                </p>
+                                            </div>
                                         </div>
 
                                     </div>
@@ -1441,26 +1391,12 @@
                                             <label class="text-gray-700 dark:text-gray-400">{{ __('use vehicle') }}</label>
                                             <div class="border-ourple-50-s rounded-2xl p-4">
                                                 <p class="text-sm text-gray-700 dark:text-gray-400">
-                                                    {{ $editVehicles->use_vehicle }}
+                                                    {{ $editVehicles->service }}
                                                 </p>
                                             </div>
                                         </div>
 
-                                        <div class="w-6-12">
 
-                                            <label class="text-gray-700 dark:text-gray-400">Selecciona si el
-                                                vehiculo es Interno o Externo</label>
-                                            <div class="border-ourple-50-s rounded-2xl p-4">
-                                                <p class="text-sm text-gray-700 dark:text-gray-400">
-                                                    @if ($editVehicles->internal_external_owner_type == 0)
-                                                        EXTERNO
-                                                    @else
-                                                        INTERNO
-                                                    @endif
-
-                                                </p>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                                 <!--fin del paso 2 edit-->
@@ -1473,7 +1409,7 @@
 
                                     <div class="flex space-x-4">
 
-                                        <div class="w-6-12">
+                                        {{-- <div class="w-6-12">
                                             <label
                                                 class="text-gray-700 dark:text-gray-400">{{ __('number accreditation soat') }}</label>
 
@@ -1482,7 +1418,7 @@
                                                 placeholder="Numero de Acreditación SOAT" type="text"
                                                 wire:model="editVehicles.number_accreditation_soat" />
 
-                                        </div>
+                                        </div> --}}
 
                                         <div class="w-6-12" wire:ignore>
                                             <label class="text-gray-700 dark:text-gray-400">{{ __('secure end date') }}</label>
@@ -1508,7 +1444,7 @@
 
                                     <div class="flex space-x-4">
 
-                                        <div class="w-6-12">
+                                        {{-- <div class="w-6-12">
                                             <label
                                                 class="text-gray-700 dark:text-gray-400">{{ __('number technomechanical accreditation') }}</label>
 
@@ -1517,7 +1453,7 @@
                                                 placeholder="Numero de Acreditación Tecnomecanica" type="text"
                                                 wire:model="editVehicles.number_technomechanical_accreditation" />
 
-                                        </div>
+                                        </div> --}}
 
                                         <div class="w-6-12">
                                             <label
@@ -1675,15 +1611,16 @@
                                                 wire:model="editVehicles.cylinder_vehicle" />
                                         </div>
 
-                                        <div class="w-1-2">
-                                            <label class="text-gray-700 dark:text-gray-400">{{ __('quantity valves') }}</label>
+                                        {{-- <div class="w-1-2">
+                                            <label
+                                                class="text-gray-700 dark:text-gray-400">{{ __('quantity valves') }}</label>
 
                                             <input
                                                 class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                                                 placeholder="cantidad de valvulas" type="text" step="0.01"
                                                 min="0" max="10" maxlength="5"
                                                 wire:model="editVehicles.quantity_valves" />
-                                        </div>
+                                        </div> --}}
 
                                     </div>
 
@@ -1699,33 +1636,35 @@
 
                                         </div>
 
-                                        <div class="w-1-2">
-                                            <label class="text-gray-700 dark:text-gray-400">{{ __('number cylinders') }}</label>
+                                        {{-- <div class="w-1-2">
+                                            <label
+                                                class="text-gray-700 dark:text-gray-400">{{ __('number cylinders') }}</label>
 
                                             <input
                                                 class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                                                 placeholder="Cantidad de cilindros" type="text" maxlength="5"
                                                 wire:model="editVehicles.number_cylinders" />
-                                        </div>
+                                        </div> --}}
 
-                                        <div class="w-1-2">
+                                        {{-- <div class="w-1-2">
                                             <label class="text-gray-700 dark:text-gray-400">turbo</label>
 
                                             <input
                                                 class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                                                 placeholder="cantidad de turbo" type="text" maxlength="5"
                                                 wire:model="editVehicles.turbo" />
-                                        </div>
+                                        </div> --}}
 
-                                        <div class="w-1-2">
-                                            <label class="text-gray-700 dark:text-gray-400">{{ __('orientation') }}</label>
+                                        {{-- <div class="w-1-2">
+                                            <label
+                                                class="text-gray-700 dark:text-gray-400">{{ __('orientation') }}</label>
 
                                             <input
                                                 class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                                                 placeholder="tipo de orentación" type="text" step="0.01"
                                                 min="0" max="10" maxlength="5"
                                                 wire:model="editVehicles.orientation" />
-                                        </div>
+                                        </div> --}}
 
 
                                     </div>
@@ -1782,15 +1721,16 @@
 
                                     <div class="flex space-x-4">
 
-                                        <div class="w-15">
-                                            <label class="text-gray-700 dark:text-gray-400">{{ __('tire number') }}</label>
+                                        {{-- <div class="w-15">
+                                            <label
+                                                class="text-gray-700 dark:text-gray-400">{{ __('tire number') }}</label>
 
                                             <input
                                                 class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                                                 placeholder="cantidad de neumaticos" type="text" step="0.01"
                                                 min="0" max="10" maxlength="5"
                                                 wire:model="editVehicles.tire_number" />
-                                        </div>
+                                        </div> --}}
                                         <div class="w-15">
                                             <label class="text-gray-700 dark:text-gray-400">{{ __('type direction') }}</label>
 
@@ -1800,41 +1740,45 @@
                                                 wire:model="editVehicles.type_direction" />
                                         </div>
 
-                                        <div class="w-15">
-                                            <label class="text-gray-700 dark:text-gray-400">{{ __('transmission type') }}</label>
+                                        {{-- <div class="w-15">
+                                            <label
+                                                class="text-gray-700 dark:text-gray-400">{{ __('transmission type') }}</label>
 
                                             <input
                                                 class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                                                 placeholder="Tipo de transmisión" type="text" maxlength="5"
                                                 wire:model="editVehicles.transmission_type" />
-                                        </div>
+                                        </div> --}}
 
-                                        <div class="w-15">
-                                            <label class="text-gray-700 dark:text-gray-400">{{ __('number speeds') }}</label>
+                                        {{-- <div class="w-15">
+                                            <label
+                                                class="text-gray-700 dark:text-gray-400">{{ __('number speeds') }}</label>
 
                                             <input
                                                 class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                                                 placeholder="cantidad maxima de velocidades" type="text"
                                                 maxlength="5" wire:model="editVehicles.number_speeds" />
-                                        </div>
+                                        </div> --}}
 
-                                        <div class="w-15">
-                                            <label class="text-gray-700 dark:text-gray-400">{{ __('type bearing') }}</label>
+                                        {{-- <div class="w-15">
+                                            <label
+                                                class="text-gray-700 dark:text-gray-400">{{ __('type bearing') }}</label>
 
                                             <input
                                                 class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                                                 placeholder="tipo de rodamiento" type="text" maxlength="5"
                                                 wire:model="editVehicles.type_bearing" />
-                                        </div>
+                                        </div> --}}
 
-                                        <div class="w-15">
-                                            <label class="text-gray-700 dark:text-gray-400">{{ __('number windows') }}</label>
+                                        {{-- <div class="w-15">
+                                            <label
+                                                class="text-gray-700 dark:text-gray-400">{{ __('number windows') }}</label>
 
                                             <input
                                                 class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                                                 placeholder="número de ventanas" type="text" maxlength="5"
                                                 wire:model="editVehicles.number_windows" />
-                                        </div>
+                                        </div> --}}
 
                                     </div>
 
@@ -1876,6 +1820,465 @@
 
 @section('scripts')
     <script>
+        $(document).ready(function() {
+
+
+            var table = $('#example').DataTable({
+                // "scrollX": true,
+                lengthMenu: [
+                    [5, 10, 50, 100, 200, -1],
+                    [5, 10, 50, 100, 200, "∞"]
+                ],
+                responsive: true,
+                autoWidth: false,
+                autoFill: true,
+                // stateSave: true,
+                "order": [
+                    [1, "desc"]
+                ],
+                dom: "<'ui stackable grid'" +
+                    "<'row'" +
+                    "<'eight wide column'l>" +
+                    "<'ml30'B>" +
+                    "<'right aligned eight wide column'f>" +
+                    ">" +
+                    "<'row dt-table'" +
+                    "<'sixteen wide column'tr>" +
+                    ">" +
+                    "<'row'" +
+                    "<'seven wide column'i>" +
+                    "<'right aligned nine wide column'p>" +
+                    ">" +
+                    ">",
+                buttons: [
+                    // {
+                    // extend:    'copyHtml5',
+                    // text:      '<i class="far fa-copy"></i>',
+                    // titleAttr: 'copiar',
+                    // className: "dark:bg-gray-800 dark:text-white"
+                    // },
+                    {
+                        text: '<button @click="openModal" class=""> crear usuario nuevo</button>',
+                        titleAttr: 'Crear usuario',
+                        className: "buttons-crear font-semibold leading-tight text-black bg-sky-700 rounded-full dark:bg-sky-700 dark:text-white"
+                    },
+                    {
+                        extend: 'excelHtml5',
+                        text: '<i class="fa fa-file-excel"></i>',
+                        titleAttr: 'Excel',
+                        filename: 'listado de usuarios',
+                        className: "dark:bg-gray-800 dark:text-white",
+
+                    },
+                    {
+                        extend: 'print',
+                        text: '<i class="fas fa-print"></i>',
+                        titleAttr: 'Imprimir',
+                        filename: 'listado de usuarios',
+                        className: "dark:bg-gray-800 dark:text-white"
+                    },
+                    {
+                        extend: 'pdfHtml5',
+                        text: '<i class="fa fa-file-pdf"></i>',
+                        titleAttr: 'PDF',
+                        filename: 'listado de usuarios',
+                        className: "dark:bg-gray-800 dark:text-white text-gray-800 rounded-md"
+                    },
+                    {
+                        extend: 'colvis',
+                        text: '±columnas',
+                        collectionLayout: 'fixed columns',
+                        collectionTitle: 'Control de visibilidad de columna',
+                        className: "dark:bg-gray-800 dark:text-white"
+                    }
+                ],
+                columnDefs: [{
+                        "targets": [1],
+                        "visible": false,
+                        "searchable": false
+                    },
+                    // {
+                    //     "targets": [8],
+                    //     "visible": false,
+                    //     "searchable": false
+                    // },
+                    // {
+                    //     "targets": [10],
+                    //     "visible": false,
+                    //     "searchable": false
+                    // },
+                    // {"targets": [10],"visible": false,"searchable": false},
+                    // {"targets": [11],"visible": false,"searchable": false},
+                    // {"targets": [12],"visible": false,"searchable": false},
+                    // {"targets": [13],"visible": false,"searchable": false},
+                    // {"targets": [14],"visible": false,"searchable": false},
+                    // {"targets": [15],"visible": false,"searchable": false},
+                    // {"targets": [16],"visible": false,"searchable": false},
+                    // {"targets": [17],"visible": false,"searchable": false},
+                    // {"targets": [18],"visible": false,"searchable": false},
+                    // {"targets": [19],"visible": false,"searchable": false},
+                    // {"targets": [20],"visible": false,"searchable": false},
+                    // {"targets": [21],"visible": false,"searchable": false},
+                    // {"targets": [22],"visible": false,"searchable": false},
+                    // {"targets": [23],"visible": false,"searchable": false},
+                    // {"targets": [24],"visible": false,"searchable": false},
+                    // {"targets": [25],"visible": false,"searchable": false},
+                    // {"targets": [26],"visible": false,"searchable": false},
+                    // {"targets": [27],"visible": false,"searchable": false},
+                    // {"targets": [28],"visible": false,"searchable": false},
+                    // {"targets": [29],"visible": false,"searchable": false},
+                    // {"targets": [30],"visible": false,"searchable": false},
+                    // {"targets": [31],"visible": false,"searchable": false},
+                    // {"targets": [32],"visible": false,"searchable": false},
+                    // {"targets": [33],"visible": false,"searchable": false},
+                    // {"targets": [35],"visible": false,"searchable": false},
+                    // {"targets": [36],"visible": false,"searchable": false},
+                ],
+                "drawCallback": function(settings) {
+                    $('.dataTables_wrapper .dataTables_filter input').addClass(
+                        "mr-4 pl-8 pr-2 text-sm text-gray-700 placeholder-gray-600 bg-gray-100 border-0 rounded-md dark:placeholder-gray-500 dark:focus:shadow-outline-gray dark:focus:placeholder-gray-600 dark:bg-gray-700 dark:text-gray-200 focus:placeholder-gray-500 focus:bg-white focus:border-purple-300 focus:outline-none focus:shadow-outline-purple form-input"
+                    );
+                    $('#example_length').removeClass("dataTables_length");
+                    $('#example_length').addClass("dark:text-white float-left");
+                    $('#example_filter').removeClass("dataTables_filter");
+                    $('#example_filter').addClass("dark:text-white float-right text-right");
+                    $('#example_info').removeClass("dataTables_info");
+                    $('#example_info').addClass("dark:text-white pt-7 float-left clear-both");
+                    $('#example tbody>tr>td').addClass("dark:bg-gray-800 dark:text-white");
+                    $('.dataTables_wrapper .dataTables_paginate .paginate_button').addClass(
+                        "dark:bg-gray-800 dark:text-white");
+                },
+                language: {
+                    "emptyTable": "Tabla Vacia",
+                    "info": "",
+                    "infoEmpty": "Sin informacion",
+                    "lengthMenu": "Mostrar _MENU_ registros por pagina",
+                    "loadingRecords": "Cargando...",
+                    "decimal": ".",
+                    "infoFiltered": "filtrado de _MAX_ entradas totales",
+                    "infoPostFix": "Mostrando del _START_ al _END_ de _TOTAL_ registros",
+                    "infoThousands": ",",
+                    "paginate": {
+                        "first": "Primero",
+                        "last": "Último",
+                        "next": "Siguiente",
+                        "previous": "Anterior"
+                    },
+                    "processing": "Procesando...",
+                    "search": "Buscar:",
+                    "thousands": ",",
+                    "zeroRecords": "No se encontro información",
+                },
+                ajax: "{{ route('datatable.vehicle') }}",
+                columns: [{
+
+                        "render": function(data, type, row) {
+
+                            return "<div class='flex items-center space-x-4 text-sm'>" +
+
+                                // "<button id='edit' onclick='edit(" + row['id'] + ")'" +
+                                // "class='inline-flex items-center justify-center  bg-yellow-700 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-yellow-400 focus:outline-none focus:bg-yellow-700 focus:ring focus:ring-red-200 active:bg-yellow-700 readonly:opacity-25 transition' aria-label='Edit'>" +
+                                // "<svg class='w-5 h-5' aria-hidden='true' fill='currentColor'" +
+                                // "viewBox='0 0 20 20'>" +
+                                // "<path fill-rule='evenodd'" +
+                                // "d='M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z'>" +
+                                // "</path>" +
+                                // "</svg>" +
+                                // "</button>" +
+
+                                "<button onclick='deletes(" + row['id'] + ")'" +
+                                "class='inline-flex items-center justify-center  bg-red-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 active:bg-red-600 readonly:opacity-25 transition' aria-label='Delete'>" +
+                                "<svg class='w-5 h-5' aria-hidden='true' fill='currentColor'" +
+                                "viewBox='0 0 20 20'>" +
+                                "<path fill-rule='evenodd'" +
+                                "d='M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z'" +
+                                "clip-rule='evenodd'></path>" +
+                                "</svg>" +
+                                "</button>" +
+
+                                // "<button onclick='view(" + row['id'] + ")'" +
+                                // "class='inline-flex items-center justify-center  bg-blue-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 active:bg-red-600 disabled:opacity-25 transition'>" +
+                                // "<svg class='w-5 h-5' fill='none' stroke='currentColor'" +
+                                // "stroke-width='1.5' viewBox='0 0 24 24'" +
+                                // "xmlns='http://www.w3.org/2000/svg' aria-hidden='true'>" +
+                                // "<path stroke-linecap='round' stroke-linejoin='round'" +
+                                // "d='M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z'>" +
+                                // "</path>" +
+                                // "<path stroke-linecap='round' stroke-linejoin='round'" +
+                                // "d='M15 12a3 3 0 11-6 0 3 3 0 016 0z'></path>" +
+                                // "</svg>" +
+                                // "</button>" +
+
+                                "</div>";
+                        },
+                        "className": "dark:bg-gray-800 dark:text-white border-b"
+                    },
+                    {
+                        data: 'id',
+                        "className": "dark:bg-gray-800 dark:text-white border-b"
+                    },
+                    {
+                        // data: 'plate_vehicle',
+                        "render": function(data, type, row) {
+                            if (row['vahicle_photo_path'] == null || row['vahicle_photo_path'] ==
+                                "") {
+                                // return "si hay imagen empresa" + row['profile_photo_path'];
+                                return (
+                                    "<div class='lex items-center text-sm'>" +
+                                    "<div class='relative  w-8 h-8 mr-3 rounded-full md:block'>" +
+                                    "<img src='{{ asset('img/l_logo_step.png') }}' alt=''" +
+                                    "class='object-cover w-full h-full rounded-full' loading='lazy'>" +
+                                    "<div class='absolute inset-0 rounded-full shadow-inner'" +
+                                    "aria-hidden='true'>" +
+                                    "</div>" +
+                                    "</div>" +
+                                    "<div class='flex items-center text-sm'>" +
+                                    "<div>" +
+                                    "<p class='font-semibold centered'>" + row[
+                                        'plate_vehicle'] +
+                                    "</p>" +
+                                    "</div>" +
+                                    "</div>" +
+                                    "</div>");
+
+                            } else {
+                                // return "no hay imagen empresa";
+                                // documentImage(file, name)
+                                return (
+                                    "<div class='flex items-center text-sm'>" +
+                                    "<div class='relative  w-8 h-8 mr-3 rounded-full md:block'>" +
+                                    "<a class='cursor-pointer' onclick='searchImg(" + row['id'] + ")'>" +
+                                    "<img src='" + row['vahicle_photo_path'] +
+                                    "' alt=''" +
+                                    "class='object-cover w-full h-full rounded-full' loading='lazy'>" +
+                                    "</a>" +
+                                    // "<div class='absolute inset-0 rounded-full shadow-inner'" +
+                                    // "aria-hidden='true'>" +
+                                    // "</div>" +
+                                    "</div>" +
+                                    "<div class='flex items-center text-sm'>" +
+                                    "<div>" +
+                                    "<p class='font-semibold'>" + row[
+                                        'plate_vehicle'] +
+                                    "</p>" +
+                                    "</div>" +
+                                    "</div>" +
+                                    "</div>");
+
+                            }
+                        },
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        data: 'model_vehicle',
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        data: 'vehicle_type_name',
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        data: 'side_vehicle',
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        "render": function(data, type, row) {
+                            if (row['state_vehicle'] == 1) {
+                                return "<span class='px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-full dark:text-red-100 dark:bg-red-700'>{{ __('Inhabilitado') }}</span>";
+                            } else if (row['state_vehicle'] == 2) {
+                                return "<span class='px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100'>{{ __('Habilitado') }}</span>";
+                            } else if (row['state_vehicle'] == 3) {
+
+                                // "<span class='px-2 py-1 font-semibold leading-tight text-gray-700 bg-gray-100 rounded-full dark:text-gray-100 dark:bg-gray-700'>{{ __('Inactivo') }}</span>";
+                                return "<button wire:click='reactivado' id='' onclick='reactive(" +
+                                    row['id'] +
+                                    ")' class='px-2 py-1 font-semibold leading-tight text-gray-700 bg-gray-100 rounded-full dark:text-gray-100 dark:bg-gray-700'>{{ __('Inactivo') }}</button>";
+                            } else if (row['state_vehicle'] == 4) {
+                                return "<span class='px-2 py-1 font-semibold leading-tight text-orange-700 bg-orange-100 rounded-full dark:text-white dark:bg-orange-600'>{{ __('PENDIENTE') }}</span>";
+                            }
+                        },
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        data: 'vehicle_class_description',
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        data: 'secure_end_date',
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        data: 'technomechanical_end_date',
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        "render": function(data, type, row) {
+                            if (row['internal_external_owner_type'] == 1) {
+                                return "<span class='px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100'>{{ __('Interno') }}</span>";
+                            } else {
+                                return "<span class='px-2 py-1 font-semibold leading-tight text-yellow-700 bg-yellow-100 rounded-full dark:bg-yellow-700 dark:text-yellow-100'>{{ __('Externo') }}</span>";
+                            }
+                        },
+                        data: 'internal_external_owner_type',
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        data: 'owner',
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        data: 'drive',
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        data: 'brand_vehicle',
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        data: 'vehicle_chassis_number',
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        data: 'property_card_number',
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        data: 'cylinder_vehicle',
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        data: 'number_passenger',
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        data: 'certificate_extracontractual',
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        data: 'civil_contractual',
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        data: 'card_operation',
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        data: 'expiration_card_operation',
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        data: 'expiration_preventive',
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        data: 'admission_date',
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        data: 'vehicle_pickup_date',
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        data: 'engine_number',
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        data: 'service',
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        data: 'color_vehicle',
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        data: 'type_direction',
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        data: 'front_suspension',
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        data: 'rear_suspension',
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        data: 'type_rims',
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        data: 'brake_Type_Description',
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        data: 'front',
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                ]
+            }).columns.adjust().responsive.recalc();
+
+            $('a.toggle-vis').on('click', function(e) {
+                e.preventDefault();
+
+                // Get the column API object
+                var column = table.column($(this).attr('data-column'));
+
+                // Toggle the visibility
+                column.visible(!column.visible());
+            });
+
+            $('#example tbody').on('click', 'tr', function() {
+
+                var tr = $(this).closest('tr');
+                var row = table.row(tr);
+                if (row.child.isShown()) {
+                    $('table.dataTable.dtr-inline.collapsed>tbody>tr>td.child').removeClass("child");
+                    $('table.dataTable.dtr-inline.collapsed>tbody>tr>td').addClass(
+                        "dark:bg-gray-800 dark:text-white");
+                }
+            });
+
+
+        });
+
+        function documentImage(file) {
+            swal.fire({
+                // title: 'Sweet!',
+                // imageUrl: `${file}`, \\img\l_logo_step.png
+                imageUrl: '/storage/STEP/users/Ident_q11111111111/profile_user_q11111111111.webp',
+                // text: '<strong></strong>',
+                // html: '<strong>' + `${name}` + '</strong>',
+                imageWidth: 800,
+                imageHeight: 400,
+                imageAlt: '',
+            })
+        }
+
+        Livewire.on('documentImage', (photo) => {
+            var photo = photo.file;
+            // console.log(photo);
+            swal.fire({
+                // title: 'Sweet!',
+                imageUrl: `${photo}`, 
+                // imageUrl: '/storage/STEP/users/Ident_q11111111111/profile_user_q11111111111.webp',
+                // text: '<strong></strong>',
+                // html: '<strong>' + `${name}` + '</strong>',
+                imageWidth: 800,
+                imageHeight: 400,
+                imageAlt: '',
+            })
+        })
+
+        function searchImg(id) {
+            // alert('reactivar el ' + id);
+            Livewire.emit('searchImg', [id]);
+        }
+
+        function reactive(id) {
+            // alert('reactivar el ' + id);
+            Livewire.emit('reactivado', [id]);
+        }
+
 
         // abriendo modal para editar
         Livewire.on('openModalEdit', () => {
@@ -2090,6 +2493,13 @@
 
             var process = process.process;
             var plateVehicle = plate.plate;
+            var message = ['Se ha registrado el vehiculo con placa  ' + plateVehicle + ' sactisfactoriamente',
+                'Se ha actualizado la información del vehiculo con placa ' + plateVehicle +
+                ' sactisfactoriamente',
+                'Se ha eliminado el Vehiculo con placa ' + plateVehicle + ' y toda su documentación',
+                'El vehiculo con placa ' + plateVehicle + ' ya esta registrado en el sistema',
+                'El lateral ' + plateVehicle + ' ya esta registrado en el sistema'
+            ];
 
             if (process == 1) {
                 message = 'The vehicle with license plate ' + plateVehicle +
@@ -2173,7 +2583,7 @@
 
                 // fields validation
                 parent_fieldset.find(
-                    'input[type="text"], input[type="password"], textarea, select, input[type="number"], input[type="tel"],input[type="email"],input[type="date"]'
+                    // 'input[type="text"], input[type="password"], textarea, select, input[type="number"], input[type="tel"],input[type="email"],input[type="date"]'
                 ).each(
                     function() {
                         // $('div').hasClass('container')
@@ -2545,8 +2955,31 @@
             var inputDocument = document.getElementById(input).value;
 
             if (inputDocument != '' || inputDocument != 0) {
-                document.getElementById(color).classList.remove('icon-green');
-                document.getElementById(color).classList.add('icon-blue');
+
+                let timerInterval
+                swal.fire({
+                    title: 'Cargando...',
+                    html: 'Cargando documento <b></b> milliseconds.', //Cargando la información del sistema en
+                    timer: 4000,
+                    timerProgressBar: true,
+                    didOpen: () => {
+                        swal.showLoading()
+                        const b = swal.getHtmlContainer().querySelector('b')
+                        timerInterval = setInterval(() => {
+                            b.textContent = swal.getTimerLeft()
+                        }, 100)
+                    },
+                    willClose: () => {
+                        clearInterval(timerInterval)
+                    }
+                }).then((result) => {
+                    /* Read more about handling dismissals below */
+                    if (result.dismiss === swal.DismissReason.timer) {
+                        // console.log('document above')//documento arribba
+                        document.getElementById(color).classList.remove('icon-green');
+                        document.getElementById(color).classList.add('icon-blue');
+                    }
+                })
                 // console.log('si');
             } else {
 

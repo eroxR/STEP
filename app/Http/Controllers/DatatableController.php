@@ -143,4 +143,123 @@ class DatatableController extends Controller
 
         return datatables()->of($users)->toJson();
     }
+    //
+
+    public function contract(){
+        $contracts = contract::join('contract_types', 'contracts.type_contract', '=', 'contract_types.id')
+        ->leftjoin('identifications', 'contracts.identification', '=', 'identifications.id')
+        ->leftjoin('identifications as i', 'contracts.identification_represent_legal', '=', 'i.id')
+        ->leftjoin('payment_types', 'contracts.tipe_pay', '=', 'payment_types.id')
+        ->select(
+            'contracts.id',
+            'contract_number',
+            'description_typeContract',
+            // 'type_contract',
+            'route_trip_contract',
+            'date_start_contract',
+            'contract_end_date',
+            'contract_value',
+            'contracting_name',
+            'state_contract',
+            // 'identification',
+            'identifications.description_identification',
+            'contract_document',
+            'expedition_identificationcard',
+            'contracting_phone',
+            'contracting_direction',
+            'legal_representative',
+            'legal_representative_expedition_identificationcard',
+            'passenger_quantity',
+            'total_disposition',
+            'quantity_vehicle',
+            'cooperation_contract',
+            // 'entity_name',
+            'secure_policy',
+            // 'tipe_pay',
+            'description_typePayment',
+            'contract_signing_date',
+            'school_name',
+            'address_school',
+            'school_year',
+            'contract_with',
+            // 'identification_represent_legal',
+            'i.description_identification as identF',
+            'identificationcard_represent_legal',
+            'identificationcard_representative_group',
+            'group_representative_name',
+            'dateofexpedition_representative_group',
+            'signed_contract'
+            )->get();
+
+        return datatables()->of($contracts)->toJson();
+    }
+    //
+
+    public function permit(){
+        $permits = permit::join('contracts', 'permits.contract', '=', 'contracts.id')
+        ->join('contract_types', 'contracts.type_contract', '=', 'contract_types.id')
+        ->select(
+            // 'contract',
+            'permits.id',
+            'permit_number',
+            'contract_number',
+            'description_typeContract',
+            'permit_start_date',
+            'permit_end_date',
+            'permit_code',
+            'fuec_state',
+            )->get();
+
+        return datatables()->of($permits)->toJson();
+    }
+    //
+
+    public function vehicle(){
+        $vehicles = vehicle::join('vehicle_types', 'vehicles.vehicle_type', '=', 'vehicle_types.id')
+        ->leftjoin('vehicle_classes', 'vehicles.infrastructure_vehicle', '=', 'vehicle_classes.id')
+        ->leftjoin('dimension_rims', 'vehicles.dimension_rims', '=', 'dimension_rims.id')
+        ->leftjoin('brake_types', 'vehicles.rear_brake_type', '=', 'brake_types.id')
+        ->leftjoin('brake_types as front', 'vehicles.front_brake_type', '=', 'front.id')
+        ->leftjoin('users', 'vehicles.owner_vehicle', '=', 'users.id')
+        ->leftjoin('drivers', 'vehicles.driver_id', '=', 'drivers.id')
+        ->leftjoin('users as v', 'drivers.user_id', '=', 'v.id')
+        ->select(
+        'vehicles.id',
+        'plate_vehicle',
+        'model_vehicle',
+        'vehicle_type_name',
+        'side_vehicle',
+        'state_vehicle',
+        'vehicle_class_description',
+        'secure_end_date',
+        'technomechanical_end_date',
+        'internal_external_owner_type',
+        DB::raw('CONCAT(users.firstname," ",users.lastname) As owner'),   
+        DB::raw('CONCAT(v.firstname," ",v.lastname) As drive'),
+        'brand_vehicle',
+        'vehicle_chassis_number',
+        'property_card_number',
+        'cylinder_vehicle',
+        'number_passenger',
+        'certificate_extracontractual',
+        'civil_contractual',
+        'card_operation',
+        'expiration_card_operation',
+        'expiration_preventive',
+        'admission_date',
+        'vehicle_pickup_date',
+        'engine_number',
+        'service',
+        'color_vehicle',
+        'type_direction',
+        'front_suspension',
+        'rear_suspension',
+        'type_rims',
+        'brake_types.brake_Type_Description',
+        'front.brake_Type_Description as front',
+        'vahicle_photo_path',
+            )->get();
+
+        return datatables()->of($vehicles)->toJson();
+    }
 }

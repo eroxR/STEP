@@ -15,7 +15,7 @@ class chargeSeeder extends Seeder
      */
     public function run()
     {
-        //
+        //-
         $cargo1 = new charge();
         $cargo1->code_charge="MO";
         $cargo1->description_charge="Monitor(a)";
@@ -28,8 +28,11 @@ class chargeSeeder extends Seeder
         
         $cargo3 = new charge();
         $cargo3->code_charge="CR";
-        $cargo3->description_charge="Coordinador(a) de Recursos";
+        $cargo3->description_charge="Coordinador(a) de Recursos Humanos e Infraestructura";
         $cargo3->save();
+
+        // mantenimiento de usuario
+        // mantenimiento de vehiculos -- infractuctura
         
         $cargo4 = new charge();
         $cargo4->code_charge="CAO";

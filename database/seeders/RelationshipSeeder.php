@@ -37,75 +37,80 @@ class RelationshipSeeder extends Seeder
         $parentezco5->save();
 
         $parentezco6 = new relationship();
-        $parentezco6->description_relationship="Cuñado(a)";
+        $parentezco6->description_relationship="cónyuge";
         $parentezco6->save();
 
         $parentezco7 = new relationship();
-        $parentezco7->description_relationship="Hermano(a)";
+        $parentezco7->description_relationship="Cuñado(a)";
         $parentezco7->save();
 
         $parentezco8 = new relationship();
-        $parentezco8->description_relationship="Hijo(a)";
+        $parentezco8->description_relationship="Hermano(a)";
         $parentezco8->save();
 
         $parentezco9 = new relationship();
-        $parentezco9->description_relationship="Madre";
+        $parentezco9->description_relationship="Hijo(a)";
         $parentezco9->save();
 
         $parentezco10 = new relationship();
-        $parentezco10->description_relationship="Nieto(a)";
+        $parentezco10->description_relationship="Madre";
         $parentezco10->save();
 
         $parentezco11 = new relationship();
-        $parentezco11->description_relationship="Nuera";
+        $parentezco11->description_relationship="Nieto(a)";
         $parentezco11->save();
 
         $parentezco12 = new relationship();
-        $parentezco12->description_relationship="Padre";
+        $parentezco12->description_relationship="Nuera";
         $parentezco12->save();
 
         $parentezco13 = new relationship();
-        $parentezco13->description_relationship="Primo(a)";
+        $parentezco13->description_relationship="Padre";
         $parentezco13->save();
 
         $parentezco14 = new relationship();
-        $parentezco14->description_relationship="Primo(a) del cónyuge";
+        $parentezco14->description_relationship="Primo(a)";
         $parentezco14->save();
 
         $parentezco15 = new relationship();
-        $parentezco15->description_relationship="Sobrino(a)";
+        $parentezco15->description_relationship="Primo(a) del cónyuge";
         $parentezco15->save();
 
         $parentezco16 = new relationship();
-        $parentezco16->description_relationship="Sobrino(a) del cónyuge";
+        $parentezco16->description_relationship="Sobrino(a)";
         $parentezco16->save();
 
         $parentezco17 = new relationship();
-        $parentezco17->description_relationship="Suegro(a)";
+        $parentezco17->description_relationship="Sobrino(a) del cónyuge";
         $parentezco17->save();
 
         $parentezco18 = new relationship();
-        $parentezco18->description_relationship="Tatarabuelo(a)";
+        $parentezco18->description_relationship="Suegro(a)";
         $parentezco18->save();
 
         $parentezco19 = new relationship();
-        $parentezco19->description_relationship="Tatarabuelo(a) del cónyuge";
+        $parentezco19->description_relationship="Tatarabuelo(a)";
         $parentezco19->save();
 
         $parentezco20 = new relationship();
-        $parentezco20->description_relationship="Tataranieto(a)";
+        $parentezco20->description_relationship="Tatarabuelo(a) del cónyuge";
         $parentezco20->save();
 
         $parentezco21 = new relationship();
-        $parentezco21->description_relationship="Tío(a)";
+        $parentezco21->description_relationship="Tataranieto(a)";
         $parentezco21->save();
 
         $parentezco22 = new relationship();
-        $parentezco22->description_relationship="Tío(a) del cónyuge";
+        $parentezco22->description_relationship="Tío(a)";
         $parentezco22->save();
 
         $parentezco23 = new relationship();
-        $parentezco23->description_relationship="Yerno";
+        $parentezco23->description_relationship="Tío(a) del cónyuge";
         $parentezco23->save();
+
+        $parentezco24 = new relationship();
+        $parentezco24->description_relationship="Yerno";
+        $parentezco24->save();
+
     }
 }

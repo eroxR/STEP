@@ -16,7 +16,7 @@
         "alpinejs": "^3.0.6",
         "autoprefixer": "^10.4.4",
         "axios": "^0.25",
-        "laravel-mix": "^6.0.43",
+        "laravel-mix": "^6.0.49",
         "lodash": "^4.17.19",
         "postcss": "^8.4.12",
         "postcss-import": "^14.0.1",
@@ -28,6 +28,7 @@
     "dependencies": {
         "@sweetalert2/theme-dark": "^5.0.15",
         "moment": "^2.29.4",
-        "sweetalert2": "^11.7.1"
+        "sweetalert2": "^11.7.1",
+        "turbolinks": "^5.2.0"
     }
 }

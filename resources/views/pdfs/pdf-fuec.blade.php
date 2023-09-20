@@ -594,14 +594,6 @@
 
         }
 
-        .contenedorprincipal {
-            margin: 1%;
-            /* width: 100%; */
-            height: 96%;
-            border: 2px solid #000;
-            border-radius: 4px;
-        }
-
         .cabecera {
             width: 100%;
             height: 8rem;
@@ -1132,12 +1124,6 @@
             margin-left: 37.7%;
         }
 
-        .firma {
-            position: absolute;
-            width: 20%;
-            margin-top: -4.2%;
-            margin-left: 19%;
-        }
 
         .text-fin {
             font-size: 11.5px;
@@ -1161,30 +1147,6 @@
 
         /* ***********************************Nuevo Fuec*******************************************************************         */
 
-
-        .boxLogos {
-            /* display: flex;*/
-            margin-left: 2%;
-            margin-right: 2%;
-            /* background: gray; */
-            /* margin-top: 10%; */
-        }
-
-        .boxMintrasnporte {
-            /* background: red; */
-            width: 33%;
-            height: 5%;
-            float: left;
-        }
-
-        .imgMintransporte {
-            width: 98%;
-            margin: 1%;
-            /* margin-top: 8.7%; */
-            /* height: 55%; */
-            /* margin-left: 1%; */
-        }
-
         .boxISO {
             /* background: blue; */
             width: 33%;
@@ -1201,13 +1163,6 @@
             /* margin-left: 1%; */
         }
 
-        .imgLogo {
-            width: 30%;
-            /* margin-top: -7.5rem; */
-            /* margin-left: -1.7rem; */
-            height: 5%;
-        }
-
         .imgIso {
             width: 30%;
             margin: 1%;
@@ -1216,150 +1171,11 @@
             /* margin-left: 1%; */
         }
 
-        .contenedorTitulo {
-            display: flex;
-            margin-left: 2%;
-            margin-right: 2%;
-            /* background: rgb(230, 247, 0); */
-            margin-top: 2%;
-            height: 5%;
-            text-align: center;
 
-        }
 
-        .contenedorDescrpcion {
-            margin-left: 2%;
-            margin-right: 2%;
-            display: grid;
-            margin-top: 2%;
-            /* background: #000; */
 
-        }
 
-        .Descr1 {
-            width: 100%;
-            height: 4%;
-            /* background: #db0404; */
-            font-size: 12px;
-        }
 
-        .Descr2 {
-            width: 100%;
-            height: 2%;
-            /* background: #0fc209; */
-            font-size: 12px;
-        }
-
-        .Descr3 {
-            width: 100%;
-            height: 2%;
-            /* background: #fff; */
-            font-size: 12px;
-        }
-
-        .Descr4 {
-            width: 100%;
-            height: 2%;
-            /* background: #150aac; */
-            font-size: 12px;
-        }
-
-        .Descr5 {
-            width: 100%;
-            height: 2%;
-            /* background: #9b204f; */
-            font-size: 12px;
-        }
-
-        .Descr6 {
-            width: 100%;
-            height: 2%;
-            /* background: #1196d4; */
-            font-size: 12px;
-        }
-
-        .Descr7 {
-            width: 100%;
-            height: 2%;
-            /* background: #cbda03; */
-            font-size: 12px;
-        }
-
-        .Descr8 {
-            width: 100%;
-            height: 2%;
-            /* background: #7b02c2; */
-            font-size: 12px;
-        }
-
-        .boxTituloVigencia {
-            margin-left: 2%;
-            margin-right: 2%;
-            display: grid;
-            margin-top: 2%;
-            /* background: #000; */
-            height: 1.5%;
-            text-align: center;
-            font-size: 13px;
-            /* color: #fff; */
-        }
-
-        .boxFechainicio {
-            margin-left: 2%;
-            margin-right: 2%;
-            margin-top: 2%;
-            /* background: #867f7f; */
-            font-size: 12px;
-
-        }
-
-        .boxFinicial {
-            width: 65%;
-            height: 3%;
-            float: left;
-            /* background: #1196d4; */
-            font-size: 13px;
-            border-left: solid 1px #000;
-            border-top: solid 1px #000;
-            border-bottom: solid 1px #000;
-        }
-
-        .boxFDia {
-            width: 8%;
-            height: 3%;
-            float: left;
-            /* background: #e2de01; */
-            text-align: center;
-            font-size: 12px;
-            border-left: solid 1px #000;
-            border-top: solid 1px #000;
-            border-bottom: solid 1px #000;
-        }
-
-        .boxFMes {
-            width: 12%;
-            height: 3%;
-            float: left;
-            /* background: #5fe704; */
-            text-align: center;
-            font-size: 12px;
-            border-left: solid 1px #000;
-            border-top: solid 1px #000;
-            border-bottom: solid 1px #000;
-        }
-
-        .boxFAzo {
-            width: 15%;
-            height: 3%;
-            float: left;
-            /* background: #033247; */
-            text-align: center;
-            font-size: 12px;
-            border-left: solid 1px #000;
-            border-top: solid 1px #000;
-            border-bottom: solid 1px #000;
-            border-right: solid 1px #000;
-        }
 
         .boxFechafin {
             margin-left: 2%;
@@ -1418,147 +1234,6 @@
             border-right: solid 1px #000;
         }
 
-        .boxTituloCaracteristica {
-            margin-left: 2%;
-            margin-right: 2%;
-            display: grid;
-            margin-top: 5%;
-            /* background: #000; */
-            height: 1.7%;
-            text-align: center;
-            /* color: #fff; */
-            font-size: 13px;
-        }
-
-        .boxVehiculo {
-            margin-left: 2%;
-            margin-right: 2%;
-            margin-top: 2%;
-            /* background: #867f7f; */
-            border: #000;
-        }
-
-        .boxPlaca {
-            width: 45%;
-            height: 3%;
-            float: left;
-            /* background: #079c5e; */
-            font-size: 12px;
-            text-align: center;
-            border: solid 1px #000;
-        }
-
-        .boxModelo {
-            width: 10%;
-            height: 3%;
-            float: left;
-            /* background: #e2e60e; */
-            font-size: 12px;
-            text-align: center;
-            border: solid 1px #000;
-        }
-
-        .boxMarca {
-            width: 15%;
-            height: 3%;
-            float: left;
-            /* background: #0273dd; */
-            font-size: 12px;
-            text-align: center;
-            border: solid 1px #000;
-        }
-
-        .boxClase {
-            width: 29.2%;
-            height: 3%;
-            float: left;
-            /* background: #919694; */
-            font-size: 12px;
-            text-align: center;
-            border: solid 1px #000;
-        }
-
-        .boxAnswerVehiculo {
-            margin-left: 2%;
-            margin-right: 2%;
-            margin-top: 2.8%;
-            background: #867f7f;
-        }
-
-        .answerPlaca {
-            width: 45%;
-            height: 3%;
-            float: left;
-            /* background: #ec059f; */
-            font-size: 12px;
-            text-align: center;
-            border-left: solid 1px #000;
-            border-top: solid 1px #000;
-            border-bottom: solid 1px #000;
-        }
-
-        .answerModelo {
-            width: 10%;
-            height: 3%;
-            float: left;
-            /* background: #01f794; */
-            font-size: 12px;
-            text-align: center;
-            border-right: solid 1px #000;
-            border-top: solid 1px #000;
-            border-bottom: solid 1px #000;
-        }
-
-        .answerMarca {
-            width: 15%;
-            height: 3%;
-            float: left;
-            /* background: #08f008; */
-            font-size: 12px;
-            text-align: center;
-            border-left: solid 1px #000;
-            border-top: solid 1px #000;
-            border-bottom: solid 1px #000;
-        }
-
-        .answerClase {
-            width: 29.9%;
-            height: 3%;
-            float: left;
-            /* background: #c7570d; */
-            font-size: 12px;
-            text-align: center;
-            border-right: solid 1px #000;
-            border-top: solid 1px #000;
-            border-bottom: solid 1px #000;
-        }
-
-        .boxTitulosDrive {
-            margin-left: 2%;
-            margin-right: 2%;
-            margin-top: 2.7%;
-            /* background: #867f7f; */
-        }
-
-        .boxNInterno {
-            width: 45%;
-            height: 3%;
-            float: left;
-            /* background: #c7570d; */
-            font-size: 12px;
-            text-align: center;
-            border: solid 1px #000;
-        }
-
-        .boxNTOperacion {
-            width: 54.8%;
-            height: 3%;
-            float: left;
-            /* background: #65b6e6; */
-            font-size: 12px;
-            text-align: center;
-            border: solid 1px #000;
-        }
 
         .boxDatosDrive0 {
             margin-left: 2%;
@@ -1607,7 +1282,7 @@
             /* background: #b60000; */
             /* border: solid 1px #000; */
         }
-        
+
         .boxConductor {
             width: 20%;
             height: 10%;
@@ -1838,6 +1513,8 @@
         .firm {
             margin-top: -1%;
             height: 110%;
+
+
         }
     </style>
 </head>
@@ -1846,222 +1523,304 @@
     <body>
         <!-- pagina 1-->
         @foreach ($contractdatas as $contractdata)
-            <div class="contenedorprincipal">
-
-                <div class="boxLogos">
-                    <div class="boxMintrasnporte">
-                        <img class="imgMintransporte" src="{{ public_path('img/Mintransporte_Colombia.svg') }}"
-                            alt="">
+            <div style="margin: 1%;height: 92%;border: 2px solid #000;border-radius: 4px;">
+                <div style="margin-left: 4%;margin-right: 2%;margin-top: 2%;">
+                    <div style="width: 50%;height: 5%;float: left;">
+                        <img style="width: 100%;margin: 1%;height: 70;margin-right: -18%;"
+                            src="{{ public_path('img/Mintransporte_Colombia.jpg') }}" alt="">
                         {{-- <img src="{{ asset('img/Mintransporte_Colombia.svg') }}" alt=""> --}}
                     </div>
-                    <div class="boxISO">
-                        <img class="imgIso" src="{{ public_path('img/Certificacion-ISO-9001-2015.jpg') }}"
-                            alt="">
-                        {{-- <img src="{{ asset('img/Certificacion-ISO-9001-2015.jpg') }}" alt=""> --}}
-                    </div>
                     <div class="boxLogo">
-                        <img class="imgLogo" src="{{ public_path('img/logo.png') }}" alt="">
+                        <img style="width: 40%;height: 50;margin-left: 2%;margin-top: 2%;"
+                            src="{{ public_path('img/logo.png') }}" alt="">
                         {{-- <img src="{{ asset('img/logo.png') }}" alt=""> --}}
                     </div>
                 </div>
-                <div class="contenedorTitulo">
+                <div style="display: flex;margin-left: 2%;margin-right: 2%;height: 5%;text-align: center;">
                     <p>FORMATO ÚNICO DE EXTRACTO DEL CONTRATO DEL SERVICIO PÚBLICO DE</p>
                     <p style="margin-top:-2.5%">TRANSPORTE TERRESTRE AUTOMOTOR ESPECIAL
                         <br> No. <span>{{ $permit->permit_code }}</span>
                     </p>
                 </div>
-                <div class="contenedorDescrpcion">
-                    <div class="Descr1">
+                <div style="margin-left: 2%;margin-right: 2%;display: grid;margin-top: 3%;">
+                    <div style="width: 100%;height: 4%;font-size: 12px;">
                         <strong> RAZÓN SOCIAL DE LA EMPRESA DE TRANSPORTE ESPECIAL: </strong> SERVICIO DE TRANSPORTE
                         ESPECIAL DE
                         <br>PASAJEROS STEP S.A.S
                     </div>
-                    <div class="Descr2">
+                    <div style="width: 100%;height: 2%;font-size: 12px;">
                         <strong> NIT: </strong> 900973862-1
                     </div>
-                    <div class="Descr3">
+                    <div style="width: 100%;height: 2%;font-size: 12px;">
                         <strong> CONTRATO No: </strong> {{ $contract_number }}
                     </div>
-                    <div class="Descr4">
+                    <div style="width: 100%;height: 2%;font-size: 12px;">
                         <strong> CONTRATANTE: </strong>{{ $contractdata->contracting_name }}
                     </div>
-                    <div class="Descr5">
+                    <div style="width: 100%;height: 2%;font-size: 12px;">
                         <strong> NIT/CC: </strong>{{ $contractdata->contract_document }}
                     </div>
-                    <div class="Descr6">
+                    <div style="width: 100%;height: 2%;font-size: 12px;">
                         <strong> OBJETO CONTRATO: </strong>
                         @if ($tipeContracts == 1)
-                            Colegios
+                            {{-- Colegios --}}
+                            CONTRATO PARA TRANSPORTE DE ESTUDIANTES
                         @else
                             @if ($tipeContracts == 2)
-                                Empresas
+                                {{-- Empresas --}}
+                                CONTRATO PARA TRANSPORTE EMPRESARIAL
                             @else
                                 @if ($tipeContracts == 3)
-                                    Empresas Turismo
+                                    {{-- Empresas Turismo --}}
+                                    CONTRATO PARA TRANSPORTE DE TURISTAS
                                 @else
                                     @if ($tipeContracts == 4)
                                         CONTRATO PARA UN GRUPO ESPECÍFICO DE USUARIOS (TRANSPORTE DE
                                         PARTICULARES)
                                     @else
                                         @if ($tipeContracts == 5)
-                                            Usuarios de Servicios de Salud
+                                            {{-- Usuarios de Servicios de Salud --}}
+                                            CONTRATO PARA TRASNPORTE DE USUARIOS DE SERVICIO DE SALUD
                                         @endif
                                     @endif
                                 @endif
                             @endif
                         @endif
                     </div>
-                    <div class="Descr7">
-                        <strong> ORIGEN-DESTINO: </strong> {{ $contractdata->place_of_origin }}
+                    <div style="width: 100%;height: 2%;font-size: 12px;">
+                        {{-- <strong> ORIGEN-DESTINO: </strong> {{ $contractdata->place_of_origin }} --}}
+                        <strong> ORIGEN-DESTINO: </strong>
                     </div>
-                    <div class="Descr8">
+                    <div style="width: 100%;height: 2%;font-size: 12px;">
                         <strong> CONVENIO DE COLABORACIÓN: </strong>
                     </div>
                 </div>
 
-                <div class="boxTituloVigencia">
+                <div
+                    style="margin-left: 2%;margin-right: 2%;display: grid;margin-top: 2%;height: 1.5%;text-align: center;font-size: 13px;">
                     <strong> VIGENCIA DEL CONTRATO </strong>
                 </div>
 
-                <div class="boxFechainicio">
-                    <div class="boxFinicial">
-                        <strong> FECHA INICIAL </strong>
-                    </div>
-                    <div class="boxFDia">
-                        <strong> DíA: </strong>{{ $permitStartday }}
-                    </div>
-                    <div class="boxFMes">
-                        <strong> MES: </strong>{{ $permitStartmonth }}
-                    </div>
-                    <div class="boxFAzo">
-                        <strong> AÑO: </strong>{{ $permitStartyear }}
-                    </div>
-                </div>
+                <table
+                    style="width: 96.5%;border: solid 1px #000000;border-collapse: collapse;font-size: 78%;text-align: center; margin-left: 2%;margin-top: 2.5%;">
+                    <tbody>
+                        <tr>
+                            <td
+                                style="width: 65%;border: solid 1px #000000;border-collapse: collapse;text-align: left;">
+                                <strong> FECHA INICIAL </strong>
+                            </td>
+                            <td style="width: 11.6%;border: solid 1px #000000;border-collapse: collapse;">
+                                <strong> DíA: </strong>{{ $permitStartday }}
 
-                <div class="boxFechafin">
-                    <div class="boxFfin">
-                        <strong> FECHA VENCIMIENTO </strong>
-                    </div>
-                    <div class="boxFfDia">
-                        <strong> DíA: </strong>{{ $permitEndday }}
-                    </div>
-                    <div class="boxFfMes">
-                        <strong> MES: </strong>{{ $permitEndmonth }}
-                    </div>
-                    <div class="boxFfAzo">
-                        <strong> AÑO: </strong>{{ $permitEndyear }}
-                    </div>
-                </div>
+                            </td>
+                            <td
+                                style="width: 11.6%;border: solid 1px #000000;border-collapse: collapse;text-align: center;">
+                                <strong> MES: </strong>{{ $permitStartmonth }}
 
-                <div class="boxTituloCaracteristica">
+                            </td>
+                            <td style="width: 11.6%;border: solid 1px #000000;border-collapse: collapse;">
+
+                                <strong> AÑO: </strong>{{ $permitStartyear }}
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td
+                                style="width: 65%;border: solid 1px #000000;border-collapse: collapse;text-align: left;">
+                                <strong> FECHA VENCIMIENTO </strong>
+                            </td>
+                            <td style="width: 11.6%;border: solid 1px #000000;border-collapse: collapse;">
+                                <strong> DíA: </strong>{{ $permitEndday }}
+
+                            </td>
+                            <td
+                                style="width: 11.6%;border: solid 1px #000000;border-collapse: collapse;text-align: center;">
+                                <strong> MES: </strong>{{ $permitEndmonth }}
+
+                            </td>
+                            <td style="width: 11.6%;border: solid 1px #000000;border-collapse: collapse;">
+
+                                <strong> AÑO: </strong>{{ $permitEndyear }}
+
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+                <div
+                    style="margin-left: 2%;margin-right: 2%;display: grid;margin-top: 5%;height: 1.7%;text-align: center;font-size: 13px;">
                     <strong> CARACTERISTÍCAS DEL VEHÍCULO </strong>
                 </div>
 
-                <div class="boxVehiculo">
-                    <div class="boxPlaca">
-                        <strong> PLACA </strong>
-                    </div>
-                    <div class="boxModelo">
-                        <strong> MODELO </strong>
-                    </div>
-                    <div class="boxMarca">
-                        <strong> MARCA </strong>
-                    </div>
-                    <div class="boxClase">
-                        <strong> CLASE </strong>
-                    </div>
-                </div>
-                @foreach ($vehicledatas as $vehicledata)
-                    <div class="boxAnswerVehiculo">
-                        <div class="answerPlaca">
-                            {{ $vehicledata->plate_vehicle }}
-                        </div>
-                        <div class="answerModelo">
-                            {{ $vehicledata->model_vehicle }}
-                        </div>
-                        <div class="answerMarca">
-                            {{ $vehicledata->brand_vehicle }}
-                        </div>
-                        <div class="answerClase">
-                            {{ $vehicledata->vehicle_type_name }}
-                        </div>
-                    </div>
+                <table
+                    style="width: 96.5%;border: solid 1px #000000;border-collapse: collapse;font-size: 78%;text-align: center; margin-left: 2%;margin-top: 2.5%;">
+                    <thead>
+                        <tr style="">
+                            <th
+                                style="width: 14.6%;border: solid 1px #000000;border-collapse: collapse;text-align: center;color: #000;height: 2%;">
+                                PLACA
+                            </th>
+                            <th
+                                style="width: 14.6%;border: solid 1px #000000;border-collapse: collapse;text-align: center;color: #000;height: 2%;">
+                                MODELO
+                            </th>
+                            <th
+                                style="width: 14.6%;border: solid 1px #000000;border-collapse: collapse;text-align: center;color: #000;height: 2%;">
+                                MARCA
+                            </th>
+                            <th
+                                style="width: 14.6%;border: solid 1px #000000;border-collapse: collapse;text-align: center;color: #000;height: 2%;">
+                                CLASE
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($vehicledatas as $vehicledata)
+                            <tr>
+                                <td
+                                    style="width: 16.6%;border: solid 1px #000000;border-collapse: collapse;text-align: center;">
+                                    {{ $vehicledata->plate_vehicle }}
+                                </td>
+                                <td style="width: 16.6%;border: solid 1px #000000;border-collapse: collapse;">
+                                    {{ $vehicledata->model_vehicle }}
 
-                    <div class="boxTitulosDrive">
-                        <div class="boxNInterno">
-                            <strong> NÚMERO INTERNO: </strong> {{ $vehicledata->side_vehicle }}
-                        </div>
-                        <div class="boxNTOperacion">
-                            <strong> NÚMERO TARJETA DE OPERACION: </strong> {{ $vehicledata->card_operation }}
-                        </div>
-                    </div>
-                @endforeach
-                @foreach ($driverdatas as $driverdata)
-                    <div class="boxDatosDrive{{ $contador }}">
-                        <div class="boxConductor">
-                            <strong> DATOS DEL <br>
-                                CONDUCTOR {{ $contador = $contador + 1 }} </strong>
-                        </div>
-                        <div class="boxNombreC">
-                            <strong> NOMBRES Y APELLIDOS </strong> <br>
-                            {{ $driverdata->operator }}
-                        </div>
-                        <div class="boxCedulaC">
-                            <strong> No. CEDULA </strong> <br>
-                            {{ $driverdata->identificationcard }}
-                        </div>
-                        <div class="boxLicenciaC">
-                            <strong> No. LICENCIA DE CONDUCCION </strong><br>
-                            {{ $driverdata->license_number }}
-                        </div>
-                        <div class="boxVigenciaC">
-                            <strong> VIGENCIA </strong> <br>
-                            {{ $driverdata->license_expiration }}
-                        </div>
-                    </div>
-                @endforeach
+                                </td>
+                                <td
+                                    style="width: 16.6%;border: solid 1px #000000;border-collapse: collapse;text-align: center;">
+                                    {{ $vehicledata->brand_vehicle }}
 
-                <div class="boxResContratante{{ $contador }}">
-                    <div class="boxResponsable">
-                        <strong> RESPONSABLE DEL CONTRATANTE </strong>
-                    </div>
-                    <div class="boxNombreR">
-                        <strong> NOMBRES Y APELLIDOS </strong> <br>
-                        {{ $contractdata->contracting_name }}
-                    </div>
-                    <div class="boxCedulaR">
-                        <strong> No. CEDULA </strong> <br>
-                        {{ $contractdata->contract_document }}
-                    </div>
-                    <div class="boxTelefonoR">
-                        <strong> TELEFONO </strong> <br>
-                        {{ $contractdata->contracting_phone }}
-                    </div>
-                    <div class="boxDireccionR">
-                        <strong> DIRECCION </strong> <br>
-                        {{ $contractdata->contracting_direction }}
-                    </div>
-                </div>
+                                </td>
+                                <td style="width: 16.6%;border: solid 1px #000000;border-collapse: collapse;">
 
-                <div class="boxDatosEmpresa{{ $contador }}">
-                    <div class="boxInfo">
-                        <strong> TRANSPORTE ESPECIAL DE PASAJEROS STEP S.A.S <br>
-                            Cra 2A #8-26 EDS Biomax La Badea <br>
-                            Correo Electrónico: sertepsa2016@gmail.com <br>
-                            Teléfono: 323 4197103 </strong>
-                    </div>
-                    <div class="boxFirma">
-                        <img class="firm" src="{{ public_path('img/Signature.png') }}" alt="">
-                    </div>
-                </div> 
+                                    {{ $vehicledata->vehicle_type_name }}
 
-                {{-- comentar --}}
+                                </td>
+                            </tr>
+                        @endforeach
+
+                    </tbody>
+                </table>
+
+                <table
+                    style="width: 96.5%;border: solid 1px #000000;border-collapse: collapse;font-size: 78%;text-align: center; margin-left: 2%;">
+                    <tbody>
+                        @foreach ($vehicledatas as $vehicledata)
+                            <tr>
+                                <td
+                                    style="width: 50%;border: solid 1px #000000;border-collapse: collapse;text-align: center;">
+                                    <strong> NÚMERO INTERNO: </strong> {{ $vehicledata->side_vehicle }}
+                                </td>
+                                <td style="width: 50%;border: solid 1px #000000;border-collapse: collapse;">
+                                    <strong> NÚMERO TARJETA DE OPERACION: </strong> {{ $vehicledata->card_operation }}
+
+                                </td>
+                            </tr>
+                        @endforeach
+
+                    </tbody>
+                </table>
+
+                <table
+                    style="width: 96.5%;border: solid 1px #000000;border-collapse: collapse;font-size: 78%;text-align: center; margin-left: 2%;">
+                    <tbody>
+                        @foreach ($driverdatas as $driverdata)
+                            <tr style="">
+                                <td
+                                    style="width: 16.6%;border: solid 1px #000000;border-collapse: collapse;text-align: center;">
+                                    <strong> DATOS DEL <br>
+                                        CONDUCTOR {{ $contador = $contador + 1 }} </strong>
+                                </td>
+                                <td style="width: 16.6%;border: solid 1px #000000;border-collapse: collapse;">
+                                    {{-- <strong style="font-size: 85%;"> NOMBRES Y APELLIDOS </strong> <br> --}}
+                                    <strong> NOMBRES Y APELLIDOS </strong> <br>
+                                    <span>{{ $driverdata->operator }}</span>
+
+                                </td>
+                                <td
+                                    style="width: 16.6%;border: solid 1px #000000;border-collapse: collapse;text-align: center;">
+                                    <strong> No. CEDULA </strong> <br><br>
+                                    {{ $driverdata->identificationcard }}
+
+                                </td>
+                                <td style="width: 16.6%;border: solid 1px #000000;border-collapse: collapse;">
+                                    {{-- <strong style="font-size: 66%;"> No. LICENCIA DE CONDUCCION </strong><br> --}}
+                                    <strong> No. LICENCIA DE CONDUCCION </strong><br>
+                                    {{ $driverdata->license_number }}
+
+                                </td>
+                                <td style="width: 16.6%;border: solid 1px #000000;border-collapse: collapse;">
+                                    <strong> VIGENCIA </strong> <br><br>
+                                    {{ $driverdata->license_expiration }}
+
+                                </td>
+                            </tr>
+                        @endforeach
+
+                    </tbody>
+                </table>
+
+                <table
+                style="width: 96.5%;border: solid 1px #000000;border-collapse: collapse;font-size: 78%;text-align: center; margin-left: 2%;">
+                <tbody>
+                        <tr style="">
+                            <td
+                                style="width: 20%;border: solid 1px #000000;border-collapse: collapse;text-align: center;">
+                                <strong> RESPONSABLE DEL CONTRATANTE </strong>
+                            </td>
+                            <td style="width: 20%;border: solid 1px #000000;border-collapse: collapse;">
+                                {{-- <strong style="font-size: 85%;"> NOMBRES Y APELLIDOS </strong> <br> --}}
+                                <strong> NOMBRES Y APELLIDOS </strong> <br>
+                                {{ $contractdata->contracting_name }}
+
+                            </td>
+                            <td
+                                style="width: 20%;border: solid 1px #000000;border-collapse: collapse;text-align: center;">
+                                <strong> No. CEDULA </strong> <br>
+                                {{ $contractdata->contract_document }}
+
+                            </td>
+                            <td style="width: 20%;border: solid 1px #000000;border-collapse: collapse;">
+                                {{-- <strong style="font-size: 66%;"> No. LICENCIA DE CONDUCCION </strong><br> --}}
+                                <strong> TELEFONO </strong> <br>
+                                {{ $contractdata->contracting_phone }}
+
+                            </td>
+                            <td style="width: 20%;border: solid 1px #000000;border-collapse: collapse;">
+                                <strong> DIRECCION </strong> <br>
+                                {{ $contractdata->contracting_direction }}
+                            </td>
+                        </tr>
+                </tbody>
+            </table>
+                <table
+                style="width: 96.5%;border: solid 1px #000000;border-collapse: collapse;font-size: 78%;text-align: center; margin-left: 2%;">
+                <tbody>
+                        <tr>
+                            <td
+                                style="width: 50%;border: solid 1px #000000;border-collapse: collapse;text-align: center;padding: 2%;">
+                                <strong> TRANSPORTE ESPECIAL DE PASAJEROS STEP S.A.S <br>
+                                    Cra 2A #8-26 EDS Biomax La Badea <br>
+                                    Correo Electrónico: sertepsa2016@gmail.com <br>
+                                    Teléfono: 323 4197103 </strong>
+                            </td>
+                            <td style="width: 50%;border: solid 1px #000000;border-collapse: collapse;">
+                                <img style="position: absolute;width: 26%;margin-left: 22%;margin-top: 1%;" src="{{ public_path('img/Signature.png') }}" alt="">
+                                <img style="position: absolute;width: 30%;margin-top: -3.5%;" src="{{ public_path('img/sello.png') }}" alt="">
+
+                            </td>
+                        </tr>
+
+                </tbody>
+            </table>
 
             </div>
         @endforeach
 
     </body>
 @endforeach
+
+
 
 
 

@@ -20,7 +20,7 @@ return new class extends Migration
 			
 			$table->timestamps();
 			
-			$table->foreign('driver_id')->references('id')->on('drivers')->onUpdate('cascade');
+			$table->foreign('driver_id')->references('id')->on('users')->onUpdate('cascade');
 			$table->foreign('permit_id')->references('id')->on('permits')->onUpdate('cascade');
         });
     }

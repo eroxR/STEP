@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Users;
 
 use App\Models\arl;
+use App\Models\beneficiary;
 use App\Models\bloodType;
 use App\Models\bonding;
 use App\Models\charge;
@@ -62,11 +63,15 @@ class ManageUsers extends Component
     public $countrys, $Departments = null, $citiesSelects = null, $name, $extension, $Route, $Doc, $DocFecha, $RouteStart = 'public/STEP/users/Ident_',
         $editUsers = null, $editDriver = null,
         $certificate = [
-            'Certificado_de_Licencia_usuario_', 'Certificado_drogas_alchoolemia_usuario_', 'Certificado_Consultas_SIMIT_usuario_', 'Certificado_Examen_Conduccion_usuario_',
-            'Certificado_Norma_Transporte_terrestre_automotor_usuario_', 'Certificado_Normas_Transito_usuario_', 'Certificado_Tips_normativos_usuario_', 'Certificado_Metodos_Conduccion_usuario_',
-            'Certificado_Manejo_Defensivo_usuario_', 'Certificado_Distracciones_usuario_', 'Certificado_Primeros_Auxilios_usuario_', 'Certificado_Primero_Respondiente_usuario_',
-            'Certificado_Cinco_Sentidos_Conduccion_usuario_', 'Certificado_Seguridad_activa_pasiva_vehiculo_usuario_', 'Certificado_Seguridad_Vial_usuario_'
-        ];
+
+            'Certificado_Titulo_Educación_usuario_', 'Certificado_Laboral_Ultima_Empres_usuario_', 'Certificado_Eps_usuario_', 'Certificado_Pension_usuario_', 'Certificado_Cesantias_usuario_',
+            'Certificado_Arl_usuario_', 'Certificado_Caja_compensacion_usuario_', 'Certificado_Documento_del_Beneficiario_usuario_', 'Certificado_de_Estudio_Beneficiario_usuario_', 'Certificado_de_Licencia_de_Conducción_usuario_',
+            'Certificado_drogas_alchoolemia_usuario_', 'Certificado_Consultas_SIMIT_usuario_', 'Certificado_Normas_Transito_usuario_', 'Certificado_Manejo_Defensivo_usuario_',
+            'Certificado_Primeros_Auxilios_usuario_', 'Certificado_Psicosensometrico_usuario_', 'Certificado_Seguridad_Vial_usuario_'
+
+        ],
+        $Role = ['Cliente','Monitor','CoodinadorOperativo','RecursosHumanosEI','ComprasSuministros','Conductor','SistemasGestión','GerenteGeneral','AuditorInterno','Proveedor','Vinculado','Administrador'];
+
     public $username, $email, $password, $identificationcard, $usertype, $user_entry_date, $date_withdrawal_user, $firstname,
         $lastname, $profile_photo_path, $identification, $secondname, $motherslastname, $birthdate, $age, $type_sex, $country, $Department,
         $city, $address, $phone, $phone_cellular, $eps, $eps_status, $date_eps, $blood_type, $pension, $pension_status, $date_pension, $layoffs,
@@ -77,26 +82,28 @@ class ManageUsers extends Component
         $start_date_last_company, $date_end_last_company, $functions_performed, $supplier_name, $company_name_provider, $commercial_reason_supplier,
         $supplier_web_page, $supplier_category, $economic_activity, $products_and_services, $supplier_description, $salary, $aid_transport, $work_area,
 
-        $license_number, $license_category, $license_expiration, $certificate_drugs_alchoolemia, $SIMIT_queries, $driving_exam, $Norm_Overland_Transportation_Automotive,
-        $Rules_Transit, $Normative_Tips, $Driving_Methods, $Defensive_driving, $distractions, $First_aid, $First_Responder, $five_senses_driving, $Active_Passive_Security_vehicle,
+        $documentBeneficiary, $nameBeneficiary, $beneficiary,
+
+        $license_number, $license_category, $license_expiration, $certificate_drugs_alchoolemia, $SIMIT_queries,
+        $Rules_Transit, $Defensive_driving, $First_aid, $psicosensometrico,
         $Road_safety, $Linked,
 
-        $license_number2, $license_category2, $license_expiration2, $certificate_drugs_alchoolemia2, $SIMIT_queries2, $driving_exam2, $Norm_Overland_Transportation_Automotive2,
-        $Rules_Transit2, $Normative_Tips2, $Driving_Methods2, $Defensive_driving2, $distractions2, $First_aid2, $First_Responder2, $five_senses_driving2, $Active_Passive_Security_vehicle2,
+        $license_number2, $license_category2, $license_expiration2, $certificate_drugs_alchoolemia2, $SIMIT_queries2,
+        $Rules_Transit2, $Defensive_driving2, $First_aid2, $psicosensometrico2,
         $Road_safety2, $Linked2,
 
-        $DocNit, $Docu,
-
-        $Doclicense, $DocAlchoolemia, $DocSimitQueries, $DocdrivingExam, $DocNormOverlandTransportationAutomotive,
-        $DocRulesTransit, $DocNormativeTips, $DocDrivingMethods, $DocDefensiveDriving, $Docdistractions, $DocFirstAid, $DocFirstResponder, $DocfiveSensesDriving, $DocActivePassiveSecurityVehicle,
+        $DocNit, $Docu, $DocObtainedTitle, $DocLastCompanyName, $DocEps, $DocPension, $DocLayoffs, $DocArl, $DocCompensationbox, $DocBeneficiary,
+        $DocNameBeneficiary, $Doclicense, $DocAlchoolemia, $DocSimitQueries, $DocRulesTransit, $DocDefensiveDriving, $DocFirstAid, $DocfiveSensesDriving,
         $DocRoadSafety,
 
-        $doclicense, $docAlchoolemia, $docSimitQueries, $docdrivingExam, $docNormOverlandTransportationAutomotive,
-        $docRulesTransit, $docNormativeTips, $docDrivingMethods, $docDefensiveDriving, $docdistractions, $docFirstAid, $docFirstResponder, $docfiveSensesDriving, $docActivePassiveSecurityVehicle,
+        $Routeprofile,
+
+        $doclicense, $docAlchoolemia, $docSimitQueries, $docNormOverlandTransportationAutomotive,
+        $docRulesTransit, $docDefensiveDriving, $docFirstAid, $docfiveSensesDriving, $docActivePassiveSecurityVehicle,
         $docRoadSafety;
 
 
-    protected $listeners = ['destroy', 'edit', 'documentUpdate'];
+    protected $listeners = ['destroy', 'edit', 'documentUpdate', 'searchImg'];
 
     protected $rules = [
 
@@ -145,7 +152,6 @@ class ManageUsers extends Component
         'editUsers.date_compensationbox'  => 'required',
         'editUsers.user_state'  => 'required',
         'editUsers.user_entry_date'  => 'required',
-        'editUsers.date_withdrawal_user'  => 'required',
         'editUsers.charge'  => 'required',
         'editUsers.usertype'  => 'required',
         'editUsers.civil_status'  => 'required',
@@ -192,73 +198,113 @@ class ManageUsers extends Component
     {
 
         if ($this->usertype == 3) {
-            
-           $docFind = DB::table('users')->where('nit', $this->nit)->value('nit');
+
+            $docFind = DB::table('users')->where('nit', $this->nit)->value('nit');
         } else {
-           $docFind = DB::table('users')->where('identificationcard', $this->identificationcard)->value('identificationcard');
+            $docFind = DB::table('users')->where('identificationcard', $this->identificationcard)->value('identificationcard');
         }
-          
+
         if ($docFind > 0) {
-           return $this->emit('crud', ['document' => $docFind], ['process' => 4], ['name' => '']);
+            return $this->emit('crud', ['document' => $docFind], ['process' => 4], ['name' => '']);
         }
 
         $emailFind = DB::table('users')->where('email', $this->email)->value('email');
 
         if ($emailFind > 0) {
             return $this->emit('crud', ['document' => $emailFind], ['process' => 5], ['name' => '']);
-         }
+        }
 
         $userNameFind = DB::table('users')->where('username', $this->username)->value('username');
 
         if ($userNameFind > 0) {
             return $this->emit('crud', ['document' => $userNameFind], ['process' => 6], ['name' => '']);
-         }
-
-        // $Routelicense = Storage::put('STEP/users/'.'Ident_'. $this->identificationcard, $this->Doclicense);
-        // $name = $this->Doclicense->hashName();
-
-        // $profileExtension = $this->profile_photo_path->extension();
-        if ($this->profile_photo_path != '') {
-
-            $profileExtension = $this->profile_photo_path->extension();
-            $nameprofile = 'profile_user_' . $this->identificationcard . '.' . $profileExtension;
-            $urlprofile = $this->profile_photo_path->storeAs($this->RouteStart . $this->identificationcard, $nameprofile);
-            $Routeprofile = Storage::url($urlprofile);
-        }else {
-            $Routeprofile = '';
         }
+
+        $documentUp = [
+            $this->Docu == null, $this->DocNit == null, $this->DocEps == null, $this->DocPension == null, $this->DocLayoffs == null, $this->DocArl == null,
+            $this->DocCompensationbox == null, $this->Doclicense == null, $this->DocSimitQueries == null
+        ];
+        $text = ['documento de identificación del usuario', 'prerstaciones de ley para el usuario', 'documentos del conductor'];
+        $counter = 0;
 
         if ($this->usertype == 3) {
-            # code...
-        } else {
-            # code...
-        }
-        
-
-        $newName = '';
-        if ($this->firstname != '') {
-            $this->username = strtolower($this->firstname[0].$this->lastname);
-        } else {
-            // $a = 0;
-            // do {
-            //     if ($this->supplier_name[$a] != '') {
-            //         $newName = $newName . strtolower($this->supplier_name[$a]);
-            //         $a = $a+1;
-            //     } else {
-            //         $a = 100;
-            //     }
-                
-            // } while ($a == 100);
-
-            // $this->username = $newName;
+            if ($documentUp[1]) {
+                return $this->emit('crud', ['document' => $text[0]], ['process' => 7], ['name' => '']);
+            }
+        } else if ($documentUp[0]) {
+            return $this->emit('crud', ['document' => $text[0]], ['process' => 7], ['name' => '']);
         }
 
-        // dd($this->username);
-         
-        
-        // dd($this->username);
+        if ($this->usertype == 2) {
+            if ($this->charge != 5) {
+                $prestaciones = [2, 3, 4, 5, 6];
+                for ($i = 0; $i < count($prestaciones); $i++) {
+                    if ($documentUp[$prestaciones[$i]]) {
+                        return $this->emit('crud', ['document' => $text[1]], ['process' => 7], ['name' => '']);
+                    }
+                }
+            } else {
+                $prestaciones = [2, 3, 4, 5, 6, 7, 8];
+                for ($i = 0; $i < count($prestaciones); $i++) {
+                    if ($documentUp[$prestaciones[$i]]) {
+                        return $this->emit('crud', ['document' => $text[2]], ['process' => 7], ['name' => '']);
+                    }
+                }
+            }
+        }
 
-        $age = Carbon::createFromDate($this->birthdate)->age;
+        if ($this->usertype == 2 ) {
+            if ($this->identificationcard == null || $this->eps == null || $this->date_eps == null || $this->pension == null || $this->date_pension == null || 
+            $this->layoffs == null || $this->date_layoffs == null || $this->arl == null || $this->arl_date == null || $this->compensationbox == null || 
+            $this->date_compensationbox == null) {
+                return $this->emit('crud', ['document' => ''], ['process' => 8], ['name' => '']);
+            }
+        }
+
+        $this->preparationsInsert();
+
+        switch ($this->usertype) {
+            case '1':
+                $rol = $this->Role[0];
+                break;
+            case '2':
+                switch ($this->charge) {
+                    case '1':
+                        $rol = $this->Role[1];
+                        break;
+                    case '2':
+                        $rol = $this->Role[2];
+                        break;
+                    case '3':
+                        $rol = $this->Role[3];
+                        break;
+                    case '4':
+                        $rol = $this->Role[4];
+                        break;
+                    case '5':
+                        $rol = $this->Role[5];
+                        break;
+                    case '6':
+                        $rol = $this->Role[6];
+                        break;
+                    case '7':
+                        $rol = $this->Role[7];
+                        break;
+                    case '8':
+                        $rol = $this->Role[8];
+                        break;
+                }
+                break;
+            case '3':
+                $rol = $this->Role[9];
+                break;
+            case '4':
+                $rol = $this->Role[10];
+                break;
+            default:
+                $rol = $this->Role[11];
+                break;
+        }
 
         $user = User::create([
             'username'  => $this->username,
@@ -266,17 +312,16 @@ class ManageUsers extends Component
             'password'  => bcrypt('12345678'),
             'identificationcard'  => $this->identificationcard,
             'usertype'  => $this->usertype,
-            'user_state'  => '1',
+            'user_state'  => '2',
             'user_entry_date'  => $this->user_entry_date,
-            'date_withdrawal_user'  => $this->date_withdrawal_user,
             'firstname'  => $this->firstname,
             'lastname'  => $this->lastname,
-            'profile_photo_path'  => $Routeprofile,
+            'profile_photo_path'  => $this->Routeprofile,
             'identification'  => $this->identification,
             'secondname'  => $this->secondname,
             'motherslastname'  => $this->motherslastname,
             'birthdate'  => $this->birthdate,
-            'age'  => $age,
+            'age'  => $this->age,
             'type_sex'  => $this->type_sex,
             'country'  => $this->country,
             'Department'  => $this->Department,
@@ -338,241 +383,10 @@ class ManageUsers extends Component
             'salary'  => $this->salary,
             'aid_transport'  => $this->aid_transport,
             'work_area'  => $this->work_area,
-        ]);
 
-        // if ($this->usertype == 2) {
+        ])->assignRole($rol);
 
-            // $user_idsfind = User::latest('id')->first()->get();
-
-            // foreach ($user_idsfind as $user_ids) {
-            //     $user_id = $user_ids->id;
-            // }
-
-            $user_id = User::latest('id')->value('id');
-
-            // if ($this->arl_date != "") {
-            //     historicalArl::create([
-            //         'user_id'  => $user_id,
-            //         'id_arl'  => $this->arl,
-            //         'renewal_date'  => $this->arl_date,
-            //     ]);
-            // }
-
-            // if ($this->date_eps != "") {
-            //     historicalEps::create([
-            //         'user_id'  => $user_id,
-            //         'eps_id'  => $this->eps,
-            //         'renewal_date'  => $this->date_eps,
-            //     ]);
-            // }
-
-            // if ($this->date_layoffs != "") {
-            //     historicalLayoffs::create([
-            //         'user_id'  => $user_id,
-            //         'layoffs_id'  => $this->layoffs,
-            //         'renewal_date'  => $this->date_layoffs,
-            //     ]);
-            // }
-
-            // if ($this->date_pension != "") {
-            //     historicalPension::create([
-            //         'user_id'  => $user_id,
-            //         'pension_id'  => $this->pension,
-            //         'renewal_date'  => $this->date_pension,
-            //     ]);
-            // }
-
-
-            // if ($this->date_compensationbox != "") {
-            //     historicalCompensationBox::create([
-            //         'user_id'  => $user_id,
-            //         'id_compensationbox'  => $this->compensationbox,
-            //         'renewal_date'  => $this->date_compensationbox,
-            //     ]);
-            // }
-        // }
-
-        if ($this->charge == 5) {
-
-            driver::create([
-
-                'user_id'  => $user_id,
-                'license_number'  => $this->license_number,
-                'license_category'  => $this->license_category,
-                'license_expiration'  => $this->license_expiration,
-                'certificate_drugs_alchoolemia'  => $this->certificate_drugs_alchoolemia,
-                'SIMIT_queries'  => $this->SIMIT_queries,
-                'driving_exam'  => $this->driving_exam,
-                'Norm_Overland_Transportation_Automotive'  => $this->Norm_Overland_Transportation_Automotive,
-                'Rules_Transit'  => $this->Rules_Transit,
-                'Normative_Tips'  => $this->Normative_Tips,
-                'Driving_Methods'  => $this->Driving_Methods,
-                'Defensive_driving'  => $this->Defensive_driving,
-                'distractions'  => $this->distractions,
-                'First_aid'  => $this->First_aid,
-                'First_Responder'  => $this->First_Responder,
-                'five_senses_driving'  => $this->five_senses_driving,
-                'Active_Passive_Security_vehicle'  => $this->Active_Passive_Security_vehicle,
-                'Road_safety'  => $this->Road_safety,
-                'driver_status'  => '0',
-                'Linked'  => $this->Linked,
-            ]);
-
-            $this->Doc = [
-                $this->Doclicense, $this->DocAlchoolemia, $this->DocSimitQueries, $this->DocdrivingExam, $this->DocNormOverlandTransportationAutomotive,
-                $this->DocRulesTransit, $this->DocNormativeTips, $this->DocDrivingMethods, $this->DocDefensiveDriving, $this->Docdistractions, $this->DocFirstAid,
-                $this->DocFirstResponder, $this->DocfiveSensesDriving, $this->DocActivePassiveSecurityVehicle, $this->DocRoadSafety
-    
-            ];
-    
-            $this->DocFecha = [
-                $this->license_expiration, $this->certificate_drugs_alchoolemia, $this->SIMIT_queries, $this->driving_exam, $this->Norm_Overland_Transportation_Automotive,
-                $this->Rules_Transit, $this->Normative_Tips, $this->Driving_Methods, $this->Defensive_driving, $this->distractions, $this->First_aid,
-                $this->First_Responder, $this->five_senses_driving, $this->Active_Passive_Security_vehicle, $this->Road_safety
-            ];
-            
-    
-    
-            for ($i = 0; $i <= 13; $i++) {
-    
-                if ($this->Doc != "" || $this->Doc != 0) {
-    
-                    $this->insertDocument($this->certificate[$i], $this->Doc[$i], $this->DocFecha[$i]);
-    
-                    $user->documents()->create([
-                        'document_name' => $this->name,
-                        'extension' => $this->extension,
-                        'directory' => $this->Route,
-                    ]);
-                }
-            }
-
-            // $driversfind = driver::latest('id')->first()->get();
-
-            // foreach ($driversfind as $drivers) {
-            //     $drivers = $drivers->id;
-            // }
-
-            // $drivers = driver::latest('id')->value('id');
-
-            // if ($this->SIMIT_queries != "" || $this->SIMIT_queries != 0) {
-            //     historicalSimits::create([
-            //         'driver_id' => $drivers,
-            //         'Simits_certification' => $this->SIMIT_queries,
-            //     ]);
-            // }
-
-            // if ($this->license_expiration != "" || $this->license_expiration != 0) {
-            //     historicalLicense::create([
-            //         'driver_id'  => $drivers,
-            //         'license_number'  => $this->license_number,
-            //         'license_category'  => $this->license_category,
-            //         'license_expiration'  => $this->license_expiration,
-            //     ]);
-            // }
-
-
-            // if ($this->First_aid != "" || $this->First_aid != 0) {
-            //     historicalFirst_Aid::create([
-            //         'driver_id'  => $drivers,
-            //         'First_Aid_certification'  => $this->First_aid,
-            //     ]);
-            // }
-
-
-            // if ($this->Road_safety != "" || $this->Road_safety != 0) {
-            //     historicalRoadSafety::create([
-            //         'driver_id'  => $drivers,
-            //         'Road_safety_certification'  => $this->Road_safety,
-            //     ]);
-            // }
-
-
-            // if ($this->distractions != "" || $this->distractions != 0) {
-            //     historicalDistractions::create([
-            //         'driver_id'  => $drivers,
-            //         'distractions_certification'  => $this->distractions,
-            //     ]);
-            // }
-
-
-            // if ($this->driving_exam != "" || $this->driving_exam != 0) {
-            //     historicalDrivingTest::create([
-            //         'driver_id'  => $drivers,
-            //         'Driving_Test_certification'  => $this->driving_exam,
-            //     ]);
-            // }
-
-
-            // if ($this->Rules_Transit != "" || $this->Rules_Transit != 0) {
-            //     historicalNormTransit::create([
-            //         'driver_id'  => $drivers,
-            //         'Norm_Transit_certification'  => $this->Rules_Transit,
-            //     ]);
-            // }
-
-            // if ($this->Normative_Tips != "" || $this->Normative_Tips != 0) {
-            //     historicalTipsNormative::create([
-            //         'driver_id'  => $drivers,
-            //         'Tips_Normative_certification'  => $this->Normative_Tips,
-            //     ]);
-            // }
-
-
-            // if ($this->Driving_Methods != "" || $this->Driving_Methods != 0) {
-            //     historicalDrivingMethods::create([
-            //         'driver_id'  => $drivers,
-            //         'driving_Methods_certification'  => $this->Driving_Methods,
-            //     ]);
-            // }
-
-
-            // if ($this->First_Responder != "" || $this->First_Responder != 0) {
-            //     historicalFirstResponder::create([
-            //         'driver_id'  => $drivers,
-            //         'First_Responder_certification'  => $this->First_Responder,
-            //     ]);
-            // }
-
-
-            // if ($this->Defensive_driving != "" || $this->Defensive_driving != 0) {
-            //     historicalDefensiveDriving::create([
-            //         'driver_id'  => $drivers,
-            //         'Defensive_driving_certification'  => $this->Defensive_driving,
-            //     ]);
-            // }
-
-
-            // if ($this->certificate_drugs_alchoolemia != "" || $this->certificate_drugs_alchoolemia != 0) {
-            //     historicalDrugsAlchoolemia::create([
-            //         'driver_id'  => $drivers,
-            //         'drugs_alchoolemia_certification'  => $this->certificate_drugs_alchoolemia,
-            //     ]);
-            // }
-
-
-            // if ($this->five_senses_driving != "" || $this->five_senses_driving != 0) {
-            //     historicalFiveSensesDriving::create([
-            //         'driver_id'  => $drivers,
-            //         'Five_Senses_Driving_certification'  => $this->five_senses_driving,
-            //     ]);
-            // }
-
-            // if ($this->Norm_Overland_Transportation_Automotive != "" || $this->Norm_Overland_Transportation_Automotive != 0) {
-            //     historicalLandTransportStandards::create([
-            //         'driver_id'  => $drivers,
-            //         'Land_Transport_Standards_certification'  => $this->Norm_Overland_Transportation_Automotive,
-            //     ]);
-            // }
-
-
-            // if ($this->Active_Passive_Security_vehicle != "" || $this->Active_Passive_Security_vehicle != 0) {
-            //     historicalSafetyActivePassiveVehicles::create([
-            //         'driver_id'  => $drivers,
-            //         'Safety_Active_Passive_Vehicles_certification'  => $this->Active_Passive_Security_vehicle,
-            //     ]);
-            // }
-        }
+        $this->documentsEmployees($user);
 
         $name = $this->firstname . " " . $this->secondname . " " . $this->lastname . " " . $this->motherslastname;
 
@@ -596,7 +410,7 @@ class ManageUsers extends Component
             $name = $this->editUsers->supplier_name;
         } else {
             $document = $this->editUsers->identificationcard;
-            $name = $this->editUsers->firstname.' '.$this->editUsers->secondname.' '.$this->editUsers->lastname.' '.$this->editUsers->motherslastname;
+            $name = $this->editUsers->firstname . ' ' . $this->editUsers->secondname . ' ' . $this->editUsers->lastname . ' ' . $this->editUsers->motherslastname;
         }
 
         $this->emit('crud', ['document' => $document], ['process' => 2], ['name' => $name]);
@@ -605,63 +419,62 @@ class ManageUsers extends Component
     }
 
     // actualizar un documento de un usuario
-    public function documentUpdate($paramText, $documentName)
-    {
+    // public function documentUpdate($paramText, $documentName)
+    // {
 
-        $documentName = $documentName[0];
+    //     $documentName = $documentName[0];
 
-        $ruta = DB::table('documents')->where('documentable_id', $this->editUsers->id)->where('documentable_Type', 'like', '%\User%')->where('document_name', 'like', '%' . $documentName . '%')->value('id');
+    //     $ruta = DB::table('documents')->where('documentable_id', $this->editUsers->id)->where('documentable_Type', 'like', '%\User%')->where('document_name', 'like', '%' . $documentName . '%')->value('id');
 
 
-        $paramText = $paramText[0];
+    //     $paramText = $paramText[0];
 
-        $this->Doc = [
-            $this->Doclicense, $this->DocAlchoolemia, $this->DocSimitQueries, $this->DocdrivingExam, $this->DocNormOverlandTransportationAutomotive,
-            $this->DocRulesTransit, $this->DocNormativeTips, $this->DocDrivingMethods, $this->DocDefensiveDriving, $this->Docdistractions, $this->DocFirstAid,
-            $this->DocFirstResponder, $this->DocfiveSensesDriving, $this->DocActivePassiveSecurityVehicle, $this->DocRoadSafety
+    //     $this->Doc = [
+    //         $this->Doclicense, $this->DocAlchoolemia, $this->DocSimitQueries, $this->DocNormOverlandTransportationAutomotive,
+    //         $this->DocRulesTransit, $this->DocDefensiveDriving, $this->DocFirstAid,
+    //         $this->DocfiveSensesDriving, $this->DocActivePassiveSecurityVehicle, $this->DocRoadSafety
 
-        ];
+    //     ];
 
-        $this->DocFecha = [
-            $this->license_expiration2, $this->certificate_drugs_alchoolemia2, $this->SIMIT_queries2, $this->driving_exam2, $this->Norm_Overland_Transportation_Automotive2,
-            $this->Rules_Transit2, $this->Normative_Tips2, $this->Driving_Methods2, $this->Defensive_driving2, $this->distractions2, $this->First_aid2,
-            $this->First_Responder2, $this->five_senses_driving2, $this->Active_Passive_Security_vehicle2, $this->Road_safety2
-        ];
+    //     $this->DocFecha = [
+    //         $this->license_expiration2, $this->certificate_drugs_alchoolemia2, $this->SIMIT_queries2,
+    //         $this->Rules_Transit2, $this->Defensive_driving2, $this->First_aid2,
+    //         $this->psicosensometrico2, $this->Road_safety2
+    //     ];
 
-        for ($i = 0; $i <= $paramText; $i++) {
-            if ($paramText == $i) {
-                // dd($this->Doc[$i]);
-                // $fech = $this->DocFecha[$i];
-                $this->insertDocument($this->certificate[$i], $this->Doc[$i], $this->DocFecha[$i]);
-            }
-        }
+    //     for ($i = 0; $i <= $paramText; $i++) {
+    //         if ($paramText == $i) {
+    //             // dd($this->Doc[$i]);
+    //             // $fech = $this->DocFecha[$i];
+    //             $this->insertDocument($this->certificate[$i], $this->Doc[$i], $this->DocFecha[$i]);
+    //         }
+    //     }
 
-        if ($ruta != null) {
+    //     if ($ruta != null) {
 
-            $directory = DB::table('documents')->where('id', $ruta)->value('directory');
-            $newRuta = str_replace('/storage', 'public', $directory);
-            Storage::delete($newRuta);
+    //         $directory = DB::table('documents')->where('id', $ruta)->value('directory');
+    //         $newRuta = str_replace('/storage', 'public', $directory);
+    //         Storage::delete($newRuta);
 
-            DB::table('documents')->where('id', $ruta)->update(['document_name' => $this->name, 'directory' => $this->Route, 'extension' => $this->extension]);
-            // dd('se actualizo');
-            
-            $this->emit('documentup', ['up' => 1],['input' => $paramText]);
-        } else {
-            DB::table('documents')->insert([
-                'documentable_id' => $this->editUsers->id,
-                'document_name' => $this->name,
-                'extension' => $this->extension,
-                'directory' => $this->Route,
-                'documentable_Type' => 'App\Models\User',
-            ]);
-            // dd('se creo');
-            
-            $this->emit('documentup', ['up' => 2],['input' => $paramText]);
-        }
+    //         DB::table('documents')->where('id', $ruta)->update(['document_name' => $this->name, 'directory' => $this->Route, 'extension' => $this->extension]);
+    //         // dd('se actualizo');
 
-        $this->validateColor();        
-        
-    }
+    //         $this->emit('documentup', ['up' => 1], ['input' => $paramText]);
+    //     } else {
+    //         DB::table('documents')->insert([
+    //             'documentable_id' => $this->editUsers->id,
+    //             'document_name' => $this->name,
+    //             'extension' => $this->extension,
+    //             'directory' => $this->Route,
+    //             'documentable_Type' => 'App\Models\User',
+    //         ]);
+    //         // dd('se creo');
+
+    //         $this->emit('documentup', ['up' => 2], ['input' => $paramText]);
+    //     }
+
+    //     $this->validateColor();
+    // }
 
     public function destroy($id)
     {
@@ -704,17 +517,10 @@ class ManageUsers extends Component
             $this->license_expiration2 = $key->license_expiration;
             $this->certificate_drugs_alchoolemia2 = $key->certificate_drugs_alchoolemia;
             $this->SIMIT_queries2 = $key->SIMIT_queries;
-            $this->driving_exam2 = $key->driving_exam;
-            $this->Norm_Overland_Transportation_Automotive2 = $key->Norm_Overland_Transportation_Automotive;
             $this->Rules_Transit2 = $key->Rules_Transit;
-            $this->Normative_Tips2 = $key->Normative_Tips;
-            $this->Driving_Methods2 = $key->Driving_Methods;
-            $this->Defensive_driving2 = $key->Driving_Methods;
-            $this->distractions2 = $key->distractions;
+            $this->Defensive_driving2 = $key->Defensive_driving;
             $this->First_aid2 = $key->First_aid;
-            $this->First_Responder2 = $key->First_Responder;
-            $this->five_senses_driving2 = $key->five_senses_driving;
-            $this->Active_Passive_Security_vehicle2 = $key->Active_Passive_Security_vehicle;
+            $this->psicosensometrico2 = $key->psicosensometrico;
             $this->Road_safety2 = $key->Road_safety;
             $this->Linked2 = $key->Linked;
         }
@@ -722,7 +528,6 @@ class ManageUsers extends Component
         $this->validateColor();
 
         $this->emit('openModalEdit');
-        
     }
 
     public function render()
@@ -755,7 +560,7 @@ class ManageUsers extends Component
             ->orwhere('email', 'like', '%' . $this->search . '%')
             ->orderBy($this->sort, $this->direction)->get();
 
-        $linkers = user::select('id', DB::raw('CONCAT(firstname, secondname, lastname, motherslastname) As owner'))
+        $linkers = user::select('id', DB::raw('CONCAT(firstname, " ", secondname, " ", lastname, " ", motherslastname) As owner'))
             ->where('usertype', '=', 4)->get();
 
         $charges = charge::all();
@@ -875,12 +680,13 @@ class ManageUsers extends Component
             'family_phone_cellular',
             'city_birth',
             'place_expedition_identificationcard',
-            // 'identificationcard_family',
+            'identificationcard_family',
             'bonding_type',
             'weight',
             'pant_size',
             'shirt_size',
             'shoe_size',
+            'nit',
             'education_level',
             'educational_institution',
             'last_year',
@@ -902,25 +708,51 @@ class ManageUsers extends Component
             'salary',
             'aid_transport',
             'work_area',
+            'documentBeneficiary',
+            'nameBeneficiary',
+            'beneficiary',
             'license_number',
             'license_category',
             'license_expiration',
             'certificate_drugs_alchoolemia',
             'SIMIT_queries',
-            'driving_exam',
-            'Norm_Overland_Transportation_Automotive',
             'Rules_Transit',
-            'Normative_Tips',
-            'Driving_Methods',
             'Defensive_driving',
-            'distractions',
             'First_aid',
-            'First_Responder',
-            'five_senses_driving',
-            'Active_Passive_Security_vehicle',
+            'psicosensometrico',
             'Road_safety',
             'Linked',
-            'nit',
+            'license_number2',
+            'license_category2',
+            'license_expiration2',
+            'certificate_drugs_alchoolemia2',
+            'SIMIT_queries2',
+            'Rules_Transit2',
+            'Defensive_driving2',
+            'First_aid2',
+            'psicosensometrico2',
+            'Road_safety2',
+            'Linked2',
+            'DocNit',
+            'Docu',
+            'DocObtainedTitle',
+            'DocLastCompanyName',
+            'DocEps',
+            'DocPension',
+            'DocLayoffs',
+            'DocArl',
+            'DocCompensationbox',
+            'DocBeneficiary',
+            'DocNameBeneficiary',
+            'Doclicense',
+            'DocAlchoolemia',
+            'DocSimitQueries',
+            'DocRulesTransit',
+            'DocDefensiveDriving',
+            'DocFirstAid',
+            'DocfiveSensesDriving',
+            'DocRoadSafety',
+            'Routeprofile',
         ]);
 
         $this->Doc = [];
@@ -970,91 +802,242 @@ class ManageUsers extends Component
         $this->Route = Storage::url($url);
     }
 
-    public function validateColor(){
+    // public function validateColor()
+    // {
 
-        $this->doclicense = DB::table('documents')->where('documentable_id', $this->editUsers->id)->where('documentable_Type', 'like', '%\User%')->where('document_name', 'like', '%Licencia%')->value('id');
-        $this->docAlchoolemia = DB::table('documents')->where('documentable_id', $this->editUsers->id)->where('documentable_Type', 'like', '%\User%')->where('document_name', 'like', '%alchoolemia%')->value('id');
-        $this->docSimitQueries = DB::table('documents')->where('documentable_id', $this->editUsers->id)->where('documentable_Type', 'like', '%\User%')->where('document_name', 'like', '%SIMIT%')->value('id');
-        $this->docdrivingExam = DB::table('documents')->where('documentable_id', $this->editUsers->id)->where('documentable_Type', 'like', '%\User%')->where('document_name', 'like', '%Examen%')->value('id');
-        $this->docNormOverlandTransportationAutomotive = DB::table('documents')->where('documentable_id', $this->editUsers->id)->where('documentable_Type', 'like', '%\User%')->where('document_name', 'like', '%Norma_Transporte%')->value('id');
-        $this->docRulesTransit = DB::table('documents')->where('documentable_id', $this->editUsers->id)->where('documentable_Type', 'like', '%\User%')->where('document_name', 'like', '%Normas_Transito%')->value('id');
-        $this->docNormativeTips = DB::table('documents')->where('documentable_id', $this->editUsers->id)->where('documentable_Type', 'like', '%\User%')->where('document_name', 'like', '%Tips_normativos%')->value('id');
-        $this->docDrivingMethods = DB::table('documents')->where('documentable_id', $this->editUsers->id)->where('documentable_Type', 'like', '%\User%')->where('document_name', 'like', '%Metodos_Conduccion%')->value('id');
-        $this->docDefensiveDriving = DB::table('documents')->where('documentable_id', $this->editUsers->id)->where('documentable_Type', 'like', '%\User%')->where('document_name', 'like', '%Defensivo%')->value('id');
-        $this->docdistractions = DB::table('documents')->where('documentable_id', $this->editUsers->id)->where('documentable_Type', 'like', '%\User%')->where('document_name', 'like', '%Distracciones%')->value('id');
-        $this->docFirstAid = DB::table('documents')->where('documentable_id', $this->editUsers->id)->where('documentable_Type', 'like', '%\User%')->where('document_name', 'like', '%Primeros_Auxilios%')->value('id');
-        $this->docFirstResponder = DB::table('documents')->where('documentable_id', $this->editUsers->id)->where('documentable_Type', 'like', '%\User%')->where('document_name', 'like', '%Primero_Respondiente%')->value('id');
-        $this->docfiveSensesDriving = DB::table('documents')->where('documentable_id', $this->editUsers->id)->where('documentable_Type', 'like', '%\User%')->where('document_name', 'like', '%Cinco_Sentidos%')->value('id');
-        $this->docActivePassiveSecurityVehicle = DB::table('documents')->where('documentable_id', $this->editUsers->id)->where('documentable_Type', 'like', '%\User%')->where('document_name', 'like', '%Seguridad_activa_pasiva%')->value('id');
-        $this->docRoadSafety = DB::table('documents')->where('documentable_id', $this->editUsers->id)->where('documentable_Type', 'like', '%\User%')->where('document_name', 'like', '%Seguridad_Vial%')->value('id');
+    //     $this->doclicense = DB::table('documents')->where('documentable_id', $this->editUsers->id)->where('documentable_Type', 'like', '%\User%')->where('document_name', 'like', '%Licencia%')->value('id');
+    //     $this->docAlchoolemia = DB::table('documents')->where('documentable_id', $this->editUsers->id)->where('documentable_Type', 'like', '%\User%')->where('document_name', 'like', '%alchoolemia%')->value('id');
+    //     $this->docSimitQueries = DB::table('documents')->where('documentable_id', $this->editUsers->id)->where('documentable_Type', 'like', '%\User%')->where('document_name', 'like', '%SIMIT%')->value('id');
+    //     $this->docNormOverlandTransportationAutomotive = DB::table('documents')->where('documentable_id', $this->editUsers->id)->where('documentable_Type', 'like', '%\User%')->where('document_name', 'like', '%Norma_Transporte%')->value('id');
+    //     $this->docRulesTransit = DB::table('documents')->where('documentable_id', $this->editUsers->id)->where('documentable_Type', 'like', '%\User%')->where('document_name', 'like', '%Normas_Transito%')->value('id');
+    //     $this->docDefensiveDriving = DB::table('documents')->where('documentable_id', $this->editUsers->id)->where('documentable_Type', 'like', '%\User%')->where('document_name', 'like', '%Defensivo%')->value('id');
+    //     $this->docFirstAid = DB::table('documents')->where('documentable_id', $this->editUsers->id)->where('documentable_Type', 'like', '%\User%')->where('document_name', 'like', '%Primeros_Auxilios%')->value('id');
+    //     $this->docfiveSensesDriving = DB::table('documents')->where('documentable_id', $this->editUsers->id)->where('documentable_Type', 'like', '%\User%')->where('document_name', 'like', '%Cinco_Sentidos%')->value('id');
+    //     $this->docActivePassiveSecurityVehicle = DB::table('documents')->where('documentable_id', $this->editUsers->id)->where('documentable_Type', 'like', '%\User%')->where('document_name', 'like', '%Seguridad_activa_pasiva%')->value('id');
+    //     $this->docRoadSafety = DB::table('documents')->where('documentable_id', $this->editUsers->id)->where('documentable_Type', 'like', '%\User%')->where('document_name', 'like', '%Seguridad_Vial%')->value('id');
 
-        if ($this->doclicense == null) {
-            $this->doclicense = 0;
+    //     if ($this->doclicense == null) {
+    //         $this->doclicense = 0;
+    //     }
+
+    //     if ($this->docAlchoolemia == null) {
+    //         $this->docAlchoolemia = 0;
+    //     }
+
+    //     if ($this->docSimitQueries == null) {
+    //         $this->docSimitQueries = 0;
+    //     }
+
+    //     if ($this->docNormOverlandTransportationAutomotive == null) {
+    //         $this->docNormOverlandTransportationAutomotive = 0;
+    //     }
+
+    //     if ($this->docRulesTransit == null) {
+    //         $this->docRulesTransit = 0;
+    //     }
+
+    //     if ($this->docDefensiveDriving == null) {
+    //         $this->docDefensiveDriving = 0;
+    //     }
+
+    //     if ($this->docFirstAid == null) {
+    //         $this->docFirstAid = 0;
+    //     }
+
+    //     if ($this->docfiveSensesDriving == null) {
+    //         $this->docfiveSensesDriving = 0;
+    //     }
+
+    //     if ($this->docActivePassiveSecurityVehicle == null) {
+    //         $this->docActivePassiveSecurityVehicle = 0;
+    //     }
+
+    //     if ($this->docRoadSafety == null) {
+    //         $this->docRoadSafety = 0;
+    //     }
+
+    //     if ($this->editUsers->charge == 5) {
+    //         $this->emit(
+    //             'documentStatus',
+    //             ['doclicense' => $this->doclicense],
+    //             ['docAlchoolemia' => $this->docAlchoolemia],
+    //             ['docSimitQueries' => $this->docSimitQueries],
+    //             ['docNormOverlandTransportationAutomotive' => $this->docNormOverlandTransportationAutomotive],
+    //             ['docRulesTransit' => $this->docRulesTransit],
+    //             ['docDefensiveDriving' => $this->docDefensiveDriving],
+    //             ['docFirstAid' => $this->docFirstAid],
+    //             ['docfiveSensesDriving' => $this->docfiveSensesDriving],
+    //             ['docActivePassiveSecurityVehicle' => $this->docActivePassiveSecurityVehicle],
+    //             ['docRoadSafety' => $this->docRoadSafety]
+    //         );
+    //     }
+    // }
+
+    public function preparationsInsert()
+    {
+        if ($this->profile_photo_path != '') {
+
+            if ($this->usertype == 3) {
+                $cc = $this->nit;
+            } else {
+                $cc = $this->identificationcard;
+            }
+
+            $profileExtension = $this->profile_photo_path->extension();
+            $nameprofile = 'profile_user_' . $cc . '.' . $profileExtension;
+            $urlprofile = $this->profile_photo_path->storeAs($this->RouteStart . $cc, $nameprofile);
+            $this->Routeprofile = Storage::url($urlprofile);
+        } else {
+            $this->Routeprofile = '';
+
+            //alimentamos el generador de aleatorios
+            mt_srand(time());
+            //generamos un número aleatorio
+            $profilePhoto_aleatorio = mt_rand(0, 10);
         }
 
-        if ($this->docAlchoolemia == null) {
-            $this->docAlchoolemia = 0;
+
+        // $newName = '';
+        if ($this->firstname != '') {
+
+            $this->username = strtolower($this->firstname[0] . $this->lastname);
+        } else {
+            // $a = 0;
+            // do {
+            //     if ($this->supplier_name[$a] != '') {
+            //         $newName = $newName . strtolower($this->supplier_name[$a]);
+            //         $a = $a+1;
+            //     } else {
+            //         $a = 100;
+            //     }
+
+            // } while ($a == 100);
+
+            // $this->username = $newName;
         }
 
-        if ($this->docSimitQueries == null) {
-            $this->docSimitQueries = 0;
-        }
 
-        if ($this->docdrivingExam == null) {
-            $this->docdrivingExam = 0;
-        }
+        // dd($this->username);
 
-        if ($this->docNormOverlandTransportationAutomotive == null) {
-            $this->docNormOverlandTransportationAutomotive = 0;
-        }
 
-        if ($this->docRulesTransit == null) {
-            $this->docRulesTransit = 0;
-        }
+        // dd($this->username);
 
-        if ($this->docNormativeTips == null) {
-            $this->docNormativeTips = 0;
-        }
+        $this->age = Carbon::createFromDate($this->birthdate)->age;
 
-        if ($this->docDrivingMethods == null) {
-            $this->docDrivingMethods = 0;
-        }
-
-        if ($this->docDefensiveDriving == null) {
-            $this->docDefensiveDriving = 0;
-        }
-
-        if ($this->docdistractions == null) {
-            $this->docdistractions = 0;
-        }
-
-        if ($this->docFirstAid == null) {
-            $this->docFirstAid = 0;
-        }
-
-        if ($this->docFirstResponder == null) {
-            $this->docFirstResponder = 0;
-        }
-
-        if ($this->docfiveSensesDriving == null) {
-            $this->docfiveSensesDriving = 0;
-        }
-
-        if ($this->docActivePassiveSecurityVehicle == null) {
-            $this->docActivePassiveSecurityVehicle = 0;
-        }
-
-        if ($this->docRoadSafety == null) {
-            $this->docRoadSafety = 0;
-        }
-
-        if ($this->editUsers->charge == 5) {
-            $this->emit('documentStatus', ['doclicense' => $this->doclicense], ['docAlchoolemia' => $this->docAlchoolemia], ['docSimitQueries' => $this->docSimitQueries],
-            ['docdrivingExam' => $this->docdrivingExam ], ['docNormOverlandTransportationAutomotive' => $this->docNormOverlandTransportationAutomotive],['docRulesTransit' => $this->docRulesTransit ],
-            ['docNormativeTips' => $this->docNormativeTips ], ['docDrivingMethods' => $this->docDrivingMethods],['docDefensiveDriving' => $this->docDefensiveDriving ],
-            ['docdistractions' => $this->docdistractions ], ['docFirstAid' => $this->docFirstAid],['docFirstResponder' => $this->docFirstResponder ],
-            ['docfiveSensesDriving' => $this->docfiveSensesDriving ], ['docActivePassiveSecurityVehicle' => $this->docActivePassiveSecurityVehicle], ['docRoadSafety' => $this->docRoadSafety]);
-        }
 
     }
+
+    public function documentsEmployees($user)
+    {
+        // carga arcchivo de documento (cedula o nit) y lo registra en la base de datos
+        if ($this->Docu != '' || $this->Docu != 0) {
+            $docExtension = $this->Docu->extension();
+            $nameDoc = 'document_user_' . $this->identificationcard . '.' . $docExtension;
+            $urlDoc = $this->Docu->storeAs($this->RouteStart . $this->identificationcard, $nameDoc);
+            $RouteDocument = Storage::url($urlDoc);
+
+            $user->documents()->create([
+                'document_name' => $nameDoc,
+                'extension' => $docExtension,
+                'directory' => $RouteDocument,
+            ]);
+        } else {
+            if ($this->DocNit != '' || $this->DocNit != 0) {
+                $docExtension = $this->DocNit->extension();
+                $nameDoc = 'rut_proveedor_' . $this->nit . '.' . $docExtension;
+                $urlDoc = $this->DocNit->storeAs($this->RouteStart . $this->nit, $nameDoc);
+                $RouteDocument = Storage::url($urlDoc);
+
+                $user->documents()->create([
+                    'document_name' => $nameDoc,
+                    'extension' => $docExtension,
+                    'directory' => $RouteDocument,
+                ]);
+            }
+        }
+
+        $user_id = User::latest('id')->value('id');
+
+        if ($this->documentBeneficiary != '') {
+            
+            DB::table('beneficiaries')->insert([
+                'full_name' => $this->nameBeneficiary,
+                'document' => $this->documentBeneficiary,
+                'beneficiaryType' => $this->beneficiary,
+                'user_id'  => $user_id,
+            ]);
+        }
+
+        $beneficiary_id = beneficiary::latest('id')->value('id');
+
+        if ($this->usertype == 2) {
+
+            $this->Doc = [
+                $this->DocObtainedTitle, $this->DocLastCompanyName, $this->DocEps, $this->DocPension, $this->DocLayoffs, $this->DocArl,
+                $this->DocCompensationbox, $this->DocBeneficiary, $this->DocNameBeneficiary, $this->Doclicense, $this->DocAlchoolemia,
+                $this->DocSimitQueries, $this->DocRulesTransit, $this->DocDefensiveDriving, $this->DocFirstAid, $this->DocfiveSensesDriving,
+                $this->DocRoadSafety
+
+            ];
+
+            $this->DocFecha = [
+                $this->obtained_title, $this->last_company_name, $this->date_eps, $this->date_pension, $this->date_layoffs, $this->arl_date,
+                $this->date_compensationbox, $beneficiary_id, $beneficiary_id, $this->license_expiration,
+                $this->certificate_drugs_alchoolemia, $this->SIMIT_queries, $this->Rules_Transit, $this->Defensive_driving,
+                $this->First_aid, $this->psicosensometrico, $this->Road_safety
+            ];
+
+
+            for ($i = 0; $i < count($this->Doc); $i++) {
+
+                if ($this->Doc[$i] != "" || $this->Doc[$i] != 0) {
+
+                    $this->insertDocument($this->certificate[$i], $this->Doc[$i], $this->DocFecha[$i]);
+
+                    $user->documents()->create([
+                        'document_name' => $this->name,
+                        'extension' => $this->extension,
+                        'directory' => $this->Route,
+                    ]);
+                }
+            }
+
+
+            if ($this->DocCompensationbox == null || $this->Doclicense == null || $this->DocSimitQueries == null) {
+                $driveState = '1';
+            } else {
+                $driveState = '2';
+            }
+            
+
+            if ($this->charge == 5) {
+
+                driver::create([
+
+                    'user_id'  => $user_id,
+                    'license_number'  => $this->license_number,
+                    'license_category'  => $this->license_category,
+                    'license_expiration'  => $this->license_expiration,
+                    'certificate_drugs_alchoolemia'  => $this->certificate_drugs_alchoolemia,
+                    'SIMIT_queries'  => $this->SIMIT_queries,
+                    'Rules_Transit'  => $this->Rules_Transit,
+                    'Defensive_driving'  => $this->Defensive_driving,
+                    'First_aid'  => $this->First_aid,
+                    'psicosensometrico'  => $this->psicosensometrico,
+                    'Road_safety'  => $this->Road_safety,
+                    'driver_status'  => $driveState,
+                    'Linked'  => $this->Linked,
+                ]);
+            }
+        }
+    }
+
+    
+    public function searchImg($id){
+        $photo = User::where('id', $id)->value('profile_photo_path');
+        $this->emit('documentImage', ['file' => $photo]);
+    }
 }
+
+// 3217325075
+

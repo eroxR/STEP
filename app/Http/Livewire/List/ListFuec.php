@@ -21,16 +21,20 @@ class ListFuec extends Component
             ->where('permit_number', 'like', '%' . $this->search . '%')
             ->get();
 
-        $typeContracts =  DB::table('contracts')
+        $Contracts =  DB::table('contracts')
         ->select('id','type_contract','contract_number')
-        ->get();           
+        ->get();  
+        
+        $typeContracts =  DB::table('contract_types')
+        ->select('id','contract_name')
+        ->get();
 
         $this->ide != (0) ? $permitsSelected = DB::table('permits')
-            ->join('contracts', 'contracts.id', 'permits.contract')
+            // ->join('contracts', 'contracts.id', 'permits.contract')
             ->where('permits.id', $this->ide)
             ->get() :
             $permitsSelected = DB::table('permits')
-            ->join('contracts', 'contracts.id', 'permits.contract')
+            // ->join('contracts', 'contracts.id', 'permits.contract')
             ->orderBy('permits.id', 'desc')
             ->limit(1)
             ->get();
@@ -39,30 +43,11 @@ class ListFuec extends Component
             $permitNow = $key->id;
         }
 
-        $this->ide != (0) ? $cars = DB::table('contract_vehicle_permit')
-            ->join('vehicles', 'vehicles.id', 'vehicle_id')
-            ->where('permit_id', $this->ide)
-            ->get() :
-            $cars = DB::table('contract_vehicle_permit')
-            ->join('vehicles', 'vehicles.id', 'vehicle_id')
-            ->where('permit_id', 173)
-            ->get();
-
-        $this->ide != (0) ? $drivers = DB::table('driver_permit')
-            ->join('drivers', 'drivers.id', 'driver_id')
-            ->join('users', 'users.id', 'user_id')
-            ->where('permit_id', $this->ide)
-            ->get() :
-            $drivers = DB::table('driver_permit')
-            ->join('drivers', 'drivers.id', 'driver_id')
-            ->join('users', 'users.id', 'user_id')
-            ->where('permit_id', 173)
-            ->get();
-
         $allDrivers = DB::table('driver_permit')
             ->join('drivers', 'drivers.id', 'driver_id')
             ->join('users', 'users.id', 'user_id')
             ->get();
+        
 
         $allCars = DB::table('contract_vehicle_permit')
             ->join('vehicles', 'vehicles.id', 'vehicle_id')
@@ -89,7 +74,7 @@ class ListFuec extends Component
         // $allpermits = permit::all();
 
 
-        return view('livewire.list.list-fuec', compact('permits', 'permitsSelected', 'cars', 'drivers', 'allDrivers', 'allCars', 'typeContracts'));
+        return view('livewire.list.list-fuec', compact('permits', 'permitsSelected', 'Contracts', 'allDrivers', 'allCars', 'typeContracts'));
     }
 
     public function order()

@@ -612,7 +612,7 @@
                 </button>
                 <button id="btnStore"
                     class="Inactive w-full px-5 py-3 text-sm font-medium leading-5 transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg sm:w-auto sm:px-4 sm:py-2 active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
-                    wire:click="store" onclick="restart()" x-on:click="closeModal">
+                    wire:click="store">
                     {{ __('Generate Permit') }}
                 </button>
             </div>
@@ -877,6 +877,270 @@
 
 @section('scripts')
     <script>
+        $(document).ready(function() {
+
+
+            var table = $('#example').DataTable({
+                // "scrollX": true,
+                lengthMenu: [
+                    [5, 10, 50, 100, 200, -1],
+                    [5, 10, 50, 100, 200, "∞"]
+                ],
+                responsive: true,
+                autoWidth: false,
+                autoFill: true,
+                // stateSave: true,
+                "order": [
+                    [1, "desc"]
+                ],
+                dom: "<'ui stackable grid'" +
+                    "<'row'" +
+                    "<'eight wide column'l>" +
+                    "<'ml30'B>" +
+                    "<'right aligned eight wide column'f>" +
+                    ">" +
+                    "<'row dt-table'" +
+                    "<'sixteen wide column'tr>" +
+                    ">" +
+                    "<'row'" +
+                    "<'seven wide column'i>" +
+                    "<'right aligned nine wide column'p>" +
+                    ">" +
+                    ">",
+                buttons: [
+                    // {
+                    // extend:    'copyHtml5',
+                    // text:      '<i class="far fa-copy"></i>',
+                    // titleAttr: 'copiar',
+                    // className: "dark:bg-gray-800 dark:text-white"
+                    // },
+                    {
+                        text: '<button @click="openModal" class=""> crear usuario nuevo</button>',
+                        titleAttr: 'Crear usuario',
+                        className: "buttons-crear font-semibold leading-tight text-black bg-sky-700 rounded-full dark:bg-sky-700 dark:text-white"
+                    },
+                    {
+                        extend: 'excelHtml5',
+                        text: '<i class="fa fa-file-excel"></i>',
+                        titleAttr: 'Excel',
+                        filename: 'listado de usuarios',
+                        className: "dark:bg-gray-800 dark:text-white",
+
+                    },
+                    {
+                        extend: 'print',
+                        text: '<i class="fas fa-print"></i>',
+                        titleAttr: 'Imprimir',
+                        filename: 'listado de usuarios',
+                        className: "dark:bg-gray-800 dark:text-white"
+                    },
+                    {
+                        extend: 'pdfHtml5',
+                        text: '<i class="fa fa-file-pdf"></i>',
+                        titleAttr: 'PDF',
+                        filename: 'listado de usuarios',
+                        className: "dark:bg-gray-800 dark:text-white text-gray-800 rounded-md"
+                    },
+                    {
+                        extend: 'colvis',
+                        text: '±columnas',
+                        collectionLayout: 'fixed columns',
+                        collectionTitle: 'Control de visibilidad de columna',
+                        className: "dark:bg-gray-800 dark:text-white"
+                    }
+                ],
+                columnDefs: [{
+                        "targets": [1],
+                        "visible": false,
+                        "searchable": false
+                    },
+                    // {
+                    //     "targets": [8],
+                    //     "visible": false,
+                    //     "searchable": false
+                    // },
+                    // {
+                    //     "targets": [10],
+                    //     "visible": false,
+                    //     "searchable": false
+                    // },
+                    // {"targets": [10],"visible": false,"searchable": false},
+                    // {"targets": [11],"visible": false,"searchable": false},
+                    // {"targets": [12],"visible": false,"searchable": false},
+                    // {"targets": [13],"visible": false,"searchable": false},
+                    // {"targets": [14],"visible": false,"searchable": false},
+                    // {"targets": [15],"visible": false,"searchable": false},
+                    // {"targets": [16],"visible": false,"searchable": false},
+                    // {"targets": [17],"visible": false,"searchable": false},
+                    // {"targets": [18],"visible": false,"searchable": false},
+                    // {"targets": [19],"visible": false,"searchable": false},
+                    // {"targets": [20],"visible": false,"searchable": false},
+                    // {"targets": [21],"visible": false,"searchable": false},
+                    // {"targets": [22],"visible": false,"searchable": false},
+                    // {"targets": [23],"visible": false,"searchable": false},
+                    // {"targets": [24],"visible": false,"searchable": false},
+                    // {"targets": [25],"visible": false,"searchable": false},
+                    // {"targets": [26],"visible": false,"searchable": false},
+                    // {"targets": [27],"visible": false,"searchable": false},
+                    // {"targets": [28],"visible": false,"searchable": false},
+                    // {"targets": [29],"visible": false,"searchable": false},
+                    // {"targets": [30],"visible": false,"searchable": false},
+                    // {"targets": [31],"visible": false,"searchable": false},
+                    // {"targets": [32],"visible": false,"searchable": false},
+                    // {"targets": [33],"visible": false,"searchable": false},
+                    // {"targets": [35],"visible": false,"searchable": false},
+                    // {"targets": [36],"visible": false,"searchable": false},
+                ],
+                "drawCallback": function(settings) {
+                    $('.dataTables_wrapper .dataTables_filter input').addClass(
+                        "mr-4 pl-8 pr-2 text-sm text-gray-700 placeholder-gray-600 bg-gray-100 border-0 rounded-md dark:placeholder-gray-500 dark:focus:shadow-outline-gray dark:focus:placeholder-gray-600 dark:bg-gray-700 dark:text-gray-200 focus:placeholder-gray-500 focus:bg-white focus:border-purple-300 focus:outline-none focus:shadow-outline-purple form-input"
+                    );
+                    $('#example_length').removeClass("dataTables_length");
+                    $('#example_length').addClass("dark:text-white float-left");
+                    $('#example_filter').removeClass("dataTables_filter");
+                    $('#example_filter').addClass("dark:text-white float-right text-right");
+                    $('#example_info').removeClass("dataTables_info");
+                    $('#example_info').addClass("dark:text-white pt-7 float-left clear-both");
+                    $('#example tbody>tr>td').addClass("dark:bg-gray-800 dark:text-white");
+                    $('.dataTables_wrapper .dataTables_paginate .paginate_button').addClass(
+                        "dark:bg-gray-800 dark:text-white");
+                },
+                language: {
+                    "emptyTable": "Tabla Vacia",
+                    "info": "",
+                    "infoEmpty": "Sin informacion",
+                    "lengthMenu": "Mostrar _MENU_ registros por pagina",
+                    "loadingRecords": "Cargando...",
+                    "decimal": ".",
+                    "infoFiltered": "filtrado de _MAX_ entradas totales",
+                    "infoPostFix": "Mostrando del _START_ al _END_ de _TOTAL_ registros",
+                    "infoThousands": ",",
+                    "paginate": {
+                        "first": "Primero",
+                        "last": "Último",
+                        "next": "Siguiente",
+                        "previous": "Anterior"
+                    },
+                    "processing": "Procesando...",
+                    "search": "Buscar:",
+                    "thousands": ",",
+                    "zeroRecords": "No se encontro información",
+                },
+                ajax: "{{ route('datatable.permit') }}",
+                columns: [{
+
+                        "render": function(data, type, row) {
+
+                            return "<div class='flex items-center space-x-4 text-sm'>" +
+
+                                // "<button id='edit' onclick='edit(" + row['id'] + ")'" +
+                                // "class='inline-flex items-center justify-center  bg-yellow-700 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-yellow-400 focus:outline-none focus:bg-yellow-700 focus:ring focus:ring-red-200 active:bg-yellow-700 readonly:opacity-25 transition' aria-label='Edit'>" +
+                                // "<svg class='w-5 h-5' aria-hidden='true' fill='currentColor'" +
+                                // "viewBox='0 0 20 20'>" +
+                                // "<path fill-rule='evenodd'" +
+                                // "d='M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z'>" +
+                                // "</path>" +
+                                // "</svg>" +
+                                // "</button>" +
+
+                                "<button onclick='deletes(" + row['id'] + ")'" +
+                                "class='inline-flex items-center justify-center  bg-red-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 active:bg-red-600 readonly:opacity-25 transition' aria-label='Delete'>" +
+                                "<svg class='w-5 h-5' aria-hidden='true' fill='currentColor'" +
+                                "viewBox='0 0 20 20'>" +
+                                "<path fill-rule='evenodd'" +
+                                "d='M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z'" +
+                                "clip-rule='evenodd'></path>" +
+                                "</svg>" +
+                                "</button>" +
+
+                                // "<button onclick='view(" + row['id'] + ")'" +
+                                // "class='inline-flex items-center justify-center  bg-blue-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 active:bg-red-600 disabled:opacity-25 transition'>" +
+                                // "<svg class='w-5 h-5' fill='none' stroke='currentColor'" +
+                                // "stroke-width='1.5' viewBox='0 0 24 24'" +
+                                // "xmlns='http://www.w3.org/2000/svg' aria-hidden='true'>" +
+                                // "<path stroke-linecap='round' stroke-linejoin='round'" +
+                                // "d='M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z'>" +
+                                // "</path>" +
+                                // "<path stroke-linecap='round' stroke-linejoin='round'" +
+                                // "d='M15 12a3 3 0 11-6 0 3 3 0 016 0z'></path>" +
+                                // "</svg>" +
+                                // "</button>" +
+
+                                "</div>";
+                        },
+                        "className": "dark:bg-gray-800 dark:text-white border-b"
+                    },
+                    {
+                        data: 'id',
+                        "className": "dark:bg-gray-800 dark:text-white border-b"
+                    },
+                    {
+                        data: 'permit_number',
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        data: 'contract_number',
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        data: 'description_typeContract',
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        data: 'permit_start_date',
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        data: 'permit_end_date',
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        data: 'permit_code',
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                    {
+                        "render": function(data, type, row) {
+                            if (row['fuec_state'] == 1) {
+                                return "<span class='px-2 py-1 font-semibold leading-tight text-gray-700 bg-gray-100 rounded-full dark:text-gray-100 dark:bg-gray-700'>{{ __('INICIAL') }}</span>";
+                            } else if (row['fuec_state'] == 2) {
+                                return "<span class='px-2 py-1 font-semibold leading-tight text-yellow-700 bg-yellow-100 rounded-full dark:bg-yellow-700 dark:text-yellow-100'>{{ __('EN CURSO') }}</span>";
+                            } else if (row['fuec_state'] == 3) {
+                                return "<span class='px-2 py-1 font-semibold leading-tight text-yellow-700 bg-yellow-100 rounded-full dark:bg-yellow-700 dark:text-yellow-100'>{{ __('PENDIENTE') }}</span>";
+                            } else if (row['fuec_state'] == 4) {
+                                return "<span class='px-2 py-1 font-semibold leading-tight text-sky-700 bg-sky-300 rounded-full dark:bg-sky-700 dark:text-sky-100'>{{ __('FINALIZADO') }}</span>";
+                            } else if (row['fuec_state'] == 5) {
+                                return "<span class='px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-full dark:text-red-100 dark:bg-red-700'>{{ __('CANCELADO') }}</span>";
+                            }
+                        },
+                        "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
+                    },
+                ]
+            }).columns.adjust().responsive.recalc();
+
+            $('a.toggle-vis').on('click', function(e) {
+                e.preventDefault();
+
+                // Get the column API object
+                var column = table.column($(this).attr('data-column'));
+
+                // Toggle the visibility
+                column.visible(!column.visible());
+            });
+
+            $('#example tbody').on('click', 'tr', function() {
+
+                var tr = $(this).closest('tr');
+                var row = table.row(tr);
+                if (row.child.isShown()) {
+                    $('table.dataTable.dtr-inline.collapsed>tbody>tr>td.child').removeClass("child");
+                    $('table.dataTable.dtr-inline.collapsed>tbody>tr>td').addClass(
+                        "dark:bg-gray-800 dark:text-white");
+                }
+            });
+
+
+        });
+
         var limitcars = 0;
 
         // Livewire.on('prueba', () => {
@@ -1002,6 +1266,23 @@
             window.open('http://127.0.0.1:8000/pdfs/pdf-fuec/' + id, '_blank')
         }
 
+        const steps = ['1', '2'];
+        const swalQueueStep = swal.mixin({
+            icon: 'error',
+            confirmButtonText: 'Vehiculos',
+            cancelButtonText: 'Conductores',
+            progressSteps: steps,
+            // input: 'text',
+            // inputAttributes: {
+            //     required: true
+            // },
+            reverseButtons: true,
+            // validationMessage: 'This field is required'
+        });
+
+        const values = [];
+        let currentStep;
+
         Livewire.on('crud', (contractnumber, process, contractType, id, permit_number) => {
 
             var process = process.process;
@@ -1055,7 +1336,145 @@
                 // Se ha eliminado el permiso numero xxx del contrato numero xxx tipo xxx sactisfactoriamente
 
                 swal.fire(main, message, 'success')
+            } else if (process == 4) {
+
+                var driverHTML = '';
+
+                driverHTML +=
+                    '<strong><h2>Revisa la fecha final del FUEC, puesto que para los siguientes conductores o vehiculos estan vencidos o se vencen documentos dentro de la vigencia del FUEC</h2></strong> <br>';
+                if (id != null) {
+                    for (let a = 0; a < id.length; a++) {
+                        driverHTML += '<div>' +
+                            '<h1> <strong>Conductor</strong> ' + id[a]['fullname'] + '</h1>' +
+                            '<table class="w-full whitespace-no-wrap">' +
+                            '<thead>' +
+                            '<tr' +
+                            'class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">' +
+                            '<th class="">Documento</th>' +
+                            '<th class="">Fecha Vencimiento</th>' +
+                            '</tr>' +
+                            '</thead>' +
+                            '<tbody class=" divide-y dark:divide-gray-700 ">';
+
+                        for (let i = 1; i < Object.keys(id[a].documents).length; i++) {
+
+                            driverHTML += '<tr class="text-gray-700 dark:text-gray-400">' +
+                                '<td class=" text-sm">' +
+                                '<span type = "button"' +
+                                'class ="text-white w-full text-xs leading-5 transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg sm:w-auto sm:px-4 active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple btn-file" >' +
+                                id[a]['documents']['document' + [i]] +
+                                '</span>' +
+                                '</td>' +
+                                '<td class=" text-xs">' +
+                                '<span type = "button"' +
+                                'class ="text-white w-full text-xs leading-5 transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg sm:w-auto sm:px-4 active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple btn-file" >' +
+                                id[a]['dates']['date' + [i]] +
+                                '</span>' +
+                                '</td>' +
+                                '</tr>';
+
+                        }
+                        driverHTML += '</tbody>' +
+                            '</table>' +
+                            '</div>';
+                    }
+                }
+
+                var vehicleHTML = '';
+
+                vehicleHTML +=
+                    '<strong><h2>Revisa la fecha final del FUEC, puesto que para los siguientes conductores o vehiculos estan vencidos o se vencen documentos dentro de la vigencia del FUEC</h2></strong> <br>';
+                if (permit_number != null) {
+                    for (let a = 0; a < permit_number.length; a++) {
+                        vehicleHTML += '<div>' +
+                            '<h1> <strong>Placa</strong> ' + permit_number[a]['plate'] + '</h1>' +
+                            '<table class="w-full whitespace-no-wrap">' +
+                            '<thead>' +
+                            '<tr' +
+                            'class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">' +
+                            '<th class="">Documento</th>' +
+                            '<th class="">Fecha Vencimiento</th>' +
+                            '</tr>' +
+                            '</thead>' +
+                            '<tbody class=" divide-y dark:divide-gray-700 ">';
+
+                        for (let i = 1; i < Object.keys(permit_number[a].documents).length; i++) {
+
+                            vehicleHTML += '<tr class="text-gray-700 dark:text-gray-400">' +
+                                '<td class=" text-sm">' +
+                                '<span type = "button"' +
+                                'class ="text-white w-full text-xs leading-5 transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg sm:w-auto sm:px-4 active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple btn-file" >' +
+                                permit_number[a]['documents']['document' + [i]] +
+                                '</span>' +
+                                '</td>' +
+                                '<td class=" text-xs">' +
+                                '<span type = "button"' +
+                                'class ="text-white w-full text-xs leading-5 transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg sm:w-auto sm:px-4 active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple btn-file" >' +
+                                permit_number[a]['dates']['date' + [i]] +
+                                '</span>' +
+                                '</td>' +
+                                '</tr>';
+
+                        }
+                        vehicleHTML += '</tbody>' +
+                            '</table>' +
+                            '</div>';
+                    }
+                }
+
+                // Definimos una función asincrónica que contiene el bucle
+                async function runSteps() {
+                    for (currentStep = 0; currentStep < steps.length;) {
+
+                        // console.log(currentStep);
+                        // let newcontenidoHTML = '';
+
+                        if (currentStep == 1) {
+                            // console.log('si');
+                            contenidoHTML = vehicleHTML;
+                        } else {
+                            // console.log('no');
+                            contenidoHTML = driverHTML;
+                        }
+
+                        const result = await swalQueueStep.fire({
+                            // title: `Question ${steps[currentStep]}`,
+                            html: contenidoHTML,
+                            // inputValue: values[currentStep],
+                            showCancelButton: currentStep > 0,
+                            showConfirmButton: currentStep == 0,
+                            currentProgressStep: currentStep
+                        });
+
+                        if (result.value) {
+                            values[currentStep] = result.value;
+                            currentStep++;
+                        } else if (result.dismiss === swal.DismissReason.cancel) {
+                            currentStep--;
+                        } else {
+                            break;
+                        }
+                    }
+
+                    // if (currentStep === steps.length) {
+                    //     swal.fire(JSON.stringify(values));
+                    // }
+                }
+
+                // Llamamos a la función asincrónica para ejecutar el código
+                runSteps();
+            } else if (process == 5) {
+                // message = 'Permit number ' + permit_number + ' of contract number ' + contractnumber +
+                //     ' type ' + contractType + ' has been removed successfully';
+
+                // Se ha eliminado el permiso numero xxx del contrato numero xxx tipo xxx sactisfactoriamente
+                message = 'Las fechas del Fuec deben de estar dentro de la fecha de inicio y la fecha final del contrato N° ' + contractnumber + ' de ' + contractType;
+
+                swal.fire(main, message, 'error')
             }
+
+
+            $('#example').DataTable().ajax.reload(null, 1);
 
         })
 
@@ -1465,7 +1884,7 @@
             // console.log(current_active_step_a);
             $('.f1 fieldset').fadeOut(400, function() {
                 // change icons
-                console.log('prueba');
+                // console.log('prueba');
                 // parpadeo(false);
                 // lastsaved();
                 // progress bar

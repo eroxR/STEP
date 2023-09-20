@@ -27,7 +27,7 @@ class ContractTypeSeeder extends Seeder
         $tipoContrato2->save();
         
         $tipoContrato3 = new contractType();
-        $tipoContrato3->description_typeContract="Contrato para transporte de turistas";
+        $tipoContrato3->description_typeContract="Contrato para transporte de turistas";
         $tipoContrato3->contract_name="Empresa Turismo";
         $tipoContrato3->save();
         
@@ -42,18 +42,13 @@ class ContractTypeSeeder extends Seeder
         $tipoContrato5->save();
 
         $tipoContrato6 = new contractType();
-        $tipoContrato6->description_typeContract="Contrato para Padres";
-        $tipoContrato6->contract_name="por cada papa";
+        $tipoContrato6->description_typeContract="convenio de colaboracion empresarial";
+        $tipoContrato6->contract_name="Comveni Empresarial";
         $tipoContrato6->save();
 
         $tipoContrato7 = new contractType();
-        $tipoContrato7->description_typeContract="Anexo";
-        $tipoContrato7->contract_name="Anexo";
+        $tipoContrato7->description_typeContract="Contrato de Vinculación";
+        $tipoContrato7->contract_name="Vinculación";
         $tipoContrato7->save();
-
-        $tipoContrato8 = new contractType();
-        $tipoContrato8->description_typeContract="Contrato de Vinculación";
-        $tipoContrato8->contract_name="Vinculación";
-        $tipoContrato8->save();
     }
 }
