@@ -127,7 +127,7 @@ class ManagePermissions extends Component
             'permit_start_date' => $this->permit_start_date,
             'permit_end_date' => $this->permit_end_date,
             'permit_number' => $this->permit_number,
-            'fuec_state' => '1',
+            'fuec_state' => '0',
             'permit_code' => $this->permit_code,
         ]);
 

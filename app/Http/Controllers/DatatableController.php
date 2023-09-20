@@ -2,13 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\contract;
-use App\Models\permit;
 use App\Models\User;
-use App\Models\vehicle;
 use Illuminate\Http\Request;
 use Database;
-use Illuminate\Support\Facades\DB;
 
 class DatatableController extends Controller
 {
@@ -79,25 +75,25 @@ class DatatableController extends Controller
             'phone_cellular',
             // 'eps',
             'description_eps',
-            // 'eps_status',
+            'eps_status',
             'date_eps',
             // 'blood_type',
             'blood_type_description',
             // 'pension',
             'description_pension',
-            // 'pension_status',
+            'pension_status',
             'date_pension',
             // 'layoffs',
             'description_layoffs',
-            // 'status_layoffs',
+            'status_layoffs',
             'date_layoffs',
             // 'arl',
             'description_arl',
-            // 'arl_status',
+            'arl_status',
             'arl_date',
             // 'compensationbox',
             'description_compensationbox',
-            // 'compensationbox_status',
+            'compensationbox_status',
             'date_compensationbox',
             'date_withdrawal_user',
             // 'civil_status',

@@ -26,6 +26,7 @@ return new class extends Migration
 			$table->unsignedBigInteger('owner_vehicle')->nullable();//propietario_vehiculo
 			$table->unsignedBigInteger('driver_id')->nullable();//conductor
 			$table->integer('number_passenger')->nullable();//nunero_pasajeros
+
 			$table->date('secure_end_date')->nullable();//fecha_fin_SOAT
 			// $table->string('number_accreditation_soat')->nullable();//numero_acreditacion_soat
 			$table->date('technomechanical_end_date')->nullable();//fecha_fin_tecnomecanica

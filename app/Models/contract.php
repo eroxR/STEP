@@ -55,8 +55,9 @@ class contract extends Model
         }
 
         protected $fillable = [
-            'contract_number',
+            'contract_number',			
             'type_contract',
+
             'route_trip_contract',
             'date_start_contract',
             'contract_end_date',
@@ -101,5 +102,6 @@ class contract extends Model
 			'return_contract',
             'municipality',
             'legal_bond',
+
         ];    
 }

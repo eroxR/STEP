@@ -41,9 +41,10 @@ return new class extends Migration
 			$table->string('school_name', 150)->nullable();//nombre_colegio
 			$table->string('address_school', 150)->nullable();//direccion_colegio
 			$table->string('school_year', 5)->nullable();//año_escolar
-			$table->enum('contract_with', ['1','2','3','4'])->default('1')->nullable(); //contrato_con['Con Grupo PADRES','Con UNIVERSITARIOS','Con ESTUDIANTE CON ACUDIENTE','Con RECTOR O REPRESENTANTE LEGAL Del Colegio'])->default('INICIAL');
+			$table->enum('contract_with', ['1','2','3'])->default('1')->nullable(); //contrato_con['PADRES','UNIVERSITARIOS','RECTOR O REPRESENTANTE LEGAL'])->default('INICIAL');
 			$table->unsignedBigInteger('identification_represent_legal')->nullable();//identificación_represen_legal
 			$table->bigInteger('identificationcard_represent_legal')->nullable();//cedula_represen_legal
+
 			$table->time('exit_contract')->nullable();//salida
 			$table->time('arrival_contract')->nullable();//llegada
 			$table->time('return_contract')->nullable();//regreso

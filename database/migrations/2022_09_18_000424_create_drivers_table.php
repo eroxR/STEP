@@ -33,7 +33,7 @@ return new class extends Migration
 			$table->date('psicosensometrico')->nullable();//cinco_sentidos_conduccion
 			// $table->date('Active_Passive_Security_vehicle')->nullable();//Seguridad_activa_pasiva_vehiculo
 			$table->date('Road_safety')->nullable();//Seguridad_Vial
-			$table->enum('driver_status', ['1', '2'])->nullable();//estado_conductor['Inhabilitado','Habilitado']
+			$table->enum('driver_status', ['0', '1'])->nullable();//estado_conductor['Inhabilitado','Habilitado']
 			$table->integer('Linked')->nullable();//Vinculado
 			
 			$table->timestamps();

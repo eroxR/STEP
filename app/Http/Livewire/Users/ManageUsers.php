@@ -17,6 +17,26 @@ use App\Models\driver;
 use App\Models\economicActivity;
 use App\Models\educationalLevel;
 use App\Models\eps;
+use App\Models\historicalArl;
+use App\Models\historicalCompensationBox;
+use App\Models\historicalDefensiveDriving;
+use App\Models\historicalDistractions;
+use App\Models\historicalDrivingMethods;
+use App\Models\historicalDrivingTest;
+use App\Models\historicalDrugsAlchoolemia;
+use App\Models\historicalEps;
+use App\Models\historicalFirst_Aid;
+use App\Models\historicalFirstResponder;
+use App\Models\historicalFiveSensesDriving;
+use App\Models\historicalLandTransportStandards;
+use App\Models\historicalLayoffs;
+use App\Models\historicalLicense;
+use App\Models\historicalNormTransit;
+use App\Models\historicalPension;
+use App\Models\historicalRoadSafety;
+use App\Models\historicalSafetyActivePassiveVehicles;
+use App\Models\historicalSimits;
+use App\Models\historicalTipsNormative;
 use App\Models\identification;
 use App\Models\layoffs;
 use App\Models\licenseCategory;
@@ -43,6 +63,7 @@ class ManageUsers extends Component
     public $countrys, $Departments = null, $citiesSelects = null, $name, $extension, $Route, $Doc, $DocFecha, $RouteStart = 'public/STEP/users/Ident_',
         $editUsers = null, $editDriver = null,
         $certificate = [
+
             'Certificado_Titulo_Educación_usuario_', 'Certificado_Laboral_Ultima_Empres_usuario_', 'Certificado_Eps_usuario_', 'Certificado_Pension_usuario_', 'Certificado_Cesantias_usuario_',
             'Certificado_Arl_usuario_', 'Certificado_Caja_compensacion_usuario_', 'Certificado_Documento_del_Beneficiario_usuario_', 'Certificado_de_Estudio_Beneficiario_usuario_', 'Certificado_de_Licencia_de_Conducción_usuario_',
             'Certificado_drogas_alchoolemia_usuario_', 'Certificado_Consultas_SIMIT_usuario_', 'Certificado_Normas_Transito_usuario_', 'Certificado_Manejo_Defensivo_usuario_',
@@ -50,6 +71,7 @@ class ManageUsers extends Component
 
         ],
         $Role = ['Cliente','Monitor','CoodinadorOperativo','RecursosHumanosEI','ComprasSuministros','Conductor','SistemasGestión','GerenteGeneral','AuditorInterno','Proveedor','Vinculado','Administrador'];
+
     public $username, $email, $password, $identificationcard, $usertype, $user_entry_date, $date_withdrawal_user, $firstname,
         $lastname, $profile_photo_path, $identification, $secondname, $motherslastname, $birthdate, $age, $type_sex, $country, $Department,
         $city, $address, $phone, $phone_cellular, $eps, $eps_status, $date_eps, $blood_type, $pension, $pension_status, $date_pension, $layoffs,
@@ -174,7 +196,6 @@ class ManageUsers extends Component
 
     public function store()
     {
-        // dd($this->DocNit);
 
         if ($this->usertype == 3) {
 
@@ -213,7 +234,6 @@ class ManageUsers extends Component
         } else if ($documentUp[0]) {
             return $this->emit('crud', ['document' => $text[0]], ['process' => 7], ['name' => '']);
         }
-
 
         if ($this->usertype == 2) {
             if ($this->charge != 5) {
@@ -310,15 +330,20 @@ class ManageUsers extends Component
             'phone'  => $this->phone,
             'phone_cellular'  => $this->phone_cellular,
             'eps'  => $this->eps,
+            'eps_status'  => $this->eps_status,
             'date_eps'  => $this->date_eps,
             'blood_type'  => $this->blood_type,
             'pension'  => $this->pension,
+            'pension_status'  => $this->pension_status,
             'date_pension'  => $this->date_pension,
             'layoffs'  => $this->layoffs,
+            'status_layoffs'  => $this->status_layoffs,
             'date_layoffs'  => $this->date_layoffs,
             'arl'  => $this->arl,
+            'arl_status'  => $this->arl_status,
             'arl_date'  => $this->arl_date,
             'compensationbox'  => $this->compensationbox,
+            'compensationbox_status'  => $this->compensationbox_status,
             'date_compensationbox'  => $this->date_compensationbox,
             'charge'  => $this->charge,
             'civil_status'  => $this->civil_status,
@@ -358,6 +383,7 @@ class ManageUsers extends Component
             'salary'  => $this->salary,
             'aid_transport'  => $this->aid_transport,
             'work_area'  => $this->work_area,
+
         ])->assignRole($rol);
 
         $this->documentsEmployees($user);

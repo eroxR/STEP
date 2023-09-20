@@ -18,12 +18,14 @@
     <div class="py-12 mb-2 mt-4">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="justify-center flex">
-                <h1 class="text-black dark:text-white text-4xl rounded-lg border-b-green-800 p-1">
-                    {{ __('Manage Contracts') }}</h1>
+                {{-- class="bg-white overflow-hidden shadow-xl sm:rounded-lg border-gray-50-s dark:bg-gray-800 dark:text-white" --}}
+                <h1 class="text-black dark:text-white text-4xl rounded-lg border-b-green-800 p-1">{{ __('Manage Contracts') }}</h1>
+                {{-- background: black;
+                border-radius: 3px;
+                padding: 0.3rem; --}}
             </div>
         </div>
         <div class="w-full overflow-hidden rounded-lg shadow-xs mt-4">
-
             <div class=" overflow-x-auto" style="width:100%;" wire:ignore>
 
                 <table id="example" class="stripe dark:border-gray-700 bg-gray-50 dark:text-white dark:bg-gray-800"
@@ -77,7 +79,77 @@
                     </tbody>
 
                 </table>
-
+            </div>
+            <div
+                class="grid px-4 py-3 text-xs font-semibold tracking-wide text-gray-500 uppercase border-t dark:border-gray-700 bg-gray-50 sm:grid-cols-9 dark:text-gray-400 dark:bg-gray-800">
+                {{-- <span class="flex items-center col-span-3">
+                    Showing 21-30 of 100
+                </span>
+                <span class="col-span-2"></span> --}}
+                <!-- Pagination -->
+                {{-- <span class="flex col-span-4 mt-2 sm:mt-auto sm:justify-end">
+                    <nav aria-label="Table navigation">
+                        <ul class="inline-flex items-center">
+                            <li>
+                                <button
+                                    class="px-3 py-1 rounded-md rounded-l-lg focus:outline-none focus:shadow-outline-purple"
+                                    aria-label="Previous">
+                                    <svg class="w-4 h-4 fill-current" aria-hidden="true" viewBox="0 0 20 20">
+                                        <path
+                                            d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                                            clip-rule="evenodd" fill-rule="evenodd"></path>
+                                    </svg>
+                                </button>
+                            </li>
+                            <li>
+                                <button class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple">
+                                    1
+                                </button>
+                            </li>
+                            <li>
+                                <button class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple">
+                                    2
+                                </button>
+                            </li>
+                            <li>
+                                <button
+                                    class="px-3 py-1 text-white transition-colors duration-150 bg-purple-600 border border-r-0 border-purple-600 rounded-md focus:outline-none focus:shadow-outline-purple">
+                                    3
+                                </button>
+                            </li>
+                            <li>
+                                <button class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple">
+                                    4
+                                </button>
+                            </li>
+                            <li>
+                                <span class="px-3 py-1">...</span>
+                            </li>
+                            <li>
+                                <button class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple">
+                                    8
+                                </button>
+                            </li>
+                            <li>
+                                <button class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple">
+                                    9
+                                </button>
+                            </li>
+                            <li>
+                                <button
+                                    class="px-3 py-1 rounded-md rounded-r-lg focus:outline-none focus:shadow-outline-purple"
+                                    aria-label="Next">
+                                    <svg class="w-4 h-4 fill-current" aria-hidden="true" viewBox="0 0 20 20">
+                                        <path
+                                            d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                            clip-rule="evenodd" fill-rule="evenodd"></path>
+                                    </svg>
+                                </button>
+                            </li>
+                        </ul>
+                    </nav>
+                </span> --}}
+                {{ $contracts->links('livewire.tailwind') }}
             </div>
         </div>
 
@@ -104,8 +176,7 @@
             <header class="flex justify-center border-b-fuchsia-800 border-b">
                 <!-- Modal title -->
                 <p class="justify-start mb-2 text-lg font-semibold text-gray-700 dark:text-gray-300">
-                <h1 class="text-black dark:text-white text-4xl1">{{ __('Creating new contract') }}<span id="typed2"
-                        class="typed2">.</span>
+                <h1 class="text-black dark:text-white text-4xl1">{{ __('Creating new contract') }}<span id="typed2" class="typed2">.</span>
                     <span id="typed3" class="typed3">.</span>
                     <span id="typed4" class="typed4">.</span>
                     <span id="typed5" class="typed5">.</span>
@@ -229,10 +300,8 @@
 
                             <div class="flex space-x-4 ">
 
-                                <div class="w-6-12" id="divIdentification">
-                                    <label id="labelIdentification"
-                                        class="Inactive text-gray-700 dark:text-gray-400">Tipo de
-                                        Identificación</label>
+                                <div class="w-6-12"  id="divIdentification">
+                                    <label id="labelIdentification" class="Inactive text-gray-700 dark:text-gray-400">Tipo de Identificación</label>
                                     <select wire:model.defer="identification" id="identification"
                                         name="identification"
                                         class="Inactive block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
@@ -404,7 +473,6 @@
                                 </div>
 
                             </div>
-
                             <div class="flex space-x-4" id="divEstudiante">
 
                                 <div class="w30">
@@ -463,7 +531,6 @@
                             </div>
 
                             <div class="flex space-x-4">
-
                                 <div class="w-6-12">
                                     <label id="labelLegalRepresentative"
                                         class="text-gray-700 dark:text-gray-400">{{ __('legal representative') }}</label>
@@ -489,7 +556,6 @@
                             </div>
 
                             <div class="flex space-x-4">
-
                                 <div class="w-6-12" id="divIdentificationRepresentativeGroup">
                                     <label id="labelIdentificationRepresentativeGroup"
                                         class="text-gray-700 dark:text-gray-400">{{ __('identification representative group') }}</label>
@@ -551,7 +617,6 @@
                                 <div id="divRouteTrip" class="w-full">
                                     <label id="labelRouteTrip"
                                         class="text-gray-700 dark:text-gray-400">{{ __('route trip contract') }}</label>
-
                                     <textarea
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                                         name="" id="route_trip_contract" cols="1" rows="1" placeholder="ruta del contrato"
@@ -791,7 +856,6 @@
                         <fieldset>
 
                             <div class="flex space-x-4">
-
                                 <div class="w-6-12" id="divFamilyRelationship">
                                     <label id="labelFamilyRelationship"
                                         class="text-gray-700 dark:text-gray-400">{{ __('Family Relationship') }}</label>
@@ -826,14 +890,12 @@
                                 <div class="w-6-12" id="divDateStartContract">
                                     <label id="labelDateStartContract"
                                         class="text-gray-700 dark:text-gray-400">{{ __('date start contract') }}</label>
-
                                     <input
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                                         placeholder="fecha inicio del contrato" type="text"
                                         id="date_start_contract" readonly wire:model.defer="date_start_contract"
                                         onchange="fechasSet('date_start_contract')" />
                                 </div>
-
                                 <div class="w-6-12" id="divContractEndDate">
                                     <label id="labelContractEndDate"
                                         class="text-gray-700 dark:text-gray-400">{{ __('contract end date') }}</label>
@@ -847,7 +909,6 @@
                             </div>
 
                             <div class="flex space-x-4" id="">
-
                                 <div class="w-6-12" id="divQuantityVehicle">
                                     <label id="labelQuantityVehicle"
                                         class="text-gray-700 dark:text-gray-400">{{ __('quantity vehicle') }}</label>
@@ -859,8 +920,7 @@
                                 </div>
 
                                 <div class="w-6-12" id="divPassengerQuantity">
-                                    <label id="labelPassengerQuantity"
-                                        class="text-gray-700 dark:text-gray-400">{{ __('passenger quantity') }}</label>
+                                    <label id="labelPassengerQuantity" class="text-gray-700 dark:text-gray-400">{{ __('passenger quantity') }}</label>
 
                                     <input
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -896,8 +956,7 @@
                             <div class="flex space-x-4">
 
                                 <div class="w-6-12">
-                                    <label id="labelTipePay"
-                                        class="text-gray-700 dark:text-gray-400">{{ __('tipe pay') }}</label>
+                                    <label id="labelTipePay" class="text-gray-700 dark:text-gray-400">{{ __('tipe pay') }}</label>
                                     <select wire:model.defer="tipe_pay" id="tipe_pay"
                                         class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
                                         <option value="0">Selecciona el tipo de pago</option>
@@ -909,8 +968,7 @@
                                 </div>
 
                                 <div class="w-6-12">
-                                    <label id="labelContractValue"
-                                        class="text-gray-700 dark:text-gray-400">{{ __('contract value') }}</label>
+                                    <label id="labelContractValue" class="text-gray-700 dark:text-gray-400">{{ __('contract value') }}</label>
 
                                     <input
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -997,15 +1055,14 @@
                 <!-- Modal title -->
                 <p class="justify-start mb-2 text-lg font-semibold text-gray-700 dark:text-gray-300">
                 <h1 class="text-black dark:text-white text-4xl1">{{ __('Editing the information') }}
-
+                    
                     @if (!is_null($editContracts))
                         {{ $descriptionTypeContract }}
                     @endif
                     {{ __('number') }}
                     @if (!is_null($editContracts))
                         {{ $editContracts->contract_number }}
-                    @endif
-                    <span id="typed2" class="typed2">.</span>
+                    @endif<span id="typed2" class="typed2">.</span>
                     <span id="typed3" class="typed3">.</span>
                     <span id="typed4" class="typed4">.</span>
                     <span id="typed5" class="typed5">.</span>
@@ -1061,8 +1118,7 @@
                                     <div class="flex space-x-4 ">
 
                                         <div class="w-6-12 ">
-                                            <label class="text-gray-700 dark:text-gray-400">tipo de
-                                                identification</label>
+                                            <label class="text-gray-700 dark:text-gray-400">tipo de identification</label>
                                             <select wire:model="editContracts.identification" name="identification"
                                                 class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
                                                 <option value="0">Tipo de Identificación</option>
@@ -1074,8 +1130,7 @@
                                         </div>
 
                                         <div class="w-6-12 ">
-                                            <label
-                                                class="text-gray-700 dark:text-gray-400">{{ __('contract document') }}</label>
+                                            <label class="text-gray-700 dark:text-gray-400">{{ __('contract document') }}</label>
 
                                             <input
                                                 class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -1089,8 +1144,7 @@
                                     <div class="flex space-x-4">
 
                                         <div class="w-6-12 ">
-                                            <label
-                                                class="text-gray-700 dark:text-gray-400">{{ __('contracting name') }}</label>
+                                            <label class="text-gray-700 dark:text-gray-400">{{ __('contracting name') }}</label>
 
                                             <input
                                                 class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -1125,8 +1179,7 @@
                                         </div>
 
                                         <div class="w-6-12  ">
-                                            <label
-                                                class="text-gray-700 dark:text-gray-400">{{ __('contracting phone') }}</label>
+                                            <label class="text-gray-700 dark:text-gray-400">{{ __('contracting phone') }}</label>
 
                                             <input
                                                 class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -1148,8 +1201,7 @@
                                         <div class="flex space-x-4">
 
                                             <div class="w-6-12">
-                                                <label
-                                                    class="text-gray-700 dark:text-gray-400">{{ __('school name') }}</label>
+                                                <label class="text-gray-700 dark:text-gray-400">{{ __('school name') }}</label>
 
                                                 <input
                                                     class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -1158,8 +1210,7 @@
                                             </div>
 
                                             <div class="w-6-12">
-                                                <label
-                                                    class="text-gray-700 dark:text-gray-400">{{ __('address school') }}</label>
+                                                <label class="text-gray-700 dark:text-gray-400">{{ __('address school') }}</label>
 
                                                 <input
                                                     class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -1370,8 +1421,7 @@
                                     <div class="flex space-x-4">
 
                                         <div class="w-full">
-                                            <label
-                                                class="text-gray-700 dark:text-gray-400">{{ __('route trip contract') }}</label>
+                                            <label class="text-gray-700 dark:text-gray-400">{{ __('route trip contract') }}</label>
 
                                             <textarea
                                                 class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -1394,8 +1444,7 @@
                                     <div class="flex space-x-4">
 
                                         <div class="w-6-12">
-                                            <label
-                                                class="text-gray-700 dark:text-gray-400">{{ __('date start contract') }}</label>
+                                            <label class="text-gray-700 dark:text-gray-400">{{ __('date start contract') }}</label>
 
                                             <input
                                                 class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -1404,8 +1453,7 @@
                                         </div>
 
                                         <div class="w-6-12">
-                                            <label
-                                                class="text-gray-700 dark:text-gray-400">{{ __('contract end date') }}</label>
+                                            <label class="text-gray-700 dark:text-gray-400">{{ __('contract end date') }}</label>
 
                                             <input
                                                 class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -1417,8 +1465,7 @@
                                     <div class="flex space-x-4">
 
                                         <div class="w-6-12">
-                                            <label
-                                                class="text-gray-700 dark:text-gray-400">{{ __('quantity vehicle') }}</label>
+                                            <label class="text-gray-700 dark:text-gray-400">{{ __('quantity vehicle') }}</label>
 
                                             <input
                                                 class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -1427,8 +1474,7 @@
                                         </div>
 
                                         <div class="w-6-12">
-                                            <label
-                                                class="text-gray-700 dark:text-gray-400">{{ __('passenger quantity') }}</label>
+                                            <label class="text-gray-700 dark:text-gray-400">{{ __('passenger quantity') }}</label>
 
                                             <input
                                                 class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -1440,8 +1486,7 @@
                                     <div class="flex space-x-4">
 
                                         <div class="w-6-12">
-                                            <label
-                                                class="text-gray-700 dark:text-gray-400">{{ __('total disposition') }}</label>
+                                            <label class="text-gray-700 dark:text-gray-400">{{ __('total disposition') }}</label>
                                             <select wire:model="editContracts.total_disposition"
                                                 class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
                                                 <option value="0">Selecciona si necesita Disposición Total
@@ -1465,8 +1510,7 @@
                                     <div class="flex space-x-4">
 
                                         <div class="w-6-12">
-                                            <label
-                                                class="text-gray-700 dark:text-gray-400">{{ __('tipe pay') }}</label>
+                                            <label class="text-gray-700 dark:text-gray-400">{{ __('tipe pay') }}</label>
                                             <select wire:model="editContracts.tipe_pay"
                                                 class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
                                                 <option value="0">Selecciona el tipo de pago</option>
@@ -1478,8 +1522,7 @@
                                         </div>
 
                                         <div class="w-6-12">
-                                            <label
-                                                class="text-gray-700 dark:text-gray-400">{{ __('contract value') }}</label>
+                                            <label class="text-gray-700 dark:text-gray-400">{{ __('contract value') }}</label>
 
                                             <input
                                                 class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -1999,7 +2042,6 @@
             })
         }
 
-
         function add() {
             i++;
             total.push(i);
@@ -2208,8 +2250,6 @@
 
                 swal.fire(main, message, 'error')
             }
-
-            $('#example').DataTable().ajax.reload(null, 1);
 
         })
 
@@ -3059,7 +3099,6 @@
         ];
 
         clave = [];
-
         function typeContract() {
 
             var contractType = document.getElementById('type_contract').value;
@@ -3070,7 +3109,6 @@
             switch (contractType) {
                 // colegios
                 case '1':
-
                     viewhideinputs('contract_with', 'Active', 'Inactive');
                     viewhideinputs('divRouteTrip', 'w-full', 'w-6-12');
                     clave.push(2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 118, 119, 120, 121);
@@ -3238,7 +3276,7 @@
         }
         //fin scritp de formulario paso a paso
 
-        function changeInput() {
+        function changeInput (){
             let change = false;
             // prueba = [];
 
@@ -3264,12 +3302,13 @@
                     if (change == true) {
                         viewhideinputs(camps[i], 'Inactive', 'Active');
                     } else {
-                        if (camps[i] == 'previous2' || camps[i] == 'previous3') {
+                        if (camps[i] == 'previous2' || camps[i] == 'previous3' || camps[i] == 'previous4' || camps[i] == 'previous5') {
                             document.getElementById(camps[i]).classList.remove('Inactive');
                         } else {
                             viewhideinputs(camps[i], '', 'Inactive');
-                        }
 
+                        }
+                        
                     }
                 }
 

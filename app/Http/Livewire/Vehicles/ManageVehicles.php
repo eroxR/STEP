@@ -33,12 +33,14 @@ class ManageVehicles extends Component
         $internal_external_owner_type, $admission_date, $vehicle_pickup_date, $cylinder_vehicle, $number_passenger, $front_suspension, $rear_suspension,
         $rear_brake_type, $front_brake_type, $type_direction, $vahicle_photo_path,
 
+
         $technomechanical_end_date, $secure_end_date, $expiration_card_operation, $expiration_preventive, $certificate_extracontractual, $civil_contractual,
 
         $DocPropertyCardNumber, $DocNumberTechnomechanicalAccreditation, $DocNumberAccreditationSoat, $DocCardOperation, $DocPreventive, $DocCertificateExtracontractual,
         $DocCivilContractual;
 
     protected $listeners = ['destroy', 'edit', 'documentUpdate', 'reactivado', 'searchImg'];
+
 
     protected $rules = [
 
@@ -93,6 +95,7 @@ class ManageVehicles extends Component
     {
         $this->property_card_number = strtoupper($this->property_card_number);
         $plate_vehicle = strtoupper($this->plate_vehicle);
+
 
         $plateExits = DB::table('vehicles')->where('plate_vehicle', $plate_vehicle)->value('plate_vehicle');
         $sideExits = DB::table('vehicles')->where('side_vehicle', $this->side_vehicle)->value('side_vehicle');
@@ -310,7 +313,6 @@ class ManageVehicles extends Component
     {
         $plate = DB::table('vehicles')->where('id', $id)->value('plate_vehicle');
         // dd($plate);
-        DB::table('contract_vehicle_permit')->where('vehicle_id', $id)->delete();
         vehicle::destroy($id);
 
         // $limitDelete = DB::table('documents')->where('documentable_id', $id)->where('documentable_Type', 'like', '%\vehicle%')->count();
@@ -469,9 +471,8 @@ class ManageVehicles extends Component
 
         $dimensionRims = dimensionRims::select('id', 'inch', 'type_rims')->get();
 
-        $owners = User::select('id', DB::raw('CONCAT(firstname, " " ,secondname, " " ,lastname, " " ,motherslastname) As owner'))->where('usertype', '4')->get();
+        $owners = User::select('id', DB::raw('CONCAT(firstname, secondname, lastname, motherslastname) As owner'))->where('usertype', '4')->get();
 
-        // $conducs = User::select('id', DB::raw('CONCAT(firstname, " " ,secondname, " " ,lastname, " " ,motherslastname) As conduc'))->where('charge', '5')->get();
 
         $conducs = user::select('id', DB::raw('CONCAT(firstname, " " ,secondname, " " ,lastname, " " ,motherslastname) As conduc'))
             ->where('charge', 5)->get();
@@ -576,4 +577,5 @@ class ManageVehicles extends Component
     {
         dd('si funciona');
     }
+
 }

@@ -1,17 +1,17 @@
 <div>
+
     <div class="py-12 mb-2 mt-4">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="justify-center flex">
                 {{-- class="bg-white overflow-hidden shadow-xl sm:rounded-lg border-gray-50-s dark:bg-gray-800 dark:text-white" --}}
-                <h1 class="text-black dark:text-white text-4xl rounded-lg border-b-yellow-800 p-1">
-                    {{ __('Manage Permissions') }}
+                <h1 class="text-black dark:text-white text-4xl rounded-lg border-b-yellow-800 p-1">{{ __('Manage Permissions') }}
                 </h1>
             </div>
         </div>
         <div class="w-full overflow-hidden rounded-lg shadow-xs mt-4">
-            {{-- <div class="px-4 py-2 mb-2 mt-1 ml-2 flex items-center border-b-fuchsia-800 border-b"> --}}
-            {{-- <h1 class="text-black dark:text-white">cambio de contraseña desde livewire</h1> --}}
-            {{-- <input
+            <div class="px-4 py-2 mb-2 mt-1 ml-2 flex items-center border-b-fuchsia-800 border-b">
+                {{-- <h1 class="text-black dark:text-white">cambio de contraseña desde livewire</h1> --}}
+                <input
                     class="flex-1 mr-4 pl-8 pr-2 text-sm text-gray-700 placeholder-gray-600 bg-gray-100 border-0 rounded-md dark:placeholder-gray-500 dark:focus:shadow-outline-gray dark:focus:placeholder-gray-600 dark:bg-gray-700 dark:text-gray-200 focus:placeholder-gray-500 focus:bg-white focus:border-purple-300 focus:outline-none focus:shadow-outline-purple form-input"
                     type="text" placeholder="Escribe una consulta sobre la tabla" wire:model="search">
 
@@ -19,39 +19,15 @@
                     class="px-2 py-1 font-semibold leading-tight text-black bg-sky-700 rounded-full dark:bg-sky-700 dark:text-white">
                     {{ __('create new permit') }}
                 </button>
-            </div> --}}
-
-            <div class=" overflow-x-auto" style="width:100%;" wire:ignore>
-
-                <table id="example" class="stripe dark:border-gray-700 bg-gray-50 dark:text-white dark:bg-gray-800"
-                    style="width:100%; padding-top: 1em;  padding-bottom: 1em;">
-                    <thead>
-                        <tr
-                            class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
-                            <th class="pl-4 py-2" data-priority="0">{{ __('Actions') }}</th>
-                            <th class="pl-4 py-2" data-priority="1">ID</th>
-                            <th class="pl-4 py-2" data-priority="2">{{ __('permit number') }}</th>
-                            <th class="pl-4 py-2" data-priority="3">{{ __('contract number') }}</th>
-                            <th class="pl-4 py-2" data-priority="4">{{ __('description typeContract') }}</th>
-                            <th class="pl-4 py-2" data-priority="5">{{ __('permit start date') }}</th>
-                            <th class="pl-4 py-2" data-priority="6">{{ __('permit end date') }}</th>
-                            <th class="pl-4 py-2" data-priority="7">{{ __('permit code') }}</th>
-                            <th class="pl-4 py-2" data-priority="8">{{ __('fuec state') }}</th>
-                        </tr>
-                    </thead>
-                    <tbody {{-- class="dark:bg-gray-800 dark:text-white" --}}>
-                    </tbody>
-
-                </table>
             </div>
 
-            {{-- <div class="w-full overflow-x-auto">
+            <div class="w-full overflow-x-auto">
                 @if ($permissions->count())
                     <table class="w-full">
                         <thead>
                             <tr
-                                class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800"> --}}
-            {{-- <th class="cursor-pointer px-4 py-3" wire:click="order('id')">
+                                class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
+                                {{-- <th class="cursor-pointer px-4 py-3" wire:click="order('id')">
 
                                     ID
 
@@ -67,7 +43,7 @@
                                     @endif
 
                                 </th> --}}
-            {{-- <th class="cursor-pointer px-4 py-3" wire:click="order('permit_number')">
+                                <th class="cursor-pointer px-4 py-3" wire:click="order('permit_number')">
 
                                     {{ __('permit number') }}
 
@@ -169,11 +145,11 @@
                         <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
 
                             @foreach ($permissions as $permit)
-                                <tr class="text-gray-700 dark:text-gray-400"> --}}
-            {{-- <td class="px-4 py-3 text-sm">
+                                <tr class="text-gray-700 dark:text-gray-400">
+                                    {{-- <td class="px-4 py-3 text-sm">
                                         {{ $permit->id }}
                                     </td> --}}
-            {{-- <td class="px-4 py-3 text-sm">
+                                    <td class="px-4 py-3 text-sm">
                                         {{ $permit->permit_number }}
                                     </td>
                                     <td class="px-4 py-3 text-sm">
@@ -231,9 +207,9 @@
                                     <td class="px-4 py-3">
                                         <div class="flex items-center space-x-4 text-sm">
                                             <button id="edit" onclick="edit({{ $permit }})"
-                                                class="inline-flex items-center justify-center  bg-yellow-700 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-yellow-400 focus:outline-none focus:bg-yellow-700 focus:ring focus:ring-red-200 active:bg-yellow-700 disabled:opacity-25 transition" --}}
-            {{-- flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray" aria-label="Edit">
-            {{-- <svg class="w-5 h-5" aria-hidden="true" fill="currentColor"
+                                                class="inline-flex items-center justify-center  bg-yellow-700 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-yellow-400 focus:outline-none focus:bg-yellow-700 focus:ring focus:ring-red-200 active:bg-yellow-700 disabled:opacity-25 transition"
+                                                {{-- flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray" --}} aria-label="Edit">
+                                                <svg class="w-5 h-5" aria-hidden="true" fill="currentColor"
                                                     viewBox="0 0 20 20">
                                                     <path
                                                         d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z">
@@ -241,9 +217,9 @@
                                                 </svg>
                                             </button>
                                             <button onclick="deletes({{ $permit->id }})"
-                                                class="inline-flex items-center justify-center  bg-red-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 active:bg-red-600 disabled:opacity-25 transition" --}}
-            {{-- flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray" aria-label="Delete">
-            {{-- <svg class="w-5 h-5" aria-hidden="true" fill="currentColor"
+                                                class="inline-flex items-center justify-center  bg-red-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 active:bg-red-600 disabled:opacity-25 transition"
+                                                {{-- flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray" --}} aria-label="Delete">
+                                                <svg class="w-5 h-5" aria-hidden="true" fill="currentColor"
                                                     viewBox="0 0 20 20">
                                                     <path fill-rule="evenodd"
                                                         d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
@@ -251,9 +227,9 @@
                                                 </svg>
                                             </button>
                                             <button onclick="view({{ $permit->id }})"
-                                                class="inline-flex items-center justify-center  bg-blue-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 active:bg-red-600 disabled:opacity-25 transition" --}}
-            {{-- flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray" aria-label="view">
-            {{-- <svg class="w-5 h-5" fill="none" stroke="currentColor"
+                                                class="inline-flex items-center justify-center  bg-blue-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 active:bg-red-600 disabled:opacity-25 transition"
+                                                {{-- flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray" --}} aria-label="view">
+                                                <svg class="w-5 h-5" fill="none" stroke="currentColor"
                                                     stroke-width="1.5" viewBox="0 0 24 24"
                                                     xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                                                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -262,10 +238,10 @@
                                                     <path stroke-linecap="round" stroke-linejoin="round"
                                                         d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
                                                 </svg>
-                                            </button> --}}
-            {{-- </div> --}}
-            {{-- </td> --}}
-            {{-- </tr>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
                             @endforeach
                         </tbody>
                     </table>
@@ -273,10 +249,10 @@
                     <div class="px-6 py-4 text-black dark:text-white">
                         No existe FUEC que coincidan con lo que estas buscando...
                     </div>
-                @endif --}}
+                @endif
 
-            {{-- </div> --}}
-            {{-- <div
+            </div>
+            <div
                 class="grid px-4 py-3 text-xs font-semibold tracking-wide text-gray-500 uppercase border-t dark:border-gray-700 bg-gray-50 sm:grid-cols-9 dark:text-gray-400 dark:bg-gray-800">
                 <span class="flex items-center col-span-3">
                     Showing 21-30 of 100
@@ -345,7 +321,7 @@
                         </ul>
                     </nav>
                 </span>
-            </div> --}}
+            </div>
         </div>
 
     </div>
@@ -371,8 +347,7 @@
             <header class="flex justify-center border-b-fuchsia-800 border-b">
                 <!-- Modal title -->
                 <p class="justify-start mb-2 text-lg font-semibold text-gray-700 dark:text-gray-300">
-                <h1 class="text-black dark:text-white text-4xl1">{{ __('Creating new permit') }}<span id="typed2"
-                        class="typed2">.</span>
+                <h1 class="text-black dark:text-white text-4xl1">{{ __('Creating new permit') }}<span id="typed2" class="typed2">.</span>
                     <span id="typed3" class="typed3">.</span>
                     <span id="typed4" class="typed4">.</span>
                     <span id="typed5" class="typed5">.</span>
@@ -459,17 +434,15 @@
 
                                 <div class="w-6-12">
 
-                                    <label class="text-gray-700 dark:text-gray-400">Selecciona el tipo de
-                                        contrato</label>
+                                    <label class="text-gray-700 dark:text-gray-400">Selecciona el tipo de contrato</label>
 
                                     <select wire:model="typeContract" name="typeContract" id="typeContract"
                                         onchange="contractType()"
                                         class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input">
                                         <option value="0">Tipo de contrato</option>
                                         @foreach ($typeContracts as $id => $typeContract)
-                                            @if ($id == 1 || $id == 2 || $id == 3 || $id == 4 || $id == 5)
-                                                <option value="{{ $id }}">{{ $typeContract }}</option>
-                                            @endif
+                                            <option value="{{ $id }}">
+                                                {{ $typeContract }}</option>
                                         @endforeach
                                     </select>
 
@@ -528,12 +501,11 @@
 
                             <div class="flex space-x-4" wire:ignore>
 
-                                <div class="w-full Inactive mt-12" id="divchangeDate">
+                                <div class="w-full Inactive" id="divchangeDate">
                                     <label
                                         class="ml-26 px-2 font-semibold leading-tight text-red-700 bg-red-100 rounded-full dark:text-red-100 dark:bg-red-700"
-                                        id="">
-                                        {{ __('You have changed your contract, remember to check the dates') }}
-                                    </label>
+                                        id=""> {{ __('You have changed your contract, remember to check the dates') }}
+                                    </label> 
                                 </div>
 
                             </div>
@@ -558,8 +530,7 @@
                                         conductor</label>
                                     <button id="chooseDrivers"
                                         class="Inactive ml-1-5 px-2 py-1 font-semibold leading-tight text-black bg-sky-700 rounded-full dark:bg-sky-700 dark:text-white"
-                                        type="button"
-                                        onclick="enable('select2','chooseDrivers')">{{ __('choose drivers') }}
+                                        type="button" onclick="enable('select2','chooseDrivers')">{{ __('choose drivers') }}
                                     </button>
 
                                     <select wire:model="driving" id="driving" name="driving" style="width: 100%"
@@ -594,13 +565,11 @@
 
                                 <div class="w-full" id="divCars">
 
-                                    <label class="text-gray-700 dark:text-gray-400" id="labelCars">Selecciona los
-                                        Vehiculos
+                                    <label class="text-gray-700 dark:text-gray-400" id="labelCars">Selecciona los Vehiculos
                                     </label>
                                     <button id="chooseVehicles"
                                         class="Inactive ml-1-5 px-2 py-1 font-semibold leading-tight text-black bg-sky-700 rounded-full dark:bg-sky-700 dark:text-white"
-                                        type="button"
-                                        onclick="enable('car','chooseVehicles')">{{ __('choose vehicles') }}
+                                        type="button" onclick="enable('car','chooseVehicles')">{{ __('choose vehicles') }}
                                     </button>
 
                                     <select wire:model="cars" name="cars" style="width: 100%;" id="cars"
@@ -679,29 +648,28 @@
 
                         @switch($editContratype)
                             @case(1)
-                                Colegios
+                            Colegios
                             @break
 
                             @case(2)
-                                Empresas
+                            Empresas
                             @break
 
                             @case(3)
-                                Empresa Turismo
+                            Empresa Turismo
                             @break
 
                             @case(4)
-                                Ocacionales
+                            Ocacionales
                             @break
 
                             @case(5)
-                                Usuarios de Servicios de Salud
+                            Usuarios de Servicios de Salud
                             @break
 
                             @default
                         @endswitch
-                    @endif
-                    <span id="typed2" class="typed2">.</span>
+                    @endif<span id="typed2" class="typed2">.</span>
                     <span id="typed3" class="typed3">.</span>
                     <span id="typed4" class="typed4">.</span>
                     <span id="typed5" class="typed5">.</span>
@@ -770,8 +738,7 @@
                                     <div class="flex space-x-4">
 
                                         <div class="w-6-12">
-                                            <label
-                                                class="text-gray-700 dark:text-gray-400">{{ __('permit start date') }}</label>
+                                            <label class="text-gray-700 dark:text-gray-400">{{ __('permit start date') }}</label>
 
                                             <input
                                                 class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -780,8 +747,7 @@
                                         </div>
 
                                         <div class="w-6-12">
-                                            <label
-                                                class="text-gray-700 dark:text-gray-400">{{ __('permit end date') }}</label>
+                                            <label class="text-gray-700 dark:text-gray-400">{{ __('permit end date') }}</label>
 
                                             <input
                                                 class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -1525,7 +1491,7 @@
                 single = ' conductor y un vehiculo';
             }
 
-            var dateStart = document.getElementById('permit_start_date').value;
+            var dateStart = document.getElementById('fecha_inicio_permiso').value;
             var dateEnd = document.getElementById('permit_end_date').value;
 
             if (dateStart != "" || dateEnd != "") {
@@ -1534,20 +1500,15 @@
 
             message = 'recuerda solo puedes escoger ' + limitcars + single;
 
-            if (limitcars > 1) {
-                swal.fire({
-                    position: 'center',
-                    icon: 'warning',
-                    title: message,
-                    showConfirmButton: false,
-                    timer: 1500
-                });
+            swal.fire({
+                position: 'center',
+                icon: 'warning',
+                title: message,
+                showConfirmButton: false,
+                timer: 1500
+            });
 
-                changeContract();
-            } else {
-                viewhideinputs('fieldset1Buttons', 'Inactive', 'Active');
-
-            }
+            changeContract();
 
         });
 
@@ -1575,7 +1536,7 @@
             var id = 'labelPermitStartDate';
             for (var i = 1; i <= 4; i++) {
                 // console.log('posición' + [i]);
-                viewhideinputs(id, 'Active', 'Inactive');
+                viewhideinputs(id, 'Inactive', 'Active');
 
                 if (id == 'labelPermitStartDate') {
                     id = 'permit_start_date';

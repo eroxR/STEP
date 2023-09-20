@@ -59,15 +59,20 @@ class User extends Authenticatable
         'phone',
         'phone_cellular',
         'eps',
+        'eps_status',
         'date_eps',
         'blood_type',
         'pension',
+        'pension_status',
         'date_pension',
         'layoffs',
+        'status_layoffs',
         'date_layoffs',
         'arl Índice',
+        'arl_status',
         'arl_date',
         'compensationbox',
+        'compensationbox_status',
         'date_compensationbox',
         'user_state',
         'user_entry_date',
@@ -110,7 +115,9 @@ class User extends Authenticatable
         'salary',
         'aid_transport',
         'work_area',
-        'username',
+        'username ',
+
+
     ];
 
     /**

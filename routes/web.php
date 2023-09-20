@@ -95,12 +95,6 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
 
 Route::get('datatable/users', [DatatableController::class,'user'])->name('datatable.user');
 
-Route::get('datatable/contracts', [DatatableController::class,'contract'])->name('datatable.contract');
-
-Route::get('datatable/permits', [DatatableController::class,'permit'])->name('datatable.permit');
-
-Route::get('datatable/vehicles', [DatatableController::class,'vehicle'])->name('datatable.vehicle');
-
 // pruebas
 
 

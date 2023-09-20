@@ -41,7 +41,6 @@
     <body>
         {{-- pagina 1 --}}
         <x-contractframes typeContract="{{ $titlecontract }}">
-
             @switch($contract->type_contract)
                 @case(1)
                     <div

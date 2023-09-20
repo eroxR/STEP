@@ -2,11 +2,22 @@
     <div class="py-12 mb-2 mt-4">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="justify-center flex">
-                <h1 class="text-black dark:text-white text-4xl rounded-lg border-b-orange-800 p-1">
-                    {{ __('Manage Vehicles') }}</h1>
+                {{-- class="bg-white overflow-hidden shadow-xl sm:rounded-lg border-gray-50-s dark:bg-gray-800 dark:text-white" --}}
+                <h1 class="text-black dark:text-white text-4xl rounded-lg border-b-orange-800 p-1">{{ __('Manage Vehicles') }}</h1>
             </div>
         </div>
         <div class="w-full overflow-hidden rounded-lg shadow-xs mt-4">
+            <div class="px-4 py-2 mb-2 mt-1 ml-2 flex items-center border-b-fuchsia-800 border-b">
+                {{-- <h1 class="text-black dark:text-white">cambio de contraseña desde livewire</h1> --}}
+                <input
+                    class="flex-1 mr-4 pl-8 pr-2 text-sm text-gray-700 placeholder-gray-600 bg-gray-100 border-0 rounded-md dark:placeholder-gray-500 dark:focus:shadow-outline-gray dark:focus:placeholder-gray-600 dark:bg-gray-700 dark:text-gray-200 focus:placeholder-gray-500 focus:bg-white focus:border-purple-300 focus:outline-none focus:shadow-outline-purple form-input"
+                    type="text" placeholder="Escribe una consulta sobre la tabla" wire:model="search">
+
+                <button @click="openModal"
+                    class="px-2 py-1 font-semibold leading-tight text-black bg-sky-700 rounded-full dark:bg-sky-700 dark:text-white">
+                    {{ __('create new Vehicle') }}
+                </button>
+            </div>
 
             <div class=" overflow-x-auto" style="width:100%;" wire:ignore>
 
@@ -57,8 +68,288 @@
 
                 </table>
 
-            </div>
+                                    ID
 
+                                    @if ($sort == 'id')
+
+                                        @if ($direction == 'asc')
+                                            <i class="fas fa-sort-alpha-up-alt "></i>
+                                        @else
+                                            <i class="fas fa-sort-alpha-down-alt "></i>
+                                        @endif
+                                    @else
+                                        <i class="fas fa-sort "></i>
+                                    @endif
+
+                                </th>
+                                <th class="cursor-pointer px-2 py-2" wire:click="order('plate_vehicle')">
+
+                                    {{ __('plate vehicle') }}
+
+                                    @if ($sort == 'plate_vehicle')
+
+                                        @if ($direction == 'asc')
+                                            <i class="fas fa-sort-alpha-up-alt "></i>
+                                        @else
+                                            <i class="fas fa-sort-alpha-down-alt "></i>
+                                        @endif
+                                    @else
+                                        <i class="fas fa-sort "></i>
+                                    @endif
+
+                                </th>
+                                <th class="cursor-pointer px-2 py-2" wire:click="order('model_vehicle')">
+
+                                    {{ __('model vehicle') }}
+
+                                    @if ($sort == 'model_vehicle')
+
+                                        @if ($direction == 'asc')
+                                            <i class="fas fa-sort-alpha-up-alt "></i>
+                                        @else
+                                            <i class="fas fa-sort-alpha-down-alt "></i>
+                                        @endif
+                                    @else
+                                        <i class="fas fa-sort "></i>
+                                    @endif
+
+                                </th>
+                                <th class="cursor-pointer px-2 py-2" wire:click="order('vehicle_type_name')">
+
+                                    {{ __('vehicle type name') }}
+
+                                    @if ($sort == 'vehicle_type_name')
+
+                                        @if ($direction == 'asc')
+                                            <i class="fas fa-sort-alpha-up-alt "></i>
+                                        @else
+                                            <i class="fas fa-sort-alpha-down-alt "></i>
+                                        @endif
+                                    @else
+                                        <i class="fas fa-sort "></i>
+                                    @endif
+
+                                </th>
+                                <th class="cursor-pointer px-2 py-2" wire:click="order('side_vehicle')">
+
+                                    {{ __('side vehicle') }}
+
+                                    @if ($sort == 'side_vehicle')
+
+                                        @if ($direction == 'asc')
+                                            <i class="fas fa-sort-alpha-up-alt "></i>
+                                        @else
+                                            <i class="fas fa-sort-alpha-down-alt "></i>
+                                        @endif
+                                    @else
+                                        <i class="fas fa-sort "></i>
+                                    @endif
+
+                                </th>
+                                <th class="cursor-pointer px-2 py-2" wire:click="order('vehicle_class_description')">
+
+                                    {{ __('vehicle class description') }}
+
+                                    @if ($sort == 'vehicle_class_description')
+
+                                        @if ($direction == 'asc')
+                                            <i class="fas fa-sort-alpha-up-alt "></i>
+                                        @else
+                                            <i class="fas fa-sort-alpha-down-alt "></i>
+                                        @endif
+                                    @else
+                                        <i class="fas fa-sort "></i>
+                                    @endif
+
+                                </th>
+                                <th class="cursor-pointer px-2 py-2" wire:click="order('secure_end_date')">
+
+                                    {{ __('secure end date') }}
+
+                                    @if ($sort == 'secure_end_date')
+
+                                        @if ($direction == 'asc')
+                                            <i class="fas fa-sort-alpha-up-alt "></i>
+                                        @else
+                                            <i class="fas fa-sort-alpha-down-alt "></i>
+                                        @endif
+                                    @else
+                                        <i class="fas fa-sort "></i>
+                                    @endif
+
+                                </th>
+                                <th class="cursor-pointer px-2 py-2" wire:click="order('technomechanical_end_date')">
+
+                                    {{ __('technomechanical end date') }}
+
+                                    @if ($sort == 'technomechanical_end_date')
+
+                                        @if ($direction == 'asc')
+                                            <i class="fas fa-sort-alpha-up-alt "></i>
+                                        @else
+                                            <i class="fas fa-sort-alpha-down-alt "></i>
+                                        @endif
+                                    @else
+                                        <i class="fas fa-sort "></i>
+                                    @endif
+
+                                </th>
+                                <th class="cursor-pointer px-2 py-2" wire:click="order('owner')">
+
+                                    {{ __('owner') }}
+
+                                    @if ($sort == 'owner')
+
+                                        @if ($direction == 'asc')
+                                            <i class="fas fa-sort-alpha-up-alt "></i>
+                                        @else
+                                            <i class="fas fa-sort-alpha-down-alt "></i>
+                                        @endif
+                                    @else
+                                        <i class="fas fa-sort "></i>
+                                    @endif
+
+                                </th>
+                                <th class="px-2 py-2">{{ __('Actions') }}</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
+
+
+                            @foreach ($vehicles as $vehicle)
+                                <tr class="text-gray-700 dark:text-gray-400">
+                                    <td class="px-2 py-2 text-sm">
+                                        {{ $vehicle->id }}
+                                    </td>
+                                    <td class="px-2 py-2 text-sm">
+                                        {{ $vehicle->plate_vehicle }}
+                                    </td>
+                                    <td class="px-2 py-2 text-sm">
+                                        {{ $vehicle->model_vehicle }}
+                                    </td>
+                                    <td class="px-2 py-2 text-sm">
+                                        {{ $vehicle->vehicle_type_name }}
+                                    </td>
+                                    <td class="px-2 py-2 text-sm">
+                                        {{ $vehicle->side_vehicle }}
+                                    </td>
+                                    <td class="px-2 py-2 text-sm">
+                                        {{ $vehicle->vehicle_class_description }}
+                                    </td>
+                                    <td class="px-2 py-2 text-sm">
+                                        {{ $vehicle->secure_end_date }}
+                                    </td>
+                                    <td class="px-2 py-2 text-sm">
+                                        {{ $vehicle->technomechanical_end_date }}
+                                    </td>
+                                    <td class="px-2 py-2 text-sm">
+                                        {{ $vehicle->owner }}
+                                    </td>
+                                    <td class="px-2 py-2">
+                                        <div class="flex items-center space-x-4 text-sm">
+                                            <button id="edit" onclick="edit({{ $vehicle }})"
+                                                class="inline-flex items-center justify-center  bg-yellow-700 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-yellow-400 focus:outline-none focus:bg-yellow-700 focus:ring focus:ring-red-200 active:bg-yellow-700 disabled:opacity-25 transition"
+                                                {{-- flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray" --}} aria-label="Edit">
+                                                <svg class="w-5 h-5" aria-hidden="true" fill="currentColor"
+                                                    viewBox="0 0 20 20">
+                                                    <path
+                                                        d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z">
+                                                    </path>
+                                                </svg>
+                                            </button>
+                                            <button onclick="deletes({{ $vehicle->id }})" id="delete"
+                                                class="inline-flex items-center justify-center  bg-red-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 active:bg-red-600 disabled:opacity-25 transition"
+                                                {{-- flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray" --}} aria-label="Delete">
+                                                <svg class="w-5 h-5" aria-hidden="true" fill="currentColor"
+                                                    viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd"
+                                                        d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
+                                                        clip-rule="evenodd"></path>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                @else
+                    <div class="px-6 py-4 text-black dark:text-white">
+                        No existe Vehiculos que coincidan con lo que estas buscando...
+                    </div>
+                @endif
+
+            </div>
+            <div
+                class="grid px-4 py-3 text-xs font-semibold tracking-wide text-gray-500 uppercase border-t dark:border-gray-700 bg-gray-50 sm:grid-cols-9 dark:text-gray-400 dark:bg-gray-800">
+                <span class="flex items-center col-span-3">
+                    Showing 21-30 of 100
+                </span>
+                <span class="col-span-2"></span>
+                <!-- Pagination -->
+                <span class="flex col-span-4 mt-2 sm:mt-auto sm:justify-end">
+                    <nav aria-label="Table navigation">
+                        <ul class="inline-flex items-center">
+                            <li>
+                                <button
+                                    class="px-3 py-1 rounded-md rounded-l-lg focus:outline-none focus:shadow-outline-purple"
+                                    aria-label="Previous">
+                                    <svg class="w-4 h-4 fill-current" aria-hidden="true" viewBox="0 0 20 20">
+                                        <path
+                                            d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                                            clip-rule="evenodd" fill-rule="evenodd"></path>
+                                    </svg>
+                                </button>
+                            </li>
+                            <li>
+                                <button class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple">
+                                    1
+                                </button>
+                            </li>
+                            <li>
+                                <button class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple">
+                                    2
+                                </button>
+                            </li>
+                            <li>
+                                <button
+                                    class="px-3 py-1 text-white transition-colors duration-150 bg-purple-600 border border-r-0 border-purple-600 rounded-md focus:outline-none focus:shadow-outline-purple">
+                                    3
+                                </button>
+                            </li>
+                            <li>
+                                <button class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple">
+                                    4
+                                </button>
+                            </li>
+                            <li>
+                                <span class="px-3 py-1">...</span>
+                            </li>
+                            <li>
+                                <button class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple">
+                                    8
+                                </button>
+                            </li>
+                            <li>
+                                <button class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple">
+                                    9
+                                </button>
+                            </li>
+                            <li>
+                                <button
+                                    class="px-3 py-1 rounded-md rounded-r-lg focus:outline-none focus:shadow-outline-purple"
+                                    aria-label="Next">
+                                    <svg class="w-4 h-4 fill-current" aria-hidden="true" viewBox="0 0 20 20">
+                                        <path
+                                            d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                            clip-rule="evenodd" fill-rule="evenodd"></path>
+                                    </svg>
+                                </button>
+                            </li>
+                        </ul>
+                    </nav>
+                </span>
+            </div>
         </div>
 
     </div>
@@ -83,8 +374,7 @@
             <header class="flex justify-center border-b-fuchsia-800 border-b">
                 <!-- Modal title -->
                 <p class="justify-start mb-2 text-lg font-semibold text-gray-700 dark:text-gray-300">
-                <h1 class="text-black dark:text-white text-4xl1">{{ __('Creating new vehicle') }}<span id="typed2"
-                        class="typed2">.</span>
+                <h1 class="text-black dark:text-white text-4xl1">{{ __('Creating new vehicle') }}<span id="typed2" class="typed2">.</span>
                     <span id="typed3" class="typed3">.</span>
                     <span id="typed4" class="typed4">.</span>
                     <span id="typed5" class="typed5">.</span>
@@ -806,7 +1096,7 @@
             </div>
             <div
                 class="flex flex-col items-center justify-end px-6 py-3-1 -mx-6 -mb-4 space-y-4 sm:space-y-0 sm:space-x-6 sm:flex-row bg-gray-50 dark:bg-gray-800 border-t-fuchsia-800">
-                <button x-on:click="closeModal" id="btnCalcel"
+                <button x-on:click="closeModal"
                     class="w-full px-5 py-3 text-sm font-medium leading-5 text-gray-700 transition-colors duration-150 border border-gray-300 rounded-lg dark:text-gray-400 sm:px-4 sm:py-2 sm:w-auto active:bg-transparent hover:border-gray-500 focus:border-gray-500 active:text-gray-500 focus:outline-none focus:shadow-outline-gray"
                     wire:click="clear" onclick="restart()">
                     {{ __('Cancel') }}
@@ -841,12 +1131,10 @@
             <header class="flex justify-center border-b-fuchsia-800 border-b">
                 <!-- Modal title -->
                 <p class="justify-start mb-2 text-lg font-semibold text-gray-700 dark:text-gray-300">
-                <h1 class="text-black dark:text-white text-4xl1">
-                    {{ __('Editing the information of the vehicle with license plate') }}
+                <h1 class="text-black dark:text-white text-4xl1">{{ __('Editing the information of the vehicle with license plate') }} 
                     @if (!is_null($editVehicles))
                         {{ $editVehicles->plate_vehicle }}
-                    @endif
-                    <span id="typed2" class="typed2">.</span>
+                    @endif<span id="typed2" class="typed2">.</span>
                     <span id="typed3" class="typed3">.</span>
                     <span id="typed4" class="typed4">.</span>
                     <span id="typed5" class="typed5">.</span>
@@ -886,8 +1174,7 @@
                                     <div class="flex space-x-4 justify-center">
 
                                         <div class="w-6-12">
-                                            <label
-                                                class="text-gray-700 dark:text-gray-400">{{ __('vehicle type') }}</label>
+                                            <label class="text-gray-700 dark:text-gray-400">{{ __('vehicle type') }}</label>
 
                                             @foreach ($vehicle_types as $id => $vehicle_type)
                                                 @if ($editVehicles->vehicle_type == $id)
@@ -902,8 +1189,7 @@
                                         </div>
 
                                         <div class="w-6-12">
-                                            <label
-                                                class="text-gray-700 dark:text-gray-400">{{ __('plate vehicle') }}</label>
+                                            <label class="text-gray-700 dark:text-gray-400">{{ __('plate vehicle') }}</label>
                                             <div class="border-ourple-50-s rounded-2xl p-4">
                                                 <p class="text-sm text-gray-700 dark:text-gray-400">
                                                     {{ $editVehicles->plate_vehicle }}
@@ -915,8 +1201,7 @@
                                     <div class="flex space-x-4 ">
 
                                         <div class="w-6-12">
-                                            <label
-                                                class="text-gray-700 dark:text-gray-400">{{ __('model vehicle') }}</label>
+                                            <label class="text-gray-700 dark:text-gray-400">{{ __('model vehicle') }}</label>
                                             <div class="border-ourple-50-s rounded-2xl p-4">
                                                 <p class="text-sm text-gray-700 dark:text-gray-400">
                                                     {{ $editVehicles->model_vehicle }}
@@ -925,8 +1210,7 @@
                                         </div>
 
                                         <div class="w-6-12">
-                                            <label
-                                                class="text-gray-700 dark:text-gray-400">{{ __('brand vehicle') }}</label>
+                                            <label class="text-gray-700 dark:text-gray-400">{{ __('brand vehicle') }}</label>
                                             <div class="border-ourple-50-s rounded-2xl p-4">
                                                 <p class="text-sm text-gray-700 dark:text-gray-400">
                                                     {{ $editVehicles->brand_vehicle }}
@@ -949,8 +1233,7 @@
                                         </div>
 
                                         <div class="w-6-12">
-                                            <label
-                                                class="text-gray-700 dark:text-gray-400">{{ __('color vehicle') }}</label>
+                                            <label class="text-gray-700 dark:text-gray-400">{{ __('color vehicle') }}</label>
 
                                             <input
                                                 class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -963,8 +1246,7 @@
                                     <div class="flex space-x-4 ">
 
                                         <div class="w-6-12">
-                                            <label
-                                                class="text-gray-700 dark:text-gray-400">{{ __('side vehicle') }}</label>
+                                            <label class="text-gray-700 dark:text-gray-400">{{ __('side vehicle') }}</label>
                                             <div class="border-ourple-50-s rounded-2xl p-4">
                                                 <p class="text-sm text-gray-700 dark:text-gray-400">
                                                     {{ $editVehicles->side_vehicle }}
@@ -1003,8 +1285,7 @@
                                     <div class="flex space-x-4 ">
 
                                         <div class="w-6-12">
-                                            <label
-                                                class="text-gray-700 dark:text-gray-400">{{ __('engine number') }}</label>
+                                            <label class="text-gray-700 dark:text-gray-400">{{ __('engine number') }}</label>
                                             <div class="border-ourple-50-s rounded-2xl p-4">
                                                 <p class="text-sm text-gray-700 dark:text-gray-400">
                                                     {{ $editVehicles->engine_number }}
@@ -1074,8 +1355,7 @@
                                     <div class="flex space-x-4 ">
 
                                         <div class="w-6-12">
-                                            <label
-                                                class="text-gray-700 dark:text-gray-400">{{ __('owner vehicle') }}</label>
+                                            <label class="text-gray-700 dark:text-gray-400">{{ __('owner vehicle') }}</label>
 
                                             @foreach ($owners as $owner)
                                                 @if ($editVehicles->owner_vehicle == $owner->id)
@@ -1090,8 +1370,7 @@
                                         </div>
 
                                         <div class="w-6-12">
-                                            <label
-                                                class="text-gray-700 dark:text-gray-400">{{ __('driver id') }}</label>
+                                            <label class="text-gray-700 dark:text-gray-400">{{ __('driver id') }}</label>
 
                                             <select wire:model="editVehicles.driver_id" readonly
                                                 class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
@@ -1109,8 +1388,7 @@
                                     <div class="flex space-x-4">
 
                                         <div class="w-6-12">
-                                            <label
-                                                class="text-gray-700 dark:text-gray-400">{{ __('use vehicle') }}</label>
+                                            <label class="text-gray-700 dark:text-gray-400">{{ __('use vehicle') }}</label>
                                             <div class="border-ourple-50-s rounded-2xl p-4">
                                                 <p class="text-sm text-gray-700 dark:text-gray-400">
                                                     {{ $editVehicles->service }}
@@ -1143,8 +1421,7 @@
                                         </div> --}}
 
                                         <div class="w-6-12" wire:ignore>
-                                            <label
-                                                class="text-gray-700 dark:text-gray-400">{{ __('secure end date') }}</label>
+                                            <label class="text-gray-700 dark:text-gray-400">{{ __('secure end date') }}</label>
 
                                             <input
                                                 class="flex-1 block w90 py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -1272,8 +1549,7 @@
                                         </div>
 
                                         <div class="w-6-12">
-                                            <label
-                                                class="text-gray-700 dark:text-gray-400">{{ __('civil contractual') }}</label>
+                                            <label class="text-gray-700 dark:text-gray-400">{{ __('civil contractual') }}</label>
 
                                             <input
                                                 class="block w90 py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -1306,9 +1582,8 @@
                                 <div class="border-ourple-50-s rounded-2xl p-4">
                                     <div class="flex space-x-4">
 
-                                        <div class="w-1-3">
-                                            <label
-                                                class="text-gray-700 dark:text-gray-400">{{ __('admission date') }}</label>
+                                        <div class="w-1-2">
+                                            <label class="text-gray-700 dark:text-gray-400">{{ __('admission date') }}</label>
                                             <div class="border-ourple-50-s rounded-2xl p-4">
                                                 <p class="text-sm text-gray-700 dark:text-gray-400">
                                                     {{ $editVehicles->admission_date }}
@@ -1316,7 +1591,7 @@
                                             </div>
                                         </div>
 
-                                        {{-- <div class="w-1-2">
+                                        <div class="w-1-2">
                                             <label
                                                 class="text-gray-700 dark:text-gray-400">{{ __('vehicle pickup date') }}</label>
 
@@ -1324,16 +1599,15 @@
                                                 class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                                                 placeholder="Fecha de retiro del sitema del vahiculo" type="date"
                                                 wire:model="editVehicles.vehicle_pickup_date"
-                                                {{-- onchange="fechasSet('vehicle_pickup_date')" />
-                                        </div> --}}
+                                                {{-- onchange="fechasSet('vehicle_pickup_date')"  --}} />
+                                        </div>
 
                                         <div class="w-1-2">
-                                            <label
-                                                class="text-gray-700 dark:text-gray-400">{{ __('cylinder vehicle') }}</label>
+                                            <label class="text-gray-700 dark:text-gray-400">{{ __('cylinder vehicle') }}</label>
 
                                             <input
                                                 class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="número de Cilindraje del vehiculo" type="number"
+                                                placeholder="número de Cilindraje del vehiculo" type="text"
                                                 wire:model="editVehicles.cylinder_vehicle" />
                                         </div>
 
@@ -1343,7 +1617,7 @@
 
                                             <input
                                                 class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="cantidad de valvulas" type="number" step="0.01"
+                                                placeholder="cantidad de valvulas" type="text" step="0.01"
                                                 min="0" max="10" maxlength="5"
                                                 wire:model="editVehicles.quantity_valves" />
                                         </div> --}}
@@ -1353,8 +1627,7 @@
                                     <div class="flex space-x-4">
 
                                         <div class="w-1-2">
-                                            <label
-                                                class="text-gray-700 dark:text-gray-400">{{ __('number passenger') }}</label>
+                                            <label class="text-gray-700 dark:text-gray-400">{{ __('number passenger') }}</label>
                                             <div class="border-ourple-50-s rounded-2xl p-4">
                                                 <p class="text-sm text-gray-700 dark:text-gray-400">
                                                     {{ $editVehicles->number_passenger }}
@@ -1369,7 +1642,7 @@
 
                                             <input
                                                 class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="Cantidad de cilindros" type="number" maxlength="5"
+                                                placeholder="Cantidad de cilindros" type="text" maxlength="5"
                                                 wire:model="editVehicles.number_cylinders" />
                                         </div> --}}
 
@@ -1378,7 +1651,7 @@
 
                                             <input
                                                 class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="cantidad de turbo" type="number" maxlength="5"
+                                                placeholder="cantidad de turbo" type="text" maxlength="5"
                                                 wire:model="editVehicles.turbo" />
                                         </div> --}}
 
@@ -1388,7 +1661,7 @@
 
                                             <input
                                                 class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="tipo de orentación" type="number" step="0.01"
+                                                placeholder="tipo de orentación" type="text" step="0.01"
                                                 min="0" max="10" maxlength="5"
                                                 wire:model="editVehicles.orientation" />
                                         </div> --}}
@@ -1399,28 +1672,25 @@
                                     <div class="flex space-x-4">
 
                                         <div class="w-1-2">
-                                            <label
-                                                class="text-gray-700 dark:text-gray-400">{{ __('front suspension') }}</label>
+                                            <label class="text-gray-700 dark:text-gray-400">{{ __('front suspension') }}</label>
 
                                             <input
                                                 class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="cantidad de suspensión frontal" type="number"
+                                                placeholder="cantidad de suspensión frontal" type="text"
                                                 maxlength="5" wire:model="editVehicles.front_suspension" />
                                         </div>
 
                                         <div class="w-1-2">
-                                            <label
-                                                class="text-gray-700 dark:text-gray-400">{{ __('rear suspension') }}</label>
+                                            <label class="text-gray-700 dark:text-gray-400">{{ __('rear suspension') }}</label>
 
                                             <input
                                                 class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="cantidad de suspensión trasera" type="number"
+                                                placeholder="cantidad de suspensión trasera" type="text"
                                                 maxlength="5" wire:model="editVehicles.rear_suspension" />
                                         </div>
 
                                         <div class="w-1-2">
-                                            <label
-                                                class="text-gray-700 dark:text-gray-400">{{ __('rear brake type') }}</label>
+                                            <label class="text-gray-700 dark:text-gray-400">{{ __('rear brake type') }}</label>
 
                                             <select wire:model="editVehicles.rear_brake_type"
                                                 class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
@@ -1434,8 +1704,7 @@
                                         </div>
 
                                         <div class="w-1-2">
-                                            <label
-                                                class="text-gray-700 dark:text-gray-400">{{ __('front brake type') }}</label>
+                                            <label class="text-gray-700 dark:text-gray-400">{{ __('front brake type') }}</label>
 
                                             <select wire:model="editVehicles.front_brake_type"
                                                 class="block w-full py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
@@ -1458,17 +1727,16 @@
 
                                             <input
                                                 class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="cantidad de neumaticos" type="number" step="0.01"
+                                                placeholder="cantidad de neumaticos" type="text" step="0.01"
                                                 min="0" max="10" maxlength="5"
                                                 wire:model="editVehicles.tire_number" />
                                         </div> --}}
                                         <div class="w-15">
-                                            <label
-                                                class="text-gray-700 dark:text-gray-400">{{ __('type direction') }}</label>
+                                            <label class="text-gray-700 dark:text-gray-400">{{ __('type direction') }}</label>
 
                                             <input
                                                 class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="tipo de dirección" type="number" maxlength="5"
+                                                placeholder="tipo de dirección" type="text" maxlength="5"
                                                 wire:model="editVehicles.type_direction" />
                                         </div>
 
@@ -1478,7 +1746,7 @@
 
                                             <input
                                                 class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="Tipo de transmisión" type="number" maxlength="5"
+                                                placeholder="Tipo de transmisión" type="text" maxlength="5"
                                                 wire:model="editVehicles.transmission_type" />
                                         </div> --}}
 
@@ -1488,7 +1756,7 @@
 
                                             <input
                                                 class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="cantidad maxima de velocidades" type="number"
+                                                placeholder="cantidad maxima de velocidades" type="text"
                                                 maxlength="5" wire:model="editVehicles.number_speeds" />
                                         </div> --}}
 
@@ -1498,7 +1766,7 @@
 
                                             <input
                                                 class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="tipo de rodamiento" type="number" maxlength="5"
+                                                placeholder="tipo de rodamiento" type="text" maxlength="5"
                                                 wire:model="editVehicles.type_bearing" />
                                         </div> --}}
 
@@ -1508,7 +1776,7 @@
 
                                             <input
                                                 class="block w-full py-2 px-4 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                                placeholder="número de ventanas" type="number" maxlength="5"
+                                                placeholder="número de ventanas" type="text" maxlength="5"
                                                 wire:model="editVehicles.number_windows" />
                                         </div> --}}
 
@@ -2233,24 +2501,28 @@
                 'El lateral ' + plateVehicle + ' ya esta registrado en el sistema'
             ];
 
-            // var message = ['The vehicle with license plate ' + plateVehicle + ' has been successfully registered',
-            // 'The information of the vehicle with license plate ' + plateVehicle + ' has been successfully updated',
-            // 'The vehicle with plate ' + plateVehicle + ' and all its documentation have been eliminated',
-            // 'The vehicle with plate ' + plateVehicle + ' is already registered in the system',
-            // 'The side of the vehicle with plate ' + plateVehicle + ' is already registered in the system'
-            // ];
+            if (process == 1) {
+                message = 'The vehicle with license plate ' + plateVehicle +
+                    ' has been successfully registered';
+                //Se ha registrado el vehiculo con placa xxx sactisfactoriamente
+            } else if (process == 2) {
 
+                message = 'The information of the vehicle with license plate ' + plateVehicle +
+                    ' has been successfully updated';
+                // Se ha actualizado la información del vehiculo con placa xxx sactisfactoriamente
 
-            var newmessage = message[process - 1];
+            } else if (process == 3) {
 
-            if (process == 1 || process == 2 || process == 3) {
-                swal.fire('', newmessage, 'success')
-                $("#btnCalcel").trigger("click");
-            } else {
-                swal.fire('', newmessage, 'error')
+                message = 'The vehicle with plate ' + plateVehicle +
+                    ' and all its documentation have been eliminated';
+                // Se ha eliminado el Vehiculo con placa xxx y toda su documentación
             }
 
-            $('#example').DataTable().ajax.reload(null, 1);
+            swal.fire(
+                '',
+                message,
+                'success'
+            )
         })
 
         //scritp de formulario paso a paso
