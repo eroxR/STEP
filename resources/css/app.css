@@ -536,6 +536,8 @@ line-height: 1.5rem; /* 24px */}
 
 .ml40{margin-left: 40%;}
 
+.ml50{margin-left: 50%;}
+
 .ml53{margin-left: 53%;}
 
 .ml56{margin-left: 56%;}
@@ -1212,6 +1214,8 @@ margin-right: 3.5rem; /* 56px */
 
 .border-orange-800 {border: 1px solid #FF8000;}
 
+.border-white {border: 1px solid #ffffff;}
+
 .border-b-pink-800 {border-bottom: 1px solid #db088a;}
 
 .border-b-red-800 {border-bottom: 1px solid #ee300f;}
@@ -1408,6 +1412,8 @@ border-bottom-left-radius: 1rem; /* 16px */}
 .bg-emerald-900{background-color: rgb(6 78 59);}
 
 .bg-sky-600{background-color: rgb(2 132 199);}
+
+.bg-gray-600{background-color: rgb(160, 160, 160);}
 
 .bg-sky-700{background-color: rgb(3 105 161);}
 
@@ -1816,7 +1822,6 @@ border-bottom-left-radius: 1rem; /* 16px */}
 .flicker {
 	animation: parpadear 2s infinite backwards;
 }
-
 
 .numcolor {
 	color: #000;
@@ -2269,8 +2274,6 @@ border-bottom-left-radius: 1rem; /* 16px */}
 		transform: scale(1);
 	}
 }
-
-
 @keyframes pasajero3{
 	0%{
 		transform: scale(1);
@@ -2454,7 +2457,6 @@ border-bottom-left-radius: 1rem; /* 16px */}
 	animation-iteration-count: infinite;
 }
 
-
 @keyframes typeds {
 	0%{
 		transform: scale(1);
@@ -2605,15 +2607,93 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td.child {
 	color: #fff;
 }
 
-.li-active {
-	margin-left: -2.2%;
+.li-active1 {
+	margin-left: -2.9%;
     border-radius: 5px;
-    height: 5px;
-    margin-top: 4%;
+    height: 5.5px;
+    margin-top: 5%;
+    width: 2.4rem;
+}
+
+.li-active2 {
+	margin-left: 3.9%;
+    border-radius: 5px;
+    height: 5.5px;
+    margin-top: 5%;
 	width: 2.4rem;
 }
+
+.li-active3 {
+	margin-left: 11%;
+    border-radius: 5px;
+    height: 5.5px;
+    margin-top: 5%;
+	width: 2.4rem;
+}
+
+.li-active4 {
+	margin-left: 18.9%;
+    border-radius: 5px;
+    height: 5.5px;
+    margin-top: 5%;
+	width: 2.4rem;
+}
+
+.li-active5 {
+	margin-left: 26.8%;
+    border-radius: 5px;
+    height: 5.5px;
+    margin-top: 5%;
+	width: 2.4rem;
+}
+
+.li-active6 {
+	margin-left: 33.9%;
+    border-radius: 5px;
+    height: 5.5px;
+    margin-top: 5%;
+	width: 2.4rem;
+}
+
+.li-active7 {
+	margin-left: 42.6%;
+    border-radius: 5px;
+    height: 5.5px;
+    margin-top: 5%;
+	width: 2.4rem;
+}
+
+.li-active8 {
+	margin-left: 49.6%;
+    border-radius: 5px;
+    height: 5.5px;
+    margin-top: 5%;
+	width: 2.4rem;
+}
+
+.li-active9 {
+	margin-left: 56.3%;
+    border-radius: 5px;
+    height: 5.5px;
+    margin-top: 5%;
+	width: 2.4rem;
+}
+
 
 .centered{
 	margin-left: 65%;
     margin-top: -45%;
+}
+
+.til-inspect1 {
+	width: 19%;
+    padding: 0.30%;
+}
+.til-inspect2 {
+	width: 18%;
+    padding: 0.30%;
+}
+.til-inspect3 {
+	width: 6%;
+    padding: 0.30%;
 }

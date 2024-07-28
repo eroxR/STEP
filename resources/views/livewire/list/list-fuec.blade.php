@@ -1,5 +1,10 @@
 <div>
 
+    {{-- @if ($bandera)
+        <p class="rounded-3xl p-1 bg-red-600 dark:text-yellow-400 text-white">
+            No hay información para mostrar
+        </p>
+    @else --}}
     <div class="py-12 mb-2 mt-4">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="roundedx1 mt5 mr3 fixed inset-y-0 flex items-end bg-black bg-opacity-50 sm:items-center">
@@ -14,34 +19,7 @@
                         <line x1="9" y1="9" x2="15" y2="15" />
                     </svg>
                 </button>
-                {{-- <button wire:click="$set('filtre',0)" class="absolute top-0 ml22 mt1-3">
-                    <svg class="w-5 h-5 icon-red" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2" />
-                        <line x1="15" y1="9" x2="9" y2="15" />
-                        <line x1="9" y1="9" x2="15" y2="15" />
-                    </svg>
-                </button> --}}
-                {{-- <button wire:click="$set('filtre',1)"
-                    class="absolute top-0 ml25 mt1 px-2 py-1 font-semibold leading-tight text-white bg-emerald-700 rounded-full dark:bg-sky-700 dark:text-white">
-                    Colegios
-                </button> --}}
-                {{-- <button wire:click="$set('filtre',2)"
-                    class="absolute top-0 ml32 mt1 px-2 py-1 font-semibold leading-tight text-white bg-emerald-700 rounded-full dark:bg-sky-700 dark:text-white">
-                    Empresas
-                </button> --}}
-                {{-- <button wire:click="$set('filtre',3)"
-                    class="absolute top-0 ml40 mt1 px-2 py-1 font-semibold leading-tight text-white bg-emerald-700 rounded-full dark:bg-sky-700 dark:text-white">
-                    Empresas Turismo
-                </button> --}}
-                {{-- <button wire:click="$set('filtre',4)"
-                    class="absolute top-0 ml53 mt1 px-2 py-1 font-semibold leading-tight text-white bg-emerald-700 rounded-full dark:bg-sky-700 dark:text-white">
-                    Ocacionales
-                </button> --}}
-                {{-- <button wire:click="$set('filtre',5)"
-                    class="absolute top-0 ml62 mt1 border-transparent px-2 py-1 font-semibold leading-tight text-white bg-emerald-700 rounded-full dark:bg-sky-700 dark:text-white">
-                    Empresas Salud
-                </button> --}}
+
                 <div class="mt0-1 right-0 top-0 absolute mr1-4">
 
                     <button
@@ -200,7 +178,7 @@
                                                 @endif
                                             @endforeach
                                             @php
-                                                $countCars = 0
+                                                $countCars = 0;
                                             @endphp
                                             {{-- {{ $countCars = 0 }} --}}
                                             {{-- <div class="border-b text-yellow-600 text-xl">
@@ -220,17 +198,19 @@
                                                         <br>
                                                         <strong>nombre:</strong> {{ $allDriver->firstname }}
                                                         {{ $allDriver->secondname }}
-                                                        {{ $allDriver->lastname }} {{ $allDriver->motherslastname }}
+                                                        {{ $allDriver->lastname }}
+                                                        {{ $allDriver->motherslastname }}
                                                         <br>
-                                                        <strong>tipo sangre:</strong> {{ $allDriver->blood_type }} <br>
+                                                        <strong>tipo sangre:</strong> {{ $allDriver->blood_type }}
+                                                        <br>
                                                         <strong>fin licencia.:</strong>
                                                         {{ $allDriver->license_expiration }} <br>
                                                     </div>
                                                 @endif
                                             @endforeach
                                             @php
-                                            $countDrive = 0
-                                        @endphp
+                                                $countDrive = 0;
+                                            @endphp
                                             {{-- {{ $countDrive = 0 }} --}}
                                         </div>
 
@@ -338,49 +318,49 @@
                             </div> --}}
 
                             @foreach ($allCars as $allCar)
-                            @if ($allCar->permit_id == $permitSelected->id)
-                                <div class="border-b text-black text80 dark:text-white ">
-                                    <p class="text-yellow-600 text-base">
-                                        <strong>Vehiculo->{{ $countCars = $countCars + 1 }}</strong>
-                                    </p>
-                                    {{-- <strong>id:</strong> {{ $car->id }} <br> --}}
-                                    <strong>placa:</strong> {{ $allCar->plate_vehicle }} <br>
-                                    <strong>lateral:</strong> {{ $allCar->side_vehicle }} <br>
-                                    <strong>fin tecno.:</strong>
-                                    {{ $allCar->technomechanical_end_date }} <br>
-                                    <strong>fin Soat:</strong> {{ $allCar->secure_end_date }} <br>
-                                    <strong>fin tarjeta OP:</strong>
-                                    {{ $allCar->expiration_card_operation }}
-                                    <br>
-                                    <strong>fin Prevent.:</strong>
-                                    {{ $allCar->expiration_preventive }}
-                                </div>
-                            @endif
-                        @endforeach
+                                @if ($allCar->permit_id == $permitSelected->id)
+                                    <div class="border-b text-black text80 dark:text-white ">
+                                        <p class="text-yellow-600 text-base">
+                                            <strong>Vehiculo->{{ $countCars = $countCars + 1 }}</strong>
+                                        </p>
+                                        {{-- <strong>id:</strong> {{ $car->id }} <br> --}}
+                                        <strong>placa:</strong> {{ $allCar->plate_vehicle }} <br>
+                                        <strong>lateral:</strong> {{ $allCar->side_vehicle }} <br>
+                                        <strong>fin tecno.:</strong>
+                                        {{ $allCar->technomechanical_end_date }} <br>
+                                        <strong>fin Soat:</strong> {{ $allCar->secure_end_date }} <br>
+                                        <strong>fin tarjeta OP:</strong>
+                                        {{ $allCar->expiration_card_operation }}
+                                        <br>
+                                        <strong>fin Prevent.:</strong>
+                                        {{ $allCar->expiration_preventive }}
+                                    </div>
+                                @endif
+                            @endforeach
                             {{-- <div class="border-b text-yellow-600 text-xl">
                                 
                             </div> --}}
 
                             @foreach ($allDrivers as $allDriver)
-                            @if ($allDriver->permit_id == $permitSelected->id)
-                                <div class="border-b text-black text80 dark:text-white ">
-                                    <p class="text-yellow-600 text-base">
-                                        <strong>Conductor->{{ $countDrive = $countDrive + 1 }}</strong>
-                                    </p>
-                                    {{-- <strong>id:</strong> {{ $driver->id }} <br> --}}
-                                    <strong>documento:</strong>
-                                    {{ $allDriver->identificationcard }}
-                                    <br>
-                                    <strong>nombre:</strong> {{ $allDriver->firstname }}
-                                    {{ $allDriver->secondname }}
-                                    {{ $allDriver->lastname }} {{ $allDriver->motherslastname }}
-                                    <br>
-                                    <strong>tipo sangre:</strong> {{ $allDriver->blood_type }} <br>
-                                    <strong>fin licencia.:</strong>
-                                    {{ $allDriver->license_expiration }} <br>
-                                </div>
-                            @endif
-                        @endforeach
+                                @if ($allDriver->permit_id == $permitSelected->id)
+                                    <div class="border-b text-black text80 dark:text-white ">
+                                        <p class="text-yellow-600 text-base">
+                                            <strong>Conductor->{{ $countDrive = $countDrive + 1 }}</strong>
+                                        </p>
+                                        {{-- <strong>id:</strong> {{ $driver->id }} <br> --}}
+                                        <strong>documento:</strong>
+                                        {{ $allDriver->identificationcard }}
+                                        <br>
+                                        <strong>nombre:</strong> {{ $allDriver->firstname }}
+                                        {{ $allDriver->secondname }}
+                                        {{ $allDriver->lastname }} {{ $allDriver->motherslastname }}
+                                        <br>
+                                        <strong>tipo sangre:</strong> {{ $allDriver->blood_type }} <br>
+                                        <strong>fin licencia.:</strong>
+                                        {{ $allDriver->license_expiration }} <br>
+                                    </div>
+                                @endif
+                            @endforeach
 
                         </div>
                     @endforeach
@@ -389,6 +369,9 @@
             </div>
         </div>
     </div>
+    {{-- @endif --}}
+
+
 
 
 
@@ -479,6 +462,11 @@
 
 @section('scripts')
     <script>
+        $(document).ready(function() {
+            // alert('prueba');
+            $("#active3").removeClass('hidden');
+        });
+
         // abriendo modal para editar
         Livewire.on('openModalView', () => {
             viewhideinputs('modalView', 'block', 'hidden');

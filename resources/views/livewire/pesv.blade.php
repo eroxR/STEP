@@ -35,7 +35,7 @@
                                         </template>
                                     </ul>
 
-                                    <div
+                                    {{-- <div
                                         class="w-80 bg-white p-16 text-center mx-auto  dark:text-white dark:bg-gray-800">
                                         <div x-show="activeTab===0">Content Contexto DOFA
 
@@ -253,7 +253,7 @@
                                         <div x-show="activeTab===5">Content Procesos</div>
                                         <div x-show="activeTab===6">Content Lista Entrada Revisión por la Dirección
                                         </div>
-                                    </div>
+                                    </div> --}}
 
                                     <ul class="flex justify-center items-center my-4">
                                         <template x-for="(tab, index) in tabs" :key="index">
@@ -1138,4 +1138,10 @@
 </div>
 
 @section('scripts')
+    <script>
+        $(document).ready(function() {
+            // alert('prueba');
+            $("#active2").removeClass('hidden');
+        });
+    </script>
 @endsection

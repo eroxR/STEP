@@ -47,6 +47,7 @@
     "Your email address is not verified.": "Su dirección de correo electrónico no está verificada.",
     "Log Out": "Cerrar sesión",
     "manuals": "manuales",
+    "settings": "configuraciones",
     "PESV": "PESV",
     "Information lists.": "listas de Información",
     "List of Contracts": "Lista de contratos",
@@ -223,7 +224,7 @@
     "technomechanical end date": "fecha de finalización tecnomecánica",
     "owner": "dueño",
     "Creating new vehicle": "Creando nuevo vehículo",
-    "vehicle type": "tipo de vehiculo",
+    "vehicle type": "tipo de vehículo",
     "brand vehicle": "marca del vehículo",
     "brand": "marca",
     "vehicle chassis number": "número de chasis del vehículo",
@@ -236,7 +237,7 @@
     "dimension rims": "dimensión de las llantas",
     "owner vehicle": "propietario del vehículo",
     "driver id": "Conductor",
-    "use vehicle": "uso del vehiculo",
+    "use vehicle": "uso del vehículo",
     "number accreditation soat": "número de acreditación soat",
     "number technomechanical accreditation": "número de acreditación tecnomecánica",
     "expiration card operation": "caducidad de tarjeta de operación",
@@ -277,7 +278,7 @@
     "contract with": "contrato con",
     "permit code": "codigo fuec",
     "internal external owner type": "tipo dueño interno o externo",
-    "state vehicle ": "estado vehiculo",
+    "state vehicle ": "estado vehículo",
     "state": "estado",
     "signature place": "Lugar de la firma",
     "departure time": "hora de salida",
@@ -299,7 +300,10 @@
     "Family Relationship": "relación familiar",
     "who receives": "quien lo recibe",
     "return time": "hora de regreso",
-    "vehicles List": "Listado de Vahiculos",
-    "psychosensometric certificate": "certificado psicosensométrico"
+    "vehicles List": "Listado de Vehículos",
+    "psychosensometric certificate": "certificado psicosensométrico",
+    "city of residence": "ciudad de residencia",
+    "Residence Department": "Departamento de Residencia",
+    "Log in": "Inicio Sesión"
     
 }

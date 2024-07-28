@@ -129,8 +129,8 @@
                                 <div class="flex items-center space-x-4">
                                     <div class="flex-shrink-0">
                                         <svg class="w-8 h-8 rounded-full" width="24" height="24"
-                                            viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
-                                            fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                            stroke-linecap="round" stroke-linejoin="round">
                                             <path stroke="none" d="M0 0h24v24H0z" />
                                             <circle cx="7" cy="17" r="2" />
                                             <circle cx="17" cy="17" r="2" />
@@ -164,3 +164,11 @@
 
 
 </div>
+@section('scripts')
+    <script>
+               $(document).ready(function() {
+            
+            $("#active9").removeClass('hidden');
+        });
+    </script>
+@endsection

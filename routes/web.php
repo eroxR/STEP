@@ -4,6 +4,7 @@ use App\Http\Controllers\ContractController;
 use App\Http\Controllers\PermitController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\DatatableController;
+use App\Http\Controllers\InspectionController;
 use App\Http\Livewire\Body;
 use App\Http\Livewire\Cambiocontraseña;
 use App\Http\Livewire\Contracts\ManageContracts;
@@ -16,11 +17,12 @@ use App\Http\Livewire\Mantenimientocontrato;
 use App\Http\Livewire\Mantenimientofuec;
 use App\Http\Livewire\Mantenimientousuario;
 use App\Http\Livewire\Mantenimientovehiculos;
-use App\Http\Livewire\Manual;
+use App\Http\Livewire\Settings;
 use App\Http\Livewire\Otraactividad;
 use App\Http\Livewire\Permissions\ManagePermissions;
 use App\Http\Livewire\Pesv;
 use App\Http\Livewire\Totals;
+use App\Http\Livewire\BearingPlan;
 use App\Http\Livewire\Users\ManageUsers;
 use App\Http\Livewire\Vehicles\ManageVehicles;
 use Illuminate\Support\Facades\Route;
@@ -55,7 +57,7 @@ Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified'
-])->group(function () {Route::get('manual', Manual::class)->name('manual');
+])->group(function () {Route::get('settings', Settings::class)->name('settings');
 });
 
 
@@ -80,14 +82,23 @@ Route::get('pdfs/permit-public/{id}', [PermitController::class, 'publicfuec'])->
 
 Route::get('pdfs/index/{id}', [PermitController::class, 'index'])->name('pdfs.index');
 
+Route::get('processes/inspection-form', [InspectionController::class, 'inspection'])->name('processes.inspection-form');
 
-Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->group(function () {Route::get('permissions/manage-permissions', ManagePermissions::class)->middleware('can:manage-permissions')->name('manage-permissions');
+Route::post('processes/inspection', [InspectionController::class, 'store'])->name('processes.inspection-store');
+
+Route::get('pdfs/pdf-inspection/{plate}/{dates}', [InspectionController::class, 'pdf'])->name('pdfs.pdf-inspection');
+
+
+Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->group(function () {Route::get('permissions/manage-permissions', ManagePermissions::class)->middleware('can:mantenimientoFuec')->name('manage-permissions');
 });
 
 Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->group(function () {Route::get('users/manage-users', ManageUsers::class)->name('manage-users');
 });
 
 Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->group(function () {Route::get('/pesv', Pesv::class)->name('pesv');
+});
+
+Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->group(function () {Route::get('/bearing-plan', BearingPlan::class)->name('bearing-plan');
 });
 
 Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->group(function () {Route::get('/totals', Totals::class)->name('totals');

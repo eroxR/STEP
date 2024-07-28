@@ -22,17 +22,17 @@
                         <line x1="9" y1="9" x2="15" y2="15" />
                     </svg>
                 </button> --}}
-                <span 
+                <span
                     class="absolute top-0 ml25 mt1 px-2 py-1 font-semibold leading-tight text-sky-700 bg-sky-300 rounded-full dark:bg-sky-700 dark:text-sky-100">
-                    Total Conductores = {{$totals}} 
+                    Total Conductores = {{ $totals }}
                 </span>
-                <span 
+                <span
                     class="absolute top-0 ml40 mt1 px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">
-                    Conductores Habilitados {{$habilitado }}
+                    Conductores Habilitados {{ $habilitado }}
                 </span>
-                <span 
+                <span
                     class="absolute top-0 ml57 mt1 px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-full dark:text-red-100 dark:bg-red-700">
-                    Conductores Inhabilitados {{$inhabilitado}}
+                    Conductores Inhabilitados {{ $inhabilitado }}
                 </span>
                 {{-- <button wire:click="$set('filtre',4)"
                     class="absolute top-0 ml53 mt1 px-2 py-1 font-semibold leading-tight text-white bg-emerald-700 rounded-full dark:bg-sky-700 dark:text-white">
@@ -1007,6 +1007,10 @@
 
 @section('scripts')
     <script>
+        $(document).ready(function() {
+            // alert('prueba');
+            $("#active3").removeClass('hidden');
+        });
         // abriendo modal de historicos documentos
         Livewire.on('openModalHistorico', () => {
 

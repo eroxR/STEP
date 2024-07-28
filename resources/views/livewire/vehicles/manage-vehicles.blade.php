@@ -777,7 +777,7 @@
                                 </div>
 
                                 <div class="w-6-12">
-                                    <label id="labelVahiclePhotoPath" 
+                                    <label id="labelVahiclePhotoPath"
                                         class="text-gray-700 dark:text-gray-400">{{ __('vahicle photo path') }}</label>
 
                                     <input
@@ -1779,7 +1779,8 @@
                                 return (
                                     "<div class='flex items-center text-sm'>" +
                                     "<div class='relative  w-8 h-8 mr-3 rounded-full md:block'>" +
-                                    "<a class='cursor-pointer' onclick='searchImg(" + row['id'] + ")'>" +
+                                    "<a class='cursor-pointer' onclick='searchImg(" + row[
+                                        'id'] + ")'>" +
                                     "<img src='" + row['vahicle_photo_path'] +
                                     "' alt=''" +
                                     "class='object-cover w-full h-full rounded-full' loading='lazy'>" +
@@ -1815,19 +1816,38 @@
                     },
                     {
                         "render": function(data, type, row) {
+                            // if (row['state_vehicle'] == 1) {
+                            //     return "<span class='px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-full dark:text-red-100 dark:bg-red-700'>{{ __('Inhabilitado') }}</span>";
+                            // } else if (row['state_vehicle'] == 2) {
+                            //     return "<span class='px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100'>{{ __('Habilitado') }}</span>";
+                            // } else if (row['state_vehicle'] == 3) {
+                            //     return "<button wire:click='reactivado' id='' onclick='reactive(" +
+                            //         row['id'] +
+                            //         ")' class='px-2 py-1 font-semibold leading-tight text-gray-700 bg-gray-100 rounded-full dark:text-gray-100 dark:bg-gray-700'>{{ __('Inactivo') }}</button>";
+                            // } else if (row['state_vehicle'] == 4) {
+                            //     return "<span class='px-2 py-1 font-semibold leading-tight text-orange-700 bg-orange-100 rounded-full dark:text-white dark:bg-orange-600'>{{ __('PENDIENTE') }}</span>";
+                            // return ("<button wire:click='updateState' id='' onclick='changeState(" + row['id'] + ")'>" +}
                             if (row['state_vehicle'] == 1) {
-                                return "<span class='px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-full dark:text-red-100 dark:bg-red-700'>{{ __('Inhabilitado') }}</span>";
+                                return ("<button id='' onclick='changeState(" + row['id'] + ")'>" +
+                                    "<span class='px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-full dark:text-red-100 dark:bg-red-700'>{{ __('Inhabilitado') }}</span>" +
+                                    "</button>");
                             } else if (row['state_vehicle'] == 2) {
-                                return "<span class='px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100'>{{ __('Habilitado') }}</span>";
+
+                                return ("<button id='' onclick='changeState(" + row['id'] + ")'>" +
+                                    "<span class='px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100'>{{ __('Habilitado') }}</span>" +
+                                    "</button>");
                             } else if (row['state_vehicle'] == 3) {
 
-                                // "<span class='px-2 py-1 font-semibold leading-tight text-gray-700 bg-gray-100 rounded-full dark:text-gray-100 dark:bg-gray-700'>{{ __('Inactivo') }}</span>";
-                                return "<button wire:click='reactivado' id='' onclick='reactive(" +
-                                    row['id'] +
-                                    ")' class='px-2 py-1 font-semibold leading-tight text-gray-700 bg-gray-100 rounded-full dark:text-gray-100 dark:bg-gray-700'>{{ __('Inactivo') }}</button>";
+                                return ("<button id='' onclick='changeState(" + row['id'] + ")'>" +
+                                    "<span class='px-2 py-1 font-semibold leading-tight text-gray-700 bg-gray-100 rounded-full dark:text-gray-100 dark:bg-gray-700'>{{ __('Inactivo') }}</span>" +
+                                    "</button>");
                             } else if (row['state_vehicle'] == 4) {
-                                return "<span class='px-2 py-1 font-semibold leading-tight text-orange-700 bg-orange-100 rounded-full dark:text-white dark:bg-orange-600'>{{ __('PENDIENTE') }}</span>";
+
+                                return ("<button id='' onclick='changeState(" + row['id'] + ")'>" +
+                                    "<span class='px-2 py-1 font-semibold leading-tight text-orange-700 bg-orange-100 rounded-full dark:text-white dark:bg-orange-600'>{{ __('PENDIENTE') }}</span>" +
+                                    "</button>");
                             }
+
                         },
                         "className": "dark:bg-gray-800 dark:text-white text-center border-b text-xs text-gray-600"
                     },
@@ -1970,6 +1990,7 @@
                 }
             });
 
+            $("#active7").removeClass('hidden');
 
         });
 
@@ -1991,7 +2012,7 @@
             // console.log(photo);
             swal.fire({
                 // title: 'Sweet!',
-                imageUrl: `${photo}`, 
+                imageUrl: `${photo}`,
                 // imageUrl: '/storage/STEP/users/Ident_q11111111111/profile_user_q11111111111.webp',
                 // text: '<strong></strong>',
                 // html: '<strong>' + `${name}` + '</strong>',
@@ -2006,10 +2027,20 @@
             Livewire.emit('searchImg', [id]);
         }
 
-        function reactive(id) {
+        function changeState(id) {
             // alert('reactivar el ' + id);
-            Livewire.emit('reactivado', [id]);
+            Livewire.emit('updateState', [id]);
         }
+
+        Livewire.on('stateNew', () => {
+            location.reload();
+            swal.fire({
+                position: 'center',
+                title: 'Cambio de estado', //documento actualizado
+                showConfirmButton: false,
+                timer: 1500
+            })
+        })
 
 
         // abriendo modal para editar

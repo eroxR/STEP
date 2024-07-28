@@ -1,5 +1,15 @@
 <div>
 
+    {{-- @if ($bandera)
+
+        <span
+            class="absolute top-0 ml57 mt1 px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-full dark:text-red-100 dark:bg-red-700">
+            No hay información para mostrar
+        </span>
+        <p class="rounded-3xl p-1 bg-red-600 dark:text-yellow-400 text-white">
+            No hay información para mostrar
+        </p>
+    @else --}}
     <div class="py-12 mb-2 mt-4">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="roundedx1 mt5 mr3 fixed inset-y-0 flex items-end bg-black bg-opacity-50 sm:items-center">
@@ -189,15 +199,34 @@
                                                 </div>
                                                 <div class="text-black dark:text-white">
                                                     <h1>
-                                                        Permiso N°
-                                                        @foreach ($allpermits as $allpermit)
-                                                            @if ($allpermit->contract == $contract->id)
-                                                                <button {{-- onclick="deletes({{ $contract->id }})" --}}
-                                                                    class="p-1 inline-flex items-center justify-center  bg-red-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 active:bg-red-600 disabled:opacity-25 transition">
-                                                                    <span>{{ $allpermit->permit_number }}</span>
-                                                                </button>
-                                                            @endif
-                                                        @endforeach
+                                                        @can('listaContratos.crearFuecContingencia')
+                                                            <button
+                                                                class="inline-flex items-center justify-center  bg-blue-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest
+                                                    hover:bg-red-500 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 active:bg-red-600 disabled:opacity-25 transition"
+                                                                aria-label="view" onmouseover="Tooltip(true,'tooltip')">
+                                                                <svg id="Layer_1" class="w-5 h-5" viewBox="0 0 24 24"
+                                                                    width="512" xmlns="http://www.w3.org/2000/svg"
+                                                                    data-name="Layer 1">
+                                                                    <path
+                                                                        d="m9.5 24h-8a1.5 1.5 0 0 1 0-3h8a1.5 1.5 0 0 1 0 3z" />
+                                                                    <path
+                                                                        d="m7.5 19h-6a1.5 1.5 0 0 1 0-3h6a1.5 1.5 0 0 1 0 3z" />
+                                                                    <path
+                                                                        d="m5.5 14h-4a1.5 1.5 0 0 1 0-3h4a1.5 1.5 0 0 1 0 3z" />
+                                                                    <path
+                                                                        d="m14.5 23.722a1.5 1.5 0 0 1 -.354-2.958 9.022 9.022 0 1 0 -10.303-12.622 1.5 1.5 0 0 1 -2.711-1.284 12.023 12.023 0 1 1 13.723
+                                                                                            16.821 1.513 1.513 0 0 1 -.355.043z" />
+                                                                    <path
+                                                                        d="m12.5 6a1.5 1.5 0 0 0 -1.5 1.5v4.293a2 2 0 0 0 .586 1.414l1.793 1.793a1.5 1.5 0 0 0
+                                                                                            2.121-2.121l-1.5-1.5v-3.879a1.5 1.5 0 0 0 -1.5-1.5z" />
+                                                                </svg>
+                                                                <div id="tooltip" role="tooltip"
+                                                                    class="hidden fixed mt-12 -ml-7 border transition-colors duration-150 text-white  text-sm bg-gray-900 px-2 py-1 rounded-md">
+                                                                    FUEC DE CONTINGENCIA
+                                                                </div>
+                                                            </button>
+                                                        @endcan
+
                                                         @can('listaContratos.crearFuec')
                                                             <button {{-- onclick="view({{ $permit->id }})" --}}
                                                                 class="inline-flex items-center justify-center  bg-blue-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 active:bg-red-600 disabled:opacity-25 transition">
@@ -219,10 +248,12 @@
                                             <div class="border-b text-black text80 dark:text-white "><strong>Fecha
                                                     Inicio:</strong>
                                                 {{ $contract->date_start_contract }}
-                                                <strong>Fecha final:</strong> {{ $contract->contract_end_date }} <br>
+                                                <strong>Fecha final:</strong> {{ $contract->contract_end_date }}
+                                                <br>
                                                 <strong>Se firma el:</strong>{{ $contract->contract_signing_date }}
                                             </div>
-                                            <div class="border-b text-black text80 dark:text-white "><strong>tipo de
+                                            <div class="border-b text-black text80 dark:text-white "><strong>tipo
+                                                    de
                                                     Pago:</strong>
                                                 @switch($contract->tipe_pay)
                                                     @case(1)
@@ -241,13 +272,15 @@
                                                     @default
                                                 @endswitch
                                             </div>
-                                            <div class="border-b text-black text80 dark:text-white "><strong>Valor del
+                                            <div class="border-b text-black text80 dark:text-white "><strong>Valor
+                                                    del
                                                     Contrato:</strong>
                                                 ${{ number_format($contract->contract_value, 2, ',', '.') }}</div>
                                             <div class="border-b text-black text80 dark:text-white "><strong>Cant.
                                                     Vehiculos:</strong>
                                                 {{ $contract->quantity_vehicle }} <br>
-                                                <strong>Cant. Pasajeros:</strong> {{ $contract->passenger_quantity }}
+                                                <strong>Cant. Pasajeros:</strong>
+                                                {{ $contract->passenger_quantity }}
                                             </div>
                                             <div class="border-b text-black text80 dark:text-white "><strong>Nombre
                                                     Contratante:</strong>
@@ -296,9 +329,11 @@
                                                 <br> <strong>Cedula Contratante:</strong>
                                                 {{ $contract->contract_document }}
                                             </div>
-                                            <div class="border-b text-black text80 dark:text-white "><strong>Expedida
+                                            <div class="border-b text-black text80 dark:text-white ">
+                                                <strong>Expedida
                                                     en:</strong>
-                                                {{ $contract->expedition_identificationcard }}</div>
+                                                {{ $contract->expedition_identificationcard }}
+                                            </div>
                                             <div class="border-b text-black text80 dark:text-white ">
                                                 <strong>Dirección:</strong>
                                                 {{ $contract->contracting_direction }}
@@ -353,7 +388,8 @@
                                                 {{ $contract->legal_representative_expedition_identificationcard }}
                                             </div>
                                             @if ($contract->type_contract == 1)
-                                                <div class="border-b text-black text80 dark:text-white "><strong>Nombre
+                                                <div class="border-b text-black text80 dark:text-white ">
+                                                    <strong>Nombre
                                                         Colegio:</strong>
                                                     {{ $contract->school_name }}
                                                     <br> <strong>Poliza:</strong> {{ $contract->secure_policy }}
@@ -422,7 +458,7 @@
                                                         @break
 
                                                         @case(9)
-                                                            Tipo de Documento Extranjero
+                                                            Tipo de Documento Extranjero
                                                         @break
 
                                                         @default
@@ -437,6 +473,137 @@
 
                                             {{-- <div class="border-b text-black text80 dark:text-white"></div> --}}
                                         </div>
+                                        <br>
+                                        @foreach ($allpermits as $allpermit)
+                                            @if ($allpermit->contract == $contract->id)
+                                                <p class="text-sm text-black text80 dark:text-white">
+                                                    <strong>PERMISO N° </strong>
+                                                    <span
+                                                        class="p-1 inline-flex items-center justify-center  bg-red-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 active:bg-red-600 disabled:opacity-25 transition">
+                                                        <span>{{ $allpermit->permit_number }}</span>
+                                                    </span>
+                                                    <span class="ml-1-5"><strong>Estado: </strong>
+                                                        @switch($allpermit->fuec_state)
+                                                            @case('0')
+                                                                <span
+                                                                    class="px-2 py-1 font-semibold leading-tight text-gray-700 bg-gray-100 rounded-full dark:text-gray-100 dark:bg-gray-700">
+                                                                    INICIAL
+                                                                </span>
+                                                            @break
+
+                                                            @case('1')
+                                                                <span
+                                                                    class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">
+                                                                    CANCELADO
+                                                                </span>
+                                                            @break
+
+                                                            @case('2')
+                                                                <span
+                                                                    class="px-2 py-1 font-semibold leading-tight text-yellow-700 bg-yellow-100 rounded-full dark:bg-yellow-700 dark:text-yellow-100">
+                                                                    EN CURSO
+                                                                </span>
+                                                            @break
+
+                                                            @case('3')
+                                                                <span
+                                                                    class="px-2 py-1 font-semibold leading-tight text-sky-700 bg-sky-300 rounded-full dark:bg-sky-700 dark:text-sky-100">
+                                                                    FINALIZADO
+                                                                </span>
+                                                            @break
+
+                                                            @case('4')
+                                                                <span
+                                                                    class="px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-full dark:text-red-100 dark:bg-red-700">
+                                                                    PENDIENTE
+                                                                </span>
+                                                            @break
+
+                                                            @default
+                                                        @endswitch
+                                                    </span>
+                                                </p>
+                                                <div
+                                                    class="{{ $colorPermit[random_int(1, 10) - 1] }} rounded-2xl p-4">
+
+                                                    <div class="grid grid-cols-5 gap-4">
+                                                        <div class="border-b text-black text80 dark:text-white ">
+                                                            <strong>Fecha
+                                                                Inicio:</strong>
+                                                            {{ $allpermit->permit_start_date }}
+                                                            <strong>Fecha final:</strong>
+                                                            {{ $allpermit->permit_end_date }} <br>
+                                                            <strong>Codigo fuec:</strong> {{ $allpermit->permit_code }}
+                                                        </div>
+                                                        {{-- <div class="border-b text-yellow-600 text80 text-2xl">
+                                                    </div> --}}
+                                                        @php
+                                                            $countCars = 0;
+                                                        @endphp
+                                                        @foreach ($allCars as $allCar)
+                                                            @if ($allCar->permit_id == $allpermit->id)
+                                                                <div
+                                                                    class="border-b text-black text80 dark:text-white ">
+                                                                    <p class="text-yellow-600 text-base">
+                                                                        <strong>Vehiculo->{{ $countCars = $countCars + 1 }}</strong>
+                                                                    </p>
+                                                                    {{-- <strong>id:</strong> {{ $car->id }} <br> --}}
+                                                                    <strong>placa:</strong>
+                                                                    {{ $allCar->plate_vehicle }} <br>
+                                                                    <strong>lateral:</strong>
+                                                                    {{ $allCar->side_vehicle }} <br>
+                                                                    <strong>fin tecno.:</strong>
+                                                                    {{ $allCar->technomechanical_end_date }} <br>
+                                                                    <strong>fin Soat:</strong>
+                                                                    {{ $allCar->secure_end_date }} <br>
+                                                                    <strong>fin tarjeta OP:</strong>
+                                                                    {{ $allCar->expiration_card_operation }}
+                                                                    <br>
+                                                                    <strong>fin Prevent.:</strong>
+                                                                    {{ $allCar->expiration_preventive }}
+                                                                </div>
+                                                            @endif
+                                                        @endforeach
+                                                        {{-- <div class="border-b text-yellow-600 text-xl">
+                                                        
+                                                    </div> --}}
+                                                        @php
+                                                            $countDrive = 0;
+                                                        @endphp
+                                                        @foreach ($allDrivers as $allDriver)
+                                                            @if ($allDriver->permit_id == $allpermit->id)
+                                                                <div
+                                                                    class="border-b text-black text80 dark:text-white ">
+                                                                    <p class="text-yellow-600 text-base">
+                                                                        <strong>Conductor->{{ $countDrive = $countDrive + 1 }}</strong>
+                                                                    </p>
+                                                                    {{-- <strong>id:</strong> {{ $driver->id }} <br> --}}
+                                                                    <strong>documento:</strong>
+                                                                    {{ $allDriver->identificationcard }}
+                                                                    <br>
+                                                                    <strong>nombre:</strong>
+                                                                    {{ $allDriver->firstname }}
+                                                                    {{ $allDriver->secondname }}
+                                                                    {{ $allDriver->lastname }}
+                                                                    {{ $allDriver->motherslastname }}
+                                                                    <br>
+                                                                    <strong>tipo sangre:</strong>
+                                                                    @foreach ($bloodType as $id => $blood_type_description)
+                                                                        @if ($id == $allDriver->blood_type)
+                                                                            {{ $blood_type_description }}
+                                                                        @endif
+                                                                    @endforeach
+                                                                    <br>
+                                                                    <strong>fin licencia.:</strong>
+                                                                    {{ $allDriver->license_expiration }} <br>
+                                                                </div>
+                                                            @endif
+                                                        @endforeach
+
+                                                    </div>
+                                                </div>
+                                            @endif
+                                        @endforeach
                                     </div>
                                 </li>
                             @endforeach
@@ -585,7 +752,7 @@
                                         @can('listaContratos.crearFuecContingencia')
                                             <button
                                                 class="inline-flex items-center justify-center  bg-blue-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest
-                                        hover:bg-red-500 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 active:bg-red-600 disabled:opacity-25 transition"
+                                                         hover:bg-red-500 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 active:bg-red-600 disabled:opacity-25 transition"
                                                 aria-label="view" onmouseover="Tooltip(true,'tooltip')"
                                                 onmouseleave="Tooltip(false,'tooltip')"
                                                 onclick="openModalFuec({{ $contracSelected->id }},{{ $contracSelected->type_contract }},true)">
@@ -594,12 +761,11 @@
                                                     <path d="m9.5 24h-8a1.5 1.5 0 0 1 0-3h8a1.5 1.5 0 0 1 0 3z" />
                                                     <path d="m7.5 19h-6a1.5 1.5 0 0 1 0-3h6a1.5 1.5 0 0 1 0 3z" />
                                                     <path d="m5.5 14h-4a1.5 1.5 0 0 1 0-3h4a1.5 1.5 0 0 1 0 3z" />
+                                                    <path d="m14.5 23.722a1.5 1.5 0 0 1 -.354-2.958 9.022 9.022 0 1 0 -10.303-12.622 1.5 1.5 0 0 1 -2.711-1.284 12.023 12.023 0 1 1 13.723
+                                                                                16.821 1.513 1.513 0 0 1 -.355.043z" />
                                                     <path
-                                                        d="m14.5 23.722a1.5 1.5 0 0 1 -.354-2.958 9.022 9.022 0 1 0 -10.303-12.622 1.5 1.5 0 0 1 -2.711-1.284 12.023 12.023 0 1 1 13.723 
-                                            16.821 1.513 1.513 0 0 1 -.355.043z" />
-                                                    <path
-                                                        d="m12.5 6a1.5 1.5 0 0 0 -1.5 1.5v4.293a2 2 0 0 0 .586 1.414l1.793 1.793a1.5 1.5 0 0 0 
-                                            2.121-2.121l-1.5-1.5v-3.879a1.5 1.5 0 0 0 -1.5-1.5z" />
+                                                        d="m12.5 6a1.5 1.5 0 0 0 -1.5 1.5v4.293a2 2 0 0 0 .586 1.414l1.793 1.793a1.5 1.5 0 0 0
+                                                                                2.121-2.121l-1.5-1.5v-3.879a1.5 1.5 0 0 0 -1.5-1.5z" />
                                                 </svg>
                                                 <div id="tooltip" role="tooltip"
                                                     class="hidden fixed mt-12 -ml-7 border transition-colors duration-150 text-white  text-sm bg-gray-900 px-2 py-1 rounded-md">
@@ -607,13 +773,7 @@
                                                 </div>
                                             </button>
                                         @endcan
-                                        <strong>Permiso N°</strong>
-                                        @foreach ($permits as $permit)
-                                            <button onclick="viewPermit({{ $permit->id }})"
-                                                class="p-1 inline-flex items-center justify-center  bg-red-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 active:bg-red-600 disabled:opacity-25 transition">
-                                                <span>{{ $permit->permit_number }}</span>
-                                            </button>
-                                        @endforeach
+
                                         @can('listaContratos.crearFuec')
                                             <button
                                                 class="inline-flex items-center justify-center  bg-blue-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 active:bg-red-600 disabled:opacity-25 transition"
@@ -633,180 +793,47 @@
 
                         </header>
                         <!-- body -->
-                        <div class="grid grid-cols-5 gap-4">
-                            <div class="border-b text-black text80 dark:text-white "><strong>Fecha
-                                    Inicio:</strong>
-                                {{ $contracSelected->date_start_contract }}
-                                <strong>Fecha final:</strong> {{ $contracSelected->contract_end_date }} <br>
-                                <strong>Se firma el:</strong>{{ $contracSelected->contract_signing_date }}
-                            </div>
-                            <div class="border-b text-black text80 dark:text-white "><strong>tipo de
-                                    Pago:</strong>
-                                @switch($contracSelected->tipe_pay)
-                                    @case(1)
-                                        De Contado
-                                    @break
+                        <div class="scroll h-4-7 overflow-y-auto">
+                            <div class="grid grid-cols-5 gap-4">
+                                <div class="border-b text-black text80 dark:text-white "><strong>Fecha
+                                        Inicio:</strong>
+                                    {{ $contracSelected->date_start_contract }}
+                                    <strong>Fecha final:</strong> {{ $contracSelected->contract_end_date }} <br>
+                                    <strong>Se firma el:</strong>{{ $contracSelected->contract_signing_date }}
+                                </div>
+                                <div class="border-b text-black text80 dark:text-white "><strong>tipo de
+                                        Pago:</strong>
+                                    @switch($contracSelected->tipe_pay)
+                                        @case(1)
+                                            De Contado
+                                        @break
 
-                                    @case(2)
-                                        el 50% a la firma del
-                                        contrato...
-                                    @break
+                                        @case(2)
+                                            el 50% a la firma del
+                                            contrato...
+                                        @break
 
-                                    @case(3)
-                                        Otro
-                                    @break
+                                        @case(3)
+                                            Otro
+                                        @break
 
-                                    @default
-                                @endswitch
-                            </div>
-                            <div class="border-b text-black text80 dark:text-white "><strong>Valor del
-                                    Contrato:</strong>
-                                ${{ number_format($contracSelected->contract_value, 2, ',', '.') }}</div>
-                            <div class="border-b text-black text80 dark:text-white "><strong>Cant.
-                                    Vehiculos:</strong>
-                                {{ $contracSelected->quantity_vehicle }} <br>
-                                <strong>Cant. Pasajeros:</strong> {{ $contracSelected->passenger_quantity }}
-                            </div>
-                            <div class="border-b text-black text80 dark:text-white "><strong>Nombre
-                                    Contratante:</strong>
-                                {{ $contracSelected->contracting_name }}</div>
-                            <div class="border-b text-black text80 dark:text-white ">
-                                <strong>Identificación:</strong>
-                                @switch($contracSelected->identification)
-                                    @case(1)
-                                        Cedula de Ciudadania
-                                    @break
-
-                                    @case(2)
-                                        Cedula de Extranjeria
-                                    @break
-
-                                    @case(3)
-                                        Documento Definido para información Exógena
-                                    @break
-
-                                    @case(4)
-                                        Nit
-                                    @break
-
-                                    @case(5)
-                                        Pasaporte
-                                    @break
-
-                                    @case(6)
-                                        Registro Civil
-                                    @break
-
-                                    @case(7)
-                                        Tarjeta de Extranjeria
-                                    @break
-
-                                    @case(8)
-                                        Tarjeta de Identidad
-                                    @break
-
-                                    @case(9)
-                                        Tipo de Documento Extranjero
-                                    @break
-
-                                    @default
-                                @endswitch
-                                <br> <strong>Cedula Contratante:</strong>
-                                {{ $contracSelected->contract_document }}
-                            </div>
-                            <div class="border-b text-black text80 dark:text-white "><strong>Expedida
-                                    en:</strong>
-                                {{ $contracSelected->expedition_identificationcard }}</div>
-                            <div class="border-b text-black text80 dark:text-white ">
-                                <strong>Dirección:</strong>
-                                {{ $contracSelected->contracting_direction }}
-                                <br> <strong>Telefono:</strong> {{ $contracSelected->contracting_phone }}
-                            </div>
-                            <div class="border-b text-black text80 dark:text-white "><strong>Nombre
-                                    Representante
-                                    Legal:</strong> {{ $contracSelected->legal_representative }}</div>
-                            <div class="border-b text-black text80 dark:text-white ">
-                                <strong>Identificación Repres.
-                                    Legal:</strong>
-                                @switch($contracSelected->identification_represent_legal)
-                                    @case(1)
-                                        Cedula de Ciudadania
-                                    @break
-
-                                    @case(2)
-                                        Cedula de Extranjeria
-                                    @break
-
-                                    @case(3)
-                                        Documento Definido para información Exógena
-                                    @break
-
-                                    @case(4)
-                                        Nit
-                                    @break
-
-                                    @case(5)
-                                        Pasaporte
-                                    @break
-
-                                    @case(6)
-                                        Registro Civil
-                                    @break
-
-                                    @case(7)
-                                        Tarjeta de Extranjeria
-                                    @break
-
-                                    @case(8)
-                                        Tarjeta de Identidad
-                                    @break
-
-                                    @case(9)
-                                        Tipo de Documento Extranjero
-                                    @break
-
-                                    @default
-                                @endswitch
-                                <br> <strong>Expedida en:</strong>
-                                {{ $contracSelected->legal_representative_expedition_identificationcard }}
-                            </div>
-                            @if ($contracSelected->type_contract == 1)
+                                        @default
+                                    @endswitch
+                                </div>
+                                <div class="border-b text-black text80 dark:text-white "><strong>Valor del
+                                        Contrato:</strong>
+                                    ${{ number_format($contracSelected->contract_value, 2, ',', '.') }}</div>
+                                <div class="border-b text-black text80 dark:text-white "><strong>Cant.
+                                        Vehiculos:</strong>
+                                    {{ $contracSelected->quantity_vehicle }} <br>
+                                    <strong>Cant. Pasajeros:</strong> {{ $contracSelected->passenger_quantity }}
+                                </div>
                                 <div class="border-b text-black text80 dark:text-white "><strong>Nombre
-                                        Colegio:</strong>
-                                    {{ $contracSelected->school_name }}
-                                    <br> <strong>Poliza:</strong> {{ $contracSelected->secure_policy }}
-                                </div>
+                                        Contratante:</strong>
+                                    {{ $contracSelected->contracting_name }}</div>
                                 <div class="border-b text-black text80 dark:text-white ">
-                                    <strong>Dirección:</strong>
-                                    {{ $contracSelected->address_school }}
-                                </div>
-                            @endif
-                            {{-- @if ($contracSelected->type_contract == 2 || $contracSelected->type_contract == 3 || $contracSelected->type_contract == 5)
-                                <div class="border-b text-black text80 dark:text-white">
-                                    <strong>Empresa:</strong> {{ $contracSelected->entity_name }} <br>
-                                    <strong>Cooperación:</strong> {{ $contracSelected->cooperation_contract }}
-                                </div>
-                            @endif --}}
-                            {{-- <div class="border-b text-black text80 dark:text-white "><strong>Viaje
-                                    desde:</strong>
-                                {{ $contracSelected->trip_from }}
-                                <br> <strong>Viaje hasta:</strong> {{ $contracSelected->trip_to }}
-                            </div> --}}
-                            {{-- <div class="border-b text-black text80 dark:text-white "><strong>Lugar de
-                                    Origen:</strong>
-                                {{ $contracSelected->place_of_origin }}
-                                <br> <strong>Retorno:</strong> {{ $contracSelected->return_place }}
-                                <br> <strong>destino:</strong> {{ $contracSelected->destination_place }}
-                            </div> --}}
-                            <div class="border-b text-black text80 dark:text-white "><strong>Ruta
-                                    Contrato:</strong>
-                                {{ $contracSelected->route_trip_contract }}</div>
-                            @if ($contracSelected->type_contract == 4)
-                                <div class="border-b text-black text80 dark:text-white">
-                                    <strong>Representante del grupo:</strong> <br>
-                                    {{ $contracSelected->group_representative_name }}
                                     <strong>Identificación:</strong>
-                                    @switch($contracSelected->identificationcard_representative_group)
+                                    @switch($contracSelected->identification)
                                         @case(1)
                                             Cedula de Ciudadania
                                         @break
@@ -845,19 +872,275 @@
 
                                         @default
                                     @endswitch
+                                    <br> <strong>Cedula Contratante:</strong>
+                                    {{ $contracSelected->contract_document }}
                                 </div>
-                                <div class="border-b text-black text80 dark:text-white"><strong>Expedida
+                                <div class="border-b text-black text80 dark:text-white "><strong>Expedida
                                         en:</strong>
-                                    {{ $contracSelected->dateofexpedition_representative_group }}
+                                    {{ $contracSelected->expedition_identificationcard }}</div>
+                                <div class="border-b text-black text80 dark:text-white ">
+                                    <strong>Dirección:</strong>
+                                    {{ $contracSelected->contracting_direction }}
+                                    <br> <strong>Telefono:</strong> {{ $contracSelected->contracting_phone }}
                                 </div>
-                            @endif
+                                <div class="border-b text-black text80 dark:text-white "><strong>Nombre
+                                        Representante
+                                        Legal:</strong> {{ $contracSelected->legal_representative }}</div>
+                                <div class="border-b text-black text80 dark:text-white ">
+                                    <strong>Identificación Repres.
+                                        Legal:</strong>
+                                    @switch($contracSelected->identification_represent_legal)
+                                        @case(1)
+                                            Cedula de Ciudadania
+                                        @break
+
+                                        @case(2)
+                                            Cedula de Extranjeria
+                                        @break
+
+                                        @case(3)
+                                            Documento Definido para información Exógena
+                                        @break
+
+                                        @case(4)
+                                            Nit
+                                        @break
+
+                                        @case(5)
+                                            Pasaporte
+                                        @break
+
+                                        @case(6)
+                                            Registro Civil
+                                        @break
+
+                                        @case(7)
+                                            Tarjeta de Extranjeria
+                                        @break
+
+                                        @case(8)
+                                            Tarjeta de Identidad
+                                        @break
+
+                                        @case(9)
+                                            Tipo de Documento Extranjero
+                                        @break
+
+                                        @default
+                                    @endswitch
+                                    <br> <strong>Expedida en:</strong>
+                                    {{ $contracSelected->legal_representative_expedition_identificationcard }}
+                                </div>
+                                @if ($contracSelected->type_contract == 1)
+                                    <div class="border-b text-black text80 dark:text-white "><strong>Nombre
+                                            Colegio:</strong>
+                                        {{ $contracSelected->school_name }}
+                                        <br> <strong>Poliza:</strong> {{ $contracSelected->secure_policy }}
+                                    </div>
+                                    <div class="border-b text-black text80 dark:text-white ">
+                                        <strong>Dirección:</strong>
+                                        {{ $contracSelected->address_school }}
+                                    </div>
+                                @endif
+                                {{-- @if ($contracSelected->type_contract == 2 || $contracSelected->type_contract == 3 || $contracSelected->type_contract == 5)
+                                    <div class="border-b text-black text80 dark:text-white">
+                                        <strong>Empresa:</strong> {{ $contracSelected->entity_name }} <br>
+                                        <strong>Cooperación:</strong> {{ $contracSelected->cooperation_contract }}
+                                    </div>
+                                @endif --}}
+                                {{-- <div class="border-b text-black text80 dark:text-white "><strong>Viaje
+                                        desde:</strong>
+                                    {{ $contracSelected->trip_from }}
+                                    <br> <strong>Viaje hasta:</strong> {{ $contracSelected->trip_to }}
+                                </div> --}}
+                                {{-- <div class="border-b text-black text80 dark:text-white "><strong>Lugar de
+                                        Origen:</strong>
+                                    {{ $contracSelected->place_of_origin }}
+                                    <br> <strong>Retorno:</strong> {{ $contracSelected->return_place }}
+                                    <br> <strong>destino:</strong> {{ $contracSelected->destination_place }}
+                                </div> --}}
+                                <div class="border-b text-black text80 dark:text-white "><strong>Ruta
+                                        Contrato:</strong>
+                                    {{ $contracSelected->route_trip_contract }}</div>
+                                @if ($contracSelected->type_contract == 4)
+                                    <div class="border-b text-black text80 dark:text-white">
+                                        <strong>Representante del grupo:</strong> <br>
+                                        {{ $contracSelected->group_representative_name }}
+                                        <strong>Identificación:</strong>
+                                        @switch($contracSelected->identificationcard_representative_group)
+                                            @case(1)
+                                                Cedula de Ciudadania
+                                            @break
+
+                                            @case(2)
+                                                Cedula de Extranjeria
+                                            @break
+
+                                            @case(3)
+                                                Documento Definido para información Exógena
+                                            @break
+
+                                            @case(4)
+                                                Nit
+                                            @break
+
+                                            @case(5)
+                                                Pasaporte
+                                            @break
+
+                                            @case(6)
+                                                Registro Civil
+                                            @break
+
+                                            @case(7)
+                                                Tarjeta de Extranjeria
+                                            @break
+
+                                            @case(8)
+                                                Tarjeta de Identidad
+                                            @break
+
+                                            @case(9)
+                                                Tipo de Documento Extranjero
+                                            @break
+
+                                            @default
+                                        @endswitch
+                                    </div>
+                                    <div class="border-b text-black text80 dark:text-white"><strong>Expedida
+                                            en:</strong>
+                                        {{ $contracSelected->dateofexpedition_representative_group }}
+                                    </div>
+                                @endif
+                            </div>
+                            <br>
+                            @foreach ($permits as $permit)
+                                <p class="text-sm text-black text80 dark:text-white">
+                                    <strong>PERMISO N° </strong>
+                                    <button onclick="viewPermit({{ $permit->id }})"
+                                        class="p-1 inline-flex items-center justify-center  bg-red-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 active:bg-red-600 disabled:opacity-25 transition">
+                                        <span>{{ $permit->permit_number }}</span>
+                                    </button>
+                                    <span class="ml-1-5"><strong>Estado: </strong>
+                                        @switch($permit->fuec_state)
+                                            @case('0')
+                                                <span
+                                                    class="px-2 py-1 font-semibold leading-tight text-gray-700 bg-gray-100 rounded-full dark:text-gray-100 dark:bg-gray-700">
+                                                    INICIAL
+                                                </span>
+                                            @break
+
+                                            @case('1')
+                                                <span
+                                                    class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">
+                                                    CANCELADO
+                                                </span>
+                                            @break
+
+                                            @case('2')
+                                                <span
+                                                    class="px-2 py-1 font-semibold leading-tight text-yellow-700 bg-yellow-100 rounded-full dark:bg-yellow-700 dark:text-yellow-100">
+                                                    EN CURSO
+                                                </span>
+                                            @break
+
+                                            @case('3')
+                                                <span
+                                                    class="px-2 py-1 font-semibold leading-tight text-sky-700 bg-sky-300 rounded-full dark:bg-sky-700 dark:text-sky-100">
+                                                    FINALIZADO
+                                                </span>
+                                            @break
+
+                                            @case('4')
+                                                <span
+                                                    class="px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-full dark:text-red-100 dark:bg-red-700">
+                                                    PENDIENTE
+                                                </span>
+                                            @break
+
+                                            @default
+                                        @endswitch
+                                    </span>
+                                </p>
+                                <div class="{{ $colorPermit[random_int(1, 10) - 1] }} rounded-2xl p-4">
+
+                                    <div class="grid grid-cols-5 gap-4">
+                                        <div class="border-b text-black text80 dark:text-white "><strong>Fecha
+                                                Inicio:</strong>
+                                            {{ $permit->permit_start_date }}
+                                            <strong>Fecha final:</strong> {{ $permit->permit_end_date }} <br>
+                                            <strong>Codigo fuec:</strong> {{ $permit->permit_code }}
+                                        </div>
+                                        {{-- <div class="border-b text-yellow-600 text80 text-2xl">
+                                        </div> --}}
+
+                                        @php
+                                            $countCars = 0;
+                                        @endphp
+                                        @foreach ($allCars as $allCar)
+                                            @if ($allCar->permit_id == $permit->id)
+                                                <div class="border-b text-black text80 dark:text-white ">
+                                                    <p class="text-yellow-600 text-base">
+                                                        <strong>Vehiculo->{{ $countCars = $countCars + 1 }}</strong>
+                                                    </p>
+                                                    {{-- <strong>id:</strong> {{ $car->id }} <br> --}}
+                                                    <strong>placa:</strong> {{ $allCar->plate_vehicle }} <br>
+                                                    <strong>lateral:</strong> {{ $allCar->side_vehicle }} <br>
+                                                    <strong>fin tecno.:</strong>
+                                                    {{ $allCar->technomechanical_end_date }} <br>
+                                                    <strong>fin Soat:</strong> {{ $allCar->secure_end_date }} <br>
+                                                    <strong>fin tarjeta OP:</strong>
+                                                    {{ $allCar->expiration_card_operation }}
+                                                    <br>
+                                                    <strong>fin Prevent.:</strong>
+                                                    {{ $allCar->expiration_preventive }}
+                                                </div>
+                                            @endif
+                                        @endforeach
+                                        {{-- <div class="border-b text-yellow-600 text-xl">
+                                            
+                                        </div> --}}
+                                        @php
+                                            $countDrive = 0;
+                                        @endphp
+                                        @foreach ($allDrivers as $allDriver)
+                                            @if ($allDriver->permit_id == $permit->id)
+                                                <div class="border-b text-black text80 dark:text-white ">
+                                                    <p class="text-yellow-600 text-base">
+                                                        <strong>Conductor->{{ $countDrive = $countDrive + 1 }}</strong>
+                                                    </p>
+                                                    {{-- <strong>id:</strong> {{ $driver->id }} <br> --}}
+                                                    <strong>documento:</strong>
+                                                    {{ $allDriver->identificationcard }}
+                                                    <br>
+                                                    <strong>nombre:</strong> {{ $allDriver->firstname }}
+                                                    {{ $allDriver->secondname }}
+                                                    {{ $allDriver->lastname }} {{ $allDriver->motherslastname }}
+                                                    <br>
+                                                    <strong>tipo sangre:</strong>
+                                                    @foreach ($bloodType as $id => $blood_type_description)
+                                                        @if ($id == $allDriver->blood_type)
+                                                            {{ $blood_type_description }}
+                                                        @endif
+                                                    @endforeach
+                                                    <br>
+                                                    <strong>fin licencia.:</strong>
+                                                    {{ $allDriver->license_expiration }} <br>
+                                                </div>
+                                            @endif
+                                        @endforeach
+
+                                    </div>
+                                </div>
+                            @endforeach
                         </div>
                     @endforeach
-
+                    {{-- @endif --}}
                 </div>
             </div>
         </div>
     </div>
+
 
     {{-- componentes de modal --}}
 
@@ -1073,7 +1356,8 @@
                                         class="select2 " multiple="muliple">
 
                                         @foreach ($drivers as $driver)
-                                            <option value="{{ $driver->id }}">CC. {{ $driver->identificationcard }}
+                                            <option value="{{ $driver->id }}">CC.
+                                                {{ $driver->identificationcard }}
                                                 -
                                                 Nombre: {{ $driver->nameFull }}</option>
                                         @endforeach
@@ -1167,6 +1451,11 @@
 
 @section('scripts')
     <script>
+        $(document).ready(function() {
+            // alert('prueba');
+            $("#active3").removeClass('hidden');
+        });
+
         var limitcars = 0;
         // abriendo modal para crear Fuec
         function openModalFuec(id, typeContract, contingency) {
@@ -1711,11 +2000,11 @@
             document.getElementById('btnGenerate').classList.add('Inactive');
         }
 
-        function view(id){
-            window.open('http://127.0.0.1:8000/pdfs/pdf-contracts/' + id, '_blank');    
+        function view(id) {
+            window.open('http://127.0.0.1:8000/pdfs/pdf-contracts/' + id, '_blank');
         }
 
-        function viewPermit(id){
+        function viewPermit(id) {
             window.open('http://127.0.0.1:8000/pdfs/pdf-fuec/' + id, '_blank');
         }
 

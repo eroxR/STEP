@@ -30,24 +30,28 @@ class ListDrivers extends Component
 {
     use WithFileUploads;
 
-    public $filtre = 0, $direction = 'desc', $search = '', $ide = 0;
-    public $user, $identificationcard, $paramText, $dateDocument, $fileDocument, $extension, $name, $Route, $Lists = null, $title, $idbeneficiary;
+    public $filtre = 0, $direction = 'desc', $search = '', $ide = 0, $bandera = false;
+    public $user, $identificationcard, $paramText, $dateDocument, $fileDocument, $extension, $name, $Route, $Lists = null, $title, $amount, $idbeneficiary;
     public $certificate = [
             'Certificado_de_Licencia_de_Conducción_usuario_', 'Certificado_Drogas_Alchoolemia_usuario_', 'Certificado_Consultas_SIMIT_usuario_', 'Certificado_Psicosensométrico_',
             'Certificado_Normas_Transito_usuario_', 'Certificado_Manejo_Defensivo_usuario_', 'Certificado_Primeros_Auxilios_usuario_', 'Certificado_Seguridad_Vial_usuario_',
             'Certificado_Eps_usuario_', 'Certificado_Pension_usuario_', 'Certificado_Cesantias_usuario_', 'Certificado_Arl_usuario_', 'Certificado_Caja_Compensación_usuario_',
-            'Certificado_de_Estudio_Beneficiario_usuario_'
+            'Certificado_de_Estudio_Beneficiario_usuario_', 'Certificado_Antecedentes_Contraloria_usuario_', 'Certificado_Antecedentes_Policia_usuario_',
+            'Certificado_Antecedentes_Procuraduria_usuario_', 'Examen_Laboral_usuario_', 'Certificado_Inducción_Reinducción_usuario_', 'document_userio_', 'Certificado_Contrato_usuario_',
+            'documento_Adicional' //21 arrays
         ],
         $colum = [
             'license_expiration', 'certificate_drugs_alchoolemia', 'SIMIT_queries', 'psicosensometrico', 'Rules_Transit', 'Defensive_driving', 'First_aid', 'Road_safety',
-            'date_eps', 'date_pension', 'date_layoffs', 'arl_date', 'date_compensationbox'
+            'date_eps', 'date_pension', 'date_layoffs', 'arl_date', 'date_compensationbox', '', 'comptroller_record', 'police_record', 'attorney_record', 'medical_exams', 'induction'  //18 arrays
 
         ],
         $columname = [
             'licencia', 'Drogas y alchoolemia', 'Consultas SIMIT', 'psicosensometrico', 'Normas de Transito', 'Manejo Defensivo', 'Primeros Auxilios',
-            'Seguridad Vial', 'Eps', 'Pension', 'Cesantias', 'Arl', 'Caja Compensacion', 'Beneficiario'
+            'Seguridad Vial', 'Eps', 'Pension', 'Cesantias', 'Arl', 'Caja Compensacion', 'Beneficiario', 'Contraloria', 'Policia', 'Procuraduria', 'Examen',
+            'Induccion', 'document', 'Contrato Laboral', 'Adicionales', //20 arrays
 
         ],
+        // $aditionalDoc = ['document_user'],
         $beneficiaryType = ['Adulto mayor', 'Conyugue', 'Hijo o Hijastro'],
         $state = ['Inhabilitado', 'Habilitado'];
 
@@ -72,6 +76,10 @@ class ListDrivers extends Component
             ->limit(1)->get();
 
         $identifitations = identification::pluck('description_identification', 'id');
+
+        // if ($driversSelected == null) {
+        //     $this->bandera = true;
+        // }
 
         $cities = city::pluck('city_name', 'id');
         $provinces = Province::pluck('department_name', 'id');
@@ -160,6 +168,7 @@ class ListDrivers extends Component
         }
 
         $this->title = $this->columname[$document];
+        $this->amount = $this->Lists->count();
         // dd($this->Lists);
         $this->emit('openModalHistorico');
     }
@@ -168,7 +177,7 @@ class ListDrivers extends Component
     {
 
 
-        if ($this->paramText != 13) {
+        if ($this->paramText <= 20) {
             if (is_null($this->dateDocument)) {
                 return $this->emit('newDocument', ['exit' => 4]);
             }
@@ -178,13 +187,13 @@ class ListDrivers extends Component
             return $this->emit('newDocument', ['exit' => 4]);
         }
 
-        $hoy = Carbon::now();
+        $hoy = Carbon::now()->format('Y-m-d');
 
         // $fend = Carbon::createFromDate($this->dateDocument);
         // dd($fend);
         // dd(Carbon::createFromDate($this->dateDocument)->diffInDays($hoy));
         // dd($this->paramText);
-        if ($this->paramText != 13) {
+        if ($this->paramText <= 20) {
             if ($this->dateDocument <= $hoy) {
                 return $this->emit('newDocument', ['exit' => 2]);
             }
@@ -194,7 +203,9 @@ class ListDrivers extends Component
 
 
         // validar que la fecha no sea anterior, y realizar la subida del archivo
-        if ($this->paramText > 7 && $this->paramText <= 12) {
+        if (in_array($this->paramText, [19, 20, 21])) {
+            # code...
+        } else if ($this->paramText > 7 && $this->paramText <= 12 || $this->paramText >= 14 && $this->paramText <= 18) {
             $newState = DB::table('users')->where('id', $this->user)->value($this->colum[$this->paramText]);
 
             if ($this->dateDocument <= $newState) {
@@ -210,7 +221,6 @@ class ListDrivers extends Component
             $ruta = DB::table('documents')->where('documentable_id', $this->user)->where('document_name', $beneficiaryDoc)->value('directory');
             $newRuta = str_replace('/storage', 'public', $ruta);
             Storage::delete($newRuta);
-
         } else {
 
             $newState = DB::table('drivers')->where('user_id', $this->user)->value($this->colum[$this->paramText]);
@@ -221,7 +231,12 @@ class ListDrivers extends Component
         }
 
         $this->extension = $this->fileDocument->extension();
-        if ($this->paramText != 13) {
+        if ($this->paramText == 21) {
+
+            $aditionalDoc = count(DB::table('documents')->where('documentable_id', $this->user)->where('document_name', 'like', '%documento_Adicional_%')->get()) + 1;
+
+            $this->name = $this->certificate[$this->paramText] . '(' . $aditionalDoc . ')_usuario_' . $this->identificationcard . '_' . $this->dateDocument . '.' . $this->extension;
+        } else if ($this->paramText != 13) {
             $this->name = $this->certificate[$this->paramText] . $this->identificationcard . '_' . $this->dateDocument . '.' . $this->extension;
         } else {
             $this->name = $this->certificate[$this->paramText] . $this->identificationcard . '_' . $this->idbeneficiary . '.' . $this->extension;
@@ -241,50 +256,36 @@ class ListDrivers extends Component
             ]);
         }
 
-        $a = 99;
+        // if ($this->paramText == 13 || $this->paramText == 18 || $this->paramText == 19) {
+        //     $this->emit('newDocument', ['exit' => $exit]);
+        // }
 
-        $state = 100;
+        if (in_array($this->paramText, [13, 18, 19, 21])) {
+            $this->emit('newDocument', ['exit' => $exit]);
+        }
 
-        for ($i = 0; $i <= count($this->certificate); $i++) {
+        $newState = 100;
 
-            if ($i == 0 && $i <= 3) {
-
+        // Recorrer el array certificate
+        foreach ($this->certificate as $index => $certificate) {
+            if ($index >= 0 && $index <= 3) {
                 $newState = DB::table('drivers')
                     ->where('user_id', $this->user)
-                    ->value($this->colum[$i]);
-
-                if ($newState < $hoy) {
-                    $a = 100;
-                }
-                // dd($a);
-
-            } else if ($i > 7 && $i <= 12) {
-
+                    ->value($this->colum[$index]);
+            } else if ($index > 7 && $index <= 12 || $index >= 14 && $index <= 17) {
                 $newState = DB::table('users')
                     ->where('id', $this->user)
-                    ->value($this->colum[$i]);
+                    ->value($this->colum[$index]);
+            }
 
-                if ($newState < $hoy) {
-                    $a = 100;
-                }
-            } else if ($i == 13) {
-                # code...
+            if ($newState < $hoy) {
+                break;
             }
         }
 
-        // dd($a != 100);
-        if ($a != 100) {
-            $state = $a;
-            // $a = 100;
-        }
+        $state = ($newState < $hoy) ? 100 : 99;
 
-        // dd($state);
-        if ($state == 99) {
-            DB::table('drivers')->where('user_id', $this->user)->update(['driver_status' => '2']);
-        } else {
-            DB::table('drivers')->where('user_id', $this->user)->update(['driver_status' => '1']);
-        }
-
+        DB::table('drivers')->where('user_id', $this->user)->update(['driver_status' => ($state == 99) ? '2' : '1']);
 
         // dd($this->fileDocument, $this->dateDocument);
         $this->emit('newDocument', ['exit' => $exit]);

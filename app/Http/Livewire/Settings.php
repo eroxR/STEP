@@ -10,7 +10,7 @@ use Livewire\Component;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 
-class Manual extends Component
+class Settings extends Component
 {
 
     public $counter = 1;
@@ -32,7 +32,7 @@ class Manual extends Component
             'Seguro Obligatorio SOAT', 'Técnico Mecánica', 'Tarjeta de Operación', 'Preventiva', 'Extracontractual', 'Civil Contractual'
         ],
         $listType = [
-            'Documentos que en poco tiempo expiraran', 'Documentos cerca de vencerse', 'Documentos proximos a vencer', 'Documentos que expiran hoy', 'Documentos vencidos'
+            'Documentos que en poco tiempo expiraran (menos de 2 meses)', 'Documentos cerca de vencerse (menos de 1 mes)', 'Documentos proximos a vencer (menos de 5 dias)', 'Documentos que expiran hoy', 'Documentos vencidos'
         ];
     public $listExpire = [], $shortTimeExpire = [], $nearExpire = [], $aboutExpire = [], $todayExpired = [], $expired = [], 
     $listExpireV = [], $shortTimeExpireV = [], $nearExpireV = [], $aboutExpireV = [], $todayExpiredV = [], $expiredV = [];
@@ -51,7 +51,7 @@ class Manual extends Component
     {
 
 
-        return view('livewire.manual');
+        return view('livewire.settings');
     }
 
     public function searchExpired()

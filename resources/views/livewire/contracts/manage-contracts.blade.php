@@ -1906,6 +1906,7 @@
                 }
             });
 
+            $("#active4").removeClass('hidden');
 
         });
 

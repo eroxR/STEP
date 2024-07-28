@@ -1,7 +1,8 @@
 <?php
-
+//local
 namespace App\Http\Livewire\List;
 
+use App\Models\bloodType;
 use App\Models\contract;
 use App\Models\contractType;
 use App\Models\driver;
@@ -23,7 +24,7 @@ class ListContracts extends Component
     use WithFileUploads;
 
     public $filtre = 0, $direction = 'desc', $search = '', $ide = 0, $contract_id, $contractType, $numberContract, $contractSigned, $driving = [], $cars = [], $driversRay = [], $vehiclesRay = [];
-    public $contract, $permit_start_date, $permit_end_date, $permit_number, $permit_code, $typeContract, $idContract, $contingency, $table;
+    public $contract, $permit_start_date, $permit_end_date, $permit_number, $permit_code, $typeContract, $idContract, $contingency, $table, $countCars = 0, $countDrive = 0;
     public $fileContract = ['', 'colegios/', 'Empresas/', 'Empresa_Turismo/', 'Ocacionales/', 'Usuarios_Salud/', 'Comvenio_Empresarial/', 'Contrato_Vinculacion/'],
         $tContra = ['', 'colegios', 'Empresas', 'Empresa Turismo', 'Ocacionales', 'Usuarios Salud', 'Comvenio Empresarial', 'Contrato Vinculacion'],
         $doc = [
@@ -46,7 +47,9 @@ class ListContracts extends Component
         $columnameVehicle = [
             'Seguro Obligatorio SOAT', 'Técnico Mecánica', 'Tarjeta de Operación', 'Preventiva', 'Extracontractual', 'Civil Contractual'
 
-        ];
+        ],
+        $colorPermit = ['border-ourple-50-s','border-blue-50-s','border-yellow-50-s','border-green-50-s','border-acuamarine-50-s',
+                    'border-orange-50-s', 'border-pink-50-s', 'border-red-50-s', 'border-coffee-50-s', 'border-golden-50-s'];
 
     protected $listeners = ['veiw', 'permit', 'limitOfCars'];
 
@@ -296,8 +299,20 @@ class ListContracts extends Component
             ->orderBy('id', 'DESC')
             ->get();
 
+        $allDrivers = DB::table('driver_permit')
+            ->join('drivers', 'drivers.id', 'driver_id')
+            ->join('users', 'users.id', 'user_id')
+            ->get();
+        
 
-        return view('livewire.list.list-contracts', compact('contracts', 'contracsSelected', 'permits', 'allpermits', 'drivers', 'vehicles'));
+        $allCars = DB::table('contract_vehicle_permit')
+            ->join('vehicles', 'vehicles.id', 'vehicle_id')
+            ->get();
+
+        $bloodType = bloodType::pluck('blood_type_description', 'id');
+
+
+        return view('livewire.list.list-contracts', compact('contracts', 'contracsSelected', 'permits', 'allpermits', 'drivers', 'vehicles', 'allDrivers', 'allCars', 'bloodType'));
     }
 
     public function order()

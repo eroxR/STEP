@@ -38,7 +38,7 @@ class ManageVehicles extends Component
         $DocPropertyCardNumber, $DocNumberTechnomechanicalAccreditation, $DocNumberAccreditationSoat, $DocCardOperation, $DocPreventive, $DocCertificateExtracontractual,
         $DocCivilContractual;
 
-    protected $listeners = ['destroy', 'edit', 'documentUpdate', 'reactivado', 'searchImg'];
+    protected $listeners = ['destroy', 'edit', 'documentUpdate', 'updateState', 'searchImg'];
 
     protected $rules = [
 
@@ -572,8 +572,17 @@ class ManageVehicles extends Component
         $this->emit('documentImage', ['file' => $photo]);
     }
 
-    public function reactivado($id)
+    public function updateState($id)
     {
-        dd('si funciona');
+        $stateOld = vehicle::where('id', $id)->value('state_vehicle');
+        if (in_array($stateOld, [1, 2, 4])) {
+            DB::table('vehicles')->where('id', $id)->update(['state_vehicle' => 3]);
+        } else {
+            DB::table('vehicles')->where('id', $id)->update(['state_vehicle' => 4]);
+        }
+        
+        $this->emit('stateNew');
+        // dd('si funciona');
+
     }
 }

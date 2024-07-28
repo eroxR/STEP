@@ -973,8 +973,7 @@
 
                                 <div class="w-6-12">
 
-                                    <label id="labelCountry" class="text-gray-700 dark:text-gray-400">Selecciona un
-                                        pais</label>
+                                    <label id="labelCountry" class="text-gray-700 dark:text-gray-400">Selecciona pais de residencia</label>
 
                                     <select wire:model="country" id="country" name="country"
                                         class="block w-98 ml-1-5 py-2 mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
@@ -992,7 +991,7 @@
                                 <div class="w-6-12">
 
                                     <label id="labelDepartment" wire:loading.remove wire:target="country"
-                                        class="text-gray-700 dark:text-gray-400">{{ __('Department') }}</label><span
+                                        class="text-gray-700 dark:text-gray-400">{{ __('Residence Department') }}</label><span
                                         wire:loading wire:target="country"
                                         class="text-gray-700 dark:text-gray-400">Cargando
                                         Departamentos...</span>
@@ -1013,7 +1012,7 @@
                                 <div class="w-6-12">
 
                                     <label id="labelCity" wire:loading.remove wire:target="Department"
-                                        class="text-gray-700 dark:text-gray-400">{{ __('city') }}</label><span
+                                        class="text-gray-700 dark:text-gray-400">{{ __('city of residence') }}</label><span
                                         wire:loading wire:target="Department"
                                         class="text-gray-700 dark:text-gray-400">Cargando
                                         Ciudades...</span>
@@ -4974,6 +4973,7 @@
                 }
             });
 
+            $("#active6").removeClass('hidden');
 
         });
 
