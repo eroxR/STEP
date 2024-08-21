@@ -92,6 +92,13 @@
                 // this.trapCleanup();
                 // console.log(isModalOpen2);
             },
+            modals: {}, // Almacena el estado de todos los modales
+            // openModal(id) {
+            //     this.$data.modals[id] = true;
+            // },
+            // closeModal(id) {
+            //     this.$data.modals[id] = false;
+            // },
             openModal2() {
                 this.isModalOpen2 = true;
                 // this.trapCleanup = focusTrap(document.querySelector('#modal'));
@@ -823,7 +830,7 @@
                         <li class="relative">
                             <div class='flex items-center text-sm'>
                                 <div>
-                                    <p class='font-semibold'>
+                                    <p class='font-semibold w-1'>
 
                                         @if (auth()->user()->usertype != 2)
                                             @switch(auth()->user()->usertype)
@@ -921,6 +928,8 @@
     {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script> --}}
     <script src="{{ asset('librerias/dataTables/buttons.print.min.js') }}"></script>
     <script src="{{ asset('librerias/dataTables/buttons.colVis.min.js') }}"></script>
+    <script src="{{ asset('librerias/dynamicTable/jquery.dynamicTable.js') }}"></script>
+
     {{-- <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script> --}}
 
 

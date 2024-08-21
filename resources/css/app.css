@@ -427,6 +427,8 @@ img,video{max-width:100%;height:auto}
 
 .text80{font-size: 80%;}
 
+.textp20{font-size: 20px;}
+
 .text-xs{font-size:.75rem}
 
 .text-sm{font-size:.875rem}
@@ -1372,6 +1374,8 @@ border-bottom-left-radius: 1rem; /* 16px */}
 .h90{height: 90%;}
 
 .h50{height: 50%;}
+
+.h45{height: 45%;}
 
 .h95{height: 95%;}
 

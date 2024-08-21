@@ -82,11 +82,15 @@ class ContractController extends Controller
         $firmemonth = $firme->monthName;
         $fstart = $fstart->isoFormat('D \d\e MMMM \d\e\l Y');
         $fend = $fend->isoFormat('D \d\e MMMM \d\e\l Y');
-        $formatterES = new NumberFormatter("es", NumberFormatter::SPELLOUT);
-        $difdayletter =  $formatterES->format($difday);
-
         // $formatterES = new NumberFormatter("es", NumberFormatter::SPELLOUT);
-        $valueContractText =  $formatterES->format($contract_value);
+        // $difdayletter =  $formatterES->format($difday);
+        // $difdayletter =  $difday;
+        $difdayletter =  $this->numberToText($difday);
+        
+        // $formatterES = new NumberFormatter("es", NumberFormatter::SPELLOUT);
+        // $valueContractText =  $formatterES->format($contract_value);
+        // $valueContractText =  $contract_value;
+        $valueContractText =  $this->numberToText($contract_value);
         $fyear = Carbon::parse(now());
         $start = Carbon::parse($date_start_contract);
         $end = Carbon::parse($contract_end_date);
@@ -250,5 +254,53 @@ class ContractController extends Controller
     public function destroy(contract $contract)
     {
         //
+    }
+
+    function numberToText($number) 
+    {
+        $units = ["", "uno", "dos", "tres", "cuatro", "cinco", "seis", "siete", "ocho", "nueve"];
+        $tens = ["", "diez", "veinte", "treinta", "cuarenta", "cincuenta", "sesenta", "setenta", "ochenta", "noventa"];
+        $teens = ["once", "doce", "trece", "catorce", "quince", "dieciséis", "diecisiete", "dieciocho", "diecinueve"];
+        $hundreds = ["", "cien", "doscientos", "trescientos", "cuatrocientos", "quinientos", "seiscientos", "setecientos", "ochocientos", "novecientos"];
+        
+        if ($number == 0) {
+            return "cero";
+        } elseif ($number < 10) {
+            return $units[$number];
+        } elseif ($number < 20) {
+            return $teens[$number - 11];
+        } elseif ($number < 100) {
+            $ten = intval($number / 10);
+            $unit = $number % 10;
+            return $tens[$ten] . ($unit > 0 ? " y " . $units[$unit] : "");
+        } elseif ($number < 1000) {
+            $hundred = intval($number / 100);
+            $remainder = $number % 100;
+            if ($remainder == 0) {
+                return $hundreds[$hundred];
+            } elseif ($hundred == 1) {
+                return "ciento " . $this->numberToText($remainder);
+            } else {
+                return $hundreds[$hundred] . " " . $this->numberToText($remainder);
+            }
+        } elseif ($number < 1000000) {
+            $thousands = intval($number / 1000);
+            $remainder = $number % 1000;
+            if ($thousands == 1) {
+                return "mil " . ($remainder > 0 ? $this->numberToText($remainder) : "");
+            } else {
+                return $this->numberToText($thousands) . " mil " . ($remainder > 0 ? $this->numberToText($remainder) : "");
+            }
+        } elseif ($number < 1000000000) {
+            $millions = intval($number / 1000000);
+            $remainder = $number % 1000000;
+            if ($millions == 1) {
+                return "un millón " . ($remainder > 0 ? $this->numberToText($remainder) : "");
+            } else {
+                return $this->numberToText($millions) . " millones " . ($remainder > 0 ? $this->numberToText($remainder) : "");
+            }
+        } else {
+            return "Número fuera de rango";
+        }
     }
 }

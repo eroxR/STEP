@@ -343,10 +343,20 @@ class ListVehicles extends Component
         if ($this->dateDocument <= $newState) {
             return $this->emit('newDocument', ['exit' => 3]);
         }
-        DB::table('vehicles')->where('id', $this->vehicle)->update([$this->colum[$this->paramText] => $this->dateDocument]);
+        if ($this->paramText == 0) {
+            DB::table('vehicles')->where('id', $this->vehicle)->update([$this->colum[$this->paramText] => $this->operationDocument]);
+        } else {
+            DB::table('vehicles')->where('id', $this->vehicle)->update([$this->colum[$this->paramText] => $this->dateDocument]);
+        }
+        
+        
 
         if ($this->paramText == 3) {
             DB::table('vehicles')->where('id', $this->vehicle)->update(['card_operation' => $this->operationDocument]);
+        }
+
+        if ($this->paramText == 0) {
+            $this->dateDocument = $this->operationDocument;
         }
 
         $this->extension = $this->fileDocument->extension();
